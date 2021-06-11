@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Silence</string>
+    <string name="toggle_on">Activate</string>
+    <string name="toggle_off">Deactivate</string>
+    <string name="description">Activate Silence to avoid getting calls from people you do not know. This blocks phone numbers that are not saved in your contacts list.</string>
+</resources>
