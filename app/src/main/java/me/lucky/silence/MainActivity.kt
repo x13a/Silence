@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         val btn: Button = findViewById(R.id.toggle)
         if (prefs.isServiceEnabled) {
-            btn.text = getText(R.string.toggle_off)
+            btn.text = getText(R.string.toggle_on)
             btn.backgroundTintList = getColorStateList(R.color.red)
         }
         btn.setOnClickListener {
@@ -46,10 +46,10 @@ class MainActivity : AppCompatActivity() {
         val stringId: Int
         val colorId: Int
         if (isEnabled) {
-            stringId = R.string.toggle_off
+            stringId = R.string.toggle_on
             colorId = R.color.red
         } else {
-            stringId = R.string.toggle_on
+            stringId = R.string.toggle_off
             colorId = R.color.green
         }
         val btn: Button = findViewById(R.id.toggle)
