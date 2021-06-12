@@ -3,4 +3,6 @@
     <string name="toggle_off">Activate</string>
     <string name="toggle_on">Deactivate</string>
     <string name="description">Activate Silence to avoid getting calls from people you do not know. This blocks phone numbers that are not saved in your contacts list.</string>
+    <string name="callback_switch">Callback</string>
+    <string name="callback_description">Allow phone numbers that are calling you back.</string>
 </resources>
