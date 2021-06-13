@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="me.lucky.silence">
 
-    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Silence">
+        <receiver
+            android:name=".BroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.lucky.silence.action.TOGGLE_ON" />
+                <action android:name="me.lucky.silence.action.TOGGLE_OFF" />
+            </intent-filter>
+        </receiver>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,10 +28,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".CallScreeningService"
+
+        <service
+            android:name=".CallScreeningService"
             android:permission="android.permission.BIND_SCREENING_SERVICE">
             <intent-filter>
-                <action android:name="android.telecom.CallScreeningService"/>
+                <action android:name="android.telecom.CallScreeningService" />
             </intent-filter>
         </service>
     </application>

@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
             setOnCheckedChangeListener { _, isChecked -> prefs.isRepeatedChecked = isChecked }
         }
 
-        toggle(prefs.isServiceEnabled)
+        updateToggleUi(prefs.isServiceEnabled)
         binding.toggle.setOnClickListener {
             val isNotEnabled = !prefs.isServiceEnabled
             if (
@@ -84,8 +84,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onRestart() {
+        super.onRestart()
+        updateToggleUi(prefs.isServiceEnabled)
+    }
+
     private fun toggle(isChecked: Boolean) {
         prefs.isServiceEnabled = isChecked
+        updateToggleUi(isChecked)
+    }
+
+    private fun updateToggleUi(isChecked: Boolean) {
         val stringId: Int
         val colorId: Int
         if (isChecked) {
