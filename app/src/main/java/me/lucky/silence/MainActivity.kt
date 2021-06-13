@@ -41,15 +41,14 @@ class MainActivity : AppCompatActivity() {
         with (binding.callbackSwitch) {
             isChecked = prefs.isCallbackChecked
             setOnCheckedChangeListener { _, isChecked ->
-                val permission = Manifest.permission.READ_CALL_LOG
                 if (
                     ContextCompat.checkSelfPermission(
                         this@MainActivity,
-                        permission,
+                        Manifest.permission.READ_CALL_LOG,
                     ) != PackageManager.PERMISSION_GRANTED &&
                     isChecked
                 ) {
-                    requestCallLog.launch(permission)
+                    requestCallLog.launch(Manifest.permission.READ_CALL_LOG)
                 } else {
                     prefs.isCallbackChecked = isChecked
                 }

@@ -9,12 +9,14 @@ class CallScreeningService : CallScreeningService() {
     private val prefs by lazy { Preferences(this) }
 
     override fun onScreenCall(callDetails: Call.Details) {
-        if (callDetails.callDirection != Call.Details.DIRECTION_INCOMING) {
+        if (
+            callDetails.callDirection != Call.Details.DIRECTION_INCOMING ||
+            !prefs.isServiceEnabled
+        ) {
             respondAllow(callDetails)
             return
         }
-        val isEnabled = prefs.isServiceEnabled
-        if (isEnabled && prefs.isCallbackChecked) {
+        if (prefs.isCallbackChecked) {
             try {
                 val cursor = contentResolver.query(
                     CallLog.Calls.CONTENT_URI,
@@ -24,12 +26,10 @@ class CallScreeningService : CallScreeningService() {
                     null,
                 )
                 cursor?.apply {
+                    val number = callDetails.handle.schemeSpecificPart
                     var isFound = false
                     while (moveToNext()) {
-                        if (PhoneNumberUtils.compare(
-                            callDetails.handle.schemeSpecificPart,
-                            getString(0),
-                        )) {
+                        if (PhoneNumberUtils.compare(number, getString(0))) {
                             isFound = true
                             break
                         }
@@ -45,8 +45,8 @@ class CallScreeningService : CallScreeningService() {
         respondToCall(
             callDetails,
             CallResponse.Builder()
-                .setDisallowCall(isEnabled)
-                .setRejectCall(isEnabled)
+                .setDisallowCall(true)
+                .setRejectCall(true)
                 .build(),
         )
     }
