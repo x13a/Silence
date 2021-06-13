@@ -11,6 +11,10 @@ import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
 
 class CallScreeningService : CallScreeningService() {
+    companion object {
+        private const val REPEATED_DURATION = 5 * 60 * 1000
+    }
+
     private val telephonyManager by lazy { getSystemService(TelephonyManager::class.java) }
     private val prefs by lazy { Preferences(this) }
 
@@ -115,7 +119,7 @@ class CallScreeningService : CallScreeningService() {
                 "${CallLog.Calls.TYPE} = ? AND ${CallLog.Calls.DATE} > ?",
                 arrayOf(
                     CallLog.Calls.BLOCKED_TYPE.toString(),
-                    (System.currentTimeMillis() - 5 * 60 * 1000).toString(),
+                    (System.currentTimeMillis() - REPEATED_DURATION).toString(),
                 ),
                 null,
             )
