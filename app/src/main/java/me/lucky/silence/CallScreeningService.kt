@@ -77,12 +77,13 @@ class CallScreeningService : CallScreeningService() {
         var result = false
         cursor?.apply {
             val phoneNumberUtil = PhoneNumberUtil.getInstance()
+            val logNumber = Phonenumber.PhoneNumber()
             while (moveToNext()) {
-                val logNumber: Phonenumber.PhoneNumber
                 try {
-                    logNumber = phoneNumberUtil.parse(
+                    phoneNumberUtil.parseAndKeepRawInput(
                         getString(0),
                         getString(1),
+                        logNumber,
                     )
                 } catch (exc: NumberParseException) {
                     continue
@@ -125,12 +126,13 @@ class CallScreeningService : CallScreeningService() {
         cursor?.apply {
             var count = 0
             val phoneNumberUtil = PhoneNumberUtil.getInstance()
+            val logNumber = Phonenumber.PhoneNumber()
             while (moveToNext()) {
-                val logNumber: Phonenumber.PhoneNumber
                 try {
-                    logNumber = phoneNumberUtil.parse(
+                    phoneNumberUtil.parseAndKeepRawInput(
                         getString(0),
                         getString(1),
+                        logNumber,
                     )
                 } catch (exc: NumberParseException) {
                     continue
