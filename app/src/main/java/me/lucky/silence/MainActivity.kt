@@ -38,6 +38,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initUi()
+    }
+
+    private fun initUi() {
         with (binding.callbackSwitch) {
             isChecked = prefs.isCallbackChecked
             setOnCheckedChangeListener { _, isChecked ->
@@ -53,6 +57,11 @@ class MainActivity : AppCompatActivity() {
                     prefs.isCallbackChecked = isChecked
                 }
             }
+        }
+
+        with (binding.tollFreeSwitch) {
+            isChecked = prefs.isTollFreeChecked
+            setOnCheckedChangeListener { _, isChecked -> prefs.isTollFreeChecked = isChecked }
         }
 
         toggle(prefs.isServiceEnabled)
