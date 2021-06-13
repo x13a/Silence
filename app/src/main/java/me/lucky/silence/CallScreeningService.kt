@@ -22,20 +22,20 @@ class CallScreeningService : CallScreeningService() {
             respondAllow(callDetails)
             return
         }
-        val countryCode = telephonyManager?.networkCountryIso?.uppercase()
         val number: Phonenumber.PhoneNumber
         try {
             number = PhoneNumberUtil.getInstance().parse(
                 callDetails.handle.schemeSpecificPart,
-                countryCode,
+                telephonyManager?.networkCountryIso?.uppercase(),
             )
         } catch (exc: NumberParseException) {
             respondReject(callDetails)
             return
         }
         if (
-            (prefs.isCallbackChecked && checkCallback(number, countryCode)) ||
-            (prefs.isTollFreeChecked && checkTollFree(number))
+            (prefs.isCallbackChecked && checkCallback(number)) ||
+            (prefs.isTollFreeChecked && checkTollFree(number)) ||
+            (prefs.isRepeatedChecked && checkRepeated(number))
         ) {
             respondAllow(callDetails)
             return
@@ -48,6 +48,8 @@ class CallScreeningService : CallScreeningService() {
     }
 
     private fun respondReject(callDetails: Call.Details) {
+        // Pixel 4a, Android 11
+        // redirect on reject not working correctly
         respondToCall(
             callDetails,
             CallResponse.Builder()
@@ -57,12 +59,14 @@ class CallScreeningService : CallScreeningService() {
         )
     }
 
-    private fun checkCallback(number: Phonenumber.PhoneNumber, countryCode: String?): Boolean {
+    private fun checkCallback(number: Phonenumber.PhoneNumber): Boolean {
         val cursor: Cursor?
         try {
+            // Pixel 4a, Android 11
+            // CallLog.Calls.CONTENT_FILTER_URI: Unknown URL content://call_log/calls/filter
             cursor = contentResolver.query(
                 CallLog.Calls.CONTENT_URI,
-                arrayOf(CallLog.Calls.NUMBER),
+                arrayOf(CallLog.Calls.NUMBER, CallLog.Calls.COUNTRY_ISO),
                 "${CallLog.Calls.TYPE} = ?",
                 arrayOf(CallLog.Calls.OUTGOING_TYPE.toString()),
                 null,
@@ -76,7 +80,10 @@ class CallScreeningService : CallScreeningService() {
             while (moveToNext()) {
                 val logNumber: Phonenumber.PhoneNumber
                 try {
-                    logNumber = phoneNumberUtil.parse(getString(0), countryCode)
+                    logNumber = phoneNumberUtil.parse(
+                        getString(0),
+                        getString(1),
+                    )
                 } catch (exc: NumberParseException) {
                     continue
                 }
@@ -96,5 +103,51 @@ class CallScreeningService : CallScreeningService() {
     private fun checkTollFree(number: Phonenumber.PhoneNumber): Boolean {
         return (PhoneNumberUtil.getInstance().getNumberType(number) ==
                 PhoneNumberUtil.PhoneNumberType.TOLL_FREE)
+    }
+
+    private fun checkRepeated(number: Phonenumber.PhoneNumber): Boolean {
+        val cursor: Cursor?
+        try {
+            cursor = contentResolver.query(
+                CallLog.Calls.CONTENT_URI,
+                arrayOf(CallLog.Calls.NUMBER, CallLog.Calls.COUNTRY_ISO),
+                "${CallLog.Calls.TYPE} = ? AND ${CallLog.Calls.DATE} > ?",
+                arrayOf(
+                    CallLog.Calls.BLOCKED_TYPE.toString(),
+                    (System.currentTimeMillis() - 5 * 60 * 1000).toString(),
+                ),
+                null,
+            )
+        } catch (exc: SecurityException) {
+            return false
+        }
+        var result = false
+        cursor?.apply {
+            var count = 0
+            val phoneNumberUtil = PhoneNumberUtil.getInstance()
+            while (moveToNext()) {
+                val logNumber: Phonenumber.PhoneNumber
+                try {
+                    logNumber = phoneNumberUtil.parse(
+                        getString(0),
+                        getString(1),
+                    )
+                } catch (exc: NumberParseException) {
+                    continue
+                }
+                if (
+                    phoneNumberUtil.isNumberMatch(number, logNumber) ==
+                    PhoneNumberUtil.MatchType.EXACT_MATCH
+                ) {
+                    count++
+                    if (count >= 2) {
+                        result = true
+                        break
+                    }
+                }
+            }
+            close()
+        }
+        return result
     }
 }

@@ -9,6 +9,7 @@ class Preferences(context: Context) {
         private const val SERVICE_ENABLED = "service_enabled"
         private const val CALLBACK_CHECKED = "callback_checked"
         private const val TOLL_FREE_CHECKED = "toll_free_checked"
+        private const val REPEATED_CHECKED = "repeated_checked"
     }
 
     private val prefs = PreferenceManager.getDefaultSharedPreferences(context)
@@ -24,6 +25,10 @@ class Preferences(context: Context) {
     var isTollFreeChecked: Boolean
         get() = getBoolean(TOLL_FREE_CHECKED)
         set(value) = setBoolean(TOLL_FREE_CHECKED, value)
+
+    var isRepeatedChecked: Boolean
+        get() = getBoolean(REPEATED_CHECKED)
+        set(value) = setBoolean(REPEATED_CHECKED, value)
 
     private fun getBoolean(key: String): Boolean {
         return prefs.getBoolean(key, false)

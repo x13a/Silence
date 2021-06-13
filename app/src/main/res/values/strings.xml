@@ -4,7 +4,9 @@
     <string name="toggle_on">Deactivate</string>
     <string name="description">Activate Silence to avoid getting calls from people you do not know. This blocks phone numbers that are not saved in your contacts list.</string>
     <string name="callback_switch">Callback</string>
-    <string name="callback_description">Allow numbers that you have called</string>
+    <string name="callback_description">Allow numbers that you have called.</string>
     <string name="toll_free_switch">Toll-free</string>
-    <string name="toll_free_description">Allow numbers with toll-free codes (ex: 800)</string>
+    <string name="toll_free_description">Allow numbers with toll-free codes (ex: 800).</string>
+    <string name="repeated_switch">Repeated</string>
+    <string name="repeated_description">Allow a third call from the same number within five minutes. Cause of the call screening cache calls have to be out of the cache interval.</string>
 </resources>

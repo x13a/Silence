@@ -64,6 +64,11 @@ class MainActivity : AppCompatActivity() {
             setOnCheckedChangeListener { _, isChecked -> prefs.isTollFreeChecked = isChecked }
         }
 
+        with (binding.repeatedSwitch) {
+            isChecked = prefs.isRepeatedChecked
+            setOnCheckedChangeListener { _, isChecked -> prefs.isRepeatedChecked = isChecked }
+        }
+
         toggle(prefs.isServiceEnabled)
         binding.toggle.setOnClickListener {
             val isNotEnabled = !prefs.isServiceEnabled
