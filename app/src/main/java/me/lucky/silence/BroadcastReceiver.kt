@@ -1,5 +1,6 @@
 package me.lucky.silence
 
+import android.app.role.RoleManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -13,7 +14,14 @@ class BroadcastReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         with (Preferences(context)) {
             when (intent.action) {
-                TOGGLE_ON -> isServiceEnabled = true
+                TOGGLE_ON -> {
+                    if (
+                        context.getSystemService(RoleManager::class.java)
+                            .isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
+                    ) {
+                        isServiceEnabled = true
+                    }
+                }
                 TOGGLE_OFF -> isServiceEnabled = false
             }
         }
