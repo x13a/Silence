@@ -1,12 +1,13 @@
 package me.lucky.silence
 
 import android.content.Context
+import android.content.SharedPreferences
 
 import androidx.preference.PreferenceManager
 
 class Preferences(context: Context) {
     companion object {
-        private const val SERVICE_ENABLED = "service_enabled"
+        const val SERVICE_ENABLED = "service_enabled"
         private const val CALLBACK_CHECKED = "callback_checked"
         private const val TOLL_FREE_CHECKED = "toll_free_checked"
         private const val REPEATED_CHECKED = "repeated_checked"
@@ -36,5 +37,13 @@ class Preferences(context: Context) {
 
     private fun setBoolean(key: String, value: Boolean) {
         prefs.edit().putBoolean(key, value).apply()
+    }
+
+    fun register(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
+        prefs.registerOnSharedPreferenceChangeListener(listener)
+    }
+
+    fun unregister(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
+        prefs.unregisterOnSharedPreferenceChangeListener(listener)
     }
 }

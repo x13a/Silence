@@ -12,7 +12,7 @@ class BroadcastReceiver : BroadcastReceiver() {
     }
 
     override fun onReceive(context: Context, intent: Intent) {
-        with (Preferences(context)) {
+        Preferences(context).apply {
             when (intent.action) {
                 TOGGLE_ON -> {
                     if (

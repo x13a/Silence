@@ -3,6 +3,7 @@ package me.lucky.silence
 import android.Manifest
 import android.app.Activity
 import android.app.role.RoleManager
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Bundle
 
@@ -17,6 +18,12 @@ class MainActivity : AppCompatActivity() {
 
     private val roleManager by lazy { getSystemService(RoleManager::class.java) }
     private val prefs by lazy { Preferences(this) }
+
+    private val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+        if (key == Preferences.SERVICE_ENABLED) {
+            updateToggleUi(prefs.isServiceEnabled)
+        }
+    }
 
     private val requestCallScreening =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -38,11 +45,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        prefs.register(listener)
         initUi()
     }
 
     private fun initUi() {
-        with (binding.callbackSwitch) {
+        binding.callbackSwitch.apply {
             isChecked = prefs.isCallbackChecked
             setOnCheckedChangeListener { _, isChecked ->
                 if (
@@ -59,12 +67,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        with (binding.tollFreeSwitch) {
+        binding.tollFreeSwitch.apply {
             isChecked = prefs.isTollFreeChecked
             setOnCheckedChangeListener { _, isChecked -> prefs.isTollFreeChecked = isChecked }
         }
 
-        with (binding.repeatedSwitch) {
+        binding.repeatedSwitch.apply {
             isChecked = prefs.isRepeatedChecked
             setOnCheckedChangeListener { _, isChecked -> prefs.isRepeatedChecked = isChecked }
         }
@@ -84,14 +92,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onRestart() {
-        super.onRestart()
-        updateToggleUi(prefs.isServiceEnabled)
+    override fun onDestroy() {
+        super.onDestroy()
+        prefs.unregister(listener)
     }
 
     private fun toggle(isChecked: Boolean) {
         prefs.isServiceEnabled = isChecked
-        updateToggleUi(isChecked)
     }
 
     private fun updateToggleUi(isChecked: Boolean) {
@@ -104,7 +111,7 @@ class MainActivity : AppCompatActivity() {
             stringId = R.string.toggle_off
             colorId = R.color.green
         }
-        with (binding.toggle) {
+        binding.toggle.apply {
             text = getText(stringId)
             backgroundTintList = getColorStateList(colorId)
         }
