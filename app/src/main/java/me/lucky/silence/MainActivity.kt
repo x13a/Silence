@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             toggle(true)
         }
     }
-    private val requestCallLogPermission =
+    private val requestReadCallLogPermission =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             when {
                 isGranted -> prefs.isCallbackChecked = true
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupUiListeners() {
         binding.callbackSwitch.setOnCheckedChangeListener { _, isChecked ->
             when {
-                !hasCallLogPermission() && isChecked -> requestCallLogPermission
+                !hasReadCallLogPermission() && isChecked -> requestReadCallLogPermission
                     .launch(Manifest.permission.READ_CALL_LOG)
                 else -> prefs.isCallbackChecked = isChecked
             }
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.repeatedSwitch.setOnCheckedChangeListener { _, isChecked ->
             when {
-                !hasCallLogPermission() && isChecked -> requestCallLogPermission
+                !hasReadCallLogPermission() && isChecked -> requestReadCallLogPermission
                     .launch(Manifest.permission.READ_CALL_LOG)
                 else -> prefs.isRepeatedChecked = isChecked
             }
@@ -80,9 +80,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateStates() {
-        val hasCallLogPerm = hasCallLogPermission()
+        val hasReadCallLogPerm = hasReadCallLogPermission()
         binding.callbackSwitch.isChecked = when {
-            !hasCallLogPerm -> {
+            !hasReadCallLogPerm -> {
                 prefs.isCallbackChecked = false
                 false
             }
@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.tollFreeSwitch.isChecked = prefs.isTollFreeChecked
         binding.repeatedSwitch.isChecked = when {
-            !hasCallLogPerm -> {
+            !hasReadCallLogPerm -> {
                 prefs.isRepeatedChecked = false
                 false
             }
@@ -137,7 +137,7 @@ class MainActivity : AppCompatActivity() {
         return roleManager.isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
     }
 
-    private fun hasCallLogPermission(): Boolean {
+    private fun hasReadCallLogPermission(): Boolean {
         return (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CALL_LOG)
                 == PackageManager.PERMISSION_GRANTED)
     }
