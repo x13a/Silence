@@ -14,16 +14,14 @@ class BroadcastReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         Preferences(context).apply {
             when (intent.action) {
-                TOGGLE_ON -> {
-                    if (
-                        context.getSystemService(RoleManager::class.java)
-                            .isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
-                    ) {
-                        isServiceEnabled = true
-                    }
-                }
+                TOGGLE_ON -> if (hasCallScreeningRole(context)) isServiceEnabled = true
                 TOGGLE_OFF -> isServiceEnabled = false
             }
         }
+    }
+
+    private fun hasCallScreeningRole(context: Context): Boolean {
+        return context.getSystemService(RoleManager::class.java)
+            .isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
     }
 }

@@ -39,11 +39,11 @@ class Preferences(context: Context) {
         prefs.edit().putBoolean(key, value).apply()
     }
 
-    fun register(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
+    fun registerListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
         prefs.registerOnSharedPreferenceChangeListener(listener)
     }
 
-    fun unregister(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
+    fun unregisterListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
         prefs.unregisterOnSharedPreferenceChangeListener(listener)
     }
 }
