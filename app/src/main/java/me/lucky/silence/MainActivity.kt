@@ -21,21 +21,30 @@ class MainActivity : AppCompatActivity() {
 
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
         if (key == Preferences.SERVICE_ENABLED) {
-            updateToggleUi(prefs.isServiceEnabled)
+            updateToggle()
         }
     }
 
     private val requestCallScreeningRole =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            toggle(true)
+            if (result.resultCode == Activity.RESULT_OK) {
+                prefs.isServiceEnabled = true
+            }
         }
-    }
-    private val requestReadCallLogPermission =
+
+    private val requestReadCallLogPermissionForCallback =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             when {
                 isGranted -> prefs.isCallbackChecked = true
                 else -> binding.callbackSwitch.isChecked = false
+            }
+        }
+
+    private val requestReadCallLogPermissionForRepeated =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            when {
+                isGranted -> prefs.isRepeatedChecked = true
+                else -> binding.repeatedSwitch.isChecked = false
             }
         }
 
@@ -49,57 +58,44 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupUiListeners() {
-        binding.callbackSwitch.setOnCheckedChangeListener { _, isChecked ->
-            when {
-                !hasReadCallLogPermission() && isChecked -> requestReadCallLogPermission
-                    .launch(Manifest.permission.READ_CALL_LOG)
-                else -> prefs.isCallbackChecked = isChecked
+        binding.apply {
+            callbackSwitch.setOnCheckedChangeListener { _, isChecked ->
+                when {
+                    !hasReadCallLogPermission() && isChecked ->
+                        requestReadCallLogPermissionForCallback
+                            .launch(Manifest.permission.READ_CALL_LOG)
+                    else -> prefs.isCallbackChecked = isChecked
+                }
             }
-        }
 
-        binding.tollFreeSwitch.setOnCheckedChangeListener { _, isChecked ->
-            prefs.isTollFreeChecked = isChecked
-        }
-
-        binding.repeatedSwitch.setOnCheckedChangeListener { _, isChecked ->
-            when {
-                !hasReadCallLogPermission() && isChecked -> requestReadCallLogPermission
-                    .launch(Manifest.permission.READ_CALL_LOG)
-                else -> prefs.isRepeatedChecked = isChecked
+            tollFreeSwitch.setOnCheckedChangeListener { _, isChecked ->
+                prefs.isTollFreeChecked = isChecked
             }
-        }
 
-        binding.toggle.setOnClickListener {
-            val isNotEnabled = !prefs.isServiceEnabled
-            when {
-                !hasCallScreeningRole() && isNotEnabled -> requestCallScreeningRole
-                    .launch(roleManager.createRequestRoleIntent(RoleManager.ROLE_CALL_SCREENING))
-                else -> toggle(isNotEnabled)
+            repeatedSwitch.setOnCheckedChangeListener { _, isChecked ->
+                when {
+                    !hasReadCallLogPermission() && isChecked ->
+                        requestReadCallLogPermissionForRepeated
+                            .launch(Manifest.permission.READ_CALL_LOG)
+                    else -> prefs.isRepeatedChecked = isChecked
+                }
+            }
+
+            toggle.setOnClickListener {
+                when {
+                    !hasCallScreeningRole() && !prefs.isServiceEnabled -> requestCallScreeningRole
+                        .launch(roleManager.createRequestRoleIntent(RoleManager.ROLE_CALL_SCREENING))
+                    else -> prefs.isServiceEnabled = !prefs.isServiceEnabled
+                }
             }
         }
     }
 
     private fun updateStates() {
-        val hasReadCallLogPerm = hasReadCallLogPermission()
-        binding.callbackSwitch.isChecked = when {
-            !hasReadCallLogPerm -> {
-                prefs.isCallbackChecked = false
-                false
-            }
-            else -> prefs.isCallbackChecked
-        }
-        binding.tollFreeSwitch.isChecked = prefs.isTollFreeChecked
-        binding.repeatedSwitch.isChecked = when {
-            !hasReadCallLogPerm -> {
-                prefs.isRepeatedChecked = false
-                false
-            }
-            else -> prefs.isRepeatedChecked
-        }
-        when {
-            !hasCallScreeningRole() -> prefs.isServiceEnabled = false
-            else -> updateToggleUi(prefs.isServiceEnabled)
-        }
+        updateCallback()
+        updateTollFree()
+        updateRepeated()
+        updateToggle()
     }
 
     override fun onStart() {
@@ -112,14 +108,32 @@ class MainActivity : AppCompatActivity() {
         prefs.unregisterListener(prefsListener)
     }
 
-    private fun toggle(isChecked: Boolean) {
-        prefs.isServiceEnabled = isChecked
+    private fun updateRepeated() {
+        if (!hasReadCallLogPermission()) {
+            prefs.isRepeatedChecked = false
+        }
+        binding.repeatedSwitch.isChecked = prefs.isRepeatedChecked
     }
 
-    private fun updateToggleUi(isChecked: Boolean) {
+    private fun updateCallback() {
+        if (!hasReadCallLogPermission()) {
+            prefs.isCallbackChecked = false
+        }
+        binding.callbackSwitch.isChecked = prefs.isCallbackChecked
+    }
+
+    private fun updateTollFree() {
+        binding.tollFreeSwitch.isChecked = prefs.isTollFreeChecked
+    }
+
+    private fun updateToggle() {
+        if (!hasCallScreeningRole() && prefs.isServiceEnabled) {
+            prefs.isServiceEnabled = false
+            return
+        }
         val stringId: Int
         val colorId: Int
-        if (isChecked) {
+        if (prefs.isServiceEnabled) {
             stringId = R.string.toggle_on
             colorId = R.color.red
         } else {
