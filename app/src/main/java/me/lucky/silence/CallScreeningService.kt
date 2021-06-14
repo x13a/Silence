@@ -17,6 +17,7 @@ class CallScreeningService : CallScreeningService() {
 
     private val telephonyManager by lazy { getSystemService(TelephonyManager::class.java) }
     private val prefs by lazy { Preferences(this) }
+    private val phoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }
 
     override fun onScreenCall(callDetails: Call.Details) {
         if (
@@ -28,7 +29,7 @@ class CallScreeningService : CallScreeningService() {
         }
         val number: Phonenumber.PhoneNumber
         try {
-            number = PhoneNumberUtil.getInstance().parse(
+            number = phoneNumberUtil.parse(
                 callDetails.handle.schemeSpecificPart,
                 telephonyManager?.networkCountryIso?.uppercase(),
             )
@@ -80,7 +81,6 @@ class CallScreeningService : CallScreeningService() {
         }
         var result = false
         cursor?.apply {
-            val phoneNumberUtil = PhoneNumberUtil.getInstance()
             val logNumber = Phonenumber.PhoneNumber()
             while (moveToNext()) {
                 try {
@@ -129,7 +129,6 @@ class CallScreeningService : CallScreeningService() {
         var result = false
         cursor?.apply {
             var count = 0
-            val phoneNumberUtil = PhoneNumberUtil.getInstance()
             val logNumber = Phonenumber.PhoneNumber()
             while (moveToNext()) {
                 try {
