@@ -13,18 +13,20 @@
         android:theme="@style/Theme.Silence">
         <service
             android:name=".QSTileService"
-            android:label="@string/app_name"
             android:icon="@drawable/ic_shield"
+            android:label="@string/app_name"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
-            <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+
+            <meta-data
+                android:name="android.service.quicksettings.TOGGLEABLE_TILE"
                 android:value="true" />
         </service>
 
         <receiver
-            android:name=".ToggleBroadcastReceiver"
+            android:name=".ToggleReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
