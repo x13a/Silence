@@ -106,8 +106,7 @@ class CallScreeningService : CallScreeningService() {
     }
 
     private fun checkTollFree(number: Phonenumber.PhoneNumber): Boolean {
-        return (PhoneNumberUtil.getInstance().getNumberType(number) ==
-                PhoneNumberUtil.PhoneNumberType.TOLL_FREE)
+        return phoneNumberUtil.getNumberType(number) == PhoneNumberUtil.PhoneNumberType.TOLL_FREE
     }
 
     private fun checkRepeated(number: Phonenumber.PhoneNumber): Boolean {
