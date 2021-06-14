@@ -24,7 +24,7 @@
         </service>
 
         <receiver
-            android:name=".BroadcastReceiver"
+            android:name=".ToggleBroadcastReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
