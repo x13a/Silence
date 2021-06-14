@@ -11,17 +11,12 @@ class QSTileService : TileService() {
     private val prefs by lazy { Preferences(this) }
 
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
-        if (key == Preferences.SERVICE_ENABLED) {
-            updateTile()
-        }
+        if (key == Preferences.SERVICE_ENABLED) updateTile()
     }
 
     override fun onClick() {
         super.onClick()
-        when (qsTile.state) {
-            Tile.STATE_INACTIVE -> prefs.isServiceEnabled = true
-            Tile.STATE_ACTIVE -> prefs.isServiceEnabled = false
-        }
+        prefs.isServiceEnabled = qsTile.state == Tile.STATE_INACTIVE
     }
 
     override fun onStartListening() {
