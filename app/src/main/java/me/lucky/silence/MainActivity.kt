@@ -62,7 +62,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.repeatedSwitch.setOnCheckedChangeListener { _, isChecked ->
-            prefs.isRepeatedChecked = isChecked
+            when {
+                !hasCallLogPermission() && isChecked -> requestCallLogPermission
+                    .launch(Manifest.permission.READ_CALL_LOG)
+                else -> prefs.isRepeatedChecked = isChecked
+            }
         }
 
         binding.toggle.setOnClickListener {
@@ -76,8 +80,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateStates() {
+        val hasCallLogPerm = hasCallLogPermission()
         binding.callbackSwitch.isChecked = when {
-            !hasCallLogPermission() -> {
+            !hasCallLogPerm -> {
                 prefs.isCallbackChecked = false
                 false
             }
@@ -85,7 +90,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.tollFreeSwitch.isChecked = prefs.isTollFreeChecked
-        binding.repeatedSwitch.isChecked = prefs.isRepeatedChecked
+        binding.repeatedSwitch.isChecked = when {
+            !hasCallLogPerm -> {
+                prefs.isRepeatedChecked = false
+                false
+            }
+            else -> prefs.isRepeatedChecked
+        }
         when {
             !hasCallScreeningRole() -> prefs.isServiceEnabled = false
             else -> updateToggleUi(prefs.isServiceEnabled)
