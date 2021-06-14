@@ -6,6 +6,7 @@ import android.app.role.RoleManager
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.widget.Toast
 
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -27,9 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     private val requestCallScreeningRole =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                prefs.isServiceEnabled = true
-            }
+            if (result.resultCode == Activity.RESULT_OK) prefs.isServiceEnabled = true
         }
 
     private val requestReadCallLogPermissionForCallback =
@@ -98,6 +97,10 @@ class MainActivity : AppCompatActivity() {
         updateTollFree()
         updateRepeated()
         updateToggle()
+
+        if (!hasCallScreeningRole() && prefs.isServiceEnabled) {
+            Toast.makeText(this, "Call screening service disabled", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onStart() {
@@ -111,16 +114,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateRepeated() {
-        if (!hasReadCallLogPermission()) {
-            prefs.isRepeatedChecked = false
-        }
+        if (!hasReadCallLogPermission()) prefs.isRepeatedChecked = false
         binding.repeatedSwitch.isChecked = prefs.isRepeatedChecked
     }
 
     private fun updateCallback() {
-        if (!hasReadCallLogPermission()) {
-            prefs.isCallbackChecked = false
-        }
+        if (!hasReadCallLogPermission()) prefs.isCallbackChecked = false
         binding.callbackSwitch.isChecked = prefs.isCallbackChecked
     }
 
@@ -129,10 +128,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateToggle() {
-        if (!hasCallScreeningRole() && prefs.isServiceEnabled) {
-            prefs.isServiceEnabled = false
-            return
-        }
         val stringId: Int
         val colorId: Int
         if (prefs.isServiceEnabled) {
