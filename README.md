@@ -2,7 +2,7 @@
 
 Android call screening app.
 
-<img src="https://user-images.githubusercontent.com/53379023/121867669-df04d380-cd08-11eb-90cb-05d38a811ede.png" width="25%" height="25%">
+<img src="https://user-images.githubusercontent.com/53379023/121867669-df04d380-cd08-11eb-90cb-05d38a811ede.png" width="30%" height="30%">
 
 Block phone numbers that are not saved in your contacts list.
 
