@@ -88,7 +88,6 @@ class MainActivity : AppCompatActivity() {
             }
             else -> prefs.isCallbackChecked
         }
-
         binding.tollFreeSwitch.isChecked = prefs.isTollFreeChecked
         binding.repeatedSwitch.isChecked = when {
             !hasReadCallLogPerm -> {
