@@ -34,17 +34,19 @@ class MainActivity : AppCompatActivity() {
 
     private val requestReadCallLogPermissionForCallback =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
-            when {
-                isGranted -> prefs.isCallbackChecked = true
-                else -> binding.callbackSwitch.isChecked = false
+            when (isGranted) {
+                true -> prefs.isCallbackChecked = true
+                false -> binding.callbackSwitch.isChecked = false
             }
         }
 
     private val requestReadCallLogPermissionForRepeated =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
-            when {
-                isGranted -> prefs.isRepeatedChecked = true
-                else -> binding.repeatedSwitch.isChecked = false
+            when (isGranted) {
+                true -> prefs.isRepeatedChecked = true
+                false -> binding.repeatedSwitch.isChecked = false
+            }
+        }
             }
         }
 
@@ -60,11 +62,10 @@ class MainActivity : AppCompatActivity() {
     private fun setupUiListeners() {
         binding.apply {
             callbackSwitch.setOnCheckedChangeListener { _, isChecked ->
-                when {
-                    !hasReadCallLogPermission() && isChecked ->
-                        requestReadCallLogPermissionForCallback
-                            .launch(Manifest.permission.READ_CALL_LOG)
-                    else -> prefs.isCallbackChecked = isChecked
+                when (!hasReadCallLogPermission() && isChecked) {
+                    true -> requestReadCallLogPermissionForCallback
+                        .launch(Manifest.permission.READ_CALL_LOG)
+                    false -> prefs.isCallbackChecked = isChecked
                 }
             }
 
@@ -73,19 +74,20 @@ class MainActivity : AppCompatActivity() {
             }
 
             repeatedSwitch.setOnCheckedChangeListener { _, isChecked ->
-                when {
-                    !hasReadCallLogPermission() && isChecked ->
-                        requestReadCallLogPermissionForRepeated
-                            .launch(Manifest.permission.READ_CALL_LOG)
-                    else -> prefs.isRepeatedChecked = isChecked
+                when (!hasReadCallLogPermission() && isChecked) {
+                    true -> requestReadCallLogPermissionForRepeated
+                        .launch(Manifest.permission.READ_CALL_LOG)
+                    false -> prefs.isRepeatedChecked = isChecked
+                }
+            }
                 }
             }
 
             toggle.setOnClickListener {
-                when {
-                    !hasCallScreeningRole() && !prefs.isServiceEnabled -> requestCallScreeningRole
+                when (!hasCallScreeningRole() && !prefs.isServiceEnabled) {
+                    true -> requestCallScreeningRole
                         .launch(roleManager.createRequestRoleIntent(RoleManager.ROLE_CALL_SCREENING))
-                    else -> prefs.isServiceEnabled = !prefs.isServiceEnabled
+                    false -> prefs.isServiceEnabled = !prefs.isServiceEnabled
                 }
             }
         }
