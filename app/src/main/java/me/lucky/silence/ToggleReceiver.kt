@@ -1,6 +1,5 @@
 package me.lucky.silence
 
-import android.app.role.RoleManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -13,15 +12,9 @@ class ToggleReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         Preferences(context).apply {
-            when (intent.action) {
-                TOGGLE_ON -> if (hasCallScreeningRole(context)) isServiceEnabled = true
-                TOGGLE_OFF -> isServiceEnabled = false
-            }
+            isServiceEnabled = intent.action == TOGGLE_ON
         }
     }
 
-    private fun hasCallScreeningRole(context: Context): Boolean {
-        return context.getSystemService(RoleManager::class.java)
-            .isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
     }
 }
