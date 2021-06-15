@@ -99,7 +99,11 @@ class MainActivity : AppCompatActivity() {
         updateToggle()
 
         if (!hasCallScreeningRole() && prefs.isServiceEnabled) {
-            Toast.makeText(this, "Call screening service disabled", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                getString(R.string.service_disabled_toast),
+                Toast.LENGTH_SHORT,
+            ).show()
         }
     }
 
