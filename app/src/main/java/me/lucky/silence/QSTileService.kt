@@ -21,8 +21,8 @@ class QSTileService : TileService() {
 
     override fun onStartListening() {
         super.onStartListening()
-        prefs.registerListener(prefsListener)
         updateTile()
+        prefs.registerListener(prefsListener)
     }
 
     override fun onStopListening() {
