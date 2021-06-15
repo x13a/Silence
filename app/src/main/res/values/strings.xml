@@ -9,5 +9,5 @@
     <string name="toll_free_description">Allow numbers with toll-free codes (ex: 800).</string>
     <string name="repeated_switch">Repeated</string>
     <string name="repeated_description">Allow a third call from the same number within five minutes. Cause of the call screening cache, calls have to be out of the cache interval.</string>
-    <string name="service_disabled_toast">Call screening service disabled</string>
+    <string name="service_unavailable_toast">Call screening service unavailable</string>
 </resources>

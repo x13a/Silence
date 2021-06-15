@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
         if (!hasCallScreeningRole() && prefs.isServiceEnabled) {
             Toast.makeText(
                 this,
-                getString(R.string.service_disabled_toast),
+                getString(R.string.service_unavailable_toast),
                 Toast.LENGTH_SHORT,
             ).show()
         }
