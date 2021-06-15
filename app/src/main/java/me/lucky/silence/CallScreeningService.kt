@@ -76,9 +76,7 @@ class CallScreeningService : CallScreeningService() {
                 arrayOf(CallLog.Calls.OUTGOING_TYPE.toString()),
                 null,
             )
-        } catch (exc: SecurityException) {
-            return false
-        }
+        } catch (exc: SecurityException) { return false }
         var result = false
         cursor?.apply {
             val logNumber = Phonenumber.PhoneNumber()
@@ -89,9 +87,7 @@ class CallScreeningService : CallScreeningService() {
                         getString(1),
                         logNumber,
                     )
-                } catch (exc: NumberParseException) {
-                    continue
-                }
+                } catch (exc: NumberParseException) { continue }
                 if (
                     phoneNumberUtil.isNumberMatch(number, logNumber) ==
                     PhoneNumberUtil.MatchType.EXACT_MATCH
@@ -122,9 +118,7 @@ class CallScreeningService : CallScreeningService() {
                 ),
                 null,
             )
-        } catch (exc: SecurityException) {
-            return false
-        }
+        } catch (exc: SecurityException) { return false }
         var result = false
         cursor?.apply {
             var count = 0
@@ -136,9 +130,7 @@ class CallScreeningService : CallScreeningService() {
                         getString(1),
                         logNumber,
                     )
-                } catch (exc: NumberParseException) {
-                    continue
-                }
+                } catch (exc: NumberParseException) { continue }
                 if (
                     phoneNumberUtil.isNumberMatch(number, logNumber) ==
                     PhoneNumberUtil.MatchType.EXACT_MATCH
