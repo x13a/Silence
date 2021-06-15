@@ -3,6 +3,7 @@ package me.lucky.silence
 import android.content.Context
 import android.content.SharedPreferences
 
+import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 
 class Preferences(context: Context) {
@@ -36,7 +37,7 @@ class Preferences(context: Context) {
     }
 
     private fun setBoolean(key: String, value: Boolean) {
-        prefs.edit().putBoolean(key, value).apply()
+        prefs.edit { putBoolean(key, value) }
     }
 
     fun registerListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
