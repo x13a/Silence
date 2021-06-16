@@ -36,8 +36,8 @@ interface SmsFilterDao {
     @Insert
     fun insert(obj: SmsFilter)
 
-    @Update
-    fun update(obj: SmsFilter)
+    @Query("UPDATE sms_filter SET ts_created = :ts WHERE phone_number = :phoneNumber")
+    fun updateTimestamp(ts: Long, phoneNumber: String)
 
     @Query("DELETE FROM sms_filter WHERE ts_created < :ts")
     fun deleteBefore(ts: Long)
@@ -55,6 +55,10 @@ interface SmsFilterDao {
 
     private fun getInactiveTimestamp(): Long {
         return System.currentTimeMillis() / 1000 - INACTIVE_DURATION
+    }
+
+    fun update(obj: SmsFilter) {
+        updateTimestamp(obj.tsCreated, obj.phoneNumber)
     }
 }
 
