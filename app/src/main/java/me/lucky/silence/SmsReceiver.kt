@@ -47,6 +47,6 @@ class SmsReceiver : BroadcastReceiver() {
             }
             hasNumber = true
         }
-        if (hasNumber) db.cleanInactive()
+        if (hasNumber) db.deleteInactive()
     }
 }

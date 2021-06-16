@@ -40,17 +40,21 @@ interface SmsFilterDao {
     fun update(obj: SmsFilter)
 
     @Query("DELETE FROM sms_filter WHERE ts_created < :ts")
-    fun cleanBefore(ts: Long)
+    fun deleteBefore(ts: Long)
 
     @Query("SELECT * FROM sms_filter WHERE ts_created > :ts")
     fun getAfter(ts: Long): List<SmsFilter>
 
     fun getActive(): List<SmsFilter> {
-        return getAfter(System.currentTimeMillis() / 1000 - INACTIVE_DURATION)
+        return getAfter(getInactiveTimestamp())
     }
 
-    fun cleanInactive() {
-        cleanBefore(System.currentTimeMillis() / 1000 - INACTIVE_DURATION)
+    fun deleteInactive() {
+        deleteBefore(getInactiveTimestamp())
+    }
+
+    private fun getInactiveTimestamp(): Long {
+        return System.currentTimeMillis() / 1000 - INACTIVE_DURATION
     }
 }
 
