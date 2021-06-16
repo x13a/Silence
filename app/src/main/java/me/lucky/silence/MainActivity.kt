@@ -3,6 +3,7 @@ package me.lucky.silence
 import android.Manifest
 import android.app.Activity
 import android.app.role.RoleManager
+import android.content.ComponentName
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -21,8 +22,15 @@ class MainActivity : AppCompatActivity() {
     private val prefs by lazy { Preferences(this) }
 
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
-        if (key == Preferences.SERVICE_ENABLED) {
-            updateToggle()
+        when (key) {
+            Preferences.SERVICE_ENABLED -> {
+                setSmsReceiverState(prefs.isServiceEnabled && prefs.isSmsChecked)
+                updateToggle()
+            }
+            Preferences.SMS_CHECKED -> {
+                setSmsReceiverState(prefs.isServiceEnabled && prefs.isSmsChecked)
+                updateSms()
+            }
         }
     }
 
@@ -46,6 +54,12 @@ class MainActivity : AppCompatActivity() {
                 false -> binding.repeatedSwitch.isChecked = false
             }
         }
+
+    private val requestReceiveSmsPermission =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            when (isGranted) {
+                true -> prefs.isSmsChecked = true
+                false -> binding.smsSwitch.isChecked = false
             }
         }
 
@@ -79,6 +93,12 @@ class MainActivity : AppCompatActivity() {
                     false -> prefs.isRepeatedChecked = isChecked
                 }
             }
+
+            smsSwitch.setOnCheckedChangeListener { _, isChecked ->
+                when (!hasReceiveSmsPermission() && isChecked) {
+                    true -> requestReceiveSmsPermission
+                        .launch(Manifest.permission.RECEIVE_SMS)
+                    false -> prefs.isSmsChecked = isChecked
                 }
             }
 
@@ -96,6 +116,7 @@ class MainActivity : AppCompatActivity() {
         updateCallback()
         updateTollFree()
         updateRepeated()
+        updateSms()
         updateToggle()
 
         if (!hasCallScreeningRole() && prefs.isServiceEnabled) {
@@ -131,6 +152,11 @@ class MainActivity : AppCompatActivity() {
         binding.tollFreeSwitch.isChecked = prefs.isTollFreeChecked
     }
 
+    private fun updateSms() {
+        if (!hasReceiveSmsPermission()) prefs.isSmsChecked = false
+        binding.smsSwitch.isChecked = prefs.isSmsChecked
+    }
+
     private fun updateToggle() {
         val stringId: Int
         val colorId: Int
@@ -154,5 +180,19 @@ class MainActivity : AppCompatActivity() {
     private fun hasReadCallLogPermission(): Boolean {
         return (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CALL_LOG)
                 == PackageManager.PERMISSION_GRANTED)
+    }
+
+    private fun hasReceiveSmsPermission(): Boolean {
+        return (ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS)
+                == PackageManager.PERMISSION_GRANTED)
+    }
+
+    private fun setSmsReceiverState(value: Boolean) {
+        packageManager.setComponentEnabledSetting(
+            ComponentName(this, SmsReceiver::class.java),
+            if (value) PackageManager.COMPONENT_ENABLED_STATE_ENABLED else
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+            PackageManager.DONT_KILL_APP,
+        )
     }
 }

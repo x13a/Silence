@@ -10,4 +10,6 @@
     <string name="repeated_switch">Repeated</string>
     <string name="repeated_description">Allow a third call from the same number within five minutes. Cause of the call screening cache, calls have to be out of the cache interval.</string>
     <string name="service_unavailable_toast">Call screening service unavailable</string>
+    <string name="sms_switch">SMS</string>
+    <string name="sms_description">Allow temporary numbers from incoming text messages.</string>
 </resources>

@@ -18,6 +18,7 @@ class CallScreeningService : CallScreeningService() {
     private val telephonyManager by lazy { getSystemService(TelephonyManager::class.java) }
     private val prefs by lazy { Preferences(this) }
     private val phoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }
+    private val db by lazy { AppDatabase.getInstance(this).smsFilterDao() }
 
     override fun onScreenCall(callDetails: Call.Details) {
         if (
@@ -40,7 +41,8 @@ class CallScreeningService : CallScreeningService() {
         if (
             (prefs.isCallbackChecked && checkCallback(number)) ||
             (prefs.isTollFreeChecked && checkTollFree(number)) ||
-            (prefs.isRepeatedChecked && checkRepeated(number))
+            (prefs.isRepeatedChecked && checkRepeated(number)) ||
+            (prefs.isSmsChecked && checkSms(number))
         ) {
             respondAllow(callDetails)
             return
@@ -145,5 +147,16 @@ class CallScreeningService : CallScreeningService() {
             close()
         }
         return result
+    }
+    
+    private fun checkSms(number: Phonenumber.PhoneNumber): Boolean {
+        val logNumber = Phonenumber.PhoneNumber()
+        val countryCode = telephonyManager?.networkCountryIso?.uppercase()
+        for (filter in db.getActive()) {
+            phoneNumberUtil.parseAndKeepRawInput(filter.phoneNumber, countryCode, logNumber)
+            if (phoneNumberUtil.isNumberMatch(number, logNumber) ==
+                PhoneNumberUtil.MatchType.EXACT_MATCH) return true
+        }
+        return false
     }
 }

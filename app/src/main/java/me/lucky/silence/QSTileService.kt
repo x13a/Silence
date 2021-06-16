@@ -1,7 +1,9 @@
 package me.lucky.silence
 
 import android.app.role.RoleManager
+import android.content.ComponentName
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 
@@ -17,6 +19,7 @@ class QSTileService : TileService() {
     override fun onClick() {
         super.onClick()
         prefs.isServiceEnabled = qsTile.state == Tile.STATE_INACTIVE
+        setSmsReceiverState(prefs.isServiceEnabled && prefs.isSmsChecked)
     }
 
     override fun onStartListening() {
@@ -43,5 +46,14 @@ class QSTileService : TileService() {
 
     private fun hasCallScreeningRole(): Boolean {
         return roleManager.isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
+    }
+
+    private fun setSmsReceiverState(value: Boolean) {
+        packageManager.setComponentEnabledSetting(
+            ComponentName(this, SmsReceiver::class.java),
+            if (value) PackageManager.COMPONENT_ENABLED_STATE_ENABLED else
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+            PackageManager.DONT_KILL_APP,
+        )
     }
 }

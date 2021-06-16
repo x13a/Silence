@@ -3,6 +3,7 @@
     package="me.lucky.silence">
 
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Silence">
+        <receiver
+            android:name=".SmsReceiver"
+            android:enabled="false"
+            android:exported="true"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
         <service
             android:name=".QSTileService"
             android:icon="@drawable/ic_shield"
@@ -26,7 +37,7 @@
         </service>
 
         <receiver
-            android:name=".ToggleReceiver"
+            android:name=".ControlReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
