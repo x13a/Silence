@@ -36,10 +36,11 @@ class SmsReceiver : BroadcastReceiver() {
             ) continue
             val numbers = phoneNumberUtil.findNumbers(msg.messageBody, countryCode)
             if (numbers.count() != 1) continue
-            val number = numbers.first()
-            if (phoneNumberUtil.getNumberType(number.number()) !=
+            val number = numbers.first().number()
+            if (phoneNumberUtil.getNumberType(number) !=
                 PhoneNumberUtil.PhoneNumberType.MOBILE) continue
-            val smsFilter = SmsFilter.new(number.toString())
+            val smsFilter = SmsFilter
+                .new(phoneNumberUtil.format(number, PhoneNumberUtil.PhoneNumberFormat.E164))
             try {
                 db.insert(smsFilter)
             } catch (exc: SQLiteConstraintException) {
