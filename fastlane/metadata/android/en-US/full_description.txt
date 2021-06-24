@@ -1,4 +1,4 @@
-Android call screening app.
+Call screening app.
 
 Block phone numbers that are not saved in your contacts list.
 
