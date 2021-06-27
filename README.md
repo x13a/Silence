@@ -11,6 +11,3 @@ Optionally:
 - allow numbers with toll-free codes (ex: 800)
 - allow a third call from the same number within five minutes (cache constraint)
 - allow temporary mobile numbers from incoming text messages
-
-
-Icons made by [Freepik](https://www.freepik.com) from [Flaticon](https://www.flaticon.com).

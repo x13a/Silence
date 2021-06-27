@@ -24,7 +24,7 @@
 
         <service
             android:name=".QSTileService"
-            android:icon="@drawable/ic_shield"
+            android:icon="@drawable/ic_tile"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
