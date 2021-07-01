@@ -1,0 +1,1 @@
+Change icon to be consistent with ios
