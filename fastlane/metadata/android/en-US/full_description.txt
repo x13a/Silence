@@ -1,10 +1,9 @@
-Call screening app.
-
-Block phone numbers that are not saved in your contacts list.
-
+<p>Call screening app.</p>
+<p>Block phone numbers that are not saved in your contacts list.</p>
 Optionally:
-
-- allow numbers that you have called
-- allow numbers with toll-free codes (ex: 800)
-- allow a third call from the same number within five minutes (cache constraint)
-- allow temporary mobile numbers from incoming text messages
+<ul>
+  <li>allow numbers that you have called</li>
+  <li>allow numbers with toll-free codes (ex: 800)</li>
+  <li>allow a third call from the same number within five minutes (cache constraint)</li>
+  <li>allow temporary mobile numbers from incoming text messages</li>
+</ul>
