@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     private val roleManager by lazy { getSystemService(RoleManager::class.java) }
     private val prefs by lazy { Preferences(this) }
+    private val db by lazy { AppDatabase.getInstance(this).smsFilterDao() }
 
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
         when (key) {
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
                 updateToggle()
             }
             Preferences.SMS_CHECKED -> {
+                if (!prefs.isSmsChecked) db.deleteInactive()
                 setSmsReceiverState(prefs.isServiceEnabled && prefs.isSmsChecked)
                 updateSms()
             }

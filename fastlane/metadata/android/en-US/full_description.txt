@@ -1,5 +1,5 @@
-<p>Call screening app.</p>
-<p>Block phone numbers that are not saved in your contacts list.</p>
+<p>Block unknown callers using a call screening service.</p>
+<p>By default block phone numbers that are not saved in your contacts list.</p>
 Optionally:
 <ul>
   <li>allow numbers that you have called</li>
