@@ -1,1 +1,1 @@
-make option toggles scrollable, thanks @yuhuitach
+make option toggles scrollable, thanks @yuhuitech
