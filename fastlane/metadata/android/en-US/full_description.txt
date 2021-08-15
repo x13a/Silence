@@ -6,4 +6,5 @@ Optionally:
   <li>allow numbers with toll-free codes (ex: 800)</li>
   <li>allow a third call from the same number within five minutes (cache constraint)</li>
   <li>allow temporary mobile numbers from incoming text messages</li>
+  <li>allow numbers that passed STIR verification (android 11)</li>
 </ul>

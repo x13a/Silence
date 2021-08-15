@@ -9,10 +9,11 @@ import androidx.preference.PreferenceManager
 class Preferences(context: Context) {
     companion object {
         const val SERVICE_ENABLED = "service_enabled"
+        const val SMS_CHECKED = "sms_checked"
         private const val CALLBACK_CHECKED = "callback_checked"
         private const val TOLL_FREE_CHECKED = "toll_free_checked"
         private const val REPEATED_CHECKED = "repeated_checked"
-        const val SMS_CHECKED = "sms_checked"
+        private const val STIR_CHECKED = "stir_checked"
     }
 
     private val prefs = PreferenceManager.getDefaultSharedPreferences(context)
@@ -36,6 +37,10 @@ class Preferences(context: Context) {
     var isSmsChecked: Boolean
         get() = getBoolean(SMS_CHECKED)
         set(value) = setBoolean(SMS_CHECKED, value)
+
+    var isStirChecked: Boolean
+        get() = getBoolean(STIR_CHECKED)
+        set(value) = setBoolean(STIR_CHECKED, value)
 
     private fun getBoolean(key: String): Boolean {
         return prefs.getBoolean(key, false)

@@ -1,9 +1,11 @@
 package me.lucky.silence
 
 import android.database.Cursor
+import android.os.Build
 import android.provider.CallLog
 import android.telecom.Call
 import android.telecom.CallScreeningService
+import android.telecom.Connection
 import android.telephony.TelephonyManager
 
 import com.google.i18n.phonenumbers.NumberParseException
@@ -23,7 +25,8 @@ class CallScreeningService : CallScreeningService() {
     override fun onScreenCall(callDetails: Call.Details) {
         if (
             callDetails.callDirection != Call.Details.DIRECTION_INCOMING ||
-            !prefs.isServiceEnabled
+            !prefs.isServiceEnabled ||
+            (prefs.isStirChecked && checkStir(callDetails))
         ) {
             respondAllow(callDetails)
             return
@@ -156,6 +159,14 @@ class CallScreeningService : CallScreeningService() {
             phoneNumberUtil.parseAndKeepRawInput(filter.phoneNumber, countryCode, logNumber)
             if (phoneNumberUtil.isNumberMatch(number, logNumber) ==
                 PhoneNumberUtil.MatchType.EXACT_MATCH) return true
+        }
+        return false
+    }
+
+    private fun checkStir(callDetails: Call.Details): Boolean {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            if (callDetails.callerNumberVerificationStatus ==
+                Connection.VERIFICATION_STATUS_PASSED) return true
         }
         return false
     }

@@ -6,6 +6,7 @@ import android.app.role.RoleManager
 import android.content.ComponentName
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 
@@ -104,6 +105,12 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                stirSwitch.setOnCheckedChangeListener { _, isChecked ->
+                    prefs.isStirChecked = isChecked
+                }
+            }
+
             toggle.setOnClickListener {
                 when (!hasCallScreeningRole() && !prefs.isServiceEnabled) {
                     true -> requestCallScreeningRole
@@ -119,6 +126,7 @@ class MainActivity : AppCompatActivity() {
         updateTollFree()
         updateRepeated()
         updateSms()
+        updateStir()
         updateToggle()
 
         if (!hasCallScreeningRole() && prefs.isServiceEnabled) {
@@ -157,6 +165,12 @@ class MainActivity : AppCompatActivity() {
     private fun updateSms() {
         if (!hasReceiveSmsPermission()) prefs.isSmsChecked = false
         binding.smsSwitch.isChecked = prefs.isSmsChecked
+    }
+
+    private fun updateStir() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            binding.stirSwitch.isChecked = prefs.isStirChecked
+        }
     }
 
     private fun updateToggle() {
