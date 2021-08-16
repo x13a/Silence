@@ -1,6 +1,6 @@
 # Silence
 
-Block unknown callers using a call screening service.
+Block unknown callers via a call screening service.
 
 <a href="https://f-droid.org/packages/me.lucky.silence/" rel="nofollow"><img alt="Get it on F-Droid" height="80" src="https://user-images.githubusercontent.com/53379023/129469677-f984e551-49c5-49f1-9439-1bd34d737940.png" data-canonical-src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" style="max-width:100%;"></a>
 
