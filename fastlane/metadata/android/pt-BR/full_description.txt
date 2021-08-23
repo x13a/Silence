@@ -1,0 +1,10 @@
+<p>Bloqueia números desconhecidos com serviço de triagem de chamadas.</p>
+<p>Bloqueia automaticamente os números de telefone que não estejam salvos em sua lista de contatos.</p>
+Opcionalmente permita:
+<ul>
+    <li>os números que você ligou</li>
+    <li>os números de ligações gratuitas (p.ex.: 800 intl.)</li>
+    <li>uma terceira chamada do mesmo número dentro de cinco minutos (restrição de cache)</li>
+    <li>os números de celular das mensagens de texto recebidas</li>
+    <li>os números que passaram a verificação STIR (Android 11)</li>
+</ul>
