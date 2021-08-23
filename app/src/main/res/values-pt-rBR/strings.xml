@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Silêncio</string>
+    <string name="toggle_off">Ativar</string>
+    <string name="toggle_on">Desativar</string>
+    <string name="description">Ative o App Silêncio para parar de receber as ligações de pessoas que você não conhece. Isto bloqueia números de telefone que não estão salvos em sua lista de contatos.</string>
+    <string name="callback_switch">Chamada de retorno</string>
+    <string name="callback_description">Permitir os números que você tenha chamado.</string>
+    <string name="toll_free_switch">Ligações gratuitas</string>
+    <string name="toll_free_description">Permitir os números de ligações gratuitas (p.ex.: 800 intl.).</string>
+    <string name="repeated_switch">Recorrentes</string>
+    <string name="repeated_description">Permitir uma terceira chamada do mesmo número dentro de cinco minutos. Por causa do cache de triagem de chamadas, as chamadas têm que estar fora do intervalo do cache.</string>
+    <string name="service_unavailable_toast">Serviço de triagem de chamadas indisponível</string>
+    <string name="sms_switch">SMS</string>
+    <string name="sms_description">Permitir temporariamente os números de celular das mensagens de texto recebidas.</string>
+    <string name="stir_switch">STIR/SHAKEN</string>
+    <string name="stir_description">Permitir os números que passaram a verificação STIR.</string>
+</resources>
