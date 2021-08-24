@@ -1,0 +1,1 @@
+add pt-BR translation, thanks @mezysinc
