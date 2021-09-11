@@ -1,0 +1,1 @@
+make separate layout for android 10

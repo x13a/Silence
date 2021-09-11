@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                stirSwitch.setOnCheckedChangeListener { _, isChecked ->
+                stirSwitch?.setOnCheckedChangeListener { _, isChecked ->
                     prefs.isStirChecked = isChecked
                 }
             }
@@ -169,7 +169,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateStir() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            binding.stirSwitch.isChecked = prefs.isStirChecked
+            binding.stirSwitch?.isChecked = prefs.isStirChecked
         }
     }
 
