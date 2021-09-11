@@ -1,8 +1,10 @@
 package me.lucky.silence
 
 import android.database.Cursor
+import android.net.Uri
 import android.os.Build
 import android.provider.CallLog
+import android.provider.ContactsContract
 import android.telecom.Call
 import android.telecom.CallScreeningService
 import android.telecom.Connection
@@ -41,6 +43,12 @@ class CallScreeningService : CallScreeningService() {
             respondReject(callDetails)
             return
         }
+        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.Q) {
+            if (checkContacts(number)) {
+                respondAllow(callDetails)
+                return
+            }
+        }
         if (
             (prefs.isCallbackChecked && checkCallback(number)) ||
             (prefs.isTollFreeChecked && checkTollFree(number)) ||
@@ -58,8 +66,6 @@ class CallScreeningService : CallScreeningService() {
     }
 
     private fun respondReject(callDetails: Call.Details) {
-        // Pixel 4a, Android 11
-        // redirect on reject not working correctly
         respondToCall(
             callDetails,
             CallResponse.Builder()
@@ -72,11 +78,15 @@ class CallScreeningService : CallScreeningService() {
     private fun checkCallback(number: Phonenumber.PhoneNumber): Boolean {
         val cursor: Cursor?
         try {
-            // Pixel 4a, Android 11
-            // CallLog.Calls.CONTENT_FILTER_URI: Unknown URL content://call_log/calls/filter
             cursor = contentResolver.query(
-                CallLog.Calls.CONTENT_URI,
-                arrayOf(CallLog.Calls.NUMBER, CallLog.Calls.COUNTRY_ISO),
+                Uri.withAppendedPath(
+                    CallLog.Calls.CONTENT_FILTER_URI,
+                    Uri.encode(phoneNumberUtil.format(
+                        number,
+                        PhoneNumberUtil.PhoneNumberFormat.E164,
+                    )),
+                ),
+                arrayOf(CallLog.Calls._ID),
                 "${CallLog.Calls.TYPE} = ?",
                 arrayOf(CallLog.Calls.OUTGOING_TYPE.toString()),
                 null,
@@ -84,23 +94,7 @@ class CallScreeningService : CallScreeningService() {
         } catch (exc: SecurityException) { return false }
         var result = false
         cursor?.apply {
-            val logNumber = Phonenumber.PhoneNumber()
-            while (moveToNext()) {
-                try {
-                    phoneNumberUtil.parseAndKeepRawInput(
-                        getString(0),
-                        getString(1),
-                        logNumber,
-                    )
-                } catch (exc: NumberParseException) { continue }
-                if (
-                    phoneNumberUtil.isNumberMatch(number, logNumber) ==
-                    PhoneNumberUtil.MatchType.EXACT_MATCH
-                ) {
-                    result = true
-                    break
-                }
-            }
+            if (moveToFirst()) { result = true }
             close()
         }
         return result
@@ -114,8 +108,14 @@ class CallScreeningService : CallScreeningService() {
         val cursor: Cursor?
         try {
             cursor = contentResolver.query(
-                CallLog.Calls.CONTENT_URI,
-                arrayOf(CallLog.Calls.NUMBER, CallLog.Calls.COUNTRY_ISO),
+                Uri.withAppendedPath(
+                    CallLog.Calls.CONTENT_FILTER_URI,
+                    Uri.encode(phoneNumberUtil.format(
+                        number,
+                        PhoneNumberUtil.PhoneNumberFormat.E164,
+                    )),
+                ),
+                arrayOf(CallLog.Calls._ID),
                 "${CallLog.Calls.TYPE} = ? AND ${CallLog.Calls.DATE} > ?",
                 arrayOf(
                     CallLog.Calls.BLOCKED_TYPE.toString(),
@@ -126,27 +126,7 @@ class CallScreeningService : CallScreeningService() {
         } catch (exc: SecurityException) { return false }
         var result = false
         cursor?.apply {
-            var count = 0
-            val logNumber = Phonenumber.PhoneNumber()
-            while (moveToNext()) {
-                try {
-                    phoneNumberUtil.parseAndKeepRawInput(
-                        getString(0),
-                        getString(1),
-                        logNumber,
-                    )
-                } catch (exc: NumberParseException) { continue }
-                if (
-                    phoneNumberUtil.isNumberMatch(number, logNumber) ==
-                    PhoneNumberUtil.MatchType.EXACT_MATCH
-                ) {
-                    count++
-                    if (count >= 2) {
-                        result = true
-                        break
-                    }
-                }
-            }
+            if (count >= 2) { result = true }
             close()
         }
         return result
@@ -169,5 +149,30 @@ class CallScreeningService : CallScreeningService() {
                 Connection.VERIFICATION_STATUS_PASSED) return true
         }
         return false
+    }
+
+    private fun checkContacts(number: Phonenumber.PhoneNumber): Boolean {
+        val cursor: Cursor?
+        try {
+            cursor = contentResolver.query(
+                Uri.withAppendedPath(
+                    ContactsContract.PhoneLookup.CONTENT_FILTER_URI,
+                    Uri.encode(phoneNumberUtil.format(
+                        number,
+                        PhoneNumberUtil.PhoneNumberFormat.E164,
+                    )),
+                ),
+                arrayOf(ContactsContract.PhoneLookup._ID),
+                null,
+                null,
+                null,
+            )
+        } catch (exc: SecurityException) { return false }
+        var result = false
+        cursor?.apply {
+            if (moveToFirst()) { result = true }
+            close()
+        }
+        return result
     }
 }

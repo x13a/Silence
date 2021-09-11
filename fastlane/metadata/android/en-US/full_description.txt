@@ -1,10 +1,12 @@
 <p>Block unknown callers with call screening service.</p>
 <p>By default block phone numbers that are not saved in your contacts list.</p>
-Optionally:
+<p>Optionally:
 <ul>
   <li>allow numbers that you have called</li>
   <li>allow numbers with toll-free codes (ex: 800)</li>
   <li>allow a third call from the same number within five minutes (cache constraint)</li>
   <li>allow temporary mobile numbers from incoming text messages</li>
   <li>allow numbers that passed STIR verification (android 11)</li>
-</ul>
+</ul></p>
+<p>If app rejects calls from contacts on android 10, allow contacts permission manually in
+app info > permissions.</p>

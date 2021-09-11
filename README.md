@@ -14,3 +14,6 @@ Optionally:
 - allow a third call from the same number within five minutes (cache constraint)
 - allow temporary mobile numbers from incoming text messages
 - allow numbers that passed STIR verification (android 11)
+
+If app rejects calls from contacts on android 10, allow contacts permission manually in 
+app info > permissions.
