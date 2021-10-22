@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Silence</string>
+    <string name="toggle_off">Активировать</string>
+    <string name="toggle_on">Деактивировать</string>
+    <string name="description">Активируйте Silence чтобы перестать получать звонки от людей, которых Вы не знаете. Это заблокирует телефонные номера, которые не сохранены в Вашем списке контактов.</string>
+    <string name="callback_switch">Обратный</string>
+    <string name="callback_description">Разрешить номера на которые Вы звонили.</string>
+    <string name="toll_free_switch">Бесплатный</string>
+    <string name="toll_free_description">Разрешить номера с бесплатными телефонными кодами (к примеру: 800).</string>
+    <string name="repeated_switch">Повторный</string>
+    <string name="repeated_description">Разрешить третий звонок с одного номера в течении пять минут. Из-за кэширования скрининга звонков, они должны быть вне интервала кэширования.</string>
+    <string name="service_unavailable_toast">Сервис скрининга звонков недоступен</string>
+    <string name="sms_switch">СМС</string>
+    <string name="sms_description">Разрешить временно мобильные номера из входящих текстовых сообщений.</string>
+    <string name="stir_switch">STIR/SHAKEN</string>
+    <string name="stir_description">Разрешить номера, которые прошли STIR верификацию.</string>
+</resources>
