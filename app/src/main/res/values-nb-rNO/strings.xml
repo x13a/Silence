@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Silence</string>
+    <string name="toggle_on">Skru av</string>
+    <string name="callback_switch">Ring tilbake</string>
+    <string name="toggle_off">Skru på</string>
+    <string name="description">Aktiver Silence for å unngå anrop fra folk du ikke kjenner. Dette blokkerer telefonnumre som ikke er lagret i kontaktlisten din.</string>
+    <string name="callback_description">Tillat nummer du har ringt.</string>
+    <string name="toll_free_switch">Gratisnummer</string>
+    <string name="toll_free_description">Tillat gratisnumre (f.eks: 800).</string>
+    <string name="repeated_switch">Gjentatt</string>
+    <string name="repeated_description">Tillat en tredje samtale fra samme nummer innen fem minutter. På grunn av blokkeringspraksis må samtaler være ute av blokkeringsintervallet.</string>
+    <string name="service_unavailable_toast">Blokkeringstjeneste utilgjengelig</string>
+    <string name="sms_switch">SMS</string>
+    <string name="sms_description">Tillat midlertidige mobilnumre fra innkommende tekstmeldinger.</string>
+    <string name="stir_description">Tillat nummer som har passert STIR-bekreftelse.</string>
+</resources>
