@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Silence</string>
+    <string name="app_name">Silence1</string>
     <string name="toggle_off">Активировать</string>
     <string name="toggle_on">Деактивировать</string>
     <string name="description">Активируйте Silence чтобы перестать получать звонки от людей, которых Вы не знаете. Это заблокирует телефонные номера, которые не сохранены в Вашем списке контактов.</string>
