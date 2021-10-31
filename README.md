@@ -23,5 +23,5 @@ If app rejects calls from contacts on android 10, allow contacts permission manu
 Is `Silence` not in your language, or the translation is incorrect or incomplete? Get involved on [Weblate](https://hosted.weblate.org/engage/me-lucky-silence/).
 
 <a href="https://hosted.weblate.org/engage/me-lucky-silence/">
-<img src="https://hosted.weblate.org/widgets/me-lucky-silence/-/horizontal-auto.svg" alt="Статус перевода" />
+<img src="https://hosted.weblate.org/widgets/me-lucky-silence/-/horizontal-auto.svg" alt="Translation status" />
 </a>
