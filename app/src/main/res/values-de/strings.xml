@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="callback_description">Nummern erlauben, die Sie angerufen haben.</string>
+    <string name="app_name">Stille</string>
+    <string name="toggle_off">Aktivieren</string>
+    <string name="toggle_on">Deaktivieren</string>
+    <string name="description">Aktivieren Sie Stille, um Anrufe von Personen zu vermeiden, die Sie nicht kennen. Dies blockiert Telefonnummern, die nicht in Ihrer Kontaktliste gespeichert sind.</string>
+    <string name="callback_switch">Rückruf</string>
+    <string name="toll_free_switch">Gebührenfrei</string>
+    <string name="toll_free_description">Nummern erlauben, die mit gebührenfreien Vorwahlen sind (z. B. 800).</string>
+    <string name="repeated_switch">Wiederholt</string>
+    <string name="service_unavailable_toast">Anrufüberwachungsdienst nicht verfügbar</string>
+    <string name="repeated_description">Einen dritten Anruf erlauben, der von der gleichen Nummer innerhalb von fünf Minuten ist. Aufgrund des Anrufüberwachungs-Caches müssen die Anrufe außerhalb des Cache-Intervalls liegen.</string>
+    <string name="sms_switch">SMS</string>
+    <string name="sms_description">Temporäre Mobilnummern aus eingehenden Textnachrichten erlauben.</string>
+    <string name="stir_switch">STIR/SHAKEN</string>
+    <string name="stir_description">Nummern erlauben, die die STIR-Verifizierung bestanden haben.</string>
+</resources>
