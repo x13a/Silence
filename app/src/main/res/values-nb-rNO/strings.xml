@@ -14,4 +14,5 @@
     <string name="sms_switch">SMS</string>
     <string name="sms_description">Tillat midlertidige mobilnumre fra innkommende tekstmeldinger.</string>
     <string name="stir_description">Tillat nummer som har passert STIR-bekreftelse.</string>
+    <string name="stir_switch">STIR/SHAKEN</string>
 </resources>
