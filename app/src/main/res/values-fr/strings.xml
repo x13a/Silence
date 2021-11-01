@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Silence</string>
+    <string name="toggle_off">Activer</string>
+    <string name="repeated_description">Autoriser un troisième appel du même numéro dans les cinq minutes. En raison du cache de filtrage des appels, les appels doivent être hors de l\'intervalle du cache.</string>
+    <string name="service_unavailable_toast">Service de filtrage des appels indisponible</string>
+    <string name="sms_switch">SMS</string>
+    <string name="sms_description">Autoriser les numéros de téléphone mobile temporaires à partir des textos entrants.</string>
+    <string name="stir_switch">STIR/SHAKEN</string>
+    <string name="callback_switch">Rappel</string>
+    <string name="toll_free_description">Autoriser les numéros verts avec des codes sans frais (ex : 800).</string>
+    <string name="repeated_switch">Répété</string>
+    <string name="stir_description">Autoriser les numéros qui ont réussi la vérification STIR.</string>
+    <string name="toggle_on">Désactiver</string>
+    <string name="description">Activez Silence pour éviter de recevoir des appels de personnes que vous ne connaissez pas. Ceci bloque les numéros de téléphone qui ne sont pas enregistrés dans votre liste de contacts.</string>
+    <string name="callback_description">Autoriser les numéros que vous avez appelés.</string>
+    <string name="toll_free_switch">Sans frais</string>
+</resources>
