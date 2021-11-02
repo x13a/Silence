@@ -12,7 +12,7 @@ Optionally allow:
 - Numbers you have called
 - Numbers with toll-free codes (ex: 800)
 - A third registered call from the same number within five minutes
-- Mobile numbers from text messages temporarily
+- Mobile numbers from incoming text messages temporarily
 - Numbers passing STIR verification (Android 11)
 
 If the app rejects calls from contacts on Android 10, allow contacts permission manually in `App info → Permissions`.
