@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Silence</string>
     <string name="toggle_off">Activate</string>
@@ -8,10 +9,10 @@
     <string name="toll_free_switch">Toll-free</string>
     <string name="toll_free_description">Allow numbers with toll-free codes (ex: 800).</string>
     <string name="repeated_switch">Repeated</string>
-    <string name="repeated_description">Allow a third call from the same number within five minutes. Cause of the call screening cache, calls have to be out of the cache interval.</string>
+    <string name="repeated_description">Allow a third call from the same number within five minutes (cache constraint).</string>
     <string name="service_unavailable_toast">Call screening service unavailable</string>
     <string name="sms_switch">SMS</string>
-    <string name="sms_description">Allow temporary mobile numbers from incoming text messages.</string>
+    <string name="sms_description">Allow mobile numbers from incoming text messages temporarily.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
     <string name="stir_description">Allow numbers that passed STIR verification.</string>
 </resources>
