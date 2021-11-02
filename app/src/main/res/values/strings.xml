@@ -9,7 +9,7 @@
     <string name="toll_free_switch">Toll-free</string>
     <string name="toll_free_description">Allow numbers with toll-free codes (ex: 800).</string>
     <string name="repeated_switch">Repeated</string>
-    <string name="repeated_description">Allow a third call from the same number within five minutes (cache constraint).</string>
+    <string name="repeated_description">Allow a third registered call from the same number within five minutes.</string>
     <string name="service_unavailable_toast">Call screening service unavailable</string>
     <string name="sms_switch">SMS</string>
     <string name="sms_description">Allow mobile numbers from incoming text messages temporarily.</string>
