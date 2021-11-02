@@ -1,0 +1,12 @@
+Bli kvitt telefonterror.
+
+Som forvalg blokkeres telefonnumbre som ikke er lagret i kontaktlisten din.
+
+Alternativt:
+Tillat nummer du har ringt<br>
+Tillat gratisnummer (f.eks: 800)<br>
+Tillat et tredje anrop fra samme nummer innen fem minutter<br>
+Tillat mobilnummer fra tekstmeldinger midlertidig<br>
+Tillat nummer som har bestått STIR-bekreftelse (Android 11)
+
+Hvis programmet avslår anrop fra kontakter på Android 10 kan kontakttilgang innvilges manuelt i programinfo → tilganger.
