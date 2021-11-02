@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Silêncio</string>
     <string name="toggle_off">Ativar</string>
@@ -8,7 +9,7 @@
     <string name="toll_free_switch">Ligações gratuitas</string>
     <string name="toll_free_description">Permitir os números de ligações gratuitas (p.ex.: 800 intl.).</string>
     <string name="repeated_switch">Recorrentes</string>
-    <string name="repeated_description">Permitir uma terceira chamada do mesmo número dentro de cinco minutos. Por causa do cache de triagem de chamadas, as chamadas têm que estar fora do intervalo do cache.</string>
+    <string name="repeated_description">Permitir uma terceira chamada do mesmo número dentro de cinco minutos (cache constraint).</string>
     <string name="service_unavailable_toast">Serviço de triagem de chamadas indisponível</string>
     <string name="sms_switch">SMS</string>
     <string name="sms_description">Permitir temporariamente os números de celular das mensagens de texto recebidas.</string>
