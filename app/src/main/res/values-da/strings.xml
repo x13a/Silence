@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Silence</string>
     <string name="toggle_off">Aktivér</string>
@@ -8,7 +9,7 @@
     <string name="toll_free_switch">Told-fri</string>
     <string name="toll_free_description">Tillad numre med told-frie koder (ex: 800).</string>
     <string name="repeated_switch">Gentaget</string>
-    <string name="repeated_description">Tillad et tredje opkald fra det samme nummer inde for fem minutter. På grund af opkalds-screening cachen, skal opkald være ude af cacheintervallet.</string>
+    <string name="repeated_description">Tillad et tredje opkald fra det samme nummer inde for fem minutter (cache constraint).</string>
     <string name="service_unavailable_toast">Opkalds-screeningstjeneste utilgængelig</string>
     <string name="sms_switch">SMS</string>
     <string name="sms_description">Tillad midlertidige mobilnumre fra indgående tekstbeskeder.</string>
