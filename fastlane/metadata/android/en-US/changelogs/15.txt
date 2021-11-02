@@ -1,1 +1,1 @@
-add pt-BR translation, thanks @mezysinc
+add Portuguese translation, thanks @mezysinc

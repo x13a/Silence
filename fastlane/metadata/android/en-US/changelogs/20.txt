@@ -1,0 +1,5 @@
+fix English translation, thanks @comradekingu
+add Norwegian translation, thanks @comradekingu
+add French translation, thanks J. Lavoie (Edanas)
+add German translation, thanks J. Lavoie (Edanas)
+add Italian translation, thanks J. Lavoie (Edanas)
