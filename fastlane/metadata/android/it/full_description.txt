@@ -1,0 +1,12 @@
+Blocca i chiamanti sconosciuti con questo servizio di controllo delle chiamate.
+
+Per impostazione predefinita, i numeri non presenti nella vostra lista di contatti sono bloccati.
+
+Facoltativamente permetti:<br>
+Numeri che hai chiamato<br>
+Numeri con codici gratuiti (es: 800)<br>.
+Una terza chiamata registrata dallo stesso numero entro cinque minuti<br>
+Numeri di cellulare da messaggi di testo in arrivo temporaneamente<br>
+Numeri che superano la verifica STIR (Android 11)
+
+Se l'applicazione rifiuta le chiamate dai contatti su Android 10, autorizza manualmente l'autorizzazione dei contatti in Info dell'app → Autorizzazioni.
