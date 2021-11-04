@@ -10,9 +10,9 @@
     <string name="toll_free_description">Permetti i numeri con codici verdi (es: 800).</string>
     <string name="repeated_switch">Ripetuto</string>
     <string name="service_unavailable_toast">Servizio di controllo delle chiamate non disponibile</string>
-    <string name="repeated_description">Permetti una chiamata dallo stesso numero entro cinque minuti. A causa della cache di selezione delle chiamate, le chiamate devono essere fuori dall\'intervallo di cache.</string>
+    <string name="repeated_description">Permetti una terza chiamata registrata dallo stesso numero entro cinque minuti.</string>
     <string name="sms_switch">SMS</string>
-    <string name="sms_description">Permetti i numeri di cellulare temporanei dai SMS in arrivo.</string>
+    <string name="sms_description">Permetti temporaneamente i numeri di cellulare dai messaggi in arrivo.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
     <string name="stir_description">Permetti i numeri che hanno superato la verifica STIR.</string>
 </resources>

@@ -2,10 +2,10 @@
 <resources>
     <string name="app_name">Silence</string>
     <string name="toggle_off">Activer</string>
-    <string name="repeated_description">Autoriser un troisième appel du même numéro dans les cinq minutes. En raison du cache de filtrage des appels, les appels doivent être hors de l\'intervalle du cache.</string>
+    <string name="repeated_description">Autoriser un troisième appel enregistré du même numéro dans les cinq minutes.</string>
     <string name="service_unavailable_toast">Service de filtrage des appels indisponible</string>
     <string name="sms_switch">SMS</string>
-    <string name="sms_description">Autoriser les numéros de téléphone mobile temporaires à partir des textos entrants.</string>
+    <string name="sms_description">Autoriser temporairement les numéros de téléphone mobile dans les textos entrants.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
     <string name="callback_switch">Rappel</string>
     <string name="toll_free_description">Autoriser les numéros verts avec des codes sans frais (ex : 800).</string>
