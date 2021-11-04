@@ -1,0 +1,12 @@
+Blockieren Sie unbekannte Anrufer mit diesem Anrufüberwachungsdienst.
+
+Standardmäßig werden Nummern blockiert, die sich nicht in Ihrer Kontaktliste befinden.
+
+Optional können Sie zulassen:<br>
+Nummern, die Sie angerufen haben<br>
+Nummern mit gebührenfreien Vorwahlen (z. B. 800)<br>
+Ein dritter registrierter Anruf von der gleichen Nummer innerhalb von fünf Minuten<br>
+Handynummern aus eingehenden Textnachrichten vorübergehend<br>
+Nummern, die die STIR-Verifizierung bestehen (Android 11)
+
+Wenn die Anwendung unter Android 10 Anrufe von Kontakten ablehnt, erlauben Sie den Kontakten die Berechtigung manuell unter Anwendungsinfos → Berechtigungen.
