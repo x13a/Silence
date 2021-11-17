@@ -2,11 +2,11 @@ Bloquez les appels inconnus grâce à ce service de filtrage des appels.
 
 Par défaut, les numéros ne figurant pas dans votre liste de contacts sont bloqués.
 
-En option, vous pouvez autoriser :<br>
-Les numéros que vous avez appelés<br>
-Les numéros avec des codes gratuits (ex : 800)<br>.
-Un troisième appel enregistré du même numéro dans les cinq minutes<br>
-Les numéros de mobile des textos entrants de manière temporaire<br>.
-Numéros réussissant la vérification STIR (Android 11)
+En option, vous pouvez autoriser:
+* Les numéros que vous avez appelés
+* Les numéros avec des codes gratuits (ex: 800)
+* Un troisième appel enregistré du même numéro dans les cinq minutes
+* Les numéros de mobile des textos entrants de manière temporaire
+* Numéros réussissant la vérification STIR (Android 11)
 
 Si l'application rejette les appels des contacts sur Android 10, autorisez manuellement les contacts dans Infos de l'appli → Autorisations.
