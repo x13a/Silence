@@ -2,7 +2,7 @@
 
 Block unknown callers with this call screening service.
 
-<a href="https://f-droid.org/packages/me.lucky.silence/" rel="nofollow"><img alt="Get it on F-Droid" height="80" src="https://user-images.githubusercontent.com/53379023/129469677-f984e551-49c5-49f1-9439-1bd34d737940.png" data-canonical-src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" style="max-width:100%;"></a>
+<a href="https://f-droid.org/packages/me.lucky.silence/" rel="nofollow"><img alt="Get it on F-Droid" height="80" src="https://user-images.githubusercontent.com/53379023/142497343-0e635fc5-056b-46ff-8d8e-d607ed95527e.png" data-canonical-src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" style="max-width: 100%;"></a>
 
 <img src="https://user-images.githubusercontent.com/53379023/129469588-ab10f92d-02d4-4b3e-88a9-51ea007dcd4b.png" width="30%" height="30%">
 
