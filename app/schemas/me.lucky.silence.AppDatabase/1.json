@@ -1,0 +1,63 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "291975ce31ecb98e458cd6e2ee635dc1",
+    "entities": [
+      {
+        "tableName": "sms_filter",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `phone_number` TEXT NOT NULL, `ts_created` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "uid",
+            "columnName": "uid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "phoneNumber",
+            "columnName": "phone_number",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tsCreated",
+            "columnName": "ts_created",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "uid"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_sms_filter_phone_number",
+            "unique": true,
+            "columnNames": [
+              "phone_number"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_sms_filter_phone_number` ON `${TABLE_NAME}` (`phone_number`)"
+          },
+          {
+            "name": "index_sms_filter_ts_created",
+            "unique": false,
+            "columnNames": [
+              "ts_created"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_sms_filter_ts_created` ON `${TABLE_NAME}` (`ts_created`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '291975ce31ecb98e458cd6e2ee635dc1')"
+    ]
+  }
+}

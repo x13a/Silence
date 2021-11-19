@@ -49,6 +49,8 @@
             <intent-filter>
                 <action android:name="me.lucky.silence.action.TOGGLE_ON" />
                 <action android:name="me.lucky.silence.action.TOGGLE_OFF" />
+                <action android:name="me.lucky.silence.action.DELETE_SMS_FILTER_INACTIVE" />
+                <action android:name="me.lucky.silence.action.DELETE_SMS_FILTER_ALL" />
             </intent-filter>
         </receiver>
 

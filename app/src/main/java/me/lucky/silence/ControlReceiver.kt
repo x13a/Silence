@@ -10,12 +10,23 @@ class ControlReceiver : BroadcastReceiver() {
     companion object {
         private const val TOGGLE_ON = "me.lucky.silence.action.TOGGLE_ON"
         private const val TOGGLE_OFF = "me.lucky.silence.action.TOGGLE_OFF"
+        private const val DELETE_INACTIVE = "me.lucky.silence.DELETE_SMS_FILTER_INACTIVE"
+        private const val DELETE_ALL = "me.lucky.silence.action.DELETE_SMS_FILTER_ALL"
     }
 
     override fun onReceive(context: Context, intent: Intent) {
+        val db by lazy { AppDatabase.getInstance(context).smsFilterDao() }
         val isON = when (intent.action) {
             TOGGLE_ON -> true
             TOGGLE_OFF -> false
+            DELETE_INACTIVE -> {
+                db.deleteInactive()
+                return
+            }
+            DELETE_ALL -> {
+                db.deleteAll()
+                return
+            }
             else -> return
         }
         Preferences(context).apply {

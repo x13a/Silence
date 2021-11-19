@@ -42,6 +42,9 @@ interface SmsFilterDao {
     @Query("DELETE FROM sms_filter WHERE ts_created < :ts")
     fun deleteBefore(ts: Long)
 
+    @Query("DELETE FROM sms_filter")
+    fun deleteAll()
+
     @Query("SELECT * FROM sms_filter WHERE ts_created > :ts")
     fun getAfter(ts: Long): List<SmsFilter>
 
