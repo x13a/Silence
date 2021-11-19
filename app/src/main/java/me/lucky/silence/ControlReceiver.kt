@@ -13,8 +13,13 @@ class ControlReceiver : BroadcastReceiver() {
     }
 
     override fun onReceive(context: Context, intent: Intent) {
+        val isON = when (intent.action) {
+            TOGGLE_ON -> true
+            TOGGLE_OFF -> false
+            else -> return
+        }
         Preferences(context).apply {
-            isServiceEnabled = intent.action == TOGGLE_ON
+            isServiceEnabled = isON
             setSmsReceiverState(context, isServiceEnabled && isSmsChecked)
         }
     }
