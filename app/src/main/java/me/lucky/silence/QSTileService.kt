@@ -4,7 +4,6 @@ import android.content.SharedPreferences
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 
-
 class QSTileService : TileService() {
     private val prefs by lazy { Preferences(this) }
 
