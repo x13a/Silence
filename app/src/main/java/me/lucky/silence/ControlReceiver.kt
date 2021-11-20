@@ -1,10 +1,8 @@
 package me.lucky.silence
 
 import android.content.BroadcastReceiver
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 
 class ControlReceiver : BroadcastReceiver() {
     companion object {
@@ -15,32 +13,22 @@ class ControlReceiver : BroadcastReceiver() {
     }
 
     override fun onReceive(context: Context, intent: Intent) {
-        val db by lazy { AppDatabase.getInstance(context).smsFilterDao() }
-        val isON = when (intent.action) {
+        val isOn = when (intent.action) {
             TOGGLE_ON -> true
             TOGGLE_OFF -> false
-            DELETE_INACTIVE -> {
-                db.deleteInactive()
+            else -> {
+                AppDatabase.getInstance(context).smsFilterDao().apply {
+                    when (intent.action) {
+                        DELETE_INACTIVE -> deleteInactive()
+                        DELETE_ALL -> deleteAll()
+                    }
+                }
                 return
             }
-            DELETE_ALL -> {
-                db.deleteAll()
-                return
-            }
-            else -> return
         }
         Preferences(context).apply {
-            isServiceEnabled = isON
-            setSmsReceiverState(context, isServiceEnabled && isSmsChecked)
+            isServiceEnabled = isOn
+            Utils.setSmsReceiverState(context, isServiceEnabled && isSmsChecked)
         }
-    }
-
-    private fun setSmsReceiverState(context: Context, value: Boolean) {
-        context.packageManager.setComponentEnabledSetting(
-            ComponentName(context, SmsReceiver::class.java),
-            if (value) PackageManager.COMPONENT_ENABLED_STATE_ENABLED else
-                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-            PackageManager.DONT_KILL_APP,
-        )
     }
 }

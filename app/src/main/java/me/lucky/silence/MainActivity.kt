@@ -3,10 +3,8 @@ package me.lucky.silence
 import android.Manifest
 import android.app.Activity
 import android.app.role.RoleManager
-import android.content.ComponentName
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 
@@ -26,14 +24,16 @@ class MainActivity : AppCompatActivity() {
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
         when (key) {
             Preferences.SERVICE_ENABLED -> {
-                setSmsReceiverState(prefs.isServiceEnabled && prefs.isSmsChecked)
-                updateToggle()
+                Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isSmsChecked)
+                initToggle()
             }
             Preferences.SMS_CHECKED -> {
                 if (!prefs.isSmsChecked) db.deleteInactive()
-                setSmsReceiverState(prefs.isServiceEnabled && prefs.isSmsChecked)
+                Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isSmsChecked)
                 updateSms()
             }
+            Preferences.CALLBACK_CHECKED -> updateCallback()
+            Preferences.REPEATED_CHECKED -> updateRepeated()
         }
     }
 
@@ -70,12 +70,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        prefs.registerListener(prefsListener)
-        setupUiListeners()
+        init()
+        setup()
     }
 
-    private fun setupUiListeners() {
+    private fun setup() {
         binding.apply {
             callbackSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasReadCallLogPermission() && isChecked) {
@@ -84,11 +83,9 @@ class MainActivity : AppCompatActivity() {
                     false -> prefs.isCallbackChecked = isChecked
                 }
             }
-
             tollFreeSwitch.setOnCheckedChangeListener { _, isChecked ->
                 prefs.isTollFreeChecked = isChecked
             }
-
             repeatedSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasReadCallLogPermission() && isChecked) {
                     true -> requestReadCallLogPermissionForRepeated
@@ -96,7 +93,6 @@ class MainActivity : AppCompatActivity() {
                     false -> prefs.isRepeatedChecked = isChecked
                 }
             }
-
             smsSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasReceiveSmsPermission() && isChecked) {
                     true -> requestReceiveSmsPermission
@@ -104,15 +100,11 @@ class MainActivity : AppCompatActivity() {
                     false -> prefs.isSmsChecked = isChecked
                 }
             }
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                stirSwitch?.setOnCheckedChangeListener { _, isChecked ->
-                    prefs.isStirChecked = isChecked
-                }
+            stirSwitch?.setOnCheckedChangeListener { _, isChecked ->
+                prefs.isStirChecked = isChecked
             }
-
             toggle.setOnClickListener {
-                when (!hasCallScreeningRole() && !prefs.isServiceEnabled) {
+                when (!Utils.hasCallScreeningRole(this@MainActivity) && !prefs.isServiceEnabled) {
                     true -> requestCallScreeningRole
                         .launch(roleManager.createRequestRoleIntent(RoleManager.ROLE_CALL_SCREENING))
                     false -> prefs.isServiceEnabled = !prefs.isServiceEnabled
@@ -121,15 +113,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateStates() {
+    private fun init() {
+        binding.apply {
+            callbackSwitch.isChecked = prefs.isCallbackChecked
+            tollFreeSwitch.isChecked = prefs.isTollFreeChecked
+            repeatedSwitch.isChecked = prefs.isRepeatedChecked
+            smsSwitch.isChecked = prefs.isSmsChecked
+            stirSwitch?.isChecked = prefs.isStirChecked
+        }
+    }
+
+    private fun update() {
         updateCallback()
-        updateTollFree()
         updateRepeated()
         updateSms()
-        updateStir()
-        updateToggle()
-
-        if (!hasCallScreeningRole() && prefs.isServiceEnabled) {
+        if (!Utils.hasCallScreeningRole(this) && prefs.isServiceEnabled) {
             Toast.makeText(
                 this,
                 getString(R.string.service_unavailable_toast),
@@ -140,40 +138,47 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        updateStates()
+        initToggle()
+        prefs.registerListener(prefsListener)
+        update()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onStop() {
+        super.onStop()
         prefs.unregisterListener(prefsListener)
     }
 
     private fun updateRepeated() {
-        if (!hasReadCallLogPermission()) prefs.isRepeatedChecked = false
-        binding.repeatedSwitch.isChecked = prefs.isRepeatedChecked
-    }
-
-    private fun updateCallback() {
-        if (!hasReadCallLogPermission()) prefs.isCallbackChecked = false
-        binding.callbackSwitch.isChecked = prefs.isCallbackChecked
-    }
-
-    private fun updateTollFree() {
-        binding.tollFreeSwitch.isChecked = prefs.isTollFreeChecked
-    }
-
-    private fun updateSms() {
-        if (!hasReceiveSmsPermission()) prefs.isSmsChecked = false
-        binding.smsSwitch.isChecked = prefs.isSmsChecked
-    }
-
-    private fun updateStir() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            binding.stirSwitch?.isChecked = prefs.isStirChecked
+        binding.apply {
+            when {
+                !hasReadCallLogPermission() && prefs.isRepeatedChecked ->
+                    repeatedSwitch.setTextColor(getColor(R.color.yellow))
+                else -> repeatedSwitch.setTextColor(tollFreeSwitch.textColors)
+            }
         }
     }
 
-    private fun updateToggle() {
+    private fun updateCallback() {
+        binding.apply {
+            when {
+                !hasReadCallLogPermission() && prefs.isCallbackChecked ->
+                    callbackSwitch.setTextColor(getColor(R.color.yellow))
+                else -> callbackSwitch.setTextColor(tollFreeSwitch.textColors)
+            }
+        }
+    }
+
+    private fun updateSms() {
+        binding.apply {
+            when {
+                !hasReceiveSmsPermission() && prefs.isSmsChecked ->
+                    smsSwitch.setTextColor(getColor(R.color.yellow))
+                else -> smsSwitch.setTextColor(tollFreeSwitch.textColors)
+            }
+        }
+    }
+
+    private fun initToggle() {
         val stringId: Int
         val colorId: Int
         if (prefs.isServiceEnabled) {
@@ -185,12 +190,8 @@ class MainActivity : AppCompatActivity() {
         }
         binding.toggle.apply {
             text = getText(stringId)
-            backgroundTintList = getColorStateList(colorId)
+            setBackgroundColor(getColor(colorId))
         }
-    }
-
-    private fun hasCallScreeningRole(): Boolean {
-        return roleManager.isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
     }
 
     private fun hasReadCallLogPermission(): Boolean {
@@ -201,14 +202,5 @@ class MainActivity : AppCompatActivity() {
     private fun hasReceiveSmsPermission(): Boolean {
         return (ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS)
                 == PackageManager.PERMISSION_GRANTED)
-    }
-
-    private fun setSmsReceiverState(value: Boolean) {
-        packageManager.setComponentEnabledSetting(
-            ComponentName(this, SmsReceiver::class.java),
-            if (value) PackageManager.COMPONENT_ENABLED_STATE_ENABLED else
-                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-            PackageManager.DONT_KILL_APP,
-        )
     }
 }

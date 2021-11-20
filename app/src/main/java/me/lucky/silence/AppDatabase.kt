@@ -30,7 +30,7 @@ abstract class AppDatabase : RoomDatabase() {
 @Dao
 interface SmsFilterDao {
     companion object {
-        const val INACTIVE_DURATION = 48 * 60 * 60
+        private const val INACTIVE_DURATION = 48 * 60 * 60
     }
 
     @Insert
@@ -46,10 +46,10 @@ interface SmsFilterDao {
     fun deleteAll()
 
     @Query("SELECT * FROM sms_filter WHERE ts_created > :ts")
-    fun getAfter(ts: Long): List<SmsFilter>
+    fun selectAfter(ts: Long): List<SmsFilter>
 
-    fun getActive(): List<SmsFilter> {
-        return getAfter(getInactiveTimestamp())
+    fun selectActive(): List<SmsFilter> {
+        return selectAfter(getInactiveTimestamp())
     }
 
     fun deleteInactive() {

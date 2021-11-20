@@ -1,5 +1,7 @@
 package me.lucky.silence
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.database.Cursor
 import android.net.Uri
 import android.os.Build
@@ -9,6 +11,8 @@ import android.telecom.Call
 import android.telecom.CallScreeningService
 import android.telecom.Connection
 import android.telephony.TelephonyManager
+
+import androidx.core.content.ContextCompat
 
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
@@ -43,11 +47,9 @@ class CallScreeningService : CallScreeningService() {
             respondReject(callDetails)
             return
         }
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.Q) {
-            if (checkContacts(number)) {
-                respondAllow(callDetails)
-                return
-            }
+        if (hasContactsPermission() && checkContacts(number)) {
+            respondAllow(callDetails)
+            return
         }
         if (
             (prefs.isCallbackChecked && checkCallback(number)) ||
@@ -135,8 +137,8 @@ class CallScreeningService : CallScreeningService() {
     private fun checkSms(number: Phonenumber.PhoneNumber): Boolean {
         val logNumber = Phonenumber.PhoneNumber()
         val countryCode = telephonyManager?.networkCountryIso?.uppercase()
-        for (filter in db.getActive()) {
-            phoneNumberUtil.parseAndKeepRawInput(filter.phoneNumber, countryCode, logNumber)
+        for (row in db.selectActive()) {
+            phoneNumberUtil.parseAndKeepRawInput(row.phoneNumber, countryCode, logNumber)
             if (phoneNumberUtil.isNumberMatch(number, logNumber) ==
                 PhoneNumberUtil.MatchType.EXACT_MATCH) return true
         }
@@ -174,5 +176,10 @@ class CallScreeningService : CallScreeningService() {
             close()
         }
         return result
+    }
+
+    private fun hasContactsPermission(): Boolean {
+        return (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
+                == PackageManager.PERMISSION_GRANTED)
     }
 }
