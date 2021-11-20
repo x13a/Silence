@@ -81,13 +81,7 @@ class CallScreeningService : CallScreeningService() {
         val cursor: Cursor?
         try {
             cursor = contentResolver.query(
-                Uri.withAppendedPath(
-                    CallLog.Calls.CONTENT_FILTER_URI,
-                    Uri.encode(phoneNumberUtil.format(
-                        number,
-                        PhoneNumberUtil.PhoneNumberFormat.E164,
-                    )),
-                ),
+                makeContentUri(CallLog.Calls.CONTENT_FILTER_URI, number),
                 arrayOf(CallLog.Calls._ID),
                 "${CallLog.Calls.TYPE} = ?",
                 arrayOf(CallLog.Calls.OUTGOING_TYPE.toString()),
@@ -110,13 +104,7 @@ class CallScreeningService : CallScreeningService() {
         val cursor: Cursor?
         try {
             cursor = contentResolver.query(
-                Uri.withAppendedPath(
-                    CallLog.Calls.CONTENT_FILTER_URI,
-                    Uri.encode(phoneNumberUtil.format(
-                        number,
-                        PhoneNumberUtil.PhoneNumberFormat.E164,
-                    )),
-                ),
+                makeContentUri(CallLog.Calls.CONTENT_FILTER_URI, number),
                 arrayOf(CallLog.Calls._ID),
                 "${CallLog.Calls.TYPE} = ? AND ${CallLog.Calls.DATE} > ?",
                 arrayOf(
@@ -157,13 +145,7 @@ class CallScreeningService : CallScreeningService() {
         val cursor: Cursor?
         try {
             cursor = contentResolver.query(
-                Uri.withAppendedPath(
-                    ContactsContract.PhoneLookup.CONTENT_FILTER_URI,
-                    Uri.encode(phoneNumberUtil.format(
-                        number,
-                        PhoneNumberUtil.PhoneNumberFormat.E164,
-                    )),
-                ),
+                makeContentUri(ContactsContract.PhoneLookup.CONTENT_FILTER_URI, number),
                 arrayOf(ContactsContract.PhoneLookup._ID),
                 null,
                 null,
@@ -181,5 +163,15 @@ class CallScreeningService : CallScreeningService() {
     private fun hasContactsPermission(): Boolean {
         return (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
                 == PackageManager.PERMISSION_GRANTED)
+    }
+
+    private fun makeContentUri(base: Uri, number: Phonenumber.PhoneNumber): Uri {
+        return Uri.withAppendedPath(
+            base,
+            Uri.encode(phoneNumberUtil.format(
+                number,
+                PhoneNumberUtil.PhoneNumberFormat.E164,
+            )),
+        )
     }
 }
