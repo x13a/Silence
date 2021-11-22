@@ -1,5 +1,5 @@
-fix English translation, thanks @comradekingu
-add Norwegian translation, thanks @comradekingu
+fix English translation, thanks Allan Nordhøy
+add Norwegian Bokmål translation, thanks Allan Nordhøy
 add French translation, thanks J. Lavoie (Edanas)
 add German translation, thanks J. Lavoie (Edanas)
 add Italian translation, thanks J. Lavoie (Edanas)
