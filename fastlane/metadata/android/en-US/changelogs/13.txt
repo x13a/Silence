@@ -1,1 +1,1 @@
-make switches scrollable, thanks @yuhuitech
+make switches scrollable, thanks Yuhui Su (@yuhuitech )
