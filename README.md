@@ -30,5 +30,5 @@ Is `Silence` not in your language, or the translation is incorrect or incomplete
 
 This application is Free Software: You can use, study share and improve it at your
 will. Specifically you can redistribute and/or modify it under the terms of the
-[GNU General Public License](https://www.gnu.org/licenses/gpl.html) as
-published by the Free Software Foundation, version 3 of the License.
+[GNU General Public License v3](https://www.gnu.org/licenses/gpl.html) as
+published by the Free Software Foundation.
