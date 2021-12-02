@@ -6,7 +6,7 @@ Block unknown callers.
 
 <img src="https://user-images.githubusercontent.com/53379023/129469588-ab10f92d-02d4-4b3e-88a9-51ea007dcd4b.png" width="30%" height="30%">
 
-By default numbers not in your contact list are blocked.
+By default numbers not in your contacts list are blocked.
 
 Optionally allow:
 - Numbers you have called
