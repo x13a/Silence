@@ -1,6 +1,6 @@
-Block unknown callers with this call screening service.
+Block unknown callers.
 
-By default numbers not in your contact list are blocked.
+By default numbers not in your contacts list are blocked.
 
 Optionally allow:
 * Numbers you have called
