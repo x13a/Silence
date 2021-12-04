@@ -1,0 +1,3 @@
+add Korean translation, thanks to @oo72vv
+update themes, thanks to @oo72vv
+update translations, thanks to Allan Nordhøy
