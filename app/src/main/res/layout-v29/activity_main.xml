@@ -13,14 +13,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/icon_color_yellow"
+        android:paddingVertical="12dp"
         android:text="@string/toggle_off"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollLayout"
-        android:paddingTop="12sp"
-        android:paddingBottom="12sp"
-        android:textSize="16sp"/>
+        app:layout_constraintTop_toBottomOf="@+id/scrollLayout" />
 
     <TextView
         android:id="@+id/description"
@@ -63,12 +62,10 @@
                 android:text="@string/callback_description"
                 android:textSize="12sp" />
 
-            <View
-                android:background="@color/icon_color_white_2"
-                android:layout_width = "match_parent"
-                android:layout_height= "1dp"
-                android:layout_marginTop="20sp"
-                android:layout_marginBottom="10sp"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/tollFreeSwitch"
@@ -84,12 +81,10 @@
                 android:text="@string/toll_free_description"
                 android:textSize="12sp" />
 
-            <View
-                android:background="@color/icon_color_white_2"
-                android:layout_width = "match_parent"
-                android:layout_height= "1dp"
-                android:layout_marginTop="20sp"
-                android:layout_marginBottom="10sp"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/repeatedSwitch"
@@ -105,12 +100,10 @@
                 android:text="@string/repeated_description"
                 android:textSize="12sp" />
 
-            <View
-                android:background="@color/icon_color_white_2"
-                android:layout_width = "match_parent"
-                android:layout_height= "1dp"
-                android:layout_marginTop="20sp"
-                android:layout_marginBottom="10sp"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/smsSwitch"
@@ -125,13 +118,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sms_description"
                 android:textSize="12sp" />
-
-            <View
-                android:background="@color/icon_color_white_2"
-                android:layout_width = "match_parent"
-                android:layout_height= "1dp"
-                android:layout_marginTop="20sp"
-                android:layout_marginBottom="10sp"/>
 
         </LinearLayout>
     </ScrollView>

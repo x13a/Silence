@@ -152,7 +152,7 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             when {
                 !hasReadCallLogPermission() && prefs.isRepeatedChecked ->
-                    repeatedSwitch.setTextColor(getColor(R.color.yellow))
+                    repeatedSwitch.setTextColor(getColor(R.color.icon_color_red))
                 else -> repeatedSwitch.setTextColor(tollFreeSwitch.textColors)
             }
         }
@@ -162,7 +162,7 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             when {
                 !hasReadCallLogPermission() && prefs.isCallbackChecked ->
-                    callbackSwitch.setTextColor(getColor(R.color.yellow))
+                    callbackSwitch.setTextColor(getColor(R.color.icon_color_red))
                 else -> callbackSwitch.setTextColor(tollFreeSwitch.textColors)
             }
         }
@@ -172,7 +172,7 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             when {
                 !hasReceiveSmsPermission() && prefs.isSmsChecked ->
-                    smsSwitch.setTextColor(getColor(R.color.yellow))
+                    smsSwitch.setTextColor(getColor(R.color.icon_color_red))
                 else -> smsSwitch.setTextColor(tollFreeSwitch.textColors)
             }
         }
