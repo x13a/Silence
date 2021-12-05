@@ -183,10 +183,10 @@ class MainActivity : AppCompatActivity() {
         val colorId: Int
         if (prefs.isServiceEnabled) {
             stringId = R.string.toggle_on
-            colorId = R.color.red
+            colorId = R.color.icon_color_red
         } else {
             stringId = R.string.toggle_off
-            colorId = R.color.green
+            colorId = R.color.icon_color_yellow
         }
         binding.toggle.apply {
             text = getText(stringId)
