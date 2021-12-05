@@ -4,7 +4,7 @@ Block unknown callers.
 
 <a href="https://f-droid.org/packages/me.lucky.silence/" rel="nofollow"><img alt="Get it on F-Droid" height="80" src="https://user-images.githubusercontent.com/53379023/142497343-0e635fc5-056b-46ff-8d8e-d607ed95527e.png" data-canonical-src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" style="max-width: 100%;"></a>
 
-<img src="https://user-images.githubusercontent.com/53379023/129469588-ab10f92d-02d4-4b3e-88a9-51ea007dcd4b.png" width="30%" height="30%">
+<img src="https://user-images.githubusercontent.com/53379023/144752971-256b6f7e-8916-4864-996b-b80efee55ea5.png" width="30%" height="30%">
 
 By default numbers not in your contacts list are blocked.
 
