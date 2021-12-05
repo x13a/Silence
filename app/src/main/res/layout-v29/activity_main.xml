@@ -12,8 +12,10 @@
         android:id="@+id/toggle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/green"
+        android:backgroundTint="@color/icon_color_yellow"
+        android:paddingVertical="12dp"
         android:text="@string/toggle_off"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,6 +62,11 @@
                 android:text="@string/callback_description"
                 android:textSize="12sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp" />
+
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/tollFreeSwitch"
                 android:layout_width="match_parent"
@@ -74,6 +81,11 @@
                 android:text="@string/toll_free_description"
                 android:textSize="12sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp" />
+
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/repeatedSwitch"
                 android:layout_width="match_parent"
@@ -87,6 +99,11 @@
                 android:layout_height="wrap_content"
                 android:text="@string/repeated_description"
                 android:textSize="12sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/smsSwitch"

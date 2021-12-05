@@ -10,4 +10,8 @@
     <color name="green">#00C853</color>
     <color name="red">#D50000</color>
     <color name="yellow">#FFD600</color>
+    <color name="icon_color_white">#FAFAFA</color>
+    <color name="icon_color_white_2">#E8E3E3</color>
+    <color name="icon_color_yellow">#FFC52F</color>
+    <color name="icon_color_red">#DF5C4E</color>
 </resources>
