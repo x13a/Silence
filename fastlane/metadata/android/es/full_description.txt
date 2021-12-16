@@ -1,0 +1,12 @@
+Bloquear las llamadas desconocidas.
+
+Por defecto, los números que no están en su lista de contactos serán bloqueados.
+
+Opcionalmente se puede permitir:
+* Números a los que has llamado
+* Números con líneas telefónicas gratuitas (por ejemplo: 800 o 0800)
+* Una tercera llamada registrada desde el mismo número en un plazo de cinco minutos
+* Temporalmente los números de móvil de los mensajes de texto entrantes
+* Números que han aprobado la comprobación STIR (Android 11)
+
+Si la aplicación rechaza las llamadas de los contactos en Android 10, habilite manualmente el permiso de los contactos en Información de la aplicación → Permisos.
