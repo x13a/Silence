@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Silence</string>
+    <string name="toggle_off">Activar</string>
+    <string name="toggle_on">Desactivar</string>
+    <string name="description">Activa la App Silence para evitar que te llamen personas que no conoces. Esto bloquea los números de teléfono que no están guardados en su lista de contactos.</string>
+    <string name="callback_switch">Devolución de llamada</string>
+    <string name="callback_description">Permitir los números a los que ha llamado.</string>
+    <string name="toll_free_switch">Llamadas gratuitas</string>
+    <string name="toll_free_description">Permitir números con líneas telefónicas gratuitas (por ejemplo: 800 o 0800).</string>
+    <string name="repeated_switch">Repetidas</string>
+    <string name="repeated_description">Permitir una tercera llamada registrada desde el mismo número en un plazo de cinco minutos.</string>
+    <string name="service_unavailable_toast">El servicio de detección de llamadas no está disponible</string>
+    <string name="sms_switch">SMS - Mensajes de Texto</string>
+    <string name="sms_description">Permitir temporalmente los números de móvil de los mensajes de texto entrantes.</string>
+    <string name="stir_switch">Protocolos STIR/SHAKEN</string>
+    <string name="stir_description">Permitir los números que han aprobado la comprobación STIR.</string>
+</resources>
