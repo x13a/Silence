@@ -6,7 +6,7 @@ import android.content.SharedPreferences
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 
-class Preferences(context: Context) {
+class Preferences(ctx: Context) {
     companion object {
         const val SERVICE_ENABLED = "service_enabled"
         const val CALLBACK_CHECKED = "callback_checked"
@@ -16,7 +16,7 @@ class Preferences(context: Context) {
         private const val STIR_CHECKED = "stir_checked"
     }
 
-    private val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+    private val prefs = PreferenceManager.getDefaultSharedPreferences(ctx)
 
     var isServiceEnabled: Boolean
         get() = getBoolean(SERVICE_ENABLED)

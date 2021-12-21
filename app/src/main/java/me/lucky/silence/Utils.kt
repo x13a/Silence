@@ -5,6 +5,8 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.pm.PackageManager
 
+import androidx.core.content.ContextCompat
+
 class Utils {
     companion object {
         fun setSmsReceiverState(ctx: Context, value: Boolean) {
@@ -20,6 +22,11 @@ class Utils {
             return ctx
                 .getSystemService(RoleManager::class.java)
                 .isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
+        }
+
+        fun hasPermission(ctx: Context, permission: String): Boolean {
+            return (ContextCompat.checkSelfPermission(ctx, permission)
+                    == PackageManager.PERMISSION_GRANTED)
         }
     }
 }

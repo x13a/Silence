@@ -1,7 +1,6 @@
 package me.lucky.silence
 
 import android.Manifest
-import android.content.pm.PackageManager
 import android.database.Cursor
 import android.net.Uri
 import android.os.Build
@@ -11,8 +10,6 @@ import android.telecom.Call
 import android.telecom.CallScreeningService
 import android.telecom.Connection
 import android.telephony.TelephonyManager
-
-import androidx.core.content.ContextCompat
 
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
@@ -47,11 +44,8 @@ class CallScreeningService : CallScreeningService() {
             respondReject(callDetails)
             return
         }
-        if (hasContactsPermission() && checkContacts(number)) {
-            respondAllow(callDetails)
-            return
-        }
         if (
+            (hasContactsPermission() && checkContacts(number)) ||
             (prefs.isCallbackChecked && checkCallback(number)) ||
             (prefs.isTollFreeChecked && checkTollFree(number)) ||
             (prefs.isRepeatedChecked && checkRepeated(number)) ||
@@ -161,8 +155,7 @@ class CallScreeningService : CallScreeningService() {
     }
 
     private fun hasContactsPermission(): Boolean {
-        return (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
-                == PackageManager.PERMISSION_GRANTED)
+        return Utils.hasPermission(this, Manifest.permission.READ_CONTACTS)
     }
 
     private fun makeContentUri(base: Uri, number: Phonenumber.PhoneNumber): Uri {

@@ -1,25 +1,21 @@
 package me.lucky.silence
 
 import android.Manifest
-import android.app.Activity
 import android.app.role.RoleManager
 import android.content.SharedPreferences
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.Toast
 
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 
 import me.lucky.silence.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+open class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private val roleManager by lazy { getSystemService(RoleManager::class.java) }
     private val prefs by lazy { Preferences(this) }
-    private val db by lazy { AppDatabase.getInstance(this).smsFilterDao() }
 
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
         when (key) {
@@ -28,7 +24,6 @@ class MainActivity : AppCompatActivity() {
                 initToggle()
             }
             Preferences.SMS_CHECKED -> {
-                if (!prefs.isSmsChecked) db.deleteInactive()
                 Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isSmsChecked)
                 updateSms()
             }
@@ -39,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
     private val requestCallScreeningRole =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) prefs.isServiceEnabled = true
+            if (result.resultCode == RESULT_OK) prefs.isServiceEnabled = true
         }
 
     private val requestReadCallLogPermissionForCallback =
@@ -195,12 +190,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hasReadCallLogPermission(): Boolean {
-        return (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CALL_LOG)
-                == PackageManager.PERMISSION_GRANTED)
+        return Utils.hasPermission(this, Manifest.permission.READ_CALL_LOG)
     }
 
     private fun hasReceiveSmsPermission(): Boolean {
-        return (ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS)
-                == PackageManager.PERMISSION_GRANTED)
+        return Utils.hasPermission(this, Manifest.permission.RECEIVE_SMS)
     }
 }

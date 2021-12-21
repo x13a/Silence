@@ -16,6 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Silence">
+
         <receiver
             android:name=".SmsReceiver"
             android:enabled="false"
@@ -35,7 +36,6 @@
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
-
             <meta-data
                 android:name="android.service.quicksettings.TOGGLEABLE_TILE"
                 android:value="true" />
@@ -49,12 +49,11 @@
             <intent-filter>
                 <action android:name="me.lucky.silence.action.TOGGLE_ON" />
                 <action android:name="me.lucky.silence.action.TOGGLE_OFF" />
-                <action android:name="me.lucky.silence.action.DELETE_SMS_FILTER_INACTIVE" />
-                <action android:name="me.lucky.silence.action.DELETE_SMS_FILTER_ALL" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,6 +69,29 @@
                 <action android:name="android.telecom.CallScreeningService" />
             </intent-filter>
         </service>
+
+        <activity
+            android:name=".PanicResponderActivity"
+            android:noHistory="true"
+            android:exported="true"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="info.guardianproject.panic.action.TRIGGER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".PanicConnectionActivity"
+            android:noHistory="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="info.guardianproject.panic.action.CONNECT" />
+                <action android:name="info.guardianproject.panic.action.DISCONNECT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

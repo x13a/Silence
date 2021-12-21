@@ -30,7 +30,7 @@ abstract class AppDatabase : RoomDatabase() {
 @Dao
 interface SmsFilterDao {
     companion object {
-        private const val INACTIVE_DURATION = 48 * 60 * 60
+        const val INACTIVE_DURATION = 48 * 60 * 60
     }
 
     @Insert
