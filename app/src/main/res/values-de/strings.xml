@@ -15,4 +15,9 @@
     <string name="sms_description">Mobiltelefonnummern in eingehenden Textnachrichten vorübergehend erlauben.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
     <string name="stir_description">Nummern erlauben, die die STIR-Verifizierung bestanden haben.</string>
+    <string name="panic_app_unknown_app">eine unbekannte Anwendung</string>
+    <string name="panic_app_dialog_title">Panik-App bestätigen</string>
+    <string name="panic_app_dialog_message">Sind Sie sicher, dass Sie zulassen wollen, dass %1$s zerstörerische Panikaktionen auslöst\?</string>
+    <string name="allow">Erlauben</string>
+    <string name="cancel">Abbrechen</string>
 </resources>
