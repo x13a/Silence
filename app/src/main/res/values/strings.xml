@@ -9,7 +9,7 @@
     <string name="code_switch">Code</string>
     <string name="code_description">Allow numbers with selected codes.</string>
     <string name="repeated_switch">Repeated</string>
-    <string name="repeated_description">Allow a third registered call from the same number within five minutes.</string>
+    <string name="repeated_description">Allow N registered call from the same number within T minutes.</string>
     <string name="service_unavailable_toast">Call screening service unavailable</string>
     <string name="sms_switch">SMS</string>
     <string name="sms_description">Allow mobile numbers from incoming text messages temporarily.</string>

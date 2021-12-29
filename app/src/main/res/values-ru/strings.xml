@@ -9,7 +9,7 @@
     <string name="code_switch">Код</string>
     <string name="code_description">Разрешить номера с выбранными телефонными кодами.</string>
     <string name="repeated_switch">Повторный</string>
-    <string name="repeated_description">Разрешить третий зарегистрированный звонок с одного номера в течении пять минут.</string>
+    <string name="repeated_description">Разрешить N зарегистрированный звонок с одного номера в течении T минут.</string>
     <string name="service_unavailable_toast">Сервис скрининга звонков недоступен</string>
     <string name="sms_switch">СМС</string>
     <string name="sms_description">Разрешить временно мобильные номера из входящих текстовых сообщений.</string>
