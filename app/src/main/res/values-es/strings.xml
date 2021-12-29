@@ -17,4 +17,7 @@
     <string name="stir_description">Permitir los números que han aprobado la comprobación STIR.</string>
     <string name="cancel">Cancelar</string>
     <string name="allow">Permitir</string>
+    <string name="panic_app_dialog_title">Confirmar App de Pánico</string>
+    <string name="panic_app_dialog_message">Estás seguro de que quieres permitir a %1$s que active acciones de pánico destructivas\?</string>
+    <string name="panic_app_unknown_app">una aplicación desconocida</string>
 </resources>
