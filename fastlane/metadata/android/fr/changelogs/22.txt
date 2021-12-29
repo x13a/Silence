@@ -1,0 +1,3 @@
+mise à jour des traductions russes de fastlane, grâce à Artem
+ajout des actions de contrôle DELETE_SMS_FILTER_INACTIVE, DELETE_SMS_FILTER_ALL
+mise à jour des dépendances et remaniement du code
