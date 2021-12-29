@@ -1,7 +1,6 @@
 package me.lucky.silence
 
 import android.os.Bundle
-
 import androidx.appcompat.app.AppCompatActivity
 
 import info.guardianproject.panic.Panic

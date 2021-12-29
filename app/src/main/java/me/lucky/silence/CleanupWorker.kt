@@ -1,7 +1,6 @@
 package me.lucky.silence
 
 import android.content.Context
-
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 

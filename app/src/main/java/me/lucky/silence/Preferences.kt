@@ -2,7 +2,6 @@ package me.lucky.silence
 
 import android.content.Context
 import android.content.SharedPreferences
-
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 

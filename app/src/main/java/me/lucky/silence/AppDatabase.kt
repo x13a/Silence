@@ -1,7 +1,6 @@
 package me.lucky.silence
 
 import android.content.Context
-
 import androidx.room.*
 
 @Database(entities = [SmsFilter::class], version = 1)

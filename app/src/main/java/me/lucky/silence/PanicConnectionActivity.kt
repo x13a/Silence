@@ -2,7 +2,6 @@ package me.lucky.silence
 
 import android.content.pm.PackageManager
 import android.os.Bundle
-
 import androidx.appcompat.app.AlertDialog
 
 import info.guardianproject.panic.PanicResponder

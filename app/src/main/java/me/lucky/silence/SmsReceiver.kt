@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteConstraintException
 import android.provider.Telephony
 import android.telephony.SmsMessage
 import android.telephony.TelephonyManager
-
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import java.util.concurrent.TimeUnit
