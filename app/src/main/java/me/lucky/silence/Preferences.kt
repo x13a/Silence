@@ -11,7 +11,7 @@ class Preferences(ctx: Context) {
         const val CALLBACK_CHECKED = "callback_checked"
         const val REPEATED_CHECKED = "repeated_checked"
         const val SMS_CHECKED = "sms_checked"
-        private const val TOLL_FREE_CHECKED = "toll_free_checked"
+        private const val CODE_CHECKED = "code_checked"
         private const val STIR_CHECKED = "stir_checked"
     }
 
@@ -25,9 +25,9 @@ class Preferences(ctx: Context) {
         get() = getBoolean(CALLBACK_CHECKED)
         set(value) = setBoolean(CALLBACK_CHECKED, value)
 
-    var isTollFreeChecked: Boolean
-        get() = getBoolean(TOLL_FREE_CHECKED)
-        set(value) = setBoolean(TOLL_FREE_CHECKED, value)
+    var isCodeChecked: Boolean
+        get() = getBoolean(CODE_CHECKED)
+        set(value) = setBoolean(CODE_CHECKED, value)
 
     var isRepeatedChecked: Boolean
         get() = getBoolean(REPEATED_CHECKED)

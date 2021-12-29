@@ -47,7 +47,7 @@ class CallScreeningService : CallScreeningService() {
         if (
             (hasContactsPermission() && checkContacts(number)) ||
             (prefs.isCallbackChecked && checkCallback(number)) ||
-            (prefs.isTollFreeChecked && checkTollFree(number)) ||
+            (prefs.isCodeChecked && checkCode(number)) ||
             (prefs.isRepeatedChecked && checkRepeated(number)) ||
             (prefs.isSmsChecked && checkSms(number))
         ) {
@@ -90,7 +90,7 @@ class CallScreeningService : CallScreeningService() {
         return result
     }
 
-    private fun checkTollFree(number: Phonenumber.PhoneNumber): Boolean {
+    private fun checkCode(number: Phonenumber.PhoneNumber): Boolean {
         return phoneNumberUtil.getNumberType(number) == PhoneNumberUtil.PhoneNumberType.TOLL_FREE
     }
 

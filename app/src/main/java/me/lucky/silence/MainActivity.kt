@@ -84,8 +84,8 @@ open class MainActivity : AppCompatActivity() {
                     false -> prefs.isCallbackChecked = isChecked
                 }
             }
-            tollFreeSwitch.setOnCheckedChangeListener { _, isChecked ->
-                prefs.isTollFreeChecked = isChecked
+            codeSwitch.setOnCheckedChangeListener { _, isChecked ->
+                prefs.isCodeChecked = isChecked
             }
             repeatedSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasReadCallLogPermission() && isChecked) {
@@ -117,7 +117,7 @@ open class MainActivity : AppCompatActivity() {
     private fun init() {
         binding.apply {
             callbackSwitch.isChecked = prefs.isCallbackChecked
-            tollFreeSwitch.isChecked = prefs.isTollFreeChecked
+            codeSwitch.isChecked = prefs.isCodeChecked
             repeatedSwitch.isChecked = prefs.isRepeatedChecked
             smsSwitch.isChecked = prefs.isSmsChecked
             stirSwitch.isChecked = prefs.isStirChecked
@@ -154,7 +154,7 @@ open class MainActivity : AppCompatActivity() {
             when {
                 !hasReadCallLogPermission() && prefs.isRepeatedChecked ->
                     repeatedSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> repeatedSwitch.setTextColor(tollFreeSwitch.textColors)
+                else -> repeatedSwitch.setTextColor(codeSwitch.textColors)
             }
         }
     }
@@ -164,7 +164,7 @@ open class MainActivity : AppCompatActivity() {
             when {
                 !hasReadCallLogPermission() && prefs.isCallbackChecked ->
                     callbackSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> callbackSwitch.setTextColor(tollFreeSwitch.textColors)
+                else -> callbackSwitch.setTextColor(codeSwitch.textColors)
             }
         }
     }
@@ -174,7 +174,7 @@ open class MainActivity : AppCompatActivity() {
             when {
                 !hasReceiveSmsPermission() && prefs.isSmsChecked ->
                     smsSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> smsSwitch.setTextColor(tollFreeSwitch.textColors)
+                else -> smsSwitch.setTextColor(codeSwitch.textColors)
             }
         }
     }
