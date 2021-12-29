@@ -16,7 +16,7 @@
     <string name="stir_switch">STIR/SHAKEN</string>
     <string name="stir_description">Разрешить номера, которые прошли STIR верификацию.</string>
     <string name="panic_app_dialog_title">Подтвердите приложение тревожной кнопки</string>
-    <string name="panic_app_dialog_message">Вы уверены, что хотите разрешить %1$s запускать действия тревожной кнопки?</string>
+    <string name="panic_app_dialog_message">Вы уверены, что хотите разрешить %1$s запускать действия тревожной кнопки\?</string>
     <string name="panic_app_unknown_app">неизвестное приложение</string>
     <string name="allow">Разрешить</string>
     <string name="cancel">Отменить</string>
