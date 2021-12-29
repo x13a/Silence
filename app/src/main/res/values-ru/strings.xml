@@ -6,8 +6,8 @@
     <string name="description">Активируйте Silence чтобы перестать получать звонки от людей, которых Вы не знаете. Это заблокирует телефонные номера, которые не сохранены в Вашем списке контактов.</string>
     <string name="callback_switch">Обратный</string>
     <string name="callback_description">Разрешить номера на которые Вы звонили.</string>
-    <string name="toll_free_switch">Бесплатный</string>
-    <string name="toll_free_description">Разрешить номера с бесплатными телефонными кодами (к примеру: 800).</string>
+    <string name="code_switch">Код</string>
+    <string name="code_description">Разрешить номера с выбранными телефонными кодами.</string>
     <string name="repeated_switch">Повторный</string>
     <string name="repeated_description">Разрешить третий зарегистрированный звонок с одного номера в течении пять минут.</string>
     <string name="service_unavailable_toast">Сервис скрининга звонков недоступен</string>

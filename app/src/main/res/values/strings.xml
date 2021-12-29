@@ -6,8 +6,8 @@
     <string name="description">Activate Silence to avoid getting calls from people you do not know. This blocks phone numbers that are not saved in your contacts list.</string>
     <string name="callback_switch">Callback</string>
     <string name="callback_description">Allow numbers that you have called.</string>
-    <string name="toll_free_switch">Toll-free</string>
-    <string name="toll_free_description">Allow numbers with toll-free codes (ex: 800).</string>
+    <string name="code_switch">Code</string>
+    <string name="code_description">Allow numbers with selected codes.</string>
     <string name="repeated_switch">Repeated</string>
     <string name="repeated_description">Allow a third registered call from the same number within five minutes.</string>
     <string name="service_unavailable_toast">Call screening service unavailable</string>
