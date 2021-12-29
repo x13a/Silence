@@ -12,8 +12,8 @@ android {
         applicationId "me.lucky.silence"
         minSdkVersion 29
         targetSdkVersion 31
-        versionCode 27
-        versionName "1.8.2"
+        versionCode 28
+        versionName "1.8.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -55,7 +55,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation 'androidx.preference:preference-ktx:1.1.1'
-    implementation 'androidx.work:work-runtime-ktx:2.7.1'
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.12.37'
     implementation 'info.guardianproject.panic:panic:1.0'
 

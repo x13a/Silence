@@ -7,9 +7,6 @@ import android.database.sqlite.SQLiteConstraintException
 import android.provider.Telephony
 import android.telephony.SmsMessage
 import android.telephony.TelephonyManager
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
-import java.util.concurrent.TimeUnit
 
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 
@@ -51,11 +48,6 @@ class SmsReceiver : BroadcastReceiver() {
             }
             hasNumber = true
         }
-        if (hasNumber) {
-            val cleanupRequest = OneTimeWorkRequestBuilder<CleanupWorker>()
-                .setInitialDelay(SmsFilterDao.INACTIVE_DURATION.toLong(), TimeUnit.SECONDS)
-                .build()
-            WorkManager.getInstance(context).enqueue(cleanupRequest)
-        }
+        if (hasNumber) {}
     }
 }
