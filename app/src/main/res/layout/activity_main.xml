@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -118,6 +117,28 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sms_description"
                 android:textSize="12sp" />
+
+            <Space
+                android:id="@+id/stirSpace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/stirSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stir_switch"
+                android:textSize="16sp"
+                tools:targetApi="30" />
+
+            <TextView
+                android:id="@+id/stirDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stir_description"
+                android:textSize="12sp"
+                tools:targetApi="30" />
 
         </LinearLayout>
     </ScrollView>

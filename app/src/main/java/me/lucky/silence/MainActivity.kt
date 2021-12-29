@@ -3,12 +3,12 @@ package me.lucky.silence
 import android.Manifest
 import android.app.role.RoleManager
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
-
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-
 import me.lucky.silence.databinding.ActivityMainBinding
 
 open class MainActivity : AppCompatActivity() {
@@ -65,6 +65,11 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+            binding.stirSpace.visibility = View.GONE
+            binding.stirSwitch.visibility = View.GONE
+            binding.stirDescription.visibility = View.GONE
+        }
         init()
         setup()
     }
@@ -95,7 +100,7 @@ open class MainActivity : AppCompatActivity() {
                     false -> prefs.isSmsChecked = isChecked
                 }
             }
-            stirSwitch?.setOnCheckedChangeListener { _, isChecked ->
+            stirSwitch.setOnCheckedChangeListener { _, isChecked ->
                 prefs.isStirChecked = isChecked
             }
             toggle.setOnClickListener {
@@ -114,7 +119,7 @@ open class MainActivity : AppCompatActivity() {
             tollFreeSwitch.isChecked = prefs.isTollFreeChecked
             repeatedSwitch.isChecked = prefs.isRepeatedChecked
             smsSwitch.isChecked = prefs.isSmsChecked
-            stirSwitch?.isChecked = prefs.isStirChecked
+            stirSwitch.isChecked = prefs.isStirChecked
         }
     }
 
