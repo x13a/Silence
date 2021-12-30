@@ -67,9 +67,11 @@ open class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
-            binding.stirSpace.visibility = View.GONE
-            binding.stirSwitch.visibility = View.GONE
-            binding.stirDescription.visibility = View.GONE
+            binding.apply {
+                stirSpace.visibility = View.GONE
+                stirSwitch.visibility = View.GONE
+                stirDescription.visibility = View.GONE
+            }
         }
         init()
         setup()
