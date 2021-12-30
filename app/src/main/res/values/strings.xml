@@ -7,7 +7,7 @@
     <string name="callback_switch">Callback</string>
     <string name="callback_description">Allow numbers that you have called.</string>
     <string name="code_switch">Code</string>
-    <string name="code_description">Allow numbers with selected codes.</string>
+    <string name="code_description">Allow numbers with selected code groups.</string>
     <string name="repeated_switch">Repeated</string>
     <string name="repeated_description">Allow N registered call from the same number within T minutes.</string>
     <string name="service_unavailable_toast">Call screening service unavailable</string>
