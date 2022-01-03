@@ -1,0 +1,9 @@
+change WorkManager dependency to JobScheduler, now all "new" permissions have to be removed
+update translations, thanks to:
+    @wmdarg ,
+    Maxime Leroy (@Lisapple) ,
+    @badlop ,
+    J. Lavoie (Edanas)
+
+This is not planned release. Subsettings is not implemented.
+Some settings descriptions from future. Some will be changed.
