@@ -7,10 +7,10 @@
     <string name="description">Aktivieren Sie Stille, um Anrufe von Personen zu vermeiden, die Sie nicht kennen. Dies blockiert Telefonnummern, die nicht in Ihrer Kontaktliste gespeichert sind.</string>
     <string name="callback_switch">Rückruf</string>
     <string name="code_switch">Gebührenfrei</string>
-    <string name="code_description">Nummern erlauben, die mit gebührenfreien Vorwahlen sind (z. B. 800).</string>
+    <string name="code_description">Nummern mit ausgewählten Codegruppen zulassen.</string>
     <string name="repeated_switch">Wiederholt</string>
     <string name="service_unavailable_toast">Anrufüberwachungsdienst nicht verfügbar</string>
-    <string name="repeated_description">Einen dritten registrierten Anruf von derselben Nummer innerhalb von fünf Minuten erlauben.</string>
+    <string name="repeated_description">N registrierten Anruf von derselben Nummer innerhalb von Z Minuten erlauben.</string>
     <string name="sms_switch">SMS</string>
     <string name="sms_description">Mobiltelefonnummern in eingehenden Textnachrichten vorübergehend erlauben.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
