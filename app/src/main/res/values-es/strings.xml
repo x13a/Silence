@@ -7,9 +7,9 @@
     <string name="callback_switch">Devolución de llamada</string>
     <string name="callback_description">Permitir los números a los que ha llamado.</string>
     <string name="code_switch">Llamadas gratuitas</string>
-    <string name="code_description">Permitir números con líneas telefónicas gratuitas (por ejemplo: 800 o 0800).</string>
+    <string name="code_description">Permitir los números con grupos de código seleccionados (por ejemplo: 800 o 0800).</string>
     <string name="repeated_switch">Repetidas</string>
-    <string name="repeated_description">Permitir una tercera llamada registrada desde el mismo número en un plazo de cinco minutos.</string>
+    <string name="repeated_description">Permitir N llamadas registradas desde el mismo número en un plazo de T minutos.</string>
     <string name="service_unavailable_toast">El servicio de detección de llamadas no está disponible</string>
     <string name="sms_switch">SMS - Mensajes de Texto</string>
     <string name="sms_description">Permitir temporalmente los números de móvil de los mensajes de texto entrantes.</string>
