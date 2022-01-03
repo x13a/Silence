@@ -11,7 +11,7 @@ class Preferences(ctx: Context) {
         const val CALLBACK_CHECKED = "callback_checked"
         const val REPEATED_CHECKED = "repeated_checked"
         const val SMS_CHECKED = "sms_checked"
-        private const val CODE_CHECKED = "code_checked"
+        private const val CODE_CHECKED = "toll_free_checked"
         private const val STIR_CHECKED = "stir_checked"
     }
 
