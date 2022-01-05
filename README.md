@@ -18,7 +18,7 @@ Optionally allow:
 - Numbers you have called
 - Numbers with selected code groups
 - N registered call from the same number within T minutes
-- Numbers from incoming messages temporarily
+- Numbers from messages
 - Numbers passing STIR verification (Android 11)
 
 If the app rejects calls from contacts on Android 10, allow contacts permission manually in 

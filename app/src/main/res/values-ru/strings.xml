@@ -12,7 +12,7 @@
     <string name="repeated_description">N зарегистрированный звонок с одного номера в течении T минут.</string>
     <string name="service_unavailable_toast">Сервис скрининга звонков недоступен</string>
     <string name="message_switch">Сообщение</string>
-    <string name="message_description">Временно номера из входящих сообщений.</string>
+    <string name="message_description">Номера из сообщений.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
     <string name="stir_description">Номера проходящие STIR верификацию.</string>
     <string name="panic_app_dialog_title">Подтвердите приложение тревожной кнопки</string>
