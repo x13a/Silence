@@ -38,7 +38,7 @@ open class MainActivity : AppCompatActivity() {
             if (result.resultCode == RESULT_OK) prefs.isServiceEnabled = true
         }
 
-    private val requestReadCallLogPermissionForContacted =
+    private val requestPermissionsForContacted =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             when (isGranted) {
                 true -> prefs.isContactedChecked = true
@@ -46,7 +46,7 @@ open class MainActivity : AppCompatActivity() {
             }
         }
 
-    private val requestReadCallLogPermissionForRepeated =
+    private val requestPermissionsForRepeated =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             when (isGranted) {
                 true -> prefs.isRepeatedChecked = true
@@ -54,7 +54,7 @@ open class MainActivity : AppCompatActivity() {
             }
         }
 
-    private val requestReceiveSmsPermission =
+    private val requestPermissionsForMessage =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             when (isGranted) {
                 true -> prefs.isMessageChecked = true
@@ -74,7 +74,7 @@ open class MainActivity : AppCompatActivity() {
         binding.apply {
             contactedSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasReadCallLogPermission() && isChecked) {
-                    true -> requestReadCallLogPermissionForContacted
+                    true -> requestPermissionsForContacted
                         .launch(Manifest.permission.READ_CALL_LOG)
                     false -> prefs.isContactedChecked = isChecked
                 }
@@ -84,14 +84,14 @@ open class MainActivity : AppCompatActivity() {
             }
             repeatedSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasReadCallLogPermission() && isChecked) {
-                    true -> requestReadCallLogPermissionForRepeated
+                    true -> requestPermissionsForRepeated
                         .launch(Manifest.permission.READ_CALL_LOG)
                     false -> prefs.isRepeatedChecked = isChecked
                 }
             }
             messageSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasReceiveSmsPermission() && isChecked) {
-                    true -> requestReceiveSmsPermission
+                    true -> requestPermissionsForMessage
                         .launch(Manifest.permission.RECEIVE_SMS)
                     false -> prefs.isMessageChecked = isChecked
                 }
