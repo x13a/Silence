@@ -5,7 +5,7 @@
     <string name="toggle_on">Deactivate</string>
     <string name="description">Activate Silence to avoid getting calls from people you do not know. This blocks phone numbers that are not saved in your contacts list.</string>
     <string name="callback_switch">Callback</string>
-    <string name="callback_description">Numbers that you have called.</string>
+    <string name="callback_description">Numbers you have called.</string>
     <string name="prefix_switch">Prefix</string>
     <string name="prefix_description">Numbers with selected prefix groups.</string>
     <string name="repeated_switch">Repeated</string>
@@ -14,7 +14,7 @@
     <string name="message_switch">Message</string>
     <string name="message_description">Mobile numbers from incoming text messages temporarily.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
-    <string name="stir_description">Numbers that passed STIR verification.</string>
+    <string name="stir_description">Numbers passing STIR verification.</string>
     <string name="panic_app_dialog_title">Confirm panic app</string>
     <string name="panic_app_dialog_message">Are you sure that you want to allow %1$s to trigger destructive panic actions\?</string>
     <string name="panic_app_unknown_app">an unknown app</string>
