@@ -66,13 +66,6 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
-            binding.apply {
-                stirSpace.visibility = View.GONE
-                stirSwitch.visibility = View.GONE
-                stirDescription.visibility = View.GONE
-            }
-        }
         init()
         setup()
     }
@@ -118,6 +111,11 @@ open class MainActivity : AppCompatActivity() {
 
     private fun init() {
         binding.apply {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+                stirSpace.visibility = View.GONE
+                stirSwitch.visibility = View.GONE
+                stirDescription.visibility = View.GONE
+            }
             callbackSwitch.isChecked = prefs.isCallbackChecked
             prefixSwitch.isChecked = prefs.isPrefixChecked
             repeatedSwitch.isChecked = prefs.isRepeatedChecked
@@ -130,6 +128,7 @@ open class MainActivity : AppCompatActivity() {
         updateCallback()
         updateRepeated()
         updateMessage()
+        updateToggle()
         if (!Utils.hasCallScreeningRole(this) && prefs.isServiceEnabled) {
             Toast.makeText(
                 this,
@@ -141,7 +140,6 @@ open class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        updateToggle()
         prefs.registerListener(prefsListener)
         update()
     }
