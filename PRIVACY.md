@@ -1,4 +1,4 @@
 # Privacy Policy
 
-When `Message` switch is ON, the app will try get phone numbers from incoming messages and store 
-them in internal database to allow calls from them. All the data is stored on your device.
+The app may store some numbers in internal database for faster lookup. All the data is stored on 
+your device.
