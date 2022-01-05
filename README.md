@@ -14,7 +14,7 @@ Block unknown callers.
 </a>
 
 <img 
-    src="https://user-images.githubusercontent.com/53379023/147714498-c462621c-d25b-4c41-a077-faa5decf62de.png" 
+    src="https://user-images.githubusercontent.com/53379023/148146534-6a189b10-6721-48ef-9c73-4f6cd05bacb1.png" 
     width="30%" 
     height="30%">
 
