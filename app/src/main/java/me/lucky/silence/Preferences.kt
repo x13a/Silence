@@ -8,13 +8,14 @@ import androidx.preference.PreferenceManager
 class Preferences(ctx: Context) {
     companion object {
         const val SERVICE_ENABLED = "service_enabled"
-        const val CALLBACK_CHECKED = "callback_checked"
+        const val CONTACTED_CHECKED = "contacted_checked"
         const val REPEATED_CHECKED = "repeated_checked"
         const val MESSAGE_CHECKED = "message_checked"
         private const val CODE_CHECKED = "code_checked"
         private const val STIR_CHECKED = "stir_checked"
 
         // migrate
+        private const val CALLBACK_CHECKED = "callback_checked"
         private const val TOLL_FREE_CHECKED = "toll_free_checked"
         private const val SMS_CHECKED = "sms_checked"
     }
@@ -25,9 +26,9 @@ class Preferences(ctx: Context) {
         get() = prefs.getBoolean(SERVICE_ENABLED, false)
         set(value) = prefs.edit { putBoolean(SERVICE_ENABLED, value) }
 
-    var isCallbackChecked: Boolean
-        get() = prefs.getBoolean(CALLBACK_CHECKED, false)
-        set(value) = prefs.edit { putBoolean(CALLBACK_CHECKED, value) }
+    var isContactedChecked: Boolean
+        get() = prefs.getBoolean(CONTACTED_CHECKED, prefs.getBoolean(CALLBACK_CHECKED, false))
+        set(value) = prefs.edit { putBoolean(CONTACTED_CHECKED, value) }
 
     var isCodeChecked: Boolean
         get() = prefs.getBoolean(CODE_CHECKED, prefs.getBoolean(TOLL_FREE_CHECKED, false))

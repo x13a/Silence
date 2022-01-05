@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="callback_switch">Richiamo</string>
+    <string name="contacted_switch">Richiamo</string>
     <string name="app_name">Silenzio</string>
     <string name="toggle_off">Attiva</string>
     <string name="toggle_on">Disattiva</string>
     <string name="description">Attiva Silenzio per evitare di ricevere chiamate da persone che non conosci. Questo blocca i numeri di telefono che non sono salvati nella tua lista di contatti.</string>
-    <string name="callback_description">Permetti i numeri che hai chiamato.</string>
+    <string name="contacted_description">Permetti i numeri che hai chiamato.</string>
     <string name="code_switch">Numero verde</string>
     <string name="code_description">Permetti i numeri con codici verdi (es: 800).</string>
     <string name="repeated_switch">Ripetuto</string>

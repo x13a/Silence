@@ -15,7 +15,7 @@ Block unknown callers.
 By default numbers not in your contacts list are blocked.
 
 Optionally allow:
-- Numbers you have called
+- Numbers you have contacted
 - Numbers within selected code groups
 - N registered call from the same number within T minutes
 - Numbers from messages

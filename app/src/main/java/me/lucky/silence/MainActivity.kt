@@ -28,7 +28,7 @@ open class MainActivity : AppCompatActivity() {
                 Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isMessageChecked)
                 updateMessage()
             }
-            Preferences.CALLBACK_CHECKED -> updateCallback()
+            Preferences.CONTACTED_CHECKED -> updateContacted()
             Preferences.REPEATED_CHECKED -> updateRepeated()
         }
     }
@@ -38,11 +38,11 @@ open class MainActivity : AppCompatActivity() {
             if (result.resultCode == RESULT_OK) prefs.isServiceEnabled = true
         }
 
-    private val requestReadCallLogPermissionForCallback =
+    private val requestReadCallLogPermissionForContacted =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             when (isGranted) {
-                true -> prefs.isCallbackChecked = true
-                false -> binding.callbackSwitch.isChecked = false
+                true -> prefs.isContactedChecked = true
+                false -> binding.contactedSwitch.isChecked = false
             }
         }
 
@@ -72,11 +72,11 @@ open class MainActivity : AppCompatActivity() {
 
     private fun setup() {
         binding.apply {
-            callbackSwitch.setOnCheckedChangeListener { _, isChecked ->
+            contactedSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasReadCallLogPermission() && isChecked) {
-                    true -> requestReadCallLogPermissionForCallback
+                    true -> requestReadCallLogPermissionForContacted
                         .launch(Manifest.permission.READ_CALL_LOG)
-                    false -> prefs.isCallbackChecked = isChecked
+                    false -> prefs.isContactedChecked = isChecked
                 }
             }
             codeSwitch.setOnCheckedChangeListener { _, isChecked ->
@@ -116,7 +116,7 @@ open class MainActivity : AppCompatActivity() {
                 stirSwitch.visibility = View.GONE
                 stirDescription.visibility = View.GONE
             }
-            callbackSwitch.isChecked = prefs.isCallbackChecked
+            contactedSwitch.isChecked = prefs.isContactedChecked
             codeSwitch.isChecked = prefs.isCodeChecked
             repeatedSwitch.isChecked = prefs.isRepeatedChecked
             messageSwitch.isChecked = prefs.isMessageChecked
@@ -125,7 +125,7 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun update() {
-        updateCallback()
+        updateContacted()
         updateRepeated()
         updateMessage()
         updateToggle()
@@ -159,12 +159,12 @@ open class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateCallback() {
+    private fun updateContacted() {
         binding.apply {
             when {
-                !hasReadCallLogPermission() && prefs.isCallbackChecked ->
-                    callbackSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> callbackSwitch.setTextColor(codeSwitch.textColors)
+                !hasReadCallLogPermission() && prefs.isContactedChecked ->
+                    contactedSwitch.setTextColor(getColor(R.color.icon_color_red))
+                else -> contactedSwitch.setTextColor(codeSwitch.textColors)
             }
         }
     }

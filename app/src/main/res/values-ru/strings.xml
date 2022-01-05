@@ -4,8 +4,8 @@
     <string name="toggle_off">Активировать</string>
     <string name="toggle_on">Деактивировать</string>
     <string name="description">Активируйте Silence чтобы перестать получать звонки от людей, которых Вы не знаете. Это заблокирует телефонные номера, которые не сохранены в Вашем списке контактов.</string>
-    <string name="callback_switch">Обратный</string>
-    <string name="callback_description">Номера на которые Вы звонили.</string>
+    <string name="contacted_switch">Обратный</string>
+    <string name="contacted_description">Номера на которые Вы звонили.</string>
     <string name="code_switch">Код</string>
     <string name="code_description">Номера с выбранными группами телефонных кодов.</string>
     <string name="repeated_switch">Повторный</string>
