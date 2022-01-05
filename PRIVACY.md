@@ -1,6 +1,4 @@
 # Privacy Policy
 
-The app may use mobile phone numbers from incoming SMS (text) messages content to allow 
-incoming calls from them, only when `SMS` toggle is on.
-
-All the data is stored on your device.
+When `Message` switch is ON, the app will try get mobile phone numbers from incoming text messages 
+and store them in internal database to allow calls from them. All the data is stored on your device.
