@@ -13,10 +13,10 @@ class PanicResponderActivity : AppCompatActivity() {
             !Panic.isTriggerIntent(intent) ||
             !PanicResponder.receivedTriggerFromConnectedApp(this)
         ) {
-            finish()
+            finishAndRemoveTask()
             return
         }
-        AppDatabase.getInstance(this).smsFilterDao().deleteAll()
-        finish()
+        AppDatabase.getInstance(this).tmpNumberDao().deleteAll()
+        finishAndRemoveTask()
     }
 }

@@ -12,13 +12,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/description"
-        app:layout_constraintBottom_toTopOf="@+id/scrollLayout"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:id="@+id/scrollLayout"
+        android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginVertical="16dp"
@@ -42,7 +42,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/callbackDescription"
+                android:id="@+id/description2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/callback_description"
@@ -54,17 +54,17 @@
                 android:layout_marginVertical="4dp" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/codeSwitch"
+                android:id="@+id/prefixSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/code_switch"
+                android:text="@string/prefix_switch"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/codeDescription"
+                android:id="@+id/description3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/code_description"
+                android:text="@string/prefix_description"
                 android:textSize="12sp" />
 
             <Space
@@ -80,7 +80,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/repeatedDescription"
+                android:id="@+id/description4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/repeated_description"
@@ -92,17 +92,17 @@
                 android:layout_marginVertical="4dp" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/smsSwitch"
+                android:id="@+id/messageSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/sms_switch"
+                android:text="@string/message_switch"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/smsDescription"
+                android:id="@+id/description5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/sms_description"
+                android:text="@string/message_description"
                 android:textSize="12sp" />
 
             <Space
@@ -141,5 +141,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,13 +6,13 @@
     <string name="description">Ative o App Silêncio para parar de receber as ligações de pessoas que você não conhece. Isto bloqueia números de telefone que não estão salvos em sua lista de contatos.</string>
     <string name="callback_switch">Chamada de retorno</string>
     <string name="callback_description">Permitir os números que você tenha chamado.</string>
-    <string name="code_switch">Ligações gratuitas</string>
-    <string name="code_description">Permitir os números de ligações gratuitas (p.ex.: 800 intl.).</string>
+    <string name="prefix_switch">Ligações gratuitas</string>
+    <string name="prefix_description">Permitir os números de ligações gratuitas (p.ex.: 800 intl.).</string>
     <string name="repeated_switch">Recorrentes</string>
     <string name="repeated_description">Permitir uma terceira chamada do mesmo número dentro de cinco minutos.</string>
     <string name="service_unavailable_toast">Serviço de triagem de chamadas indisponível</string>
-    <string name="sms_switch">SMS</string>
-    <string name="sms_description">Permitir temporariamente os números de celular das mensagens de texto recebidas.</string>
+    <string name="message_switch">SMS</string>
+    <string name="message_description">Permitir temporariamente os números de celular das mensagens de texto recebidas.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
     <string name="stir_description">Permitir os números que passaram a verificação STIR.</string>
 </resources>

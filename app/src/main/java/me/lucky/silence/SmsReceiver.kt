@@ -25,7 +25,7 @@ class SmsReceiver : BroadcastReceiver() {
         val countryCode by lazy {
             context.getSystemService(TelephonyManager::class.java)?.networkCountryIso?.uppercase()
         }
-        val db by lazy { AppDatabase.getInstance(context).smsFilterDao() }
+        val db by lazy { AppDatabase.getInstance(context).tmpNumberDao() }
         var hasNumber = false
         for (msg in Telephony.Sms.Intents.getMessagesFromIntent(intent)) {
             if (
@@ -42,19 +42,21 @@ class SmsReceiver : BroadcastReceiver() {
                     msg.messageClass != SmsMessage.MessageClass.UNKNOWN
                 )
             ) continue
-            val numbers = phoneNumberUtil.findNumbers(msg.messageBody, countryCode)
-            if (numbers.count() != 1) continue
-            val number = numbers.first().number()
-            if (phoneNumberUtil.getNumberType(number) !=
-                PhoneNumberUtil.PhoneNumberType.MOBILE) continue
-            val smsFilter = SmsFilter
-                .new(phoneNumberUtil.format(number, PhoneNumberUtil.PhoneNumberFormat.E164))
-            try {
-                db.insert(smsFilter)
-            } catch (exc: SQLiteConstraintException) {
-                db.update(smsFilter)
+            for (number in phoneNumberUtil
+                .findNumbers(msg.messageBody, countryCode)
+                .asSequence()
+                .map { it.number() }
+            ) {
+                if (phoneNumberUtil.getNumberType(number) !=
+                    PhoneNumberUtil.PhoneNumberType.MOBILE) continue
+                val tmpNumber = TmpNumber(number)
+                try {
+                    db.insert(tmpNumber)
+                } catch (exc: SQLiteConstraintException) {
+                    db.update(tmpNumber)
+                }
+                hasNumber = true
             }
-            hasNumber = true
         }
         if (hasNumber) {
             val jobScheduler = context
@@ -63,7 +65,7 @@ class SmsReceiver : BroadcastReceiver() {
                 JobInfo.Builder(JOB_ID, ComponentName(context, CleanupJobService::class.java))
                     .setMinimumLatency(TimeUnit
                         .SECONDS
-                        .toMillis(SmsFilterDao.INACTIVE_DURATION.toLong() + 1))
+                        .toMillis(TmpNumberDao.INACTIVE_DURATION.toLong() + 1))
                     .build()
             )
         }

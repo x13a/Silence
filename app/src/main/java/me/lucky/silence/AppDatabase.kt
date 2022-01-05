@@ -2,10 +2,18 @@ package me.lucky.silence
 
 import android.content.Context
 import androidx.room.*
+import androidx.room.migration.AutoMigrationSpec
 
-@Database(entities = [SmsFilter::class], version = 1)
+import com.google.i18n.phonenumbers.PhoneNumberUtil
+import com.google.i18n.phonenumbers.Phonenumber
+
+@Database(
+    entities = [TmpNumber::class],
+    version = 2,
+    autoMigrations = [AutoMigration(from = 1, to = 2, spec = AutoMigration1to2::class)],
+)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun smsFilterDao(): SmsFilterDao
+    abstract fun tmpNumberDao(): TmpNumberDao
 
     companion object {
         @Volatile private var instance: AppDatabase? = null
@@ -26,28 +34,31 @@ abstract class AppDatabase : RoomDatabase() {
     }
 }
 
+@RenameTable(fromTableName = "sms_filter", toTableName = "tmp_number")
+private class AutoMigration1to2 : AutoMigrationSpec
+
 @Dao
-interface SmsFilterDao {
+interface TmpNumberDao {
     companion object {
         const val INACTIVE_DURATION = 48 * 60 * 60
     }
 
     @Insert
-    fun insert(obj: SmsFilter)
+    fun insert(obj: TmpNumber)
 
-    @Query("UPDATE sms_filter SET ts_created = :ts WHERE phone_number = :phoneNumber")
+    @Query("UPDATE tmp_number SET ts_created = :ts WHERE phone_number = :phoneNumber")
     fun updateTimestamp(ts: Long, phoneNumber: String)
 
-    @Query("DELETE FROM sms_filter WHERE ts_created < :ts")
+    @Query("DELETE FROM tmp_number WHERE ts_created < :ts")
     fun deleteBefore(ts: Long)
 
-    @Query("DELETE FROM sms_filter")
+    @Query("DELETE FROM tmp_number")
     fun deleteAll()
 
-    @Query("SELECT * FROM sms_filter WHERE ts_created > :ts")
-    fun selectAfter(ts: Long): List<SmsFilter>
+    @Query("SELECT * FROM tmp_number WHERE ts_created > :ts")
+    fun selectAfter(ts: Long): List<TmpNumber>
 
-    fun selectActive(): List<SmsFilter> {
+    fun selectActive(): List<TmpNumber> {
         return selectAfter(getInactiveTimestamp())
     }
 
@@ -59,23 +70,23 @@ interface SmsFilterDao {
         return System.currentTimeMillis() / 1000 - INACTIVE_DURATION
     }
 
-    fun update(obj: SmsFilter) {
+    fun update(obj: TmpNumber) {
         updateTimestamp(obj.tsCreated, obj.phoneNumber)
     }
 }
 
 @Entity(
     indices = [Index(value = ["phone_number"], unique = true), Index(value = ["ts_created"])],
-    tableName = "sms_filter",
+    tableName = "tmp_number",
 )
-data class SmsFilter(
+data class TmpNumber(
     @PrimaryKey(autoGenerate = true) val uid: Int,
     @ColumnInfo(name = "phone_number") val phoneNumber: String,
     @ColumnInfo(name = "ts_created") val tsCreated: Long,
 ) {
-    companion object {
-        fun new(phoneNumber: String): SmsFilter {
-            return SmsFilter(0, phoneNumber, System.currentTimeMillis() / 1000)
-        }
-    }
+    constructor(phoneNumber: Phonenumber.PhoneNumber) : this(
+        0,
+        PhoneNumberUtil.getInstance().format(phoneNumber, PhoneNumberUtil.PhoneNumberFormat.E164),
+        System.currentTimeMillis() / 1000,
+    )
 }

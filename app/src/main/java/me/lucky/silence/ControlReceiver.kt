@@ -18,7 +18,7 @@ class ControlReceiver : BroadcastReceiver() {
         }
         Preferences(context).apply {
             isServiceEnabled = isOn
-            Utils.setSmsReceiverState(context, isServiceEnabled && isSmsChecked)
+            Utils.setSmsReceiverState(context, isServiceEnabled && isMessageChecked)
         }
     }
 }

@@ -23,7 +23,7 @@ class CallScreeningService : CallScreeningService() {
     private val telephonyManager by lazy { getSystemService(TelephonyManager::class.java) }
     private val prefs by lazy { Preferences(this) }
     private val phoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }
-    private val db by lazy { AppDatabase.getInstance(this).smsFilterDao() }
+    private val db by lazy { AppDatabase.getInstance(this).tmpNumberDao() }
 
     override fun onScreenCall(callDetails: Call.Details) {
         if (
@@ -47,9 +47,9 @@ class CallScreeningService : CallScreeningService() {
         if (
             (hasContactsPermission() && checkContacts(number)) ||
             (prefs.isCallbackChecked && checkCallback(number)) ||
-            (prefs.isCodeChecked && checkCode(number)) ||
+            (prefs.isPrefixChecked && checkPrefix(number)) ||
             (prefs.isRepeatedChecked && checkRepeated(number)) ||
-            (prefs.isSmsChecked && checkSms(number))
+            (prefs.isMessageChecked && checkMessage(number))
         ) {
             respondAllow(callDetails)
             return
@@ -90,7 +90,7 @@ class CallScreeningService : CallScreeningService() {
         return result
     }
 
-    private fun checkCode(number: Phonenumber.PhoneNumber): Boolean {
+    private fun checkPrefix(number: Phonenumber.PhoneNumber): Boolean {
         return phoneNumberUtil.getNumberType(number) == PhoneNumberUtil.PhoneNumberType.TOLL_FREE
     }
 
@@ -116,7 +116,7 @@ class CallScreeningService : CallScreeningService() {
         return result
     }
     
-    private fun checkSms(number: Phonenumber.PhoneNumber): Boolean {
+    private fun checkMessage(number: Phonenumber.PhoneNumber): Boolean {
         val logNumber = Phonenumber.PhoneNumber()
         val countryCode = telephonyManager?.networkCountryIso?.uppercase()
         for (row in db.selectActive()) {

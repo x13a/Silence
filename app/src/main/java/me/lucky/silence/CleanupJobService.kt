@@ -5,7 +5,7 @@ import android.app.job.JobService
 
 class CleanupJobService : JobService() {
     override fun onStartJob(params: JobParameters?): Boolean {
-        AppDatabase.getInstance(this).smsFilterDao().deleteInactive()
+        AppDatabase.getInstance(this).tmpNumberDao().deleteInactive()
         return false
     }
 

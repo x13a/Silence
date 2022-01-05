@@ -14,7 +14,7 @@ class QSTileService : TileService() {
     override fun onClick() {
         super.onClick()
         prefs.isServiceEnabled = qsTile.state == Tile.STATE_INACTIVE
-        Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isSmsChecked)
+        Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isMessageChecked)
     }
 
     override fun onStartListening() {
@@ -29,13 +29,11 @@ class QSTileService : TileService() {
     }
 
     private fun update() {
-        qsTile.apply {
-            state = when {
-                !Utils.hasCallScreeningRole(this@QSTileService) -> Tile.STATE_UNAVAILABLE
-                prefs.isServiceEnabled -> Tile.STATE_ACTIVE
-                else -> Tile.STATE_INACTIVE
-            }
-            updateTile()
+        qsTile.state = when {
+            !Utils.hasCallScreeningRole(this) -> Tile.STATE_UNAVAILABLE
+            prefs.isServiceEnabled -> Tile.STATE_ACTIVE
+            else -> Tile.STATE_INACTIVE
         }
+        qsTile.updateTile()
     }
 }

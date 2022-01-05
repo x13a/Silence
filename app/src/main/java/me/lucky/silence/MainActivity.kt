@@ -21,12 +21,12 @@ open class MainActivity : AppCompatActivity() {
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
         when (key) {
             Preferences.SERVICE_ENABLED -> {
-                Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isSmsChecked)
-                initToggle()
+                Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isMessageChecked)
+                updateToggle()
             }
-            Preferences.SMS_CHECKED -> {
-                Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isSmsChecked)
-                updateSms()
+            Preferences.MESSAGE_CHECKED -> {
+                Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isMessageChecked)
+                updateMessage()
             }
             Preferences.CALLBACK_CHECKED -> updateCallback()
             Preferences.REPEATED_CHECKED -> updateRepeated()
@@ -57,8 +57,8 @@ open class MainActivity : AppCompatActivity() {
     private val requestReceiveSmsPermission =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             when (isGranted) {
-                true -> prefs.isSmsChecked = true
-                false -> binding.smsSwitch.isChecked = false
+                true -> prefs.isMessageChecked = true
+                false -> binding.messageSwitch.isChecked = false
             }
         }
 
@@ -86,8 +86,8 @@ open class MainActivity : AppCompatActivity() {
                     false -> prefs.isCallbackChecked = isChecked
                 }
             }
-            codeSwitch.setOnCheckedChangeListener { _, isChecked ->
-                prefs.isCodeChecked = isChecked
+            prefixSwitch.setOnCheckedChangeListener { _, isChecked ->
+                prefs.isPrefixChecked = isChecked
             }
             repeatedSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasReadCallLogPermission() && isChecked) {
@@ -96,11 +96,11 @@ open class MainActivity : AppCompatActivity() {
                     false -> prefs.isRepeatedChecked = isChecked
                 }
             }
-            smsSwitch.setOnCheckedChangeListener { _, isChecked ->
+            messageSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasReceiveSmsPermission() && isChecked) {
                     true -> requestReceiveSmsPermission
                         .launch(Manifest.permission.RECEIVE_SMS)
-                    false -> prefs.isSmsChecked = isChecked
+                    false -> prefs.isMessageChecked = isChecked
                 }
             }
             stirSwitch.setOnCheckedChangeListener { _, isChecked ->
@@ -119,9 +119,9 @@ open class MainActivity : AppCompatActivity() {
     private fun init() {
         binding.apply {
             callbackSwitch.isChecked = prefs.isCallbackChecked
-            codeSwitch.isChecked = prefs.isCodeChecked
+            prefixSwitch.isChecked = prefs.isPrefixChecked
             repeatedSwitch.isChecked = prefs.isRepeatedChecked
-            smsSwitch.isChecked = prefs.isSmsChecked
+            messageSwitch.isChecked = prefs.isMessageChecked
             stirSwitch.isChecked = prefs.isStirChecked
         }
     }
@@ -129,7 +129,7 @@ open class MainActivity : AppCompatActivity() {
     private fun update() {
         updateCallback()
         updateRepeated()
-        updateSms()
+        updateMessage()
         if (!Utils.hasCallScreeningRole(this) && prefs.isServiceEnabled) {
             Toast.makeText(
                 this,
@@ -141,7 +141,7 @@ open class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        initToggle()
+        updateToggle()
         prefs.registerListener(prefsListener)
         update()
     }
@@ -156,7 +156,7 @@ open class MainActivity : AppCompatActivity() {
             when {
                 !hasReadCallLogPermission() && prefs.isRepeatedChecked ->
                     repeatedSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> repeatedSwitch.setTextColor(codeSwitch.textColors)
+                else -> repeatedSwitch.setTextColor(prefixSwitch.textColors)
             }
         }
     }
@@ -166,22 +166,22 @@ open class MainActivity : AppCompatActivity() {
             when {
                 !hasReadCallLogPermission() && prefs.isCallbackChecked ->
                     callbackSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> callbackSwitch.setTextColor(codeSwitch.textColors)
+                else -> callbackSwitch.setTextColor(prefixSwitch.textColors)
             }
         }
     }
 
-    private fun updateSms() {
+    private fun updateMessage() {
         binding.apply {
             when {
-                !hasReceiveSmsPermission() && prefs.isSmsChecked ->
-                    smsSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> smsSwitch.setTextColor(codeSwitch.textColors)
+                !hasReceiveSmsPermission() && prefs.isMessageChecked ->
+                    messageSwitch.setTextColor(getColor(R.color.icon_color_red))
+                else -> messageSwitch.setTextColor(prefixSwitch.textColors)
             }
         }
     }
 
-    private fun initToggle() {
+    private fun updateToggle() {
         val stringId: Int
         val colorId: Int
         if (prefs.isServiceEnabled) {
