@@ -10,7 +10,7 @@ By default numbers not in your contacts list are blocked.
 
 Optionally allow:
 - Numbers you have called
-- Numbers with selected code groups
+- Numbers with selected prefix groups
 - N registered call from the same number within T minutes
 - Mobile numbers from incoming text messages temporarily
 - Numbers passing STIR verification (Android 11)
