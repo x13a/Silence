@@ -54,17 +54,17 @@
                 android:layout_marginVertical="4dp" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/prefixSwitch"
+                android:id="@+id/codeSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/prefix_switch"
+                android:text="@string/code_switch"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/description3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/prefix_description"
+                android:text="@string/code_description"
                 android:textSize="12sp" />
 
             <Space

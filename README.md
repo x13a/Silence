@@ -16,7 +16,7 @@ By default numbers not in your contacts list are blocked.
 
 Optionally allow:
 - Numbers you have called
-- Numbers with selected prefix groups
+- Numbers with selected code groups
 - N registered call from the same number within T minutes
 - Numbers from incoming messages temporarily
 - Numbers passing STIR verification (Android 11)

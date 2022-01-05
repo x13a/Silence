@@ -79,8 +79,8 @@ open class MainActivity : AppCompatActivity() {
                     false -> prefs.isCallbackChecked = isChecked
                 }
             }
-            prefixSwitch.setOnCheckedChangeListener { _, isChecked ->
-                prefs.isPrefixChecked = isChecked
+            codeSwitch.setOnCheckedChangeListener { _, isChecked ->
+                prefs.isCodeChecked = isChecked
             }
             repeatedSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasReadCallLogPermission() && isChecked) {
@@ -117,7 +117,7 @@ open class MainActivity : AppCompatActivity() {
                 stirDescription.visibility = View.GONE
             }
             callbackSwitch.isChecked = prefs.isCallbackChecked
-            prefixSwitch.isChecked = prefs.isPrefixChecked
+            codeSwitch.isChecked = prefs.isCodeChecked
             repeatedSwitch.isChecked = prefs.isRepeatedChecked
             messageSwitch.isChecked = prefs.isMessageChecked
             stirSwitch.isChecked = prefs.isStirChecked
@@ -154,7 +154,7 @@ open class MainActivity : AppCompatActivity() {
             when {
                 !hasReadCallLogPermission() && prefs.isRepeatedChecked ->
                     repeatedSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> repeatedSwitch.setTextColor(prefixSwitch.textColors)
+                else -> repeatedSwitch.setTextColor(codeSwitch.textColors)
             }
         }
     }
@@ -164,7 +164,7 @@ open class MainActivity : AppCompatActivity() {
             when {
                 !hasReadCallLogPermission() && prefs.isCallbackChecked ->
                     callbackSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> callbackSwitch.setTextColor(prefixSwitch.textColors)
+                else -> callbackSwitch.setTextColor(codeSwitch.textColors)
             }
         }
     }
@@ -174,7 +174,7 @@ open class MainActivity : AppCompatActivity() {
             when {
                 !hasReceiveSmsPermission() && prefs.isMessageChecked ->
                     messageSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> messageSwitch.setTextColor(prefixSwitch.textColors)
+                else -> messageSwitch.setTextColor(codeSwitch.textColors)
             }
         }
     }

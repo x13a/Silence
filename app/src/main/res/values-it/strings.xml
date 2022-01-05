@@ -6,8 +6,8 @@
     <string name="toggle_on">Disattiva</string>
     <string name="description">Attiva Silenzio per evitare di ricevere chiamate da persone che non conosci. Questo blocca i numeri di telefono che non sono salvati nella tua lista di contatti.</string>
     <string name="callback_description">Permetti i numeri che hai chiamato.</string>
-    <string name="prefix_switch">Numero verde</string>
-    <string name="prefix_description">Permetti i numeri con codici verdi (es: 800).</string>
+    <string name="code_switch">Numero verde</string>
+    <string name="code_description">Permetti i numeri con codici verdi (es: 800).</string>
     <string name="repeated_switch">Ripetuto</string>
     <string name="service_unavailable_toast">Servizio di controllo delle chiamate non disponibile</string>
     <string name="repeated_description">Permetti una terza chiamata registrata dallo stesso numero entro cinque minuti.</string>

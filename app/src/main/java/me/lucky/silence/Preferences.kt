@@ -11,7 +11,7 @@ class Preferences(ctx: Context) {
         const val CALLBACK_CHECKED = "callback_checked"
         const val REPEATED_CHECKED = "repeated_checked"
         const val MESSAGE_CHECKED = "message_checked"
-        private const val PREFIX_CHECKED = "prefix_checked"
+        private const val CODE_CHECKED = "code_checked"
         private const val STIR_CHECKED = "stir_checked"
 
         // migrate
@@ -29,9 +29,9 @@ class Preferences(ctx: Context) {
         get() = prefs.getBoolean(CALLBACK_CHECKED, false)
         set(value) = prefs.edit { putBoolean(CALLBACK_CHECKED, value) }
 
-    var isPrefixChecked: Boolean
-        get() = prefs.getBoolean(PREFIX_CHECKED, prefs.getBoolean(TOLL_FREE_CHECKED, false))
-        set(value) = prefs.edit { putBoolean(PREFIX_CHECKED, value) }
+    var isCodeChecked: Boolean
+        get() = prefs.getBoolean(CODE_CHECKED, prefs.getBoolean(TOLL_FREE_CHECKED, false))
+        set(value) = prefs.edit { putBoolean(CODE_CHECKED, value) }
 
     var isRepeatedChecked: Boolean
         get() = prefs.getBoolean(REPEATED_CHECKED, false)
