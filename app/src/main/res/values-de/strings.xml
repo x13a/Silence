@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="callback_description">Nummern erlauben, die Sie angerufen haben.</string>
+    <string name="contacted_description">Nummern erlauben, die Sie angerufen haben.</string>
     <string name="app_name">Stille</string>
     <string name="toggle_off">Aktivieren</string>
     <string name="toggle_on">Deaktivieren</string>
     <string name="description">Aktivieren Sie Stille, um Anrufe von Personen zu vermeiden, die Sie nicht kennen. Dies blockiert Telefonnummern, die nicht in Ihrer Kontaktliste gespeichert sind.</string>
-    <string name="callback_switch">Rückruf</string>
+    <string name="contacted_switch">Rückruf</string>
     <string name="code_switch">Gebührenfrei</string>
     <string name="code_description">Nummern mit ausgewählten Codegruppen zulassen.</string>
     <string name="repeated_switch">Wiederholt</string>

@@ -4,8 +4,8 @@
     <string name="toggle_off">Ativar</string>
     <string name="toggle_on">Desativar</string>
     <string name="description">Ative o App Silêncio para parar de receber as ligações de pessoas que você não conhece. Isto bloqueia números de telefone que não estão salvos em sua lista de contatos.</string>
-    <string name="callback_switch">Chamada de retorno</string>
-    <string name="callback_description">Permitir os números que você tenha chamado.</string>
+    <string name="contacted_switch">Chamada de retorno</string>
+    <string name="contacted_description">Permitir os números que você tenha chamado.</string>
     <string name="code_switch">Ligações gratuitas</string>
     <string name="code_description">Permitir os números de ligações gratuitas (p.ex.: 800 intl.).</string>
     <string name="repeated_switch">Recorrentes</string>

@@ -46,7 +46,7 @@ class CallScreeningService : CallScreeningService() {
         }
         if (
             (hasContactsPermission() && checkContacts(number)) ||
-            (prefs.isCallbackChecked && checkCallback(number)) ||
+            (prefs.isContactedChecked && checkContacted(number)) ||
             (prefs.isCodeChecked && checkCode(number)) ||
             (prefs.isRepeatedChecked && checkRepeated(number)) ||
             (prefs.isMessageChecked && checkMessage(number))
@@ -71,7 +71,7 @@ class CallScreeningService : CallScreeningService() {
         )
     }
 
-    private fun checkCallback(number: Phonenumber.PhoneNumber): Boolean {
+    private fun checkContacted(number: Phonenumber.PhoneNumber): Boolean {
         val cursor: Cursor?
         try {
             cursor = contentResolver.query(
