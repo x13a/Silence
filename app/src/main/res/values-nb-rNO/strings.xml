@@ -15,4 +15,9 @@
     <string name="message_description">Tillat midlertidige mobilnumre fra innkommende tekstmeldinger.</string>
     <string name="stir_description">Tillat nummer som har passert STIR-bekreftelse.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
+    <string name="panic_app_unknown_app">et ukjent program</string>
+    <string name="panic_app_dialog_message">Vil du tillate %1$s å utføre destruktive panikkhandlinger\?</string>
+    <string name="allow">Tillat</string>
+    <string name="cancel">Avbryt</string>
+    <string name="panic_app_dialog_title">Bekreft panikk-program</string>
 </resources>
