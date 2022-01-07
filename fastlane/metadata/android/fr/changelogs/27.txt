@@ -1,0 +1,9 @@
+la dépendance « WorkManager » de « JobScheduler » a été changée, maintenant toutes les « nouvelles » permissions doivent être retirées
+mise à jour des traductions, grâce à :
+    @wmdarg ,
+    Maxime Leroy (@Lisapple) ,
+    @badlop ,
+    J. Lavoie (Edanas)
+
+Ceci n'est pas une version qui était prévue. Les sous-réglages n'ont pas été ajoutés.
+Certaines descriptions de préférence seront ajoutées, d'autres changées.
