@@ -6,7 +6,10 @@ import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
@@ -93,6 +96,10 @@ open class MainActivity : AppCompatActivity() {
                         .launch(Manifest.permission.READ_CALL_LOG)
                     false -> prefs.isRepeatedChecked = isChecked
                 }
+            }
+            repeatedSwitch.setOnLongClickListener {
+                showRepeatedSettings()
+                true
             }
             messageSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasReceiveSmsPermission() && isChecked) {
@@ -221,6 +228,47 @@ open class MainActivity : AppCompatActivity() {
                 prefs.codeGroups = codeGroups
             }
             .show()
+    }
+
+    private fun showRepeatedSettings() {
+        val itemsN = listOf("2", "3", "4", "5")
+        val itemsT = listOf("3", "5", "10", "15", "20", "30", "60")
+        val repeatedSettings = prefs.repeatedSettings
+        val view = layoutInflater.inflate(R.layout.repeated_settings, null)
+        val n = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsN)
+        n.setText(repeatedSettings.n.toString())
+        n.setAdapter(ArrayAdapter(
+            view.context,
+            android.R.layout.simple_spinner_dropdown_item,
+            itemsN,
+        ))
+        val t = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsT)
+        t.setText(repeatedSettings.t.toString())
+        t.setAdapter(ArrayAdapter(
+            view.context,
+            android.R.layout.simple_spinner_dropdown_item,
+            itemsT,
+        ))
+        val dialog = MaterialAlertDialogBuilder(this)
+            .setView(view)
+            .setPositiveButton(R.string.ok) { _, _ ->
+                prefs.repeatedSettings = RepeatedSettings(
+                    n.text.toString().toInt(),
+                    t.text.toString().toInt(),
+                )
+            }
+            .create()
+        var currentN = repeatedSettings.n
+        var currentT = repeatedSettings.t
+        n.setOnItemClickListener { _, _, position, _ ->
+            currentN = itemsN[position].toInt()
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = currentN < currentT
+        }
+        t.setOnItemClickListener { _, _, position, _ ->
+            currentT = itemsT[position].toInt()
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = currentN < currentT
+        }
+        dialog.show()
     }
 
     private fun hasReadCallLogPermission(): Boolean {

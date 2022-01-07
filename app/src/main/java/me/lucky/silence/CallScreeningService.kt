@@ -16,10 +16,6 @@ import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
 
 class CallScreeningService : CallScreeningService() {
-    companion object {
-        private const val REPEATED_DURATION = 5 * 60 * 1000
-    }
-
     private val telephonyManager by lazy { getSystemService(TelephonyManager::class.java) }
     private val prefs by lazy { Preferences(this) }
     private val phoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }
@@ -109,6 +105,7 @@ class CallScreeningService : CallScreeningService() {
 
     private fun checkRepeated(number: Phonenumber.PhoneNumber): Boolean {
         val cursor: Cursor?
+        val repeatedSettings = prefs.repeatedSettings
         try {
             cursor = contentResolver.query(
                 makeContentUri(CallLog.Calls.CONTENT_FILTER_URI, number),
@@ -116,14 +113,14 @@ class CallScreeningService : CallScreeningService() {
                 "${CallLog.Calls.TYPE} = ? AND ${CallLog.Calls.DATE} > ?",
                 arrayOf(
                     CallLog.Calls.BLOCKED_TYPE.toString(),
-                    (System.currentTimeMillis() - REPEATED_DURATION).toString(),
+                    (System.currentTimeMillis() - repeatedSettings.t * 60 * 1000).toString(),
                 ),
                 null,
             )
         } catch (exc: SecurityException) { return false }
         var result = false
         cursor?.apply {
-            if (count >= 2) { result = true }
+            if (count >= repeatedSettings.n - 1) { result = true }
             close()
         }
         return result
