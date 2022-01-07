@@ -20,4 +20,5 @@
     <string name="cancel">Annuler</string>
     <string name="panic_app_dialog_message">Êtes-vous sûr·e de vouloir autoriser %1$s à déclencher des actions de panique destructrices \?</string>
     <string name="allow">Autoriser</string>
+    <string name="ok">OK</string>
 </resources>
