@@ -217,8 +217,7 @@ open class MainActivity : AppCompatActivity() {
                     false -> codeGroups.and(value.flag.inv())
                 }
             }
-            .setNegativeButton(R.string.cancel) { _, _ -> }
-            .setPositiveButton(R.string.save) { _, _ ->
+            .setPositiveButton(R.string.ok) { _, _ ->
                 prefs.codeGroups = codeGroups
             }
             .show()

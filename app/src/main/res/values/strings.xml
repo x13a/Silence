@@ -20,7 +20,7 @@
     <string name="panic_app_unknown_app">an unknown app</string>
     <string name="allow">Allow</string>
     <string name="cancel">Cancel</string>
-    <string name="save">Save</string>
+    <string name="ok">OK</string>
     <string-array name="code_groups">
         <item>Toll-Free</item>
         <item>Local</item>
