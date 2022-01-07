@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
@@ -11,14 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:labelFor="@id/repeatedSettingsN"
-        android:hint="@string/repeated_settings_n">
+        android:labelFor="@id/repeatedSettingsCount"
+        android:hint="@string/repeated_settings_count">
 
         <AutoCompleteTextView
-            android:id="@+id/repeatedSettingsN"
+            android:id="@+id/repeatedSettingsCount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none" />
+            android:inputType="none"
+            tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Space
@@ -30,14 +32,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:labelFor="@id/repeatedSettingsT"
-        android:hint="@string/repeated_settings_t">
+        android:labelFor="@id/repeatedSettingsMinutes"
+        android:hint="@string/repeated_settings_minutes">
 
         <AutoCompleteTextView
-            android:id="@+id/repeatedSettingsT"
+            android:id="@+id/repeatedSettingsMinutes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none" />
+            android:inputType="none"
+            tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>

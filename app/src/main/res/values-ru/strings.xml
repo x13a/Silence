@@ -24,4 +24,6 @@
         <item>Бесплатные</item>
         <item>Местные</item>
     </string-array>
+    <string name="repeated_settings_count">Количество</string>
+    <string name="repeated_settings_minutes">Минут</string>
 </resources>

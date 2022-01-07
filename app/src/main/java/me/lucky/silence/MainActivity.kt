@@ -235,15 +235,15 @@ open class MainActivity : AppCompatActivity() {
         val itemsT = listOf("3", "5", "10", "15", "20", "30", "60")
         val repeatedSettings = prefs.repeatedSettings
         val view = layoutInflater.inflate(R.layout.repeated_settings, null)
-        val n = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsN)
-        n.setText(repeatedSettings.n.toString())
+        val n = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsCount)
+        n.setText(repeatedSettings.count.toString())
         n.setAdapter(ArrayAdapter(
             view.context,
             android.R.layout.simple_spinner_dropdown_item,
             itemsN,
         ))
-        val t = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsT)
-        t.setText(repeatedSettings.t.toString())
+        val t = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsMinutes)
+        t.setText(repeatedSettings.minutes.toString())
         t.setAdapter(ArrayAdapter(
             view.context,
             android.R.layout.simple_spinner_dropdown_item,
@@ -258,15 +258,15 @@ open class MainActivity : AppCompatActivity() {
                 )
             }
             .create()
-        var currentN = repeatedSettings.n
-        var currentT = repeatedSettings.t
+        var count = repeatedSettings.count
+        var minutes = repeatedSettings.minutes
         n.setOnItemClickListener { _, _, position, _ ->
-            currentN = itemsN[position].toInt()
-            dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = currentN < currentT
+            count = itemsN[position].toInt()
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = count < minutes
         }
         t.setOnItemClickListener { _, _, position, _ ->
-            currentT = itemsT[position].toInt()
-            dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = currentN < currentT
+            minutes = itemsT[position].toInt()
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = count < minutes
         }
         dialog.show()
     }

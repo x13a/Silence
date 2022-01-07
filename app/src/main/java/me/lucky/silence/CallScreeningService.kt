@@ -113,14 +113,14 @@ class CallScreeningService : CallScreeningService() {
                 "${CallLog.Calls.TYPE} = ? AND ${CallLog.Calls.DATE} > ?",
                 arrayOf(
                     CallLog.Calls.BLOCKED_TYPE.toString(),
-                    (System.currentTimeMillis() - repeatedSettings.t * 60 * 1000).toString(),
+                    (System.currentTimeMillis() - repeatedSettings.minutes * 60 * 1000).toString(),
                 ),
                 null,
             )
         } catch (exc: SecurityException) { return false }
         var result = false
         cursor?.apply {
-            if (count >= repeatedSettings.n - 1) { result = true }
+            if (count >= repeatedSettings.count - 1) { result = true }
             close()
         }
         return result

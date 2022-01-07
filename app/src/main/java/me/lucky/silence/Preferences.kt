@@ -79,11 +79,11 @@ enum class CodeGroup(val flag: Int) {
     LOCAL(1 shl 1),
 }
 
-data class RepeatedSettings(var n: Int, var t: Int) {
+data class RepeatedSettings(var count: Int, var minutes: Int) {
     companion object {
         private const val DELIMITER = ','
-        private const val DEFAULT_N = 3
-        private const val DEFAULT_T = 5
+        private const val DEFAULT_COUNT = 3
+        private const val DEFAULT_MINUTES = 5
 
         fun fromString(str: String): RepeatedSettings {
             val nt = str.split(DELIMITER)
@@ -91,8 +91,8 @@ data class RepeatedSettings(var n: Int, var t: Int) {
             return RepeatedSettings(nt[0].toInt(), nt[1].toInt())
         }
 
-        fun default() = RepeatedSettings(DEFAULT_N, DEFAULT_T)
+        fun default() = RepeatedSettings(DEFAULT_COUNT, DEFAULT_MINUTES)
     }
 
-    override fun toString() = "${n}${DELIMITER}${t}"
+    override fun toString() = "${count}${DELIMITER}${minutes}"
 }

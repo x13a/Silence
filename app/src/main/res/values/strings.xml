@@ -25,6 +25,6 @@
         <item>Toll-Free</item>
         <item>Local</item>
     </string-array>
-    <string name="repeated_settings_n">N</string>
-    <string name="repeated_settings_t">T</string>
+    <string name="repeated_settings_count">Count</string>
+    <string name="repeated_settings_minutes">Minutes</string>
 </resources>
