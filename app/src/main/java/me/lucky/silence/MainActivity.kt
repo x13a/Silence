@@ -6,9 +6,9 @@ import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 
 import me.lucky.silence.databinding.ActivityMainBinding
 
@@ -130,10 +130,10 @@ open class MainActivity : AppCompatActivity() {
         updateMessage()
         updateToggle()
         if (!Utils.hasCallScreeningRole(this) && prefs.isServiceEnabled) {
-            Toast.makeText(
-                this,
+            Snackbar.make(
+                findViewById(R.id.toggle),
                 getString(R.string.service_unavailable_toast),
-                Toast.LENGTH_SHORT,
+                Snackbar.LENGTH_SHORT,
             ).show()
         }
     }
