@@ -38,7 +38,7 @@ class CallScreeningService : CallScreeningService() {
         try {
             number = phoneNumberUtil.parse(
                 callDetails.handle.schemeSpecificPart,
-                telephonyManager?.networkCountryIso?.uppercase(),
+                telephonyManager.networkCountryIso.uppercase(),
             )
         } catch (exc: NumberParseException) {
             respondReject(callDetails)
@@ -91,7 +91,20 @@ class CallScreeningService : CallScreeningService() {
     }
 
     private fun checkCode(number: Phonenumber.PhoneNumber): Boolean {
-        return phoneNumberUtil.getNumberType(number) == PhoneNumberUtil.PhoneNumberType.TOLL_FREE
+        val codeGroups = prefs.codeGroups
+        var result = false
+        for (group in CodeGroup.values().asSequence().filter { codeGroups.and(it.flag) != 0 }) {
+            result = when (group) {
+                CodeGroup.TOLL_FREE -> phoneNumberUtil.getNumberType(number) ==
+                    PhoneNumberUtil.PhoneNumberType.TOLL_FREE
+                CodeGroup.LOCAL -> phoneNumberUtil.isValidNumberForRegion(
+                    number,
+                    telephonyManager.networkCountryIso.uppercase(),
+                )
+            }
+            if (result) break
+        }
+        return result
     }
 
     private fun checkRepeated(number: Phonenumber.PhoneNumber): Boolean {

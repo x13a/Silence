@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
 import me.lucky.silence.databinding.ActivityMainBinding
@@ -81,6 +82,10 @@ open class MainActivity : AppCompatActivity() {
             }
             codeSwitch.setOnCheckedChangeListener { _, isChecked ->
                 prefs.isCodeChecked = isChecked
+            }
+            codeSwitch.setOnLongClickListener {
+                showCodeSettings()
+                true
             }
             repeatedSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasReadCallLogPermission() && isChecked) {
@@ -193,6 +198,30 @@ open class MainActivity : AppCompatActivity() {
             text = getText(stringId)
             setBackgroundColor(getColor(colorId))
         }
+    }
+
+    private fun showCodeSettings() {
+        var codeGroups = prefs.codeGroups
+        val checkedGroups = mutableListOf<Boolean>()
+        for (group in CodeGroup.values()) {
+            checkedGroups.add(codeGroups.and(group.flag) != 0)
+        }
+        MaterialAlertDialogBuilder(this)
+            .setMultiChoiceItems(
+                resources.getStringArray(R.array.code_groups),
+                checkedGroups.toBooleanArray(),
+            ) { _, index, isChecked ->
+                val value = CodeGroup.values()[index]
+                codeGroups = when (isChecked) {
+                    true -> codeGroups.or(value.flag)
+                    false -> codeGroups.and(value.flag.inv())
+                }
+            }
+            .setNegativeButton(R.string.cancel) { _, _ -> }
+            .setPositiveButton(R.string.save) { _, _ ->
+                prefs.codeGroups = codeGroups
+            }
+            .show()
     }
 
     private fun hasReadCallLogPermission(): Boolean {

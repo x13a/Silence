@@ -14,6 +14,8 @@ class Preferences(ctx: Context) {
         private const val CODE_CHECKED = "code_checked"
         private const val STIR_CHECKED = "stir_checked"
 
+        private const val CODE_GROUPS = "code_groups"
+
         // migrate
         private const val CALLBACK_CHECKED = "callback_checked"
         private const val TOLL_FREE_CHECKED = "toll_free_checked"
@@ -34,6 +36,15 @@ class Preferences(ctx: Context) {
         get() = prefs.getBoolean(CODE_CHECKED, prefs.getBoolean(TOLL_FREE_CHECKED, false))
         set(value) = prefs.edit { putBoolean(CODE_CHECKED, value) }
 
+    var codeGroups: Int
+        get() = prefs.getInt(
+            CODE_GROUPS,
+            if (prefs.getBoolean(TOLL_FREE_CHECKED, false))
+                CodeGroup.TOLL_FREE.flag
+            else 0,
+        )
+        set(value) = prefs.edit { putInt(CODE_GROUPS, value) }
+
     var isRepeatedChecked: Boolean
         get() = prefs.getBoolean(REPEATED_CHECKED, false)
         set(value) = prefs.edit { putBoolean(REPEATED_CHECKED, value) }
@@ -53,4 +64,9 @@ class Preferences(ctx: Context) {
     fun unregisterListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
         prefs.unregisterOnSharedPreferenceChangeListener(listener)
     }
+}
+
+enum class CodeGroup(val flag: Int) {
+    TOLL_FREE(1),
+    LOCAL(1 shl 1),
 }

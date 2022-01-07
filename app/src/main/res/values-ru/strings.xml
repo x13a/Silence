@@ -20,4 +20,9 @@
     <string name="panic_app_unknown_app">неизвестное приложение</string>
     <string name="allow">Разрешить</string>
     <string name="cancel">Отменить</string>
+    <string name="save">Сохранить</string>
+    <string-array name="code_groups">
+        <item>Бесплатные</item>
+        <item>Местные</item>
+    </string-array>
 </resources>
