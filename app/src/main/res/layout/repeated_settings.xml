@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:labelFor="@id/repeatedSettingsN"
         android:hint="@string/repeated_settings_n">
 
         <AutoCompleteTextView
             android:id="@+id/repeatedSettingsN"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/repeated_settings_n"
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -30,13 +30,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:labelFor="@id/repeatedSettingsT"
         android:hint="@string/repeated_settings_t">
 
         <AutoCompleteTextView
             android:id="@+id/repeatedSettingsT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/repeated_settings_t"
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
