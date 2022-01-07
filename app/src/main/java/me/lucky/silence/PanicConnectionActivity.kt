@@ -32,19 +32,18 @@ class PanicConnectionActivity : MainActivity() {
             } catch (exc: PackageManager.NameNotFoundException) {}
         }
 
-        MaterialAlertDialogBuilder(this).apply {
-            setTitle(getString(R.string.panic_app_dialog_title))
-            setMessage(String.format(getString(R.string.panic_app_dialog_message), app))
-            setNegativeButton(R.string.allow) { _, _ ->
-                PanicResponder.setTriggerPackageName(this@PanicConnectionActivity)
+        MaterialAlertDialogBuilder(this)
+            .setTitle(getString(R.string.panic_app_dialog_title))
+            .setMessage(String.format(getString(R.string.panic_app_dialog_message), app))
+            .setNegativeButton(R.string.allow) { _, _ ->
+                PanicResponder.setTriggerPackageName(this)
                 setResult(RESULT_OK)
                 finish()
             }
-            setPositiveButton(R.string.cancel) { _, _ ->
+            .setPositiveButton(R.string.cancel) { _, _ ->
                 setResult(RESULT_CANCELED)
                 finish()
             }
-            show()
-        }
+            .show()
     }
 }
