@@ -22,9 +22,20 @@ class CallScreeningService : CallScreeningService() {
     private val db by lazy { AppDatabase.getInstance(this).tmpNumberDao() }
 
     override fun onScreenCall(callDetails: Call.Details) {
-        if (
+        if (!prefs.isServiceEnabled) {
+            respondAllow(callDetails)
+            return
+        } else if (
+            callDetails.hasProperty(Call.Details.PROPERTY_EMERGENCY_CALLBACK_MODE) ||
+            callDetails.hasProperty(Call.Details.PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL) ||
+            telephonyManager.isEmergencyNumber(callDetails.handle.schemeSpecificPart)
+        ) {
+            prefs.isServiceEnabled = false
+            Utils.setSmsReceiverState(this, false)
+            respondAllow(callDetails)
+            return
+        } else if (
             callDetails.callDirection != Call.Details.DIRECTION_INCOMING ||
-            !prefs.isServiceEnabled ||
             (prefs.isStirChecked && checkStir(callDetails))
         ) {
             respondAllow(callDetails)
@@ -37,7 +48,7 @@ class CallScreeningService : CallScreeningService() {
                 telephonyManager.networkCountryIso.uppercase(),
             )
         } catch (exc: NumberParseException) {
-            respondReject(callDetails)
+            respondAllow(callDetails)
             return
         }
         if (
