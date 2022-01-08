@@ -43,8 +43,15 @@ open class MainActivity : AppCompatActivity() {
         }
 
     private val requestPermissionsForContacted =
-        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
-            when (isGranted) {
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { map ->
+            var result = true
+            for (permission in arrayOf(
+                Manifest.permission.READ_CALL_LOG,
+                Manifest.permission.READ_SMS,
+            )) {
+                result = result && map[permission]!!
+            }
+            when (result) {
                 true -> prefs.isContactedChecked = true
                 false -> binding.contactedSwitch.isChecked = false
             }
@@ -77,9 +84,12 @@ open class MainActivity : AppCompatActivity() {
     private fun setup() {
         binding.apply {
             contactedSwitch.setOnCheckedChangeListener { _, isChecked ->
-                when (!hasReadCallLogPermission() && isChecked) {
+                when (!hasContactedPermissions() && isChecked) {
                     true -> requestPermissionsForContacted
-                        .launch(Manifest.permission.READ_CALL_LOG)
+                        .launch(arrayOf(
+                            Manifest.permission.READ_CALL_LOG,
+                            Manifest.permission.READ_SMS,
+                        ))
                     false -> prefs.isContactedChecked = isChecked
                 }
             }
@@ -174,7 +184,7 @@ open class MainActivity : AppCompatActivity() {
     private fun updateContacted() {
         binding.apply {
             when {
-                !hasReadCallLogPermission() && prefs.isContactedChecked ->
+                !hasContactedPermissions() && prefs.isContactedChecked ->
                     contactedSwitch.setTextColor(getColor(R.color.icon_color_red))
                 else -> contactedSwitch.setTextColor(codeSwitch.textColors)
             }
@@ -271,11 +281,19 @@ open class MainActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    private fun hasContactedPermissions(): Boolean {
+        return Utils.hasPermissions(
+            this,
+            Manifest.permission.READ_CALL_LOG,
+            Manifest.permission.READ_SMS,
+        )
+    }
+
     private fun hasReadCallLogPermission(): Boolean {
-        return Utils.hasPermission(this, Manifest.permission.READ_CALL_LOG)
+        return Utils.hasPermissions(this, Manifest.permission.READ_CALL_LOG)
     }
 
     private fun hasReceiveSmsPermission(): Boolean {
-        return Utils.hasPermission(this, Manifest.permission.RECEIVE_SMS)
+        return Utils.hasPermissions(this, Manifest.permission.RECEIVE_SMS)
     }
 }

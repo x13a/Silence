@@ -23,9 +23,12 @@ class Utils {
                 .isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
         }
 
-        fun hasPermission(ctx: Context, permission: String): Boolean {
-            return (ContextCompat.checkSelfPermission(ctx, permission)
-                    == PackageManager.PERMISSION_GRANTED)
+        fun hasPermissions(ctx: Context, vararg permissions: String): Boolean {
+            for (permission in permissions) {
+                if (ContextCompat.checkSelfPermission(ctx, permission)
+                    != PackageManager.PERMISSION_GRANTED) { return false }
+            }
+            return true
         }
     }
 }

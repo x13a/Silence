@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Build
 import android.provider.CallLog
 import android.provider.ContactsContract
+import android.provider.Telephony
 import android.telecom.Call
 import android.telecom.CallScreeningService
 import android.telecom.Connection
@@ -79,7 +80,7 @@ class CallScreeningService : CallScreeningService() {
     }
 
     private fun checkContacted(number: Phonenumber.PhoneNumber): Boolean {
-        val cursor: Cursor?
+        var cursor: Cursor?
         try {
             cursor = contentResolver.query(
                 makeContentUri(CallLog.Calls.CONTENT_FILTER_URI, number),
@@ -90,6 +91,23 @@ class CallScreeningService : CallScreeningService() {
             )
         } catch (exc: SecurityException) { return false }
         var result = false
+        cursor?.apply {
+            if (moveToFirst()) { result = true }
+            close()
+        }
+        if (result) return result
+        try {
+            cursor = contentResolver.query(
+                Telephony.Sms.Sent.CONTENT_URI,
+                arrayOf(Telephony.Sms._ID),
+                "${Telephony.Sms.ADDRESS} = ?",
+                arrayOf(phoneNumberUtil.format(
+                    number,
+                    PhoneNumberUtil.PhoneNumberFormat.E164,
+                )),
+                null,
+            )
+        } catch (exc: SecurityException) { return false }
         cursor?.apply {
             if (moveToFirst()) { result = true }
             close()
@@ -176,7 +194,7 @@ class CallScreeningService : CallScreeningService() {
     }
 
     private fun hasContactsPermission(): Boolean {
-        return Utils.hasPermission(this, Manifest.permission.READ_CONTACTS)
+        return Utils.hasPermissions(this, Manifest.permission.READ_CONTACTS)
     }
 
     private fun makeContentUri(base: Uri, number: Phonenumber.PhoneNumber): Uri {
