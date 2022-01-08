@@ -14,7 +14,7 @@ class QSTileService : TileService() {
     override fun onClick() {
         super.onClick()
         prefs.isServiceEnabled = qsTile.state == Tile.STATE_INACTIVE
-        Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isMessageChecked)
+        Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isMessagesChecked)
     }
 
     override fun onStartListening() {

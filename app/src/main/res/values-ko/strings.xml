@@ -10,9 +10,9 @@
     <string name="groups_switch">수신자 부담 전화</string>
     <string name="repeated_description">5분 이내에 같은 번호로 세 번째 걸려온 전화를 허용합니다.</string>
     <string name="repeated_switch">지속되는 전화</string>
-    <string name="message_switch">문자</string>
+    <string name="messages_switch">문자</string>
     <string name="stir_switch">발신자 조회 서비스</string>
-    <string name="message_description">방금 도착한 문자의 번호로부터 걸려오는 전화를 일시적으로 허용합니다.</string>
+    <string name="messages_description">방금 도착한 문자의 번호로부터 걸려오는 전화를 일시적으로 허용합니다.</string>
     <string name="stir_description">STIR 인증을 통과한 번호를 허용합니다.</string>
     <string name="description">모르는 사람으로부터 걸려오는 전화를 차단하기 위해 Silence를 활성화 시키세요. 연락처 목록에 없는 번호들은 차단됩니다.</string>
 </resources>

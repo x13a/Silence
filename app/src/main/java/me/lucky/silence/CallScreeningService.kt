@@ -57,7 +57,7 @@ class CallScreeningService : CallScreeningService() {
             (prefs.isContactedChecked && checkContacted(number)) ||
             (prefs.isGroupsChecked && checkGroups(number)) ||
             (prefs.isRepeatedChecked && checkRepeated(number)) ||
-            (prefs.isMessageChecked && checkMessage(number))
+            (prefs.isMessagesChecked && checkMessages(number))
         ) {
             respondAllow(callDetails)
             return
@@ -155,9 +155,9 @@ class CallScreeningService : CallScreeningService() {
         return result
     }
     
-    private fun checkMessage(number: Phonenumber.PhoneNumber): Boolean {
+    private fun checkMessages(number: Phonenumber.PhoneNumber): Boolean {
         val logNumber = Phonenumber.PhoneNumber()
-        val countryCode = telephonyManager?.networkCountryIso?.uppercase()
+        val countryCode = telephonyManager.networkCountryIso.uppercase()
         for (row in db.selectActive()) {
             phoneNumberUtil.parseAndKeepRawInput(row.phoneNumber, countryCode, logNumber)
             if (phoneNumberUtil.isNumberMatch(number, logNumber) ==

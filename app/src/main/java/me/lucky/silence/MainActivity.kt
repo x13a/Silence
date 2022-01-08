@@ -25,12 +25,12 @@ open class MainActivity : AppCompatActivity() {
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
         when (key) {
             Preferences.SERVICE_ENABLED -> {
-                Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isMessageChecked)
+                Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isMessagesChecked)
                 updateToggle()
             }
-            Preferences.MESSAGE_CHECKED -> {
-                Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isMessageChecked)
-                updateMessage()
+            Preferences.MESSAGES_CHECKED -> {
+                Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isMessagesChecked)
+                updateMessages()
             }
             Preferences.CONTACTED_CHECKED -> updateContacted()
             Preferences.REPEATED_CHECKED -> updateRepeated()
@@ -65,11 +65,11 @@ open class MainActivity : AppCompatActivity() {
             }
         }
 
-    private val requestPermissionsForMessage =
+    private val requestPermissionsForMessages =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             when (isGranted) {
-                true -> prefs.isMessageChecked = true
-                false -> binding.messageSwitch.isChecked = false
+                true -> prefs.isMessagesChecked = true
+                false -> binding.messagesSwitch.isChecked = false
             }
         }
 
@@ -111,11 +111,11 @@ open class MainActivity : AppCompatActivity() {
                 showRepeatedSettings()
                 true
             }
-            messageSwitch.setOnCheckedChangeListener { _, isChecked ->
+            messagesSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasReceiveSmsPermission() && isChecked) {
-                    true -> requestPermissionsForMessage
+                    true -> requestPermissionsForMessages
                         .launch(Manifest.permission.RECEIVE_SMS)
-                    false -> prefs.isMessageChecked = isChecked
+                    false -> prefs.isMessagesChecked = isChecked
                 }
             }
             stirSwitch.setOnCheckedChangeListener { _, isChecked ->
@@ -141,7 +141,7 @@ open class MainActivity : AppCompatActivity() {
             contactedSwitch.isChecked = prefs.isContactedChecked
             groupsSwitch.isChecked = prefs.isGroupsChecked
             repeatedSwitch.isChecked = prefs.isRepeatedChecked
-            messageSwitch.isChecked = prefs.isMessageChecked
+            messagesSwitch.isChecked = prefs.isMessagesChecked
             stirSwitch.isChecked = prefs.isStirChecked
         }
     }
@@ -149,7 +149,7 @@ open class MainActivity : AppCompatActivity() {
     private fun update() {
         updateContacted()
         updateRepeated()
-        updateMessage()
+        updateMessages()
         updateToggle()
         if (!Utils.hasCallScreeningRole(this) && prefs.isServiceEnabled) {
             Snackbar.make(
@@ -191,12 +191,12 @@ open class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateMessage() {
+    private fun updateMessages() {
         binding.apply {
             when {
-                !hasReceiveSmsPermission() && prefs.isMessageChecked ->
-                    messageSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> messageSwitch.setTextColor(groupsSwitch.textColors)
+                !hasReceiveSmsPermission() && prefs.isMessagesChecked ->
+                    messagesSwitch.setTextColor(getColor(R.color.icon_color_red))
+                else -> messagesSwitch.setTextColor(groupsSwitch.textColors)
             }
         }
     }

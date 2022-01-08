@@ -10,7 +10,7 @@ class Preferences(ctx: Context) {
         const val SERVICE_ENABLED = "service_enabled"
         const val CONTACTED_CHECKED = "contacted_checked"
         const val REPEATED_CHECKED = "repeated_checked"
-        const val MESSAGE_CHECKED = "message_checked"
+        const val MESSAGES_CHECKED = "messages_checked"
         private const val CODE_CHECKED = "code_checked"
         private const val STIR_CHECKED = "stir_checked"
 
@@ -21,6 +21,7 @@ class Preferences(ctx: Context) {
         private const val CALLBACK_CHECKED = "callback_checked"
         private const val CODE_GROUPS = "code_groups"
         private const val TOLL_FREE_CHECKED = "toll_free_checked"
+        private const val MESSAGE_CHECKED = "message_checked"
         private const val SMS_CHECKED = "sms_checked"
     }
 
@@ -61,9 +62,12 @@ class Preferences(ctx: Context) {
         )!!)
         set(value) = prefs.edit { putString(REPEATED_SETTINGS, value.toString()) }
 
-    var isMessageChecked: Boolean
-        get() = prefs.getBoolean(MESSAGE_CHECKED, prefs.getBoolean(SMS_CHECKED, false))
-        set(value) = prefs.edit { putBoolean(MESSAGE_CHECKED, value) }
+    var isMessagesChecked: Boolean
+        get() = prefs.getBoolean(
+            MESSAGES_CHECKED,
+            prefs.getBoolean(MESSAGE_CHECKED, prefs.getBoolean(SMS_CHECKED, false)),
+        )
+        set(value) = prefs.edit { putBoolean(MESSAGES_CHECKED, value) }
 
     var isStirChecked: Boolean
         get() = prefs.getBoolean(STIR_CHECKED, false)

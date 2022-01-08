@@ -4,8 +4,8 @@
     <string name="toggle_off">Activer</string>
     <string name="repeated_description">N appel enregistré du même numéro dans les T minutes.</string>
     <string name="service_unavailable_toast">Service de filtrage des appels indisponible</string>
-    <string name="message_switch">SMS</string>
-    <string name="message_description">Numéros des messages.</string>
+    <string name="messages_switch">SMS</string>
+    <string name="messages_description">Numéros des messages.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
     <string name="contacted_switch">Rappel</string>
     <string name="groups_description">Numéros dans les groupes de codes sélectionnés.</string>

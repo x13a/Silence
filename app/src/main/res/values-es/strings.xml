@@ -11,8 +11,8 @@
     <string name="repeated_switch">Repetidas</string>
     <string name="repeated_description">N llamadas registradas desde el mismo número en un plazo de T minutos.</string>
     <string name="service_unavailable_toast">El servicio de detección de llamadas no está disponible</string>
-    <string name="message_switch">SMS - Mensajes de Texto</string>
-    <string name="message_description">Temporalmente los números de los mensajes entrantes.</string>
+    <string name="messages_switch">SMS - Mensajes de Texto</string>
+    <string name="messages_description">Temporalmente los números de los mensajes entrantes.</string>
     <string name="stir_switch">Protocolos STIR/SHAKEN</string>
     <string name="stir_description">Números que han aprobado la comprobación STIR.</string>
     <string name="cancel">Cancelar</string>

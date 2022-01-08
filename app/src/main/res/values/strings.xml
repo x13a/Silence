@@ -11,8 +11,8 @@
     <string name="repeated_switch">Repeated</string>
     <string name="repeated_description">N registered call from the same number within T minutes.</string>
     <string name="service_unavailable_toast">Call screening service unavailable</string>
-    <string name="message_switch">Message</string>
-    <string name="message_description">Numbers from messages.</string>
+    <string name="messages_switch">Messages</string>
+    <string name="messages_description">Numbers from messages.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
     <string name="stir_description">Numbers passing STIR verification.</string>
     <string name="panic_app_dialog_title">Confirm panic app</string>
