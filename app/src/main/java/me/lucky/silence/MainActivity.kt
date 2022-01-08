@@ -93,11 +93,11 @@ open class MainActivity : AppCompatActivity() {
                     false -> prefs.isContactedChecked = isChecked
                 }
             }
-            codeSwitch.setOnCheckedChangeListener { _, isChecked ->
-                prefs.isCodeChecked = isChecked
+            groupsSwitch.setOnCheckedChangeListener { _, isChecked ->
+                prefs.isGroupsChecked = isChecked
             }
-            codeSwitch.setOnLongClickListener {
-                showCodeSettings()
+            groupsSwitch.setOnLongClickListener {
+                showGroupsSettings()
                 true
             }
             repeatedSwitch.setOnCheckedChangeListener { _, isChecked ->
@@ -139,7 +139,7 @@ open class MainActivity : AppCompatActivity() {
                 stirDescription.visibility = View.GONE
             }
             contactedSwitch.isChecked = prefs.isContactedChecked
-            codeSwitch.isChecked = prefs.isCodeChecked
+            groupsSwitch.isChecked = prefs.isGroupsChecked
             repeatedSwitch.isChecked = prefs.isRepeatedChecked
             messageSwitch.isChecked = prefs.isMessageChecked
             stirSwitch.isChecked = prefs.isStirChecked
@@ -176,7 +176,7 @@ open class MainActivity : AppCompatActivity() {
             when {
                 !hasReadCallLogPermission() && prefs.isRepeatedChecked ->
                     repeatedSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> repeatedSwitch.setTextColor(codeSwitch.textColors)
+                else -> repeatedSwitch.setTextColor(groupsSwitch.textColors)
             }
         }
     }
@@ -186,7 +186,7 @@ open class MainActivity : AppCompatActivity() {
             when {
                 !hasContactedPermissions() && prefs.isContactedChecked ->
                     contactedSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> contactedSwitch.setTextColor(codeSwitch.textColors)
+                else -> contactedSwitch.setTextColor(groupsSwitch.textColors)
             }
         }
     }
@@ -196,7 +196,7 @@ open class MainActivity : AppCompatActivity() {
             when {
                 !hasReceiveSmsPermission() && prefs.isMessageChecked ->
                     messageSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> messageSwitch.setTextColor(codeSwitch.textColors)
+                else -> messageSwitch.setTextColor(groupsSwitch.textColors)
             }
         }
     }
@@ -217,25 +217,25 @@ open class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showCodeSettings() {
-        var codeGroups = prefs.codeGroups
+    private fun showGroupsSettings() {
+        var groupsFlag = prefs.groupsFlag
         val checkedGroups = mutableListOf<Boolean>()
-        for (group in CodeGroup.values()) {
-            checkedGroups.add(codeGroups.and(group.flag) != 0)
+        for (group in Group.values()) {
+            checkedGroups.add(groupsFlag.and(group.flag) != 0)
         }
         MaterialAlertDialogBuilder(this)
             .setMultiChoiceItems(
-                resources.getStringArray(R.array.code_groups),
+                resources.getStringArray(R.array.groups),
                 checkedGroups.toBooleanArray(),
             ) { _, index, isChecked ->
-                val value = CodeGroup.values()[index]
-                codeGroups = when (isChecked) {
-                    true -> codeGroups.or(value.flag)
-                    false -> codeGroups.and(value.flag.inv())
+                val value = Group.values()[index]
+                groupsFlag = when (isChecked) {
+                    true -> groupsFlag.or(value.flag)
+                    false -> groupsFlag.and(value.flag.inv())
                 }
             }
             .setPositiveButton(R.string.ok) { _, _ ->
-                prefs.codeGroups = codeGroups
+                prefs.groupsFlag = groupsFlag
             }
             .show()
     }

@@ -6,8 +6,8 @@
     <string name="description">Activa la App Silence para evitar recibir llamadas de personas que no conoces. Esto bloquea los números de teléfono que no están guardados en tu lista de contactos.</string>
     <string name="contacted_switch">Devolución de llamada</string>
     <string name="contacted_description">Permitir los números a los que ha llamado.</string>
-    <string name="code_switch">Llamadas gratuitas</string>
-    <string name="code_description">Permitir los números con grupos de código seleccionados (por ejemplo: 800 o 0800).</string>
+    <string name="groups_switch">Llamadas gratuitas</string>
+    <string name="groups_description">Permitir los números con grupos de código seleccionados (por ejemplo: 800 o 0800).</string>
     <string name="repeated_switch">Repetidas</string>
     <string name="repeated_description">N llamadas registradas desde el mismo número en un plazo de T minutos.</string>
     <string name="service_unavailable_toast">El servicio de detección de llamadas no está disponible</string>

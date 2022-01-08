@@ -6,8 +6,8 @@
     <string name="service_unavailable_toast">전화번호의 선택적인 허용은 불가능합니다</string>
     <string name="contacted_switch">콜백</string>
     <string name="app_name">Silence</string>
-    <string name="code_description">수신자 부담 코드가 있는 번호를 허용합니다. (예: 800).</string>
-    <string name="code_switch">수신자 부담 전화</string>
+    <string name="groups_description">수신자 부담 코드가 있는 번호를 허용합니다. (예: 800).</string>
+    <string name="groups_switch">수신자 부담 전화</string>
     <string name="repeated_description">5분 이내에 같은 번호로 세 번째 걸려온 전화를 허용합니다.</string>
     <string name="repeated_switch">지속되는 전화</string>
     <string name="message_switch">문자</string>

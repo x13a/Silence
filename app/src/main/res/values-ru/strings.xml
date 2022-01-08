@@ -6,8 +6,8 @@
     <string name="description">Активируйте Silence чтобы перестать получать звонки от людей, которых Вы не знаете. Это заблокирует телефонные номера, которые не сохранены в Вашем списке контактов.</string>
     <string name="contacted_switch">Контактный</string>
     <string name="contacted_description">Номера с которыми Вы контактировали.</string>
-    <string name="code_switch">Код</string>
-    <string name="code_description">Номера входящие в выбранные группы телефонных кодов.</string>
+    <string name="groups_switch">Группы</string>
+    <string name="groups_description">Номера входящие в выбранные группы.</string>
     <string name="repeated_switch">Повторный</string>
     <string name="repeated_description">N зарегистрированный звонок с одного номера в течении T минут.</string>
     <string name="service_unavailable_toast">Сервис скрининга звонков недоступен</string>
@@ -20,7 +20,7 @@
     <string name="panic_app_unknown_app">неизвестное приложение</string>
     <string name="allow">Разрешить</string>
     <string name="cancel">Отменить</string>
-    <string-array name="code_groups">
+    <string-array name="groups">
         <item>Бесплатные</item>
         <item>Местные</item>
     </string-array>

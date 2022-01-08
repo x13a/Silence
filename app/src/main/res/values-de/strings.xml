@@ -6,8 +6,8 @@
     <string name="toggle_on">Deaktivieren</string>
     <string name="description">Aktivieren Sie Stille, um Anrufe von Personen zu vermeiden, die Sie nicht kennen. Dies blockiert Telefonnummern, die nicht in Ihrer Kontaktliste gespeichert sind.</string>
     <string name="contacted_switch">Rückruf</string>
-    <string name="code_switch">Gebührenfrei</string>
-    <string name="code_description">Nummern innerhalb ausgewählter Codegruppen.</string>
+    <string name="groups_switch">Gebührenfrei</string>
+    <string name="groups_description">Nummern innerhalb ausgewählter Codegruppen.</string>
     <string name="repeated_switch">Wiederholt</string>
     <string name="service_unavailable_toast">Anrufüberwachungsdienst nicht verfügbar</string>
     <string name="repeated_description">N registrierte Anrufe von derselben Nummer innerhalb von T Minuten.</string>

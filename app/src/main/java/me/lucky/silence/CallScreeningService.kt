@@ -55,7 +55,7 @@ class CallScreeningService : CallScreeningService() {
         if (
             (hasContactsPermission() && checkContacts(number)) ||
             (prefs.isContactedChecked && checkContacted(number)) ||
-            (prefs.isCodeChecked && checkCode(number)) ||
+            (prefs.isGroupsChecked && checkGroups(number)) ||
             (prefs.isRepeatedChecked && checkRepeated(number)) ||
             (prefs.isMessageChecked && checkMessage(number))
         ) {
@@ -115,14 +115,14 @@ class CallScreeningService : CallScreeningService() {
         return result
     }
 
-    private fun checkCode(number: Phonenumber.PhoneNumber): Boolean {
-        val codeGroups = prefs.codeGroups
+    private fun checkGroups(number: Phonenumber.PhoneNumber): Boolean {
+        val groupsFlag = prefs.groupsFlag
         var result = false
-        for (group in CodeGroup.values().asSequence().filter { codeGroups.and(it.flag) != 0 }) {
+        for (group in Group.values().asSequence().filter { groupsFlag.and(it.flag) != 0 }) {
             result = when (group) {
-                CodeGroup.TOLL_FREE -> phoneNumberUtil.getNumberType(number) ==
+                Group.TOLL_FREE -> phoneNumberUtil.getNumberType(number) ==
                     PhoneNumberUtil.PhoneNumberType.TOLL_FREE
-                CodeGroup.LOCAL -> phoneNumberUtil.isValidNumberForRegion(
+                Group.LOCAL -> phoneNumberUtil.isValidNumberForRegion(
                     number,
                     telephonyManager.networkCountryIso.uppercase(),
                 )

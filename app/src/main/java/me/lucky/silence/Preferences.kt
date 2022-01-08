@@ -14,11 +14,12 @@ class Preferences(ctx: Context) {
         private const val CODE_CHECKED = "code_checked"
         private const val STIR_CHECKED = "stir_checked"
 
-        private const val CODE_GROUPS = "code_groups"
+        private const val GROUPS = "groups"
         private const val REPEATED_SETTINGS = "repeated_settings"
 
         // migrate
         private const val CALLBACK_CHECKED = "callback_checked"
+        private const val CODE_GROUPS = "code_groups"
         private const val TOLL_FREE_CHECKED = "toll_free_checked"
         private const val SMS_CHECKED = "sms_checked"
     }
@@ -33,18 +34,21 @@ class Preferences(ctx: Context) {
         get() = prefs.getBoolean(CONTACTED_CHECKED, prefs.getBoolean(CALLBACK_CHECKED, false))
         set(value) = prefs.edit { putBoolean(CONTACTED_CHECKED, value) }
 
-    var isCodeChecked: Boolean
-        get() = prefs.getBoolean(CODE_CHECKED, prefs.getBoolean(TOLL_FREE_CHECKED, false))
-        set(value) = prefs.edit { putBoolean(CODE_CHECKED, value) }
+    var isGroupsChecked: Boolean
+        get() = prefs.getBoolean(
+            GROUPS,
+            prefs.getBoolean(CODE_CHECKED, prefs.getBoolean(TOLL_FREE_CHECKED, false)),
+        )
+        set(value) = prefs.edit { putBoolean(GROUPS, value) }
 
-    var codeGroups: Int
-        get() = prefs.getInt(
+    var groupsFlag: Int
+        get() = prefs.getInt(GROUPS, prefs.getInt(
             CODE_GROUPS,
             if (prefs.getBoolean(TOLL_FREE_CHECKED, false))
-                CodeGroup.TOLL_FREE.flag
+                Group.TOLL_FREE.flag
             else 0,
-        )
-        set(value) = prefs.edit { putInt(CODE_GROUPS, value) }
+        ))
+        set(value) = prefs.edit { putInt(GROUPS, value) }
 
     var isRepeatedChecked: Boolean
         get() = prefs.getBoolean(REPEATED_CHECKED, false)
@@ -74,7 +78,7 @@ class Preferences(ctx: Context) {
     }
 }
 
-enum class CodeGroup(val flag: Int) {
+enum class Group(val flag: Int) {
     TOLL_FREE(1),
     LOCAL(1 shl 1),
 }

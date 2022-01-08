@@ -6,8 +6,8 @@
     <string name="description">Aktivér Silence for at undgå opkald fra folk du ikke kender. Dette blokérer telefonnumre der ikke er gemt i din kontaktliste.</string>
     <string name="contacted_switch">Ring tilbage</string>-------------
     <string name="contacted_description">Tillad numre du har ringet til.</string>
-    <string name="code_switch">Told-fri</string>
-    <string name="code_description">Tillad numre med told-frie koder (ex: 800).</string>
+    <string name="groups_switch">Told-fri</string>
+    <string name="groups_description">Tillad numre med told-frie koder (ex: 800).</string>
     <string name="repeated_switch">Gentaget</string>
     <string name="repeated_description">Tillad et tredje opkald fra det samme nummer inde for fem minutter.</string>
     <string name="service_unavailable_toast">Opkalds-screeningstjeneste utilgængelig</string>
