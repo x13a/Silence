@@ -26,4 +26,5 @@
     </string-array>
     <string name="repeated_settings_count">Количество</string>
     <string name="repeated_settings_minutes">Минут</string>
+    <string name="ok">OK</string>
 </resources>
