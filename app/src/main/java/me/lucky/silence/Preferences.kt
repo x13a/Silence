@@ -11,7 +11,7 @@ class Preferences(ctx: Context) {
         const val CONTACTED_CHECKED = "contacted_checked"
         const val REPEATED_CHECKED = "repeated_checked"
         const val MESSAGES_CHECKED = "messages_checked"
-        private const val CODE_CHECKED = "code_checked"
+        private const val GROUPS_CHECKED = "groups_checked"
         private const val STIR_CHECKED = "stir_checked"
 
         private const val GROUPS = "groups"
@@ -19,6 +19,7 @@ class Preferences(ctx: Context) {
 
         // migrate
         private const val CALLBACK_CHECKED = "callback_checked"
+        private const val CODE_CHECKED = "code_checked"
         private const val CODE_GROUPS = "code_groups"
         private const val TOLL_FREE_CHECKED = "toll_free_checked"
         private const val MESSAGE_CHECKED = "message_checked"
@@ -37,12 +38,12 @@ class Preferences(ctx: Context) {
 
     var isGroupsChecked: Boolean
         get() = prefs.getBoolean(
-            GROUPS,
+            GROUPS_CHECKED,
             prefs.getBoolean(CODE_CHECKED, prefs.getBoolean(TOLL_FREE_CHECKED, false)),
         )
-        set(value) = prefs.edit { putBoolean(GROUPS, value) }
+        set(value) = prefs.edit { putBoolean(GROUPS_CHECKED, value) }
 
-    var groupsFlag: Int
+    var groups: Int
         get() = prefs.getInt(GROUPS, prefs.getInt(
             CODE_GROUPS,
             if (prefs.getBoolean(TOLL_FREE_CHECKED, false))

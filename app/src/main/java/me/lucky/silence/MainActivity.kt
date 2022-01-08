@@ -218,10 +218,10 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun showGroupsSettings() {
-        var groupsFlag = prefs.groupsFlag
+        var groups = prefs.groups
         val checkedGroups = mutableListOf<Boolean>()
         for (group in Group.values()) {
-            checkedGroups.add(groupsFlag.and(group.flag) != 0)
+            checkedGroups.add(groups.and(group.flag) != 0)
         }
         MaterialAlertDialogBuilder(this)
             .setMultiChoiceItems(
@@ -229,13 +229,13 @@ open class MainActivity : AppCompatActivity() {
                 checkedGroups.toBooleanArray(),
             ) { _, index, isChecked ->
                 val value = Group.values()[index]
-                groupsFlag = when (isChecked) {
-                    true -> groupsFlag.or(value.flag)
-                    false -> groupsFlag.and(value.flag.inv())
+                groups = when (isChecked) {
+                    true -> groups.or(value.flag)
+                    false -> groups.and(value.flag.inv())
                 }
             }
             .setPositiveButton(R.string.ok) { _, _ ->
-                prefs.groupsFlag = groupsFlag
+                prefs.groups = groups
             }
             .show()
     }

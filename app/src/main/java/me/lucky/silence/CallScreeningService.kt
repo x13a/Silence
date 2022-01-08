@@ -116,9 +116,9 @@ class CallScreeningService : CallScreeningService() {
     }
 
     private fun checkGroups(number: Phonenumber.PhoneNumber): Boolean {
-        val groupsFlag = prefs.groupsFlag
+        val groups = prefs.groups
         var result = false
-        for (group in Group.values().asSequence().filter { groupsFlag.and(it.flag) != 0 }) {
+        for (group in Group.values().asSequence().filter { groups.and(it.flag) != 0 }) {
             result = when (group) {
                 Group.TOLL_FREE -> phoneNumberUtil.getNumberType(number) ==
                     PhoneNumberUtil.PhoneNumberType.TOLL_FREE
