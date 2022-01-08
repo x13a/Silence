@@ -11,7 +11,6 @@
         android:id="@+id/description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:labelFor="@id/toggle"
         android:text="@string/description"
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +45,6 @@
                 android:id="@+id/description2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:labelFor="@id/contactedSwitch"
                 android:text="@string/contacted_description"
                 android:textSize="12sp" />
 
@@ -66,7 +64,6 @@
                 android:id="@+id/description3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:labelFor="@id/codeSwitch"
                 android:text="@string/code_description"
                 android:textSize="12sp" />
 
@@ -86,7 +83,6 @@
                 android:id="@+id/description4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:labelFor="@id/repeatedSwitch"
                 android:text="@string/repeated_description"
                 android:textSize="12sp" />
 
@@ -106,7 +102,6 @@
                 android:id="@+id/description5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:labelFor="@id/messageSwitch"
                 android:text="@string/message_description"
                 android:textSize="12sp" />
 
@@ -128,7 +123,6 @@
                 android:id="@+id/stirDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:labelFor="@id/stirSwitch"
                 android:text="@string/stir_description"
                 android:textSize="12sp"
                 tools:targetApi="30" />
