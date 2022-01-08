@@ -23,14 +23,13 @@ class SmsReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         val countryCode by lazy {
-            context.getSystemService(TelephonyManager::class.java)?.networkCountryIso?.uppercase()
+            context.getSystemService(TelephonyManager::class.java).networkCountryIso.uppercase()
         }
         val db by lazy { AppDatabase.getInstance(context).tmpNumberDao() }
         var hasNumber = false
         for (msg in Telephony.Sms.Intents.getMessagesFromIntent(intent)) {
             if (
                 msg.isStatusReportMessage ||
-                msg.isEmail ||
                 msg.isCphsMwiMessage ||
                 msg.isMWIClearMessage ||
                 msg.isMWISetMessage ||
