@@ -80,7 +80,8 @@ class CallScreeningService : CallScreeningService() {
     }
 
     private fun checkContacted(number: Phonenumber.PhoneNumber): Boolean {
-        var cursor: Cursor?
+        var cursor: Cursor? = null
+        var result = false
         try {
             cursor = contentResolver.query(
                 makeContentUri(CallLog.Calls.CONTENT_FILTER_URI, number),
@@ -89,8 +90,7 @@ class CallScreeningService : CallScreeningService() {
                 arrayOf(CallLog.Calls.OUTGOING_TYPE.toString()),
                 null,
             )
-        } catch (exc: SecurityException) { return false }
-        var result = false
+        } catch (exc: SecurityException) {}
         cursor?.apply {
             if (moveToFirst()) { result = true }
             close()
@@ -107,7 +107,7 @@ class CallScreeningService : CallScreeningService() {
                 )),
                 null,
             )
-        } catch (exc: SecurityException) { return false }
+        } catch (exc: SecurityException) {}
         cursor?.apply {
             if (moveToFirst()) { result = true }
             close()
