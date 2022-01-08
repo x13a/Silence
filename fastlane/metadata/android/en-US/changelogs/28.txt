@@ -1,0 +1,13 @@
+change callback to contacted
+add code subsettings
+add repeated subsettings
+add auto-disable on emergency call
+add check for outgoing sms number in contacted (new permission!)
+update translations, thanks to:
+    @wmdarg ,
+    Allan Nordhøy (@comradekingu) ,
+    J. Lavoie (Edanas) ,
+    Maxime Leroy (@Lisapple) ,
+
+Thanks to all people who is involved in this project.
+Happy New Year!
