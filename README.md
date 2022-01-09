@@ -24,6 +24,29 @@ Optionally allow:
 If the app rejects calls from contacts on Android 10, allow contacts permission manually in 
 `App info → Permissions`.
 
+## Permissions
+
+`READ_CALL_LOG`
+
+[Contacted] check if you have called the number  
+[Repeated] count times the number have called you in T minutes
+
+`READ_SMS`
+
+[Contacted] check if you have sent a message to the number
+
+`RECEIVE_SMS`
+
+[Messages] find mobile numbers in incoming messages
+
+`READ_CONTACTS`
+
+[Android 10] check if the number exists in contacts
+
+`RECEIVE_BOOT_COMPLETED`
+
+[Messages] persist cleanup inactive numbers job across reboots
+
 ## Localization
 
 Is `Silence` not in your language, or the translation is incorrect or incomplete? Get involved on 
