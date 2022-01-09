@@ -65,6 +65,7 @@ class SmsReceiver : BroadcastReceiver() {
                     .setMinimumLatency(TimeUnit
                         .SECONDS
                         .toMillis(TmpNumberDao.INACTIVE_DURATION.toLong() + 1))
+                    .setPersisted(true)
                     .build()
             )
         }
