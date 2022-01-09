@@ -4,7 +4,7 @@ By default numbers not in your contacts list are blocked.
 
 Optionally allow:
 * Numbers you have contacted
-* Numbers within selected groups
+* Numbers within selected groups (toll-free, local)
 * N registered call from the same number within T minutes
 * Numbers from messages
 * Numbers passing STIR verification (Android 11)
