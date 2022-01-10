@@ -56,10 +56,6 @@ class SmsReceiver : BroadcastReceiver() {
         if (hasNumber) {
             val jobScheduler = context
                 .getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
-
-            // migration
-            jobScheduler.cancel(1)
-
             jobScheduler.schedule(
                 JobInfo.Builder(
                     CleanupJobService.JOB_ID,
