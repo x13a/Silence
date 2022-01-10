@@ -17,7 +17,7 @@ class Preferences(ctx: Context) {
         private const val GROUPS = "groups"
         private const val REPEATED_SETTINGS = "repeated_settings"
 
-        // migrate
+        // migration
         private const val CALLBACK_CHECKED = "callback_checked"
         private const val CODE_CHECKED = "code_checked"
         private const val CODE_GROUPS = "code_groups"
