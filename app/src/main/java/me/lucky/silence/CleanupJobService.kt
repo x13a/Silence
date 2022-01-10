@@ -4,6 +4,10 @@ import android.app.job.JobParameters
 import android.app.job.JobService
 
 class CleanupJobService : JobService() {
+    companion object {
+        const val JOB_ID = 1000
+    }
+
     override fun onStartJob(params: JobParameters?): Boolean {
         AppDatabase.getInstance(this).tmpNumberDao().deleteInactive()
         return false

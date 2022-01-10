@@ -15,10 +15,6 @@ import java.util.concurrent.TimeUnit
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 
 class SmsReceiver : BroadcastReceiver() {
-    companion object {
-        private const val JOB_ID = 1
-    }
-
     private val phoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }
 
     override fun onReceive(context: Context, intent: Intent) {
@@ -60,8 +56,15 @@ class SmsReceiver : BroadcastReceiver() {
         if (hasNumber) {
             val jobScheduler = context
                 .getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
+
+            // migration
+            jobScheduler.cancel(1)
+
             jobScheduler.schedule(
-                JobInfo.Builder(JOB_ID, ComponentName(context, CleanupJobService::class.java))
+                JobInfo.Builder(
+                    CleanupJobService.JOB_ID,
+                    ComponentName(context, CleanupJobService::class.java),
+                )
                     .setMinimumLatency(TimeUnit
                         .SECONDS
                         .toMillis(TmpNumberDao.INACTIVE_DURATION.toLong() + 1))
