@@ -27,4 +27,5 @@
     </string-array>
     <string name="repeated_settings_count">Count</string>
     <string name="repeated_settings_minutes">Minutes</string>
+    <string name="cleanup_job_service_description">cleanup inactive numbers</string>
 </resources>
