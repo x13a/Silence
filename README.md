@@ -39,13 +39,13 @@ If the app rejects calls from contacts on Android 10, allow contacts permission 
 
 [Messages] find mobile numbers in incoming messages
 
-`READ_CONTACTS`
-
-[Android 10] check if the number exists in contacts
-
 `RECEIVE_BOOT_COMPLETED`
 
 [Messages] persist cleanup inactive numbers job across reboots
+
+`READ_CONTACTS`
+
+[Android 10] check if the number exists in contacts
 
 ## Localization
 
