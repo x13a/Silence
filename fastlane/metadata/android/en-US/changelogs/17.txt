@@ -1,1 +1,1 @@
-make separate layout for android 10
+make separate layout for Android 10
