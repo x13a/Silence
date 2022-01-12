@@ -17,13 +17,14 @@ import com.google.i18n.phonenumbers.PhoneNumberUtil
 class SmsReceiver : BroadcastReceiver() {
     private val phoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }
 
-    override fun onReceive(context: Context, intent: Intent) {
+    override fun onReceive(context: Context?, intent: Intent?) {
+        if (context == null || intent == null) return
         val countryCode by lazy {
-            context.getSystemService(TelephonyManager::class.java).networkCountryIso.uppercase()
+            context.getSystemService(TelephonyManager::class.java)?.networkCountryIso?.uppercase()
         }
         val db by lazy { AppDatabase.getInstance(context).tmpNumberDao() }
         var hasNumber = false
-        for (msg in Telephony.Sms.Intents.getMessagesFromIntent(intent)) {
+        for (msg in Telephony.Sms.Intents.getMessagesFromIntent(intent) ?: return) {
             if (
                 msg.isStatusReportMessage ||
                 msg.isCphsMwiMessage ||
@@ -54,9 +55,7 @@ class SmsReceiver : BroadcastReceiver() {
             }
         }
         if (hasNumber) {
-            val jobScheduler = context
-                .getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
-            jobScheduler.schedule(
+            context.getSystemService(JobScheduler::class.java)?.schedule(
                 JobInfo.Builder(
                     CleanupJobService.JOB_ID,
                     ComponentName(context, CleanupJobService::class.java),

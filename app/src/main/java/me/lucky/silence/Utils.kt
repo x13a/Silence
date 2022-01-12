@@ -20,7 +20,7 @@ class Utils {
         fun hasCallScreeningRole(ctx: Context): Boolean {
             return ctx
                 .getSystemService(RoleManager::class.java)
-                .isRoleHeld(RoleManager.ROLE_CALL_SCREENING)
+                ?.isRoleHeld(RoleManager.ROLE_CALL_SCREENING) ?: false
         }
 
         fun hasPermissions(ctx: Context, vararg permissions: String): Boolean {

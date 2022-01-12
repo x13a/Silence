@@ -1,6 +1,7 @@
 package me.lucky.silence
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.role.RoleManager
 import android.content.SharedPreferences
 import android.os.Build
@@ -19,7 +20,7 @@ import me.lucky.silence.databinding.ActivityMainBinding
 open class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
-    private val roleManager by lazy { getSystemService(RoleManager::class.java) }
+    private var roleManager: RoleManager? = null
     private val prefs by lazy { Preferences(this) }
 
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
@@ -77,6 +78,7 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        roleManager = getSystemService(RoleManager::class.java)
         init()
         setup()
     }
@@ -124,7 +126,7 @@ open class MainActivity : AppCompatActivity() {
             toggle.setOnClickListener {
                 when (!Utils.hasCallScreeningRole(this@MainActivity) && !prefs.isServiceEnabled) {
                     true -> requestCallScreeningRole
-                        .launch(roleManager.createRequestRoleIntent(RoleManager.ROLE_CALL_SCREENING))
+                        .launch(roleManager?.createRequestRoleIntent(RoleManager.ROLE_CALL_SCREENING))
                     false -> prefs.isServiceEnabled = !prefs.isServiceEnabled
                 }
             }
@@ -151,13 +153,12 @@ open class MainActivity : AppCompatActivity() {
         updateRepeated()
         updateMessages()
         updateToggle()
-        if (!Utils.hasCallScreeningRole(this) && prefs.isServiceEnabled) {
+        if (!Utils.hasCallScreeningRole(this) && prefs.isServiceEnabled)
             Snackbar.make(
-                findViewById(R.id.toggle),
+                binding.toggle,
                 getString(R.string.service_unavailable_toast),
                 Snackbar.LENGTH_SHORT,
             ).show()
-        }
     }
 
     override fun onStart() {
@@ -244,15 +245,16 @@ open class MainActivity : AppCompatActivity() {
         val itemsN = listOf("2", "3", "4", "5")
         val itemsT = listOf("3", "5", "10", "15", "20", "30", "60")
         val repeatedSettings = prefs.repeatedSettings
-        val view = layoutInflater.inflate(R.layout.repeated_settings, null)
-        val n = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsCount)
+        @SuppressLint("InflateParams")
+        val view = layoutInflater.inflate(R.layout.repeated_settings, null) ?: return
+        val n = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsCount) ?: return
         n.setText(repeatedSettings.count.toString())
         n.setAdapter(ArrayAdapter(
             view.context,
             android.R.layout.simple_spinner_dropdown_item,
             itemsN,
         ))
-        val t = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsMinutes)
+        val t = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsMinutes) ?: return
         t.setText(repeatedSettings.minutes.toString())
         t.setAdapter(ArrayAdapter(
             view.context,
@@ -272,11 +274,11 @@ open class MainActivity : AppCompatActivity() {
         var minutes = repeatedSettings.minutes
         n.setOnItemClickListener { _, _, position, _ ->
             count = itemsN[position].toInt()
-            dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = count < minutes
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.isEnabled = count < minutes
         }
         t.setOnItemClickListener { _, _, position, _ ->
             minutes = itemsT[position].toInt()
-            dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = count < minutes
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.isEnabled = count < minutes
         }
         dialog.show()
     }

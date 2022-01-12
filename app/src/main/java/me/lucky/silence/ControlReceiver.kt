@@ -10,7 +10,8 @@ class ControlReceiver : BroadcastReceiver() {
         private const val TOGGLE_OFF = "me.lucky.silence.action.TOGGLE_OFF"
     }
 
-    override fun onReceive(context: Context, intent: Intent) {
+    override fun onReceive(context: Context?, intent: Intent?) {
+        if (context == null || intent == null) return
         val isOn = when (intent.action) {
             TOGGLE_ON -> true
             TOGGLE_OFF -> false

@@ -17,10 +17,15 @@ import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
 
 class CallScreeningService : CallScreeningService() {
-    private val telephonyManager by lazy { getSystemService(TelephonyManager::class.java) }
+    private var telephonyManager: TelephonyManager? = null
     private val prefs by lazy { Preferences(this) }
     private val phoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }
     private val db by lazy { AppDatabase.getInstance(this).tmpNumberDao() }
+
+    override fun onCreate() {
+        super.onCreate()
+        telephonyManager = getSystemService(TelephonyManager::class.java)
+    }
 
     override fun onScreenCall(callDetails: Call.Details) {
         if (!prefs.isServiceEnabled) {
@@ -29,7 +34,7 @@ class CallScreeningService : CallScreeningService() {
         } else if (
             callDetails.hasProperty(Call.Details.PROPERTY_EMERGENCY_CALLBACK_MODE) ||
             callDetails.hasProperty(Call.Details.PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL) ||
-            telephonyManager.isEmergencyNumber(callDetails.handle.schemeSpecificPart)
+            telephonyManager?.isEmergencyNumber(callDetails.handle.schemeSpecificPart) == true
         ) {
             prefs.isServiceEnabled = false
             Utils.setSmsReceiverState(this, false)
@@ -46,7 +51,7 @@ class CallScreeningService : CallScreeningService() {
         try {
             number = phoneNumberUtil.parse(
                 callDetails.handle.schemeSpecificPart,
-                telephonyManager.networkCountryIso.uppercase(),
+                telephonyManager?.networkCountryIso?.uppercase(),
             )
         } catch (exc: NumberParseException) {
             respondAllow(callDetails)
@@ -124,7 +129,7 @@ class CallScreeningService : CallScreeningService() {
                     PhoneNumberUtil.PhoneNumberType.TOLL_FREE
                 Group.LOCAL -> phoneNumberUtil.isValidNumberForRegion(
                     number,
-                    telephonyManager.networkCountryIso.uppercase(),
+                    telephonyManager?.networkCountryIso?.uppercase(),
                 )
             }
             if (result) break
@@ -157,7 +162,7 @@ class CallScreeningService : CallScreeningService() {
     
     private fun checkMessages(number: Phonenumber.PhoneNumber): Boolean {
         val logNumber = Phonenumber.PhoneNumber()
-        val countryCode = telephonyManager.networkCountryIso.uppercase()
+        val countryCode = telephonyManager?.networkCountryIso?.uppercase()
         for (row in db.selectActive()) {
             phoneNumberUtil.parseAndKeepRawInput(row.phoneNumber, countryCode, logNumber)
             if (phoneNumberUtil.isNumberMatch(number, logNumber) ==

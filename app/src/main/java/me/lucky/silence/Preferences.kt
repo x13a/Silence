@@ -33,7 +33,10 @@ class Preferences(ctx: Context) {
         set(value) = prefs.edit { putBoolean(SERVICE_ENABLED, value) }
 
     var isContactedChecked: Boolean
-        get() = prefs.getBoolean(CONTACTED_CHECKED, prefs.getBoolean(CALLBACK_CHECKED, false))
+        get() = prefs.getBoolean(
+            CONTACTED_CHECKED,
+            prefs.getBoolean(CALLBACK_CHECKED, false),
+        )
         set(value) = prefs.edit { putBoolean(CONTACTED_CHECKED, value) }
 
     var isGroupsChecked: Boolean
