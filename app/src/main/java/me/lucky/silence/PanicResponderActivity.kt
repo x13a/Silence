@@ -9,14 +9,14 @@ import info.guardianproject.panic.PanicResponder
 class PanicResponderActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (
-            !Panic.isTriggerIntent(intent) ||
-            !PanicResponder.receivedTriggerFromConnectedApp(this)
-        ) {
+        if (!Panic.isTriggerIntent(intent)) {
             finishAndRemoveTask()
             return
         }
-        AppDatabase.getInstance(this).tmpNumberDao().deleteAll()
+        Preferences(this).isServiceEnabled = false
+        Utils.setSmsReceiverState(this, false)
+        if (PanicResponder.receivedTriggerFromConnectedApp(this))
+            AppDatabase.getInstance(this).tmpNumberDao().deleteAll()
         finishAndRemoveTask()
     }
 }
