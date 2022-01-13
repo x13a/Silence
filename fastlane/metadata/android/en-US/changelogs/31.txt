@@ -1,0 +1,3 @@
+cleanup job persistence across reboots (android.permission.RECEIVE_BOOT_COMPLETED)
+under the hood improvements
+update translations, thanks to Allan Nordhøy (@comradekingu)
