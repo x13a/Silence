@@ -19,7 +19,6 @@ import me.lucky.silence.databinding.ActivityMainBinding
 
 open class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
     private var roleManager: RoleManager? = null
     private val prefs by lazy { Preferences(this) }
 
