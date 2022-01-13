@@ -17,6 +17,7 @@
             android:id="@+id/repeatedSettingsCount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLength="2"
             android:hint="@string/repeated_settings_count"
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -36,6 +37,7 @@
             android:id="@+id/repeatedSettingsMinutes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLength="4"
             android:hint="@string/repeated_settings_minutes"
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>

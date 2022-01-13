@@ -6,12 +6,14 @@ import android.app.role.RoleManager
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
+import android.text.InputType
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doOnTextChanged
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
@@ -245,39 +247,64 @@ open class MainActivity : AppCompatActivity() {
         val itemsT = listOf("3", "5", "10", "15", "20", "30", "60")
         val repeatedSettings = prefs.repeatedSettings
         @SuppressLint("InflateParams")
-        val view = layoutInflater.inflate(R.layout.repeated_settings, null) ?: return
-        val n = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsCount) ?: return
+        val view = layoutInflater.inflate(R.layout.repeated_settings, null)
+        val n = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsCount)
         n.setText(repeatedSettings.count.toString())
         n.setAdapter(ArrayAdapter(
             view.context,
             android.R.layout.simple_spinner_dropdown_item,
             itemsN,
         ))
-        val t = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsMinutes) ?: return
+        val t = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsMinutes)
         t.setText(repeatedSettings.minutes.toString())
         t.setAdapter(ArrayAdapter(
             view.context,
             android.R.layout.simple_spinner_dropdown_item,
             itemsT,
         ))
+        var count = repeatedSettings.count
+        var minutes = repeatedSettings.minutes
         val dialog = MaterialAlertDialogBuilder(this)
             .setView(view)
             .setPositiveButton(R.string.ok) { _, _ ->
-                prefs.repeatedSettings = RepeatedSettings(
-                    n.text.toString().toInt(),
-                    t.text.toString().toInt(),
-                )
+                prefs.repeatedSettings = RepeatedSettings(count, minutes)
             }
             .create()
-        var count = repeatedSettings.count
-        var minutes = repeatedSettings.minutes
+        val button by lazy { dialog.getButton(AlertDialog.BUTTON_POSITIVE) }
+        val updateButtonState = { button.isEnabled = count < minutes }
         n.setOnItemClickListener { _, _, position, _ ->
             count = itemsN[position].toInt()
-            dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.isEnabled = count < minutes
+            updateButtonState()
+        }
+        n.doOnTextChanged { text, _, _, _ ->
+            val str = text?.toString()
+            if (str == null || str == "") {
+                button.isEnabled = false
+                return@doOnTextChanged
+            }
+            count = str.toInt()
+            updateButtonState()
+        }
+        n.setOnLongClickListener {
+            n.inputType = InputType.TYPE_CLASS_NUMBER
+            true
         }
         t.setOnItemClickListener { _, _, position, _ ->
             minutes = itemsT[position].toInt()
-            dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.isEnabled = count < minutes
+            updateButtonState()
+        }
+        t.doOnTextChanged { text, _, _, _ ->
+            val str = text?.toString()
+            if (str == null || str == "") {
+                button.isEnabled = false
+                return@doOnTextChanged
+            }
+            minutes = str.toInt()
+            updateButtonState()
+        }
+        t.setOnLongClickListener {
+            t.inputType = InputType.TYPE_CLASS_NUMBER
+            true
         }
         dialog.show()
     }
