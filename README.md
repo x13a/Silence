@@ -8,7 +8,7 @@ Block unknown callers.
     height="80">](https://f-droid.org/packages/me.lucky.silence/)
 
 <img 
-    src="https://user-images.githubusercontent.com/53379023/148648867-e7e9c2b5-333f-4b92-b6ef-f9a6e18f9611.png" 
+    src="https://raw.githubusercontent.com/x13a/Silence/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" 
     width="30%" 
     height="30%">
 
