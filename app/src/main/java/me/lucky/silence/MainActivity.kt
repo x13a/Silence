@@ -39,12 +39,12 @@ open class MainActivity : AppCompatActivity() {
         }
     }
 
-    private val requestCallScreeningRole =
+    private val registerForCallScreeningRole =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) prefs.isServiceEnabled = true
         }
 
-    private val requestPermissionsForContacted =
+    private val registerForContactedPermissions =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { map ->
             var result = true
             for (permission in arrayOf(
@@ -59,7 +59,7 @@ open class MainActivity : AppCompatActivity() {
             }
         }
 
-    private val requestPermissionsForRepeated =
+    private val registerForRepeatedPermissions =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             when (isGranted) {
                 true -> prefs.isRepeatedChecked = true
@@ -67,7 +67,7 @@ open class MainActivity : AppCompatActivity() {
             }
         }
 
-    private val requestPermissionsForMessages =
+    private val registerForMessagesPermissions =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             when (isGranted) {
                 true -> prefs.isMessagesChecked = true
@@ -88,11 +88,7 @@ open class MainActivity : AppCompatActivity() {
         binding.apply {
             contactedSwitch.setOnCheckedChangeListener { _, isChecked ->
                 when (!hasContactedPermissions() && isChecked) {
-                    true -> requestPermissionsForContacted
-                        .launch(arrayOf(
-                            Manifest.permission.READ_CALL_LOG,
-                            Manifest.permission.READ_SMS,
-                        ))
+                    true -> requestContactedPermissions()
                     false -> prefs.isContactedChecked = isChecked
                 }
             }
@@ -104,9 +100,8 @@ open class MainActivity : AppCompatActivity() {
                 true
             }
             repeatedSwitch.setOnCheckedChangeListener { _, isChecked ->
-                when (!hasReadCallLogPermission() && isChecked) {
-                    true -> requestPermissionsForRepeated
-                        .launch(Manifest.permission.READ_CALL_LOG)
+                when (!hasRepeatedPermissions() && isChecked) {
+                    true -> requestRepeatedPermissions()
                     false -> prefs.isRepeatedChecked = isChecked
                 }
             }
@@ -115,9 +110,8 @@ open class MainActivity : AppCompatActivity() {
                 true
             }
             messagesSwitch.setOnCheckedChangeListener { _, isChecked ->
-                when (!hasReceiveSmsPermission() && isChecked) {
-                    true -> requestPermissionsForMessages
-                        .launch(Manifest.permission.RECEIVE_SMS)
+                when (!hasMessagesPermissions() && isChecked) {
+                    true -> requestMessagesPermissions()
                     false -> prefs.isMessagesChecked = isChecked
                 }
             }
@@ -126,8 +120,7 @@ open class MainActivity : AppCompatActivity() {
             }
             toggle.setOnClickListener {
                 when (!Utils.hasCallScreeningRole(this@MainActivity) && !prefs.isServiceEnabled) {
-                    true -> requestCallScreeningRole
-                        .launch(roleManager?.createRequestRoleIntent(RoleManager.ROLE_CALL_SCREENING))
+                    true -> requestCallScreeningRole()
                     false -> prefs.isServiceEnabled = !prefs.isServiceEnabled
                 }
             }
@@ -135,17 +128,21 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun init() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) hideStir()
         binding.apply {
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
-                stirSpace.visibility = View.GONE
-                stirSwitch.visibility = View.GONE
-                stirDescription.visibility = View.GONE
-            }
             contactedSwitch.isChecked = prefs.isContactedChecked
             groupsSwitch.isChecked = prefs.isGroupsChecked
             repeatedSwitch.isChecked = prefs.isRepeatedChecked
             messagesSwitch.isChecked = prefs.isMessagesChecked
             stirSwitch.isChecked = prefs.isStirChecked
+        }
+    }
+
+    private fun hideStir() {
+        binding.apply {
+            stirSpace.visibility = View.GONE
+            stirSwitch.visibility = View.GONE
+            stirDescription.visibility = View.GONE
         }
     }
 
@@ -176,9 +173,9 @@ open class MainActivity : AppCompatActivity() {
     private fun updateRepeated() {
         binding.apply {
             when {
-                !hasReadCallLogPermission() && prefs.isRepeatedChecked ->
+                !hasRepeatedPermissions() && prefs.isRepeatedChecked ->
                     repeatedSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> repeatedSwitch.setTextColor(groupsSwitch.textColors)
+                else -> repeatedSwitch.setTextColor(groupsSwitch.currentTextColor)
             }
         }
     }
@@ -188,7 +185,7 @@ open class MainActivity : AppCompatActivity() {
             when {
                 !hasContactedPermissions() && prefs.isContactedChecked ->
                     contactedSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> contactedSwitch.setTextColor(groupsSwitch.textColors)
+                else -> contactedSwitch.setTextColor(groupsSwitch.currentTextColor)
             }
         }
     }
@@ -196,9 +193,9 @@ open class MainActivity : AppCompatActivity() {
     private fun updateMessages() {
         binding.apply {
             when {
-                !hasReceiveSmsPermission() && prefs.isMessagesChecked ->
+                !hasMessagesPermissions() && prefs.isMessagesChecked ->
                     messagesSwitch.setTextColor(getColor(R.color.icon_color_red))
-                else -> messagesSwitch.setTextColor(groupsSwitch.textColors)
+                else -> messagesSwitch.setTextColor(groupsSwitch.currentTextColor)
             }
         }
     }
@@ -309,6 +306,27 @@ open class MainActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    private fun requestContactedPermissions() {
+        registerForContactedPermissions
+            .launch(arrayOf(
+                Manifest.permission.READ_CALL_LOG,
+                Manifest.permission.READ_SMS,
+            ))
+    }
+
+    private fun requestRepeatedPermissions() {
+        registerForRepeatedPermissions.launch(Manifest.permission.READ_CALL_LOG)
+    }
+
+    private fun requestMessagesPermissions() {
+        registerForMessagesPermissions.launch(Manifest.permission.RECEIVE_SMS)
+    }
+
+    private fun requestCallScreeningRole() {
+        registerForCallScreeningRole
+            .launch(roleManager?.createRequestRoleIntent(RoleManager.ROLE_CALL_SCREENING))
+    }
+
     private fun hasContactedPermissions(): Boolean {
         return Utils.hasPermissions(
             this,
@@ -317,11 +335,11 @@ open class MainActivity : AppCompatActivity() {
         )
     }
 
-    private fun hasReadCallLogPermission(): Boolean {
+    private fun hasRepeatedPermissions(): Boolean {
         return Utils.hasPermissions(this, Manifest.permission.READ_CALL_LOG)
     }
 
-    private fun hasReceiveSmsPermission(): Boolean {
+    private fun hasMessagesPermissions(): Boolean {
         return Utils.hasPermissions(this, Manifest.permission.RECEIVE_SMS)
     }
 }
