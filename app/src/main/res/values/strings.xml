@@ -7,7 +7,7 @@
     <string name="contacted_switch">Contacted</string>
     <string name="contacted_description">Numbers you have contacted.</string>
     <string name="groups_switch">Groups</string>
-    <string name="groups_description">Numbers within selected groups.</string>
+    <string name="groups_description">Numbers within the selected groups.</string>
     <string name="repeated_switch">Repeated</string>
     <string name="repeated_description">N registered call from the same number within T minutes.</string>
     <string name="service_unavailable_toast">Call screening service unavailable</string>
