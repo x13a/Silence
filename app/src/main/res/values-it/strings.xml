@@ -9,7 +9,7 @@
     <string name="groups_switch">Numero verde</string>
     <string name="groups_description">Numeri all\'interno dei gruppi di codici selezionati.</string>
     <string name="repeated_switch">Ripetuto</string>
-    <string name="service_unavailable_toast">Servizio di controllo delle chiamate non disponibile</string>
+    <string name="service_unavailable_popup">Servizio di controllo delle chiamate non disponibile</string>
     <string name="repeated_description">Permetti una terza chiamata registrata dallo stesso numero entro cinque minuti.</string>
     <string name="messages_switch">SMS</string>
     <string name="messages_description">Permetti temporaneamente i numeri di cellulare dai messaggi in arrivo.</string>

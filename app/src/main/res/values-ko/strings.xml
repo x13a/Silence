@@ -3,7 +3,7 @@
     <string name="toggle_off">켜기</string>
     <string name="toggle_on">끄기</string>
     <string name="contacted_description">전화 기록이 있는 번호를 허용합니다.</string>
-    <string name="service_unavailable_toast">전화번호의 선택적인 허용은 불가능합니다</string>
+    <string name="service_unavailable_popup">전화번호의 선택적인 허용은 불가능합니다</string>
     <string name="contacted_switch">콜백</string>
     <string name="app_name">Silence</string>
     <string name="groups_description">수신자 부담 코드가 있는 번호를 허용합니다. (예: 800).</string>

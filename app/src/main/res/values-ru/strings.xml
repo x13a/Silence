@@ -10,7 +10,7 @@
     <string name="groups_description">Номера входящие в выбранные группы.</string>
     <string name="repeated_switch">Повторный</string>
     <string name="repeated_description">N зарегистрированный звонок с одного номера в течении T минут.</string>
-    <string name="service_unavailable_toast">Сервис скрининга звонков недоступен</string>
+    <string name="service_unavailable_popup">Сервис скрининга звонков недоступен</string>
     <string name="messages_switch">Сообщения</string>
     <string name="messages_description">Номера из сообщений.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
@@ -25,5 +25,5 @@
     <string name="repeated_settings_count">Количество</string>
     <string name="repeated_settings_minutes">Минут</string>
     <string name="ok">OK</string>
-    <string name="cleanup_job_service_description">Удаляет неактивные номера</string>
+    <string name="cleanup_job_description">Удаляет неактивные номера</string>
 </resources>

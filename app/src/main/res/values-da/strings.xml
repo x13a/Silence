@@ -10,7 +10,7 @@
     <string name="groups_description">Tillad numre med told-frie koder (ex: 800).</string>
     <string name="repeated_switch">Gentaget</string>
     <string name="repeated_description">Tillad et tredje opkald fra det samme nummer inde for fem minutter.</string>
-    <string name="service_unavailable_toast">Opkalds-screeningstjeneste utilgængelig</string>
+    <string name="service_unavailable_popup">Opkalds-screeningstjeneste utilgængelig</string>
     <string name="messages_switch">SMS</string>
     <string name="messages_description">Tillad midlertidige mobilnumre fra indgående tekstbeskeder.</string>
     <string name="stir_switch">STIR/SHAKEN</string>

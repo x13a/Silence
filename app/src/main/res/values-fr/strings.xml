@@ -3,7 +3,7 @@
     <string name="app_name">Silence</string>
     <string name="toggle_off">Activer</string>
     <string name="repeated_description">N appel enregistré du même numéro dans les T minutes.</string>
-    <string name="service_unavailable_toast">Service de filtrage des appels indisponible</string>
+    <string name="service_unavailable_popup">Service de filtrage des appels indisponible</string>
     <string name="messages_switch">SMS</string>
     <string name="messages_description">Numéros des messages.</string>
     <string name="stir_switch">STIR/SHAKEN</string>

@@ -10,7 +10,7 @@
     <string name="groups_description">Numbers within the selected groups.</string>
     <string name="repeated_switch">Repeated</string>
     <string name="repeated_description">N registered call from the same number within T minutes.</string>
-    <string name="service_unavailable_toast">Call screening service unavailable</string>
+    <string name="service_unavailable_popup">Call screening service unavailable</string>
     <string name="messages_switch">Messages</string>
     <string name="messages_description">Numbers from messages.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
@@ -25,5 +25,5 @@
     <string name="groups_array_1">Local</string>
     <string name="repeated_settings_count">Count</string>
     <string name="repeated_settings_minutes">Minutes</string>
-    <string name="cleanup_job_service_description">Cleanup inactive numbers</string>
+    <string name="cleanup_job_description">Cleanup inactive numbers</string>
 </resources>

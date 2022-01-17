@@ -9,7 +9,7 @@
     <string name="groups_switch">Gebührenfrei</string>
     <string name="groups_description">Nummern innerhalb ausgewählter Codegruppen.</string>
     <string name="repeated_switch">Wiederholt</string>
-    <string name="service_unavailable_toast">Anrufüberwachungsdienst nicht verfügbar</string>
+    <string name="service_unavailable_popup">Anrufüberwachungsdienst nicht verfügbar</string>
     <string name="repeated_description">N registrierte Anrufe von derselben Nummer innerhalb von T Minuten.</string>
     <string name="messages_switch">SMS</string>
     <string name="messages_description">Zahlen aus Nachrichten.</string>

@@ -154,7 +154,7 @@ open class MainActivity : AppCompatActivity() {
         if (!Utils.hasCallScreeningRole(this) && prefs.isServiceEnabled)
             Snackbar.make(
                 binding.toggle,
-                getString(R.string.service_unavailable_toast),
+                getString(R.string.service_unavailable_popup),
                 Snackbar.LENGTH_SHORT,
             ).show()
     }

@@ -10,7 +10,7 @@
     <string name="groups_description">Tillat gratisnumre (f.eks: 800).</string>
     <string name="repeated_switch">Gjentatt</string>
     <string name="repeated_description">Tillat en tredje registrert samtale fra samme nummer innen fem minutter.</string>
-    <string name="service_unavailable_toast">Blokkeringstjeneste utilgjengelig</string>
+    <string name="service_unavailable_popup">Blokkeringstjeneste utilgjengelig</string>
     <string name="messages_switch">SMS</string>
     <string name="messages_description">Tillat midlertidige mobilnumre fra innkommende tekstmeldinger.</string>
     <string name="stir_description">Tillat nummer som har passert STIR-bekreftelse.</string>

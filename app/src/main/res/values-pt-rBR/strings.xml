@@ -10,7 +10,7 @@
     <string name="groups_description">Permitir os números de ligações gratuitas (p.ex.: 800 intl.).</string>
     <string name="repeated_switch">Recorrentes</string>
     <string name="repeated_description">Permitir uma terceira chamada do mesmo número dentro de cinco minutos.</string>
-    <string name="service_unavailable_toast">Serviço de triagem de chamadas indisponível</string>
+    <string name="service_unavailable_popup">Serviço de triagem de chamadas indisponível</string>
     <string name="messages_switch">SMS</string>
     <string name="messages_description">Permitir temporariamente os números de celular das mensagens de texto recebidas.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
