@@ -1,0 +1,4 @@
+add additional settings to description, thanks to uasad
+add Ukrainian translation, thanks to Andrij Mizyk (@andmizyk)
+update French translation, thanks to J. Lavoie (Edanas)
+add weblate workaround for string-array
