@@ -21,10 +21,8 @@
     <string name="allow">Allow</string>
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
-    <string-array name="groups">
-        <item>Toll-Free</item>
-        <item>Local</item>
-    </string-array>
+    <string name="groups_array_0">Toll-Free</string>
+    <string name="groups_array_1">Local</string>
     <string name="repeated_settings_count">Count</string>
     <string name="repeated_settings_minutes">Minutes</string>
     <string name="cleanup_job_service_description">Cleanup inactive numbers</string>
