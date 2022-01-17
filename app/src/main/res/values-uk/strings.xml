@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="panic_app_dialog_title">Підтвердіть програму тривожної кнопки</string>
+    <string name="panic_app_dialog_message">Ви впевнені, що хочете дозволити %1$s викликати шкідливі тривожні дії\?</string>
+    <string name="cancel">Скасувати</string>
+    <string name="toggle_on">Деактивувати</string>
+    <string name="contacted_description">Номери, з якими Ви сконтактовані.</string>
+    <string name="contacted_switch">Сконтактовані</string>
+    <string name="stir_switch">STIR/SHAKEN</string>
+    <string name="allow">Дозволити</string>
+    <string name="app_name">Silence</string>
+    <string name="toggle_off">Активувати</string>
+    <string name="repeated_settings_count">Кількість</string>
+    <string name="groups_switch">Групи</string>
+    <string name="groups_description">Номери в межах вибраних груп.</string>
+    <string name="repeated_description">N-на кількість зареєстрованих дзвінків з одного номера за T хвилин.</string>
+    <string name="messages_switch">Повідомлення</string>
+    <string name="messages_description">Номери з повідомлень.</string>
+    <string name="stir_description">Номери, які проходять перевірку STIR.</string>
+    <string name="panic_app_unknown_app">невідомий застосунок</string>
+    <string name="ok">Добре</string>
+    <string name="repeated_settings_minutes">Хвилин</string>
+    <string name="description">Активуйте Silence, щоб не отримувати дзвінків від незнайомих людей. Це заблокує незбережені у Вашому списку контактів телефонні номери.</string>
+    <string name="repeated_switch">Повторювані</string>
+</resources>
