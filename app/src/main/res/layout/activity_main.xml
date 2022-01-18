@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/description">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -41,13 +41,14 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/description2"
+                android:id="@+id/contactedDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/contacted_description"
                 android:textSize="12sp" />
 
             <Space
+                android:id="@+id/groupsSpace"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp" />
@@ -60,13 +61,14 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/description3"
+                android:id="@+id/groupsDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/groups_description"
                 android:textSize="12sp" />
 
             <Space
+                android:id="@+id/repeatedSpace"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp" />
@@ -79,13 +81,14 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/description4"
+                android:id="@+id/repeatedDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/repeated_description"
                 android:textSize="12sp" />
 
             <Space
+                android:id="@+id/messagesSpace"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp" />
@@ -98,7 +101,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/description5"
+                android:id="@+id/messagesDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/messages_description"

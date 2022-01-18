@@ -51,7 +51,7 @@ open class MainActivity : AppCompatActivity() {
                 Manifest.permission.READ_CALL_LOG,
                 Manifest.permission.READ_SMS,
             )) {
-                result = result && map[permission]!!
+                result = result && map[permission] == true
             }
             when (result) {
                 true -> prefs.isContactedChecked = true
@@ -128,6 +128,7 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun init() {
+        if (Preferences.IS_PLAY_STORE_VERSION) hidePlayStore()
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) hideStir()
         binding.apply {
             contactedSwitch.isChecked = prefs.isContactedChecked
@@ -135,6 +136,20 @@ open class MainActivity : AppCompatActivity() {
             repeatedSwitch.isChecked = prefs.isRepeatedChecked
             messagesSwitch.isChecked = prefs.isMessagesChecked
             stirSwitch.isChecked = prefs.isStirChecked
+        }
+    }
+
+    private fun hidePlayStore() {
+        binding.apply {
+            contactedSwitch.visibility = View.GONE
+            contactedDescription.visibility = View.GONE
+            groupsSpace.visibility = View.GONE
+            repeatedSpace.visibility = View.GONE
+            repeatedSwitch.visibility = View.GONE
+            repeatedDescription.visibility = View.GONE
+            messagesSpace.visibility = View.GONE
+            messagesSwitch.visibility = View.GONE
+            messagesDescription.visibility = View.GONE
         }
     }
 
