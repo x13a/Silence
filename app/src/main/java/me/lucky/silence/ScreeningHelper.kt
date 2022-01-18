@@ -18,8 +18,7 @@ class ScreeningHelper(private val ctx: Context) {
         const val RESULT_REJECT = 1
     }
 
-    private val telephonyManager: TelephonyManager? =
-        ctx.getSystemService(TelephonyManager::class.java)
+    private val telephonyManager = ctx.getSystemService(TelephonyManager::class.java)
     private val prefs = Preferences(ctx)
     private val phoneNumberUtil = PhoneNumberUtil.getInstance()
     private val db = AppDatabase.getInstance(ctx).tmpNumberDao()
