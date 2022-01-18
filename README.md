@@ -21,7 +21,7 @@ Optionally allow:
 - Numbers from messages
 - Numbers passing STIR verification (Android 11)
 
-`Groups` and `Repeated` options have additional settings. You can edit them by long click.
+`Groups` and `Repeated` options have additional settings. You can open them by long click.
 
 If the app rejects calls from contacts on Android 10, allow contacts permission manually in 
 `App info → Permissions`.
