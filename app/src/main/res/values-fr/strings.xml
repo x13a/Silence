@@ -23,4 +23,7 @@
     <string name="ok">OK</string>
     <string name="repeated_settings_minutes">Minutes</string>
     <string name="repeated_settings_count">Total</string>
+    <string name="groups_array_0">Sans frais</string>
+    <string name="groups_array_1">Local</string>
+    <string name="cleanup_job_description">Nettoyer les numéros inactifs</string>
 </resources>
