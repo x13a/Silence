@@ -79,7 +79,6 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        roleManager = getSystemService(RoleManager::class.java)
         init()
         setup()
     }
@@ -128,6 +127,7 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun init() {
+        roleManager = getSystemService(RoleManager::class.java)
         if (Preferences.IS_PLAY_STORE_VERSION) hidePlayStore()
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) hideStir()
         binding.apply {

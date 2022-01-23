@@ -5,10 +5,19 @@ import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 
 class QSTileService : TileService() {
-    private val prefs by lazy { Preferences(this) }
+    private lateinit var prefs: Preferences
 
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
         if (key == Preferences.SERVICE_ENABLED) update()
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        init()
+    }
+
+    private fun init() {
+        prefs = Preferences(this)
     }
 
     override fun onClick() {
