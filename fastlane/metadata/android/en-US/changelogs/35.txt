@@ -1,0 +1,3 @@
+now private numbers are blocked, thanks to @Ilithy , @norrinr
+update Ukrainian translation, thanks to Andrij Mizyk (@andmizyk)
+update French translation, thanks to J. Lavoie (Edanas)
