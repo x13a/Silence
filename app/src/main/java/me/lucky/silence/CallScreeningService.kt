@@ -31,7 +31,8 @@ class CallScreeningService : CallScreeningService() {
         } else if (
             callDetails.hasProperty(Call.Details.PROPERTY_EMERGENCY_CALLBACK_MODE) ||
             callDetails.hasProperty(Call.Details.PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL) ||
-            telephonyManager?.isEmergencyNumber(callDetails.handle.schemeSpecificPart) == true
+            telephonyManager
+                ?.isEmergencyNumber(callDetails.handle?.schemeSpecificPart ?: "") == true
         ) {
             prefs.isServiceEnabled = false
             Utils.setSmsReceiverState(this, false)
@@ -47,11 +48,11 @@ class CallScreeningService : CallScreeningService() {
         val number: Phonenumber.PhoneNumber
         try {
             number = phoneNumberUtil.parse(
-                callDetails.handle.schemeSpecificPart,
+                callDetails.handle?.schemeSpecificPart,
                 telephonyManager?.networkCountryIso?.uppercase(),
             )
         } catch (exc: NumberParseException) {
-            respondAllow(callDetails)
+            respondReject(callDetails)
             return
         }
         if (screeningHelper.check(number) == ScreeningHelper.RESULT_ALLOW)
