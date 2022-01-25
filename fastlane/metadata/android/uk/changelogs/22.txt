@@ -1,0 +1,3 @@
+оновлено RU переклад fastlane, завдяки Artem
+додано керувальні дії DELETE_SMS_FILTER_INACTIVE, DELETE_SMS_FILTER_ALL
+оновлено залежності і переписано
