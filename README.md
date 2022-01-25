@@ -28,6 +28,8 @@ If the app rejects calls from contacts on Android 10, allow contacts permission 
 
 ## Permissions
 
+`CALL_SCREENING` core functionality
+
 `READ_CALL_LOG`
 
 [Contacted] check if you have called the number  
