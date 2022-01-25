@@ -1,0 +1,3 @@
+збереження роботи очищення під час перезавантажень (android.permission.RECEIVE_BOOT_COMPLETED)
+покращено під капотом
+оновлено переклади, завдяки Allan Nordhøy (@comradekingu)
