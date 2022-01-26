@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="groups">
-        <item>@string/groups_array_0</item>
-        <item>@string/groups_array_1</item>
+        <item>@string/groups_array_toll_free</item>
+        <item>@string/groups_array_local</item>
     </string-array>
 </resources>

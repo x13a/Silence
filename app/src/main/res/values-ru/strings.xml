@@ -20,8 +20,8 @@
     <string name="panic_app_unknown_app">неизвестное приложение</string>
     <string name="allow">Разрешить</string>
     <string name="cancel">Отменить</string>
-    <string name="groups_array_0">Бесплатные</string>
-    <string name="groups_array_1">Местные</string>
+    <string name="groups_array_toll_free">Бесплатные</string>
+    <string name="groups_array_local">Местные</string>
     <string name="repeated_settings_count">Количество</string>
     <string name="repeated_settings_minutes">Минут</string>
     <string name="ok">OK</string>

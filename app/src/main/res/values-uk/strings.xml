@@ -22,8 +22,8 @@
     <string name="repeated_settings_minutes">Хвилин</string>
     <string name="description">Активуйте Silence, щоб не отримувати дзвінків від незнайомих людей. Це заблокує незбережені у Вашому списку контактів телефонні номери.</string>
     <string name="repeated_switch">Повторювані</string>
-    <string name="groups_array_0">Безплатний номер</string>
-    <string name="groups_array_1">Локальний</string>
+    <string name="groups_array_toll_free">Безплатний номер</string>
+    <string name="groups_array_local">Локальний</string>
     <string name="cleanup_job_description">Очистити неактивні номери</string>
     <string name="service_unavailable_popup">Сервіс перевірки дзвінків недоступний</string>
 </resources>
