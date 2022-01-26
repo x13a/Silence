@@ -21,8 +21,8 @@ import me.lucky.silence.databinding.ActivityMainBinding
 
 open class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var prefs: Preferences
     private var roleManager: RoleManager? = null
-    private val prefs by lazy { Preferences(this) }
 
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
         when (key) {
@@ -127,6 +127,7 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun init() {
+        prefs = Preferences(this)
         roleManager = getSystemService(RoleManager::class.java)
         if (Preferences.IS_PLAY_STORE_VERSION) hidePlayStore()
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) hideStir()
@@ -255,8 +256,8 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun showRepeatedSettings() {
-        val itemsN = listOf("2", "3", "4", "5")
-        val itemsT = listOf("3", "5", "10", "15", "20", "30", "60")
+        val itemsN = resources.getStringArray(R.array.repeated_settings_n)
+        val itemsT = resources.getStringArray(R.array.repeated_settings_t)
         val repeatedSettings = prefs.repeatedSettings
         @SuppressLint("InflateParams")
         val view = layoutInflater.inflate(R.layout.repeated_settings, null)
