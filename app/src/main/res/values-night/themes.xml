@@ -1,22 +1,35 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Silence.Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Silence.Base" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
     </style>
 
     <style name="Theme.Silence" parent="Theme.Silence.Base">
         <item name="colorPrimary">@color/icon_color_yellow</item>
-        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorPrimaryContainer">@color/primaryContainerDark</item>
         <item name="colorAccent">@color/icon_color_yellow</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
+    </style>
+
+    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/icon_color_white</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.App.Button</item>
+    </style>
+
+    <style name="Widget.App.Button" parent="ThemeOverlay.Material3.MaterialAlertDialog" />
+
+    <style name="Widget.App.ExposedDropdownMenu" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.ExposedDropdownMenu</item>
+    </style>
+
+    <style name="ThemeOverlay.App.ExposedDropdownMenu" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+        <item name="colorPrimary">@color/icon_color_white</item>
+        <item name="autoCompleteTextViewStyle">@style/Widget.Material3.AutoCompleteTextView.OutlinedBox</item>
     </style>
 </resources>
