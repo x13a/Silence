@@ -234,16 +234,13 @@ open class MainActivity : AppCompatActivity() {
 
     private fun showGroupsSettings() {
         var groups = prefs.groups
-        val checkedGroups = mutableListOf<Boolean>()
-        for (group in Group.values()) {
-            checkedGroups.add(groups.and(group.flag) != 0)
-        }
+        val values = Group.values()
         MaterialAlertDialogBuilder(this)
             .setMultiChoiceItems(
                 resources.getStringArray(R.array.groups),
-                checkedGroups.toBooleanArray(),
+                values.map { groups.and(it.flag) != 0 }.toBooleanArray()
             ) { _, index, isChecked ->
-                val value = Group.values()[index]
+                val value = values[index]
                 groups = when (isChecked) {
                     true -> groups.or(value.flag)
                     false -> groups.and(value.flag.inv())
