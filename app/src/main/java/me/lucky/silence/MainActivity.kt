@@ -27,11 +27,17 @@ open class MainActivity : AppCompatActivity() {
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
         when (key) {
             Preferences.SERVICE_ENABLED -> {
-                Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isMessagesChecked)
+                Utils.setSmsReceiverState(
+                    this,
+                    prefs.isServiceEnabled && prefs.isMessagesChecked,
+                )
                 updateToggle()
             }
             Preferences.MESSAGES_CHECKED -> {
-                Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isMessagesChecked)
+                Utils.setSmsReceiverState(
+                    this,
+                    prefs.isServiceEnabled && prefs.isMessagesChecked,
+                )
                 updateMessages()
             }
             Preferences.CONTACTED_CHECKED -> updateContacted()
@@ -118,10 +124,16 @@ open class MainActivity : AppCompatActivity() {
                 prefs.isStirChecked = isChecked
             }
             toggle.setOnClickListener {
-                when (!Utils.hasCallScreeningRole(this@MainActivity) && !prefs.isServiceEnabled) {
+                when (!Utils.hasCallScreeningRole(this@MainActivity)
+                      && !prefs.isServiceEnabled
+                ) {
                     true -> requestCallScreeningRole()
                     false -> prefs.isServiceEnabled = !prefs.isServiceEnabled
                 }
+            }
+            toggle.setOnLongClickListener {
+                showGeneralSettings()
+                true
             }
         }
     }
@@ -129,6 +141,7 @@ open class MainActivity : AppCompatActivity() {
     private fun init() {
         prefs = Preferences(this)
         roleManager = getSystemService(RoleManager::class.java)
+        NotificationManager(this).createNotificationChannels()
         if (Preferences.IS_PLAY_STORE_VERSION) hidePlayStore()
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) hideStir()
         binding.apply {
@@ -317,6 +330,26 @@ open class MainActivity : AppCompatActivity() {
             true
         }
         dialog.show()
+    }
+
+    private fun showGeneralSettings() {
+        var settings = prefs.generalSettings
+        val values = GeneralSettings.values()
+        MaterialAlertDialogBuilder(this)
+            .setMultiChoiceItems(
+                resources.getStringArray(R.array.general_settings),
+                values.map { settings.and(it.flag) != 0 }.toBooleanArray(),
+            ) { _, index, isChecked ->
+                val value = values[index]
+                settings = when (isChecked) {
+                    true -> settings.or(value.flag)
+                    false -> settings.and(value.flag.inv())
+                }
+            }
+            .setPositiveButton(R.string.ok) { _, _ ->
+                prefs.generalSettings = settings
+            }
+            .show()
     }
 
     private fun requestContactedPermissions() {

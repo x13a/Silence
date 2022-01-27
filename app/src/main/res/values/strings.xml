@@ -26,4 +26,7 @@
     <string name="repeated_settings_count">Count</string>
     <string name="repeated_settings_minutes">Minutes</string>
     <string name="cleanup_job_description">Cleanup inactive numbers</string>
+    <string name="general_settings_array_notification">Notification</string>
+    <string name="notification_channel_blocked_calls">Blocked calls</string>
+    <string name="notification_blocked_calls_title">Call blocked</string>
 </resources>

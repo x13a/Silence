@@ -14,10 +14,15 @@ class CallScreeningService : CallScreeningService() {
     private lateinit var prefs: Preferences
     private lateinit var screeningHelper: ScreeningHelper
     private lateinit var phoneNumberUtil: PhoneNumberUtil
+    private val notificationManager by lazy { NotificationManager(this) }
     private var telephonyManager: TelephonyManager? = null
 
     override fun onCreate() {
         super.onCreate()
+        init()
+    }
+
+    private fun init() {
         prefs = Preferences(this)
         screeningHelper = ScreeningHelper(this)
         phoneNumberUtil = PhoneNumberUtil.getInstance()
@@ -64,13 +69,17 @@ class CallScreeningService : CallScreeningService() {
     }
 
     private fun respondReject(callDetails: Call.Details) {
+        val isNotify = prefs.generalSettings.and(GeneralSettings.NOTIFICATION.flag) != 0
+        val tel = callDetails.handle?.schemeSpecificPart
         respondToCall(
             callDetails,
             CallResponse.Builder()
                 .setDisallowCall(true)
                 .setRejectCall(true)
+                .setSkipNotification(!isNotify || tel == null)
                 .build(),
         )
+        if (isNotify) notificationManager.notifyBlockedCall(tel)
     }
 
     private fun checkStir(callDetails: Call.Details): Boolean {

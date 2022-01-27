@@ -18,6 +18,7 @@ class Preferences(ctx: Context) {
 
         private const val GROUPS = "groups"
         private const val REPEATED_SETTINGS = "repeated_settings"
+        private const val GENERAL_SETTINGS = "general_settings"
 
         // migration
         private const val CALLBACK_CHECKED = "callback_checked"
@@ -79,6 +80,10 @@ class Preferences(ctx: Context) {
         get() = prefs.getBoolean(STIR_CHECKED, false)
         set(value) = prefs.edit { putBoolean(STIR_CHECKED, value) }
 
+    var generalSettings: Int
+        get() = prefs.getInt(GENERAL_SETTINGS, 0)
+        set(value) = prefs.edit { putInt(GENERAL_SETTINGS, value) }
+
     fun registerListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
         prefs.registerOnSharedPreferenceChangeListener(listener)
     }
@@ -91,6 +96,10 @@ class Preferences(ctx: Context) {
 enum class Group(val flag: Int) {
     TOLL_FREE(1),
     LOCAL(1 shl 1),
+}
+
+enum class GeneralSettings(val flag: Int) {
+    NOTIFICATION(1),
 }
 
 data class RepeatedSettings(var count: Int, var minutes: Int) {
