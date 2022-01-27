@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <!-- Android 10 -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-
     <uses-feature android:name="android.hardware.telephony" android:required="true" />
 
     <application
