@@ -1,5 +1,3 @@
-Bloquear las llamadas desconocidas.
-
 Por defecto, los números que no están en su lista de contactos serán bloqueados.
 
 Opcionalmente se puede permitir:

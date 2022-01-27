@@ -1,5 +1,3 @@
-Bloquez les appels inconnus.
-
 Par défaut, les numéros ne figurant pas dans votre liste de contacts sont bloqués.
 
 En option, vous pouvez autoriser :

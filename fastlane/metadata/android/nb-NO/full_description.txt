@@ -1,5 +1,3 @@
-Bli kvitt telefonterror.
-
 Som forvalg blokkeres telefonnumbre som ikke er lagret i kontaktlisten din.
 
 Alternativt tillat:

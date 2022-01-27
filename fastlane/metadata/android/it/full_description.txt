@@ -1,5 +1,3 @@
-Blocca i chiamanti sconosciuti con questo servizio di controllo delle chiamate.
-
 Per impostazione predefinita, i numeri non presenti nella vostra lista di contatti sono bloccati.
 
 Facoltativamente permetti:

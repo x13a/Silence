@@ -1,5 +1,3 @@
-Block unknown callers.
-
 By default numbers not in your contacts list are blocked.
 
 Optionally allow:

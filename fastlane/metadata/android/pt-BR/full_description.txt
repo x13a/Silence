@@ -1,5 +1,3 @@
-Bloqueia números desconhecidos com serviço de triagem de chamadas.
-
 Bloqueia automaticamente os números de telefone que não estejam salvos em sua lista de contatos.
 
 Opcionalmente permita:

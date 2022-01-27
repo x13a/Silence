@@ -1,5 +1,3 @@
-Blockieren Sie unbekannte Anrufer mit diesem Anrufüberwachungsdienst.
-
 Standardmäßig werden Nummern blockiert, die sich nicht in Ihrer Kontaktliste befinden.
 
 Optional können Sie zulassen:
