@@ -17,10 +17,8 @@
     <string name="groups_switch">Sans frais</string>
     <string name="panic_app_dialog_title">Confirmer l\'application de panique</string>
     <string name="panic_app_unknown_app">une application inconnue</string>
-    <string name="cancel">Annuler</string>
     <string name="panic_app_dialog_message">Êtes-vous sûr·e de vouloir autoriser %1$s à déclencher des actions de panique destructrices \?</string>
     <string name="allow">Autoriser</string>
-    <string name="ok">OK</string>
     <string name="repeated_settings_minutes">Minutes</string>
     <string name="repeated_settings_count">Total</string>
     <string name="groups_array_toll_free">Sans frais</string>

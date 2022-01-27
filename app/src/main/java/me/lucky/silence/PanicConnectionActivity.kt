@@ -39,7 +39,7 @@ class PanicConnectionActivity : MainActivity() {
                 setResult(RESULT_OK)
                 finish()
             }
-            .setPositiveButton(R.string.cancel) { _, _ ->
+            .setPositiveButton(android.R.string.cancel) { _, _ ->
                 setResult(RESULT_CANCELED)
                 finish()
             }

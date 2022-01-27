@@ -19,6 +19,4 @@
     <string name="panic_app_dialog_title">Bestätigen Sie die Panik-App</string>
     <string name="panic_app_dialog_message">Sind Sie sicher, dass Sie zulassen wollen, dass %1$s zerstörerische Panikaktionen auslöst\?</string>
     <string name="allow">Erlauben</string>
-    <string name="cancel">Abbrechen</string>
-    <string name="ok">OK</string>
 </resources>

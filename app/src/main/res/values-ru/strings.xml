@@ -19,12 +19,10 @@
     <string name="panic_app_dialog_message">Вы уверены, что хотите разрешить %1$s запускать действия тревожной кнопки\?</string>
     <string name="panic_app_unknown_app">неизвестное приложение</string>
     <string name="allow">Разрешить</string>
-    <string name="cancel">Отменить</string>
     <string name="groups_array_toll_free">Бесплатные</string>
     <string name="groups_array_local">Местные</string>
     <string name="repeated_settings_count">Количество</string>
     <string name="repeated_settings_minutes">Минут</string>
-    <string name="ok">OK</string>
     <string name="cleanup_job_description">Удаляет неактивные номера</string>
     <string name="general_settings_array_notifications">Уведомления</string>
     <string name="notification_channel_blocked_calls">Заблокированные вызовы</string>

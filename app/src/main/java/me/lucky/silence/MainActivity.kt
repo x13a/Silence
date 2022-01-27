@@ -259,7 +259,7 @@ open class MainActivity : AppCompatActivity() {
                     false -> groups.and(value.flag.inv())
                 }
             }
-            .setPositiveButton(R.string.ok) { _, _ ->
+            .setPositiveButton(android.R.string.ok) { _, _ ->
                 prefs.groups = groups
             }
             .show()
@@ -289,7 +289,7 @@ open class MainActivity : AppCompatActivity() {
         var minutes = repeatedSettings.minutes
         val dialog = MaterialAlertDialogBuilder(this)
             .setView(view)
-            .setPositiveButton(R.string.ok) { _, _ ->
+            .setPositiveButton(android.R.string.ok) { _, _ ->
                 prefs.repeatedSettings = RepeatedSettings(count, minutes)
             }
             .create()
@@ -346,7 +346,7 @@ open class MainActivity : AppCompatActivity() {
                     false -> settings.and(value.flag.inv())
                 }
             }
-            .setPositiveButton(R.string.ok) { _, _ ->
+            .setPositiveButton(android.R.string.ok) { _, _ ->
                 prefs.generalSettings = settings
             }
             .show()

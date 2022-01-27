@@ -18,6 +18,5 @@
     <string name="panic_app_unknown_app">et ukjent program</string>
     <string name="panic_app_dialog_message">Vil du tillate %1$s å utføre destruktive panikkhandlinger\?</string>
     <string name="allow">Tillat</string>
-    <string name="cancel">Avbryt</string>
     <string name="panic_app_dialog_title">Bekreft panikk-program</string>
 </resources>
