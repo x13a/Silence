@@ -5,6 +5,6 @@
         <item>@string/groups_array_local</item>
     </string-array>
     <string-array name="general_settings">
-        <item>@string/general_settings_array_notification</item>
+        <item>@string/general_settings_array_notifications</item>
     </string-array>
 </resources>

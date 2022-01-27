@@ -26,7 +26,7 @@
     <string name="repeated_settings_minutes">Минут</string>
     <string name="ok">OK</string>
     <string name="cleanup_job_description">Удаляет неактивные номера</string>
-    <string name="general_settings_array_notification">Уведомление</string>
+    <string name="general_settings_array_notifications">Уведомления</string>
     <string name="notification_channel_blocked_calls">Заблокированные вызовы</string>
     <string name="notification_blocked_calls_title">Вызов заблокирован</string>
 </resources>
