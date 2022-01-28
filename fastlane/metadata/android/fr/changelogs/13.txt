@@ -1,1 +1,1 @@
-permet le défilement des interrupteurs, merci Yuhui Su (@yuhuitech )
+permet le défilement des boutons, merci Yuhui Su (@yuhuitech )
