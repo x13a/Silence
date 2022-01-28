@@ -31,7 +31,7 @@ If the app rejects calls from contacts on Android 10, allow contacts permission 
 
 `CALL_SCREENING` 
 
-core functionality
+block and allow calls
 
 `READ_CALL_LOG`
 
