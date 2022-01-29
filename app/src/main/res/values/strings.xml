@@ -27,4 +27,6 @@
     <string name="general_settings_array_notifications">Notifications</string>
     <string name="notification_channel_blocked_calls">Blocked calls</string>
     <string name="notification_blocked_calls_title">Call blocked</string>
+    <string name="contacted_array_call">Call</string>
+    <string name="contacted_array_message">Message</string>
 </resources>

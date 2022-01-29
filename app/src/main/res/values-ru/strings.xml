@@ -27,4 +27,6 @@
     <string name="general_settings_array_notifications">Уведомления</string>
     <string name="notification_channel_blocked_calls">Заблокированные вызовы</string>
     <string name="notification_blocked_calls_title">Вызов заблокирован</string>
+    <string name="contacted_array_call">Звонок</string>
+    <string name="contacted_array_message">Сообщение</string>
 </resources>

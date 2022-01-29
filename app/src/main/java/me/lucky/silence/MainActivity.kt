@@ -53,10 +53,7 @@ open class MainActivity : AppCompatActivity() {
     private val registerForContactedPermissions =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { map ->
             var result = true
-            for (permission in arrayOf(
-                Manifest.permission.READ_CALL_LOG,
-                Manifest.permission.READ_SMS,
-            )) {
+            for (permission in getContactedPermissions()) {
                 result = result && map[permission] == true
             }
             when (result) {
@@ -96,6 +93,10 @@ open class MainActivity : AppCompatActivity() {
                     true -> requestContactedPermissions()
                     false -> prefs.isContactedChecked = isChecked
                 }
+            }
+            contactedSwitch.setOnLongClickListener {
+                showContactedSettings()
+                true
             }
             groupsSwitch.setOnCheckedChangeListener { _, isChecked ->
                 prefs.isGroupsChecked = isChecked
@@ -265,6 +266,26 @@ open class MainActivity : AppCompatActivity() {
             .show()
     }
 
+    private fun showContactedSettings() {
+        var contacted = prefs.contacted
+        val values = Contacted.values()
+        MaterialAlertDialogBuilder(this)
+            .setMultiChoiceItems(
+                resources.getStringArray(R.array.contacted),
+                values.map { contacted.and(it.flag) != 0 }.toBooleanArray()
+            ) { _, index, isChecked ->
+                val value = values[index]
+                contacted = when (isChecked) {
+                    true -> contacted.or(value.flag)
+                    false -> contacted.and(value.flag.inv())
+                }
+            }
+            .setPositiveButton(android.R.string.ok) { _, _ ->
+                prefs.contacted = contacted
+            }
+            .show()
+    }
+
     private fun showRepeatedSettings() {
         val itemsN = resources.getStringArray(R.array.repeated_settings_n)
         val itemsT = resources.getStringArray(R.array.repeated_settings_t)
@@ -353,11 +374,19 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun requestContactedPermissions() {
-        registerForContactedPermissions
-            .launch(arrayOf(
-                Manifest.permission.READ_CALL_LOG,
-                Manifest.permission.READ_SMS,
-            ))
+        registerForContactedPermissions.launch(getContactedPermissions())
+    }
+
+    private fun getContactedPermissions(): Array<String> {
+        val contacted = prefs.contacted
+        val permissions = mutableListOf<String>()
+        for (value in Contacted.values().asSequence().filter { contacted.and(it.flag) != 0 }) {
+            when (value) {
+                Contacted.CALL -> permissions.add(Manifest.permission.READ_CALL_LOG)
+                Contacted.MESSAGE -> permissions.add(Manifest.permission.READ_SMS)
+            }
+        }
+        return permissions.toTypedArray()
     }
 
     private fun requestRepeatedPermissions() {
@@ -374,11 +403,7 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun hasContactedPermissions(): Boolean {
-        return Utils.hasPermissions(
-            this,
-            Manifest.permission.READ_CALL_LOG,
-            Manifest.permission.READ_SMS,
-        )
+        return Utils.hasPermissions(this, *getContactedPermissions())
     }
 
     private fun hasRepeatedPermissions(): Boolean {

@@ -16,6 +16,7 @@ class Preferences(ctx: Context) {
         private const val GROUPS_CHECKED = "groups_checked"
         private const val STIR_CHECKED = "stir_checked"
 
+        private const val CONTACTED = "contacted"
         private const val GROUPS = "groups"
         private const val REPEATED_SETTINGS = "repeated_settings"
         private const val GENERAL_SETTINGS = "general_settings"
@@ -41,6 +42,10 @@ class Preferences(ctx: Context) {
             prefs.getBoolean(CALLBACK_CHECKED, false),
         )
         set(value) = prefs.edit { putBoolean(CONTACTED_CHECKED, value) }
+
+    var contacted: Int
+        get() = prefs.getInt(CONTACTED, Contacted.CALL.flag.or(Contacted.MESSAGE.flag))
+        set(value) = prefs.edit { putInt(CONTACTED, value) }
 
     var isGroupsChecked: Boolean
         get() = prefs.getBoolean(
@@ -93,13 +98,18 @@ class Preferences(ctx: Context) {
     }
 }
 
+enum class Contacted(val flag: Int) {
+    CALL(1),
+    MESSAGE(1 shl 1),
+}
+
 enum class Group(val flag: Int) {
     TOLL_FREE(1),
     LOCAL(1 shl 1),
 }
 
 enum class GeneralSettings(val flag: Int) {
-    NOTIFICATION(1),
+    NOTIFICATIONS(1),
 }
 
 data class RepeatedSettings(var count: Int, var minutes: Int) {

@@ -69,7 +69,7 @@ class CallScreeningService : CallScreeningService() {
     }
 
     private fun respondReject(callDetails: Call.Details) {
-        val isNotify = prefs.generalSettings.and(GeneralSettings.NOTIFICATION.flag) != 0
+        val isNotify = prefs.generalSettings.and(GeneralSettings.NOTIFICATIONS.flag) != 0
         val tel = callDetails.handle?.schemeSpecificPart
         respondToCall(
             callDetails,

@@ -37,6 +37,19 @@ class ScreeningHelper(private val ctx: Context) {
     }
 
     private fun checkContacted(number: Phonenumber.PhoneNumber): Boolean {
+        val contacted = prefs.contacted
+        var result = false
+        for (value in Contacted.values().asSequence().filter { contacted.and(it.flag) != 0 }) {
+            result = when (value) {
+                Contacted.CALL -> checkContactedCall(number)
+                Contacted.MESSAGE -> checkContactedMessage(number)
+            }
+            if (result) break
+        }
+        return result
+    }
+
+    private fun checkContactedCall(number: Phonenumber.PhoneNumber): Boolean {
         var cursor: Cursor? = null
         var result = false
         try {
@@ -52,7 +65,12 @@ class ScreeningHelper(private val ctx: Context) {
             if (moveToFirst()) { result = true }
             close()
         }
-        if (result) return result
+        return result
+    }
+
+    private fun checkContactedMessage(number: Phonenumber.PhoneNumber): Boolean {
+        var cursor: Cursor? = null
+        var result = false
         try {
             cursor = ctx.contentResolver.query(
                 Telephony.Sms.Sent.CONTENT_URI,
