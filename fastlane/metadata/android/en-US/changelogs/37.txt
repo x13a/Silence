@@ -1,1 +1,2 @@
 split contacted permissions
+update French translation, thanks to @Ilithy
