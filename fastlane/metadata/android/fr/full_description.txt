@@ -3,9 +3,9 @@ Par défaut, les numéros ne figurant pas dans votre liste de contacts sont bloq
 En option, vous pouvez autoriser :
 * Les numéros que vous avez appelés
 * Les numéros avec des codes gratuits (ex.: 800)
-* Un troisième appel enregistré du même numéro dans les N minutes
+* N appel enregistré du même numéro dans les N minutes
 * Les numéros de mobile des textos reçus
 * Numéros réussissant la vérification STIR (Android 11)
 
-Si l'application rejette les appels des contacts sur Android 10, autorisez manuellement les contacts dans
+Si l'application rejette les appels des contacts sur Android 10, autorisez manuellement l'accès aux contacts dans
 Infos de l'appli → Autorisations.

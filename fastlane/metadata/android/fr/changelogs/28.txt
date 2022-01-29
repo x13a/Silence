@@ -1,0 +1,13 @@
+changer le callback en rappel
+ajouter des sous-ensembles de code
+ajouter des sous-ensembles répétés
+ajout d'une désactivation automatique lors d'un appel d'urgence
+ajout de la vérification du numéro desvsms sortants dans les contactés (nouvelle permission!)
+mise à jour des traductions, merci à :
+        @wmdarg ,
+        Allan Nordhøy (@comradekingu) ,
+        J. Lavoie (Edanas) ,
+        Maxime Leroy (@Lisapple) ,
+
+Merci à toutes les personnes qui participent à ce projet.
+Bonne année à tous !

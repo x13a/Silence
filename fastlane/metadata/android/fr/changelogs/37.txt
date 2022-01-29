@@ -1,0 +1,2 @@
+séparation des permissions pour les sous ensemble de l'éléments contactées
+mise à jour de la traduction française, grâce à @Ilithy

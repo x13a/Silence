@@ -1,1 +1,1 @@
-correction du rejet des contacts sur Android 10, merci ua Sad, @norrinr
+correction du rejet des contacts sous Android 10, merci ua Sad, @norrinr
