@@ -1,0 +1,3 @@
+maintenant les numéros masqués seront bloqués, merci à @Ilithy , @norrinr
+mise à jour de la traduction ukrainienne, merci à Andrij Mizyk (@andmizyk)
+mise à jour de la traduction française, merci à J. Lavoie (Edanas)

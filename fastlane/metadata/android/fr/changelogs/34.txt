@@ -1,0 +1,4 @@
+ajout de paramètres supplémentaires en lien avec les descriptions, merci à uasad
+ajout de la traduction ukrainienne, grâce à Andrij Mizyk (@andmizyk)
+mise à jour de la traduction française, merci à J. Lavoie (Edanas)
+ajout d'une solution par weblate pour string-array

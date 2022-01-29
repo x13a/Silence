@@ -1,0 +1,3 @@
+persistance des tâches de nettoyage à travers les redémarrages (android.permission.RECEIVE_BOOT_COMPLETED)
+améliorations sous le capot
+mise à jour des traductions, grâce à Allan Nordhøy (@comradekingu)
