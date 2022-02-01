@@ -6,8 +6,8 @@ import android.content.Intent
 
 class ControlReceiver : BroadcastReceiver() {
     companion object {
-        private const val TOGGLE_ON = "me.lucky.silence.action.TOGGLE_ON"
-        private const val TOGGLE_OFF = "me.lucky.silence.action.TOGGLE_OFF"
+        private const val TOGGLE_ON = "me.lucky.silence.action.SET_ON"
+        private const val TOGGLE_OFF = "me.lucky.silence.action.SET_OFF"
     }
 
     override fun onReceive(context: Context?, intent: Intent?) {

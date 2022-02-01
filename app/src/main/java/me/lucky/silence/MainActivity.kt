@@ -1,7 +1,6 @@
 package me.lucky.silence
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.app.role.RoleManager
 import android.content.SharedPreferences
 import android.os.Build
@@ -290,7 +289,7 @@ open class MainActivity : AppCompatActivity() {
         val itemsN = resources.getStringArray(R.array.repeated_settings_n)
         val itemsT = resources.getStringArray(R.array.repeated_settings_t)
         val repeatedSettings = prefs.repeatedSettings
-        @SuppressLint("InflateParams")
+        @Suppress("InflateParams")
         val view = layoutInflater.inflate(R.layout.repeated_settings, null)
         val n = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsCount)
         n.setText(repeatedSettings.count.toString())
