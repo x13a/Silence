@@ -1,10 +1,16 @@
-Per impostazione predefinita, i numeri non presenti nella vostra lista di contatti sono bloccati.
+Per impostazione predefinita, i numeri non presenti nei tuoi contatti sono bloccati.
 
-Facoltativamente permetti:
+Permetti facoltativamente:
 * Numeri che hai chiamato
-* Numeri con codici gratuiti (es: 800)
-* Una terza chiamata registrata dallo stesso numero entro cinque minuti
-* Numeri di cellulare da messaggi di testo in arrivo temporaneamente
+* Numeri all'interno dei gruppi selezionati (Numeri Verde, Locali)
+* N chiamate registrate dallo stesso numero entro T minuti.
+* Numeri di cellulare da SMS
 * Numeri che superano la verifica STIR (Android 11)
 
+Contattati, Gruppi, Azioni ripetute e l'interruttore principale hanno impostazioni aggiuntive. Puoi aprirle
+con un tocco prolungato
+
 Se l'applicazione rifiuta le chiamate dai contatti su Android 10, autorizza manualmente l'autorizzazione dei contatti in Info dell'app → Autorizzazioni.
+
+È un software open source gratuito.
+Licenza: GPL-3
