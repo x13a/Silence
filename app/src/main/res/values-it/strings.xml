@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="contacted_switch">Richiamo</string>
-    <string name="app_name">Silenzio</string>
+    <string name="contacted_switch">Contattati</string>
+    <string name="app_name">Silence</string>
     <string name="toggle_off">Attiva</string>
     <string name="toggle_on">Disattiva</string>
-    <string name="description">Attiva Silenzio per evitare di ricevere chiamate da persone che non conosci. Questo blocca i numeri di telefono che non sono salvati nella tua lista di contatti.</string>
-    <string name="contacted_description">Permetti i numeri che hai chiamato.</string>
-    <string name="groups_switch">Numero verde</string>
-    <string name="groups_description">Numeri all\'interno dei gruppi di codici selezionati.</string>
-    <string name="repeated_switch">Ripetuto</string>
+    <string name="description">Attiva Silence per evitare di ricevere chiamate da persone che non conosci. Questo blocca i numeri di telefono che non sono salvati nei tuoi contatti.</string>
+    <string name="contacted_description">Numeri che hai contattato.</string>
+    <string name="groups_switch">Gruppi</string>
+    <string name="groups_description">Numeri all\'interno dei gruppi selezionati.</string>
+    <string name="repeated_switch">Ripetuti</string>
     <string name="service_unavailable_popup">Servizio di controllo delle chiamate non disponibile</string>
-    <string name="repeated_description">Permetti una terza chiamata registrata dallo stesso numero entro cinque minuti.</string>
+    <string name="repeated_description">N chiamate registrate dallo stesso numero in T minuti.</string>
     <string name="messages_switch">SMS</string>
-    <string name="messages_description">Permetti temporaneamente i numeri di cellulare dai messaggi in arrivo.</string>
+    <string name="messages_description">Numeri dai messaggi.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
-    <string name="stir_description">Permetti i numeri che hanno superato la verifica STIR.</string>
+    <string name="stir_description">Numeri che hanno superato la verifica STIR.</string>
+    <string name="panic_app_dialog_title">Conferma app panico</string>
+    <string name="panic_app_dialog_message">Sei sicuro di voler permettere a %1$s di innescare azioni di panico distruttive\?</string>
+    <string name="panic_app_unknown_app">un\'app sconosciuta</string>
+    <string name="allow">Permetti</string>
+    <string name="notification_channel_blocked_calls">Chiamate bloccate</string>
+    <string name="notification_blocked_calls_title">Chiamata bloccata</string>
+    <string name="groups_array_toll_free">Numero verde</string>
+    <string name="repeated_settings_count">Totale</string>
+    <string name="repeated_settings_minutes">Minuti</string>
+    <string name="cleanup_job_description">Pulizia numeri inattivi</string>
+    <string name="general_settings_array_notifications">Notifiche</string>
+    <string name="contacted_array_call">Chiamata</string>
+    <string name="contacted_array_message">Messaggio</string>
+    <string name="groups_array_local">Locale</string>
 </resources>

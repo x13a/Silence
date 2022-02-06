@@ -17,7 +17,7 @@
     <string name="groups_switch">Groupes</string>
     <string name="panic_app_dialog_title">Confirmer l\'application de panique</string>
     <string name="panic_app_unknown_app">une application inconnue</string>
-    <string name="panic_app_dialog_message">Êtes-vous sûr·e de vouloir autoriser %1$s à déclencher des actions de panique destructrices \?</string>
+    <string name="panic_app_dialog_message">Êtes-vous sûre de vouloir autoriser %1$s à déclencher des actions de panique destructrices\?</string>
     <string name="allow">Autoriser</string>
     <string name="repeated_settings_minutes">Minutes</string>
     <string name="repeated_settings_count">Total</string>
