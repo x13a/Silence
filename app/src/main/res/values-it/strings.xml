@@ -25,7 +25,7 @@
     <string name="repeated_settings_count">Totale</string>
     <string name="repeated_settings_minutes">Minuti</string>
     <string name="cleanup_job_description">Pulizia numeri inattivi</string>
-    <string name="general_settings_array_notifications">Notifiche</string>
+    <string name="general_flag_array_notifications">Notifiche</string>
     <string name="contacted_array_call">Chiamata</string>
     <string name="contacted_array_message">Messaggio</string>
     <string name="groups_array_local">Locale</string>

@@ -8,7 +8,7 @@
         <item>@string/groups_array_toll_free</item>
         <item>@string/groups_array_local</item>
     </string-array>
-    <string-array name="general_settings">
-        <item>@string/general_settings_array_notifications</item>
+    <string-array name="general_flag">
+        <item>@string/general_flag_array_notifications</item>
     </string-array>
 </resources>

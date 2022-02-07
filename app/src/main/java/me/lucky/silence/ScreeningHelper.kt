@@ -39,7 +39,7 @@ class ScreeningHelper(private val ctx: Context) {
     private fun checkContacted(number: Phonenumber.PhoneNumber): Boolean {
         val contacted = prefs.contacted
         var result = false
-        for (value in Contacted.values().asSequence().filter { contacted.and(it.flag) != 0 }) {
+        for (value in Contacted.values().asSequence().filter { contacted.and(it.value) != 0 }) {
             result = when (value) {
                 Contacted.CALL -> checkContactedCall(number)
                 Contacted.MESSAGE -> checkContactedMessage(number)
@@ -93,7 +93,7 @@ class ScreeningHelper(private val ctx: Context) {
     private fun checkGroups(number: Phonenumber.PhoneNumber): Boolean {
         val groups = prefs.groups
         var result = false
-        for (group in Group.values().asSequence().filter { groups.and(it.flag) != 0 }) {
+        for (group in Group.values().asSequence().filter { groups.and(it.value) != 0 }) {
             result = when (group) {
                 Group.TOLL_FREE -> phoneNumberUtil.getNumberType(number) ==
                         PhoneNumberUtil.PhoneNumberType.TOLL_FREE

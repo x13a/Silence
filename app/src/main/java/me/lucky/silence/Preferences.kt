@@ -19,7 +19,7 @@ class Preferences(ctx: Context) {
         private const val CONTACTED = "contacted"
         private const val GROUPS = "groups"
         private const val REPEATED_SETTINGS = "repeated_settings"
-        private const val GENERAL_SETTINGS = "general_settings"
+        private const val GENERAL_FLAG = "general_flag"
 
         // migration
         private const val CALLBACK_CHECKED = "callback_checked"
@@ -28,6 +28,7 @@ class Preferences(ctx: Context) {
         private const val TOLL_FREE_CHECKED = "toll_free_checked"
         private const val MESSAGE_CHECKED = "message_checked"
         private const val SMS_CHECKED = "sms_checked"
+        private const val GENERAL_SETTINGS = "general_settings"
     }
 
     private val prefs = PreferenceManager.getDefaultSharedPreferences(ctx)
@@ -44,7 +45,7 @@ class Preferences(ctx: Context) {
         set(value) = prefs.edit { putBoolean(CONTACTED_CHECKED, value) }
 
     var contacted: Int
-        get() = prefs.getInt(CONTACTED, Contacted.CALL.flag.or(Contacted.MESSAGE.flag))
+        get() = prefs.getInt(CONTACTED, Contacted.CALL.value.or(Contacted.MESSAGE.value))
         set(value) = prefs.edit { putInt(CONTACTED, value) }
 
     var isGroupsChecked: Boolean
@@ -58,7 +59,7 @@ class Preferences(ctx: Context) {
         get() = prefs.getInt(GROUPS, prefs.getInt(
             CODE_GROUPS,
             if (prefs.getBoolean(TOLL_FREE_CHECKED, false))
-                Group.TOLL_FREE.flag
+                Group.TOLL_FREE.value
             else 0,
         ))
         set(value) = prefs.edit { putInt(GROUPS, value) }
@@ -85,9 +86,9 @@ class Preferences(ctx: Context) {
         get() = prefs.getBoolean(STIR_CHECKED, false)
         set(value) = prefs.edit { putBoolean(STIR_CHECKED, value) }
 
-    var generalSettings: Int
-        get() = prefs.getInt(GENERAL_SETTINGS, 0)
-        set(value) = prefs.edit { putInt(GENERAL_SETTINGS, value) }
+    var generalFlag: Int
+        get() = prefs.getInt(GENERAL_FLAG, prefs.getInt(GENERAL_SETTINGS, 0))
+        set(value) = prefs.edit { putInt(GENERAL_FLAG, value) }
 
     fun registerListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
         prefs.registerOnSharedPreferenceChangeListener(listener)
@@ -98,17 +99,17 @@ class Preferences(ctx: Context) {
     }
 }
 
-enum class Contacted(val flag: Int) {
+enum class Contacted(val value: Int) {
     CALL(1),
     MESSAGE(1 shl 1),
 }
 
-enum class Group(val flag: Int) {
+enum class Group(val value: Int) {
     TOLL_FREE(1),
     LOCAL(1 shl 1),
 }
 
-enum class GeneralSettings(val flag: Int) {
+enum class GeneralFlag(val value: Int) {
     NOTIFICATIONS(1),
 }
 

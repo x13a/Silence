@@ -26,7 +26,7 @@
     <string name="cleanup_job_description">Nettoyer les numéros inactifs</string>
     <string name="notification_blocked_calls_title">Appel bloqué</string>
     <string name="notification_channel_blocked_calls">Appels bloqués</string>
-    <string name="general_settings_array_notifications">Notifications</string>
+    <string name="general_flag_array_notifications">Notifications</string>
     <string name="contacted_array_call">Appeler</string>
     <string name="contacted_array_message">Texter</string>
 </resources>

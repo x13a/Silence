@@ -249,12 +249,12 @@ open class MainActivity : AppCompatActivity() {
         MaterialAlertDialogBuilder(this)
             .setMultiChoiceItems(
                 resources.getStringArray(R.array.groups),
-                values.map { groups.and(it.flag) != 0 }.toBooleanArray()
+                values.map { groups.and(it.value) != 0 }.toBooleanArray()
             ) { _, index, isChecked ->
                 val value = values[index]
                 groups = when (isChecked) {
-                    true -> groups.or(value.flag)
-                    false -> groups.and(value.flag.inv())
+                    true -> groups.or(value.value)
+                    false -> groups.and(value.value.inv())
                 }
             }
             .setPositiveButton(android.R.string.ok) { _, _ ->
@@ -269,12 +269,12 @@ open class MainActivity : AppCompatActivity() {
         MaterialAlertDialogBuilder(this)
             .setMultiChoiceItems(
                 resources.getStringArray(R.array.contacted),
-                values.map { contacted.and(it.flag) != 0 }.toBooleanArray()
+                values.map { contacted.and(it.value) != 0 }.toBooleanArray()
             ) { _, index, isChecked ->
                 val value = values[index]
                 contacted = when (isChecked) {
-                    true -> contacted.or(value.flag)
-                    false -> contacted.and(value.flag.inv())
+                    true -> contacted.or(value.value)
+                    false -> contacted.and(value.value.inv())
                 }
             }
             .setPositiveButton(android.R.string.ok) { _, _ ->
@@ -326,21 +326,21 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun showGeneralSettings() {
-        var settings = prefs.generalSettings
-        val values = GeneralSettings.values()
+        var flag = prefs.generalFlag
+        val values = GeneralFlag.values()
         MaterialAlertDialogBuilder(this)
             .setMultiChoiceItems(
-                resources.getStringArray(R.array.general_settings),
-                values.map { settings.and(it.flag) != 0 }.toBooleanArray(),
+                resources.getStringArray(R.array.general_flag),
+                values.map { flag.and(it.value) != 0 }.toBooleanArray(),
             ) { _, index, isChecked ->
                 val value = values[index]
-                settings = when (isChecked) {
-                    true -> settings.or(value.flag)
-                    false -> settings.and(value.flag.inv())
+                flag = when (isChecked) {
+                    true -> flag.or(value.value)
+                    false -> flag.and(value.value.inv())
                 }
             }
             .setPositiveButton(android.R.string.ok) { _, _ ->
-                prefs.generalSettings = settings
+                prefs.generalFlag = flag
             }
             .show()
     }
@@ -352,7 +352,7 @@ open class MainActivity : AppCompatActivity() {
     private fun getContactedPermissions(): Array<String> {
         val contacted = prefs.contacted
         val permissions = mutableListOf<String>()
-        for (value in Contacted.values().asSequence().filter { contacted.and(it.flag) != 0 }) {
+        for (value in Contacted.values().asSequence().filter { contacted.and(it.value) != 0 }) {
             when (value) {
                 Contacted.CALL -> permissions.add(Manifest.permission.READ_CALL_LOG)
                 Contacted.MESSAGE -> permissions.add(Manifest.permission.READ_SMS)

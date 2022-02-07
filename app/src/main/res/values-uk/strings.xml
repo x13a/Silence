@@ -26,7 +26,7 @@
     <string name="service_unavailable_popup">Сервіс перевірки дзвінків недоступний</string>
     <string name="notification_channel_blocked_calls">Блоковані дзвінки</string>
     <string name="notification_blocked_calls_title">Дзвінок заблоковано</string>
-    <string name="general_settings_array_notifications">Сповіщення</string>
+    <string name="general_flag_array_notifications">Сповіщення</string>
     <string name="contacted_array_call">Виклик</string>
     <string name="contacted_array_message">Повідомлення</string>
 </resources>
