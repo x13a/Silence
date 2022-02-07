@@ -5,14 +5,14 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdk 32
 
     defaultConfig {
         applicationId "me.lucky.silence"
-        minSdkVersion 29
-        targetSdkVersion 31
-        versionCode 37
-        versionName "1.9.9"
+        minSdk 29
+        targetSdk 32
+        versionCode 38
+        versionName "1.10.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 

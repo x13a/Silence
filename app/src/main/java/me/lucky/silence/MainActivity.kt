@@ -5,14 +5,12 @@ import android.app.role.RoleManager
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
-import android.text.InputType
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.doOnTextChanged
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
@@ -313,41 +311,16 @@ open class MainActivity : AppCompatActivity() {
                 prefs.repeatedSettings = RepeatedSettings(count, minutes)
             }
             .create()
-        val button by lazy { dialog.getButton(AlertDialog.BUTTON_POSITIVE) }
-        val updateButtonState = { button.isEnabled = count < minutes }
+        val updateButtonState = {
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).isEnabled = count < minutes
+        }
         n.setOnItemClickListener { _, _, position, _ ->
             count = itemsN[position].toInt()
             updateButtonState()
         }
-        n.doOnTextChanged { text, _, _, _ ->
-            val str = text?.toString()
-            if (str == null || str == "") {
-                button.isEnabled = false
-                return@doOnTextChanged
-            }
-            count = str.toInt()
-            updateButtonState()
-        }
-        n.setOnLongClickListener {
-            n.inputType = InputType.TYPE_CLASS_NUMBER
-            true
-        }
         t.setOnItemClickListener { _, _, position, _ ->
             minutes = itemsT[position].toInt()
             updateButtonState()
-        }
-        t.doOnTextChanged { text, _, _, _ ->
-            val str = text?.toString()
-            if (str == null || str == "") {
-                button.isEnabled = false
-                return@doOnTextChanged
-            }
-            minutes = str.toInt()
-            updateButtonState()
-        }
-        t.setOnLongClickListener {
-            t.inputType = InputType.TYPE_CLASS_NUMBER
-            true
         }
         dialog.show()
     }
