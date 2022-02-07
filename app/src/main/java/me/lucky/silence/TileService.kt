@@ -4,7 +4,7 @@ import android.content.SharedPreferences
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 
-class QSTileService : TileService() {
+class TileService : TileService() {
     private lateinit var prefs: Preferences
 
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->

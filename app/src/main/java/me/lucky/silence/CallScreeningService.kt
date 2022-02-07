@@ -45,7 +45,11 @@ class CallScreeningService : CallScreeningService() {
             return
         } else if (
             callDetails.callDirection != Call.Details.DIRECTION_INCOMING ||
-            (prefs.isStirChecked && checkStir(callDetails))
+            (prefs.isStirChecked && checkStir(callDetails)) ||
+            (
+                callDetails.handle?.schemeSpecificPart == null &&
+                prefs.generalFlag.and(GeneralFlag.HIDDEN_NUMBERS.value) != 0
+            )
         ) {
             respondAllow(callDetails)
             return

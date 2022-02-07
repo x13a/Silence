@@ -245,16 +245,16 @@ open class MainActivity : AppCompatActivity() {
 
     private fun showGroupsSettings() {
         var groups = prefs.groups
-        val values = Group.values()
+        val flags = Group.values()
         MaterialAlertDialogBuilder(this)
             .setMultiChoiceItems(
                 resources.getStringArray(R.array.groups),
-                values.map { groups.and(it.value) != 0 }.toBooleanArray()
+                flags.map { groups.and(it.value) != 0 }.toBooleanArray()
             ) { _, index, isChecked ->
-                val value = values[index]
+                val flag = flags[index]
                 groups = when (isChecked) {
-                    true -> groups.or(value.value)
-                    false -> groups.and(value.value.inv())
+                    true -> groups.or(flag.value)
+                    false -> groups.and(flag.value.inv())
                 }
             }
             .setPositiveButton(android.R.string.ok) { _, _ ->
@@ -265,16 +265,16 @@ open class MainActivity : AppCompatActivity() {
 
     private fun showContactedSettings() {
         var contacted = prefs.contacted
-        val values = Contacted.values()
+        val flags = Contacted.values()
         MaterialAlertDialogBuilder(this)
             .setMultiChoiceItems(
                 resources.getStringArray(R.array.contacted),
-                values.map { contacted.and(it.value) != 0 }.toBooleanArray()
+                flags.map { contacted.and(it.value) != 0 }.toBooleanArray()
             ) { _, index, isChecked ->
-                val value = values[index]
+                val flag = flags[index]
                 contacted = when (isChecked) {
-                    true -> contacted.or(value.value)
-                    false -> contacted.and(value.value.inv())
+                    true -> contacted.or(flag.value)
+                    false -> contacted.and(flag.value.inv())
                 }
             }
             .setPositiveButton(android.R.string.ok) { _, _ ->
@@ -326,21 +326,21 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun showGeneralSettings() {
-        var flag = prefs.generalFlag
-        val values = GeneralFlag.values()
+        var general = prefs.generalFlag
+        val flags = GeneralFlag.values()
         MaterialAlertDialogBuilder(this)
             .setMultiChoiceItems(
                 resources.getStringArray(R.array.general_flag),
-                values.map { flag.and(it.value) != 0 }.toBooleanArray(),
+                flags.map { general.and(it.value) != 0 }.toBooleanArray(),
             ) { _, index, isChecked ->
-                val value = values[index]
-                flag = when (isChecked) {
-                    true -> flag.or(value.value)
-                    false -> flag.and(value.value.inv())
+                val flag = flags[index]
+                general = when (isChecked) {
+                    true -> general.or(flag.value)
+                    false -> general.and(flag.value.inv())
                 }
             }
             .setPositiveButton(android.R.string.ok) { _, _ ->
-                prefs.generalFlag = flag
+                prefs.generalFlag = general
             }
             .show()
     }

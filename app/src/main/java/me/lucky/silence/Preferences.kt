@@ -111,9 +111,10 @@ enum class Group(val value: Int) {
 
 enum class GeneralFlag(val value: Int) {
     NOTIFICATIONS(1),
+    HIDDEN_NUMBERS(1 shl 1),
 }
 
-data class RepeatedSettings(var count: Int, var minutes: Int) {
+data class RepeatedSettings(val count: Int, val minutes: Int) {
     companion object {
         private const val DELIMITER = ','
         private const val DEFAULT_COUNT = 3

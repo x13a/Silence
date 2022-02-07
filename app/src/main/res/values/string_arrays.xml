@@ -10,5 +10,6 @@
     </string-array>
     <string-array name="general_flag">
         <item>@string/general_flag_array_notifications</item>
+        <item>@string/general_flag_array_hidden_numbers</item>
     </string-array>
 </resources>

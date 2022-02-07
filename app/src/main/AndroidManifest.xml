@@ -12,8 +12,6 @@
     <uses-feature android:name="android.hardware.telephony" android:required="true" />
 
     <application
-        android:allowBackup="true"
-        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -31,7 +29,7 @@
         </receiver>
 
         <service
-            android:name=".QSTileService"
+            android:name=".TileService"
             android:icon="@drawable/ic_tile"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
@@ -52,6 +50,8 @@
             <intent-filter>
                 <action android:name="me.lucky.silence.action.SET_ON" />
                 <action android:name="me.lucky.silence.action.SET_OFF" />
+                <action android:name="me.lucky.silence.action.SET_HIDDEN_NUMBERS_ON" />
+                <action android:name="me.lucky.silence.action.SET_HIDDEN_NUMBERS_OFF" />
             </intent-filter>
         </receiver>
 
