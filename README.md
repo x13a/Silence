@@ -15,11 +15,11 @@ Block unknown callers.
 By default numbers not in your contacts list are blocked.
 
 Optionally allow:
-- Numbers you have contacted
-- Numbers within the selected groups (Toll-Free, Local)
-- N registered call from the same number within T minutes
-- Numbers from messages
-- Numbers passing STIR verification (Android 11)
+* Numbers you have contacted
+* Numbers within the selected groups (Toll-Free, Local)
+* N registered call from the same number within T minutes
+* Numbers from messages
+* Numbers passing STIR verification (Android 11)
 
 `Contacted`, `Groups`, `Repeated` options and the main toggle have additional settings. You can 
 open them by long click.
@@ -29,30 +29,13 @@ If the app rejects calls from contacts on Android 10, allow contacts permission 
 
 ## Permissions
 
-`CALL_SCREENING` 
-
-block and allow calls
-
-`READ_CALL_LOG`
-
-[Contacted] check if you have called the number  
-[Repeated] count times the number have called you in T minutes
-
-`READ_SMS`
-
-[Contacted] check if you have sent a message to the number
-
-`RECEIVE_SMS`
-
-[Messages] find mobile numbers in incoming messages
-
-`RECEIVE_BOOT_COMPLETED`
-
-[Messages] persist cleanup inactive numbers job across reboots
-
-`READ_CONTACTS`
-
-[Android 10] check if the number exists in contacts
+* CALL_SCREENING         - block or allow call
+* READ_CALL_LOG          - check you have called the number and count times the number have called 
+    you in T minutes
+* READ_SMS               - check you have sent a message to the number
+* RECEIVE_SMS            - find mobile numbers in incoming messages
+* RECEIVE_BOOT_COMPLETED - persist cleanup inactive numbers job across reboots
+* READ_CONTACTS          - check the number exists in contacts on Android 10
 
 ## Localization
 
