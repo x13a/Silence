@@ -1,4 +1,4 @@
-By default numbers not in your contacts list are blocked.
+By default numbers not in your contacts are blocked.
 
 Optionally allow:
 * Numbers you have contacted

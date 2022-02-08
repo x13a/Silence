@@ -12,7 +12,7 @@ Block unknown callers.
     width="30%" 
     height="30%">
 
-By default numbers not in your contacts list are blocked.
+By default numbers not in your contacts are blocked.
 
 Optionally allow:
 * Numbers you have contacted
@@ -21,8 +21,8 @@ Optionally allow:
 * Numbers from messages
 * Numbers passing STIR verification (Android 11)
 
-`Contacted`, `Groups`, `Repeated` options and the main toggle have additional settings. You can 
-open them by long click.
+Contacted, Groups, Repeated options and the main toggle have additional settings. You can open them 
+by long click.
 
 If the app rejects calls from contacts on Android 10, allow contacts permission manually in 
 `App info → Permissions`.
