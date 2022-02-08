@@ -7,8 +7,6 @@ import androidx.preference.PreferenceManager
 
 class Preferences(ctx: Context) {
     companion object {
-        const val IS_PLAY_STORE_VERSION = false
-
         const val SERVICE_ENABLED = "service_enabled"
         const val CONTACTED_CHECKED = "contacted_checked"
         const val REPEATED_CHECKED = "repeated_checked"
@@ -38,7 +36,7 @@ class Preferences(ctx: Context) {
         set(value) = prefs.edit { putBoolean(SERVICE_ENABLED, value) }
 
     var isContactedChecked: Boolean
-        get() = if (IS_PLAY_STORE_VERSION) false else prefs.getBoolean(
+        get() = prefs.getBoolean(
             CONTACTED_CHECKED,
             prefs.getBoolean(CALLBACK_CHECKED, false),
         )
@@ -65,7 +63,7 @@ class Preferences(ctx: Context) {
         set(value) = prefs.edit { putInt(GROUPS, value) }
 
     var isRepeatedChecked: Boolean
-        get() = if (IS_PLAY_STORE_VERSION) false else prefs.getBoolean(REPEATED_CHECKED, false)
+        get() = prefs.getBoolean(REPEATED_CHECKED, false)
         set(value) = prefs.edit { putBoolean(REPEATED_CHECKED, value) }
 
     var repeatedSettings: RepeatedSettings
@@ -76,7 +74,7 @@ class Preferences(ctx: Context) {
         set(value) = prefs.edit { putString(REPEATED_SETTINGS, value.toString()) }
 
     var isMessagesChecked: Boolean
-        get() = if (IS_PLAY_STORE_VERSION) false else prefs.getBoolean(
+        get() = prefs.getBoolean(
             MESSAGES_CHECKED,
             prefs.getBoolean(MESSAGE_CHECKED, prefs.getBoolean(SMS_CHECKED, false)),
         )
