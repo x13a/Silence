@@ -39,7 +39,7 @@ If the app rejects calls from contacts on Android 10, allow contacts permission 
 
 ## Localization
 
-Is `Silence` not in your language, or the translation is incorrect or incomplete? Get involved on 
+Is Silence not in your language, or the translation is incorrect or incomplete? Get involved on 
 [Weblate](https://hosted.weblate.org/engage/me-lucky-silence/).
 
 [![Translation status](https://hosted.weblate.org/widgets/me-lucky-silence/-/app/horizontal-auto.svg)](https://hosted.weblate.org/engage/me-lucky-silence/)
