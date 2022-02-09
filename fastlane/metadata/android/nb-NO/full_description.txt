@@ -7,4 +7,5 @@ Alternativt tillat:
 * Mobilnummer fra tekstmeldinger midlertidig
 * Nummer som har bestått STIR-bekreftelse (Android 11)
 
-Hvis programmet avslår anrop fra kontakter på Android 10 kan kontakttilgang innvilges manuelt i programinfo → tilganger.
+Hvis programmet avslår anrop fra kontakter på Android 10 kan kontakttilgang innvilges manuelt i
+programinfo → tilganger.

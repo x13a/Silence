@@ -7,4 +7,5 @@ Opcionalmente se puede permitir:
 * Temporalmente los números de móvil de los mensajes de texto entrantes
 * Números que han aprobado la comprobación STIR (Android 11)
 
-Si la aplicación rechaza las llamadas de los contactos en Android 10, habilite manualmente el permiso de los contactos en Información de la aplicación → Permisos.
+Si la aplicación rechaza las llamadas de los contactos en Android 10, habilite manualmente el
+permiso de los contactos en Información de la aplicación → Permisos.

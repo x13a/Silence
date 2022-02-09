@@ -7,4 +7,5 @@ Optional können Sie zulassen:
 * Handynummern aus eingehenden Textnachrichten vorübergehend
 * Nummern, die die STIR-Verifizierung bestehen (Android 11)
 
-Wenn die Anwendung unter Android 10 Anrufe von Kontakten ablehnt, erlauben Sie den Kontakten die Berechtigung manuell unter Anwendungsinfos → Berechtigungen.
+Wenn die Anwendung unter Android 10 Anrufe von Kontakten ablehnt, erlauben Sie den Kontakten die
+Berechtigung manuell unter Anwendungsinfos → Berechtigungen.

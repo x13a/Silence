@@ -7,10 +7,11 @@ En option, vous pouvez autoriser :
 * Les numéros de mobile des textos reçus
 * Numéros réussissant la vérification STIR (Android 11)
 
-Les options Contacté, Groupes, Répétition et le boutons principale ont des paramètres additionnels. Vous pouvez y accéder par un appui long.
+Les options Contacté, Groupes, Répétition et le boutons principale ont des paramètres additionnels.
+Vous pouvez y accéder par un appui long.
 
-Si l'application rejette les appels de contacts sur Android 10, autorisez manuellement l'accès aux contacts dans
-Infos de l'appli → Autorisations.
+Si l'application rejette les appels de contacts sur Android 10, autorisez manuellement l'accès aux
+contacts dans Infos de l'appli → Autorisations.
 
 C'est un logiciel libre et gratuit.
 Licence : GPL-3

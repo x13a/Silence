@@ -7,10 +7,11 @@ Permetti facoltativamente:
 * Numeri di cellulare da SMS
 * Numeri che superano la verifica STIR (Android 11)
 
-Contattati, Gruppi, Azioni ripetute e l'interruttore principale hanno impostazioni aggiuntive. Puoi aprirle
-con un tocco prolungato
+Contattati, Gruppi, Azioni ripetute e l'interruttore principale hanno impostazioni aggiuntive. Puoi
+aprirle con un tocco prolungato
 
-Se l'applicazione rifiuta le chiamate dai contatti su Android 10, autorizza manualmente l'autorizzazione dei contatti in Info dell'app → Autorizzazioni.
+Se l'applicazione rifiuta le chiamate dai contatti su Android 10, autorizza manualmente
+l'autorizzazione dei contatti in Info dell'app → Autorizzazioni.
 
 È un software open source gratuito.
 Licenza: GPL-3
