@@ -1,0 +1,3 @@
+Rusça fastlane çevirisi güncellendi, teşekkürler Artem
+DELETE_SMS_FILTER_INACTIVE, DELETE_SMS_FILTER_ALL eylemleri eklendi
+gereksinimler güncellendi yeniden düzenlendi

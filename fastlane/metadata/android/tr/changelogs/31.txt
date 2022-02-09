@@ -1,0 +1,3 @@
+yeniden başlatmalar sırasında temizlik (android.permission.RECEIVE_BOOT_COMPLETED)
+kaput altı iyileştirmeleri
+çeviriler güncellendi, teşekkürler Allan Nordhøy (@comradekingu)
