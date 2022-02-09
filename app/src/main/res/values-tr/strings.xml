@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toggle_off">Etkinleştir</string>
+    <string name="toggle_on">Etkisizleştir</string>
+    <string name="contacted_switch">Aranmış</string>
+    <string name="contacted_description">Daha önce iletişime geçtiğiniz numaralar.</string>
+    <string name="groups_switch">Gruplar</string>
+    <string name="groups_description">Seçili gruplardaki numaralar.</string>
+    <string name="repeated_switch">Tekrarlanan</string>
+    <string name="repeated_description">T dakika içerisinde aynı numaradan gelen N sayıdaki aramalar.</string>
+    <string name="service_unavailable_popup">Çağrı izleme servisi kullanım dışı</string>
+    <string name="messages_switch">Mesajlar</string>
+    <string name="stir_switch">STIR/SHAKEN</string>
+    <string name="stir_description">STIR onaylamasını başarıyla geçmiş olan numaralar.</string>
+    <string name="panic_app_dialog_title">Panik uygulamasını onayla</string>
+    <string name="panic_app_unknown_app">bilinmeyen bir uygulama</string>
+    <string name="allow">İzin ver</string>
+    <string name="groups_array_toll_free">Bedelsiz</string>
+    <string name="groups_array_local">Yerel</string>
+    <string name="repeated_settings_count">Arama sayısı</string>
+    <string name="repeated_settings_minutes">Dakika</string>
+    <string name="cleanup_job_description">Geçersiz numaraları temizle</string>
+    <string name="general_flag_array_notifications">Bildirimler</string>
+    <string name="general_flag_array_hidden_numbers">Gizli Numaralar</string>
+    <string name="notification_channel_blocked_calls">Engellenmiş aramalar</string>
+    <string name="notification_blocked_calls_title">Çağrı engellendi</string>
+    <string name="contacted_array_call">Çağrı</string>
+    <string name="contacted_array_message">Mesaj</string>
+    <string name="description">Tanımadığınız kişilerden çağrılar almamak için Silence\'ı etkinleştirin. Bu, rehberinizde kayıtlı olmayan numaraları engeller.</string>
+    <string name="app_name">Silence</string>
+    <string name="messages_description">Mesajlardaki numaralar.</string>
+    <string name="panic_app_dialog_message">%1$s\'in yıkıcı panik aksiyonlarını tetiklemesine izin vermek istediğinize emin misiniz\?</string>
+</resources>
