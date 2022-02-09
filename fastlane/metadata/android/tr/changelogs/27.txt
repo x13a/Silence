@@ -1,0 +1,9 @@
+WorkManager gereksinimi JobScheduler olacak şekilde değiştirildi, artık tüm "yeni" izinler silinmek zorunda
+çeviriler güncellendi, teşekkürler:
+@wmdarg,
+Maxime Leroy (@Lisapple),
+@badlop,
+J. Lavoie (Edanas),
+
+Bu planlı bir sürüm değil. Alt ayarlar henüz eklenmedi.
+Gelecek sürümlere ait bazı açıklamalar içeriyor. Kimisi ileride değiştirilecek.

@@ -1,0 +1,4 @@
+açıklamaya ek ayarlar eklendi, teşekkürler uasad
+Ukrayna dili çevirisi eklendi, teşekkürler Andrij Mizyk (@andmizyk)
+Fransızca çevirisi güncellendi, teşekkürler J. Lavoie (Edanas)
+string-array için weblate dolaylı çözümü eklendi

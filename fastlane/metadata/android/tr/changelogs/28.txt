@@ -1,0 +1,13 @@
+callbak iletişim kurulmuşlar olarak değiştirildi
+kod alt ayarları eklendi
+tekrarlanan alt ayarı eklendi
+acil çağrılarda otomatik-kapanma eklendi
+iletişim kurulmuş grubuna giden sms numarası kontrolü eklendi
+çeviriler güncellendi, teşekkürler:
+@wmdarg ,
+Allan Nordhøy (@comradekingu) ,
+J. Lavoie (Edanas) ,
+Maxime Leroy (@Lisapple) ,
+
+Bu projede katkıda bulunmış herkese teşekkür ederim.
+Mutlu yeni yıllar!
