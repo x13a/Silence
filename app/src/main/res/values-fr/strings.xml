@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Silence</string>
     <string name="toggle_off">Activer</string>
-    <string name="repeated_description">N appel enregistré du même numéro dans les T minutes.</string>
+    <string name="repeated_description">Ne pas filtrer après N appel enregistré du même numéro dans les T minutes.</string>
     <string name="service_unavailable_popup">Service de filtrage des appels indisponible</string>
     <string name="messages_switch">SMS</string>
     <string name="messages_description">Autoriser les appels des numéros provenant des messages.</string>
@@ -12,7 +12,7 @@
     <string name="repeated_switch">Répété</string>
     <string name="stir_description">Ne pas filtrer les appels des numéros passant la vérification STIR.</string>
     <string name="toggle_on">Désactiver</string>
-    <string name="description">Activer Silence pour éviter de recevoir des appels de personnes inconnues. Ceci bloque les numéros de téléphone qui ne sont pas enregistrés dans votre liste de contacts.</string>
+    <string name="description">Activer Silence pour éviter de recevoir des appels de personnes inconnues. Ceci bloque les numéros de téléphone qui ne sont pas enregistrés dans vos contacts.</string>
     <string name="contacted_description">Autoriser les appels des numéros que vous avez contactés.</string>
     <string name="groups_switch">Groupes</string>
     <string name="panic_app_dialog_title">Confirmer l\'application de panique</string>
