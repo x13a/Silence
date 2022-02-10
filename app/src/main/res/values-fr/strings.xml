@@ -30,4 +30,6 @@
     <string name="contacted_array_call">Appeler</string>
     <string name="contacted_array_message">Texter</string>
     <string name="general_flag_array_unknown_numbers">Numéros masqués</string>
+    <string name="general_flag_array_sim_1">Sim 1</string>
+    <string name="general_flag_array_sim_2">Sim 2</string>
 </resources>
