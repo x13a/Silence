@@ -15,50 +15,60 @@ import java.util.concurrent.TimeUnit
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 
 class SmsReceiver : BroadcastReceiver() {
-    private val phoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }
-
     override fun onReceive(context: Context?, intent: Intent?) {
         if (context == null || intent == null) return
-        val countryCode by lazy {
-            context.getSystemService(TelephonyManager::class.java)?.networkCountryIso?.uppercase()
-        }
-        val db by lazy { AppDatabase.getInstance(context).tmpNumberDao() }
-        var hasNumber = false
-        for (msg in Telephony.Sms.Intents.getMessagesFromIntent(intent) ?: return) {
-            if (
-                msg.isStatusReportMessage ||
-                msg.isCphsMwiMessage ||
-                msg.isMWIClearMessage ||
-                msg.isMWISetMessage ||
-                msg.isMwiDontStore ||
-                msg.isReplace ||
-                msg.originatingAddress == null ||
-                (
-                    msg.messageClass != SmsMessage.MessageClass.CLASS_1 &&
-                    msg.messageClass != SmsMessage.MessageClass.UNKNOWN
-                )
-            ) continue
-            for (number in phoneNumberUtil
-                .findNumbers(msg.messageBody, countryCode)
-                .asSequence()
-                .map { it.number() }
-            ) {
-                if (phoneNumberUtil.getNumberType(number) !=
-                    PhoneNumberUtil.PhoneNumberType.MOBILE) continue
-                val tmpNumber = TmpNumber(number)
-                try {
-                    db.insert(tmpNumber)
-                } catch (exc: SQLiteConstraintException) {
-                    db.update(tmpNumber)
-                }
-                hasNumber = true
+        Thread(Runner(context, intent)).start()
+        goAsync()
+    }
+
+    private class Runner(private val ctx: Context, private val intent: Intent) : Runnable {
+        private val phoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }
+
+        override fun run() {
+            val countryCode by lazy {
+                ctx.getSystemService(TelephonyManager::class.java)?.networkCountryIso?.uppercase()
             }
+            val db by lazy { AppDatabase.getInstance(ctx).tmpNumberDao() }
+            var hasNumber = false
+            for (msg in Telephony.Sms.Intents.getMessagesFromIntent(intent) ?: return) {
+                if (
+                    msg.isStatusReportMessage ||
+                    msg.isCphsMwiMessage ||
+                    msg.isMWIClearMessage ||
+                    msg.isMWISetMessage ||
+                    msg.isMwiDontStore ||
+                    msg.isReplace ||
+                    msg.originatingAddress == null ||
+                    (
+                        msg.messageClass != SmsMessage.MessageClass.CLASS_1 &&
+                        msg.messageClass != SmsMessage.MessageClass.UNKNOWN
+                    )
+                ) continue
+                for (number in phoneNumberUtil
+                    .findNumbers(msg.messageBody, countryCode)
+                    .asSequence()
+                    .map { it.number() }
+                    .filter {
+                        phoneNumberUtil.getNumberType(it) == PhoneNumberUtil.PhoneNumberType.MOBILE
+                    }
+                    .map { TmpNumber(it) }
+                ) {
+                    try {
+                        db.insert(number)
+                    } catch (exc: SQLiteConstraintException) {
+                        db.update(number)
+                    }
+                    hasNumber = true
+                }
+            }
+            if (hasNumber) schedule()
         }
-        if (hasNumber) {
-            context.getSystemService(JobScheduler::class.java)?.schedule(
+
+        private fun schedule() {
+            ctx.getSystemService(JobScheduler::class.java)?.schedule(
                 JobInfo.Builder(
                     CleanupJobService.JOB_ID,
-                    ComponentName(context, CleanupJobService::class.java),
+                    ComponentName(ctx, CleanupJobService::class.java),
                 )
                     .setMinimumLatency(TimeUnit
                         .SECONDS
