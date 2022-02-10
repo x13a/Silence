@@ -31,9 +31,10 @@ If the app rejects calls from contacts on Android 10, allow contacts permission 
 
 * CALL_SCREENING         - block or allow call
 * READ_CALL_LOG          - check you have called the number and count times the number have called 
-    you in T minutes
+  you in T minutes
 * READ_SMS               - check you have sent a message to the number
 * RECEIVE_SMS            - find mobile numbers in incoming messages
+* READ_PHONE_STATE       - check on which sim the number is calling
 * RECEIVE_BOOT_COMPLETED - persist cleanup inactive numbers job across reboots
 * READ_CONTACTS          - check the number exists in contacts on Android 10
 

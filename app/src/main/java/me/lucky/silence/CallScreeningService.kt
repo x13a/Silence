@@ -4,7 +4,10 @@ import android.os.Build
 import android.telecom.Call
 import android.telecom.CallScreeningService
 import android.telecom.Connection
+import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
+import androidx.annotation.RequiresApi
+import kotlin.properties.Delegates
 
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
@@ -15,7 +18,9 @@ class CallScreeningService : CallScreeningService() {
     private lateinit var callScreeningHelper: CallScreeningHelper
     private lateinit var phoneNumberUtil: PhoneNumberUtil
     private val notificationManager by lazy { NotificationManager(this) }
+    private var isMultiSim by Delegates.notNull<Boolean>()
     private var telephonyManager: TelephonyManager? = null
+    private var subscriptionManager: SubscriptionManager? = null
 
     override fun onCreate() {
         super.onCreate()
@@ -26,19 +31,16 @@ class CallScreeningService : CallScreeningService() {
         prefs = Preferences(this)
         callScreeningHelper = CallScreeningHelper(this)
         phoneNumberUtil = PhoneNumberUtil.getInstance()
+        isMultiSim = Utils.getModemCount(this) >= 2
         telephonyManager = getSystemService(TelephonyManager::class.java)
+        subscriptionManager = getSystemService(SubscriptionManager::class.java)
     }
 
     override fun onScreenCall(callDetails: Call.Details) {
         if (!prefs.isServiceEnabled) {
             respondAllow(callDetails)
             return
-        } else if (
-            callDetails.hasProperty(Call.Details.PROPERTY_EMERGENCY_CALLBACK_MODE) ||
-            callDetails.hasProperty(Call.Details.PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL) ||
-            telephonyManager
-                ?.isEmergencyNumber(callDetails.handle?.schemeSpecificPart ?: "") == true
-        ) {
+        } else if (checkEmergency(callDetails)) {
             prefs.isServiceEnabled = false
             Utils.setSmsReceiverState(this, false)
             respondAllow(callDetails)
@@ -46,10 +48,8 @@ class CallScreeningService : CallScreeningService() {
         } else if (
             callDetails.callDirection != Call.Details.DIRECTION_INCOMING ||
             (prefs.isStirChecked && checkStir(callDetails)) ||
-            (
-                callDetails.handle?.schemeSpecificPart == null &&
-                prefs.generalFlag.and(GeneralFlag.HIDDEN_NUMBERS.value) != 0
-            )
+            checkUnknownNumber(callDetails) ||
+            checkSim()
         ) {
             respondAllow(callDetails)
             return
@@ -88,9 +88,39 @@ class CallScreeningService : CallScreeningService() {
 
     private fun checkStir(callDetails: Call.Details): Boolean {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            if (callDetails.callerNumberVerificationStatus ==
-                Connection.VERIFICATION_STATUS_PASSED) return true
+            return callDetails.callerNumberVerificationStatus ==
+                    Connection.VERIFICATION_STATUS_PASSED
         }
         return false
+    }
+
+    private fun checkEmergency(callDetails: Call.Details): Boolean {
+        return callDetails.hasProperty(Call.Details.PROPERTY_EMERGENCY_CALLBACK_MODE) ||
+            callDetails.hasProperty(Call.Details.PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL) ||
+            telephonyManager
+                ?.isEmergencyNumber(callDetails.handle?.schemeSpecificPart ?: "") == true
+    }
+
+    private fun checkSim(): Boolean {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S || !isMultiSim) return false
+        val flag = prefs.generalFlag
+        return (flag.and(GeneralFlag.SIM_1.value) != 0 && checkSimSlot(0)) ||
+                (flag.and(GeneralFlag.SIM_2.value) != 0 && checkSimSlot(1))
+    }
+
+    @RequiresApi(Build.VERSION_CODES.S)
+    private fun checkSimSlot(slotIndex: Int): Boolean {
+        return try {
+            telephonyManager
+                ?.createForSubscriptionId(subscriptionManager
+                    ?.getActiveSubscriptionInfoForSimSlotIndex(slotIndex)
+                    ?.subscriptionId ?: return false)
+                ?.callStateForSubscription == TelephonyManager.CALL_STATE_RINGING
+        } catch (exc: SecurityException) { false }
+    }
+
+    private fun checkUnknownNumber(callDetails: Call.Details): Boolean {
+        return callDetails.handle?.schemeSpecificPart == null &&
+            prefs.generalFlag.and(GeneralFlag.UNKNOWN_NUMBERS.value) != 0
     }
 }

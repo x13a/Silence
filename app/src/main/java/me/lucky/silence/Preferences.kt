@@ -109,7 +109,9 @@ enum class Group(val value: Int) {
 
 enum class GeneralFlag(val value: Int) {
     NOTIFICATIONS(1),
-    HIDDEN_NUMBERS(1 shl 1),
+    UNKNOWN_NUMBERS(1 shl 1),
+    SIM_1(1 shl 2),
+    SIM_2(1 shl 3),
 }
 
 data class RepeatedSettings(val count: Int, val minutes: Int) {

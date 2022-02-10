@@ -21,7 +21,7 @@
     <string name="repeated_settings_minutes">Dakika</string>
     <string name="cleanup_job_description">Geçersiz numaraları temizle</string>
     <string name="general_flag_array_notifications">Bildirimler</string>
-    <string name="general_flag_array_hidden_numbers">Gizli Numaralar</string>
+    <string name="general_flag_array_unknown_numbers">Gizli Numaralar</string>
     <string name="notification_channel_blocked_calls">Engellenmiş aramalar</string>
     <string name="notification_blocked_calls_title">Çağrı engellendi</string>
     <string name="contacted_array_call">Çağrı</string>

@@ -51,6 +51,9 @@ open class MainActivity : AppCompatActivity() {
             updateMessages()
         }
 
+    private val registerForSimPermissions =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) {}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -279,10 +282,19 @@ open class MainActivity : AppCompatActivity() {
 
     private fun showGeneralSettings() {
         var general = prefs.generalFlag
-        val flags = GeneralFlag.values()
+        val flags = GeneralFlag.values().toMutableList()
+        val strings = resources.getStringArray(R.array.general_flag).toMutableList()
+        val hasApi31 = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
+        val isMultiSim = Utils.getModemCount(this) >= 2
+        if (!hasApi31 || !isMultiSim) {
+            strings.removeAt(flags.indexOf(GeneralFlag.SIM_1))
+            flags.remove(GeneralFlag.SIM_1)
+            strings.removeAt(flags.indexOf(GeneralFlag.SIM_2))
+            flags.remove(GeneralFlag.SIM_2)
+        }
         MaterialAlertDialogBuilder(this)
             .setMultiChoiceItems(
-                resources.getStringArray(R.array.general_flag),
+                strings.toTypedArray(),
                 flags.map { general.and(it.value) != 0 }.toBooleanArray(),
             ) { _, index, isChecked ->
                 val flag = flags[index]
@@ -293,6 +305,12 @@ open class MainActivity : AppCompatActivity() {
             }
             .setPositiveButton(android.R.string.ok) { _, _ ->
                 prefs.generalFlag = general
+                if (hasApi31 && isMultiSim && (
+                    general.and(GeneralFlag.SIM_1.value) != 0 ||
+                    general.and(GeneralFlag.SIM_2.value) != 0
+                )) {
+                    requestSimPermissions()
+                }
             }
             .show()
     }
@@ -336,5 +354,9 @@ open class MainActivity : AppCompatActivity() {
 
     private fun hasMessagesPermissions(): Boolean {
         return Utils.hasPermissions(this, Manifest.permission.RECEIVE_SMS)
+    }
+
+    private fun requestSimPermissions() {
+        registerForSimPermissions.launch(Manifest.permission.READ_PHONE_STATE)
     }
 }

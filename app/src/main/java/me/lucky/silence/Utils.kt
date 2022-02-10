@@ -4,6 +4,8 @@ import android.app.role.RoleManager
 import android.content.ComponentName
 import android.content.Context
 import android.content.pm.PackageManager
+import android.os.Build
+import android.telephony.TelephonyManager
 import androidx.core.content.ContextCompat
 
 class Utils {
@@ -27,6 +29,16 @@ class Utils {
             return !permissions.any {
                 ContextCompat.checkSelfPermission(ctx, it) != PackageManager.PERMISSION_GRANTED
             }
+        }
+
+        fun getModemCount(ctx: Context): Int {
+            val telephonyManager = ctx.getSystemService(TelephonyManager::class.java)
+            return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                telephonyManager?.supportedModemCount
+            } else {
+                @Suppress("deprecation")
+                telephonyManager?.phoneCount
+            } ?: 0
         }
     }
 }
