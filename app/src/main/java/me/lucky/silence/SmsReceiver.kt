@@ -17,11 +17,14 @@ import com.google.i18n.phonenumbers.PhoneNumberUtil
 class SmsReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         if (context == null || intent == null) return
-        Thread(Runner(context, intent)).start()
-        goAsync()
+        Thread(Runner(context, intent, goAsync())).start()
     }
 
-    private class Runner(private val ctx: Context, private val intent: Intent) : Runnable {
+    private class Runner(
+        private val ctx: Context,
+        private val intent: Intent,
+        private val result: PendingResult,
+    ) : Runnable {
         private val phoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }
 
         override fun run() {
@@ -62,6 +65,7 @@ class SmsReceiver : BroadcastReceiver() {
                 }
             }
             if (hasNumber) schedule()
+            result.finish()
         }
 
         private fun schedule() {
