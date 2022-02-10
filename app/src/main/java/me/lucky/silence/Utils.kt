@@ -24,11 +24,9 @@ class Utils {
         }
 
         fun hasPermissions(ctx: Context, vararg permissions: String): Boolean {
-            for (permission in permissions) {
-                if (ContextCompat.checkSelfPermission(ctx, permission)
-                    != PackageManager.PERMISSION_GRANTED) { return false }
+            return !permissions.any {
+                ContextCompat.checkSelfPermission(ctx, it) != PackageManager.PERMISSION_GRANTED
             }
-            return true
         }
     }
 }

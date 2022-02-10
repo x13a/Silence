@@ -13,23 +13,20 @@ class TileService : TileService() {
 
     override fun onCreate() {
         super.onCreate()
-        init()
-    }
-
-    private fun init() {
         prefs = Preferences(this)
     }
 
     override fun onClick() {
         super.onClick()
-        prefs.isServiceEnabled = qsTile.state == Tile.STATE_INACTIVE
-        Utils.setSmsReceiverState(this, prefs.isServiceEnabled && prefs.isMessagesChecked)
+        val state = qsTile.state == Tile.STATE_INACTIVE
+        prefs.isServiceEnabled = state
+        Utils.setSmsReceiverState(this, state && prefs.isMessagesChecked)
     }
 
     override fun onStartListening() {
         super.onStartListening()
-        update()
         prefs.registerListener(prefsListener)
+        update()
     }
 
     override fun onStopListening() {

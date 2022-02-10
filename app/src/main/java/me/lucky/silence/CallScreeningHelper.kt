@@ -12,7 +12,7 @@ import android.telephony.TelephonyManager
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
 
-class ScreeningHelper(private val ctx: Context) {
+class CallScreeningHelper(private val ctx: Context) {
     companion object {
         const val RESULT_ALLOW = 0
         const val RESULT_REJECT = 1

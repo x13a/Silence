@@ -22,57 +22,33 @@ open class MainActivity : AppCompatActivity() {
     private var roleManager: RoleManager? = null
 
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
-        when (key) {
-            Preferences.SERVICE_ENABLED -> {
-                Utils.setSmsReceiverState(
-                    this,
-                    prefs.isServiceEnabled && prefs.isMessagesChecked,
-                )
-                updateToggle()
-            }
-            Preferences.MESSAGES_CHECKED -> {
-                Utils.setSmsReceiverState(
-                    this,
-                    prefs.isServiceEnabled && prefs.isMessagesChecked,
-                )
-                updateMessages()
-            }
-            Preferences.CONTACTED_CHECKED -> updateContacted()
-            Preferences.REPEATED_CHECKED -> updateRepeated()
+        if (key == Preferences.SERVICE_ENABLED) {
+            Utils.setSmsReceiverState(
+                this,
+                prefs.isServiceEnabled && prefs.isMessagesChecked,
+            )
+            updateToggle()
         }
     }
 
     private val registerForCallScreeningRole =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == RESULT_OK) prefs.isServiceEnabled = true
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            prefs.isServiceEnabled = it.resultCode == RESULT_OK
         }
 
     private val registerForContactedPermissions =
-        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { map ->
-            var result = true
-            for (permission in getContactedPermissions()) {
-                result = result && map[permission] == true
-            }
-            when (result) {
-                true -> prefs.isContactedChecked = true
-                false -> binding.contactedSwitch.isChecked = false
-            }
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
+            updateContacted()
         }
 
     private val registerForRepeatedPermissions =
-        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
-            when (isGranted) {
-                true -> prefs.isRepeatedChecked = true
-                false -> binding.repeatedSwitch.isChecked = false
-            }
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) {
+            updateRepeated()
         }
 
     private val registerForMessagesPermissions =
-        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
-            when (isGranted) {
-                true -> prefs.isMessagesChecked = true
-                false -> binding.messagesSwitch.isChecked = false
-            }
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) {
+            updateMessages()
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,10 +62,8 @@ open class MainActivity : AppCompatActivity() {
     private fun setup() {
         binding.apply {
             contactedSwitch.setOnCheckedChangeListener { _, isChecked ->
-                when (!hasContactedPermissions() && isChecked) {
-                    true -> requestContactedPermissions()
-                    false -> prefs.isContactedChecked = isChecked
-                }
+                prefs.isContactedChecked = isChecked
+                if (isChecked) requestContactedPermissions() else updateContacted()
             }
             contactedSwitch.setOnLongClickListener {
                 showContactedSettings()
@@ -103,31 +77,24 @@ open class MainActivity : AppCompatActivity() {
                 true
             }
             repeatedSwitch.setOnCheckedChangeListener { _, isChecked ->
-                when (!hasRepeatedPermissions() && isChecked) {
-                    true -> requestRepeatedPermissions()
-                    false -> prefs.isRepeatedChecked = isChecked
-                }
+                prefs.isRepeatedChecked = isChecked
+                if (isChecked) requestRepeatedPermissions() else updateRepeated()
             }
             repeatedSwitch.setOnLongClickListener {
                 showRepeatedSettings()
                 true
             }
             messagesSwitch.setOnCheckedChangeListener { _, isChecked ->
-                when (!hasMessagesPermissions() && isChecked) {
-                    true -> requestMessagesPermissions()
-                    false -> prefs.isMessagesChecked = isChecked
-                }
+                prefs.isMessagesChecked = isChecked
+                if (isChecked) requestMessagesPermissions() else updateMessages()
             }
             stirSwitch.setOnCheckedChangeListener { _, isChecked ->
                 prefs.isStirChecked = isChecked
             }
             toggle.setOnClickListener {
-                when (!Utils.hasCallScreeningRole(this@MainActivity)
-                      && !prefs.isServiceEnabled
-                ) {
-                    true -> requestCallScreeningRole()
-                    false -> prefs.isServiceEnabled = !prefs.isServiceEnabled
-                }
+                val state = prefs.isServiceEnabled
+                prefs.isServiceEnabled = !state
+                if (!state) requestCallScreeningRole()
             }
             toggle.setOnLongClickListener {
                 showGeneralSettings()
@@ -163,7 +130,7 @@ open class MainActivity : AppCompatActivity() {
         updateRepeated()
         updateMessages()
         updateToggle()
-        if (!Utils.hasCallScreeningRole(this) && prefs.isServiceEnabled)
+        if (prefs.isServiceEnabled && !Utils.hasCallScreeningRole(this))
             Snackbar.make(
                 binding.toggle,
                 getString(R.string.service_unavailable_popup),
@@ -185,7 +152,7 @@ open class MainActivity : AppCompatActivity() {
     private fun updateRepeated() {
         binding.apply {
             when {
-                !hasRepeatedPermissions() && prefs.isRepeatedChecked ->
+                prefs.isRepeatedChecked && !hasRepeatedPermissions() ->
                     repeatedSwitch.setTextColor(getColor(R.color.icon_color_red))
                 else -> repeatedSwitch.setTextColor(groupsSwitch.currentTextColor)
             }
@@ -195,7 +162,7 @@ open class MainActivity : AppCompatActivity() {
     private fun updateContacted() {
         binding.apply {
             when {
-                !hasContactedPermissions() && prefs.isContactedChecked ->
+                prefs.isContactedChecked && !hasContactedPermissions() ->
                     contactedSwitch.setTextColor(getColor(R.color.icon_color_red))
                 else -> contactedSwitch.setTextColor(groupsSwitch.currentTextColor)
             }
@@ -205,7 +172,7 @@ open class MainActivity : AppCompatActivity() {
     private fun updateMessages() {
         binding.apply {
             when {
-                !hasMessagesPermissions() && prefs.isMessagesChecked ->
+                prefs.isMessagesChecked && !hasMessagesPermissions() ->
                     messagesSwitch.setTextColor(getColor(R.color.icon_color_red))
                 else -> messagesSwitch.setTextColor(groupsSwitch.currentTextColor)
             }

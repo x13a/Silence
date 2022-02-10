@@ -12,7 +12,7 @@ import com.google.i18n.phonenumbers.Phonenumber
 
 class CallScreeningService : CallScreeningService() {
     private lateinit var prefs: Preferences
-    private lateinit var screeningHelper: ScreeningHelper
+    private lateinit var callScreeningHelper: CallScreeningHelper
     private lateinit var phoneNumberUtil: PhoneNumberUtil
     private val notificationManager by lazy { NotificationManager(this) }
     private var telephonyManager: TelephonyManager? = null
@@ -24,7 +24,7 @@ class CallScreeningService : CallScreeningService() {
 
     private fun init() {
         prefs = Preferences(this)
-        screeningHelper = ScreeningHelper(this)
+        callScreeningHelper = CallScreeningHelper(this)
         phoneNumberUtil = PhoneNumberUtil.getInstance()
         telephonyManager = getSystemService(TelephonyManager::class.java)
     }
@@ -64,7 +64,7 @@ class CallScreeningService : CallScreeningService() {
             respondReject(callDetails)
             return
         }
-        if (screeningHelper.check(number) == ScreeningHelper.RESULT_ALLOW)
+        if (callScreeningHelper.check(number) == CallScreeningHelper.RESULT_ALLOW)
             respondAllow(callDetails) else respondReject(callDetails)
     }
 

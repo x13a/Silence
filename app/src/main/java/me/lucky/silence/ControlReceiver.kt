@@ -25,7 +25,7 @@ class ControlReceiver : BroadcastReceiver() {
     private fun setGlobalState(ctx: Context, state: Boolean) {
         Preferences(ctx).apply {
             isServiceEnabled = state
-            Utils.setSmsReceiverState(ctx, isServiceEnabled && isMessagesChecked)
+            Utils.setSmsReceiverState(ctx, state && isMessagesChecked)
         }
     }
 

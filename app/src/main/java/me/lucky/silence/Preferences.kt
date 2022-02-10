@@ -8,9 +8,9 @@ import androidx.preference.PreferenceManager
 class Preferences(ctx: Context) {
     companion object {
         const val SERVICE_ENABLED = "service_enabled"
-        const val CONTACTED_CHECKED = "contacted_checked"
-        const val REPEATED_CHECKED = "repeated_checked"
-        const val MESSAGES_CHECKED = "messages_checked"
+        private const val CONTACTED_CHECKED = "contacted_checked"
+        private const val REPEATED_CHECKED = "repeated_checked"
+        private const val MESSAGES_CHECKED = "messages_checked"
         private const val GROUPS_CHECKED = "groups_checked"
         private const val STIR_CHECKED = "stir_checked"
 
