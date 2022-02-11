@@ -129,5 +129,5 @@ data class RepeatedSettings(val count: Int, val minutes: Int) {
         fun default() = RepeatedSettings(DEFAULT_COUNT, DEFAULT_MINUTES)
     }
 
-    override fun toString() = "${count}${DELIMITER}${minutes}"
+    override fun toString() = "$count$DELIMITER$minutes"
 }

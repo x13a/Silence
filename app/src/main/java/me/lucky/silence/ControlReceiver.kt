@@ -7,16 +7,15 @@ import android.os.Build
 
 class ControlReceiver : BroadcastReceiver() {
     companion object {
-        private const val SET_ON = "me.lucky.silence.action.SET_ON"
-        private const val SET_OFF = "me.lucky.silence.action.SET_OFF"
-        private const val SET_UNKNOWN_NUMBERS_ON =
-            "me.lucky.silence.action.SET_UNKNOWN_NUMBERS_ON"
-        private const val SET_UNKNOWN_NUMBERS_OFF =
-            "me.lucky.silence.action.SET_UNKNOWN_NUMBERS_OFF"
-        private const val SET_SIM_1_ON = "me.lucky.silence.action.SET_SIM_1_ON"
-        private const val SET_SIM_1_OFF = "me.lucky.silence.action.SET_SIM_1_OFF"
-        private const val SET_SIM_2_ON = "me.lucky.silence.action.SET_SIM_2_ON"
-        private const val SET_SIM_2_OFF = "me.lucky.silence.action.SET_SIM_2_OFF"
+        private const val PREFIX = "me.lucky.silence.action"
+        private const val SET_ON = "$PREFIX.SET_ON"
+        private const val SET_OFF = "$PREFIX.SET_OFF"
+        private const val SET_UNKNOWN_NUMBERS_ON = "$PREFIX.SET_UNKNOWN_NUMBERS_ON"
+        private const val SET_UNKNOWN_NUMBERS_OFF = "$PREFIX.SET_UNKNOWN_NUMBERS_OFF"
+        private const val SET_SIM_1_ON = "$PREFIX.SET_SIM_1_ON"
+        private const val SET_SIM_1_OFF = "$PREFIX.SET_SIM_1_OFF"
+        private const val SET_SIM_2_ON = "$PREFIX.SET_SIM_2_ON"
+        private const val SET_SIM_2_OFF = "$PREFIX.SET_SIM_2_OFF"
     }
 
     override fun onReceive(context: Context?, intent: Intent?) {

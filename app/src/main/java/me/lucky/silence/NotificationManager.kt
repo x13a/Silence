@@ -34,7 +34,7 @@ class NotificationManager(private val ctx: Context) {
                 .setCategory(NotificationCompat.CATEGORY_STATUS)
                 .setShowWhen(true)
                 .setAutoCancel(true)
-                .addPerson(Person.Builder().setUri("tel:${tel}").build())
+                .addPerson(Person.Builder().setUri("tel:$tel").build())
                 .setGroup(GROUP_BLOCKED_CALLS_KEY)
                 .setGroupSummary(true)
                 .build(),
