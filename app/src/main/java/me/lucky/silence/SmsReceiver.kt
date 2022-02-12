@@ -23,7 +23,7 @@ class SmsReceiver : BroadcastReceiver() {
     private class Runner(
         private val ctx: Context,
         private val intent: Intent,
-        private val result: PendingResult,
+        private val pendingResult: PendingResult,
     ) : Runnable {
         private val phoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }
 
@@ -65,7 +65,7 @@ class SmsReceiver : BroadcastReceiver() {
                 }
             }
             if (hasNumber) schedule()
-            result.finish()
+            pendingResult.finish()
         }
 
         private fun schedule() {
