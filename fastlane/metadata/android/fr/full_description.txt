@@ -2,7 +2,7 @@ Par défaut, les numéros ne figurant pas dans votre liste de contacts sont bloq
 
 En option, vous pouvez autoriser :
 * Les numéros que vous avez appelés
-* Les numéros avec des codes gratuits (ex: 800)
+* Les numéros avec dans les groupes de codes sélectionner  (ex: numéro locaux, non surtaxé)
 * N appel enregistré du même numéro dans les N minutes
 * Les numéros de mobile des textos reçus
 * Numéros réussissant la vérification STIR (Android 11)
@@ -13,5 +13,14 @@ Vous pouvez y accéder par un appui long.
 Si l'application rejette les appels de contacts sur Android 10, autorisez manuellement l'accès aux
 contacts dans Infos de l'appli → Autorisations.
 
-C'est un logiciel libre et gratuit.
-Licence : GPL-3
+Autorisations:
+* CALL_SCREENING - Bloquer ou autoriser les appels.
+* READ_CALL_LOG - Vérifie que vous avez appelé le numéro et compte les fois où un numéro vous a appelé en T minutes
+* READ_SMS - Vérifier les numéros auquel vous avez envoyé un message.
+* RECEIVE_SMS - Recherche les numéros de téléphone mobile dans les messages entrants.
+* READ_PHONE_STATE - Vérifie sur quelle sim le numéro appelle.
+* RECEIVE_BOOT_COMPLETED - Maintient le nettoyage des numéros inactifs à travers les redémarrages.
+* READ_CONTACTS - Vérifie que le numéro existe dans les contacts sur Android 10
+
+Ceci est un logiciel libre et gratuit.
+Licence: GPL-3
