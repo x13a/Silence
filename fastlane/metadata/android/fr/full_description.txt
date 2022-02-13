@@ -2,25 +2,25 @@ Par défaut, les numéros ne figurant pas dans votre liste de contacts sont bloq
 
 En option, vous pouvez autoriser :
 * Les numéros que vous avez appelés
-* Les numéros avec dans les groupes de codes sélectionner  (ex: numéro locaux, non surtaxé)
+* Les numéros dans les groupes de codes sélectionner (ex: numéro locaux, non surtaxé)
 * N appel enregistré du même numéro dans les N minutes
 * Les numéros de mobile des textos reçus
 * Numéros réussissant la vérification STIR (Android 11)
 
-Les options Contacté, Groupes, Répétition et le boutons principale ont des paramètres additionnels.
+Les options Contacté, Groupes, Répétition et le boutons principale possèdent des paramètres additionnels.
 Vous pouvez y accéder par un appui long.
 
-Si l'application rejette les appels de contacts sur Android 10, autorisez manuellement l'accès aux
+Si l'application rejette les appels de contacts sous Android 10, autorisez manuellement l'accès aux
 contacts dans Infos de l'appli → Autorisations.
 
 Autorisations:
 * CALL_SCREENING - Bloquer ou autoriser les appels.
-* READ_CALL_LOG - Vérifie que vous avez appelé le numéro et compte les fois où un numéro vous a appelé en T minutes
+* READ_CALL_LOG - Vérifie les numéros que vous avez appelé et décompter les fois où un numéro vous a appelé en T minutes.
 * READ_SMS - Vérifier les numéros auquel vous avez envoyé un message.
-* RECEIVE_SMS - Recherche les numéros de téléphone mobile dans les messages entrants.
-* READ_PHONE_STATE - Vérifie sur quelle sim le numéro appelle.
-* RECEIVE_BOOT_COMPLETED - Maintient le nettoyage des numéros inactifs à travers les redémarrages.
-* READ_CONTACTS - Vérifie que le numéro existe dans les contacts sur Android 10
+* RECEIVE_SMS - Rechercher des numéros de téléphone mobile dans les messages entrants.
+* READ_PHONE_STATE - Vérifier sur quelle sim le numéro appel.
+* RECEIVE_BOOT_COMPLETED - démarrer le service de blocage après redémarrage de l'appareil.
+* READ_CONTACTS - Vérifier qu'un numéro est présent dans les contacts sous Android 10.
 
 Ceci est un logiciel libre et gratuit.
 Licence: GPL-3
