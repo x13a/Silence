@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">برنامج صامت</string>
+    <string name="toggle_on">تعطيل</string>
+    <string name="description">قم بتنشيط برنامج الصامت لتجنب تلقي مكالمات من أشخاص لا تعرفهم. يؤدي هذا إلى حظر أرقام الهواتف التي لم يتم حفظها في جهات الاتصال الخاصة بك.</string>
+    <string name="contacted_switch">تم الاتصال</string>
+    <string name="groups_switch">مجموعات</string>
+    <string name="groups_description">أرقام ضمن المجموعات المختارة.</string>
+    <string name="repeated_switch">مكرر</string>
+    <string name="repeated_description">\"N\"مكالمة مسجلة من نفس الرقم خلال \"T\" دقيقة.</string>
+    <string name="service_unavailable_popup">خدمة فحص المكالمات غير متوفرة</string>
+    <string name="messages_switch">الرسائل النصية</string>
+    <string name="messages_description">أرقام من الرسائل النصية.</string>
+    <string name="stir_switch">STIR/SHAKEN</string>
+    <string name="stir_description">أرقام اجتياز التحقق من STIR.</string>
+    <string name="panic_app_dialog_title">تأكيد السماح بتشغيل الاجراءات</string>
+    <string name="panic_app_dialog_message">هل أنت متأكد من أنك تريد السماح%1$s بتشغيل الاجراءات ؟</string>
+    <string name="panic_app_unknown_app">تطبيق غير معروف</string>
+    <string name="allow">السماح</string>
+    <string name="groups_array_toll_free">رقم مجاني</string>
+    <string name="groups_array_local">رقم محلي</string>
+    <string name="repeated_settings_count">عدد المرات</string>
+    <string name="repeated_settings_minutes">الدقائق</string>
+    <string name="general_flag_array_notifications">إشعارات</string>
+    <string name="general_flag_array_unknown_numbers">أرقام غير معروفة</string>
+    <string name="general_flag_array_sim_1">شريحة 01</string>
+    <string name="notification_channel_blocked_calls">المكالمات المحظورة</string>
+    <string name="notification_blocked_calls_title">تم حظر الاتصال</string>
+    <string name="contacted_array_call">اتصال</string>
+    <string name="contacted_array_message">رسالة نصية</string>
+    <string name="contacted_description">الأرقام التي اتصلت بها.</string>
+    <string name="toggle_off">تفعيل</string>
+    <string name="general_flag_array_sim_2">شريحة 02</string>
+    <string name="cleanup_job_description">تنظيف الأرقام غير النشطة</string>
+</resources>
