@@ -1,0 +1,3 @@
+استمرار مهمة التنظيف عبر عمليات إعادة التشغيل (android.permission.RECEIVE_BOOT_COMPLETED)
+تحت التحسينات
+تحديث الترجمات بفضل Allan Nordhøy (comradekingu)
