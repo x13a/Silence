@@ -19,17 +19,13 @@
     <string name="allow">السماح</string>
     <string name="groups_array_toll_free">رقم مجاني</string>
     <string name="groups_array_local">رقم محلي</string>
-    <string name="repeated_settings_count">عدد المرات</string>
     <string name="repeated_settings_minutes">الدقائق</string>
-    <string name="general_flag_array_notifications">إشعارات</string>
     <string name="general_flag_array_unknown_numbers">أرقام غير معروفة</string>
-    <string name="general_flag_array_sim_1">شريحة 01</string>
     <string name="notification_channel_blocked_calls">المكالمات المحظورة</string>
     <string name="notification_blocked_calls_title">تم حظر الاتصال</string>
     <string name="contacted_array_call">اتصال</string>
     <string name="contacted_array_message">رسالة نصية</string>
     <string name="contacted_description">الأرقام التي اتصلت بها.</string>
     <string name="toggle_off">تفعيل</string>
-    <string name="general_flag_array_sim_2">شريحة 02</string>
     <string name="cleanup_job_description">تنظيف الأرقام غير النشطة</string>
 </resources>
