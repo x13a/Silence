@@ -6,7 +6,7 @@ add options behind to the controller
 rename controller actions prefix to SET_
 
 add Turkish translation, thanks to Ümit Seyhan
-add Hindi translation, thanks to tanmayrajk
+add Hindi translation, thanks to @tanmayrajk
 add Arabic translation, thanks to DJEBARI.ABDELHAMID
 update Ukrainian translation, thanks to Andrij Mizyk (@andmizyk)
 update French translation, thanks to @Ilithy
