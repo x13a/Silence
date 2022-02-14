@@ -37,7 +37,7 @@ class Preferences(ctx: Context) {
         set(value) = prefs.edit { putBoolean(CONTACTED_CHECKED, value) }
 
     var contacted: Int
-        get() = prefs.getInt(CONTACTED, Contacted.CALL.value.or(Contacted.MESSAGE.value))
+        get() = prefs.getInt(CONTACTED, Contact.CALL.value.or(Contact.MESSAGE.value))
         set(value) = prefs.edit { putInt(CONTACTED, value) }
 
     var isGroupsChecked: Boolean
@@ -89,7 +89,7 @@ class Preferences(ctx: Context) {
     }
 }
 
-enum class Contacted(val value: Int) {
+enum class Contact(val value: Int) {
     CALL(1),
     MESSAGE(1 shl 1),
 }

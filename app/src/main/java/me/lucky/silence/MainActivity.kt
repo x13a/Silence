@@ -221,7 +221,7 @@ open class MainActivity : AppCompatActivity() {
 
     private fun showContactedSettings() {
         var contacted = prefs.contacted
-        val flags = Contacted.values()
+        val flags = Contact.values()
         MaterialAlertDialogBuilder(this)
             .setMultiChoiceItems(
                 resources.getStringArray(R.array.contacted),
@@ -343,10 +343,10 @@ open class MainActivity : AppCompatActivity() {
     private fun getContactedPermissions(): Array<String> {
         val contacted = prefs.contacted
         val permissions = mutableListOf<String>()
-        for (value in Contacted.values().asSequence().filter { contacted.and(it.value) != 0 }) {
+        for (value in Contact.values().asSequence().filter { contacted.and(it.value) != 0 }) {
             when (value) {
-                Contacted.CALL -> permissions.add(Manifest.permission.READ_CALL_LOG)
-                Contacted.MESSAGE -> permissions.add(Manifest.permission.READ_SMS)
+                Contact.CALL -> permissions.add(Manifest.permission.READ_CALL_LOG)
+                Contact.MESSAGE -> permissions.add(Manifest.permission.READ_SMS)
             }
         }
         return permissions.toTypedArray()

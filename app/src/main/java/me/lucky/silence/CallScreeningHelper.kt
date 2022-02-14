@@ -39,10 +39,10 @@ class CallScreeningHelper(private val ctx: Context) {
     private fun checkContacted(number: Phonenumber.PhoneNumber): Boolean {
         val contacted = prefs.contacted
         var result = false
-        for (value in Contacted.values().asSequence().filter { contacted.and(it.value) != 0 }) {
+        for (value in Contact.values().asSequence().filter { contacted.and(it.value) != 0 }) {
             result = when (value) {
-                Contacted.CALL -> checkContactedCall(number)
-                Contacted.MESSAGE -> checkContactedMessage(number)
+                Contact.CALL -> checkContactedCall(number)
+                Contact.MESSAGE -> checkContactedMessage(number)
             }
             if (result) break
         }
