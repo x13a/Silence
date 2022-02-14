@@ -23,14 +23,12 @@ class ControlReceiver : BroadcastReceiver() {
         when (intent.action) {
             SET_ON -> setGlobalState(context, true)
             SET_OFF -> setGlobalState(context, false)
-            SET_UNKNOWN_NUMBERS_ON ->
-                setGeneralFlag(context, GeneralFlag.UNKNOWN_NUMBERS, true)
-            SET_UNKNOWN_NUMBERS_OFF ->
-                setGeneralFlag(context, GeneralFlag.UNKNOWN_NUMBERS, false)
-            SET_SIM_1_ON -> setSimState(context, GeneralFlag.SIM_1, true)
-            SET_SIM_1_OFF -> setSimState(context, GeneralFlag.SIM_1, false)
-            SET_SIM_2_ON -> setSimState(context, GeneralFlag.SIM_2, true)
-            SET_SIM_2_OFF -> setSimState(context, GeneralFlag.SIM_2, false)
+            SET_UNKNOWN_NUMBERS_ON -> setUnknownNumbersState(context, true)
+            SET_UNKNOWN_NUMBERS_OFF -> setUnknownNumbersState(context, false)
+            SET_SIM_1_ON -> setSimState(context, Sim.SIM_1, true)
+            SET_SIM_1_OFF -> setSimState(context, Sim.SIM_1, false)
+            SET_SIM_2_ON -> setSimState(context, Sim.SIM_2, true)
+            SET_SIM_2_OFF -> setSimState(context, Sim.SIM_2, false)
         }
     }
 
@@ -41,17 +39,17 @@ class ControlReceiver : BroadcastReceiver() {
         }
     }
 
-    private fun setGeneralFlag(ctx: Context, flag: GeneralFlag, state: Boolean) {
-        Preferences(ctx).apply {
-            generalFlag = when (state) {
-                true -> generalFlag.or(flag.value)
-                false -> generalFlag.and(flag.value.inv())
-            }
-        }
+    private fun setUnknownNumbersState(ctx: Context, state: Boolean) {
+        Preferences(ctx).isGeneralUnknownNumbersChecked = state
     }
 
-    private fun setSimState(ctx: Context, flag: GeneralFlag, state: Boolean) {
+    private fun setSimState(ctx: Context, flag: Sim, state: Boolean) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && Utils.getModemCount(ctx) >= 2)
-            setGeneralFlag(ctx, flag, state)
+            Preferences(ctx).apply {
+                sim = when (state) {
+                    true -> sim.or(flag.value)
+                    false -> sim.and(flag.value.inv())
+                }
+            }
     }
 }

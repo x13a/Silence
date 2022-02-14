@@ -73,7 +73,7 @@ class CallScreeningService : CallScreeningService() {
     }
 
     private fun respondReject(callDetails: Call.Details) {
-        val isNotify = prefs.generalFlag.and(GeneralFlag.NOTIFICATIONS.value) != 0
+        val isNotify = prefs.isGeneralNotificationsChecked
         val tel = callDetails.handle?.schemeSpecificPart
         respondToCall(
             callDetails,
@@ -103,9 +103,9 @@ class CallScreeningService : CallScreeningService() {
 
     private fun checkSim(): Boolean {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S || !isMultiSim) return false
-        val flag = prefs.generalFlag
-        return (flag.and(GeneralFlag.SIM_1.value) != 0 && checkSimSlot(0)) ||
-                (flag.and(GeneralFlag.SIM_2.value) != 0 && checkSimSlot(1))
+        val sim = prefs.sim
+        return (sim.and(Sim.SIM_1.value) != 0 && checkSimSlot(0)) ||
+                (sim.and(Sim.SIM_2.value) != 0 && checkSimSlot(1))
     }
 
     @RequiresApi(Build.VERSION_CODES.S)
@@ -121,6 +121,6 @@ class CallScreeningService : CallScreeningService() {
 
     private fun checkUnknownNumber(callDetails: Call.Details): Boolean {
         return callDetails.handle?.schemeSpecificPart == null &&
-            prefs.generalFlag.and(GeneralFlag.UNKNOWN_NUMBERS.value) != 0
+                prefs.isGeneralUnknownNumbersChecked
     }
 }

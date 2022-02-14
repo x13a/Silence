@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.CheckBox
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -239,31 +240,31 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun showRepeatedSettings() {
-        val itemsN = resources.getStringArray(R.array.repeated_settings_n)
-        val itemsT = resources.getStringArray(R.array.repeated_settings_t)
-        val repeatedSettings = prefs.repeatedSettings
+        val itemsN = resources.getStringArray(R.array.repeated_count)
+        val itemsT = resources.getStringArray(R.array.repeated_minutes)
+        var count = prefs.repeatedCount
+        var minutes = prefs.repeatedMinutes
         @Suppress("InflateParams")
         val view = layoutInflater.inflate(R.layout.repeated_settings, null)
-        val n = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsCount)
-        n.setText(repeatedSettings.count.toString())
+        val n = view.findViewById<AutoCompleteTextView>(R.id.repeatedCount)
+        n.setText(count.toString())
         n.setAdapter(ArrayAdapter(
             view.context,
             android.R.layout.simple_spinner_dropdown_item,
             itemsN,
         ))
-        val t = view.findViewById<AutoCompleteTextView>(R.id.repeatedSettingsMinutes)
-        t.setText(repeatedSettings.minutes.toString())
+        val t = view.findViewById<AutoCompleteTextView>(R.id.repeatedMinutes)
+        t.setText(minutes.toString())
         t.setAdapter(ArrayAdapter(
             view.context,
             android.R.layout.simple_spinner_dropdown_item,
             itemsT,
         ))
-        var count = repeatedSettings.count
-        var minutes = repeatedSettings.minutes
         val dialog = MaterialAlertDialogBuilder(this)
             .setView(view)
             .setPositiveButton(android.R.string.ok) { _, _ ->
-                prefs.repeatedSettings = RepeatedSettings(count, minutes)
+                prefs.repeatedCount = count
+                prefs.repeatedMinutes = minutes
             }
             .create()
         val updateButtonState = {
@@ -281,33 +282,53 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun showGeneralSettings() {
-        var general = prefs.generalFlag
-        val flags = GeneralFlag.values().toMutableList()
-        val strings = resources.getStringArray(R.array.general_flag).toMutableList()
+        var isNotificationsChecked = prefs.isGeneralNotificationsChecked
+        var isUnknownNumbersChecked = prefs.isGeneralUnknownNumbersChecked
+        var sim = prefs.sim
+        @Suppress("InflateParams")
+        val view = layoutInflater.inflate(R.layout.general_settings, null)
         val hasApi31 = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
         val isMultiSim = Utils.getModemCount(this) >= 2
+        val notifications = view.findViewById<CheckBox>(R.id.notifications)
+        val unknownNumbers = view.findViewById<CheckBox>(R.id.unknownNumbers)
+        val sim1 = view.findViewById<CheckBox>(R.id.sim1)
+        val sim2 = view.findViewById<CheckBox>(R.id.sim2)
+        notifications.isChecked = isNotificationsChecked
+        unknownNumbers.isChecked = isUnknownNumbersChecked
+        sim1.isChecked = sim.and(Sim.SIM_1.value) != 0
+        sim2.isChecked = sim.and(Sim.SIM_2.value) != 0
         if (!hasApi31 || !isMultiSim) {
-            strings.removeAt(flags.indexOf(GeneralFlag.SIM_1))
-            flags.remove(GeneralFlag.SIM_1)
-            strings.removeAt(flags.indexOf(GeneralFlag.SIM_2))
-            flags.remove(GeneralFlag.SIM_2)
+            view.findViewById<View>(R.id.divider).visibility = View.GONE
+            sim1.visibility = View.GONE
+            sim2.visibility = View.GONE
+        }
+        notifications.setOnCheckedChangeListener { _, isChecked ->
+            isNotificationsChecked = isChecked
+        }
+        unknownNumbers.setOnCheckedChangeListener { _, isChecked ->
+            isUnknownNumbersChecked = isChecked
+        }
+        sim1.setOnCheckedChangeListener { _, isChecked ->
+            sim = when (isChecked) {
+                true -> sim.or(Sim.SIM_1.value)
+                false -> sim.and(Sim.SIM_1.value.inv())
+            }
+        }
+        sim2.setOnCheckedChangeListener { _, isChecked ->
+            sim = when (isChecked) {
+                true -> sim.or(Sim.SIM_2.value)
+                false -> sim.and(Sim.SIM_2.value.inv())
+            }
         }
         MaterialAlertDialogBuilder(this)
-            .setMultiChoiceItems(
-                strings.toTypedArray(),
-                flags.map { general.and(it.value) != 0 }.toBooleanArray(),
-            ) { _, index, isChecked ->
-                val flag = flags[index]
-                general = when (isChecked) {
-                    true -> general.or(flag.value)
-                    false -> general.and(flag.value.inv())
-                }
-            }
+            .setView(view)
             .setPositiveButton(android.R.string.ok) { _, _ ->
-                prefs.generalFlag = general
+                prefs.isGeneralNotificationsChecked = isNotificationsChecked
+                prefs.isGeneralUnknownNumbersChecked = isUnknownNumbersChecked
+                prefs.sim = sim
                 if (hasApi31 && isMultiSim && (
-                    general.and(GeneralFlag.SIM_1.value) != 0 ||
-                    general.and(GeneralFlag.SIM_2.value) != 0
+                    sim.and(Sim.SIM_1.value) != 0 ||
+                    sim.and(Sim.SIM_2.value) != 0
                 )) {
                     requestSimPermissions()
                 }

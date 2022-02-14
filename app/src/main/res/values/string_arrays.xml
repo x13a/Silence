@@ -8,10 +8,4 @@
         <item>@string/groups_array_toll_free</item>
         <item>@string/groups_array_local</item>
     </string-array>
-    <string-array name="general_flag">
-        <item>@string/general_flag_array_notifications</item>
-        <item>@string/general_flag_array_unknown_numbers</item>
-        <item>@string/general_flag_array_sim_1</item>
-        <item>@string/general_flag_array_sim_2</item>
-    </string-array>
 </resources>

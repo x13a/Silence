@@ -9,7 +9,7 @@
     <string name="allow">Дозволити</string>
     <string name="app_name">Silence</string>
     <string name="toggle_off">Активувати</string>
-    <string name="repeated_settings_count">Кількість</string>
+    <string name="repeated_count">Кількість</string>
     <string name="groups_switch">Групи</string>
     <string name="groups_description">Номери в межах вибраних груп.</string>
     <string name="repeated_description">N-на кількість зареєстрованих дзвінків з одного номера за T хвилин.</string>
@@ -17,7 +17,7 @@
     <string name="messages_description">Номери з повідомлень.</string>
     <string name="stir_description">Номери, які проходять перевірку STIR.</string>
     <string name="panic_app_unknown_app">невідомий застосунок</string>
-    <string name="repeated_settings_minutes">Хвилин</string>
+    <string name="repeated_minutes">Хвилин</string>
     <string name="description">Активуйте Silence, щоб не отримувати дзвінків від незнайомих людей. Це заблокує незбережені у Вашому списку контактів телефонні номери.</string>
     <string name="repeated_switch">Повторювані</string>
     <string name="groups_array_toll_free">Безплатний номер</string>
@@ -26,7 +26,7 @@
     <string name="service_unavailable_popup">Сервіс перевірки дзвінків недоступний</string>
     <string name="notification_channel_blocked_calls">Блоковані дзвінки</string>
     <string name="notification_blocked_calls_title">Дзвінок заблоковано</string>
-    <string name="general_flag_array_notifications">Сповіщення</string>
+    <string name="general_notifications">Сповіщення</string>
     <string name="contacted_array_call">Виклик</string>
     <string name="contacted_array_message">Повідомлення</string>
 </resources>

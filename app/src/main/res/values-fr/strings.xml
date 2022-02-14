@@ -19,17 +19,17 @@
     <string name="panic_app_unknown_app">une application inconnue</string>
     <string name="panic_app_dialog_message">Êtes-vous sûre de vouloir autoriser %1$s à déclencher des actions de panique destructrices\?</string>
     <string name="allow">Autoriser</string>
-    <string name="repeated_settings_minutes">Minutes</string>
-    <string name="repeated_settings_count">Total</string>
+    <string name="repeated_minutes">Minutes</string>
+    <string name="repeated_count">Total</string>
     <string name="groups_array_toll_free">Non Surtaxé</string>
     <string name="groups_array_local">Local</string>
     <string name="cleanup_job_description">Nettoyer les numéros inactifs</string>
     <string name="notification_blocked_calls_title">Appel bloqué</string>
     <string name="notification_channel_blocked_calls">Appels bloqués</string>
-    <string name="general_flag_array_notifications">Notifications</string>
+    <string name="general_notifications">Notifications</string>
     <string name="contacted_array_call">Appeler</string>
     <string name="contacted_array_message">Texter</string>
-    <string name="general_flag_array_unknown_numbers">Numéros masqués</string>
-    <string name="general_flag_array_sim_1">Sim 1</string>
-    <string name="general_flag_array_sim_2">Sim 2</string>
+    <string name="general_unknown_numbers">Numéros masqués</string>
+    <string name="sim_1">Sim 1</string>
+    <string name="sim_2">Sim 2</string>
 </resources>

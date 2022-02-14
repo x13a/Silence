@@ -11,15 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:hint="@string/repeated_settings_count">
+        android:hint="@string/repeated_count">
 
         <AutoCompleteTextView
-            android:id="@+id/repeatedSettingsCount"
+            android:id="@+id/repeatedCount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="2"
-            android:hint="@string/repeated_settings_count"
+            android:hint="@string/repeated_count"
             android:inputType="none" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <Space
@@ -31,15 +32,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:hint="@string/repeated_settings_minutes">
+        android:hint="@string/repeated_minutes">
 
         <AutoCompleteTextView
-            android:id="@+id/repeatedSettingsMinutes"
+            android:id="@+id/repeatedMinutes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="4"
-            android:hint="@string/repeated_settings_minutes"
+            android:hint="@string/repeated_minutes"
             android:inputType="none" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>

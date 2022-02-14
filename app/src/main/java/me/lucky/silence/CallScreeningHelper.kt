@@ -109,7 +109,6 @@ class CallScreeningHelper(private val ctx: Context) {
 
     private fun checkRepeated(number: Phonenumber.PhoneNumber): Boolean {
         val cursor: Cursor?
-        val repeatedSettings = prefs.repeatedSettings
         try {
             cursor = ctx.contentResolver.query(
                 makeContentUri(CallLog.Calls.CONTENT_FILTER_URI, number),
@@ -117,14 +116,14 @@ class CallScreeningHelper(private val ctx: Context) {
                 "${CallLog.Calls.TYPE} = ? AND ${CallLog.Calls.DATE} > ?",
                 arrayOf(
                     CallLog.Calls.BLOCKED_TYPE.toString(),
-                    (System.currentTimeMillis() - repeatedSettings.minutes * 60 * 1000).toString(),
+                    (System.currentTimeMillis() - prefs.repeatedMinutes * 60 * 1000).toString(),
                 ),
                 null,
             )
         } catch (exc: SecurityException) { return false }
         var result = false
         cursor?.apply {
-            if (count >= repeatedSettings.count - 1) { result = true }
+            if (count >= prefs.repeatedCount - 1) { result = true }
             close()
         }
         return result

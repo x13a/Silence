@@ -17,11 +17,11 @@
     <string name="allow">İzin ver</string>
     <string name="groups_array_toll_free">Bedelsiz</string>
     <string name="groups_array_local">Yerel</string>
-    <string name="repeated_settings_count">Arama sayısı</string>
-    <string name="repeated_settings_minutes">Dakika</string>
+    <string name="repeated_count">Arama sayısı</string>
+    <string name="repeated_minutes">Dakika</string>
     <string name="cleanup_job_description">Geçersiz numaraları temizle</string>
-    <string name="general_flag_array_notifications">Bildirimler</string>
-    <string name="general_flag_array_unknown_numbers">Gizli Numaralar</string>
+    <string name="general_notifications">Bildirimler</string>
+    <string name="general_unknown_numbers">Gizli Numaralar</string>
     <string name="notification_channel_blocked_calls">Engellenmiş aramalar</string>
     <string name="notification_blocked_calls_title">Çağrı engellendi</string>
     <string name="contacted_array_call">Çağrı</string>
