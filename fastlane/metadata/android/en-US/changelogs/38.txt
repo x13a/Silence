@@ -1,0 +1,13 @@
+All preferences migrations were removed, you may have to reconfigure Silence!
+
+option to allow hidden/unknown numbers
+options to allow per SIM calls, require READ_PHONE_STATE permission
+add options behind to the controller
+rename controller actions prefix to SET_
+
+add Turkish translation, thanks to Ümit Seyhan
+add Hindi translation, thanks to tanmayrajk
+add Arabic translation, thanks to DJEBARI.ABDELHAMID
+update Ukrainian translation, thanks to Andrij Mizyk (@andmizyk)
+update French translation, thanks to @Ilithy
+update Italian translation, thanks to Giovanni Donisi (@gdonisi + @giovannidonisi)
