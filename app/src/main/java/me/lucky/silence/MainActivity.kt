@@ -203,6 +203,7 @@ open class MainActivity : AppCompatActivity() {
         var groups = prefs.groups
         val flags = Group.values()
         MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.groups_switch)
             .setMultiChoiceItems(
                 resources.getStringArray(R.array.groups),
                 flags.map { groups.and(it.value) != 0 }.toBooleanArray()
@@ -223,6 +224,7 @@ open class MainActivity : AppCompatActivity() {
         var contacted = prefs.contacted
         val flags = Contact.values()
         MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.contacted_switch)
             .setMultiChoiceItems(
                 resources.getStringArray(R.array.contacted),
                 flags.map { contacted.and(it.value) != 0 }.toBooleanArray()
@@ -261,6 +263,7 @@ open class MainActivity : AppCompatActivity() {
             itemsT,
         ))
         val dialog = MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.repeated_switch)
             .setView(view)
             .setPositiveButton(android.R.string.ok) { _, _ ->
                 prefs.repeatedCount = count
@@ -321,6 +324,7 @@ open class MainActivity : AppCompatActivity() {
             }
         }
         MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.settings)
             .setView(view)
             .setPositiveButton(android.R.string.ok) { _, _ ->
                 prefs.isGeneralNotificationsChecked = isNotificationsChecked
