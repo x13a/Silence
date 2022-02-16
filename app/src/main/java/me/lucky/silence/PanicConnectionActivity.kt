@@ -33,7 +33,7 @@ class PanicConnectionActivity : MainActivity() {
         }
         MaterialAlertDialogBuilder(this)
             .setTitle(R.string.panic_app_dialog_title)
-            .setMessage(String.format(getString(R.string.panic_app_dialog_message), app))
+            .setMessage(getString(R.string.panic_app_dialog_message, app))
             .setNegativeButton(R.string.allow) { _, _ ->
                 PanicResponder.setTriggerPackageName(this)
                 setResult(RESULT_OK)
