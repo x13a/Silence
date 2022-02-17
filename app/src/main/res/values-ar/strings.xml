@@ -2,15 +2,15 @@
 <resources>
     <string name="app_name">برنامج صامت</string>
     <string name="toggle_on">تعطيل</string>
-    <string name="description">قم بتنشيط برنامج الصامت لتجنب تلقي مكالمات من أشخاص لا تعرفهم. يؤدي هذا إلى حظر أرقام الهواتف التي لم يتم حفظها في جهات الاتصال الخاصة بك.</string>
-    <string name="contacted_switch">تم الاتصال</string>
+    <string name="description">قم بتفعيل برنامج الصامت لتجنب تلقي مكالمات من أشخاص لا تعرفهم. يؤدي هذا إلى حظر أرقام الهواتف التي لم يتم حفظها في جهات الاتصال الخاصة بك.</string>
+    <string name="contacted_switch">تمكين الاتصال</string>
     <string name="groups_switch">مجموعات</string>
-    <string name="groups_description">أرقام ضمن المجموعات المختارة.</string>
-    <string name="repeated_switch">مكرر</string>
-    <string name="repeated_description">\"N\"مكالمة مسجلة من نفس الرقم خلال \"T\" دقيقة.</string>
+    <string name="groups_description">تمكين استقبال اتصال ضمن المجموعات المختارة.</string>
+    <string name="repeated_switch">تمكين استقبال الاتصال المكرر</string>
+    <string name="repeated_description">\"ن\"مكالمة مسجلة من نفس الرقم خلال \"ز\" دقيقة.</string>
     <string name="service_unavailable_popup">خدمة فحص المكالمات غير متوفرة</string>
     <string name="messages_switch">الرسائل النصية</string>
-    <string name="messages_description">أرقام من الرسائل النصية.</string>
+    <string name="messages_description">تمكين استقبال اتصال من أرقام بالرسائل النصية.</string>
     <string name="stir_switch">STIR/SHAKEN</string>
     <string name="stir_description">أرقام اجتياز التحقق من STIR.</string>
     <string name="panic_app_dialog_title">تأكيد السماح بتشغيل الاجراءات</string>
@@ -22,13 +22,13 @@
     <string name="repeated_count">عدد المرات</string>
     <string name="repeated_minutes">الدقائق</string>
     <string name="general_notifications">إشعارات</string>
-    <string name="general_unknown_numbers">أرقام غير معروفة</string>
+    <string name="general_unknown_numbers">أرقام مخفية</string>
     <string name="sim_1">شريحة 01</string>
     <string name="notification_channel_blocked_calls">المكالمات المحظورة</string>
     <string name="notification_blocked_calls_title">تم حظر الاتصال</string>
     <string name="contacted_array_call">اتصال</string>
     <string name="contacted_array_message">رسالة نصية</string>
-    <string name="contacted_description">الأرقام التي اتصلت بها.</string>
+    <string name="contacted_description">تمكين الاستقبال للأرقام التي اتصلت بها.</string>
     <string name="toggle_off">تفعيل</string>
     <string name="sim_2">شريحة 02</string>
     <string name="cleanup_job_description">تنظيف الأرقام غير النشطة</string>
