@@ -16,8 +16,7 @@ import com.google.i18n.phonenumbers.PhoneNumberUtil
 
 class SmsReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
-        if (context == null || intent == null) return
-        Thread(Runner(context, intent, goAsync())).start()
+        Thread(Runner(context ?: return, intent ?: return, goAsync())).start()
     }
 
     private class Runner(
