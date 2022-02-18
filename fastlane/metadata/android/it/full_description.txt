@@ -10,8 +10,18 @@ Permetti facoltativamente:
 Contattati, Gruppi, Azioni ripetute e l'interruttore principale hanno impostazioni aggiuntive. Puoi
 aprirle con un tocco prolungato
 
-Se l'applicazione rifiuta le chiamate dai contatti su Android 10, autorizza manualmente
+Se l'applicazione rifiuta le chiamate dai contatti su Android 10, concedi manualmente
 l'autorizzazione dei contatti in Info dell'app → Autorizzazioni.
+
+Permessi:
+* CALL_SCREENING - blocca o autorizza chiamata
+* READ_CALL_LOG - controlla se hai chiamato il numero e conta le volte che il numero ti ha
+chiamato in T minuti
+* READ_SMS - controlla se hai inviato un messaggio al numero
+* RECEIVE_SMS - trova i numeri di cellulare nei messaggi in arrivo
+* READ_PHONE_STATE - controlla su quale SIM sta chiamando il numero
+* RECEIVE_BOOT_COMPLETED - continua il lavoro di pulizia dei numeri inattivi tra i riavvii
+* READ_CONTACTS - controlla che il numero esista nei contatti su Android 10
 
 È un software open source gratuito.
 Licenza: GPL-3
