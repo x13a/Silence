@@ -1,0 +1,3 @@
+atualizar a tradução fastlane em RU, obrigado Artem
+adicionar ações de controle DELETE_SMS_FILTER_INACTIVE, DELETE_SMS_FILTER_ALL
+atualizar dependências e refactor

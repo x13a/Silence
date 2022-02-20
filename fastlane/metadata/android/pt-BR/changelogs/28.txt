@@ -1,0 +1,13 @@
+mudar a ligação de retorno para contatado
+adicionar sub-configurações de código
+adicionar sub-configurações repetidas
+adicionar a desativação automática para ligações de emergência
+adicionar verificação de número para sms de saída em contatados (nova permissão!)
+atualização de traduções, obrigado:
+    @wmdarg ,
+    Allan Nordhøy (@comradekingu) ,
+    J. Lavoie (Edanas) ,
+    Maxime Leroy (@Lisapple) ,
+
+Obrigado a todas as pessoas que estão contribuindo a este projeto.
+Feliz Ano Novo!

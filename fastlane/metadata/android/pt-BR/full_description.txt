@@ -1,8 +1,27 @@
-Bloqueia automaticamente os números de telefone que não estejam salvos em sua lista de contatos.
+Por padrão, os números que não estão em seus contatos são bloqueados.
 
-Opcionalmente permita:
-* Os números que você ligou
-* Os números de ligações gratuitas (p.ex.: 800 intl.)
-* Uma terceira chamada do mesmo número dentro de cinco minutos
-* Os números de celular das mensagens de texto recebidas
-* Os números que passaram a verificação STIR (Android 11)
+Opcionalmente pode permitir:
+* Números que você contactou
+* Números dentro de grupos selecionados (Gratuitas, Locais)
+* N ligação registrada do mesmo número dentro do T minutos.
+* Números de mensagens
+* Números que passam a verificação STIR (Android 11)
+
+Opções de Contatado, Grupos, Repetidos e alteração geral têm configurações adicionais. Você pode abri-las
+via clique longo.
+
+Se o app recusar ligações de contatos no Android 10, conceda a permissão de contatos manualmente em
+Info do App → Permissões.
+
+Permissões:
+* CALL_SCREENING - bloqueia ou permite as ligações
+* READ_CALL_LOG - verifica se você ligou um número e calcula quantas vezes o número ligou você
+em T minutos
+* READ_SMS - verifica se você enviou uma mensagem para um número
+* RECEIVE_SMS - encontra os números em mensagens recebidas
+* READ_PHONE_STATE - verifica para qual SIM o número está ligando
+* RECEIVE_BOOT_COMPLETED - faça limpeza persistente de números inativos ao reiniciar
+* READ_CONTACTS - verifica se o número existe em contatos no Android 10
+
+App de Software Livre e Código Aberto.
+Licença: GPL-3

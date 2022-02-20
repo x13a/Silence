@@ -1,0 +1,11 @@
+opção para permitir números ocultos/ desconhecidos
+opções para permitir ligações via SIM, requerem a permissão do READ_PHONE_STATE
+opções ao controlador
+renomear o prefixo de ações do controlador para SET_
+
+tradução em turco, Ümit Seyhan
+tradução em hindi, tan (@tanmayrajk)
+tradução em árabe, DJEBARI.ABDELHAMID
+atualização de tradução ucraniana, Andrij Mizyk (@andmizyk)
+atualização de tradução francesa, @Ilithy
+atualização de tradução italiana, Giovanni Donisi (@gdonisi + @giovannidonisi)
