@@ -1,0 +1,3 @@
+limpar a persistência de tarefas durante reinicializações (android.permission.RECEIVE_BOOT_COMPLETED)
+melhorias intrínsecas
+atualizar traduções, obrigado Allan Nordhøy (@comradekingu)
