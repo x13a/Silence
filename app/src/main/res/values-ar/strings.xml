@@ -33,4 +33,5 @@
     <string name="sim_2">شريحة 02</string>
     <string name="cleanup_job_description">تنظيف الأرقام غير النشطة</string>
     <string name="settings">إعدادات</string>
+    <string name="messages_array_body">هيكل</string>
 </resources>
