@@ -9,7 +9,7 @@
         <item>@string/groups_array_local</item>
     </string-array>
     <string-array name="messages">
-        <item>@string/messages_array_address</item>
+        <item>@string/messages_array_inbox</item>
         <item>@string/messages_array_body</item>
     </string-array>
 </resources>

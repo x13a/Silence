@@ -105,7 +105,7 @@ enum class Group(val value: Int) {
 }
 
 enum class Message(val value: Int) {
-    ADDRESS(1),
+    INBOX(1),
     BODY(1 shl 1),
 }
 

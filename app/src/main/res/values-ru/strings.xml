@@ -33,6 +33,6 @@
     <string name="contacted_array_call">Звонок</string>
     <string name="contacted_array_message">Сообщение</string>
     <string name="settings">Настройки</string>
-    <string name="messages_array_address">Адрес</string>
+    <string name="messages_array_inbox">Входящее</string>
     <string name="messages_array_body">Текст</string>
 </resources>

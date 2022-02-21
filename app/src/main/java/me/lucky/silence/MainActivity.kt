@@ -396,7 +396,7 @@ open class MainActivity : AppCompatActivity() {
         val permissions = mutableListOf<String>()
         for (value in Message.values().asSequence().filter { messages.and(it.value) != 0 }) {
             when (value) {
-                Message.ADDRESS -> permissions.add(Manifest.permission.READ_SMS)
+                Message.INBOX -> permissions.add(Manifest.permission.READ_SMS)
                 Message.BODY -> permissions.add(Manifest.permission.RECEIVE_SMS)
             }
         }

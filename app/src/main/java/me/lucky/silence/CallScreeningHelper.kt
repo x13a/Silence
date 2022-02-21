@@ -134,7 +134,7 @@ class CallScreeningHelper(private val ctx: Context) {
         var result = false
         for (value in Message.values().asSequence().filter { messages.and(it.value) != 0 }) {
             result = when (value) {
-                Message.ADDRESS -> checkMessagesAddress(number)
+                Message.INBOX -> checkMessagesInbox(number)
                 Message.BODY -> checkMessagesBody(number)
             }
             if (result) break
@@ -142,7 +142,7 @@ class CallScreeningHelper(private val ctx: Context) {
         return result
     }
 
-    private fun checkMessagesAddress(number: Phonenumber.PhoneNumber): Boolean {
+    private fun checkMessagesInbox(number: Phonenumber.PhoneNumber): Boolean {
         if (phoneNumberUtil.getNumberType(number) != PhoneNumberUtil.PhoneNumberType.MOBILE)
             return false
         var cursor: Cursor? = null
