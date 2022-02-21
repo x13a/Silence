@@ -33,4 +33,6 @@
     <string name="contacted_array_call">Call</string>
     <string name="contacted_array_message">Message</string>
     <string name="settings">Settings</string>
+    <string name="messages_array_address">Address</string>
+    <string name="messages_array_body">Body</string>
 </resources>

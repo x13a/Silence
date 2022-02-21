@@ -26,7 +26,9 @@ open class MainActivity : AppCompatActivity() {
         if (key == Preferences.SERVICE_ENABLED) {
             Utils.setSmsReceiverState(
                 this,
-                prefs.isServiceEnabled && prefs.isMessagesChecked,
+                prefs.isServiceEnabled &&
+                        prefs.isMessagesChecked &&
+                        prefs.messages.and(Message.BODY.value) != 0,
             )
             updateToggle()
         }
@@ -48,7 +50,7 @@ open class MainActivity : AppCompatActivity() {
         }
 
     private val registerForMessagesPermissions =
-        registerForActivityResult(ActivityResultContracts.RequestPermission()) {
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
             updateMessages()
         }
 
@@ -91,6 +93,10 @@ open class MainActivity : AppCompatActivity() {
             messagesSwitch.setOnCheckedChangeListener { _, isChecked ->
                 prefs.isMessagesChecked = isChecked
                 if (isChecked) requestMessagesPermissions() else updateMessages()
+            }
+            messagesSwitch.setOnLongClickListener {
+                showMessagesSettings()
+                true
             }
             stirSwitch.setOnCheckedChangeListener { _, isChecked ->
                 prefs.isStirChecked = isChecked
@@ -216,6 +222,27 @@ open class MainActivity : AppCompatActivity() {
             }
             .setPositiveButton(android.R.string.ok) { _, _ ->
                 prefs.groups = groups
+            }
+            .show()
+    }
+
+    private fun showMessagesSettings() {
+        var messages = prefs.messages
+        val flags = Message.values()
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.messages_switch)
+            .setMultiChoiceItems(
+                resources.getStringArray(R.array.messages),
+                flags.map { messages.and(it.value) != 0 }.toBooleanArray()
+            ) { _, index, isChecked ->
+                val flag = flags[index]
+                messages = when (isChecked) {
+                    true -> messages.or(flag.value)
+                    false -> messages.and(flag.value.inv())
+                }
+            }
+            .setPositiveButton(android.R.string.ok) { _, _ ->
+                prefs.messages = messages
             }
             .show()
     }
@@ -361,7 +388,19 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun requestMessagesPermissions() {
-        registerForMessagesPermissions.launch(Manifest.permission.RECEIVE_SMS)
+        registerForMessagesPermissions.launch(getMessagesPermissions())
+    }
+
+    private fun getMessagesPermissions(): Array<String> {
+        val messages = prefs.messages
+        val permissions = mutableListOf<String>()
+        for (value in Message.values().asSequence().filter { messages.and(it.value) != 0 }) {
+            when (value) {
+                Message.ADDRESS -> permissions.add(Manifest.permission.READ_SMS)
+                Message.BODY -> permissions.add(Manifest.permission.RECEIVE_SMS)
+            }
+        }
+        return permissions.toTypedArray()
     }
 
     private fun requestCallScreeningRole() {
@@ -378,7 +417,7 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun hasMessagesPermissions(): Boolean {
-        return Utils.hasPermissions(this, Manifest.permission.RECEIVE_SMS)
+        return Utils.hasPermissions(this, *getMessagesPermissions())
     }
 
     private fun requestSimPermissions() {

@@ -18,6 +18,7 @@ class Preferences(ctx: Context) {
         private const val GROUPS = "groups"
         private const val REPEATED_COUNT = "repeated_count"
         private const val REPEATED_MINUTES = "repeated_minutes"
+        private const val MESSAGES = "messages"
         private const val GENERAL_NOTIFICATIONS_CHECKED = "general_notifications_checked"
         private const val GENERAL_UNKNOWN_NUMBERS_CHECKED = "general_unknown_numbers_checked"
         private const val SIM = "sim"
@@ -64,6 +65,10 @@ class Preferences(ctx: Context) {
         get() = prefs.getBoolean(MESSAGES_CHECKED, false)
         set(value) = prefs.edit { putBoolean(MESSAGES_CHECKED, value) }
 
+    var messages: Int
+        get() = prefs.getInt(MESSAGES, 0)
+        set(value) = prefs.edit { putInt(MESSAGES, value) }
+
     var isStirChecked: Boolean
         get() = prefs.getBoolean(STIR_CHECKED, false)
         set(value) = prefs.edit { putBoolean(STIR_CHECKED, value) }
@@ -97,6 +102,11 @@ enum class Contact(val value: Int) {
 enum class Group(val value: Int) {
     TOLL_FREE(1),
     LOCAL(1 shl 1),
+}
+
+enum class Message(val value: Int) {
+    ADDRESS(1),
+    BODY(1 shl 1),
 }
 
 enum class Sim(val value: Int) {

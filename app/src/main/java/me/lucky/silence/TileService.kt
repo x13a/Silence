@@ -20,7 +20,10 @@ class TileService : TileService() {
         super.onClick()
         val state = qsTile.state == Tile.STATE_INACTIVE
         prefs.isServiceEnabled = state
-        Utils.setSmsReceiverState(this, state && prefs.isMessagesChecked)
+        Utils.setSmsReceiverState(
+            this,
+            state && prefs.isMessagesChecked && prefs.messages.and(Message.BODY.value) != 0,
+        )
     }
 
     override fun onStartListening() {

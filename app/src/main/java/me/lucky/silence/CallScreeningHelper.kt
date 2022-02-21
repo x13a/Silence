@@ -130,6 +130,43 @@ class CallScreeningHelper(private val ctx: Context) {
     }
 
     private fun checkMessages(number: Phonenumber.PhoneNumber): Boolean {
+        val messages = prefs.messages
+        var result = false
+        for (value in Message.values().asSequence().filter { messages.and(it.value) != 0 }) {
+            result = when (value) {
+                Message.ADDRESS -> checkMessagesAddress(number)
+                Message.BODY -> checkMessagesBody(number)
+            }
+            if (result) break
+        }
+        return result
+    }
+
+    private fun checkMessagesAddress(number: Phonenumber.PhoneNumber): Boolean {
+        if (phoneNumberUtil.getNumberType(number) != PhoneNumberUtil.PhoneNumberType.MOBILE)
+            return false
+        var cursor: Cursor? = null
+        var result = false
+        try {
+            cursor = ctx.contentResolver.query(
+                Telephony.Sms.Inbox.CONTENT_URI,
+                arrayOf(Telephony.Sms._ID),
+                "${Telephony.Sms.ADDRESS} = ?",
+                arrayOf(phoneNumberUtil.format(
+                    number,
+                    PhoneNumberUtil.PhoneNumberFormat.E164,
+                )),
+                null,
+            )
+        } catch (exc: SecurityException) {}
+        cursor?.apply {
+            if (moveToFirst()) { result = true }
+            close()
+        }
+        return result
+    }
+
+    private fun checkMessagesBody(number: Phonenumber.PhoneNumber): Boolean {
         val logNumber = Phonenumber.PhoneNumber()
         val countryCode = telephonyManager?.networkCountryIso?.uppercase()
         for (row in db.selectActive()) {

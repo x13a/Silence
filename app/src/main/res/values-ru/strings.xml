@@ -3,9 +3,9 @@
     <string name="app_name">Silence</string>
     <string name="toggle_off">Активировать</string>
     <string name="toggle_on">Деактивировать</string>
-    <string name="description">Активируйте Silence чтобы перестать получать звонки от людей, которых Вы не знаете. Это заблокирует телефонные номера, которые не сохранены в Вашем списке контактов.</string>
-    <string name="contacted_switch">Контактный</string>
-    <string name="contacted_description">Номера с которыми Вы контактировали.</string>
+    <string name="description">Активируйте Silence чтобы перестать получать звонки от людей, которых вы не знаете. Это заблокирует телефонные номера, которые не сохранены в вашем списке контактов.</string>
+    <string name="contacted_switch">Контакт</string>
+    <string name="contacted_description">Номера с которыми вы контактировали.</string>
     <string name="groups_switch">Группы</string>
     <string name="groups_description">Номера входящие в выбранные группы.</string>
     <string name="repeated_switch">Повторный</string>
@@ -33,4 +33,6 @@
     <string name="contacted_array_call">Звонок</string>
     <string name="contacted_array_message">Сообщение</string>
     <string name="settings">Настройки</string>
+    <string name="messages_array_address">Адрес</string>
+    <string name="messages_array_body">Текст</string>
 </resources>
