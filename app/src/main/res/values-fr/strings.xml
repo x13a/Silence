@@ -33,4 +33,5 @@
     <string name="sim_1">Sim 1</string>
     <string name="sim_2">Sim 2</string>
     <string name="settings">Paramėtres</string>
+    <string name="messages_array_body">Corps</string>
 </resources>
