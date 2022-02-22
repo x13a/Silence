@@ -43,9 +43,9 @@ private class AutoMigration1to2 : AutoMigrationSpec
 private val MIGRATION_2_3 = object : Migration(2, 3) {
     override fun migrate(database: SupportSQLiteDatabase) {
         database.execSQL("ALTER TABLE tmp_number RENAME TO allow_number")
-        database.execSQL("ALTER TABLE allow_number RENAME COLUMN ts_created TO ts_ends")
+        database.execSQL("ALTER TABLE allow_number RENAME COLUMN ts_created TO ttl")
         database.execSQL(
-            "UPDATE allow_number SET ts_ends = ts_ends + ${AllowNumberDao.INACTIVE_DURATION}")
+            "UPDATE allow_number SET ttl = ttl + ${AllowNumberDao.INACTIVE_DURATION}")
     }
 }
 
@@ -58,31 +58,31 @@ interface AllowNumberDao {
     @Insert
     fun insert(obj: AllowNumber)
 
-    @Query("UPDATE allow_number SET ts_ends = :ts WHERE phone_number = :phoneNumber")
+    @Query("UPDATE allow_number SET ttl = :ts WHERE phone_number = :phoneNumber")
     fun updateTimestamp(ts: Long, phoneNumber: String)
 
-    @Query("DELETE FROM allow_number WHERE ts_ends < :ts")
+    @Query("DELETE FROM allow_number WHERE ttl < :ts")
     fun deleteAfterEnds(ts: Long)
 
     @Query("DELETE FROM allow_number")
     fun deleteAll()
 
-    @Query("SELECT * FROM allow_number WHERE ts_ends > :ts")
+    @Query("SELECT * FROM allow_number WHERE ttl > :ts")
     fun selectBeforeEnds(ts: Long): List<AllowNumber>
 
     fun selectActive() = selectBeforeEnds(Utils.currentTimeSeconds())
     fun deleteInactive() = deleteAfterEnds(Utils.currentTimeSeconds())
-    fun update(obj: AllowNumber) = updateTimestamp(obj.tsEnds, obj.phoneNumber)
+    fun update(obj: AllowNumber) = updateTimestamp(obj.ttl, obj.phoneNumber)
 }
 
 @Entity(
-    indices = [Index(value = ["phone_number"], unique = true), Index(value = ["ts_ends"])],
+    indices = [Index(value = ["phone_number"], unique = true), Index(value = ["ttl"])],
     tableName = "allow_number",
 )
 data class AllowNumber(
     @PrimaryKey(autoGenerate = true) val uid: Int,
     @ColumnInfo(name = "phone_number") val phoneNumber: String,
-    @ColumnInfo(name = "ts_ends") val tsEnds: Long,
+    @ColumnInfo(name = "ttl") val ttl: Long,
 ) {
     companion object {
         fun new(phoneNumber: Phonenumber.PhoneNumber): AllowNumber {

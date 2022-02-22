@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 3,
-    "identityHash": "c7e0f2a9f9c0ea1ebd8bd6d9cfbf652e",
+    "identityHash": "fbd3c954594a6ba8b6f2625bab1867c0",
     "entities": [
       {
         "tableName": "allow_number",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `phone_number` TEXT NOT NULL, `ts_ends` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `phone_number` TEXT NOT NULL, `ttl` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "uid",
@@ -21,8 +21,8 @@
             "notNull": true
           },
           {
-            "fieldPath": "tsEnds",
-            "columnName": "ts_ends",
+            "fieldPath": "ttl",
+            "columnName": "ttl",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -44,13 +44,13 @@
             "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_allow_number_phone_number` ON `${TABLE_NAME}` (`phone_number`)"
           },
           {
-            "name": "index_allow_number_ts_ends",
+            "name": "index_allow_number_ttl",
             "unique": false,
             "columnNames": [
-              "ts_ends"
+              "ttl"
             ],
             "orders": [],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_allow_number_ts_ends` ON `${TABLE_NAME}` (`ts_ends`)"
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_allow_number_ttl` ON `${TABLE_NAME}` (`ttl`)"
           }
         ],
         "foreignKeys": []
@@ -59,7 +59,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c7e0f2a9f9c0ea1ebd8bd6d9cfbf652e')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fbd3c954594a6ba8b6f2625bab1867c0')"
     ]
   }
 }
