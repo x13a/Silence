@@ -9,7 +9,7 @@ class CleanupJobService : JobService() {
     }
 
     override fun onStartJob(params: JobParameters?): Boolean {
-        AppDatabase.getInstance(this).tmpNumberDao().deleteInactive()
+        AppDatabase.getInstance(this).allowNumberDao().deleteInactive()
         return false
     }
 

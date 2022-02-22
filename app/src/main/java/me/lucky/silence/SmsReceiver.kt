@@ -30,7 +30,7 @@ class SmsReceiver : BroadcastReceiver() {
             val countryCode by lazy {
                 ctx.getSystemService(TelephonyManager::class.java)?.networkCountryIso?.uppercase()
             }
-            val db by lazy { AppDatabase.getInstance(ctx).tmpNumberDao() }
+            val db by lazy { AppDatabase.getInstance(ctx).allowNumberDao() }
             var hasNumber = false
             for (msg in Telephony.Sms.Intents.getMessagesFromIntent(intent) ?: return) {
                 if (
@@ -53,7 +53,7 @@ class SmsReceiver : BroadcastReceiver() {
                     .filter {
                         phoneNumberUtil.getNumberType(it) == PhoneNumberUtil.PhoneNumberType.MOBILE
                     }
-                    .map { TmpNumber(it) }
+                    .map { AllowNumber.new(it) }
                 ) {
                     try {
                         db.insert(number)
@@ -75,7 +75,7 @@ class SmsReceiver : BroadcastReceiver() {
                 )
                     .setMinimumLatency(TimeUnit
                         .SECONDS
-                        .toMillis(TmpNumberDao.INACTIVE_DURATION.toLong() + 1))
+                        .toMillis(AllowNumberDao.INACTIVE_DURATION + 1))
                     .setPersisted(true)
                     .build()
             )

@@ -21,7 +21,7 @@ class CallScreeningHelper(private val ctx: Context) {
     private val telephonyManager = ctx.getSystemService(TelephonyManager::class.java)
     private val prefs = Preferences(ctx)
     private val phoneNumberUtil = PhoneNumberUtil.getInstance()
-    private val db = AppDatabase.getInstance(ctx).tmpNumberDao()
+    private val db = AppDatabase.getInstance(ctx).allowNumberDao()
 
     fun check(number: Phonenumber.PhoneNumber): Int {
         if (

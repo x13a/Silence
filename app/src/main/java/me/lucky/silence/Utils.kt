@@ -40,5 +40,7 @@ class Utils {
                 telephonyManager?.phoneCount
             } ?: 0
         }
+
+        fun currentTimeSeconds() = System.currentTimeMillis() / 1000
     }
 }
