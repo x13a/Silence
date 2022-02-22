@@ -19,8 +19,8 @@ class ControlReceiver : BroadcastReceiver() {
     }
 
     override fun onReceive(context: Context?, intent: Intent?) {
-        if (context == null || intent == null) return
-        when (intent.action) {
+        if (context == null) return
+        when (intent?.action) {
             SET_ON -> setGlobalState(context, true)
             SET_OFF -> setGlobalState(context, false)
             SET_UNKNOWN_NUMBERS_ON -> setUnknownNumbersState(context, true)
