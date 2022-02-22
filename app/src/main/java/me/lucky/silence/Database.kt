@@ -71,7 +71,7 @@ interface AllowNumberDao {
     fun selectBeforeEnds(ts: Long): List<AllowNumber>
 
     fun selectActive() = selectBeforeEnds(Utils.currentTimeSeconds())
-    fun deleteInactive() = deleteAfterEnds(Utils.currentTimeSeconds())
+    fun deleteExpired() = deleteAfterEnds(Utils.currentTimeSeconds())
     fun update(obj: AllowNumber) = updateTimestamp(obj.ttl, obj.phoneNumber)
 }
 
