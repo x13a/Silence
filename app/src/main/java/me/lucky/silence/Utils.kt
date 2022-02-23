@@ -11,12 +11,21 @@ import androidx.core.content.ContextCompat
 class Utils {
     companion object {
         fun setSmsReceiverState(ctx: Context, value: Boolean) {
+            setComponentState(ctx, SmsReceiver::class.java, value)
+        }
+
+        fun setComponentState(ctx: Context, cls: Class<*>, value: Boolean) {
             ctx.packageManager.setComponentEnabledSetting(
-                ComponentName(ctx, SmsReceiver::class.java),
+                ComponentName(ctx, cls),
                 if (value) PackageManager.COMPONENT_ENABLED_STATE_ENABLED else
                     PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                 PackageManager.DONT_KILL_APP,
             )
+        }
+
+        fun getComponentState(ctx: Context, cls: Class<*>): Boolean {
+            return ctx.packageManager.getComponentEnabledSetting(ComponentName(ctx, cls)) ==
+                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED
         }
 
         fun hasCallScreeningRole(ctx: Context): Boolean {

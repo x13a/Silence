@@ -26,6 +26,7 @@
     <string name="cleanup_job_description">Cleanup inactive numbers</string>
     <string name="general_notifications">Notifications</string>
     <string name="general_unknown_numbers">Unknown numbers</string>
+    <string name="general_controller">Controller</string>
     <string name="sim_1">SIM 1</string>
     <string name="sim_2">SIM 2</string>
     <string name="notification_channel_blocked_calls">Blocked calls</string>

@@ -321,10 +321,12 @@ open class MainActivity : AppCompatActivity() {
         val isMultiSim = Utils.getModemCount(this) >= 2
         val notifications = view.findViewById<CheckBox>(R.id.notifications)
         val unknownNumbers = view.findViewById<CheckBox>(R.id.unknownNumbers)
+        val controller = view.findViewById<CheckBox>(R.id.controller)
         val sim1 = view.findViewById<CheckBox>(R.id.sim1)
         val sim2 = view.findViewById<CheckBox>(R.id.sim2)
         notifications.isChecked = isNotificationsChecked
         unknownNumbers.isChecked = isUnknownNumbersChecked
+        controller.isChecked = Utils.getComponentState(this, ControlReceiver::class.java)
         sim1.isChecked = sim.and(Sim.SIM_1.value) != 0
         sim2.isChecked = sim.and(Sim.SIM_2.value) != 0
         if (!hasApi31 || !isMultiSim) {
@@ -337,6 +339,9 @@ open class MainActivity : AppCompatActivity() {
         }
         unknownNumbers.setOnCheckedChangeListener { _, isChecked ->
             isUnknownNumbersChecked = isChecked
+        }
+        controller.setOnCheckedChangeListener { _, isChecked ->
+            Utils.setComponentState(this, ControlReceiver::class.java, isChecked)
         }
         sim1.setOnCheckedChangeListener { _, isChecked ->
             sim = when (isChecked) {
