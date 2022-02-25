@@ -33,4 +33,6 @@
     <string name="sim_1">SIM 1</string>
     <string name="sim_2">SIM 2</string>
     <string name="settings">Impostazioni</string>
+    <string name="messages_array_body">Corpo</string>
+    <string name="messages_array_inbox">Posta in arrivo</string>
 </resources>
