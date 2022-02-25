@@ -23,7 +23,7 @@
     <string name="groups_array_local">Local</string>
     <string name="repeated_count">Count</string>
     <string name="repeated_minutes">Minutes</string>
-    <string name="cleanup_job_description">Cleanup inactive numbers</string>
+    <string name="cleanup_job_description">Clean up inactive numbers</string>
     <string name="general_notifications">Notifications</string>
     <string name="general_unknown_numbers">Unknown numbers</string>
     <string name="general_controller">Controller</string>

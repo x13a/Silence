@@ -34,4 +34,6 @@
     <string name="cleanup_job_description">تنظيف الأرقام غير النشطة</string>
     <string name="settings">إعدادات</string>
     <string name="messages_array_body">هيكل</string>
+    <string name="messages_array_inbox">صندوق الوارد</string>
+    <string name="general_controller">تحكم</string>
 </resources>
