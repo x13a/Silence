@@ -24,7 +24,7 @@
     <string name="groups_array_toll_free">Numero verde</string>
     <string name="repeated_count">Totale</string>
     <string name="repeated_minutes">Minuti</string>
-    <string name="cleanup_job_description">Pulizia numeri inattivi</string>
+    <string name="cleanup_job_description">Pulizia numeri scaduti</string>
     <string name="general_notifications">Notifiche</string>
     <string name="contacted_array_call">Chiamata</string>
     <string name="contacted_array_message">Messaggio</string>
@@ -35,4 +35,5 @@
     <string name="settings">Impostazioni</string>
     <string name="messages_array_body">Corpo</string>
     <string name="messages_array_inbox">Posta in arrivo</string>
+    <string name="general_controller">Controllore</string>
 </resources>
