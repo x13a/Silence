@@ -17,13 +17,13 @@
     <string name="stir_description">Números que passam a verificação STIR.</string>
     <string name="settings">Configurações</string>
     <string name="allow">Permitir</string>
-    <string name="cleanup_job_description">Remover os números inativos</string>
+    <string name="cleanup_job_description">Remover números inativos</string>
     <string name="panic_app_dialog_message">Você tem certeza que quer permitir a %1$s para acionar ações destrutivas de pânico\?</string>
     <string name="contacted_array_call">Ligação</string>
     <string name="contacted_array_message">Mensagem</string>
     <string name="panic_app_unknown_app">um app desconhecido</string>
-    <string name="groups_array_toll_free">Gratuitas</string>
-    <string name="groups_array_local">Locais</string>
+    <string name="groups_array_toll_free">Gratuito</string>
+    <string name="groups_array_local">Local</string>
     <string name="repeated_count">Contagem</string>
     <string name="repeated_minutes">Minutos</string>
     <string name="notification_channel_blocked_calls">Ligações bloqueadas</string>
@@ -33,4 +33,7 @@
     <string name="notification_blocked_calls_title">Ligação bloqueada</string>
     <string name="sim_1">SIM 1</string>
     <string name="panic_app_dialog_title">Confirmar o app de pânico</string>
+    <string name="messages_array_body">Texto da mensagem</string>
+    <string name="messages_array_inbox">Caixa de entrada</string>
+    <string name="general_controller">Verificador</string>
 </resources>
