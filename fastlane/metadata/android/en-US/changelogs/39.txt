@@ -1,0 +1,11 @@
+add allow a call after a message (Messages > Inbox)
+add controller toggle (by default off)
+
+update Turkish translation, thanks to Oğuz Ersen (@ersen0)
+update Arabic translation, thanks to DJEBARI.ABDELHAMID
+update French translation, thanks to @Ilithy
+update Italian translation, thanks to Giovanni Donisi (@gdonisi + @giovannidonisi)
+update Ukrainian translation, thanks to Andrij Mizyk (@andmizyk)
+update Portuguese (Brazil) translation, thanks to mezysinc
+update Norwegian Bokmål translation, thanks to Allan Nordhøy (@comradekingu)
+update English translation, thanks to Allan Nordhøy (@comradekingu)
