@@ -36,7 +36,7 @@ If the app rejects calls from contacts on Android 10, allow contacts permission 
   from the number
 * RECEIVE_SMS            - find mobile numbers in incoming messages
 * READ_PHONE_STATE       - check on which SIM the number is calling
-* RECEIVE_BOOT_COMPLETED - persist cleanup inactive numbers job across reboots
+* RECEIVE_BOOT_COMPLETED - persist cleanup expired numbers job across reboots
 * READ_CONTACTS          - check the number exists in contacts on Android 10
 
 ## Localization
