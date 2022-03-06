@@ -15,20 +15,20 @@
         android:text="@string/general_notifications" />
 
     <CheckBox
-        android:id="@+id/unknownNumbers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:paddingHorizontal="20sp"
-        android:text="@string/general_unknown_numbers" />
-
-    <CheckBox
         android:id="@+id/controller"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:paddingHorizontal="20sp"
         android:text="@string/general_controller" />
+
+    <CheckBox
+        android:id="@+id/unknownNumbers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:paddingHorizontal="20sp"
+        android:text="@string/general_unknown_numbers" />
 
     <View
         android:id="@+id/divider"
