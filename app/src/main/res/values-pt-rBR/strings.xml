@@ -5,11 +5,11 @@
     <string name="toggle_on">Desativar</string>
     <string name="description">Ative o Silêncio para deixar de receber as ligações de pessoas que você não conhece. O app bloqueia números de telefone que não estão salvos na sua lista de contatos.</string>
     <string name="contacted_switch">Contatado</string>
-    <string name="contacted_description">Os números que você tenha chamado.</string>
+    <string name="contacted_description">Números que você já ligou.</string>
     <string name="groups_switch">Grupos</string>
     <string name="groups_description">Números dentro de grupos selecionados.</string>
     <string name="repeated_switch">Recorrentes</string>
-    <string name="repeated_description">N ligação registrada do mesmo número dentro do T minutos.</string>
+    <string name="repeated_description">Ligações registradas do mesmo número em poucos minutos de intervalo.</string>
     <string name="service_unavailable_popup">Serviço de triagem de ligações indisponível</string>
     <string name="messages_switch">Mensagens</string>
     <string name="messages_description">Números de mensagens.</string>
@@ -17,7 +17,7 @@
     <string name="stir_description">Números que passam a verificação STIR.</string>
     <string name="settings">Configurações</string>
     <string name="allow">Permitir</string>
-    <string name="cleanup_job_description">Remover números inativos</string>
+    <string name="cleanup_job_description">Remover números expirados</string>
     <string name="panic_app_dialog_message">Você tem certeza que quer permitir a %1$s para acionar ações destrutivas de pânico\?</string>
     <string name="contacted_array_call">Ligação</string>
     <string name="contacted_array_message">Mensagem</string>

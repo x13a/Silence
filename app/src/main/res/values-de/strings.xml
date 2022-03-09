@@ -7,7 +7,7 @@
     <string name="description">Aktivieren Sie Stille, um Anrufe von Personen zu vermeiden, die Sie nicht kennen. Dies blockiert Telefonnummern, die nicht in Ihrer Kontaktliste gespeichert sind.</string>
     <string name="contacted_switch">Rückruf</string>
     <string name="groups_switch">Gebührenfrei</string>
-    <string name="groups_description">Nummern innerhalb ausgewählter Codegruppen.</string>
+    <string name="groups_description">Nummern innerhalb der ausgewählten Gruppen.</string>
     <string name="repeated_switch">Wiederholt</string>
     <string name="service_unavailable_popup">Anrufüberwachungsdienst nicht verfügbar</string>
     <string name="repeated_description">N registrierte Anrufe von derselben Nummer innerhalb von T Minuten.</string>
@@ -19,4 +19,19 @@
     <string name="panic_app_dialog_title">Bestätigen Sie die Panik-App</string>
     <string name="panic_app_dialog_message">Sind Sie sicher, dass Sie zulassen wollen, dass %1$s zerstörerische Panikaktionen auslöst\?</string>
     <string name="allow">Erlauben</string>
+    <string name="settings">Einstellungen</string>
+    <string name="cleanup_job_description">Abgelaufene Nummern bereinigen</string>
+    <string name="messages_array_body">Nachrichtentext</string>
+    <string name="notification_channel_blocked_calls">Blockierte Anrufe</string>
+    <string name="sim_1">SIM 1</string>
+    <string name="groups_array_toll_free">Gebührenfrei</string>
+    <string name="messages_array_inbox">Posteingang</string>
+    <string name="groups_array_local">Lokal</string>
+    <string name="general_notifications">Benachrichtigungen</string>
+    <string name="general_unknown_numbers">Unbekannte Zahlen</string>
+    <string name="repeated_minutes">Minuten</string>
+    <string name="sim_2">SIM 2</string>
+    <string name="notification_blocked_calls_title">Anruf blockiert</string>
+    <string name="contacted_array_message">Nachricht</string>
+    <string name="contacted_array_call">Anruf</string>
 </resources>
