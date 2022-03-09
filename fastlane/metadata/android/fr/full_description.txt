@@ -1,13 +1,13 @@
 Par défaut, les numéros ne figurant pas dans vos contacts sont bloqués.
 
-En option, vous pouvez autoriser :
+En option, vous pouvez autoriser:
 * Les numéros que vous avez appelés
 * Les numéros dans les groupes de codes sélectionner (ex: numéro locaux, non surtaxé)
 * N appel enregistré du même numéro dans les N minutes
 * Les numéros de mobile des textos reçus
 * Numéros réussissant la vérification STIR (Android 11)
 
-Les options Contacté, Groupes, Répétition et le boutons principale possèdent des paramètres additionnels.
+Les options Contacté, Groupes, Répétition, SMS et le boutons principale possèdent des paramètres additionnels.
 Vous pouvez y accéder par un appui long.
 
 Si l'application rejette les appels de contacts sous Android 10, autorisez manuellement l'accès aux
@@ -19,7 +19,7 @@ Autorisations:
 * READ_SMS - Vérifier les numéros auquel vous avez envoyé un message.
 * RECEIVE_SMS - Rechercher des numéros de téléphone mobile dans les messages entrants.
 * READ_PHONE_STATE - Vérifier sur quelle sim le numéro appel.
-* RECEIVE_BOOT_COMPLETED - démarrer le service de blocage après redémarrage de l'appareil.
+* RECEIVE_BOOT_COMPLETED - démarrer le service de blocage des numéros après redémarrage de l'appareil.
 * READ_CONTACTS - Vérifier qu'un numéro est présent dans les contacts sous Android 10.
 
 Ceci est un logiciel libre et gratuit.
