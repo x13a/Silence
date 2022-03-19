@@ -1,2 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Cisza</string>
+    <string name="toggle_off">Włącz</string>
+    <string name="contacted_switch">Kontaktowane</string>
+    <string name="groups_switch">Grupy</string>
+    <string name="contacted_description">Numery z krórymi sie kontaktowałeś.</string>
+    <string name="repeated_switch">Powtórzone</string>
+    <string name="repeated_description">Numer który do Ciebie dzwonił N razy w ostatnich T minutach.</string>
+    <string name="allow">Pozwól</string>
+    <string name="messages_switch">Wiadomości</string>
+    <string name="groups_array_local">Lokalne</string>
+    <string name="repeated_minutes">Minuty</string>
+    <string name="general_notifications">Powiadomienia</string>
+    <string name="general_controller">Kontroler</string>
+    <string name="general_unknown_numbers">Nieznane numery</string>
+    <string name="repeated_count">Liczba</string>
+    <string name="groups_array_toll_free">Bezopłatowe</string>
+    <string name="stir_switch">STIR/SHAKEN</string>
+    <string name="panic_app_unknown_app">Nieznana aplikacja</string>
+    <string name="service_unavailable_popup">Usługa Weryfikowania połączeń jest niedostępna</string>
+    <string name="panic_app_dialog_title">Potwierdź aplikację przeciwko-napadową</string>
+    <string name="cleanup_job_description">Wyczyść wygasłe numery</string>
+    <string name="toggle_on">Wyłącz</string>
+    <string name="settings">Ustawienia</string>
+    <string name="sim_2">Karta SIM 2</string>
+    <string name="messages_array_inbox">Skszynka</string>
+    <string name="contacted_array_message">Wiadomość</string>
+    <string name="sim_1">Karta SIM 1</string>
+    <string name="contacted_array_call">Telefon</string>
+    <string name="messages_array_body">Treść</string>
+    <string name="notification_blocked_calls_title">Połączenie zablokowane</string>
+    <string name="notification_channel_blocked_calls">Zablokowane połączenia</string>
+    <string name="panic_app_dialog_message">Czy napewno chcesz pozwolić aplikacji %1$s wykonywać niszczycielskie działańa przeciwko-napadowe\?</string>
+    <string name="groups_description">Numery w wyznaczonych grupah.</string>
+    <string name="description">Włącz Ciszę żeby nie dostawać telefonów od nieznajomych. Cisza blokuje telefony których numery nie znajdują sie w twoich kontaktach.</string>
+    <string name="messages_description">Numery pochodzące z wiadomości.</string>
+    <string name="stir_description">Numery pszechodzące weryfikację STIR.</string>
+</resources>
