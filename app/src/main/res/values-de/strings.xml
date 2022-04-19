@@ -34,4 +34,6 @@
     <string name="notification_blocked_calls_title">Anruf blockiert</string>
     <string name="contacted_array_message">Nachricht</string>
     <string name="contacted_array_call">Anruf</string>
+    <string name="general_controller">Controller</string>
+    <string name="repeated_count">Anzahl</string>
 </resources>
