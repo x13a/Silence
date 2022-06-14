@@ -102,6 +102,7 @@ enum class Contact(val value: Int) {
 enum class Group(val value: Int) {
     TOLL_FREE(1),
     LOCAL(1 shl 1),
+    NOT_LOCAL(1 shl 2),
 }
 
 enum class Message(val value: Int) {

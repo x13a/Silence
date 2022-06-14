@@ -1,6 +1,5 @@
 package me.lucky.silence
 
-import android.Manifest
 import android.content.Context
 import android.database.Cursor
 import android.net.Uri
@@ -13,27 +12,19 @@ import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
 
 class CallScreeningHelper(private val ctx: Context) {
-    companion object {
-        const val RESULT_ALLOW = 0
-        const val RESULT_REJECT = 1
-    }
-
     private val telephonyManager = ctx.getSystemService(TelephonyManager::class.java)
     private val prefs = Preferences(ctx)
     private val phoneNumberUtil = PhoneNumberUtil.getInstance()
     private val db = AppDatabase.getInstance(ctx).allowNumberDao()
 
-    fun check(number: Phonenumber.PhoneNumber): Int {
-        if (
-            (hasContactsPermission() && checkContacts(number)) ||
+    fun check(number: Phonenumber.PhoneNumber): Boolean {
+        return (
+            checkContacts(number) ||
             (prefs.isContactedChecked && checkContacted(number)) ||
             (prefs.isGroupsChecked && checkGroups(number)) ||
             (prefs.isRepeatedChecked && checkRepeated(number)) ||
             (prefs.isMessagesChecked && checkMessages(number))
-        ) {
-            return RESULT_ALLOW
-        }
-        return RESULT_REJECT
+        )
     }
 
     private fun checkContacted(number: Phonenumber.PhoneNumber): Boolean {
@@ -98,6 +89,10 @@ class CallScreeningHelper(private val ctx: Context) {
                 Group.TOLL_FREE -> phoneNumberUtil.getNumberType(number) ==
                         PhoneNumberUtil.PhoneNumberType.TOLL_FREE
                 Group.LOCAL -> phoneNumberUtil.isValidNumberForRegion(
+                    number,
+                    telephonyManager?.networkCountryIso?.uppercase(),
+                )
+                Group.NOT_LOCAL -> !phoneNumberUtil.isValidNumberForRegion(
                     number,
                     telephonyManager?.networkCountryIso?.uppercase(),
                 )
@@ -194,10 +189,6 @@ class CallScreeningHelper(private val ctx: Context) {
             close()
         }
         return result
-    }
-
-    private fun hasContactsPermission(): Boolean {
-        return Utils.hasPermissions(ctx, Manifest.permission.READ_CONTACTS)
     }
 
     private fun makeContentUri(base: Uri, number: Phonenumber.PhoneNumber): Uri {

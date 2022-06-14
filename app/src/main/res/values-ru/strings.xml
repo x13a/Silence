@@ -21,6 +21,7 @@
     <string name="allow">Разрешить</string>
     <string name="groups_array_toll_free">Бесплатные</string>
     <string name="groups_array_local">Местные</string>
+    <string name="groups_array_not_local">Не местные</string>
     <string name="repeated_count">Количество</string>
     <string name="repeated_minutes">Минут</string>
     <string name="cleanup_job_description">Удаляет неактивные номера</string>

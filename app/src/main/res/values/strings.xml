@@ -21,6 +21,7 @@
     <string name="allow">Allow</string>
     <string name="groups_array_toll_free">Toll-Free</string>
     <string name="groups_array_local">Local</string>
+    <string name="groups_array_not_local">Not local</string>
     <string name="repeated_count">Count</string>
     <string name="repeated_minutes">Minutes</string>
     <string name="cleanup_job_description">Clean up expired numbers</string>

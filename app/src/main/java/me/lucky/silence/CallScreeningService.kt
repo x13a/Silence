@@ -64,8 +64,8 @@ class CallScreeningService : CallScreeningService() {
             respondReject(callDetails)
             return
         }
-        if (callScreeningHelper.check(number) == CallScreeningHelper.RESULT_ALLOW)
-            respondAllow(callDetails) else respondReject(callDetails)
+        if (callScreeningHelper.check(number)) respondAllow(callDetails)
+        else respondReject(callDetails)
     }
 
     private fun respondAllow(callDetails: Call.Details) {
