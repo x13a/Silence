@@ -36,4 +36,5 @@
     <string name="messages_array_body">Corps</string>
     <string name="messages_array_inbox">Boîte de réception</string>
     <string name="general_controller">Contrôleur</string>
+    <string name="groups_array_not_local">Non local</string>
 </resources>
