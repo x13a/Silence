@@ -7,10 +7,11 @@ import android.telecom.Connection
 import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
 import androidx.annotation.RequiresApi
+import kotlin.properties.Delegates
+
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
-import kotlin.properties.Delegates
 
 class CallScreeningService : CallScreeningService() {
     private lateinit var prefs: Preferences
