@@ -25,11 +25,11 @@
     <string name="repeated_count">Count</string>
     <string name="repeated_minutes">Minutes</string>
     <string name="cleanup_job_description">Clean up expired numbers</string>
-    <string name="general_disallow_call">Disallow call</string>
-    <string name="general_reject_call">Reject call</string>
-    <string name="general_silence_call">Silence call</string>
-    <string name="general_skip_call_log">Skip call log</string>
-    <string name="general_skip_notification">Skip notification</string>
+    <string name="response_option_disallow_call">Disallow call</string>
+    <string name="response_option_reject_call">Reject call</string>
+    <string name="response_option_silence_call">Silence call</string>
+    <string name="response_option_skip_call_log">Skip call log</string>
+    <string name="response_option_skip_notification">Skip notification</string>
     <string name="general_unknown_numbers">Unknown numbers</string>
     <string name="general_controller">Controller</string>
     <string name="sim_1">SIM 1</string>

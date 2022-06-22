@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="20sp"
-        android:text="@string/general_disallow_call"
+        android:text="@string/response_option_disallow_call"
         android:textSize="16sp" />
 
     <CheckBox
@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="20sp"
-        android:text="@string/general_reject_call"
+        android:text="@string/response_option_reject_call"
         android:textSize="16sp" />
 
     <CheckBox
@@ -50,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="20sp"
-        android:text="@string/general_silence_call"
+        android:text="@string/response_option_silence_call"
         android:textSize="16sp" />
 
     <CheckBox
@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="20sp"
-        android:text="@string/general_skip_call_log"
+        android:text="@string/response_option_skip_call_log"
         android:textSize="16sp" />
 
     <CheckBox
@@ -66,7 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="20sp"
-        android:text="@string/general_skip_notification"
+        android:text="@string/response_option_skip_notification"
         android:textSize="16sp" />
 
     <View
