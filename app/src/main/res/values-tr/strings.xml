@@ -36,4 +36,5 @@
     <string name="messages_array_body">Gövde</string>
     <string name="messages_array_inbox">Gelen kutusu</string>
     <string name="general_controller">Denetleyici</string>
+    <string name="groups_array_not_local">Yerel değil</string>
 </resources>

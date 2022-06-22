@@ -36,4 +36,5 @@
     <string name="contacted_array_call">Anruf</string>
     <string name="general_controller">Controller</string>
     <string name="repeated_count">Anzahl</string>
+    <string name="groups_array_not_local">Nicht lokal</string>
 </resources>
