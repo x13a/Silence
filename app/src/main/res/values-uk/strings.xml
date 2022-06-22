@@ -25,8 +25,7 @@
     <string name="cleanup_job_description">Очистити неактивні номери</string>
     <string name="service_unavailable_popup">Сервіс перевірки дзвінків недоступний</string>
     <string name="notification_channel_blocked_calls">Блоковані дзвінки</string>
-    <string name="notification_blocked_calls_title">Дзвінок заблоковано</string>
-    <string name="general_notifications">Сповіщення</string>
+    <string name="notification_blocked_call_title">Дзвінок заблоковано</string>
     <string name="contacted_array_call">Виклик</string>
     <string name="contacted_array_message">Повідомлення</string>
 </resources>

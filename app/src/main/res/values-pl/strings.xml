@@ -11,7 +11,6 @@
     <string name="messages_switch">Wiadomości</string>
     <string name="groups_array_local">Lokalne</string>
     <string name="repeated_minutes">Minuty</string>
-    <string name="general_notifications">Powiadomienia</string>
     <string name="general_controller">Kontroler</string>
     <string name="general_unknown_numbers">Nieznane numery</string>
     <string name="repeated_count">Liczba</string>
@@ -29,7 +28,7 @@
     <string name="sim_1">Karta SIM 1</string>
     <string name="contacted_array_call">Telefon</string>
     <string name="messages_array_body">Treść</string>
-    <string name="notification_blocked_calls_title">Połączenie zablokowane</string>
+    <string name="notification_blocked_call_title">Połączenie zablokowane</string>
     <string name="notification_channel_blocked_calls">Zablokowane połączenia</string>
     <string name="panic_app_dialog_message">Czy napewno chcesz pozwolić aplikacji %1$s wykonywać niszczycielskie działańa przeciwko-napadowe\?</string>
     <string name="groups_description">Numery w wyznaczonych grupah.</string>

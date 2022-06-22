@@ -21,11 +21,10 @@
     <string name="groups_array_local">رقم محلي</string>
     <string name="repeated_count">عدد المرات</string>
     <string name="repeated_minutes">الدقائق</string>
-    <string name="general_notifications">إشعارات</string>
     <string name="general_unknown_numbers">أرقام مخفية</string>
     <string name="sim_1">شريحة 01</string>
     <string name="notification_channel_blocked_calls">المكالمات المحظورة</string>
-    <string name="notification_blocked_calls_title">تم حظر الاتصال</string>
+    <string name="notification_blocked_call_title">تم حظر الاتصال</string>
     <string name="contacted_array_call">اتصال</string>
     <string name="contacted_array_message">رسالة نصية</string>
     <string name="contacted_description">تمكين الاستقبال للأرقام التي اتصلت بها.</string>

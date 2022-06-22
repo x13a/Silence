@@ -7,7 +7,7 @@ import androidx.preference.PreferenceManager
 
 class Preferences(ctx: Context) {
     companion object {
-        const val SERVICE_ENABLED = "service_enabled"
+        const val ENABLED = "enabled"
         private const val CONTACTED_CHECKED = "contacted_checked"
         private const val REPEATED_CHECKED = "repeated_checked"
         private const val MESSAGES_CHECKED = "messages_checked"
@@ -19,19 +19,23 @@ class Preferences(ctx: Context) {
         private const val REPEATED_COUNT = "repeated_count"
         private const val REPEATED_MINUTES = "repeated_minutes"
         private const val MESSAGES = "messages"
-        private const val GENERAL_NOTIFICATIONS_CHECKED = "general_notifications_checked"
+
+        private const val RESPONSE_OPTIONS = "call_screening_response_options"
         private const val GENERAL_UNKNOWN_NUMBERS_CHECKED = "general_unknown_numbers_checked"
         private const val SIM = "sim"
 
         private const val DEFAULT_REPEATED_COUNT = 3
         private const val DEFAULT_REPEATED_MINUTES = 5
+
+        // migration
+        const val SERVICE_ENABLED = "service_enabled"
     }
 
     private val prefs = PreferenceManager.getDefaultSharedPreferences(ctx)
 
-    var isServiceEnabled: Boolean
-        get() = prefs.getBoolean(SERVICE_ENABLED, false)
-        set(value) = prefs.edit { putBoolean(SERVICE_ENABLED, value) }
+    var isEnabled: Boolean
+        get() = prefs.getBoolean(ENABLED, prefs.getBoolean(SERVICE_ENABLED, false))
+        set(value) = prefs.edit { putBoolean(ENABLED, value) }
 
     var isContactedChecked: Boolean
         get() = prefs.getBoolean(CONTACTED_CHECKED, false)
@@ -73,13 +77,16 @@ class Preferences(ctx: Context) {
         get() = prefs.getBoolean(STIR_CHECKED, false)
         set(value) = prefs.edit { putBoolean(STIR_CHECKED, value) }
 
-    var isGeneralNotificationsChecked: Boolean
-        get() = prefs.getBoolean(GENERAL_NOTIFICATIONS_CHECKED, false)
-        set(value) = prefs.edit { putBoolean(GENERAL_NOTIFICATIONS_CHECKED, value) }
-
     var isGeneralUnknownNumbersChecked: Boolean
         get() = prefs.getBoolean(GENERAL_UNKNOWN_NUMBERS_CHECKED, false)
         set(value) = prefs.edit { putBoolean(GENERAL_UNKNOWN_NUMBERS_CHECKED, value) }
+
+    var responseOptions: Int
+        get() = prefs.getInt(
+            RESPONSE_OPTIONS,
+            ResponseOption.DisallowCall.value.or(ResponseOption.RejectCall.value),
+        )
+        set(value) = prefs.edit { putInt(RESPONSE_OPTIONS, value) }
 
     var sim: Int
         get() = prefs.getInt(SIM, 0)
@@ -108,6 +115,14 @@ enum class Group(val value: Int) {
 enum class Message(val value: Int) {
     INBOX(1),
     BODY(1 shl 1),
+}
+
+enum class ResponseOption(val value: Int) {
+    DisallowCall(1),
+    RejectCall(1 shl 1),
+    SilenceCall(1 shl 2),
+    SkipCallLog(1 shl 3),
+    SkipNotification(1 shl 4),
 }
 
 enum class Sim(val value: Int) {

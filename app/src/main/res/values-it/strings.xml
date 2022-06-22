@@ -20,12 +20,11 @@
     <string name="panic_app_unknown_app">un\'app sconosciuta</string>
     <string name="allow">Permetti</string>
     <string name="notification_channel_blocked_calls">Chiamate bloccate</string>
-    <string name="notification_blocked_calls_title">Chiamata bloccata</string>
+    <string name="notification_blocked_call_title">Chiamata bloccata</string>
     <string name="groups_array_toll_free">Numero verde</string>
     <string name="repeated_count">Totale</string>
     <string name="repeated_minutes">Minuti</string>
     <string name="cleanup_job_description">Pulizia numeri scaduti</string>
-    <string name="general_notifications">Notifiche</string>
     <string name="contacted_array_call">Chiamata</string>
     <string name="contacted_array_message">Messaggio</string>
     <string name="groups_array_local">Locale</string>

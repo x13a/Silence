@@ -7,14 +7,6 @@
     android:paddingHorizontal="24dp">
 
     <CheckBox
-        android:id="@+id/notifications"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:paddingHorizontal="20sp"
-        android:text="@string/general_notifications" />
-
-    <CheckBox
         android:id="@+id/controller"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,6 +24,53 @@
 
     <View
         android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="8dp"
+        android:background="?android:attr/listDivider" />
+
+    <CheckBox
+        android:id="@+id/disallowCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20sp"
+        android:text="@string/general_disallow_call"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/rejectCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20sp"
+        android:text="@string/general_reject_call"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/silenceCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20sp"
+        android:text="@string/general_silence_call"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/skipCallLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20sp"
+        android:text="@string/general_skip_call_log"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/skipNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20sp"
+        android:text="@string/general_skip_notification"
+        android:textSize="16sp" />
+
+    <View
+        android:id="@+id/divider2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginVertical="8dp"

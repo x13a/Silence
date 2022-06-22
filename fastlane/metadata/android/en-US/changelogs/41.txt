@@ -1,0 +1,8 @@
+add response options to general settings
+update Turkish, German, French, Italian, Norwegian Bokmål translations
+
+Thanks to:
+Oğuz Ersen (@ersen0)
+Allan Nordhøy (@comradekingu)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+J. Lavoie (Edanas)

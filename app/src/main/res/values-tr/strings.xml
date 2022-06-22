@@ -20,10 +20,9 @@
     <string name="repeated_count">Arama sayısı</string>
     <string name="repeated_minutes">Dakika</string>
     <string name="cleanup_job_description">Süresi dolan numaraları temizle</string>
-    <string name="general_notifications">Bildirimler</string>
     <string name="general_unknown_numbers">Bilinmeyen numaralar</string>
     <string name="notification_channel_blocked_calls">Engellenmiş aramalar</string>
-    <string name="notification_blocked_calls_title">Çağrı engellendi</string>
+    <string name="notification_blocked_call_title">Çağrı engellendi</string>
     <string name="contacted_array_call">Çağrı</string>
     <string name="contacted_array_message">Mesaj</string>
     <string name="description">Tanımadığınız kişilerden çağrılar almamak için Silence\'ı etkinleştirin. Bu, rehberinizde kayıtlı olmayan numaraları engeller.</string>

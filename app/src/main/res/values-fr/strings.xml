@@ -24,9 +24,8 @@
     <string name="groups_array_toll_free">Non surtaxé</string>
     <string name="groups_array_local">Local</string>
     <string name="cleanup_job_description">Nettoyer les numéros expirés</string>
-    <string name="notification_blocked_calls_title">Appel bloqué</string>
+    <string name="notification_blocked_call_title">Appel bloqué</string>
     <string name="notification_channel_blocked_calls">Appels bloqués</string>
-    <string name="general_notifications">Notifications</string>
     <string name="contacted_array_call">Appeler</string>
     <string name="contacted_array_message">Message</string>
     <string name="general_unknown_numbers">Numéros masqués</string>

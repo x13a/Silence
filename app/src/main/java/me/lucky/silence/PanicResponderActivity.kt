@@ -13,7 +13,7 @@ class PanicResponderActivity : AppCompatActivity() {
             finishAndRemoveTask()
             return
         }
-        Preferences(this).isServiceEnabled = false
+        Preferences(this).isEnabled = false
         Utils.setSmsReceiverState(this, false)
         if (PanicResponder.receivedTriggerFromConnectedApp(this))
             AppDatabase.getInstance(this).allowNumberDao().deleteAll()

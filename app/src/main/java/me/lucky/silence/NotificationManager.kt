@@ -28,7 +28,7 @@ class NotificationManager(private val ctx: Context) {
             NOTIFICATION_BLOCKED_CALLS_ID,
             NotificationCompat.Builder(ctx, CHANNEL_BLOCKED_CALLS_ID)
                 .setSmallIcon(R.drawable.ic_tile)
-                .setContentTitle(ctx.getString(R.string.notification_blocked_calls_title))
+                .setContentTitle(ctx.getString(R.string.notification_blocked_call_title))
                 .setContentText(tel)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setCategory(NotificationCompat.CATEGORY_STATUS)

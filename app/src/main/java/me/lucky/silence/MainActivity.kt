@@ -23,10 +23,10 @@ open class MainActivity : AppCompatActivity() {
     private var roleManager: RoleManager? = null
 
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
-        if (key == Preferences.SERVICE_ENABLED) {
+        if (key == Preferences.ENABLED) {
             Utils.setSmsReceiverState(
                 this,
-                prefs.isServiceEnabled &&
+                prefs.isEnabled &&
                         prefs.isMessagesChecked &&
                         prefs.messages.and(Message.BODY.value) != 0,
             )
@@ -36,7 +36,7 @@ open class MainActivity : AppCompatActivity() {
 
     private val registerForCallScreeningRole =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            prefs.isServiceEnabled = it.resultCode == RESULT_OK
+            prefs.isEnabled = it.resultCode == RESULT_OK
         }
 
     private val registerForContactedPermissions =
@@ -102,8 +102,8 @@ open class MainActivity : AppCompatActivity() {
                 prefs.isStirChecked = isChecked
             }
             toggle.setOnClickListener {
-                val state = prefs.isServiceEnabled
-                prefs.isServiceEnabled = !state
+                val state = prefs.isEnabled
+                prefs.isEnabled = !state
                 if (!state) requestCallScreeningRole()
             }
             toggle.setOnLongClickListener {
@@ -140,7 +140,7 @@ open class MainActivity : AppCompatActivity() {
         updateRepeated()
         updateMessages()
         updateToggle()
-        if (prefs.isServiceEnabled && !Utils.hasCallScreeningRole(this))
+        if (prefs.isEnabled && !Utils.hasCallScreeningRole(this))
             Snackbar.make(
                 binding.toggle,
                 getString(R.string.service_unavailable_popup),
@@ -192,7 +192,7 @@ open class MainActivity : AppCompatActivity() {
     private fun updateToggle() {
         val stringId: Int
         val colorId: Int
-        if (prefs.isServiceEnabled) {
+        if (prefs.isEnabled) {
             stringId = R.string.toggle_on
             colorId = R.color.icon_color_red
         } else {
@@ -312,36 +312,72 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun showGeneralSettings() {
-        var isNotificationsChecked = prefs.isGeneralNotificationsChecked
         var isUnknownNumbersChecked = prefs.isGeneralUnknownNumbersChecked
+        var isControllerChecked = Utils.getComponentState(this, ControlReceiver::class.java)
+        var responseOptions = prefs.responseOptions
         var sim = prefs.sim
         @Suppress("InflateParams")
         val view = layoutInflater.inflate(R.layout.general_settings, null)
         val hasApi31 = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
         val isMultiSim = Utils.getModemCount(this) >= 2
-        val notifications = view.findViewById<CheckBox>(R.id.notifications)
         val unknownNumbers = view.findViewById<CheckBox>(R.id.unknownNumbers)
         val controller = view.findViewById<CheckBox>(R.id.controller)
+        val disallowCall = view.findViewById<CheckBox>(R.id.disallowCall)
+        val rejectCall = view.findViewById<CheckBox>(R.id.rejectCall)
+        val silenceCall = view.findViewById<CheckBox>(R.id.silenceCall)
+        val skipCallLog = view.findViewById<CheckBox>(R.id.skipCallLog)
+        val skipNotification = view.findViewById<CheckBox>(R.id.skipNotification)
         val sim1 = view.findViewById<CheckBox>(R.id.sim1)
         val sim2 = view.findViewById<CheckBox>(R.id.sim2)
-        notifications.isChecked = isNotificationsChecked
         unknownNumbers.isChecked = isUnknownNumbersChecked
-        controller.isChecked = Utils.getComponentState(this, ControlReceiver::class.java)
+        controller.isChecked = isControllerChecked
+        disallowCall.isChecked = responseOptions.and(ResponseOption.DisallowCall.value) != 0
+        rejectCall.isChecked = responseOptions.and(ResponseOption.RejectCall.value) != 0
+        silenceCall.isChecked = responseOptions.and(ResponseOption.SilenceCall.value) != 0
+        skipCallLog.isChecked = responseOptions.and(ResponseOption.SkipCallLog.value) != 0
+        skipNotification.isChecked = responseOptions.and(ResponseOption.SkipNotification.value) != 0
         sim1.isChecked = sim.and(Sim.SIM_1.value) != 0
         sim2.isChecked = sim.and(Sim.SIM_2.value) != 0
         if (!hasApi31 || !isMultiSim) {
-            view.findViewById<View>(R.id.divider).visibility = View.GONE
+            view.findViewById<View>(R.id.divider2).visibility = View.GONE
             sim1.visibility = View.GONE
             sim2.visibility = View.GONE
-        }
-        notifications.setOnCheckedChangeListener { _, isChecked ->
-            isNotificationsChecked = isChecked
         }
         unknownNumbers.setOnCheckedChangeListener { _, isChecked ->
             isUnknownNumbersChecked = isChecked
         }
         controller.setOnCheckedChangeListener { _, isChecked ->
-            Utils.setComponentState(this, ControlReceiver::class.java, isChecked)
+            isControllerChecked = isChecked
+        }
+        disallowCall.setOnCheckedChangeListener { _, isChecked ->
+            responseOptions = when (isChecked) {
+                true -> responseOptions.or(ResponseOption.DisallowCall.value)
+                false -> responseOptions.and(ResponseOption.DisallowCall.value.inv())
+            }
+        }
+        rejectCall.setOnCheckedChangeListener { _, isChecked ->
+            responseOptions = when (isChecked) {
+                true -> responseOptions.or(ResponseOption.RejectCall.value)
+                false -> responseOptions.and(ResponseOption.RejectCall.value.inv())
+            }
+        }
+        silenceCall.setOnCheckedChangeListener { _, isChecked ->
+            responseOptions = when (isChecked) {
+                true -> responseOptions.or(ResponseOption.SilenceCall.value)
+                false -> responseOptions.and(ResponseOption.SilenceCall.value.inv())
+            }
+        }
+        skipCallLog.setOnCheckedChangeListener { _, isChecked ->
+            responseOptions = when (isChecked) {
+                true -> responseOptions.or(ResponseOption.SkipCallLog.value)
+                false -> responseOptions.and(ResponseOption.SkipCallLog.value.inv())
+            }
+        }
+        skipNotification.setOnCheckedChangeListener { _, isChecked ->
+            responseOptions = when (isChecked) {
+                true -> responseOptions.or(ResponseOption.SkipNotification.value)
+                false -> responseOptions.and(ResponseOption.SkipNotification.value.inv())
+            }
         }
         sim1.setOnCheckedChangeListener { _, isChecked ->
             sim = when (isChecked) {
@@ -359,8 +395,9 @@ open class MainActivity : AppCompatActivity() {
             .setTitle(R.string.settings)
             .setView(view)
             .setPositiveButton(android.R.string.ok) { _, _ ->
-                prefs.isGeneralNotificationsChecked = isNotificationsChecked
                 prefs.isGeneralUnknownNumbersChecked = isUnknownNumbersChecked
+                Utils.setComponentState(this, ControlReceiver::class.java, isControllerChecked)
+                prefs.responseOptions = responseOptions
                 prefs.sim = sim
                 if (hasApi31 && isMultiSim && (
                     sim.and(Sim.SIM_1.value) != 0 ||

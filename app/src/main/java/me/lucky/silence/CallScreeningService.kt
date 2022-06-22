@@ -7,11 +7,10 @@ import android.telecom.Connection
 import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
 import androidx.annotation.RequiresApi
-import kotlin.properties.Delegates
-
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
+import kotlin.properties.Delegates
 
 class CallScreeningService : CallScreeningService() {
     private lateinit var prefs: Preferences
@@ -37,11 +36,11 @@ class CallScreeningService : CallScreeningService() {
     }
 
     override fun onScreenCall(callDetails: Call.Details) {
-        if (!prefs.isServiceEnabled) {
+        if (!prefs.isEnabled) {
             respondAllow(callDetails)
             return
         } else if (checkEmergency(callDetails)) {
-            prefs.isServiceEnabled = false
+            prefs.isEnabled = false
             Utils.setSmsReceiverState(this, false)
             respondAllow(callDetails)
             return
@@ -73,17 +72,24 @@ class CallScreeningService : CallScreeningService() {
     }
 
     private fun respondReject(callDetails: Call.Details) {
-        val isNotify = prefs.isGeneralNotificationsChecked
+        val responseOptions = prefs.responseOptions
+        val disallowCall = responseOptions.and(ResponseOption.DisallowCall.value) != 0
         val tel = callDetails.handle?.schemeSpecificPart
+        val isNotify = responseOptions.and(ResponseOption.SkipNotification.value) == 0
+                && tel != null
         respondToCall(
             callDetails,
             CallResponse.Builder()
-                .setDisallowCall(true)
-                .setRejectCall(true)
-                .setSkipNotification(!isNotify || tel == null)
+                .setDisallowCall(disallowCall)
+                .setRejectCall(responseOptions.and(ResponseOption.RejectCall.value) != 0
+                        && disallowCall)
+                .setSilenceCall(responseOptions.and(ResponseOption.SilenceCall.value) != 0)
+                .setSkipCallLog(responseOptions.and(ResponseOption.SkipCallLog.value) != 0
+                        && disallowCall)
+                .setSkipNotification(!isNotify && disallowCall)
                 .build(),
         )
-        if (isNotify) notificationManager.notifyBlockedCall(tel)
+        if (isNotify && disallowCall) notificationManager.notifyBlockedCall(tel)
     }
 
     private fun checkStir(callDetails: Call.Details): Boolean {

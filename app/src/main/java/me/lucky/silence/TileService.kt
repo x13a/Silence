@@ -8,7 +8,7 @@ class TileService : TileService() {
     private lateinit var prefs: Preferences
 
     private val prefsListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
-        if (key == Preferences.SERVICE_ENABLED) update()
+        if (key == Preferences.ENABLED) update()
     }
 
     override fun onCreate() {
@@ -19,7 +19,7 @@ class TileService : TileService() {
     override fun onClick() {
         super.onClick()
         val state = qsTile.state == Tile.STATE_INACTIVE
-        prefs.isServiceEnabled = state
+        prefs.isEnabled = state
         Utils.setSmsReceiverState(
             this,
             state && prefs.isMessagesChecked && prefs.messages.and(Message.BODY.value) != 0,
@@ -40,7 +40,7 @@ class TileService : TileService() {
     private fun update() {
         qsTile.state = when {
             !Utils.hasCallScreeningRole(this) -> Tile.STATE_UNAVAILABLE
-            prefs.isServiceEnabled -> Tile.STATE_ACTIVE
+            prefs.isEnabled -> Tile.STATE_ACTIVE
             else -> Tile.STATE_INACTIVE
         }
         qsTile.updateTile()

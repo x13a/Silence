@@ -27,11 +27,10 @@
     <string name="groups_array_toll_free">Gebührenfrei</string>
     <string name="messages_array_inbox">Posteingang</string>
     <string name="groups_array_local">Lokal</string>
-    <string name="general_notifications">Benachrichtigungen</string>
     <string name="general_unknown_numbers">Unbekannte Zahlen</string>
     <string name="repeated_minutes">Minuten</string>
     <string name="sim_2">SIM 2</string>
-    <string name="notification_blocked_calls_title">Anruf blockiert</string>
+    <string name="notification_blocked_call_title">Anruf blockiert</string>
     <string name="contacted_array_message">Nachricht</string>
     <string name="contacted_array_call">Anruf</string>
     <string name="general_controller">Controller</string>

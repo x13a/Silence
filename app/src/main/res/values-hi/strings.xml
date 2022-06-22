@@ -12,10 +12,9 @@
     <string name="groups_array_local">स्थानीय</string>
     <string name="repeated_minutes">मिनट</string>
     <string name="cleanup_job_description">निष्क्रिय नंबरों को साफ करें</string>
-    <string name="general_notifications">सूचनाएं</string>
     <string name="general_unknown_numbers">अनजान नंबरें</string>
     <string name="sim_2">सिम 2</string>
-    <string name="notification_blocked_calls_title">अवरोधित कॉल</string>
+    <string name="notification_blocked_call_title">अवरोधित कॉल</string>
     <string name="groups_array_toll_free">टोल फ्री</string>
     <string name="description">शांति सक्रिय करें अनजान लोगों के कॉल को टालने के लिए। यह उन फ़ोन नंबरों को टाल कर देता है जो संपर्क सूची में नही हैं।</string>
     <string name="groups_switch">समूहें</string>

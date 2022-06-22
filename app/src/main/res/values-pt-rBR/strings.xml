@@ -27,10 +27,9 @@
     <string name="repeated_count">Contagem</string>
     <string name="repeated_minutes">Minutos</string>
     <string name="notification_channel_blocked_calls">Ligações bloqueadas</string>
-    <string name="general_notifications">Notificações</string>
     <string name="general_unknown_numbers">Números desconhecidos</string>
     <string name="sim_2">SIM 2</string>
-    <string name="notification_blocked_calls_title">Ligação bloqueada</string>
+    <string name="notification_blocked_call_title">Ligação bloqueada</string>
     <string name="sim_1">SIM 1</string>
     <string name="panic_app_dialog_title">Confirmar o app de pânico</string>
     <string name="messages_array_body">Texto da mensagem</string>

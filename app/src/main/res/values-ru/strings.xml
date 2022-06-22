@@ -25,13 +25,12 @@
     <string name="repeated_count">Количество</string>
     <string name="repeated_minutes">Минут</string>
     <string name="cleanup_job_description">Удаляет неактивные номера</string>
-    <string name="general_notifications">Уведомления</string>
     <string name="general_unknown_numbers">Скрытые номера</string>
     <string name="general_controller">Контроллер</string>
     <string name="sim_1">SIM 1</string>
     <string name="sim_2">SIM 2</string>
     <string name="notification_channel_blocked_calls">Заблокированные вызовы</string>
-    <string name="notification_blocked_calls_title">Вызов заблокирован</string>
+    <string name="notification_blocked_call_title">Вызов заблокирован</string>
     <string name="contacted_array_call">Звонок</string>
     <string name="contacted_array_message">Сообщение</string>
     <string name="settings">Настройки</string>
