@@ -30,11 +30,11 @@
     <string name="groups_array_local">Lokalt</string>
     <string name="groups_array_toll_free">Gratisnummer</string>
     <string name="notification_blocked_calls_title">Anrop blokkert</string>
-    <string name="cleanup_job_description">Rens opp inaktive nummer</string>
+    <string name="cleanup_job_description">Rens opp utløpte nummer</string>
     <string name="contacted_array_call">Anrop</string>
     <string name="repeated_count">Total</string>
     <string name="general_notifications">Merknader</string>
     <string name="contacted_array_message">Melding</string>
-    <string name="general_controller">Kontroller</string>
+    <string name="general_controller">Kontrollør</string>
     <string name="groups_array_not_local">Ikke lokal</string>
 </resources>
