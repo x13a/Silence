@@ -35,4 +35,6 @@
     <string name="repeated_count">Total</string>
     <string name="general_notifications">Merknader</string>
     <string name="contacted_array_message">Melding</string>
+    <string name="general_controller">Kontroller</string>
+    <string name="groups_array_not_local">Ikke lokal</string>
 </resources>

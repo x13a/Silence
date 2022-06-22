@@ -36,4 +36,5 @@
     <string name="messages_array_body">Corpo</string>
     <string name="messages_array_inbox">Posta in arrivo</string>
     <string name="general_controller">Controllore</string>
+    <string name="groups_array_not_local">Non locale</string>
 </resources>
