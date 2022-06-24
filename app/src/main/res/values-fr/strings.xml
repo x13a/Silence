@@ -36,4 +36,9 @@
     <string name="messages_array_inbox">Boîte de réception</string>
     <string name="general_controller">Contrôleur</string>
     <string name="groups_array_not_local">Non local</string>
+    <string name="response_option_disallow_call">Refuser l\'appel</string>
+    <string name="response_option_reject_call">Rejeter l\'appel</string>
+    <string name="response_option_silence_call">Silencer l\'appel</string>
+    <string name="response_option_skip_call_log">Ignorer le journal des appels</string>
+    <string name="response_option_skip_notification">Ignorer la notification</string>
 </resources>
