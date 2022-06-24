@@ -1,0 +1,9 @@
+genel ayarlara yanıt seçenekleri eklendi
+Türkçe, Almanca, Fransızca, İtalyanca, Bokmål Norveççe çevirileri güncellendi
+
+Teşekkürler:
+Oğuz Ersen (@ersen0)
+Allan Nordhøy (@comradekingu)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+@Ilithy
+J. Lavoie (Edanas)
