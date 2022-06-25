@@ -36,4 +36,9 @@
     <string name="general_controller">Controller</string>
     <string name="repeated_count">Anzahl</string>
     <string name="groups_array_not_local">Nicht lokal</string>
+    <string name="response_option_disallow_call">Anruf blockieren</string>
+    <string name="response_option_reject_call">Anruf ablehnen</string>
+    <string name="response_option_silence_call">Anruf stummschalten</string>
+    <string name="response_option_skip_call_log">Anrufliste überspringen</string>
+    <string name="response_option_skip_notification">Benachrichtigung überspringen</string>
 </resources>
