@@ -36,4 +36,9 @@
     <string name="messages_array_inbox">Posta in arrivo</string>
     <string name="general_controller">Controllore</string>
     <string name="groups_array_not_local">Non locale</string>
+    <string name="response_option_silence_call">Silenzia chiamata</string>
+    <string name="response_option_disallow_call">Non consentire chiamata</string>
+    <string name="response_option_skip_notification">Salta la notifica</string>
+    <string name="response_option_reject_call">Rifiuta chiamata</string>
+    <string name="response_option_skip_call_log">Salta registro chiamate</string>
 </resources>
