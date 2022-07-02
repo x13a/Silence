@@ -25,7 +25,7 @@
     <string name="messages_inbox">Inbox</string>
     <string name="messages_inbox_description">Allow calls from numbers that sent you a message.</string>
     <string name="messages_text">Text</string>
-    <string name="messages_text_description">Temporarily allow calls from numbers found in incoming messages text.</string>
+    <string name="messages_text_description">Temporarily allow calls from mobile numbers found in incoming messages text.</string>
     <string name="stir_main">STIR/SHAKEN</string>
     <string name="stir_description">Allow calls from numbers passing STIR verification.</string>
     <string name="settings">Settings</string>
