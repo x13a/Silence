@@ -14,7 +14,7 @@
     <string name="groups_not_local">Not local</string>
     <string name="groups_not_local_description">Allow calls from numbers with not the same country code as your.</string>
     <string name="groups_toll_free">Toll-Free</string>
-    <string name="groups_toll_free_description">Allow calls from Toll-Free numbers (ex: 800).</string>
+    <string name="groups_toll_free_description">Allow calls from Toll-Free numbers (ex 800).</string>
     <string name="repeated_main">Repeated</string>
     <string name="repeated_description">Allow N registered call from the same number within T minutes.</string>
     <string name="repeated_count">Count</string>
