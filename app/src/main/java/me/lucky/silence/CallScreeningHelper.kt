@@ -130,7 +130,7 @@ class CallScreeningHelper(private val ctx: Context) {
         for (value in Message.values().asSequence().filter { messages.and(it.value) != 0 }) {
             result = when (value) {
                 Message.INBOX -> checkMessagesInbox(number)
-                Message.BODY -> checkMessagesBody(number)
+                Message.TEXT -> checkMessagesText(number)
             }
             if (result) break
         }
@@ -161,7 +161,7 @@ class CallScreeningHelper(private val ctx: Context) {
         return result
     }
 
-    private fun checkMessagesBody(number: Phonenumber.PhoneNumber): Boolean {
+    private fun checkMessagesText(number: Phonenumber.PhoneNumber): Boolean {
         val logNumber = Phonenumber.PhoneNumber()
         val countryCode = telephonyManager?.networkCountryIso?.uppercase()
         for (row in db.selectActive()) {

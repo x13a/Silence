@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Silence</string>
-    <string name="toggle_off">Aktivér</string>
-    <string name="toggle_on">Deaktivér</string>
-    <string name="description">Aktivér Silence for at undgå opkald fra folk du ikke kender. Dette blokérer telefonnumre der ikke er gemt i din kontaktliste.</string>
-    <string name="contacted_switch">Ring tilbage</string>-------------
+    <string name="contacted_main">Ring tilbage</string>-------------
     <string name="contacted_description">Tillad numre du har ringet til.</string>
-    <string name="groups_switch">Told-fri</string>
+    <string name="groups_main">Told-fri</string>
     <string name="groups_description">Tillad numre med told-frie koder (ex: 800).</string>
-    <string name="repeated_switch">Gentaget</string>
+    <string name="repeated_main">Gentaget</string>
     <string name="repeated_description">Tillad et tredje opkald fra det samme nummer inde for fem minutter.</string>
-    <string name="service_unavailable_popup">Opkalds-screeningstjeneste utilgængelig</string>
-    <string name="messages_switch">SMS</string>
+    <string name="messages_main">SMS</string>
     <string name="messages_description">Tillad midlertidige mobilnumre fra indgående tekstbeskeder.</string>
-    <string name="stir_switch">STIR/SHAKEN</string>
+    <string name="stir_main">STIR/SHAKEN</string>
     <string name="stir_description">Tillad numre der har bestået STIR-verificering.</string>
 </resources>

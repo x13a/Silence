@@ -10,9 +10,8 @@ import android.database.sqlite.SQLiteConstraintException
 import android.provider.Telephony
 import android.telephony.SmsMessage
 import android.telephony.TelephonyManager
-import java.util.concurrent.TimeUnit
-
 import com.google.i18n.phonenumbers.PhoneNumberUtil
+import java.util.concurrent.TimeUnit
 
 class SmsReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
@@ -70,8 +69,8 @@ class SmsReceiver : BroadcastReceiver() {
         private fun schedule() {
             ctx.getSystemService(JobScheduler::class.java)?.schedule(
                 JobInfo.Builder(
-                    CleanupJobService.JOB_ID,
-                    ComponentName(ctx, CleanupJobService::class.java),
+                    CleanJobService.JOB_ID,
+                    ComponentName(ctx, CleanJobService::class.java),
                 )
                     .setMinimumLatency(TimeUnit
                         .SECONDS

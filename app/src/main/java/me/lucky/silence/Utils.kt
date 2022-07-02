@@ -6,39 +6,36 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import android.telephony.TelephonyManager
-import androidx.core.content.ContextCompat
 
 class Utils {
     companion object {
-        fun setSmsReceiverState(ctx: Context, value: Boolean) {
+        fun setSmsReceiverState(ctx: Context, value: Boolean) =
             setComponentState(ctx, SmsReceiver::class.java, value)
-        }
 
-        fun setComponentState(ctx: Context, cls: Class<*>, value: Boolean) {
+        fun updateSmsReceiverState(ctx: Context, prefs: Preferences) =
+            setSmsReceiverState(
+                ctx,
+                prefs.isEnabled &&
+                        prefs.isMessagesChecked &&
+                        prefs.messages.and(Message.TEXT.value) != 0,
+            )
+
+        fun setComponentState(ctx: Context, cls: Class<*>, value: Boolean) =
             ctx.packageManager.setComponentEnabledSetting(
                 ComponentName(ctx, cls),
                 if (value) PackageManager.COMPONENT_ENABLED_STATE_ENABLED else
                     PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                 PackageManager.DONT_KILL_APP,
             )
-        }
 
-        fun getComponentState(ctx: Context, cls: Class<*>): Boolean {
-            return ctx.packageManager.getComponentEnabledSetting(ComponentName(ctx, cls)) ==
-                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED
-        }
+        fun getComponentState(ctx: Context, cls: Class<*>) =
+            ctx.packageManager.getComponentEnabledSetting(ComponentName(ctx, cls)) ==
+                PackageManager.COMPONENT_ENABLED_STATE_ENABLED
 
-        fun hasCallScreeningRole(ctx: Context): Boolean {
-            return ctx
+        fun hasCallScreeningRole(ctx: Context) =
+            ctx
                 .getSystemService(RoleManager::class.java)
                 ?.isRoleHeld(RoleManager.ROLE_CALL_SCREENING) ?: false
-        }
-
-        fun hasPermissions(ctx: Context, vararg permissions: String): Boolean {
-            return !permissions.any {
-                ContextCompat.checkSelfPermission(ctx, it) != PackageManager.PERMISSION_GRANTED
-            }
-        }
 
         fun getModemCount(ctx: Context): Int {
             val telephonyManager = ctx.getSystemService(TelephonyManager::class.java)
@@ -51,5 +48,11 @@ class Utils {
         }
 
         fun currentTimeSeconds() = System.currentTimeMillis() / 1000
+
+        fun setFlag(key: Int, value: Int, enabled: Boolean) =
+            when(enabled) {
+                true -> key.or(value)
+                false -> key.or(value.inv())
+            }
     }
 }

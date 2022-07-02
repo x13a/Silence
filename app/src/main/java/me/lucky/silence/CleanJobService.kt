@@ -3,7 +3,7 @@ package me.lucky.silence
 import android.app.job.JobParameters
 import android.app.job.JobService
 
-class CleanupJobService : JobService() {
+class CleanJobService : JobService() {
     companion object {
         const val JOB_ID = 1000
     }

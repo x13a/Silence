@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_main"
+        android:title="@string/main"
+        android:checkable="true"
+        android:checked="true" />
+
+    <group
+        android:id="@+id/nav_group_options"
+        android:checkableBehavior="all">
+
+        <item
+            android:id="@+id/nav_contacted"
+            android:title="@string/contacted_main" />
+
+        <item
+            android:id="@+id/nav_groups"
+            android:title="@string/groups_main" />
+
+        <item
+            android:id="@+id/nav_repeated"
+            android:title="@string/repeated_main" />
+
+        <item
+            android:id="@+id/nav_messages"
+            android:title="@string/messages_main" />
+
+    </group>
+
+</menu>

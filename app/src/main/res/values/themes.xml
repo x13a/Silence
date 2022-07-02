@@ -1,20 +1,13 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.Silence.Base" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.Silence" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
-    </style>
 
-    <style name="Theme.Silence" parent="Theme.Silence.Base">
-        <item name="colorPrimary">@color/icon_color_yellow</item>
-        <item name="colorPrimaryContainer">@color/primaryContainerLight</item>
-        <item name="colorAccent">@color/icon_color_yellow</item>
-        <item name="android:windowBackground">@color/icon_color_white</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
-
-    <style name="Widget.App.ExposedDropdownMenu" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu" />
 </resources>

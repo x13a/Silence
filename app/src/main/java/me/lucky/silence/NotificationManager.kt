@@ -19,7 +19,7 @@ class NotificationManager(private val ctx: Context) {
         manager.createNotificationChannel(NotificationChannelCompat.Builder(
             CHANNEL_BLOCKED_CALLS_ID,
             NotificationManagerCompat.IMPORTANCE_DEFAULT,
-        ).setName(ctx.getString(R.string.notification_channel_blocked_calls)).build())
+        ).setName(ctx.getString(R.string.notification_channel)).build())
     }
 
     fun notifyBlockedCall(tel: String?) {
@@ -28,7 +28,7 @@ class NotificationManager(private val ctx: Context) {
             NOTIFICATION_BLOCKED_CALLS_ID,
             NotificationCompat.Builder(ctx, CHANNEL_BLOCKED_CALLS_ID)
                 .setSmallIcon(R.drawable.ic_tile)
-                .setContentTitle(ctx.getString(R.string.notification_blocked_call_title))
+                .setContentTitle(ctx.getString(R.string.notification_title))
                 .setContentText(tel)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setCategory(NotificationCompat.CATEGORY_STATUS)

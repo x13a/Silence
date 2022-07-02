@@ -5,12 +5,4 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-    <color name="icon_color_white">#FAFAFA</color>
-    <color name="icon_color_white_2">#E8E3E3</color>
-    <color name="icon_color_yellow">#FFC52F</color>
-    <color name="icon_color_red">#DF5C4E</color>
-
-    <color name="primaryContainerLight">#FFDF98</color>
-    <color name="primaryContainerDark">#5C4300</color>
 </resources>

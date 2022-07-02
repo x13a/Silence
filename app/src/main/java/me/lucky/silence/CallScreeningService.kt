@@ -7,11 +7,10 @@ import android.telecom.Connection
 import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
 import androidx.annotation.RequiresApi
-import kotlin.properties.Delegates
-
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
+import kotlin.properties.Delegates
 
 class CallScreeningService : CallScreeningService() {
     private lateinit var prefs: Preferences
@@ -61,18 +60,18 @@ class CallScreeningService : CallScreeningService() {
                 telephonyManager?.networkCountryIso?.uppercase(),
             )
         } catch (exc: NumberParseException) {
-            respondReject(callDetails)
+            respondNotAllow(callDetails)
             return
         }
         if (callScreeningHelper.check(number)) respondAllow(callDetails)
-        else respondReject(callDetails)
+        else respondNotAllow(callDetails)
     }
 
     private fun respondAllow(callDetails: Call.Details) {
         respondToCall(callDetails, CallResponse.Builder().build())
     }
 
-    private fun respondReject(callDetails: Call.Details) {
+    private fun respondNotAllow(callDetails: Call.Details) {
         val responseOptions = prefs.responseOptions
         val disallowCall = responseOptions.and(ResponseOption.DisallowCall.value) != 0
         val tel = callDetails.handle?.schemeSpecificPart
@@ -128,6 +127,6 @@ class CallScreeningService : CallScreeningService() {
 
     private fun checkUnknownNumber(callDetails: Call.Details): Boolean {
         return callDetails.handle?.schemeSpecificPart == null &&
-                prefs.isGeneralUnknownNumbersChecked
+                prefs.isUnknownNumbersChecked
     }
 }

@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Silence</string>
-    <string name="toggle_off">Activar</string>
-    <string name="toggle_on">Desactivar</string>
-    <string name="description">Activa la App Silence para evitar recibir llamadas de personas que no conoces. Esto bloquea los números de teléfono que no están guardados en tu lista de contactos.</string>
-    <string name="contacted_switch">Devolución de llamada</string>
+    <string name="contacted_main">Devolución de llamada</string>
     <string name="contacted_description">Permitir los números a los que ha llamado.</string>
-    <string name="groups_switch">Llamadas gratuitas</string>
+    <string name="groups_main">Llamadas gratuitas</string>
     <string name="groups_description">Permitir los números con grupos de código seleccionados (por ejemplo: 800 o 0800).</string>
-    <string name="repeated_switch">Repetidas</string>
+    <string name="repeated_main">Repetidas</string>
     <string name="repeated_description">N llamadas registradas desde el mismo número en un plazo de T minutos.</string>
-    <string name="service_unavailable_popup">El servicio de detección de llamadas no está disponible</string>
-    <string name="messages_switch">SMS - Mensajes de Texto</string>
+    <string name="messages_main">SMS - Mensajes de Texto</string>
     <string name="messages_description">Temporalmente los números de los mensajes entrantes.</string>
-    <string name="stir_switch">Protocolos STIR/SHAKEN</string>
+    <string name="stir_main">Protocolos STIR/SHAKEN</string>
     <string name="stir_description">Números que han aprobado la comprobación STIR.</string>
     <string name="allow">Permitir</string>
     <string name="panic_app_dialog_title">Confirmar app de pánico</string>

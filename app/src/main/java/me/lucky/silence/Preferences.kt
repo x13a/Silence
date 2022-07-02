@@ -1,7 +1,6 @@
 package me.lucky.silence
 
 import android.content.Context
-import android.content.SharedPreferences
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 
@@ -21,14 +20,15 @@ class Preferences(ctx: Context) {
         private const val MESSAGES = "messages"
 
         private const val RESPONSE_OPTIONS = "call_screening_response_options"
-        private const val GENERAL_UNKNOWN_NUMBERS_CHECKED = "general_unknown_numbers_checked"
+        private const val UNKNOWN_NUMBERS_CHECKED = "unknown_numbers_checked"
         private const val SIM = "sim"
 
         private const val DEFAULT_REPEATED_COUNT = 3
         private const val DEFAULT_REPEATED_MINUTES = 5
 
         // migration
-        const val SERVICE_ENABLED = "service_enabled"
+        private const val SERVICE_ENABLED = "service_enabled"
+        private const val GENERAL_UNKNOWN_NUMBERS_CHECKED = "general_unknown_numbers_checked"
     }
 
     private val prefs = PreferenceManager.getDefaultSharedPreferences(ctx)
@@ -77,9 +77,12 @@ class Preferences(ctx: Context) {
         get() = prefs.getBoolean(STIR_CHECKED, false)
         set(value) = prefs.edit { putBoolean(STIR_CHECKED, value) }
 
-    var isGeneralUnknownNumbersChecked: Boolean
-        get() = prefs.getBoolean(GENERAL_UNKNOWN_NUMBERS_CHECKED, false)
-        set(value) = prefs.edit { putBoolean(GENERAL_UNKNOWN_NUMBERS_CHECKED, value) }
+    var isUnknownNumbersChecked: Boolean
+        get() = prefs.getBoolean(
+            UNKNOWN_NUMBERS_CHECKED,
+            prefs.getBoolean(GENERAL_UNKNOWN_NUMBERS_CHECKED, false),
+        )
+        set(value) = prefs.edit { putBoolean(UNKNOWN_NUMBERS_CHECKED, value) }
 
     var responseOptions: Int
         get() = prefs.getInt(
@@ -91,14 +94,6 @@ class Preferences(ctx: Context) {
     var sim: Int
         get() = prefs.getInt(SIM, 0)
         set(value) = prefs.edit { putInt(SIM, value) }
-
-    fun registerListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
-        prefs.registerOnSharedPreferenceChangeListener(listener)
-    }
-
-    fun unregisterListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
-        prefs.unregisterOnSharedPreferenceChangeListener(listener)
-    }
 }
 
 enum class Contact(val value: Int) {
@@ -114,7 +109,7 @@ enum class Group(val value: Int) {
 
 enum class Message(val value: Int) {
     INBOX(1),
-    BODY(1 shl 1),
+    TEXT(1 shl 1),
 }
 
 enum class ResponseOption(val value: Int) {

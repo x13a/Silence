@@ -11,8 +11,8 @@ android {
         applicationId "me.lucky.silence"
         minSdk 29
         targetSdk 32
-        versionCode 41
-        versionName "1.10.3"
+        versionCode 42
+        versionName "1.10.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -57,6 +57,7 @@ dependencies {
     implementation 'androidx.preference:preference-ktx:1.2.0'
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.12.41'
     implementation 'info.guardianproject.panic:panic:1.0'
+    implementation 'androidx.drawerlayout:drawerlayout:1.1.1'
 
     def room_version = "2.4.2"
     implementation "androidx.room:room-runtime:$room_version"

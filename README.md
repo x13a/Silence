@@ -16,28 +16,23 @@ By default numbers not in your contacts are blocked.
 
 Optionally allow:
 * Numbers you have contacted
-* Numbers within the selected groups (Toll-Free, Local)
+* Numbers within the selected groups
 * N registered call from the same number within T minutes
-* Numbers from messages
+* Numbers found in messages
 * Numbers passing STIR verification (Android 11)
-
-Contacted, Groups, Repeated, Messages options and the main toggle have additional settings. You can 
-open them by long click.
 
 If the app rejects calls from contacts on Android 10, allow contacts permission manually in 
 `App info → Permissions`.
 
 ## Permissions
 
-* CALL_SCREENING         - block or allow call
-* READ_CALL_LOG          - check you have called the number and count times the number have called 
-  you in T minutes
-* READ_SMS               - check you have sent a message to the number and you received a message 
-  from the number
-* RECEIVE_SMS            - find mobile numbers in incoming messages
-* READ_PHONE_STATE       - check on which SIM the number is calling
-* RECEIVE_BOOT_COMPLETED - persist cleanup expired numbers job across reboots
-* READ_CONTACTS          - check the number exists in contacts on Android 10
+* CALL_SCREENING - block or allow call
+* READ_CALL_LOG - check you have called the number and count times the number have called you in T minutes
+* READ_SMS - check you have sent a message to the number and you received a message from the number
+* RECEIVE_SMS - find mobile numbers in incoming messages
+* READ_PHONE_STATE - check on which SIM the number is calling
+* RECEIVE_BOOT_COMPLETED - persist clean expired numbers job across reboots
+* READ_CONTACTS - check the number exists in contacts on Android 10
 
 ## Localization
 

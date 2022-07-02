@@ -1,10 +1,12 @@
-package me.lucky.silence
+package me.lucky.silence.panic
 
 import android.content.pm.PackageManager
 import android.os.Bundle
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 import info.guardianproject.panic.PanicResponder
+import me.lucky.silence.MainActivity
+import me.lucky.silence.R
 
 class PanicConnectionActivity : MainActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,11 +17,7 @@ class PanicConnectionActivity : MainActivity() {
         }
         val sender = PanicResponder.getConnectIntentSender(this)
         val packageName = PanicResponder.getTriggerPackageName(this)
-        if (sender != "" && sender != packageName) {
-            showOptInDialog()
-        } else {
-            finish()
-        }
+        if (sender != "" && sender != packageName) showOptInDialog() else finish()
     }
 
     private fun showOptInDialog() {

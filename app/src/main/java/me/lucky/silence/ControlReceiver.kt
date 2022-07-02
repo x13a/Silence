@@ -33,17 +33,13 @@ class ControlReceiver : BroadcastReceiver() {
     }
 
     private fun setGlobalState(ctx: Context, state: Boolean) {
-        Preferences(ctx).apply {
-            isEnabled = state
-            Utils.setSmsReceiverState(
-                ctx,
-                state && isMessagesChecked && messages.and(Message.BODY.value) != 0,
-            )
-        }
+        val prefs = Preferences(ctx)
+        prefs.isEnabled = state
+        Utils.updateSmsReceiverState(ctx, prefs)
     }
 
     private fun setUnknownNumbersState(ctx: Context, state: Boolean) {
-        Preferences(ctx).isGeneralUnknownNumbersChecked = state
+        Preferences(ctx).isUnknownNumbersChecked = state
     }
 
     private fun setSimState(ctx: Context, flag: Sim, state: Boolean) {
