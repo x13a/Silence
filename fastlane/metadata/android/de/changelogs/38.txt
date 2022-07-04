@@ -1,0 +1,13 @@
+Alle Einstellungsmigrationen wurden entfernt, möglicherweise müssen Sie Silence neu konfigurieren!
+
+Option zum Zulassen versteckter/unbekannter Nummern
+Optionen zum Zulassen von Anrufen pro SIM, erfordern die Berechtigung READ_PHONE_STATE
+Hinzufügen von Optionen hinter dem Controller
+Umbenennung des Präfixes für Controller-Aktionen in SET_
+
+Türkische Übersetzung hinzugefügt, danke an Ümit Seyhan
+Hindi-Übersetzung hinzufügen, dank an tan (@tanmayrajk)
+Arabische Übersetzung hinzufügen, dank DJEBARI.ABDELHAMID
+ukrainische Übersetzung aktualisieren, dank an Andrij Mizyk (@andmizyk)
+Französische Übersetzung aktualisieren, dank @Ilithy
+Aktualisierung der italienischen Übersetzung, dank Giovanni Donisi (@gdonisi + @giovannidonisi)

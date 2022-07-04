@@ -1,0 +1,9 @@
+Hinzufügen von Antwortoptionen zu den allgemeinen Einstellungen
+Türkische, deutsche, französische, italienische und norwegische Bokmål-Übersetzungen aktualisieren
+
+Dank an:
+Oğuz Ersen (@ersen0)
+Allan Nordhøy (@comradekingu)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+@Ilithy
+J. Lavoie (Edanas)

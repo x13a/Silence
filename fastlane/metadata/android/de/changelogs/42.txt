@@ -1,0 +1,8 @@
+Aktualisierung der Benutzeroberfläche (es waren viele interne Änderungen erforderlich, wenn Sie etwas kaputt finden, sagen Sie es mir bitte)
+Aktualisierung der türkischen, französischen, deutschen und italienischen Übersetzungen
+
+Dank an:
+Oğuz Ersen (@ersen0)
+@Ilithy
+Jean-Luc Tibaux (@eUgEntOptIc44)
+Giovanni Donisi (@gdonisi + @giovannidonisi)

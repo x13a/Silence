@@ -1,0 +1,11 @@
+einen Anruf nach einer Nachricht zulassen (Nachrichten &gt; Posteingang)
+Controller-Toggle hinzufügen (standardmäßig ausgeschaltet)
+
+Türkische Übersetzung aktualisiert, dank Oğuz Ersen (@ersen0)
+Arabische Übersetzung aktualisiert, dank DJEBARI.ABDELHAMID
+Aktualisierung der französischen Übersetzung, dank @Ilithy
+Aktualisierung der italienischen Übersetzung, dank Giovanni Donisi (@gdonisi + @giovannidonisi)
+Aktualisierung der ukrainischen Übersetzung, mit Dank an Andrij Mizyk (@andmizyk)
+Aktualisierung der portugiesischen (Brasilien) Übersetzung, dank mezysinc
+Aktualisierung der norwegischen Bokmål-Übersetzung, dank Allan Nordhøy (@comradekingu)
+Aktualisierung der englischen Übersetzung, dank Allan Nordhøy (@comradekingu)

@@ -1,0 +1,8 @@
+kullanıcı arayüzü yenilendi (birçok dahili değişiklik gerektirdi, bozuk bir şey bulursanız lütfen bana söyleyin)
+Türkçe, Fransızca, Almanca, İtalyanca çeviriler güncellendi
+
+Teşekkürler:
+Oğuz Ersen (@ersen0)
+@Ilithy
+Jean-Luc Tibaux (@eUgEntOptIc44)
+Giovanni Donisi (@gdonisi + @giovannidonisi)

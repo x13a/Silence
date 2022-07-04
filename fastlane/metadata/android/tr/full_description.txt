@@ -2,21 +2,17 @@ Varsayılan olarak rehberinizde kayıtlı olmayan numaralar engellenir.
 
 İsteğe bağlı olarak şunlara izin verebilir:
 * Daha önceden iletişim kurmuş olduğunuz numaralar
-* Seçili gruplardaki numaralar (Bedelsiz, Yerel)
+* Seçili gruplardaki numaralar
 * T dakika içerisinde aynı numaradan gelen N sayıdaki aramalar.
 * Mesajlardaki numaralar.
 * STIR onaylamasını başarıyla geçmiş olan numaralar. (Android 11)
-
-Aranmış, Gruplar, Tekrarlanan, Mesajlar ayarları ve ana düğme ek ayarlara sahiptir.
-Bu ayarlara basılı tutarak ulaşabilirsiniz.
 
 Eğer uygualama Android 10'da rehberinizde kayıtlı olan numaralardan gelen çağrıları engelliyor ise,
 Uygulama Bilgileri → İzinler yolunu izleyerek elle rehbere erişim izni vermeyi deneyin.
 
 Uygulama İzinleri:
 * CALL_SCREENING - Çağrıyı engeller ya da izin verir.
-* READ_CALL_LOG - Numarayı arayıp aramadığınızı ve numaranın sizi kaç kere ve kaç dakika boyunca
-aradığını denetler.
+* READ_CALL_LOG - Numarayı arayıp aramadığınızı ve numaranın sizi kaç kere ve kaç dakika boyunca aradığını denetler.
 * READ_SMS - Numaraya mesaj gönderip göndermediğinizi ve numaradan mesaj alıp almadığınızı denetler.
 * RECEIVE_SMS - Gelen mesajlardan telefon numaralarını bulur.
 * READ_PHONE_STATE - numaranın hangi SIM'di aradığını denetler.
