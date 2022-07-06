@@ -52,7 +52,7 @@ class Utils {
         fun setFlag(key: Int, value: Int, enabled: Boolean) =
             when(enabled) {
                 true -> key.or(value)
-                false -> key.or(value.inv())
+                false -> key.and(value.inv())
             }
     }
 }
