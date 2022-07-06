@@ -16,7 +16,7 @@
     <string name="groups_toll_free">Toll-Free</string>
     <string name="groups_toll_free_description">Allow calls from Toll-Free numbers (ex 800).</string>
     <string name="repeated_main">Repeated</string>
-    <string name="repeated_description">Allow N registered call from the same number within T minutes.</string>
+    <string name="repeated_description">Allow X registered call(s) from the same number within a set amount of minutes.</string>
     <string name="repeated_count">Count</string>
     <string name="repeated_minutes">Minutes</string>
     <string name="repeated_settings_description">Count has to be lower than minutes. Because Android caches the result, calls have to be out of the cache interval.</string>
