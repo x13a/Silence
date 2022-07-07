@@ -1,0 +1,3 @@
+RU-Fastlane-Übersetzung aktualisieren, danke Artem
+Hinzufügen von DELETE_SMS_FILTER_INACTIVE, DELETE_SMS_FILTER_ALL Steueraktionen
+Aktualisieren von Abhängigkeiten und Refactoring
