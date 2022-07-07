@@ -1,4 +1,4 @@
-package me.lucky.silence
+package me.lucky.silence.screening
 
 import android.content.Context
 import android.database.Cursor
@@ -10,6 +10,7 @@ import android.telephony.TelephonyManager
 
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
+import me.lucky.silence.*
 
 class CallScreeningHelper(private val ctx: Context) {
     private val telephonyManager = ctx.getSystemService(TelephonyManager::class.java)

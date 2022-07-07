@@ -17,7 +17,7 @@ By default numbers not in your contacts are blocked.
 Optionally allow:
 * Numbers you have contacted
 * Numbers within the selected groups
-* N registered call from the same number within T minutes
+* X registered call(s) from the same number within a set amount of minutes
 * Numbers found in messages
 * Numbers passing STIR verification (Android 11)
 

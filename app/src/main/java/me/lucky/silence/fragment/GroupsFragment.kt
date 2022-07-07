@@ -1,4 +1,4 @@
-package me.lucky.silence.fragments
+package me.lucky.silence.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+
 import me.lucky.silence.Group
 import me.lucky.silence.Preferences
 import me.lucky.silence.Utils
@@ -38,17 +39,15 @@ class GroupsFragment : Fragment() {
         }
     }
 
-    private fun setup() {
-        binding.apply {
-            local.setOnCheckedChangeListener { _, isChecked ->
-                prefs.groups = Utils.setFlag(prefs.groups, Group.LOCAL.value, isChecked)
-            }
-            notLocal.setOnCheckedChangeListener { _, isChecked ->
-                prefs.groups = Utils.setFlag(prefs.groups, Group.NOT_LOCAL.value, isChecked)
-            }
-            tollFree.setOnCheckedChangeListener { _, isChecked ->
-                prefs.groups = Utils.setFlag(prefs.groups, Group.TOLL_FREE.value, isChecked)
-            }
+    private fun setup() = binding.apply {
+        local.setOnCheckedChangeListener { _, isChecked ->
+            prefs.groups = Utils.setFlag(prefs.groups, Group.LOCAL.value, isChecked)
+        }
+        notLocal.setOnCheckedChangeListener { _, isChecked ->
+            prefs.groups = Utils.setFlag(prefs.groups, Group.NOT_LOCAL.value, isChecked)
+        }
+        tollFree.setOnCheckedChangeListener { _, isChecked ->
+            prefs.groups = Utils.setFlag(prefs.groups, Group.TOLL_FREE.value, isChecked)
         }
     }
 }

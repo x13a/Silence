@@ -1,4 +1,4 @@
-package me.lucky.silence.fragments
+package me.lucky.silence.fragment
 
 import android.Manifest
 import android.app.role.RoleManager
@@ -10,7 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
-import me.lucky.silence.*
+
+import me.lucky.silence.Contact
+import me.lucky.silence.Message
+import me.lucky.silence.Preferences
+import me.lucky.silence.Utils
 import me.lucky.silence.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
@@ -38,8 +42,7 @@ class MainFragment : Fragment() {
     private fun init() {
         ctx = this.requireContext()
         prefs = Preferences(ctx)
-        NotificationManager(ctx).createNotificationChannels()
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) hideStir()
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) disableStir()
         binding.apply {
             contacted.isChecked = prefs.isContactedChecked
             groups.isChecked = prefs.isGroupsChecked
@@ -49,40 +52,32 @@ class MainFragment : Fragment() {
         }
     }
 
-    private fun hideStir() {
-        binding.apply {
-            space.visibility = View.GONE
-            stir.visibility = View.GONE
-            stirDescription.visibility = View.GONE
-        }
-    }
+    private fun disableStir() { binding.stir.isEnabled = false }
 
-    private fun setup() {
-        binding.apply {
-            contacted.setOnCheckedChangeListener { _, isChecked ->
-                prefs.isContactedChecked = isChecked
-                if (isChecked) requestContactedPermissions()
-            }
-            groups.setOnCheckedChangeListener { _, isChecked ->
-                prefs.isGroupsChecked = isChecked
-            }
-            repeated.setOnCheckedChangeListener { _, isChecked ->
-                prefs.isRepeatedChecked = isChecked
-                if (isChecked) requestRepeatedPermissions()
-            }
-            messages.setOnCheckedChangeListener { _, isChecked ->
-                prefs.isMessagesChecked = isChecked
-                if (isChecked) requestMessagesPermissions()
-                Utils.updateSmsReceiverState(ctx, prefs)
-            }
-            stir.setOnCheckedChangeListener { _, isChecked ->
-                prefs.isStirChecked = isChecked
-            }
-            toggle.setOnCheckedChangeListener { _, isChecked ->
-                prefs.isEnabled = isChecked
-                if (isChecked) requestCallScreeningRole()
-                Utils.updateSmsReceiverState(ctx, prefs)
-            }
+    private fun setup() = binding.apply {
+        contacted.setOnCheckedChangeListener { _, isChecked ->
+            prefs.isContactedChecked = isChecked
+            if (isChecked) requestContactedPermissions()
+        }
+        groups.setOnCheckedChangeListener { _, isChecked ->
+            prefs.isGroupsChecked = isChecked
+        }
+        repeated.setOnCheckedChangeListener { _, isChecked ->
+            prefs.isRepeatedChecked = isChecked
+            if (isChecked) requestRepeatedPermissions()
+        }
+        messages.setOnCheckedChangeListener { _, isChecked ->
+            prefs.isMessagesChecked = isChecked
+            if (isChecked) requestMessagesPermissions()
+            Utils.updateSmsReceiverState(ctx, prefs)
+        }
+        stir.setOnCheckedChangeListener { _, isChecked ->
+            prefs.isStirChecked = isChecked
+        }
+        toggle.setOnCheckedChangeListener { _, isChecked ->
+            prefs.isEnabled = isChecked
+            if (isChecked) requestCallScreeningRole()
+            Utils.updateSmsReceiverState(ctx, prefs)
         }
     }
 

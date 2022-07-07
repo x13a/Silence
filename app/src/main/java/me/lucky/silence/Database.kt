@@ -52,6 +52,7 @@ private val MIGRATION_2_3 = object : Migration(2, 3) {
 @Dao
 interface AllowNumberDao {
     companion object {
+        // outdated
         const val INACTIVE_DURATION = 48 * 60 * 60L
     }
 
@@ -85,13 +86,13 @@ data class AllowNumber(
     @ColumnInfo(name = "ttl") val ttl: Long,
 ) {
     companion object {
-        fun new(phoneNumber: Phonenumber.PhoneNumber): AllowNumber {
+        fun new(phoneNumber: Phonenumber.PhoneNumber, minutes: Int): AllowNumber {
             return AllowNumber(
                 0,
                 PhoneNumberUtil
                     .getInstance()
                     .format(phoneNumber, PhoneNumberUtil.PhoneNumberFormat.E164),
-                Utils.currentTimeSeconds() + AllowNumberDao.INACTIVE_DURATION,
+                Utils.currentTimeSeconds() + minutes * 60L,
             )
         }
     }

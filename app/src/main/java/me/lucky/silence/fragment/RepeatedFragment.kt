@@ -1,4 +1,4 @@
-package me.lucky.silence.fragments
+package me.lucky.silence.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
+
 import me.lucky.silence.Preferences
 import me.lucky.silence.databinding.FragmentRepeatedBinding
 
@@ -35,18 +36,16 @@ class RepeatedFragment : Fragment() {
         }
     }
 
-    private fun setup() {
-        binding.apply {
-            count.editText?.doAfterTextChanged {
-                try {
-                    prefs.repeatedCount = it?.toString()?.toInt() ?: return@doAfterTextChanged
-                } catch (exc: NumberFormatException) {}
-            }
-            minutes.editText?.doAfterTextChanged {
-                try {
-                    prefs.repeatedMinutes = it?.toString()?.toInt() ?: return@doAfterTextChanged
-                } catch (exc: NumberFormatException) {}
-            }
+    private fun setup() = binding.apply {
+        count.editText?.doAfterTextChanged {
+            try {
+                prefs.repeatedCount = it?.toString()?.toInt() ?: return@doAfterTextChanged
+            } catch (exc: NumberFormatException) {}
+        }
+        minutes.editText?.doAfterTextChanged {
+            try {
+                prefs.repeatedMinutes = it?.toString()?.toInt() ?: return@doAfterTextChanged
+            } catch (exc: NumberFormatException) {}
         }
     }
 }

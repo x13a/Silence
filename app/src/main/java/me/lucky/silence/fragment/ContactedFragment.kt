@@ -1,4 +1,4 @@
-package me.lucky.silence.fragments
+package me.lucky.silence.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+
 import me.lucky.silence.Contact
 import me.lucky.silence.Preferences
 import me.lucky.silence.Utils
@@ -37,14 +38,12 @@ class ContactedFragment : Fragment() {
         }
     }
 
-    private fun setup() {
-        binding.apply {
-            call.setOnCheckedChangeListener { _, isChecked ->
-                prefs.contacted = Utils.setFlag(prefs.contacted, Contact.CALL.value, isChecked)
-            }
-            message.setOnCheckedChangeListener { _, isChecked ->
-                prefs.contacted = Utils.setFlag(prefs.contacted, Contact.MESSAGE.value, isChecked)
-            }
+    private fun setup() = binding.apply {
+        call.setOnCheckedChangeListener { _, isChecked ->
+            prefs.contacted = Utils.setFlag(prefs.contacted, Contact.CALL.value, isChecked)
+        }
+        message.setOnCheckedChangeListener { _, isChecked ->
+            prefs.contacted = Utils.setFlag(prefs.contacted, Contact.MESSAGE.value, isChecked)
         }
     }
 }

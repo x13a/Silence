@@ -7,6 +7,8 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.telephony.TelephonyManager
 
+import me.lucky.silence.text.SmsReceiver
+
 class Utils {
     companion object {
         fun setSmsReceiverState(ctx: Context, value: Boolean) =

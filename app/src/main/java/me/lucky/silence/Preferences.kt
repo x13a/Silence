@@ -18,6 +18,7 @@ class Preferences(ctx: Context) {
         private const val REPEATED_COUNT = "repeated_count"
         private const val REPEATED_MINUTES = "repeated_minutes"
         private const val MESSAGES = "messages"
+        private const val MESSAGES_TEXT_TTL = "messages_text_ttl"
 
         private const val RESPONSE_OPTIONS = "call_screening_response_options"
         private const val UNKNOWN_NUMBERS_CHECKED = "unknown_numbers_checked"
@@ -25,6 +26,7 @@ class Preferences(ctx: Context) {
 
         private const val DEFAULT_REPEATED_COUNT = 3
         private const val DEFAULT_REPEATED_MINUTES = 5
+        private const val DEFAULT_MESSAGES_TEXT_TTL = 2 * 24 * 60
 
         // migration
         private const val SERVICE_ENABLED = "service_enabled"
@@ -72,6 +74,10 @@ class Preferences(ctx: Context) {
     var messages: Int
         get() = prefs.getInt(MESSAGES, 0)
         set(value) = prefs.edit { putInt(MESSAGES, value) }
+
+    var messagesTextTtl: Int
+        get() = prefs.getInt(MESSAGES_TEXT_TTL, DEFAULT_MESSAGES_TEXT_TTL)
+        set(value) = prefs.edit { putInt(MESSAGES_TEXT_TTL, value) }
 
     var isStirChecked: Boolean
         get() = prefs.getBoolean(STIR_CHECKED, false)

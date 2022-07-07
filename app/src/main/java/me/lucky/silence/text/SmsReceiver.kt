@@ -1,4 +1,4 @@
-package me.lucky.silence
+package me.lucky.silence.text
 
 import android.app.job.JobInfo
 import android.app.job.JobScheduler
@@ -11,6 +11,9 @@ import android.provider.Telephony
 import android.telephony.SmsMessage
 import android.telephony.TelephonyManager
 import com.google.i18n.phonenumbers.PhoneNumberUtil
+import me.lucky.silence.AllowNumber
+import me.lucky.silence.AppDatabase
+import me.lucky.silence.Preferences
 import java.util.concurrent.TimeUnit
 
 class SmsReceiver : BroadcastReceiver() {
@@ -30,6 +33,7 @@ class SmsReceiver : BroadcastReceiver() {
                 ctx.getSystemService(TelephonyManager::class.java)?.networkCountryIso?.uppercase()
             }
             val db by lazy { AppDatabase.getInstance(ctx).allowNumberDao() }
+            val prefs by lazy { Preferences(ctx) }
             var hasNumber = false
             for (msg in Telephony.Sms.Intents.getMessagesFromIntent(intent) ?: return) {
                 if (
@@ -52,7 +56,7 @@ class SmsReceiver : BroadcastReceiver() {
                     .filter {
                         phoneNumberUtil.getNumberType(it) == PhoneNumberUtil.PhoneNumberType.MOBILE
                     }
-                    .map { AllowNumber.new(it) }
+                    .map { AllowNumber.new(it, prefs.messagesTextTtl) }
                 ) {
                     try {
                         db.insert(number)
@@ -62,19 +66,19 @@ class SmsReceiver : BroadcastReceiver() {
                     hasNumber = true
                 }
             }
-            if (hasNumber) schedule()
+            if (hasNumber) schedule(prefs)
             pendingResult.finish()
         }
 
-        private fun schedule() {
+        private fun schedule(prefs: Preferences) {
             ctx.getSystemService(JobScheduler::class.java)?.schedule(
                 JobInfo.Builder(
                     CleanJobService.JOB_ID,
                     ComponentName(ctx, CleanJobService::class.java),
                 )
                     .setMinimumLatency(TimeUnit
-                        .SECONDS
-                        .toMillis(AllowNumberDao.INACTIVE_DURATION + 1))
+                        .MINUTES
+                        .toMillis(prefs.messagesTextTtl.toLong() + 5))
                     .setPersisted(true)
                     .build()
             )

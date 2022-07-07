@@ -26,11 +26,14 @@
     <string name="messages_inbox_description">Allow calls from numbers that sent you a message.</string>
     <string name="messages_text">Text</string>
     <string name="messages_text_description">Temporarily allow calls from mobile numbers found in incoming messages text.</string>
+    <string name="messages_text_ttl_hint">time</string>
+    <string name="messages_text_ttl_helper_text">How much time the number will be able to call you. Modifiers: [d]ays [h]ours [m]inutes</string>
+    <string name="messages_text_ttl_error">7d / 48h / 120m</string>
     <string name="stir_main">STIR/SHAKEN</string>
     <string name="stir_description">Allow calls from numbers passing STIR verification.</string>
     <string name="settings">Settings</string>
     <string name="settings_controller">Controller</string>
-    <string name="settings_controller_description">Enables broadcast receiver to control Silence with intents.</string>
+    <string name="settings_controller_description">Enable broadcast receiver to control Silence with intents.</string>
     <string name="settings_unknown_numbers">Unknown numbers</string>
     <string name="settings_unknown_numbers_description">Allow calls from strangers without a number.</string>
     <string name="settings_disallow_call">Disallow call</string>

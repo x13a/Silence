@@ -1,0 +1,11 @@
+add messages text ttl
+some fixes
+update Arabic, Turkish, German, French, Polish, English translations
+
+Thanks to:
+Allan Nordhøy (@comradekingu)
+DJEBBARI.ABDELHAMID
+@Ilithy
+Jean-Luc Tibaux (@eUgEntOptIc44)
+Oğuz Ersen (@ersen0)
+@RealShadowFury

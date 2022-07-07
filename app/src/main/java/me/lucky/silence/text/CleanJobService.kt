@@ -1,7 +1,9 @@
-package me.lucky.silence
+package me.lucky.silence.text
 
 import android.app.job.JobParameters
 import android.app.job.JobService
+
+import me.lucky.silence.AppDatabase
 
 class CleanJobService : JobService() {
     companion object {

@@ -2,8 +2,10 @@ package me.lucky.silence
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+
 import me.lucky.silence.databinding.ActivityMainBinding
-import me.lucky.silence.fragments.*
+import me.lucky.silence.fragment.*
 
 open class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -17,44 +19,47 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(binding.fragment.id, MainFragment())
-            .commit()
+        NotificationManager(this).createNotificationChannels()
+        replaceFragment(MainFragment())
     }
 
-    private fun setup() {
-        binding.apply {
-            appBar.setNavigationOnClickListener {
-                drawer.open()
-            }
-            appBar.setOnMenuItemClickListener {
-                when (it.itemId) {
-                    R.id.settings -> {
-                        navigation.checkedItem?.isChecked = false
-                        supportFragmentManager
-                            .beginTransaction()
-                            .replace(fragment.id, SettingsFragment())
-                            .commit()
-                        true
-                    }
-                    else -> false
+    private fun setup() = binding.apply {
+        appBar.setNavigationOnClickListener {
+            drawer.open()
+        }
+        appBar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.top_settings -> {
+                    replaceFragment(when (supportFragmentManager.fragments.last()) {
+                        is SettingsFragment ->
+                            getFragment(navigation.checkedItem?.itemId ?: R.id.nav_main)
+                        else -> SettingsFragment()
+                    })
+                    true
                 }
-            }
-            navigation.setNavigationItemSelectedListener {
-                val frag = when (it.itemId) {
-                    R.id.nav_main -> MainFragment()
-                    R.id.nav_contacted -> ContactedFragment()
-                    R.id.nav_groups -> GroupsFragment()
-                    R.id.nav_repeated -> RepeatedFragment()
-                    R.id.nav_messages -> MessagesFragment()
-                    else -> MainFragment()
-                }
-                supportFragmentManager.beginTransaction().replace(fragment.id, frag).commit()
-                it.isChecked = true
-                drawer.close()
-                true
+                else -> false
             }
         }
+        navigation.setNavigationItemSelectedListener {
+            replaceFragment(getFragment(it.itemId))
+            it.isChecked = true
+            drawer.close()
+            true
+        }
+    }
+
+    private fun replaceFragment(f: Fragment) =
+        supportFragmentManager
+            .beginTransaction()
+            .replace(binding.fragment.id, f)
+            .commit()
+
+    private fun getFragment(id: Int) = when (id) {
+        R.id.nav_main -> MainFragment()
+        R.id.nav_contacted -> ContactedFragment()
+        R.id.nav_groups -> GroupsFragment()
+        R.id.nav_repeated -> RepeatedFragment()
+        R.id.nav_messages -> MessagesFragment()
+        else -> MainFragment()
     }
 }
