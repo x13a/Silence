@@ -5,7 +5,7 @@
     <string name="groups_main">Gruplar</string>
     <string name="groups_description">Seçili gruplardaki numaralardan gelen aramalara izin ver.</string>
     <string name="repeated_main">Tekrarlanan</string>
-    <string name="repeated_description">T dakika içerisinde aynı numaradan gelen N sayıdaki aramaya izin ver.</string>
+    <string name="repeated_description">Belirli bir dakika içerisinde aynı numaradan gelen X kayıtlı aramaya izin ver.</string>
     <string name="messages_main">Mesajlar</string>
     <string name="stir_main">STIR/SHAKEN</string>
     <string name="stir_description">STIR onaylamasını başarıyla geçen numaralardan gelen aramalara izin ver.</string>
