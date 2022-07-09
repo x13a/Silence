@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Silence</string>
-    <string name="contacted_main">Контакт</string>
-    <string name="contacted_description">Номера с которыми вы контактировали.</string>
+    <string name="contacted_main">Контакты</string>
+    <string name="contacted_description">Разрешить звонки с номеров, с которыми вы связались.</string>
     <string name="groups_main">Группы</string>
-    <string name="groups_description">Номера входящие в выбранные группы.</string>
+    <string name="groups_description">Разрешить звонки с номеров выбранных групп.</string>
     <string name="repeated_main">Повторный</string>
-    <string name="repeated_description">N зарегистрированный звонок с одного номера в течении T минут.</string>
+    <string name="repeated_description">Разрешить X зарегистрированных звонков с одного и того же номера в течении заданного количества минут.</string>
     <string name="messages_main">Сообщения</string>
-    <string name="messages_description">Номера из сообщений.</string>
+    <string name="messages_description">Разрешить звонки с номеров, найденных в сообщениях.</string>
     <string name="stir_main">STIR/SHAKEN</string>
-    <string name="stir_description">Номера проходящие STIR верификацию.</string>
+    <string name="stir_description">Разрешить звонки с номеров, прошедших STIR верификацию.</string>
     <string name="panic_app_dialog_title">Подтвердите приложение тревожной кнопки</string>
     <string name="panic_app_dialog_message">Вы уверены, что хотите разрешить %1$s запускать действия тревожной кнопки\?</string>
     <string name="panic_app_unknown_app">неизвестное приложение</string>
@@ -31,4 +31,26 @@
     <string name="settings">Настройки</string>
     <string name="messages_inbox">Входящее</string>
     <string name="messages_text">Текст</string>
+    <string name="groups_local_description">Разрешить звонки с номеров с таким же кодом страны, как у вас.</string>
+    <string name="settings_reject_call_description">Устанавливает, должен ли входящий вызов отклоняться, как если бы пользователь отклонил его вручную.</string>
+    <string name="groups_not_local_description">Разрешить звонки с номеров с кодом страны, отличающимся от вашего.</string>
+    <string name="repeated_settings_description">Количество должно быть меньше минут. Поскольку Android кэширует результат, вызовы должны выходить за пределы интервала кэширования.</string>
+    <string name="settings_silence_call_description">Устанавливает, должен ли звук звонка отключаться для входящего вызова. Однако вызов все равно будет отправлен в приложение для набора номера по умолчанию, если он не заблокирован.</string>
+    <string name="contacted_call_description">Разрешить звонки с номеров, на которые вы звонили.</string>
+    <string name="settings_skip_notification_description">Устанавливает, должно ли уведомление о пропущенном вызове отображаться для входящего вызова.</string>
+    <string name="contacted_message_description">Разрешить звонки с номеров, на которые вы отправляли сообщения.</string>
+    <string name="groups_toll_free_description">Разрешить звонки с бесплатных номеров (напр. 800).</string>
+    <string name="messages_inbox_description">Разрешить звонки с номеров, которые отправили вам сообщение.</string>
+    <string name="messages_text_description">Временно разрешить вызовы с мобильных номеров, обнаруженных в тексте входящих сообщений.</string>
+    <string name="settings_unknown_numbers_description">Разрешить звонки от незнакомцев без номеров.</string>
+    <string name="settings_disallow_call">Запретить звонки</string>
+    <string name="settings_disallow_call_description">Устанавливает, следует ли блокировать входящий вызов.</string>
+    <string name="settings_reject_call">Отклонить вызов</string>
+    <string name="settings_silence_call">Тихий звонок</string>
+    <string name="settings_skip_call_log">Пропускать журнал вызовов</string>
+    <string name="settings_skip_call_log_description">Устанавливает, должен ли входящий вызов отображаться в журнале вызовов. Вызовы по-прежнему будут регистрироваться с типом BLOCKED_TYPE.</string>
+    <string name="settings_skip_notification">Пропускать уведомления</string>
+    <string name="settings_sim_1_description">Разрешить все вызовы для SIM 1.</string>
+    <string name="settings_sim_2_description">Разрешить все вызовы для SIM 2.</string>
+    <string name="main">Главная</string>
 </resources>
