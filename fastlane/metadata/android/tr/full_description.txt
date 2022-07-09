@@ -3,7 +3,7 @@ Varsayılan olarak rehberinizde kayıtlı olmayan numaralar engellenir.
 İsteğe bağlı olarak şunlara izin verebilir:
 * Daha önceden iletişim kurmuş olduğunuz numaralar
 * Seçili gruplardaki numaralar
-* T dakika içerisinde aynı numaradan gelen N sayıdaki aramalar.
+* Belirli bir dakika içerisinde aynı numaradan gelen X kayıtlı arama
 * Mesajlardaki numaralar.
 * STIR onaylamasını başarıyla geçmiş olan numaralar. (Android 11)
 
