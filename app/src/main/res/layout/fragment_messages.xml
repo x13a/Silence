@@ -6,68 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".fragment.MessagesFragment">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:isScrollContainer="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <CheckBox
-                android:id="@+id/inbox"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/messages_inbox" />
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/messages_inbox_description"
-                android:textAppearance="?attr/textAppearanceBodySmall" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp" />
-
-            <CheckBox
-                android:id="@+id/text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/messages_text" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/messages_text_description"
-                android:textAppearance="?attr/textAppearanceBodySmall" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/time"
-                app:helperText="@string/messages_text_ttl_helper_text"
-                app:helperTextEnabled="true"
-                app:errorEnabled="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
+                <CheckBox
+                    android:id="@+id/inbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/messages_text_ttl_hint" />
+                    android:layoutDirection="rtl"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"
+                    android:text="@string/messages_inbox" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/messages_inbox_description"
+                    android:textAppearance="?attr/textAppearanceBodySmall" />
 
-        </LinearLayout>
-    </ScrollView>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp" />
+
+                <CheckBox
+                    android:id="@+id/text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"
+                    android:text="@string/messages_text" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/messages_text_description"
+                    android:textAppearance="?attr/textAppearanceBodySmall" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/time"
+                    app:helperText="@string/messages_text_ttl_helper_text"
+                    app:helperTextEnabled="true"
+                    app:errorEnabled="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/messages_text_ttl_hint" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/gotoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/goto_button"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

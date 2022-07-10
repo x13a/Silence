@@ -7,15 +7,15 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.telephony.TelephonyManager
 
-import me.lucky.silence.text.SmsReceiver
+import me.lucky.silence.text.NotificationListenerService
 
 class Utils {
     companion object {
-        fun setSmsReceiverState(ctx: Context, value: Boolean) =
-            setComponentState(ctx, SmsReceiver::class.java, value)
+        fun setMessagesTextState(ctx: Context, value: Boolean) =
+            setComponentState(ctx, NotificationListenerService::class.java, value)
 
-        fun updateSmsReceiverState(ctx: Context, prefs: Preferences) =
-            setSmsReceiverState(
+        fun updateMessagesTextState(ctx: Context, prefs: Preferences) =
+            setMessagesTextState(
                 ctx,
                 prefs.isEnabled &&
                         prefs.isMessagesChecked &&

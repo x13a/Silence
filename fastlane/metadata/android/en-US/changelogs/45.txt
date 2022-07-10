@@ -1,0 +1,8 @@
+change sms receiver to notification listener
+update Italian, Russian, Turkish, Arabic translations
+
+Thanks to:
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+Ivan
+Oğuz Ersen (@ersen0)
+DJEBBARI.ABDELHAMID

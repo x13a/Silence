@@ -85,18 +85,16 @@ class CallScreeningHelper(private val ctx: Context) {
     private fun checkGroups(number: Phonenumber.PhoneNumber): Boolean {
         val groups = prefs.groups
         var result = false
+        val isLocal by lazy { phoneNumberUtil.isValidNumberForRegion(
+            number,
+            telephonyManager?.networkCountryIso?.uppercase(),
+        ) }
         for (group in Group.values().asSequence().filter { groups.and(it.value) != 0 }) {
             result = when (group) {
                 Group.TOLL_FREE -> phoneNumberUtil.getNumberType(number) ==
                         PhoneNumberUtil.PhoneNumberType.TOLL_FREE
-                Group.LOCAL -> phoneNumberUtil.isValidNumberForRegion(
-                    number,
-                    telephonyManager?.networkCountryIso?.uppercase(),
-                )
-                Group.NOT_LOCAL -> !phoneNumberUtil.isValidNumberForRegion(
-                    number,
-                    telephonyManager?.networkCountryIso?.uppercase(),
-                )
+                Group.LOCAL -> isLocal
+                Group.NOT_LOCAL -> !isLocal
             }
             if (result) break
         }

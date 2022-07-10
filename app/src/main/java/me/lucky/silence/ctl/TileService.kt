@@ -18,7 +18,7 @@ class TileService : TileService() {
         super.onClick()
         val state = qsTile.state == Tile.STATE_INACTIVE
         prefs.isEnabled = state
-        Utils.updateSmsReceiverState(this, prefs)
+        Utils.updateMessagesTextState(this, prefs)
         update()
     }
 

@@ -42,7 +42,7 @@ class CallScreeningService : CallScreeningService() {
             return
         } else if (checkEmergency(callDetails)) {
             prefs.isEnabled = false
-            Utils.setSmsReceiverState(this, false)
+            Utils.setMessagesTextState(this, false)
             respondAllow(callDetails)
             return
         } else if (

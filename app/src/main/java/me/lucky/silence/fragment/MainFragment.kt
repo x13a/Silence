@@ -36,7 +36,7 @@ class MainFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        binding.toggle.isChecked = prefs.isEnabled
+        update()
     }
 
     private fun init() {
@@ -53,6 +53,7 @@ class MainFragment : Fragment() {
     }
 
     private fun disableStir() { binding.stir.isEnabled = false }
+    private fun update() { binding.toggle.isChecked = prefs.isEnabled }
 
     private fun setup() = binding.apply {
         contacted.setOnCheckedChangeListener { _, isChecked ->
@@ -69,7 +70,7 @@ class MainFragment : Fragment() {
         messages.setOnCheckedChangeListener { _, isChecked ->
             prefs.isMessagesChecked = isChecked
             if (isChecked) requestMessagesPermissions()
-            Utils.updateSmsReceiverState(ctx, prefs)
+            Utils.updateMessagesTextState(ctx, prefs)
         }
         stir.setOnCheckedChangeListener { _, isChecked ->
             prefs.isStirChecked = isChecked
@@ -77,7 +78,7 @@ class MainFragment : Fragment() {
         toggle.setOnCheckedChangeListener { _, isChecked ->
             prefs.isEnabled = isChecked
             if (isChecked) requestCallScreeningRole()
-            Utils.updateSmsReceiverState(ctx, prefs)
+            Utils.updateMessagesTextState(ctx, prefs)
         }
     }
 
@@ -112,7 +113,7 @@ class MainFragment : Fragment() {
         for (value in Message.values().asSequence().filter { messages.and(it.value) != 0 }) {
             when (value) {
                 Message.INBOX -> permissions.add(Manifest.permission.READ_SMS)
-                Message.TEXT -> permissions.add(Manifest.permission.RECEIVE_SMS)
+                Message.TEXT -> {}
             }
         }
         return permissions.toTypedArray()

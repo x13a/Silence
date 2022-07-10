@@ -1,18 +1,21 @@
 package me.lucky.silence.fragment
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
+import java.util.regex.Pattern
+
 import me.lucky.silence.Message
 import me.lucky.silence.Preferences
 import me.lucky.silence.R
 import me.lucky.silence.Utils
 import me.lucky.silence.databinding.FragmentMessagesBinding
-import java.util.regex.Pattern
 
 class MessagesFragment : Fragment() {
     companion object {
@@ -80,6 +83,9 @@ class MessagesFragment : Fragment() {
                 else -> return@doAfterTextChanged
             }
             time.error = null
+        }
+        gotoButton.setOnClickListener {
+            startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
         }
     }
 }

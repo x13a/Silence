@@ -39,7 +39,7 @@ class BroadcastReceiver : BroadcastReceiver() {
     private fun setGlobalState(ctx: Context, state: Boolean) {
         val prefs = Preferences(ctx)
         prefs.isEnabled = state
-        Utils.updateSmsReceiverState(ctx, prefs)
+        Utils.updateMessagesTextState(ctx, prefs)
     }
 
     private fun setUnknownNumbersState(ctx: Context, state: Boolean) {

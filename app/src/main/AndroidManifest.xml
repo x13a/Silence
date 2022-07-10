@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <!-- Android 10 -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -91,15 +90,23 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name=".text.SmsReceiver"
+        <service
+            android:name=".text.NotificationListenerService"
             android:enabled="false"
             android:exported="true"
-            android:permission="android.permission.BROADCAST_SMS">
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
-        </receiver>
+            <meta-data
+                android:name="android.service.notification.default_filter_types"
+                android:value="alerting|conversations">
+            </meta-data>
+            <meta-data
+                android:name="android.service.notification.disabled_filter_types"
+                android:value="ongoing|silent">
+            </meta-data>
+        </service>
 
         <service
             android:name=".text.CleanJobService"
