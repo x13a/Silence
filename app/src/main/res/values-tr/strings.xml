@@ -54,4 +54,8 @@
     <string name="settings_controller_description">Genel yayın alıcısının Silence\'ı intent\'lerle denetlemesini etkinleştirir.</string>
     <string name="settings_disallow_call_description">Gelen aramanın engellenip engellenmeyeceğini ayarlar.</string>
     <string name="settings_silence_call_description">Gelen arama için zil sesinin kapatılıp kapatılmayacağını ayarlar. Bununla birlikte, arama engellenmemişse öntanımlı telefon uygulamasına gönderilmeye devam edecektir. Bunun işaretlenmesi yalnızca aramaya izin verilmediğinde anlamlıdır.</string>
+    <string name="messages_text_ttl_error">7d / 48h / 120m</string>
+    <string name="messages_text_ttl_helper_text">Numaranın sizi ne kadar süre arayabileceği. Değiştiriciler: [d]gün [h]saat [m]dakika</string>
+    <string name="messages_text_ttl_hint">süre</string>
+    <string name="goto_button">GİT</string>
 </resources>
