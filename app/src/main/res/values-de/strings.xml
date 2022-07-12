@@ -53,4 +53,8 @@
     <string name="settings_silence_call_description">Legt fest, ob das Klingeln für den eingehenden Anruf stummgeschaltet werden soll. Der Anruf wird jedoch weiterhin an die Standard-Dialer-App weitergeleitet, wenn er nicht blockiert ist. Die Aktivierung dieser Option ist nur dann sinnvoll, wenn der Anruf nicht blockiert wurde.</string>
     <string name="settings_skip_notification_description">Legt fest, ob für den eingehenden Anruf keine Benachrichtigung über einen verpassten Anruf angezeigt werden soll. Diese Option sollte nur aktiviert werden, wenn der Anruf nicht zugelassen ist.</string>
     <string name="settings_sim_2_description">Alle Anrufe von SIM 2 zulassen.</string>
+    <string name="messages_text_ttl_helper_text">Wie lange die Nummer Sie anrufen kann. Modifikatoren: Tage [d], Stunden [h], Minuten [m]</string>
+    <string name="messages_text_ttl_hint">zeit</string>
+    <string name="messages_text_ttl_error">7 Tage / 48 Stunden / 120 Minuten</string>
+    <string name="main">Start</string>
 </resources>
