@@ -54,4 +54,8 @@
     <string name="settings_reject_call_description">Imposta se la chiamata in arrivo deve essere disconnessa come se l\'utente l\'avesse rifiutata manualmente. Dovrebbe essere selezionato solo se la chiamata non è consentita.</string>
     <string name="settings_sim_1_description">Consenti tutte le chiamate dalla SIM 1.</string>
     <string name="main">Principale</string>
+    <string name="goto_button">Vai</string>
+    <string name="messages_text_ttl_hint">tempo</string>
+    <string name="messages_text_ttl_helper_text">Per quanto tempo il numero sarà in grado di chiamarvi. Modificatori: giorni [d], ore [h], minuti [m]</string>
+    <string name="messages_text_ttl_error">7 g / 48 o / 120 min</string>
 </resources>

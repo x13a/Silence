@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Silence</string>
-    <string name="repeated_description">Ne pas filtrer après N appel enregistré du même numéro dans les T minutes.</string>
+    <string name="repeated_description">Autorise X appels enregistrés depuis le même numéro pendant un nombre de minutes déterminé.</string>
     <string name="messages_main">SMS</string>
     <string name="messages_description">Autorisez les appels provenant de numéros trouvés dans les messages.</string>
     <string name="stir_main">STIR/SHAKEN</string>
@@ -40,7 +40,7 @@
     <string name="contacted_message_description">Autoriser les appels des numéros auxquels vous avez envoyé un message.</string>
     <string name="groups_local_description">Autoriser les appels provenant de numéros ayant le même indicatif de pays que le vôtre.</string>
     <string name="groups_not_local_description">Autoriser les appels provenant de numéros ayant le même indicatif de pays que le vôtre.</string>
-    <string name="groups_toll_free_description">Autoriser les appels provenant de numéros sans frais (ex: 800).</string>
+    <string name="groups_toll_free_description">Autoriser les appels provenant de numéros sans frais (ex : 800).</string>
     <string name="messages_inbox_description">Autorisez les appels provenant de numéros qui vous ont fait parvenir un message.</string>
     <string name="messages_text_description">Autoriser temporairement les appels provenant de numéros mobiles trouvés dans le texte des messages entrants.</string>
     <string name="settings_controller_description">Permet au récepteur de diffusion de contrôler Silence avec des intentions.</string>
@@ -54,4 +54,7 @@
     <string name="settings_reject_call_description">Définit si l\'appel entrant doit être déconnecté comme si l\'utilisateur l\'avait rejeté manuellement. Cette option ne doit être cochée que si l\'appel est bloqué.</string>
     <string name="settings_silence_call_description">Définit si la sonnerie doit être coupée pour l\'appel entrant. s\'il n\'est pas refusé l\'appel sera envoyé à l\'application téléphone par défaut. Cocher cette case n\'a de sens que si l\'appel n\'a pas été bloqué.</string>
     <string name="settings_skip_call_log_description">Indique si l\'appel entrant ne doit pas être affiché dans le journal des appels. Cette option ne doit être cochée que si l\'appel n\'est pas autorisé. Les appels seront toujours enregistrés avec le critère BLOCKED_TYPE.</string>
+    <string name="messages_text_ttl_error">7 j / 48 h / 120 min</string>
+    <string name="messages_text_ttl_hint">temps</string>
+    <string name="messages_text_ttl_helper_text">Combien de temps le numéro pourra-t-il vous appeler. Modificateurs : jours [d], heures [h], minutes [m]</string>
 </resources>
