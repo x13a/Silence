@@ -1,0 +1,13 @@
+Toutes les migrations de préférences ont été supprimées, vous devrez peut-être reconfigurer Silence !
+
+option pour autoriser les numéros cachés/inconnus
+options pour autoriser les appels dans SIM, requiert la permission READ_PHONE_STATE
+ajouter des options derrière le contrôleur
+renommé le préfixe d'action du contrôleur en SET_
+
+ajouté la traduction Turque, grâce à Ümit Seyhan
+ajouté la traduction Hindi, grâce à tan (2tanmayrajk)
+ajouté la traduction Arabe, grâce à DJEBARI.ABDELHAMID
+mis à jour la traduction Ukrainienne, grâce à Andrij Mizyk (@andmizyk)
+mis à jour la traduction Française, grâce à @Ilithy
+mis à jour la traduction Italienne, grâce à Giovanni Donisi (@gdonisi + @giovannidonisi)
