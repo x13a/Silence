@@ -1,0 +1,1 @@
+naprawiono odrzucanie kontaktów na Androidzie 10, dzięki ua Sad, @norrinr

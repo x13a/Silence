@@ -1,0 +1,5 @@
+poprawiono angielskie tłumaczenie, dzięki Allan Nordhøy
+dodano norweskie tłumaczenie Bokmål, dzięki Allan Nordhøy
+dodano francuskie tłumaczenie, dzięki J. Lavoie (Edanas)
+dodano niemieckie tłumaczenie, dzięki J. Lavoie (Edanas)
+dodano włoskie tłumaczenie, dzięki J. Lavoie (Edanas)
