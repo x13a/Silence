@@ -89,10 +89,11 @@ class CallScreeningHelper(private val ctx: Context) {
             number,
             telephonyManager?.networkCountryIso?.uppercase(),
         ) }
+        val numberType by lazy { phoneNumberUtil.getNumberType(number) }
         for (group in Group.values().asSequence().filter { groups.and(it.value) != 0 }) {
             result = when (group) {
-                Group.TOLL_FREE -> phoneNumberUtil.getNumberType(number) ==
-                        PhoneNumberUtil.PhoneNumberType.TOLL_FREE
+                Group.TOLL_FREE -> numberType == PhoneNumberUtil.PhoneNumberType.TOLL_FREE
+                Group.MOBILE -> numberType == PhoneNumberUtil.PhoneNumberType.MOBILE
                 Group.LOCAL -> isLocal
                 Group.NOT_LOCAL -> !isLocal
             }

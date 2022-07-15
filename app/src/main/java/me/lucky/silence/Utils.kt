@@ -11,18 +11,20 @@ import me.lucky.silence.text.NotificationListenerService
 
 class Utils {
     companion object {
-        fun setMessagesTextState(ctx: Context, value: Boolean) =
-            setComponentState(ctx, NotificationListenerService::class.java, value)
+        fun setMessagesTextEnabled(ctx: Context, value: Boolean) =
+            setComponentEnabled(ctx, NotificationListenerService::class.java, value)
 
-        fun updateMessagesTextState(ctx: Context, prefs: Preferences) =
-            setMessagesTextState(
+        fun updateMessagesTextEnabled(ctx: Context) {
+            val prefs = Preferences(ctx)
+            setMessagesTextEnabled(
                 ctx,
                 prefs.isEnabled &&
                         prefs.isMessagesChecked &&
                         prefs.messages.and(Message.TEXT.value) != 0,
             )
+        }
 
-        fun setComponentState(ctx: Context, cls: Class<*>, value: Boolean) =
+        fun setComponentEnabled(ctx: Context, cls: Class<*>, value: Boolean) =
             ctx.packageManager.setComponentEnabledSetting(
                 ComponentName(ctx, cls),
                 if (value) PackageManager.COMPONENT_ENABLED_STATE_ENABLED else
@@ -30,7 +32,7 @@ class Utils {
                 PackageManager.DONT_KILL_APP,
             )
 
-        fun getComponentState(ctx: Context, cls: Class<*>) =
+        fun isComponentEnabled(ctx: Context, cls: Class<*>) =
             ctx.packageManager.getComponentEnabledSetting(ComponentName(ctx, cls)) ==
                 PackageManager.COMPONENT_ENABLED_STATE_ENABLED
 

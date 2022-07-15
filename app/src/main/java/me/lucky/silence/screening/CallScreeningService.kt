@@ -7,6 +7,7 @@ import android.telecom.Connection
 import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
 import androidx.annotation.RequiresApi
+import androidx.core.text.isDigitsOnly
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
@@ -42,13 +43,14 @@ class CallScreeningService : CallScreeningService() {
             return
         } else if (checkEmergency(callDetails)) {
             prefs.isEnabled = false
-            Utils.setMessagesTextState(this, false)
+            Utils.setMessagesTextEnabled(this, false)
             respondAllow(callDetails)
             return
         } else if (
             callDetails.callDirection != Call.Details.DIRECTION_INCOMING ||
             (prefs.isStirChecked && checkStir(callDetails)) ||
-            checkUnknownNumber(callDetails) ||
+            (prefs.isUnknownNumbersChecked && checkUnknownNumber(callDetails)) ||
+            (prefs.isShortNumbersChecked && checkShortNumber(callDetails)) ||
             checkSim()
         ) {
             respondAllow(callDetails)
@@ -126,8 +128,11 @@ class CallScreeningService : CallScreeningService() {
         } catch (exc: SecurityException) { false }
     }
 
-    private fun checkUnknownNumber(callDetails: Call.Details): Boolean {
-        return callDetails.handle?.schemeSpecificPart == null &&
-                prefs.isUnknownNumbersChecked
+    private fun checkUnknownNumber(callDetails: Call.Details) =
+        callDetails.handle?.schemeSpecificPart == null
+
+    private fun checkShortNumber(callDetails: Call.Details): Boolean {
+        val v = callDetails.handle?.schemeSpecificPart?.trimStart('+') ?: return false
+        return v.length in 3..5 && v.isDigitsOnly()
     }
 }

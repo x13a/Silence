@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.SettingsFragment">
+    tools:context=".fragment.ExtraFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,17 +15,55 @@
             android:orientation="vertical">
 
             <CheckBox
-                android:id="@+id/controller"
+                android:id="@+id/shortNumbers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
                 android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/settings_controller" />
+                android:text="@string/extra_short_numbers" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/settings_controller_description"
+                android:text="@string/extra_short_numbers_description"
+                android:textAppearance="?attr/textAppearanceBodySmall" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp" />
+
+            <CheckBox
+                android:id="@+id/unknownNumbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:text="@string/extra_unknown_numbers" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/extra_unknown_numbers_description"
+                android:textAppearance="?attr/textAppearanceBodySmall" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp" />
+
+            <CheckBox
+                android:id="@+id/stir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:text="@string/extra_stir"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/extra_stir_description"
                 android:textAppearance="?attr/textAppearanceBodySmall" />
 
             <Space
@@ -40,17 +78,17 @@
                 android:background="?android:attr/listDivider" />
 
             <CheckBox
-                android:id="@+id/disallowCall"
+                android:id="@+id/sim1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
                 android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/settings_disallow_call" />
+                android:text="@string/extra_sim_1" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/settings_disallow_call_description"
+                android:text="@string/extra_sim_1_description"
                 android:textAppearance="?attr/textAppearanceBodySmall" />
 
             <Space
@@ -59,74 +97,17 @@
                 android:layout_marginVertical="5dp" />
 
             <CheckBox
-                android:id="@+id/rejectCall"
+                android:id="@+id/sim2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
                 android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/settings_reject_call" />
+                android:text="@string/extra_sim_2" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/settings_reject_call_description"
-                android:textAppearance="?attr/textAppearanceBodySmall" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp" />
-
-            <CheckBox
-                android:id="@+id/silenceCall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/settings_silence_call" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/settings_silence_call_description"
-                android:textAppearance="?attr/textAppearanceBodySmall" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp" />
-
-            <CheckBox
-                android:id="@+id/skipCallLog"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/settings_skip_call_log" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/settings_skip_call_log_description"
-                android:textAppearance="?attr/textAppearanceBodySmall" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp" />
-
-            <CheckBox
-                android:id="@+id/skipNotification"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/settings_skip_notification" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/settings_skip_notification_description"
+                android:text="@string/extra_sim_2_description"
                 android:textAppearance="?attr/textAppearanceBodySmall" />
 
         </LinearLayout>

@@ -22,6 +22,7 @@ class Preferences(ctx: Context) {
 
         private const val RESPONSE_OPTIONS = "call_screening_response_options"
         private const val UNKNOWN_NUMBERS_CHECKED = "unknown_numbers_checked"
+        private const val SHORT_NUMBERS_CHECKED = "short_numbers_checked"
         private const val SIM = "sim"
 
         private const val DEFAULT_REPEATED_COUNT = 3
@@ -90,6 +91,10 @@ class Preferences(ctx: Context) {
         )
         set(value) = prefs.edit { putBoolean(UNKNOWN_NUMBERS_CHECKED, value) }
 
+    var isShortNumbersChecked: Boolean
+        get() = prefs.getBoolean(SHORT_NUMBERS_CHECKED, false)
+        set(value) = prefs.edit { putBoolean(SHORT_NUMBERS_CHECKED, value) }
+
     var responseOptions: Int
         get() = prefs.getInt(
             RESPONSE_OPTIONS,
@@ -111,6 +116,7 @@ enum class Group(val value: Int) {
     TOLL_FREE(1),
     LOCAL(1 shl 1),
     NOT_LOCAL(1 shl 2),
+    MOBILE(1 shl 3),
 }
 
 enum class Message(val value: Int) {

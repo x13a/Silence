@@ -9,8 +9,8 @@
     <string name="repeated_description">N llamadas registradas desde el mismo número en un plazo de T minutos.</string>
     <string name="messages_main">SMS - Mensajes de Texto</string>
     <string name="messages_description">Temporalmente los números de los mensajes entrantes.</string>
-    <string name="stir_main">Protocolos STIR/SHAKEN</string>
-    <string name="stir_description">Números que han aprobado la comprobación STIR.</string>
+    <string name="extra_stir">Protocolos STIR/SHAKEN</string>
+    <string name="extra_stir_description">Números que han aprobado la comprobación STIR.</string>
     <string name="allow">Permitir</string>
     <string name="panic_app_dialog_title">Confirmar app de pánico</string>
     <string name="panic_app_dialog_message">Estás seguro de que quieres permitir a %1$s que active acciones de pánico destructivas\?</string>

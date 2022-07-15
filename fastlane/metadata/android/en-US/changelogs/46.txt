@@ -1,0 +1,11 @@
+add mobile group
+add allow calls from short numbers
+add Japanese translation, thanks to Guillaume BOEHM (@guillaumeboehm)
+update Turkish, German, French, Italian, Polish translations
+
+Thanks to:
+Oğuz Ersen (@ersen0)
+Jean-Luc Tibaux (@eUgEntOptIc44)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+J. Lavoie (Edanas)
+nyepwinbxihprivx ngfrqbjhovhytpto

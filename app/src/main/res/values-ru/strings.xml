@@ -9,8 +9,8 @@
     <string name="repeated_description">Разрешить X зарегистрированных звонков с одного и того же номера в течении заданного количества минут.</string>
     <string name="messages_main">Сообщения</string>
     <string name="messages_description">Разрешить звонки с номеров, найденных в сообщениях.</string>
-    <string name="stir_main">STIR/SHAKEN</string>
-    <string name="stir_description">Разрешить звонки с номеров, прошедших STIR верификацию.</string>
+    <string name="extra_stir">STIR/SHAKEN</string>
+    <string name="extra_stir_description">Разрешить звонки с номеров, прошедших STIR верификацию.</string>
     <string name="panic_app_dialog_title">Подтвердите приложение тревожной кнопки</string>
     <string name="panic_app_dialog_message">Вы уверены, что хотите разрешить %1$s запускать действия тревожной кнопки\?</string>
     <string name="panic_app_unknown_app">неизвестное приложение</string>
@@ -20,10 +20,10 @@
     <string name="groups_not_local">Не местные</string>
     <string name="repeated_count">Количество</string>
     <string name="repeated_minutes">Минут</string>
-    <string name="settings_unknown_numbers">Скрытые номера</string>
+    <string name="extra_unknown_numbers">Скрытые номера</string>
     <string name="settings_controller">Контроллер</string>
-    <string name="settings_sim_1">SIM 1</string>
-    <string name="settings_sim_2">SIM 2</string>
+    <string name="extra_sim_1">SIM 1</string>
+    <string name="extra_sim_2">SIM 2</string>
     <string name="notification_channel">Заблокированные вызовы</string>
     <string name="notification_title">Вызов заблокирован</string>
     <string name="contacted_call">Звонок</string>
@@ -42,7 +42,7 @@
     <string name="groups_toll_free_description">Разрешить звонки с бесплатных номеров (напр. 800).</string>
     <string name="messages_inbox_description">Разрешить звонки с номеров, которые отправили вам сообщение.</string>
     <string name="messages_text_description">Временно разрешить вызовы с мобильных номеров, обнаруженных в тексте входящих сообщений.</string>
-    <string name="settings_unknown_numbers_description">Разрешить звонки от незнакомцев без номеров.</string>
+    <string name="extra_unknown_numbers_description">Разрешить звонки от незнакомцев без номеров.</string>
     <string name="settings_disallow_call">Запретить звонки</string>
     <string name="settings_disallow_call_description">Устанавливает, следует ли блокировать входящий вызов.</string>
     <string name="settings_reject_call">Отклонить вызов</string>
@@ -50,7 +50,7 @@
     <string name="settings_skip_call_log">Пропускать журнал вызовов</string>
     <string name="settings_skip_call_log_description">Устанавливает, должен ли входящий вызов отображаться в журнале вызовов. Вызовы по-прежнему будут регистрироваться с типом BLOCKED_TYPE.</string>
     <string name="settings_skip_notification">Пропускать уведомления</string>
-    <string name="settings_sim_1_description">Разрешить все вызовы для SIM 1.</string>
-    <string name="settings_sim_2_description">Разрешить все вызовы для SIM 2.</string>
+    <string name="extra_sim_1_description">Разрешить все вызовы для SIM 1.</string>
+    <string name="extra_sim_2_description">Разрешить все вызовы для SIM 2.</string>
     <string name="main">Главная</string>
 </resources>

@@ -9,8 +9,8 @@
     <string name="repeated_description">N registrert samtale fra samme nummer innen T minutter.</string>
     <string name="messages_main">SMS</string>
     <string name="messages_description">Tillat midlertidige mobilnumre fra innkommende tekstmeldinger.</string>
-    <string name="stir_description">Nummer som har passert STIR-bekreftelse.</string>
-    <string name="stir_main">STIR/SHAKEN</string>
+    <string name="extra_stir_description">Nummer som har passert STIR-bekreftelse.</string>
+    <string name="extra_stir">STIR/SHAKEN</string>
     <string name="panic_app_unknown_app">et ukjent program</string>
     <string name="panic_app_dialog_message">Vil du tillate %1$s å utføre destruktive panikkhandlinger\?</string>
     <string name="allow">Tillat</string>
@@ -19,10 +19,10 @@
     <string name="notification_channel">Blokkerte anrop</string>
     <string name="messages_text">Brødtekst</string>
     <string name="messages_inbox">Innboks</string>
-    <string name="settings_sim_2">SIM 2</string>
-    <string name="settings_sim_1">SIM 1</string>
+    <string name="extra_sim_2">SIM 2</string>
+    <string name="extra_sim_1">SIM 1</string>
     <string name="repeated_minutes">Minutter</string>
-    <string name="settings_unknown_numbers">Ukjente nummer</string>
+    <string name="extra_unknown_numbers">Ukjente nummer</string>
     <string name="groups_local">Lokalt</string>
     <string name="groups_toll_free">Gratisnummer</string>
     <string name="notification_title">Anrop blokkert</string>

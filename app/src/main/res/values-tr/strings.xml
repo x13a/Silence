@@ -7,8 +7,8 @@
     <string name="repeated_main">Tekrarlanan</string>
     <string name="repeated_description">Belirli bir dakika içerisinde aynı numaradan gelen X kayıtlı aramaya izin ver.</string>
     <string name="messages_main">Mesajlar</string>
-    <string name="stir_main">STIR/SHAKEN</string>
-    <string name="stir_description">STIR onaylamasını başarıyla geçen numaralardan gelen aramalara izin ver.</string>
+    <string name="extra_stir">STIR/SHAKEN</string>
+    <string name="extra_stir_description">STIR onaylamasını başarıyla geçen numaralardan gelen aramalara izin ver.</string>
     <string name="panic_app_dialog_title">Panik uygulamasını onayla</string>
     <string name="panic_app_unknown_app">bilinmeyen bir uygulama</string>
     <string name="allow">İzin ver</string>
@@ -16,7 +16,7 @@
     <string name="groups_local">Yerel</string>
     <string name="repeated_count">Arama sayısı</string>
     <string name="repeated_minutes">Dakika</string>
-    <string name="settings_unknown_numbers">Bilinmeyen numaralar</string>
+    <string name="extra_unknown_numbers">Bilinmeyen numaralar</string>
     <string name="notification_channel">Engellenen çağrılar</string>
     <string name="notification_title">Çağrı engellendi</string>
     <string name="contacted_call">Çağrı</string>
@@ -24,8 +24,8 @@
     <string name="app_name">Silence</string>
     <string name="messages_description">Mesajlardaki numaralardan gelen aramalara izin ver.</string>
     <string name="panic_app_dialog_message">%1$s\'in yıkıcı panik eylemlerini tetiklemesine izin vermek istediğinize emin misiniz\?</string>
-    <string name="settings_sim_1">SIM 1</string>
-    <string name="settings_sim_2">SIM 2</string>
+    <string name="extra_sim_1">SIM 1</string>
+    <string name="extra_sim_2">SIM 2</string>
     <string name="settings">Ayarlar</string>
     <string name="messages_text">Gövde</string>
     <string name="messages_inbox">Gelen kutusu</string>
@@ -43,12 +43,12 @@
     <string name="groups_toll_free_description">Ücretsiz numaralardan (örneğin 800) gelen aramalara izin ver.</string>
     <string name="repeated_settings_description">Sayının dakikadan daha düşük olması gerekir. Android sonucu önbelleğe aldığından, aramaların önbellek aralığının dışında olması gerekir.</string>
     <string name="messages_inbox_description">Size mesaj gönderen numaralardan gelen aramalara izin ver.</string>
-    <string name="settings_unknown_numbers_description">Numara olmadan yabancılardan gelen aramalara izin ver.</string>
+    <string name="extra_unknown_numbers_description">Numara olmadan yabancılardan gelen aramalara izin ver.</string>
     <string name="settings_reject_call_description">Gelen aramanın, kullanıcı elle yapmış gibi reddedilip edilmeyeceğini ayarlar. Bu yalnızca aramaya izin verilmediğinde işaretlenmelidir.</string>
     <string name="settings_skip_call_log_description">Gelen aramanın arama günlüğünde görüntülenmemesi gerekip gerekmediğini ayarlar. Bu yalnızca aramaya izin verilmiyorsa işaretlenmelidir. Aramalar yine de BLOCKED_TYPE türüyle kaydedilecektir.</string>
     <string name="settings_skip_notification_description">Gelen arama için bir cevapsız arama bildiriminin gösterilmemesi gerekip gerekmediğini ayarlar. Bu yalnızca aramaya izin verilmiyorsa işaretlenmelidir.</string>
-    <string name="settings_sim_1_description">SIM 1\'den gelen tüm aramalara izin ver.</string>
-    <string name="settings_sim_2_description">SIM 2\'den gelen tüm aramalara izin ver.</string>
+    <string name="extra_sim_1_description">SIM 1\'den gelen tüm aramalara izin ver.</string>
+    <string name="extra_sim_2_description">SIM 2\'den gelen tüm aramalara izin ver.</string>
     <string name="main">Ana</string>
     <string name="messages_text_description">Gelen mesajlar metninde bulunan cep telefonu numaralarından gelen aramalara geçici olarak izin ver.</string>
     <string name="settings_controller_description">Genel yayın alıcısının Silence\'ı intent\'lerle denetlemesini etkinleştirir.</string>

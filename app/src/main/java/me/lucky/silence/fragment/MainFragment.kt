@@ -3,7 +3,6 @@ package me.lucky.silence.fragment
 import android.Manifest
 import android.app.role.RoleManager
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -42,17 +41,14 @@ class MainFragment : Fragment() {
     private fun init() {
         ctx = this.requireContext()
         prefs = Preferences(ctx)
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) disableStir()
         binding.apply {
             contacted.isChecked = prefs.isContactedChecked
             groups.isChecked = prefs.isGroupsChecked
             repeated.isChecked = prefs.isRepeatedChecked
             messages.isChecked = prefs.isMessagesChecked
-            stir.isChecked = prefs.isStirChecked
         }
     }
 
-    private fun disableStir() { binding.stir.isEnabled = false }
     private fun update() { binding.toggle.isChecked = prefs.isEnabled }
 
     private fun setup() = binding.apply {
@@ -70,15 +66,12 @@ class MainFragment : Fragment() {
         messages.setOnCheckedChangeListener { _, isChecked ->
             prefs.isMessagesChecked = isChecked
             if (isChecked) requestMessagesPermissions()
-            Utils.updateMessagesTextState(ctx, prefs)
-        }
-        stir.setOnCheckedChangeListener { _, isChecked ->
-            prefs.isStirChecked = isChecked
+            Utils.updateMessagesTextEnabled(ctx)
         }
         toggle.setOnCheckedChangeListener { _, isChecked ->
             prefs.isEnabled = isChecked
             if (isChecked) requestCallScreeningRole()
-            Utils.updateMessagesTextState(ctx, prefs)
+            Utils.updateMessagesTextEnabled(ctx)
         }
     }
 

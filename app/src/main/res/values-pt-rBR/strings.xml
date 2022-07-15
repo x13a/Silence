@@ -9,8 +9,8 @@
     <string name="repeated_description">Ligações registradas do mesmo número em poucos minutos de intervalo.</string>
     <string name="messages_main">Mensagens</string>
     <string name="messages_description">Números de mensagens.</string>
-    <string name="stir_main">STIR/SHAKEN</string>
-    <string name="stir_description">Números que passam a verificação STIR.</string>
+    <string name="extra_stir">STIR/SHAKEN</string>
+    <string name="extra_stir_description">Números que passam a verificação STIR.</string>
     <string name="settings">Configurações</string>
     <string name="allow">Permitir</string>
     <string name="panic_app_dialog_message">Você tem certeza que quer permitir a %1$s para acionar ações destrutivas de pânico\?</string>
@@ -22,10 +22,10 @@
     <string name="repeated_count">Contagem</string>
     <string name="repeated_minutes">Minutos</string>
     <string name="notification_channel">Ligações bloqueadas</string>
-    <string name="settings_unknown_numbers">Números desconhecidos</string>
-    <string name="settings_sim_2">SIM 2</string>
+    <string name="extra_unknown_numbers">Números desconhecidos</string>
+    <string name="extra_sim_2">SIM 2</string>
     <string name="notification_title">Ligação bloqueada</string>
-    <string name="settings_sim_1">SIM 1</string>
+    <string name="extra_sim_1">SIM 1</string>
     <string name="panic_app_dialog_title">Confirmar o app de pânico</string>
     <string name="messages_text">Texto da mensagem</string>
     <string name="messages_inbox">Caixa de entrada</string>

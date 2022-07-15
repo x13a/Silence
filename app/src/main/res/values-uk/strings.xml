@@ -4,7 +4,7 @@
     <string name="panic_app_dialog_message">Ви впевнені, що хочете дозволити %1$s викликати шкідливі тривожні дії\?</string>
     <string name="contacted_description">Номери, з якими Ви сконтактовані.</string>
     <string name="contacted_main">Сконтактовані</string>
-    <string name="stir_main">STIR/SHAKEN</string>
+    <string name="extra_stir">STIR/SHAKEN</string>
     <string name="allow">Дозволити</string>
     <string name="app_name">Silence</string>
     <string name="repeated_count">Кількість</string>
@@ -13,7 +13,7 @@
     <string name="repeated_description">N-на кількість зареєстрованих дзвінків з одного номера за T хвилин.</string>
     <string name="messages_main">Повідомлення</string>
     <string name="messages_description">Номери з повідомлень.</string>
-    <string name="stir_description">Номери, які проходять перевірку STIR.</string>
+    <string name="extra_stir_description">Номери, які проходять перевірку STIR.</string>
     <string name="panic_app_unknown_app">невідомий застосунок</string>
     <string name="repeated_minutes">Хвилин</string>
     <string name="repeated_main">Повторювані</string>
