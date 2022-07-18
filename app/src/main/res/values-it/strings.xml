@@ -58,4 +58,9 @@
     <string name="messages_text_ttl_hint">tempo</string>
     <string name="messages_text_ttl_helper_text">Per quanto tempo il numero sarà in grado di chiamarvi. Modificatori: giorni [d], ore [h], minuti [m]</string>
     <string name="messages_text_ttl_error">7 g / 48 o / 120 min</string>
+    <string name="extra_short_numbers">Numeri brevi</string>
+    <string name="extra_short_numbers_description">Consenti chiamate da numeri con lunghezza da 3 a 5 cifre.</string>
+    <string name="groups_mobile_description">Consenti chiamate da numeri di cellulare.</string>
+    <string name="groups_mobile">Cellulari</string>
+    <string name="extra">Extra</string>
 </resources>

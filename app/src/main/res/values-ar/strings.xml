@@ -54,4 +54,13 @@
     <string name="extra_unknown_numbers_description">السماح بالمكالمات من الغرباء بدون رقم.</string>
     <string name="settings_silence_call_description">يحدد ما إذا كان يجب إسكات الرنين للمكالمة الواردة. ومع ذلك ، سيظل يتم إرسال المكالمة إلى تطبيق طالب الاتصال الافتراضي إذا لم يتم حظرها. التحقق من ذلك أمر منطقي فقط عندما لا يتم رفض المكالمة.</string>
     <string name="repeated_settings_description">يجب أن يكون العدد أقل من الدقائق. نظرا لأن النظام يقوم بتخزين النتيجة مؤقتا ، يجب أن تكون المكالمات خارج الفاصل الزمني لذاكرة التخزين المؤقت.</string>
+    <string name="messages_text_ttl_hint">زمن</string>
+    <string name="messages_text_ttl_helper_text">كم من الوقت سيتمكن الرقم من الاتصال بك. المعدلات: [d]ays [h] ours [m]inutes</string>
+    <string name="messages_text_ttl_error">7أيام / 48ساعة/ 120 دقيقة</string>
+    <string name="extra">إضافي</string>
+    <string name="extra_short_numbers">أرقام قصيرة</string>
+    <string name="goto_button">اذهب إلى</string>
+    <string name="groups_mobile">جوال</string>
+    <string name="groups_mobile_description">السماح بالمكالمات من أرقام الهواتف المحمولة.</string>
+    <string name="extra_short_numbers_description">السماح بالمكالمات من أرقام يتراوح طولها من 3 إلى 5 أرقام.</string>
 </resources>
