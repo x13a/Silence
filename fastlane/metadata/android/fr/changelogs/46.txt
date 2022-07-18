@@ -1,0 +1,11 @@
+ajout du groupe mobile
+ajout de l'autorisation d'appels à partir de numéros courts  
+ajout de la traduction Japonaise, merci à Guillaume BOEHM (@guillaumeboehm)
+mise à jour des traductions en Turc, Allemand, Français, Italien, Polonais
+
+Grâce à:
+Oğuz Ersen (@ersen0)
+Jean-Luc Tibaux (@eUgEntOptIc44)
+Giovanni Donissi (@gdonisi + @giovannidonisi)
+J. Lavoie (Edanas)
+nyepwinbxihprivx ngfrqbjhovhytpto
