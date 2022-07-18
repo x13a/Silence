@@ -1,0 +1,8 @@
+modification du récepteur SMS en recepteur de notification
+mise à jour des traductions en Italien, Russe, Turc et Arabe
+
+Grâce à:
+Giovanni Donissi (@gdonisi + @giovannidonisi
+Ivan
+Oğuz Ersen (@ersen0)
+DJEBBARI.ABDELHAMID

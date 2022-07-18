@@ -1,0 +1,11 @@
+ajout d'une durée de conservation paramétrable pour les numéros provenant des messages
+correctifs divers
+mise à jour des traductions en Arabe, Turc, Allemand, Français, Polonais, Anglais
+
+Merci à:
+Allan Nordhøy (@comradekingu)
+DJEBBARI.ABDELHAMID
+@Ilithy
+Jean-Luc Tibaux (@eUgEntOptIc44)
+Oğuz Ersen (@ersen0)
+@RealShadowFury

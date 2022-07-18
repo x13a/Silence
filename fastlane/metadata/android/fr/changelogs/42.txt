@@ -1,0 +1,8 @@
+rafraîchissement de l'interface utilisateur (cela a nécessité de nombreux changements internes, si vous trouvez quelque chose de cassé, dites-le moi)
+mise à jour des traductions turque, française, allemande et italienne.
+
+Merci à :
+Oğuz Ersen (@ersen0)
+@Ilithy
+Jean-Luc Tibaux (@eUgEntOptIc44)
+Giovanni Donisi (@gdonisi + @giovannidonisi)

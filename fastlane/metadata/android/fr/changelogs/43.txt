@@ -1,0 +1,1 @@
+correction du bouton de sortie des paramètres
