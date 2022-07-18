@@ -57,4 +57,9 @@
     <string name="messages_text_ttl_error">7 j / 48 h / 120 min</string>
     <string name="messages_text_ttl_hint">temps</string>
     <string name="messages_text_ttl_helper_text">Combien de temps le numéro pourra-t-il vous appeler. Modificateurs : jours [d], heures [h], minutes [m]</string>
+    <string name="extra">Supplément</string>
+    <string name="extra_short_numbers">Numéros courts</string>
+    <string name="groups_mobile">Cellulaire</string>
+    <string name="groups_mobile_description">Autoriser la reception d\'appels depuis des numéros de téléphone mobiles.</string>
+    <string name="extra_short_numbers_description">Autoriser les appels provenant de numéros de 3 à 5 chiffres.</string>
 </resources>
