@@ -70,9 +70,8 @@ class CallScreeningService : CallScreeningService() {
         else respondNotAllow(callDetails)
     }
 
-    private fun respondAllow(callDetails: Call.Details) {
+    private fun respondAllow(callDetails: Call.Details) =
         respondToCall(callDetails, CallResponse.Builder().build())
-    }
 
     private fun respondNotAllow(callDetails: Call.Details) {
         val responseOptions = prefs.responseOptions
@@ -103,12 +102,11 @@ class CallScreeningService : CallScreeningService() {
         return false
     }
 
-    private fun checkEmergency(callDetails: Call.Details): Boolean {
-        return callDetails.hasProperty(Call.Details.PROPERTY_EMERGENCY_CALLBACK_MODE) ||
-            callDetails.hasProperty(Call.Details.PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL) ||
-            telephonyManager
-                ?.isEmergencyNumber(callDetails.handle?.schemeSpecificPart ?: "") == true
-    }
+    private fun checkEmergency(callDetails: Call.Details) =
+        callDetails.hasProperty(Call.Details.PROPERTY_EMERGENCY_CALLBACK_MODE) ||
+        callDetails.hasProperty(Call.Details.PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL) ||
+        telephonyManager
+            ?.isEmergencyNumber(callDetails.handle?.schemeSpecificPart ?: "") == true
 
     private fun checkSim(): Boolean {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S || !isMultiSim) return false

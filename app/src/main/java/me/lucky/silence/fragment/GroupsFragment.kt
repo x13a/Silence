@@ -37,6 +37,7 @@ class GroupsFragment : Fragment() {
             notLocal.isChecked = value.and(Group.NOT_LOCAL.value) != 0
             tollFree.isChecked = value.and(Group.TOLL_FREE.value) != 0
             mobile.isChecked = value.and(Group.MOBILE.value) != 0
+            localMobile.isChecked = value.and(Group.LOCAL_MOBILE.value) != 0
         }
     }
 
@@ -52,6 +53,9 @@ class GroupsFragment : Fragment() {
         }
         mobile.setOnCheckedChangeListener { _, isChecked ->
             prefs.groups = Utils.setFlag(prefs.groups, Group.MOBILE.value, isChecked)
+        }
+        localMobile.setOnCheckedChangeListener { _, isChecked ->
+            prefs.groups = Utils.setFlag(prefs.groups, Group.LOCAL_MOBILE.value, isChecked)
         }
     }
 }

@@ -34,13 +34,15 @@ class ExtraFragment : Fragment() {
     private fun init() {
         ctx = this.requireContext()
         prefs = Preferences(ctx)
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) disableStir()
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S || Utils.getModemCount(ctx) < 2)
-            disableSim()
         binding.apply {
             shortNumbers.isChecked = prefs.isShortNumbersChecked
             unknownNumbers.isChecked = prefs.isUnknownNumbersChecked
+            stir.isEnabled = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R
             stir.isChecked = prefs.isStirChecked
+            val enabled = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
+                    Utils.getModemCount(ctx) >= 2
+            sim1.isEnabled = enabled
+            sim2.isEnabled = enabled
             val opts = prefs.sim
             sim1.isChecked = opts.and(Sim.SIM_1.value) != 0
             sim2.isChecked = opts.and(Sim.SIM_2.value) != 0
@@ -65,13 +67,6 @@ class ExtraFragment : Fragment() {
             prefs.sim = Utils.setFlag(prefs.sim, Sim.SIM_2.value, isChecked)
             if (isChecked) requestSimPermissions()
         }
-    }
-
-    private fun disableStir() { binding.stir.isEnabled = false }
-
-    private fun disableSim() = binding.apply {
-        sim1.isEnabled = false
-        sim2.isEnabled = false
     }
 
     private val registerForSimPermissions =

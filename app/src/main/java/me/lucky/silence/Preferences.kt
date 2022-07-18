@@ -117,6 +117,7 @@ enum class Group(val value: Int) {
     LOCAL(1 shl 1),
     NOT_LOCAL(1 shl 2),
     MOBILE(1 shl 3),
+    LOCAL_MOBILE(1 shl 4),
 }
 
 enum class Message(val value: Int) {

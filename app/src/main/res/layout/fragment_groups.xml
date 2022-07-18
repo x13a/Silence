@@ -85,6 +85,25 @@
                 android:text="@string/groups_mobile_description"
                 android:textAppearance="?attr/textAppearanceBodySmall" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp" />
+
+            <CheckBox
+                android:id="@+id/localMobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:text="@string/groups_local_mobile" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/groups_local_mobile_description"
+                android:textAppearance="?attr/textAppearanceBodySmall" />
+
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

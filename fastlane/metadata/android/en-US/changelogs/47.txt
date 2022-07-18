@@ -1,0 +1,11 @@
+add local mobile group
+make toggle button state visible on material3
+add Persian translation, thanks to @Special-N9NE
+update Arabic, Turkish, Japanese, Italian, French translations
+
+Thanks to:
+DJEBBARI.ABDELHAMID
+Oğuz Ersen (@ersen0)
+Guillaume BOEHM (@guillaumeboehm)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+@Ilithy
