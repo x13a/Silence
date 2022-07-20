@@ -1,0 +1,11 @@
+yerel cep telefonu grubu eklendi
+material3'te geçiş düğmesi durumu görünür yapıldı
+Farsça çeviri eklendi, teşekkürler @Special-N9NE
+Arapça, Türkçe, Japonca, İtalyanca, Fransızca çeviriler güncellendi
+
+Teşekkürler:
+DJEBBARI.ABDELHAMID
+Oğuz Ersen (@ersen0)
+Guillaume BOEHM (@guillaumeboehm)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+@Ilithy
