@@ -1,18 +1,18 @@
-# Silence
 
-Block unknown callers.
+<h1 align="center">Silence</h1>  
+</p><h3 align="center">Block unknown callers.</h3>  
+<br/><br/>
+
+<p align="center">
+<img 
+    src="https://github.com/Ilithy/Silence/blob/f909d7e7dfb9fd9fe2e5fd1af922d4d6712f7fe9/data/Global%20Silence%20Presentation.png">
 
 [<img 
     src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
     alt="Get it on F-Droid"
     height="80">](https://f-droid.org/packages/me.lucky.silence/)
 
-<img 
-    src="https://raw.githubusercontent.com/x13a/Silence/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" 
-    width="30%" 
-    height="30%">
-
-By default numbers not in your contacts are blocked.
+<b>By default numbers not in your contacts are blocked.</b>
 
 Optionally allow:
 * Numbers you have contacted
