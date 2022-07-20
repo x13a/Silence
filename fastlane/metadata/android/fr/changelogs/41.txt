@@ -1,0 +1,9 @@
+ajout d'options de réponse aux paramètres généraux
+mise à jour des traductions turc, allemand, français, italien, norvégien Bokmål
+
+Grâce à:
+Oğuz Ersen (@ersen0)
+Allan Nordhøy (@comradekingu)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+@Ilithy
+J. Lavoie (Edanas)

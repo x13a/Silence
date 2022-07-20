@@ -1,0 +1,11 @@
+ajout du groupe cellulaire local
+rendu de l'état du bouton d'activation visible via matérial3
+ajout de la traduction persane, grâce à @Special-N9NE
+mise à jour des traductions arabe, turc, japonais, italien, français
+
+Grâce à:
+DJEBBARI.ABDELHAMID
+Oğuz Ersen (@ersen0)
+Guillaume BOEHM (@guillaumeboehm)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+@Ilithy

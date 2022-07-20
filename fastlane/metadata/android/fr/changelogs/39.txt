@@ -1,0 +1,11 @@
+ajout de l'autorisation d'appel après un message (Messages &gt; Boîte de réception)
+ajout d'un bouton de contrôleur (par défaut désactivé)
+
+traduction turque mise à jour, grâce à Oğuz Ersen (@ersen0)
+traduction arabe mise à jour, merci à DJEBARI.ABDELHAMID
+traduction française mise à jour, merci à @Ilithy
+traduction italienne mise à jour, merci à Giovanni Donisi (@gdonisi + @giovannidonisi)
+traduction ukrainienne mise à jour, grâce à Andrij Mizyk (@andmizyk)
+traduction portugaise (Brésil) mise à jour, grâce à mezysinc
+traduction en bokmål norvégien mise à jour, grâce à Allan Nordhøy (@comradekingu)
+traduction anglaise mise à jour, merci à Allan Nordhøy (@comradekingu)
