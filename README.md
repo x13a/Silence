@@ -24,6 +24,13 @@ Optionally allow:
 If the app rejects calls from contacts on Android 10, allow contacts permission manually in 
 `App info → Permissions`.
 
+
+<p align="center"><img 
+    src="https://github.com/Ilithy/Silence/blob/1bddd699016aef0756cdd6c201b4aa28f2888823/data/contacted.png" height="400"> <img 
+    src="https://github.com/Ilithy/Silence/blob/1bddd699016aef0756cdd6c201b4aa28f2888823/data/groups.png" height="400"> <img 
+    src="https://github.com/Ilithy/Silence/blob/1bddd699016aef0756cdd6c201b4aa28f2888823/data/Repeated.png" height="400"> <img 
+    src="https://github.com/Ilithy/Silence/blob/1bddd699016aef0756cdd6c201b4aa28f2888823/data/messages.png" height="400">
+
 ## Permissions
 
 * CALL_SCREENING - block or allow call
