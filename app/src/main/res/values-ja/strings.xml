@@ -63,4 +63,6 @@
     <string name="extra">その次</string>
     <string name="extra_short_numbers">短い番号</string>
     <string name="extra_short_numbers_description">３桁から５桁までの番号からの電話を許可する。</string>
+    <string name="groups_local_mobile">国内携帯電話</string>
+    <string name="groups_local_mobile_description">国内携帯電話番号からの電話を許可する。</string>
 </resources>

@@ -62,4 +62,6 @@
     <string name="groups_mobile">Cellulaire</string>
     <string name="groups_mobile_description">Autoriser la reception d\'appels depuis des numéros de téléphone mobiles.</string>
     <string name="extra_short_numbers_description">Autoriser les appels provenant de numéros de 3 à 5 chiffres.</string>
+    <string name="groups_local_mobile_description">Autorisez les appels provenant de numéros de mobiles ayant le même indicatif que le vôtre.</string>
+    <string name="groups_local_mobile">Cellulaire Local</string>
 </resources>

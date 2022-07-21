@@ -63,4 +63,6 @@
     <string name="groups_mobile_description">Consenti chiamate da numeri di cellulare.</string>
     <string name="groups_mobile">Cellulari</string>
     <string name="extra">Extra</string>
+    <string name="groups_local_mobile">Cellulare della zona</string>
+    <string name="groups_local_mobile_description">Consenti chiamate da numeri di cellulare con lo stesso prefisso internazionale del tuo.</string>
 </resources>
