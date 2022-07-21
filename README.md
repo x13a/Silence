@@ -1,11 +1,11 @@
-
 <h1 align="center">Silence</h1>  
-</p><h3 align="center">Block unknown callers.</h3>  
-<br/><br/>
+<h3 align="center">Block unknown callers</h3>  
+<br/>
 
 <p align="center">
 <img 
-    src="https://github.com/Ilithy/Silence/blob/f909d7e7dfb9fd9fe2e5fd1af922d4d6712f7fe9/data/Global%20Silence%20Presentation.png">
+    src="https://raw.githubusercontent.com/x13a/Silence/master/data/presentation.png">
+</p>
 
 [<img 
     src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
@@ -19,17 +19,26 @@ Optionally allow:
 * Numbers within the selected groups
 * X registered call(s) from the same number within a set amount of minutes
 * Numbers found in messages
-* Numbers passing STIR verification (Android 11)
+* and more..
 
 If the app rejects calls from contacts on Android 10, allow contacts permission manually in 
 `App info → Permissions`.
 
 
-<p align="center"><img 
-    src="https://github.com/Ilithy/Silence/blob/1bddd699016aef0756cdd6c201b4aa28f2888823/data/contacted.png" height="400"> <img 
-    src="https://github.com/Ilithy/Silence/blob/1bddd699016aef0756cdd6c201b4aa28f2888823/data/groups.png" height="400"> <img 
-    src="https://github.com/Ilithy/Silence/blob/1bddd699016aef0756cdd6c201b4aa28f2888823/data/Repeated.png" height="400"> <img 
-    src="https://github.com/Ilithy/Silence/blob/1bddd699016aef0756cdd6c201b4aa28f2888823/data/messages.png" height="400">
+<p align="center">
+<img 
+    src="https://raw.githubusercontent.com/x13a/Silence/master/data/contacted.png" 
+    height="400"> 
+<img 
+    src="https://raw.githubusercontent.com/x13a/Silence/master/data/groups.png" 
+    height="400"> 
+<img 
+    src="https://raw.githubusercontent.com/x13a/Silence/master/data/repeated.png" 
+    height="400"> 
+<img 
+    src="https://raw.githubusercontent.com/x13a/Silence/master/data/messages.png" 
+    height="400">
+</p>
 
 ## Permissions
 
