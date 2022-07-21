@@ -26,10 +26,10 @@ If the app rejects calls from contacts on Android 10, allow contacts permission 
 
 
 <p align="center"><img 
-    src="https://github.com/Ilithy/Silence/blob/9a01ef0ada627315ede003e3bad6c5495982fbe8/data/Contacted_Screenshot.png" height="400"> <img 
-    src="https://github.com/Ilithy/Silence/blob/9a01ef0ada627315ede003e3bad6c5495982fbe8/data/Groups_Screenshot.png" height="400"> <img 
-    src="https://github.com/Ilithy/Silence/blob/9a01ef0ada627315ede003e3bad6c5495982fbe8/data/Repeated_Screenshot.png" height="400"> <img 
-    src="https://github.com/Ilithy/Silence/blob/9a01ef0ada627315ede003e3bad6c5495982fbe8/data/Messages_Screenshot.png" height="400">
+    src="https://github.com/Ilithy/Silence/blob/1bddd699016aef0756cdd6c201b4aa28f2888823/data/contacted.png" height="420"> <img 
+    src="https://github.com/Ilithy/Silence/blob/1bddd699016aef0756cdd6c201b4aa28f2888823/data/groups.png" height="420"> <img 
+    src="https://github.com/Ilithy/Silence/blob/1bddd699016aef0756cdd6c201b4aa28f2888823/data/Repeated.png" height="420"> <img 
+    src="https://github.com/Ilithy/Silence/blob/1bddd699016aef0756cdd6c201b4aa28f2888823/data/messages.png" height="420">
 
 ## Permissions
 
