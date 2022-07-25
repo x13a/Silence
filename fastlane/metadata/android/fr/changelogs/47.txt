@@ -1,5 +1,5 @@
 ajout du groupe cellulaire local
-rendu de l'état du bouton d'activation visible via matérial3
+Amélioration du rendu de l'état du bouton d'activation visible via matérial3, Merci à Guillaume BOEHM (@guillaumeboehm) et @Ilithy.
 ajout de la traduction persane, grâce à @Special-N9NE
 mise à jour des traductions arabe, turc, japonais, italien, français
 
