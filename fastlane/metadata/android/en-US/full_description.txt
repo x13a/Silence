@@ -12,7 +12,7 @@ App info → Permissions.
 
 Permissions:
 * CALL_SCREENING - block or allow call
-* READ_CALL_LOG - check you have called the number and count times the number have called you in T minutes
+* READ_CALL_LOG - check you have called the number and count times the number have called you in X minutes
 * READ_SMS - check you have sent a message to the number and you received a message from the number
 * NOTIFICATION_LISTENER - find mobile numbers in incoming messages
 * READ_PHONE_STATE - check on which SIM the number is calling
