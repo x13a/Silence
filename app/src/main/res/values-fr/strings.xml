@@ -39,7 +39,7 @@
     <string name="contacted_call_description">Autorisez les appels provenant de numéros que vous avez appelés.</string>
     <string name="contacted_message_description">Autoriser les appels des numéros auxquels vous avez envoyé un message.</string>
     <string name="groups_local_description">Autoriser les appels provenant de numéros ayant le même indicatif de pays que le vôtre.</string>
-    <string name="groups_not_local_description">Autoriser les appels provenant de numéros ayant le même indicatif de pays que le vôtre.</string>
+    <string name="groups_not_local_description">Autoriser les appels provenant de numéros ayant le même indicatif que le vôtre.</string>
     <string name="groups_toll_free_description">Autoriser les appels provenant de numéros sans frais (ex : 800).</string>
     <string name="messages_inbox_description">Autorisez les appels provenant de numéros qui vous ont fait parvenir un message.</string>
     <string name="messages_text_description">Autoriser temporairement les appels provenant de numéros mobiles trouvés dans le texte des messages entrants.</string>
@@ -62,6 +62,6 @@
     <string name="groups_mobile">Cellulaire</string>
     <string name="groups_mobile_description">Autoriser la reception d\'appels depuis des numéros de téléphone mobiles.</string>
     <string name="extra_short_numbers_description">Autoriser les appels provenant de numéros de 3 à 5 chiffres.</string>
-    <string name="groups_local_mobile_description">Autorisez les appels provenant de numéros de mobiles ayant le même indicatif que le vôtre.</string>
+    <string name="groups_local_mobile_description">Autorisez les appels provenant de numéros de téléphones mobiles ayant le même indicatif que le vôtre.</string>
     <string name="groups_local_mobile">Cellulaire Local</string>
 </resources>

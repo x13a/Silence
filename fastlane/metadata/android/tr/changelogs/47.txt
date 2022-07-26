@@ -1,5 +1,5 @@
 yerel cep telefonu grubu eklendi
-material3'te geçiş düğmesi durumu görünür yapıldı
+material3'te geçiş düğmesi durumu görünür yapıldı, teşekkürler Guillaume BOEHM (@guillaumeboehm) &amp; @Ilithy
 Farsça çeviri eklendi, teşekkürler @Special-N9NE
 Arapça, Türkçe, Japonca, İtalyanca, Fransızca çeviriler güncellendi
 
