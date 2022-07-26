@@ -24,6 +24,8 @@ Optionally allow:
 If the app rejects calls from contacts on Android 10, allow contacts permission manually in 
 `App info → Permissions`.
 
+<details>
+<summary>More</summary>
 
 <p align="center">
 <img 
@@ -39,11 +41,12 @@ If the app rejects calls from contacts on Android 10, allow contacts permission 
     src="https://raw.githubusercontent.com/x13a/Silence/master/data/messages.png" 
     height="400">
 </p>
+</details>
 
 ## Permissions
 
 * CALL_SCREENING - block or allow call
-* READ_CALL_LOG - check you have called the number and count times the number have called you in T minutes
+* READ_CALL_LOG - check you have called the number and count times the number have called you in X minutes
 * READ_SMS - check you have sent a message to the number and you received a message from the number
 * NOTIFICATION_LISTENER - find mobile numbers in incoming messages
 * READ_PHONE_STATE - check on which SIM the number is calling
