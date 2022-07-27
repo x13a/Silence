@@ -24,8 +24,8 @@
     <string name="contacted_call">Appeler</string>
     <string name="contacted_message">Message</string>
     <string name="extra_unknown_numbers">Numéros masqués</string>
-    <string name="extra_sim_1">SIM 1</string>
-    <string name="extra_sim_2">SIM 2</string>
+    <string name="sim_1">SIM 1</string>
+    <string name="sim_2">SIM 2</string>
     <string name="settings">Paramėtres</string>
     <string name="messages_text">Corps</string>
     <string name="messages_inbox">Boîte de réception</string>
@@ -47,8 +47,8 @@
     <string name="extra_unknown_numbers_description">Acceptez les appels de numéros masqués.</string>
     <string name="settings_disallow_call_description">Définit si l\'appel entrant doit être bloqué.</string>
     <string name="settings_skip_notification_description">Définit si une notification d\'appel manqué ne doit pas être affichée pour l\'appel entrant. Cette option ne doit être cochée que si l\'appel est bloqué.</string>
-    <string name="extra_sim_1_description">Autoriser tous les appels depuis la carte SIM 1.</string>
-    <string name="extra_sim_2_description">Autoriser tous les appels depuis la carte SIM 2.</string>
+    <string name="sim_1_description">Autoriser tous les appels depuis la carte SIM 1.</string>
+    <string name="sim_2_description">Autoriser tous les appels depuis la carte SIM 2.</string>
     <string name="main">Accueil</string>
     <string name="repeated_settings_description">Le décompte doit être inférieur au délai en minutes. Étant donné qu\'Android met le résultat en cache, les appels doivent être effectués en dehors de l\'intervalle du cache.</string>
     <string name="settings_reject_call_description">Définit si l\'appel entrant doit être déconnecté comme si l\'utilisateur l\'avait rejeté manuellement. Cette option ne doit être cochée que si l\'appel est bloqué.</string>

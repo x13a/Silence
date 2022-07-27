@@ -22,8 +22,8 @@
     <string name="repeated_minutes">Минут</string>
     <string name="extra_unknown_numbers">Скрытые номера</string>
     <string name="settings_controller">Контроллер</string>
-    <string name="extra_sim_1">SIM 1</string>
-    <string name="extra_sim_2">SIM 2</string>
+    <string name="sim_1">SIM 1</string>
+    <string name="sim_2">SIM 2</string>
     <string name="notification_channel">Заблокированные вызовы</string>
     <string name="notification_title">Вызов заблокирован</string>
     <string name="contacted_call">Звонок</string>
@@ -50,7 +50,7 @@
     <string name="settings_skip_call_log">Пропускать журнал вызовов</string>
     <string name="settings_skip_call_log_description">Устанавливает, должен ли входящий вызов отображаться в журнале вызовов. Вызовы по-прежнему будут регистрироваться с типом BLOCKED_TYPE.</string>
     <string name="settings_skip_notification">Пропускать уведомления</string>
-    <string name="extra_sim_1_description">Разрешить все вызовы для SIM 1.</string>
-    <string name="extra_sim_2_description">Разрешить все вызовы для SIM 2.</string>
+    <string name="sim_1_description">Разрешить все вызовы для SIM 1.</string>
+    <string name="sim_2_description">Разрешить все вызовы для SIM 2.</string>
     <string name="main">Главная</string>
 </resources>

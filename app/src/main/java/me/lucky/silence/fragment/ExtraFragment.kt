@@ -11,8 +11,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 
 import me.lucky.silence.Preferences
-import me.lucky.silence.Sim
-import me.lucky.silence.Utils
 import me.lucky.silence.databinding.FragmentExtraBinding
 
 class ExtraFragment : Fragment() {
@@ -35,21 +33,19 @@ class ExtraFragment : Fragment() {
         ctx = this.requireContext()
         prefs = Preferences(ctx)
         binding.apply {
+            contacts.isChecked = prefs.isContactsChecked
             shortNumbers.isChecked = prefs.isShortNumbersChecked
             unknownNumbers.isChecked = prefs.isUnknownNumbersChecked
             stir.isEnabled = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R
             stir.isChecked = prefs.isStirChecked
-            val enabled = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
-                    Utils.getModemCount(ctx) >= 2
-            sim1.isEnabled = enabled
-            sim2.isEnabled = enabled
-            val opts = prefs.sim
-            sim1.isChecked = opts.and(Sim.SIM_1.value) != 0
-            sim2.isChecked = opts.and(Sim.SIM_2.value) != 0
         }
     }
 
     private fun setup() = binding.apply {
+        contacts.setOnCheckedChangeListener { _, isChecked ->
+            prefs.isContactsChecked = isChecked
+            if (!isChecked) requestContactsPermissions()
+        }
         shortNumbers.setOnCheckedChangeListener { _, isChecked ->
             prefs.isShortNumbersChecked = isChecked
         }
@@ -59,19 +55,11 @@ class ExtraFragment : Fragment() {
         stir.setOnCheckedChangeListener { _, isChecked ->
             prefs.isStirChecked = isChecked
         }
-        sim1.setOnCheckedChangeListener { _, isChecked ->
-            prefs.sim = Utils.setFlag(prefs.sim, Sim.SIM_1.value, isChecked)
-            if (isChecked) requestSimPermissions()
-        }
-        sim2.setOnCheckedChangeListener { _, isChecked ->
-            prefs.sim = Utils.setFlag(prefs.sim, Sim.SIM_2.value, isChecked)
-            if (isChecked) requestSimPermissions()
-        }
     }
 
-    private val registerForSimPermissions =
+    private val registerForContactsPermissions =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) {}
 
-    private fun requestSimPermissions() =
-        registerForSimPermissions.launch(Manifest.permission.READ_PHONE_STATE)
+    private fun requestContactsPermissions() =
+        registerForContactsPermissions.launch(Manifest.permission.READ_CONTACTS)
 }

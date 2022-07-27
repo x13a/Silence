@@ -7,7 +7,7 @@ Optionally allow:
 * Numbers found in messages
 * and more..
 
-If the app rejects calls from contacts on Android 10, allow contacts permission manually in
+If the app rejects calls from contacts on Android 10, allow Contacts permission manually in
 App info → Permissions.
 
 Permissions:
@@ -17,7 +17,7 @@ Permissions:
 * NOTIFICATION_LISTENER - find mobile numbers in incoming messages
 * READ_PHONE_STATE - check on which SIM the number is calling
 * RECEIVE_BOOT_COMPLETED - persist clean expired numbers job across reboots
-* READ_CONTACTS - check the number exists in contacts on Android 10
+* READ_CONTACTS - check the number exists in contacts on Android 10 or block calls from them
 
 It is Free Open Source Software.
 License: GPL-3

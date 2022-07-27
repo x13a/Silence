@@ -60,6 +60,7 @@ open class MainActivity : AppCompatActivity() {
         R.id.nav_groups -> GroupsFragment()
         R.id.nav_repeated -> RepeatedFragment()
         R.id.nav_messages -> MessagesFragment()
+        R.id.nav_sim -> SimFragment()
         R.id.nav_extra -> ExtraFragment()
         else -> MainFragment()
     }

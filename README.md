@@ -21,7 +21,7 @@ Optionally allow:
 * Numbers found in messages
 * and more..
 
-If the app rejects calls from contacts on Android 10, allow contacts permission manually in 
+If the app rejects calls from contacts on Android 10, allow _Contacts_ permission manually in 
 `App info → Permissions`.
 
 <details>
@@ -51,7 +51,7 @@ If the app rejects calls from contacts on Android 10, allow contacts permission 
 * NOTIFICATION_LISTENER - find mobile numbers in incoming messages
 * READ_PHONE_STATE - check on which SIM the number is calling
 * RECEIVE_BOOT_COMPLETED - persist clean expired numbers job across reboots
-* READ_CONTACTS - check the number exists in contacts on Android 10
+* READ_CONTACTS - check the number exists in contacts on Android 10 or block calls from them
 
 ## Localization
 
@@ -61,9 +61,5 @@ Is `Silence` not in your language, or the translation is incorrect or incomplete
 [![Translation status](https://hosted.weblate.org/widgets/me-lucky-silence/-/app/horizontal-auto.svg)](https://hosted.weblate.org/engage/me-lucky-silence/)
 
 ## License
-[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.en.html)  
 
-This application is Free Software: You can use, study share and improve it at your will. 
-Specifically you can redistribute and/or modify it under the terms of the
-[GNU General Public License v3](https://www.gnu.org/licenses/gpl.html) as published by the Free 
-Software Foundation.
+[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.en.html)

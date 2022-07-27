@@ -24,8 +24,8 @@
     <string name="contacted_message">Messaggio</string>
     <string name="groups_local">Locale</string>
     <string name="extra_unknown_numbers">Numeri sconosciuti</string>
-    <string name="extra_sim_1">SIM 1</string>
-    <string name="extra_sim_2">SIM 2</string>
+    <string name="sim_1">SIM 1</string>
+    <string name="sim_2">SIM 2</string>
     <string name="settings">Impostazioni</string>
     <string name="messages_text">Corpo</string>
     <string name="messages_inbox">Posta in arrivo</string>
@@ -40,7 +40,7 @@
     <string name="settings_silence_call_description">Imposta se la suoneria deve essere silenziata per la chiamata in arrivo. La chiamata, tuttavia, verrà comunque inviata all\'app telefono predefinita se non è bloccata. Selezionare questo ha senso solo quando la chiamata è stata consentita.</string>
     <string name="settings_skip_notification_description">Imposta se una notifica di chiamata persa non deve essere visualizzata per la chiamata in arrivo. Dovrebbe essere selezionato solo se la chiamata non è consentita.</string>
     <string name="settings_skip_call_log_description">Imposta se la chiamata in arrivo non deve essere visualizzata nel registro chiamate. Dovrebbe essere selezionato solo se la chiamata non è consentita. Le chiamate verranno comunque registrate con il tipo BLOCKED_TYPE.</string>
-    <string name="extra_sim_2_description">Consenti tutte le chiamate dalla SIM 2.</string>
+    <string name="sim_2_description">Consenti tutte le chiamate dalla SIM 2.</string>
     <string name="contacted_call_description">Consenti chiamate dai numeri che hai chiamato.</string>
     <string name="contacted_message_description">Consenti chiamate dai numeri a cui hai mandato un messaggio.</string>
     <string name="groups_local_description">Consenti chiamate da numeri con lo stesso prefisso internazionale del tuo.</string>
@@ -52,7 +52,7 @@
     <string name="extra_unknown_numbers_description">Consenti chiamate da sconosciuti senza un numero.</string>
     <string name="settings_disallow_call_description">Imposta se la chiamata in arrivo deve essere bloccata.</string>
     <string name="settings_reject_call_description">Imposta se la chiamata in arrivo deve essere disconnessa come se l\'utente l\'avesse rifiutata manualmente. Dovrebbe essere selezionato solo se la chiamata non è consentita.</string>
-    <string name="extra_sim_1_description">Consenti tutte le chiamate dalla SIM 1.</string>
+    <string name="sim_1_description">Consenti tutte le chiamate dalla SIM 1.</string>
     <string name="main">Principale</string>
     <string name="goto_button">Vai</string>
     <string name="messages_text_ttl_hint">tempo</string>

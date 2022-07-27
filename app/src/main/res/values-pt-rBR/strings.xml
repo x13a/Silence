@@ -23,9 +23,9 @@
     <string name="repeated_minutes">Minutos</string>
     <string name="notification_channel">Ligações bloqueadas</string>
     <string name="extra_unknown_numbers">Números desconhecidos</string>
-    <string name="extra_sim_2">SIM 2</string>
+    <string name="sim_2">SIM 2</string>
     <string name="notification_title">Ligação bloqueada</string>
-    <string name="extra_sim_1">SIM 1</string>
+    <string name="sim_1">SIM 1</string>
     <string name="panic_app_dialog_title">Confirmar o app de pânico</string>
     <string name="messages_text">Texto da mensagem</string>
     <string name="messages_inbox">Caixa de entrada</string>

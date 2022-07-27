@@ -1,0 +1,11 @@
+add allow contacts (default: true)
+move sim to its own home
+rework README with new images, thanks to @Ilithy
+update Arabic, French, Turkish, Japanese, Italian translations
+
+Thanks to:
+DJEBBARI.ABDELHAMID
+@Ilithy
+Oğuz Ersen (@ersen0)
+Guillaume BOEHM (@guillaumeboehm)
+Giovanni Donisi (@gdonisi + @giovannidonisi)

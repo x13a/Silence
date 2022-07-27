@@ -18,10 +18,10 @@
     <string name="panic_app_unknown_app">Nieznana aplikacja</string>
     <string name="panic_app_dialog_title">Potwierdź aplikację przeciwko-napadową</string>
     <string name="settings">Ustawienia</string>
-    <string name="extra_sim_2">Karta SIM 2</string>
+    <string name="sim_2">Karta SIM 2</string>
     <string name="messages_inbox">Skszynka</string>
     <string name="contacted_message">Wiadomość</string>
-    <string name="extra_sim_1">Karta SIM 1</string>
+    <string name="sim_1">Karta SIM 1</string>
     <string name="contacted_call">Telefon</string>
     <string name="messages_text">Treść</string>
     <string name="notification_title">Połączenie zablokowane</string>
@@ -38,8 +38,8 @@
     <string name="settings_reject_call_description">Określa, czy połączenie przychodzące powinno zostać rozłączone tak, jakby użytkownik odrzucił je ręcznie. To powinno być zaznaczone tylko jeżeli połączenie nie jest dozwolone.</string>
     <string name="settings_skip_notification">Pomiń powiadomienie</string>
     <string name="settings_skip_notification_description">Określa, czy powiadomienie o nieodebranym połączeniu nie powinno być wyświetlane dla połączenia przychodzącego. To powinno być włączone tylko wtedy, gdy połączenie jest odrzucone.</string>
-    <string name="extra_sim_1_description">Zezwalaj na wszystkie połączenia z karty SIM 1.</string>
-    <string name="extra_sim_2_description">Zezwalaj na wszystkie połączenia z karty SIM 2.</string>
+    <string name="sim_1_description">Zezwalaj na wszystkie połączenia z karty SIM 1.</string>
+    <string name="sim_2_description">Zezwalaj na wszystkie połączenia z karty SIM 2.</string>
     <string name="goto_button">IDŹ</string>
     <string name="messages_text_description">Tymczasowo zezwalaj na połączenia od numerów telefonów komórkowych znalezionych w treści wiadomości przychodzących.</string>
     <string name="settings_silence_call">Wycisz połączenie</string>

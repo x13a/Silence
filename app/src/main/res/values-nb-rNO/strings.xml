@@ -19,8 +19,8 @@
     <string name="notification_channel">Blokkerte anrop</string>
     <string name="messages_text">Brødtekst</string>
     <string name="messages_inbox">Innboks</string>
-    <string name="extra_sim_2">SIM 2</string>
-    <string name="extra_sim_1">SIM 1</string>
+    <string name="sim_2">SIM 2</string>
+    <string name="sim_1">SIM 1</string>
     <string name="repeated_minutes">Minutter</string>
     <string name="extra_unknown_numbers">Ukjente nummer</string>
     <string name="groups_local">Lokalt</string>
