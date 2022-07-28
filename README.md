@@ -4,7 +4,7 @@
 
 <p align="center">
 <img 
-    src="https://raw.githubusercontent.com/x13a/Silence/master/data/presentation.png">
+    src="data/presentation.png">
 </p>
 
 [<img 
@@ -29,16 +29,16 @@ If the app rejects calls from contacts on Android 10, allow _Contacts_ permissio
 
 <p align="center">
 <img 
-    src="https://raw.githubusercontent.com/x13a/Silence/master/data/contacted.png" 
+    src="data/contacted.png" 
     height="400"> 
 <img 
-    src="https://raw.githubusercontent.com/x13a/Silence/master/data/groups.png" 
+    src="data/groups.png" 
     height="400"> 
 <img 
-    src="https://raw.githubusercontent.com/x13a/Silence/master/data/repeated.png" 
+    src="data/repeated.png" 
     height="400"> 
 <img 
-    src="https://raw.githubusercontent.com/x13a/Silence/master/data/messages.png" 
+    src="data/messages.png" 
     height="400">
 </p>
 </details>
