@@ -55,10 +55,9 @@ If the app rejects calls from contacts on Android 10, allow _Contacts_ permissio
 
 ## Localization
 
-Is `Silence` not in your language, or the translation is incorrect or incomplete? Get involved on 
-[Weblate](https://hosted.weblate.org/engage/me-lucky-silence/).
-
-[![Translation status](https://hosted.weblate.org/widgets/me-lucky-silence/-/app/horizontal-auto.svg)](https://hosted.weblate.org/engage/me-lucky-silence/)
+[<img 
+    src="https://hosted.weblate.org/widgets/me-lucky-silence/-/app/287x66-grey.png" 
+    alt="Weblate">](https://hosted.weblate.org/engage/me-lucky-silence/)
 
 ## License
 
