@@ -65,4 +65,7 @@
     <string name="extra_short_numbers_description">السماح بالمكالمات من أرقام يتراوح طولها من 3 إلى 5 أرقام.</string>
     <string name="groups_local_mobile">محلي ومحمول</string>
     <string name="groups_local_mobile_description">السماح بالمكالمات من أرقام الهواتف المحمولة التي تحمل نفس رمز البلد الخاص بك.</string>
+    <string name="sim">شريحة اتصال</string>
+    <string name="extra_contacts_description">السماح بالمكالمات من الأرقام في جهات الاتصال الخاصة بك.</string>
+    <string name="extra_contacts">جهات الاتصال</string>
 </resources>
