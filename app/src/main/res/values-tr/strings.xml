@@ -65,4 +65,7 @@
     <string name="extra_short_numbers_description">3 ila 5 basamaklı numaralardan gelen aramalara izin ver.</string>
     <string name="groups_local_mobile_description">Sizinle aynı ülke koduna sahip cep telefonu numaralarından gelen aramalara izin ver.</string>
     <string name="groups_local_mobile">Yerel ve Cep Telefonu</string>
+    <string name="sim">SIM</string>
+    <string name="extra_contacts_description">Kişilerinizdeki numaralardan gelen aramalara izin ver.</string>
+    <string name="extra_contacts">Kişiler</string>
 </resources>
