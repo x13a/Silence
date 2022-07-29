@@ -1,0 +1,11 @@
+ajout de l'autorisation d'appel par les contacts (activé par défaut)
+déplacement des options SIM dans une section dédiée
+README retravailler avec de nouvelles images, merci à @Ilithy
+mise à jour des traductions arabe, française, turc, japonaise, italienne
+
+Merci à :
+DJEBBARI.ABDELHAMID
+@Ilithy
+Oğuz Ersen (@ersen0)
+Guillaume BOEHM (@guillaumeboehm)
+Giovanni Donissi (@gdonisi + @giovannidonisi)
