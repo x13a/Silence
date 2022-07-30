@@ -20,7 +20,7 @@ class CallScreeningHelper(private val ctx: Context) {
 
     fun check(number: Phonenumber.PhoneNumber): Boolean {
         return (
-            checkContacts(number) ||
+            (prefs.isContactsChecked && checkContacts(number)) ||
             (prefs.isContactedChecked && checkContacted(number)) ||
             (prefs.isGroupsChecked && checkGroups(number)) ||
             (prefs.isRepeatedChecked && checkRepeated(number)) ||

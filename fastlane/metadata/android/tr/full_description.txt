@@ -8,7 +8,7 @@ Varsayılan olarak rehberinizde kayıtlı olmayan numaralar engellenir.
 * STIR onaylamasını başarıyla geçmiş olan numaralar. (Android 11)
 
 Eğer uygualama Android 10'da rehberinizde kayıtlı olan numaralardan gelen çağrıları engelliyor ise,
-Uygulama Bilgileri → İzinler yolunu izleyerek elle rehbere erişim izni vermeyi deneyin.
+Uygulama Bilgileri → İzinler yolunu izleyerek elle kişilerinize erişim izni vermeyi deneyin.
 
 Uygulama İzinleri:
 * CALL_SCREENING - Çağrıyı engeller ya da izin verir.
@@ -17,7 +17,7 @@ Uygulama İzinleri:
 * NOTIFICATION_LISTENER - Gelen mesajlardan telefon numaralarını bulur.
 * READ_PHONE_STATE - numaranın hangi SIM'di aradığını denetler.
 * RECEIVE_BOOT_COMPLETED - Yeniden başlatmalar sırasında ektin olmayan numaraları temizler.
-* READ_CONTACTS - Android 10'da ilgili numaraların rehberinizde var olup olmadığını denetler.
+* READ_CONTACTS - Android 10'da ilgili numaraların rehberinizde var olup olmadığını denetler veya onlardan gelen aramaları engeller.
 
 Bu Özgür ve Açık Kaynak Kodlu bir yazılımdır.
 Lisans: GPL-3

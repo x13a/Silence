@@ -28,6 +28,10 @@
             android:title="@string/messages_main" />
 
         <item
+            android:id="@+id/nav_sim"
+            android:title="@string/sim" />
+
+        <item
             android:id="@+id/nav_extra"
             android:title="@string/extra" />
 

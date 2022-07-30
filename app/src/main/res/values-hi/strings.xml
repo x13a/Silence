@@ -10,14 +10,14 @@
     <string name="groups_local">स्थानीय</string>
     <string name="repeated_minutes">मिनट</string>
     <string name="extra_unknown_numbers">अनजान नंबरें</string>
-    <string name="extra_sim_2">सिम 2</string>
+    <string name="sim_2">सिम 2</string>
     <string name="notification_title">अवरोधित कॉल</string>
     <string name="groups_toll_free">टोल फ्री</string>
     <string name="groups_main">समूहें</string>
     <string name="groups_description">चयनित किए गए समूहों के नंबर।</string>
     <string name="messages_main">संदेशें</string>
     <string name="panic_app_unknown_app">एक अनजान ऐप</string>
-    <string name="extra_sim_1">सिम 1</string>
+    <string name="sim_1">सिम 1</string>
     <string name="contacted_message">संदेशें</string>
     <string name="messages_description">संदेशों में से नंबरें।</string>
     <string name="repeated_count">गिनती</string>

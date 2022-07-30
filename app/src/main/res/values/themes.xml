@@ -12,6 +12,6 @@
     </style>
 
     <style name="Theme.Silence.ToggleButton" parent="Theme.Silence">
-        <item name="colorAccent">@color/green</item>
+        <item name="colorAccent">@color/green_500</item>
     </style>
 </resources>

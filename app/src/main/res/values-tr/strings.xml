@@ -24,8 +24,8 @@
     <string name="app_name">Silence</string>
     <string name="messages_description">Mesajlardaki numaralardan gelen aramalara izin ver.</string>
     <string name="panic_app_dialog_message">%1$s\'in yıkıcı panik eylemlerini tetiklemesine izin vermek istediğinize emin misiniz\?</string>
-    <string name="extra_sim_1">SIM 1</string>
-    <string name="extra_sim_2">SIM 2</string>
+    <string name="sim_1">SIM 1</string>
+    <string name="sim_2">SIM 2</string>
     <string name="settings">Ayarlar</string>
     <string name="messages_text">Gövde</string>
     <string name="messages_inbox">Gelen kutusu</string>
@@ -47,8 +47,8 @@
     <string name="settings_reject_call_description">Gelen aramanın, kullanıcı elle yapmış gibi reddedilip edilmeyeceğini ayarlar. Bu yalnızca aramaya izin verilmediğinde işaretlenmelidir.</string>
     <string name="settings_skip_call_log_description">Gelen aramanın arama günlüğünde görüntülenmemesi gerekip gerekmediğini ayarlar. Bu yalnızca aramaya izin verilmiyorsa işaretlenmelidir. Aramalar yine de BLOCKED_TYPE türüyle kaydedilecektir.</string>
     <string name="settings_skip_notification_description">Gelen arama için bir cevapsız arama bildiriminin gösterilmemesi gerekip gerekmediğini ayarlar. Bu yalnızca aramaya izin verilmiyorsa işaretlenmelidir.</string>
-    <string name="extra_sim_1_description">SIM 1\'den gelen tüm aramalara izin ver.</string>
-    <string name="extra_sim_2_description">SIM 2\'den gelen tüm aramalara izin ver.</string>
+    <string name="sim_1_description">SIM 1\'den gelen tüm aramalara izin ver.</string>
+    <string name="sim_2_description">SIM 2\'den gelen tüm aramalara izin ver.</string>
     <string name="main">Ana</string>
     <string name="messages_text_description">Gelen mesajlar metninde bulunan cep telefonu numaralarından gelen aramalara geçici olarak izin ver.</string>
     <string name="settings_controller_description">Genel yayın alıcısının Silence\'ı intent\'lerle denetlemesini etkinleştirir.</string>
@@ -63,4 +63,9 @@
     <string name="groups_mobile_description">Cep telefonu numaralarından gelen aramalara izin ver.</string>
     <string name="extra">Ek</string>
     <string name="extra_short_numbers_description">3 ila 5 basamaklı numaralardan gelen aramalara izin ver.</string>
+    <string name="groups_local_mobile_description">Sizinle aynı ülke koduna sahip cep telefonu numaralarından gelen aramalara izin ver.</string>
+    <string name="groups_local_mobile">Yerel ve Cep Telefonu</string>
+    <string name="sim">SIM</string>
+    <string name="extra_contacts_description">Kişilerinizdeki numaralardan gelen aramalara izin ver.</string>
+    <string name="extra_contacts">Kişiler</string>
 </resources>
