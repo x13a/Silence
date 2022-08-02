@@ -2,26 +2,22 @@ Por padrão, os números que não estão em seus contatos são bloqueados.
 
 Opcionalmente pode permitir:
 * Números que você contactou
-* Números dentro de grupos selecionados (Gratuito, Local)
-* N ligação registrada do mesmo número dentro de T minutos.
-* Números de mensagens
-* Números que passam a verificação STIR (Android 11)
-
-Contatados, Grupos, Repetidos, Mensagens e alteração geral têm configurações adicionais. Você pode
-abri-las via clique longo.
+* Números dentro de um grupo selecionado
+* X ligações registradas do mesmo número dentro de alguns minutos.
+* Números nas mensagens
+* e mais..
 
 Se o app recusar ligações de contatos no Android 10, conceda a permissão para contatos manualmente em
-Info do App → Permissões.
+Info do app → Permissões.
 
 Permissões:
 * CALL_SCREENING - bloqueia ou permite as ligações
-* READ_CALL_LOG - verifica se você ligou um número e calcula quantas vezes o número ligou você
-em T minutos
-* READ_SMS - verifica se você enviou e recebeu uma uma mensagem do número
-* RECEIVE_SMS - encontra os números em mensagens recebidas
+* READ_CALL_LOG - verifica se você ligou um número e calcula quantas vezes o número ligou você em X minutos
+* READ_SMS - verifica se você enviou e recebeu uma mensagem do número
+* NOTIFICATION_LISTENER - encontra os números nas mensagens recebidas
 * READ_PHONE_STATE - verifica para qual SIM um número está ligando
 * RECEIVE_BOOT_COMPLETED - faça limpeza persistente de números inativos ao reiniciar
-* READ_CONTACTS - verifica se o número existe em contatos no Android 10
+* READ_CONTACTS - verifica se o número existe em contatos no Android 10 ou bloqueia ligações deles
 
-App de Software Livre e Código Aberto.
+App é de Software Livre.
 Licença: GPL-3
