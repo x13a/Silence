@@ -67,4 +67,5 @@
     <string name="extra_contacts">Contacts</string>
     <string name="sim">SIM</string>
     <string name="extra_contacts_description">Autoriser les appels provenant de numéros de téléphone présents dans vos contacts.</string>
+    <string name="goto_button">ALLER À</string>
 </resources>
