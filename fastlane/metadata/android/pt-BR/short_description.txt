@@ -1,1 +1,1 @@
-Bloqueio de números desconhecidos
+Bloqueia números desconhecidos
