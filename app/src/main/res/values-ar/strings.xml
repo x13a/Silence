@@ -57,7 +57,7 @@
     <string name="messages_text_ttl_hint">زمن</string>
     <string name="messages_text_ttl_helper_text">كم من الوقت سيتمكن الرقم من الاتصال بك. المعدلات: [d]ays [h] ours [m]inutes</string>
     <string name="messages_text_ttl_error">7أيام / 48ساعة/ 120 دقيقة</string>
-    <string name="extra">إضافي</string>
+    <string name="extra">خصائص إضافية</string>
     <string name="extra_short_numbers">أرقام قصيرة</string>
     <string name="goto_button">اذهب إلى</string>
     <string name="groups_mobile">جوال</string>
