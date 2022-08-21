@@ -11,7 +11,7 @@ class Preferences(ctx: Context) {
         private const val REPEATED_CHECKED = "repeated_checked"
         private const val MESSAGES_CHECKED = "messages_checked"
         private const val GROUPS_CHECKED = "groups_checked"
-        private const val STIR_CHECKED = "stir_checked"
+        private const val BLOCK_ENABLED = "block_enabled"
 
         private const val CONTACTED = "contacted"
         private const val GROUPS = "groups"
@@ -24,7 +24,9 @@ class Preferences(ctx: Context) {
         private const val UNKNOWN_NUMBERS_CHECKED = "unknown_numbers_checked"
         private const val SHORT_NUMBERS_CHECKED = "short_numbers_checked"
         private const val CONTACTS_CHECKED = "contacts_checked"
+        private const val STIR_CHECKED = "stir_checked"
         private const val SIM = "sim"
+        private const val BLOCK_PLUS_NUMBERS = "block_plus_numbers"
 
         private const val DEFAULT_REPEATED_COUNT = 3
         private const val DEFAULT_REPEATED_MINUTES = 5
@@ -110,6 +112,14 @@ class Preferences(ctx: Context) {
     var sim: Int
         get() = prefs.getInt(SIM, 0)
         set(value) = prefs.edit { putInt(SIM, value) }
+
+    var isBlockPlusNumbers: Boolean
+        get() = prefs.getBoolean(BLOCK_PLUS_NUMBERS, false)
+        set(value) = prefs.edit { putBoolean(BLOCK_PLUS_NUMBERS, value) }
+
+    var isBlockEnabled: Boolean
+        get() = prefs.getBoolean(BLOCK_ENABLED, false)
+        set(value) = prefs.edit { putBoolean(BLOCK_ENABLED, value) }
 }
 
 enum class Contact(val value: Int) {

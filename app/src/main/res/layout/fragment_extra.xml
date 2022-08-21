@@ -72,6 +72,25 @@
                 android:layout_marginVertical="5dp" />
 
             <CheckBox
+                android:id="@+id/plusNumbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:text="@string/extra_plus_numbers"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/extra_plus_numbers_description"
+                android:textAppearance="?attr/textAppearanceBodySmall" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp" />
+
+            <CheckBox
                 android:id="@+id/stir"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -1,0 +1,11 @@
+add block mode
+add option to block numbers starting with a plus
+update Japanese, Arabic, Turkish, French, Italian, Portuguese Brazil translations
+
+Thanks to:
+Guillaume BOEHM (@guillaumeboehm)
+DJEBBARI.ABDELHAMID (@dxing96)
+Oğuz Ersen (@ersen0)
+Nathanaël Gagnepain (@Ilithy)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+mezysinc

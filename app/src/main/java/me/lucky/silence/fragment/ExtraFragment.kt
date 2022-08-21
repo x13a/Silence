@@ -36,6 +36,7 @@ class ExtraFragment : Fragment() {
             contacts.isChecked = prefs.isContactsChecked
             shortNumbers.isChecked = prefs.isShortNumbersChecked
             unknownNumbers.isChecked = prefs.isUnknownNumbersChecked
+            plusNumbers.isChecked = prefs.isBlockPlusNumbers
             stir.isEnabled = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R
             stir.isChecked = prefs.isStirChecked
         }
@@ -51,6 +52,9 @@ class ExtraFragment : Fragment() {
         }
         unknownNumbers.setOnCheckedChangeListener { _, isChecked ->
             prefs.isUnknownNumbersChecked = isChecked
+        }
+        plusNumbers.setOnCheckedChangeListener { _, isChecked ->
+            prefs.isBlockPlusNumbers = isChecked
         }
         stir.setOnCheckedChangeListener { _, isChecked ->
             prefs.isStirChecked = isChecked

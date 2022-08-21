@@ -8,11 +8,12 @@ import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
 import androidx.annotation.RequiresApi
 import androidx.core.text.isDigitsOnly
+import kotlin.properties.Delegates
+
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
 import me.lucky.silence.*
-import kotlin.properties.Delegates
 
 class CallScreeningService : CallScreeningService() {
     private lateinit var prefs: Preferences
@@ -41,16 +42,24 @@ class CallScreeningService : CallScreeningService() {
         if (!prefs.isEnabled) {
             respondAllow(callDetails)
             return
-        } else if (checkEmergency(callDetails)) {
+        } else if (isEmergency(callDetails)) {
             prefs.isEnabled = false
             Utils.setMessagesTextEnabled(this, false)
             respondAllow(callDetails)
             return
+        } else if (callDetails.callDirection != Call.Details.DIRECTION_INCOMING) {
+            respondAllow(callDetails)
+            return
         } else if (
-            callDetails.callDirection != Call.Details.DIRECTION_INCOMING ||
-            (prefs.isStirChecked && checkStir(callDetails)) ||
-            (prefs.isUnknownNumbersChecked && checkUnknownNumber(callDetails)) ||
-            (prefs.isShortNumbersChecked && checkShortNumber(callDetails)) ||
+            prefs.isBlockEnabled ||
+            (prefs.isBlockPlusNumbers && isPlusNumber(callDetails))
+        ) {
+            respondNotAllow(callDetails)
+            return
+        } else if (
+            (prefs.isStirChecked && isStirVerified(callDetails)) ||
+            (prefs.isUnknownNumbersChecked && isUnknownNumber(callDetails)) ||
+            (prefs.isShortNumbersChecked && isShortNumber(callDetails)) ||
             checkSim()
         ) {
             respondAllow(callDetails)
@@ -94,15 +103,12 @@ class CallScreeningService : CallScreeningService() {
         if (isNotify && disallowCall) notificationManager.notifyBlockedCall(tel)
     }
 
-    private fun checkStir(callDetails: Call.Details): Boolean {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            return callDetails.callerNumberVerificationStatus ==
-                    Connection.VERIFICATION_STATUS_PASSED
-        }
-        return false
-    }
+    private fun isStirVerified(callDetails: Call.Details) =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
+            callDetails.callerNumberVerificationStatus == Connection.VERIFICATION_STATUS_PASSED
+        else false
 
-    private fun checkEmergency(callDetails: Call.Details) =
+    private fun isEmergency(callDetails: Call.Details) =
         callDetails.hasProperty(Call.Details.PROPERTY_EMERGENCY_CALLBACK_MODE) ||
         callDetails.hasProperty(Call.Details.PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL) ||
         telephonyManager
@@ -126,11 +132,15 @@ class CallScreeningService : CallScreeningService() {
         } catch (exc: SecurityException) { false }
     }
 
-    private fun checkUnknownNumber(callDetails: Call.Details) =
+    private fun isUnknownNumber(callDetails: Call.Details) =
         callDetails.handle?.schemeSpecificPart == null
 
-    private fun checkShortNumber(callDetails: Call.Details): Boolean {
-        val v = callDetails.handle?.schemeSpecificPart?.trimStart('+') ?: return false
+    private fun isShortNumber(callDetails: Call.Details): Boolean {
+        var v = callDetails.handle?.schemeSpecificPart ?: return false
+        if (v.startsWith('+')) v = v.drop(1)
         return v.length in 3..5 && v.isDigitsOnly()
     }
+
+    private fun isPlusNumber(callDetails: Call.Details) =
+        callDetails.handle?.schemeSpecificPart?.startsWith('+') ?: false
 }

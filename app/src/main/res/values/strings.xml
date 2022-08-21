@@ -33,6 +33,8 @@
     <string name="messages_text_ttl_hint">time</string>
     <string name="messages_text_ttl_helper_text">How much time the number will be able to call you. Modifiers: [d]ays [h]ours [m]inutes</string>
     <string name="messages_text_ttl_error">7d / 48h / 120m</string>
+    <string name="block_main">Block</string>
+    <string name="block_description">Block all incoming calls. To block numbers from contacts too you have to give a permission.</string>
     <string name="sim">SIM</string>
     <string name="sim_1">SIM 1</string>
     <string name="sim_1_description">Allow all calls from SIM 1.</string>
@@ -45,6 +47,8 @@
     <string name="extra_unknown_numbers_description">Allow calls from strangers without a number.</string>
     <string name="extra_short_numbers">Short numbers</string>
     <string name="extra_short_numbers_description">Allow calls from numbers with length from 3 up to 5 digits.</string>
+    <string name="extra_plus_numbers">Plus numbers</string>
+    <string name="extra_plus_numbers_description">Block calls from numbers starting with a plus.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
     <string name="extra_stir_description">Allow calls from numbers passing STIR verification.</string>
     <string name="settings">Settings</string>

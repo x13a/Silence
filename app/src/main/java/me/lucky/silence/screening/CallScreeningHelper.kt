@@ -193,13 +193,12 @@ class CallScreeningHelper(private val ctx: Context) {
         return result
     }
 
-    private fun makeContentUri(base: Uri, number: Phonenumber.PhoneNumber): Uri {
-        return Uri.withAppendedPath(
+    private fun makeContentUri(base: Uri, number: Phonenumber.PhoneNumber) =
+        Uri.withAppendedPath(
             base,
             Uri.encode(phoneNumberUtil.format(
                 number,
                 PhoneNumberUtil.PhoneNumberFormat.E164,
             )),
         )
-    }
 }

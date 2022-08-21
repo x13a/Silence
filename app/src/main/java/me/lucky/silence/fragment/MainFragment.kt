@@ -46,6 +46,7 @@ class MainFragment : Fragment() {
             groups.isChecked = prefs.isGroupsChecked
             repeated.isChecked = prefs.isRepeatedChecked
             messages.isChecked = prefs.isMessagesChecked
+            block.isChecked = prefs.isBlockEnabled
         }
     }
 
@@ -67,6 +68,9 @@ class MainFragment : Fragment() {
             prefs.isMessagesChecked = isChecked
             if (isChecked) requestMessagesPermissions()
             Utils.updateMessagesTextEnabled(ctx)
+        }
+        block.setOnCheckedChangeListener { _, isChecked ->
+            prefs.isBlockEnabled = isChecked
         }
         toggle.setOnCheckedChangeListener { _, isChecked ->
             prefs.isEnabled = isChecked

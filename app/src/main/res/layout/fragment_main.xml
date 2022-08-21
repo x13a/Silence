@@ -90,6 +90,30 @@
                     android:text="@string/messages_description"
                     android:textAppearance="?attr/textAppearanceBodySmall" />
 
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="?android:attr/listDivider" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/block"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/block_main"
+                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/block_description"
+                    android:textAppearance="?attr/textAppearanceBodySmall" />
+
             </LinearLayout>
         </ScrollView>
 
