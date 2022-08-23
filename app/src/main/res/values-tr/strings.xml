@@ -39,7 +39,7 @@
     <string name="contacted_call_description">Aradığınız numaralardan gelen aramalara izin ver.</string>
     <string name="contacted_message_description">Mesaj gönderdiğiniz numaralardan gelen aramalara izin ver.</string>
     <string name="groups_local_description">Sizinle aynı ülke koduna sahip numaralardan gelen aramalara izin ver.</string>
-    <string name="groups_not_local_description">Sizin ülke kodunuzla aynı olmayan numaralardan gelen aramalara izin ver.</string>
+    <string name="groups_not_local_description">Sizinkinden farklı ülke kodlarına sahip numaralardan gelen aramalara izin ver.</string>
     <string name="groups_toll_free_description">Ücretsiz numaralardan (örneğin 800) gelen aramalara izin ver.</string>
     <string name="repeated_settings_description">Sayının dakikadan daha düşük olması gerekir. Android sonucu önbelleğe aldığından, aramaların önbellek aralığının dışında olması gerekir.</string>
     <string name="messages_inbox_description">Size mesaj gönderen numaralardan gelen aramalara izin ver.</string>
@@ -68,4 +68,8 @@
     <string name="sim">SIM</string>
     <string name="extra_contacts_description">Kişilerinizdeki numaralardan gelen aramalara izin ver.</string>
     <string name="extra_contacts">Kişiler</string>
+    <string name="block_main">Engelle</string>
+    <string name="extra_plus_numbers_description">Artı ile başlayan numaralardan gelen aramaları engelle.</string>
+    <string name="extra_plus_numbers">Artılı numaralar</string>
+    <string name="block_description">Tüm gelen aramaları engelle. Rehberdeki numaraları da engellemek için izin vermeniz gerekir.</string>
 </resources>

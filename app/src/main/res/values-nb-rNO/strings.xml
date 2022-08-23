@@ -31,4 +31,26 @@
     <string name="contacted_message">Melding</string>
     <string name="settings_controller">Kontrollør</string>
     <string name="groups_not_local">Ikke lokal</string>
+    <string name="block_main">Blokker</string>
+    <string name="extra_contacts_description">Tillat anrop fra nummer i kontaktlisten din.</string>
+    <string name="extra_short_numbers">Korte nummer</string>
+    <string name="extra_plus_numbers_description">Blokker anrop fra nummer som starter med pluss-tegn.</string>
+    <string name="contacted_message_description">Tillat anrop fra nummer du har sendt en melding.</string>
+    <string name="groups_not_local_description">Tillat anrop fra nummer som ikke har samme landskode som deg selv.</string>
+    <string name="groups_toll_free_description">Tillat anrop fra gratisnummer (f.eks. 800).</string>
+    <string name="block_description">Blokker alle innkommende anrop. For å blokkere nummer fra kontakter også må du innvilge tilgang.</string>
+    <string name="sim">SIM</string>
+    <string name="sim_1_description">Tillat alle anrop fra SIM 1.</string>
+    <string name="sim_2_description">Tillat alle anrop fra SIM 2.</string>
+    <string name="extra_short_numbers_description">Tillat anrop med nummer på 3 til 5 siffer.</string>
+    <string name="extra_contacts">Kontakter</string>
+    <string name="extra_plus_numbers">Pluss-numre</string>
+    <string name="settings_skip_notification">Hopp over merknad</string>
+    <string name="groups_mobile_description">Tillat anrop fra mobilnummer.</string>
+    <string name="extra_unknown_numbers_description">Tillat anrop fra ukjente uten et nummer.</string>
+    <string name="extra">Ekstra</string>
+    <string name="contacted_call_description">Tillat anrop fra nummer du har ringt.</string>
+    <string name="groups_local_description">Tillat anrop fra nummer med samme landskode som deg selv.</string>
+    <string name="settings_skip_call_log">Hopp over anropslogg</string>
+    <string name="messages_text_ttl_hint">tid</string>
 </resources>
