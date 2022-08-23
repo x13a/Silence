@@ -1,0 +1,11 @@
+blok modu eklendi
+artı ile başlayan numaraları engelleme seçeneği eklendi
+Japonca, Arapça, Türkçe, Fransızca, İtalyanca, Portekizce (Brezilya) çeviriler güncellendi
+
+Teşekkürler:
+Guillaume BOEHM (@guillaumeboehm)
+DJEBBARI.ABDELHAMID (@dxing96)
+Oğuz Ersen (@ersen0)
+Nathanaël Gagnepain (@Ilithy)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+mezysinc
