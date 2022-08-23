@@ -68,4 +68,8 @@
     <string name="sim">SIM</string>
     <string name="extra_contacts_description">連絡先に登録されている番号からの電話を許可する。</string>
     <string name="extra_contacts">連絡先</string>
+    <string name="block_main">塞ぐ</string>
+    <string name="extra_plus_numbers_description">プラスから始まる番号からの電話を塞ぐ。</string>
+    <string name="block_description">全てを塞ぐ。連絡先に登録されている番号を塞ぐために権限の許可が必要です。</string>
+    <string name="extra_plus_numbers">プラス番号</string>
 </resources>

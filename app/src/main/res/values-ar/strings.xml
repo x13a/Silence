@@ -33,7 +33,7 @@
     <string name="contacted_message_description">السماح بالمكالمات من الأرقام التي أرسلت لها رسالة.</string>
     <string name="groups_local_description">السماح بالمكالمات من أرقام تحمل نفس رمز البلد الخاص بك.</string>
     <string name="groups_not_local">غير محلي</string>
-    <string name="groups_not_local_description">السماح بالمكالمات من أرقام لا تحمل نفس رمز البلد الخاص بك.</string>
+    <string name="groups_not_local_description">السماح بالمكالمات من أرقام مختلفة عن رمز البلد الخاص بك.</string>
     <string name="groups_toll_free_description">السماح بالمكالمات من الأرقام المجانية (مثل 800).</string>
     <string name="messages_inbox_description">السماح بالمكالمات من الأرقام التي أرسلت إليك رسالة.</string>
     <string name="settings_disallow_call">رفض المكالمة</string>
@@ -68,4 +68,8 @@
     <string name="sim">شريحة اتصال</string>
     <string name="extra_contacts_description">السماح بالمكالمات من الأرقام في جهات الاتصال الخاصة بك.</string>
     <string name="extra_contacts">جهات الاتصال</string>
+    <string name="block_main">منع</string>
+    <string name="extra_plus_numbers">أرقام زائدة</string>
+    <string name="extra_plus_numbers_description">حظر المكالمات من الأرقام التي تبدأ بعلامة زائد.</string>
+    <string name="block_description">حظر جميع المكالمات الواردة. لحظر الأرقام أيضا من جهات الاتصال ، يجب عليك منح إذن.</string>
 </resources>

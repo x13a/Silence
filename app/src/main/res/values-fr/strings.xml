@@ -36,13 +36,13 @@
     <string name="settings_silence_call">Silencer l\'appel</string>
     <string name="settings_skip_call_log">Ignorer le journal des appels</string>
     <string name="settings_skip_notification">Ignorer la notification</string>
-    <string name="contacted_call_description">Autorisez les appels provenant de numéros que vous avez appelés.</string>
-    <string name="contacted_message_description">Autoriser les appels des numéros auxquels vous avez envoyé un message.</string>
+    <string name="contacted_call_description">Autoriser les appels provenant de numéros que vous avez appelés.</string>
+    <string name="contacted_message_description">Autoriser les appels de numéros auxquels vous avez envoyé un message.</string>
     <string name="groups_local_description">Autoriser les appels provenant de numéros de téléphone ayant le même indicatif que le vôtre.</string>
-    <string name="groups_not_local_description">Autorisez les appels provenant de numéros de téléphone dont l\'indicatif est différent du vôtre.</string>
+    <string name="groups_not_local_description">Autorisez les appels provenant de numéros de téléphone dont l\'indicatif diffèrent du vôtre.</string>
     <string name="groups_toll_free_description">Autoriser les appels provenant de numéros sans frais (ex : 800).</string>
     <string name="messages_inbox_description">Autorisez les appels provenant de numéros qui vous ont fait parvenir un message.</string>
-    <string name="messages_text_description">Autoriser temporairement les appels provenant de numéros mobiles trouvés dans le texte des messages entrants.</string>
+    <string name="messages_text_description">Autoriser temporairement les appels provenant de numéros cellulaires trouvés dans le texte des messages entrants.</string>
     <string name="settings_controller_description">Permet au récepteur de diffusion de contrôler Silence avec des intentions.</string>
     <string name="extra_unknown_numbers_description">Acceptez les appels de numéros masqués.</string>
     <string name="settings_disallow_call_description">Définit si l\'appel entrant doit être bloqué.</string>
@@ -60,12 +60,16 @@
     <string name="extra">Supplément</string>
     <string name="extra_short_numbers">Numéros courts</string>
     <string name="groups_mobile">Cellulaire</string>
-    <string name="groups_mobile_description">Autoriser la reception d\'appels depuis des numéros de téléphone mobiles.</string>
+    <string name="groups_mobile_description">Autoriser la reception d\'appels depuis des numéros de téléphone cellulaire.</string>
     <string name="extra_short_numbers_description">Autoriser les appels provenant de numéros de 3 à 5 chiffres.</string>
-    <string name="groups_local_mobile_description">Autorisez les appels provenant de numéros de téléphones mobiles ayant le même indicatif que le vôtre.</string>
+    <string name="groups_local_mobile_description">Autorisez les appels provenant de numéros de téléphones cellulaires ayant le même indicatif que le vôtre.</string>
     <string name="groups_local_mobile">Cellulaire Local</string>
     <string name="extra_contacts">Contacts</string>
     <string name="sim">SIM</string>
     <string name="extra_contacts_description">Autoriser les appels provenant de numéros de téléphone présents dans vos contacts.</string>
     <string name="goto_button">ALLER À</string>
+    <string name="extra_plus_numbers">Numéro Plus</string>
+    <string name="extra_plus_numbers_description">Bloquez les appels provenant de numéros commençant par un plus (+).</string>
+    <string name="block_main">Barrage</string>
+    <string name="block_description">Bloquer tous les appels entrants. Pour bloquer également les numéros des contacts, vous devez en accorder l\'autorisation.</string>
 </resources>

@@ -6,13 +6,13 @@
     <string name="contacted_call">Call</string>
     <string name="contacted_call_description">Allow calls from numbers you have called.</string>
     <string name="contacted_message">Message</string>
-    <string name="contacted_message_description">Allow calls from numbers you have send a message.</string>
+    <string name="contacted_message_description">Allow calls from numbers you have sent a message to.</string>
     <string name="groups_main">Groups</string>
     <string name="groups_description">Allow calls from numbers within the selected groups.</string>
     <string name="groups_local">Local</string>
     <string name="groups_local_description">Allow calls from numbers with the same country code as your.</string>
     <string name="groups_not_local">Not local</string>
-    <string name="groups_not_local_description">Allow calls from numbers with not the same country code as your.</string>
+    <string name="groups_not_local_description">Allow calls from numbers with country codes different from yours.</string>
     <string name="groups_toll_free">Toll-Free</string>
     <string name="groups_toll_free_description">Allow calls from Toll-Free numbers (ex 800).</string>
     <string name="groups_mobile">Mobile</string>
@@ -34,7 +34,7 @@
     <string name="messages_text_ttl_helper_text">How much time the number will be able to call you. Modifiers: [d]ays [h]ours [m]inutes</string>
     <string name="messages_text_ttl_error">7d / 48h / 120m</string>
     <string name="block_main">Block</string>
-    <string name="block_description">Block all incoming calls. To block numbers from contacts too you have to give a permission.</string>
+    <string name="block_description">Block all incoming calls. To also block numbers from contacts you have to grant a permission.</string>
     <string name="sim">SIM</string>
     <string name="sim_1">SIM 1</string>
     <string name="sim_1_description">Allow all calls from SIM 1.</string>
