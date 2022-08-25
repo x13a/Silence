@@ -21,7 +21,7 @@ chiamato in T minuti
 * RECEIVE_SMS - trova i numeri di cellulare nei messaggi in arrivo
 * READ_PHONE_STATE - controlla su quale SIM sta chiamando il numero
 * RECEIVE_BOOT_COMPLETED - continua il lavoro di pulizia dei numeri inattivi tra i riavvii
-* READ_CONTACTS - controlla che il numero esista nei contatti su Android 10
+* READ_CONTACTS - controlla che il numero esista nei contatti su Android 10 o blocca le chiamate da loro
 
 È un software open source gratuito.
 Licenza: GPL-3
