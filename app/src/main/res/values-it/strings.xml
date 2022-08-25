@@ -68,4 +68,8 @@
     <string name="sim">SIM</string>
     <string name="extra_contacts">Contatti</string>
     <string name="extra_contacts_description">Consenti chiamate dai numeri nei tuoi contatti.</string>
+    <string name="block_main">Blocca</string>
+    <string name="extra_plus_numbers">Numeri più</string>
+    <string name="extra_plus_numbers_description">Blocca le chiamate da numeri che iniziano con un più.</string>
+    <string name="block_description">Blocca tutte le chiamate in arrivo. Per bloccare anche i numeri dai contatti devi concedere un\'autorizzazione.</string>
 </resources>
