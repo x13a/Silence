@@ -53,4 +53,23 @@
     <string name="groups_local_description">Tillat anrop fra nummer med samme landskode som deg selv.</string>
     <string name="settings_skip_call_log">Hopp over anropslogg</string>
     <string name="messages_text_ttl_hint">tid</string>
+    <string name="messages_text_ttl_error">7d / 48t / 120m</string>
+    <string name="settings_disallow_call">Blokker anrop</string>
+    <string name="settings_controller_description">Skru på kringkastingsmottager for å kontrollere Silence med intensjoner.</string>
+    <string name="settings_silence_call">Forstum anrop</string>
+    <string name="groups_mobile">Mobiltelefon</string>
+    <string name="messages_text_description">Tillat anrop fra mobilnummer som har sendt deg meldinger midlertidig.</string>
+    <string name="goto_button">GÅTIL</string>
+    <string name="settings_skip_notification_description">Velger hvorvidt en merknad om et tapt anrop ikke skal vises for innkommende anrop. Dette skal kun velges hvis anropet ikke tillates.</string>
+    <string name="settings_reject_call">Avslå anrop</string>
+    <string name="settings_silence_call_description">Velger hvorvidt ringing skal forstummes for innkommende anrop. Samtalen vil dog sendes til forvalgt ringeprogram hvis det ikke er blokkert. Å velge dette gir kun mening når samtalen ikke har blitt valgt som ikke tillatt.</string>
+    <string name="settings_skip_call_log_description">Velger hvorvidt innkommende anrop skal vises i anropsloggen. Dette skal kun velges hvis anropet ikke tillates. Anrop vil fremdeles bli logget med type «BLOCKED_TYPE».</string>
+    <string name="main">Start</string>
+    <string name="groups_local_mobile">Fasttelefon og mobiltelefon</string>
+    <string name="messages_text_ttl_helper_text">Hvor lenge nummeret vil kunne ringe deg. Modifikatorer: [d]ager [h]timer [m]inutter.</string>
+    <string name="groups_local_mobile_description">Tillat anrop fra mobilnummer fra samme landskode som din.</string>
+    <string name="repeated_settings_description">Opptelling som må være mindre enn antall minutter. Siden Android hurtiglagrer resutlater må anrop være utenfor hurtiglagringsintervallen.</string>
+    <string name="messages_inbox_description">Tillat anrop fra nummer som har sendt deg en tekstmelding.</string>
+    <string name="settings_reject_call_description">Setter hvorvidt innkommende anrop skal kobles fra som om brukeren har lagt på røret manuelt. Dette skal kun velges hvis anropet ikke tillates.</string>
+    <string name="settings_disallow_call_description">Velger hvorvidt innkommende anrop skal blokkeres.</string>
 </resources>
