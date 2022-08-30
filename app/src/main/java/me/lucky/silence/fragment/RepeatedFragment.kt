@@ -33,19 +33,19 @@ class RepeatedFragment : Fragment() {
         binding.apply {
             count.editText?.setText(prefs.repeatedCount.toString())
             minutes.editText?.setText(prefs.repeatedMinutes.toString())
+            burstTimeout.editText?.setText(prefs.repeatedBurstTimeout.toString())
         }
     }
 
     private fun setup() = binding.apply {
         count.editText?.doAfterTextChanged {
-            try {
-                prefs.repeatedCount = it?.toString()?.toInt() ?: return@doAfterTextChanged
-            } catch (exc: NumberFormatException) {}
+            prefs.repeatedCount = it?.toString()?.toIntOrNull() ?: return@doAfterTextChanged
         }
         minutes.editText?.doAfterTextChanged {
-            try {
-                prefs.repeatedMinutes = it?.toString()?.toInt() ?: return@doAfterTextChanged
-            } catch (exc: NumberFormatException) {}
+            prefs.repeatedMinutes = it?.toString()?.toIntOrNull() ?: return@doAfterTextChanged
+        }
+        burstTimeout.editText?.doAfterTextChanged {
+            prefs.repeatedBurstTimeout = it?.toString()?.toIntOrNull() ?: return@doAfterTextChanged
         }
     }
 }

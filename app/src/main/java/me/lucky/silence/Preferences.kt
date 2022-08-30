@@ -17,6 +17,7 @@ class Preferences(ctx: Context) {
         private const val GROUPS = "groups"
         private const val REPEATED_COUNT = "repeated_count"
         private const val REPEATED_MINUTES = "repeated_minutes"
+        private const val REPEATED_BURST_TIMEOUT = "repeated_burst_timeout"
         private const val MESSAGES = "messages"
         private const val MESSAGES_TEXT_TTL = "messages_text_ttl"
 
@@ -70,6 +71,10 @@ class Preferences(ctx: Context) {
     var repeatedMinutes: Int
         get() = prefs.getInt(REPEATED_MINUTES, DEFAULT_REPEATED_MINUTES)
         set(value) = prefs.edit { putInt(REPEATED_MINUTES, value) }
+
+    var repeatedBurstTimeout: Int
+        get() = prefs.getInt(REPEATED_BURST_TIMEOUT, 0)
+        set(value) = prefs.edit { putInt(REPEATED_BURST_TIMEOUT, value) }
 
     var isMessagesChecked: Boolean
         get() = prefs.getBoolean(MESSAGES_CHECKED, false)

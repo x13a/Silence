@@ -1,0 +1,10 @@
+add repeated burst protection
+update Arabic, Turkish, French, Japanese, English, Norwegian Bokmål, Italian translations
+
+Thanks to:
+DJEBBARI.ABDELHAMID (@dxing96)
+Oğuz Ersen (@ersen0)
+Nathanaël Gagnepain (@Ilithy)
+Guillaume BOEHM (@guillaumeboehm)
+Allan Nordhøy (@comradekingu)
+Giovanni Donisi (@gdonisi + @giovannidonisi)

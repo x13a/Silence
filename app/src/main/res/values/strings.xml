@@ -24,6 +24,8 @@
     <string name="repeated_count">Count</string>
     <string name="repeated_minutes">Minutes</string>
     <string name="repeated_settings_description">Count has to be lower than minutes. Because Android caches the result, calls have to be out of the cache interval.</string>
+    <string name="repeated_burst_timeout_hint">Timeout</string>
+    <string name="repeated_burst_timeout_helper_text">Minimal timeout in seconds between repeated calls.</string>
     <string name="messages_main">Messages</string>
     <string name="messages_description">Allow calls from numbers found in messages.</string>
     <string name="messages_inbox">Inbox</string>

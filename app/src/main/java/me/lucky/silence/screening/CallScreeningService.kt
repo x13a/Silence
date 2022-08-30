@@ -75,7 +75,7 @@ class CallScreeningService : CallScreeningService() {
             respondNotAllow(callDetails)
             return
         }
-        if (callScreeningHelper.check(number)) respondAllow(callDetails)
+        if (callScreeningHelper.check(number, callDetails)) respondAllow(callDetails)
         else respondNotAllow(callDetails)
     }
 

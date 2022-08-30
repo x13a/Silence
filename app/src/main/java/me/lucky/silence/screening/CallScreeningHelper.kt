@@ -6,6 +6,7 @@ import android.net.Uri
 import android.provider.CallLog
 import android.provider.ContactsContract
 import android.provider.Telephony
+import android.telecom.Call
 import android.telephony.TelephonyManager
 
 import com.google.i18n.phonenumbers.PhoneNumberUtil
@@ -18,12 +19,12 @@ class CallScreeningHelper(private val ctx: Context) {
     private val phoneNumberUtil = PhoneNumberUtil.getInstance()
     private val db = AppDatabase.getInstance(ctx).allowNumberDao()
 
-    fun check(number: Phonenumber.PhoneNumber): Boolean {
+    fun check(number: Phonenumber.PhoneNumber, callDetails: Call.Details): Boolean {
         return (
             (prefs.isContactsChecked && checkContacts(number)) ||
             (prefs.isContactedChecked && checkContacted(number)) ||
             (prefs.isGroupsChecked && checkGroups(number)) ||
-            (prefs.isRepeatedChecked && checkRepeated(number)) ||
+            (prefs.isRepeatedChecked && checkRepeated(number, callDetails)) ||
             (prefs.isMessagesChecked && checkMessages(number))
         )
     }
@@ -54,7 +55,7 @@ class CallScreeningHelper(private val ctx: Context) {
             )
         } catch (exc: SecurityException) {}
         cursor?.apply {
-            if (moveToFirst()) { result = true }
+            if (moveToFirst()) result = true
             close()
         }
         return result
@@ -76,7 +77,7 @@ class CallScreeningHelper(private val ctx: Context) {
             )
         } catch (exc: SecurityException) {}
         cursor?.apply {
-            if (moveToFirst()) { result = true }
+            if (moveToFirst()) result = true
             close()
         }
         return result
@@ -104,23 +105,37 @@ class CallScreeningHelper(private val ctx: Context) {
         return result
     }
 
-    private fun checkRepeated(number: Phonenumber.PhoneNumber): Boolean {
+    private fun checkRepeated(number: Phonenumber.PhoneNumber, callDetails: Call.Details): Boolean {
         val cursor: Cursor?
         try {
             cursor = ctx.contentResolver.query(
                 makeContentUri(CallLog.Calls.CONTENT_FILTER_URI, number),
-                arrayOf(CallLog.Calls._ID),
+                arrayOf(CallLog.Calls._ID, CallLog.Calls.DATE),
                 "${CallLog.Calls.TYPE} = ? AND ${CallLog.Calls.DATE} > ?",
                 arrayOf(
                     CallLog.Calls.BLOCKED_TYPE.toString(),
                     (System.currentTimeMillis() - prefs.repeatedMinutes * 60 * 1000).toString(),
                 ),
-                null,
+                CallLog.Calls.DEFAULT_SORT_ORDER,
             )
         } catch (exc: SecurityException) { return false }
         var result = false
         cursor?.apply {
-            if (count >= prefs.repeatedCount - 1) { result = true }
+            val i: Int
+            val burstTimeout = prefs.repeatedBurstTimeout * 1000L
+            if (burstTimeout == 0L) {
+                i = count
+            } else {
+                var j = 0
+                var tm = callDetails.creationTimeMillis
+                while (moveToNext()) {
+                    val date = getLong(getColumnIndexOrThrow(CallLog.Calls.DATE))
+                    if (tm - date >= burstTimeout) j++
+                    tm = date
+                }
+                i = j
+            }
+            if (i >= prefs.repeatedCount - 1) result = true
             close()
         }
         return result
@@ -157,7 +172,7 @@ class CallScreeningHelper(private val ctx: Context) {
             )
         } catch (exc: SecurityException) {}
         cursor?.apply {
-            if (moveToFirst()) { result = true }
+            if (moveToFirst()) result = true
             close()
         }
         return result
@@ -187,7 +202,7 @@ class CallScreeningHelper(private val ctx: Context) {
         } catch (exc: SecurityException) { return false }
         var result = false
         cursor?.apply {
-            if (moveToFirst()) { result = true }
+            if (moveToFirst()) result = true
             close()
         }
         return result

@@ -11,8 +11,8 @@ android {
         applicationId "me.lucky.silence"
         minSdk 29
         targetSdk 32
-        versionCode 49
-        versionName "1.11.5"
+        versionCode 50
+        versionName "1.11.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
