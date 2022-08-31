@@ -43,6 +43,9 @@ If the app rejects calls from contacts on Android 10, allow _Contacts_ permissio
 <img 
     src="data/sim.png" 
     height="400"> 
+<img 
+    src="data/extra.png" 
+    height="400"> 
 </p>
 </details>
 
