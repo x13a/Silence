@@ -122,6 +122,7 @@ class CallScreeningHelper(private val ctx: Context) {
         var result = false
         cursor?.apply {
             val i: Int
+            val required = prefs.repeatedCount - 1
             val burstTimeout = prefs.repeatedBurstTimeout * 1000L
             if (burstTimeout == 0L) {
                 i = count
@@ -130,12 +131,15 @@ class CallScreeningHelper(private val ctx: Context) {
                 var tm = callDetails.creationTimeMillis
                 while (moveToNext()) {
                     val date = getLong(getColumnIndexOrThrow(CallLog.Calls.DATE))
-                    if (tm - date >= burstTimeout) j++
+                    if (tm - date >= burstTimeout) {
+                        j++
+                        if (j >= required) break
+                    }
                     tm = date
                 }
                 i = j
             }
-            if (i >= prefs.repeatedCount - 1) result = true
+            if (i >= required) result = true
             close()
         }
         return result
