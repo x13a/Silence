@@ -4,7 +4,7 @@
 
 <p align="center">
 <img 
-    src="data/">
+    src="data/presentation.png">
 </p>
 
 [<img 
