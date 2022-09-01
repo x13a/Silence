@@ -72,4 +72,6 @@
     <string name="extra_plus_numbers_description">Artı ile başlayan numaralardan gelen aramaları engelle.</string>
     <string name="extra_plus_numbers">Artılı numaralar</string>
     <string name="block_description">Tüm gelen aramaları engelle. Rehberdeki numaraları da engellemek için izin vermeniz gerekir.</string>
+    <string name="repeated_burst_timeout_hint">Zaman aşımı</string>
+    <string name="repeated_burst_timeout_helper_text">Tekrarlanan aramalar arasında saniye cinsinden asgari zaman aşımı.</string>
 </resources>

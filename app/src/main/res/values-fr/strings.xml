@@ -72,4 +72,6 @@
     <string name="extra_plus_numbers_description">Bloquez les appels provenant de numéros commençant par un plus (+).</string>
     <string name="block_main">Barrage</string>
     <string name="block_description">Bloquer tous les appels entrants. Pour bloquer également les numéros des contacts, vous devez en accorder l\'autorisation.</string>
+    <string name="repeated_burst_timeout_hint">Temporisation</string>
+    <string name="repeated_burst_timeout_helper_text">Temporisation minimale en secondes entre les appels répétés.</string>
 </resources>
