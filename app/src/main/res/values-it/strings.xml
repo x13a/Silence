@@ -72,4 +72,6 @@
     <string name="extra_plus_numbers">Numeri più</string>
     <string name="extra_plus_numbers_description">Blocca le chiamate da numeri che iniziano con un più.</string>
     <string name="block_description">Blocca tutte le chiamate in arrivo. Per bloccare anche i numeri dai contatti devi concedere un\'autorizzazione.</string>
+    <string name="repeated_burst_timeout_hint">Timeout</string>
+    <string name="repeated_burst_timeout_helper_text">Timeout minimo in secondi tra chiamate ripetute.</string>
 </resources>
