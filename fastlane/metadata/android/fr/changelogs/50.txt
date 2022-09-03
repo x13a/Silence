@@ -1,0 +1,10 @@
+ajout d'une protection contre les appels répétées 
+mise à jour des traductions en arabe, turc, français, japonais, anglais, bokmål norvégien et italien 
+
+Grâce à : 
+DJEBBARI.ABDELHAMID (@dxing96) 
+Oğuz Ersen (@ersen0) 
+Nathanaël Gagnepain (@Ilithy) 
+Guillaume BOEHM (@guillaumeboehm) 
+Allan Nordhøy (@comradekingu) 
+Giovanni Donisi (@gdonisi + @giovannidonisi)
