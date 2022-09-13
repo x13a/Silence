@@ -1,11 +1,23 @@
-Por defecto, los números que no están en su lista de contactos serán bloqueados.
+Por defecto se bloquean los números que no están en sus contactos.
 
-Opcionalmente se puede permitir:
-* Números a los que has llamado
-* Números con grupos de código seleccionados (por ejemplo: 800 o 0800).
-* N llamadas registradas desde el mismo número en un plazo de T minutos
-* Temporalmente los números de móvil de los mensajes de texto entrantes
-* Números que han aprobado la comprobación STIR (Android 11)
+Opcionalmente se permite:
+* Números con los que ha contactado
+* Números dentro de los grupos seleccionados
+* X llamadas registradas desde el mismo número en un periodo de tiempo determinado
+* Números encontrados en los mensajes
+* y más..
 
-Si la aplicación rechaza las llamadas de los contactos en Android 10, habilite manualmente el
-permiso de los contactos en Información de la aplicación → Permisos.
+Si la aplicación rechaza las llamadas de los contactos en Android 10, permita el permiso de Contactos manualmente en
+Información de la aplicación → Permisos.
+
+Permisos:
+* CALL_SCREENING - bloquear o permitir la llamada
+* READ_CALL_LOG - comprueba que has llamado al número y cuenta las veces que el número te ha llamado en X minutos
+* READ_SMS - comprueba que has enviado un mensaje al número y que has recibido un mensaje del número
+* NOTIFICATION_LISTENER - encuentra los números de móvil en los mensajes entrantes
+* READ_PHONE_STATE - comprueba en qué SIM está llamando el número
+* RECEIVE_BOOT_COMPLETED - persiste el trabajo de limpieza de números expirados a través de los reinicios
+* READ_CONTACTS - comprueba que el número existe en los contactos en Android 10 o bloquea las llamadas de ellos
+
+Es un software libre de código abierto.
+Licencia: GPL-3

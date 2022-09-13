@@ -1,0 +1,13 @@
+cambiar la rellamada a contactado
+añadir subconjuntos de códigos
+añadir subconjuntos repetidos
+añadir auto-desactivación de la llamada de emergencia
+añadir la comprobación del número de sms saliente en contactado (¡nuevo permiso!)
+actualizar traducciones, gracias a:
+    @wmdarg ,
+    Allan Nordhøy (@comradekingu) ,
+    J. Lavoie (Edanas) ,
+    Maxime Leroy (@Lisapple) ,
+
+Gracias a todas las personas que participan en este proyecto.
+¡Feliz Año Nuevo!
