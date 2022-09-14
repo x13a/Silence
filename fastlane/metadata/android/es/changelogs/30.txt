@@ -1,0 +1,1 @@
+corregir la rutina de detección de llamadas realizadas
