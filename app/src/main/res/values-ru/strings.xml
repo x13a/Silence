@@ -53,4 +53,20 @@
     <string name="sim_1_description">Разрешить все вызовы для SIM 1.</string>
     <string name="sim_2_description">Разрешить все вызовы для SIM 2.</string>
     <string name="main">Главная</string>
+    <string name="extra_contacts">Контакты</string>
+    <string name="extra_contacts_description">Разрешить звонки с номеров в контактах.</string>
+    <string name="extra_plus_numbers">Международные номера</string>
+    <string name="sim">Сим-карта</string>
+    <string name="repeated_burst_timeout_helper_text">Минимальный Тайм-аут, в секундах, между повторение звонока.</string>
+    <string name="groups_mobile">Мобильные</string>
+    <string name="groups_mobile_description">Разрешить звонки с мобильных номеров.</string>
+    <string name="extra">Дополнительный</string>
+    <string name="extra_short_numbers">Короткие номеры</string>
+    <string name="messages_text_ttl_hint">Время</string>
+    <string name="groups_local_mobile">Домашные и мобильные</string>
+    <string name="groups_local_mobile_description">Разрешить звонки с мобильных номеров с таким кодом страны как вашего.</string>
+    <string name="block_main">Блокирование</string>
+    <string name="repeated_burst_timeout_hint">Тайм-аут</string>
+    <string name="extra_short_numbers_description">Разрешить звонки с номеров с 3 до 5 цифрами.</string>
+    <string name="extra_plus_numbers_description">Блокировать звонки с номеров начинаемых с \'+\'.</string>
 </resources>
