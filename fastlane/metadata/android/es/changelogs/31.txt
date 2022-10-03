@@ -1,3 +1,2 @@
-limpieza de la persistencia del trabajo a través de los reinicios (android.permission.RECEIVE_BOOT_COMPLETED)  
-mejoras en el código  
-actualización de las traducciones, gracias a Allan Nordhøy (@comradekingu)
+limpieza de la persistencia del trabajo a través de los reinicios (android.permission.RECEIVE_BOOT_COMPLETED) mejoras en el código. 
+Actualización de las traducciones, gracias a Allan Nordhøy (@comradekingu)
