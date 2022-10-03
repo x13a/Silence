@@ -60,7 +60,7 @@
     <string name="settings">Ajustes</string>
     <string name="main">Principal</string>
     <string name="extra_plus_numbers_description">Bloquea llamadas de números de teléfonos que comienzan con más.</string>
-    <string name="settings_disallow_call_description">Configure cuando se debe bloquear la llamada entrante.</string>
+    <string name="settings_disallow_call_description">Establece si se debe bloquear la llamada entrante.</string>
     <string name="settings_reject_call_description">Establece si la llamada entrante debe desconectarse como si el usuario la hubiera rechazado manualmente. Esto solo debe verificarse si la llamada no está permitida.</string>
     <string name="settings_silence_call">Silenciar llamada</string>
     <string name="settings_silence_call_description">Establece si se debe silenciar el timbre para la llamada entrante. Sin embargo, la llamada se seguirá enviando a la aplicación de marcación predeterminada si no está bloqueada. Seleccionar esto solo tiene sentido cuando la llamada no ha sido rechazada.</string>
@@ -69,7 +69,7 @@
     <string name="settings_skip_notification_description">Establece si no se debe mostrar una notificación de llamada perdida para la llamada entrante. Esto solo debe verificarse si la llamada no está permitida.</string>
     <string name="notification_title">Llamada bloqueada</string>
     <string name="settings_controller">Controlador</string>
-    <string name="settings_disallow_call">Bloquear llamada</string>
+    <string name="settings_disallow_call">Bloquear la llamada</string>
     <string name="settings_reject_call">Llamada rechazada</string>
     <string name="notification_channel">Llamadas bloqueadas</string>
     <string name="settings_skip_notification">Omitir notificación</string>
