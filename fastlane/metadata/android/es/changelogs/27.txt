@@ -1,8 +1,7 @@
-cambiar la dependencia de WorkManager a JobScheduler, ahora todos los permisos "nuevos" deben eliminarse 
- actualizar las traducciones, gracias a: 
- @wmdarg,  
-Maxime Leroy (@Lisapple),  
-@badlop,  
-J. Lavoie (Edanas)  
- Este no es un lanzamiento planeado. Los subconjuntos no están implementados.  
+Cambiar la dependencia de WorkManager a JobScheduler, ahora todos los permisos "nuevos" deben eliminarse  actualizar las traducciones, gracias a: 
+@wmdarg, 
+Maxime Leroy (@Lisapple), 
+@badlop, 
+J. Lavoie (Edanas) 
+Este no es un lanzamiento planeado. Los subconjuntos no están implementados. 
 Algunas descripciones de configuraciones del futuro. Algunos serán cambiados.
