@@ -1,0 +1,11 @@
+Kontakte hinzufügen (Standard: true)
+Sim in sein eigenes Home verschieben
+README mit neuen Bildern überarbeitet, Dank an @Ilithy
+Arabische, französische, türkische, japanische und italienische Übersetzungen aktualisiert
+
+Dank an:
+DJEBBARI.ABDELHAMID
+@Ilithy
+Oğuz Ersen (@ersen0)
+Guillaume BOEHM (@guillaumeboehm)
+Giovanni Donisi (@gdonisi + @giovannidonisi)

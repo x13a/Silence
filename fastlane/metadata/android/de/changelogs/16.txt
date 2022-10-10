@@ -1,0 +1,1 @@
+Fix Ablehnung von Kontakten auf Android 10, dank ua Sad, @norrinr

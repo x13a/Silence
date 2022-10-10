@@ -1,0 +1,11 @@
+lokale mobile Gruppe hinzufügen
+Schaltflächenstatus auf Material3 sichtbar machen, Dank an Guillaume BOEHM (@guillaumeboehm) &amp; @Ilithy
+Persische Übersetzung hinzugefügt, danke an @Special-N9NE
+Aktualisierung der Übersetzungen für Arabisch, Türkisch, Japanisch, Italienisch und Französisch
+
+Dank an:
+DJEBBARI.ABDELHAMID
+Oğuz Ersen (@ersen0)
+Guillaume BOEHM (@guillaumeboehm)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+@Ilithy
