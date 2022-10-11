@@ -1,0 +1,11 @@
+Hinzufügen von Nachrichten Text ttl
+einige Korrekturen
+Aktualisierung der Übersetzungen für Arabisch, Türkisch, Deutsch, Französisch, Polnisch und Englisch
+
+Dank an:
+Allan Nordhøy (@comradekingu)
+DJEBBARI.ABDELHAMID
+@Ilithy
+Jean-Luc Tibaux (@eUgEntOptIc44)
+Oğuz Ersen (@ersen0)
+@RealShadowFury
