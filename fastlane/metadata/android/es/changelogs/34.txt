@@ -1,0 +1,4 @@
+añadir ajustes adicionales a la descripción, gracias a uasad
+añadir traducción al ucraniano, gracias a Andrij Mizyk (@andmizyk)
+actualizar la traducción al francés, gracias a J. Lavoie (Edanas)
+añadir la solución de weblate para las cadenas de caracteres
