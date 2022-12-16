@@ -42,21 +42,38 @@ class CallScreeningService : CallScreeningService() {
         if (!prefs.isEnabled) {
             respondAllow(callDetails)
             return
-        } else if (isEmergency(callDetails)) {
-            prefs.isEnabled = false
+        }
+
+        if (isEmergency(callDetails)) {
             Utils.setMessagesTextEnabled(this, false)
             respondAllow(callDetails)
             return
-        } else if (callDetails.callDirection != Call.Details.DIRECTION_INCOMING) {
+        }
+
+        if (callDetails.callDirection != Call.Details.DIRECTION_INCOMING) {
             respondAllow(callDetails)
             return
-        } else if (
+        }
+
+        if (
             prefs.isBlockEnabled ||
             (prefs.isBlockPlusNumbers && isPlusNumber(callDetails))
         ) {
             respondNotAllow(callDetails)
             return
-        } else if (
+        }
+
+        if (
+            !prefs.regexPattern.isNullOrBlank() && matchesBlockRegex(
+                callDetails,
+                prefs.regexPattern!!.toRegex()
+            )
+        ) {
+            respondNotAllow(callDetails)
+            return
+        }
+
+        if (
             (prefs.isStirChecked && isStirVerified(callDetails)) ||
             (prefs.isUnknownNumbersChecked && isUnknownNumber(callDetails)) ||
             (prefs.isShortNumbersChecked && isShortNumber(callDetails)) ||
@@ -65,6 +82,7 @@ class CallScreeningService : CallScreeningService() {
             respondAllow(callDetails)
             return
         }
+
         val number: Phonenumber.PhoneNumber
         try {
             number = phoneNumberUtil.parse(
@@ -143,4 +161,9 @@ class CallScreeningService : CallScreeningService() {
 
     private fun isPlusNumber(callDetails: Call.Details) =
         callDetails.handle?.schemeSpecificPart?.startsWith('+') ?: false
+
+    private fun matchesBlockRegex(callDetails: Call.Details, pattern: Regex): Boolean {
+        var phoneNumber = callDetails.handle?.schemeSpecificPart ?: return false
+        return pattern.matchEntire(phoneNumber) != null
+    }
 }

@@ -19,6 +19,9 @@
     <string name="groups_mobile_description">Allow calls from mobile numbers.</string>
     <string name="groups_local_mobile">Local &amp; Mobile</string>
     <string name="groups_local_mobile_description">Allow calls from mobile numbers with the same country code as your.</string>
+    <string name="groups_match_regex">Block By Pattern</string>
+    <string name="groups_match_regex_hint">Pattern matching whole phone number</string>
+    <string name="groups_match_regex_description">Block phone number matching regular expression.</string>
     <string name="repeated_main">Repeated</string>
     <string name="repeated_description">Allow X registered call(s) from the same number within a set amount of minutes.</string>
     <string name="repeated_count">Count</string>
