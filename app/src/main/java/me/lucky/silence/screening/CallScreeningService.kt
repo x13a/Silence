@@ -164,6 +164,7 @@ class CallScreeningService : CallScreeningService() {
 
     private fun matchesBlockRegex(callDetails: Call.Details, pattern: Regex): Boolean {
         var phoneNumber = callDetails.handle?.schemeSpecificPart ?: return false
-        return pattern.matchEntire(phoneNumber) != null
+        val retval = pattern.matchEntire(phoneNumber) != null
+        return retval
     }
 }

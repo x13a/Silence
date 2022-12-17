@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 
 import me.lucky.silence.Group
@@ -38,7 +40,7 @@ class GroupsFragment : Fragment() {
             tollFree.isChecked = value.and(Group.TOLL_FREE.value) != 0
             mobile.isChecked = value.and(Group.MOBILE.value) != 0
             localMobile.isChecked = value.and(Group.LOCAL_MOBILE.value) != 0
-            regex.editText?.setText(prefs.regexPattern)
+            txtLayoutRegex.editText?.setText(prefs.regexPattern)
         }
     }
 
@@ -58,6 +60,31 @@ class GroupsFragment : Fragment() {
         localMobile.setOnCheckedChangeListener { _, isChecked ->
             prefs.groups = Utils.setFlag(prefs.groups, Group.LOCAL_MOBILE.value, isChecked)
         }
-        regex.editText?.setText(prefs.regexPattern)
+
+        txtLayoutRegex.editText?.doAfterTextChanged {
+            val txt = it?.toString()
+            if(isBlockRegexValid(txt)) {
+                prefs.regexPattern = txt
+                txtLayoutRegex.error = ""
+            }
+            else {
+                txtLayoutRegex.error = "Invalid regex!"
+            }
+
+            return@doAfterTextChanged
+        }
+    }
+
+    private fun isBlockRegexValid(pattern: String?): Boolean {
+        if (pattern.isNullOrBlank())  return true
+
+        try {
+            pattern.toRegex()
+        }
+        catch(ex: java.util.regex.PatternSyntaxException) {
+            //Toast.makeText(this.ctx, ex.message, Toast.LENGTH_LONG).show()
+            return false
+        }
+        return true
     }
 }
