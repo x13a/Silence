@@ -49,8 +49,8 @@ class CallScreeningHelper(private val ctx: Context) {
             cursor = ctx.contentResolver.query(
                 makeContentUri(CallLog.Calls.CONTENT_FILTER_URI, number),
                 arrayOf(CallLog.Calls._ID),
-                "${CallLog.Calls.TYPE} = ?",
-                arrayOf(CallLog.Calls.OUTGOING_TYPE.toString()),
+                "${CallLog.Calls.TYPE} = ${CallLog.Calls.OUTGOING_TYPE}",
+                null,
                 null,
             )
         } catch (exc: SecurityException) {}
@@ -68,11 +68,11 @@ class CallScreeningHelper(private val ctx: Context) {
             cursor = ctx.contentResolver.query(
                 Telephony.Sms.Sent.CONTENT_URI,
                 arrayOf(Telephony.Sms._ID),
-                "${Telephony.Sms.ADDRESS} = ?",
-                arrayOf(phoneNumberUtil.format(
+                "${Telephony.Sms.ADDRESS} = " + phoneNumberUtil.format(
                     number,
                     PhoneNumberUtil.PhoneNumberFormat.E164,
-                )),
+                ),
+                arrayOf(),
                 null,
             )
         } catch (exc: SecurityException) {}
@@ -111,11 +111,9 @@ class CallScreeningHelper(private val ctx: Context) {
             cursor = ctx.contentResolver.query(
                 makeContentUri(CallLog.Calls.CONTENT_FILTER_URI, number),
                 arrayOf(CallLog.Calls._ID, CallLog.Calls.DATE),
-                "${CallLog.Calls.TYPE} = ? AND ${CallLog.Calls.DATE} > ?",
-                arrayOf(
-                    CallLog.Calls.BLOCKED_TYPE.toString(),
-                    (System.currentTimeMillis() - prefs.repeatedMinutes * 60 * 1000).toString(),
-                ),
+                "${CallLog.Calls.TYPE} = ${CallLog.Calls.BLOCKED_TYPE} AND ${CallLog.Calls.DATE} > " +
+                        (System.currentTimeMillis() - prefs.repeatedMinutes * 60 * 1000).toString(),
+                null,
                 CallLog.Calls.DEFAULT_SORT_ORDER,
             )
         } catch (exc: SecurityException) { return false }
@@ -167,11 +165,11 @@ class CallScreeningHelper(private val ctx: Context) {
             cursor = ctx.contentResolver.query(
                 Telephony.Sms.Inbox.CONTENT_URI,
                 arrayOf(Telephony.Sms._ID),
-                "${Telephony.Sms.ADDRESS} = ?",
-                arrayOf(phoneNumberUtil.format(
+                "${Telephony.Sms.ADDRESS} = " + phoneNumberUtil.format(
                     number,
                     PhoneNumberUtil.PhoneNumberFormat.E164,
-                )),
+                ),
+                null,
                 null,
             )
         } catch (exc: SecurityException) {}
