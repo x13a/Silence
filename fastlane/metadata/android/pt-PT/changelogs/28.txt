@@ -1,0 +1,13 @@
+alterada a chamada de retorno para contactado
+adicionas as sub-configurações de código
+adicionas as sub-configurações repetidas
+adicionada a desativação automática para chamadas de emergência
+adicionada a verificação de número para SMS de saída em contactados (nova permissão!)
+atualização de traduções, obrigado:
+    @wmdarg ,
+    Allan Nordhøy (@comradekingu) ,
+    J. Lavoie (Edanas) ,
+    Maxime Leroy (@Lisapple) ,
+
+Obrigado a todas as pessoas que contribuíram neste projeto.
+Feliz Ano Novo!

@@ -1,0 +1,11 @@
+añadir grupo móvil local
+hacer que el estado del botón de alternar sea visible en material3, gracias a Guillaume BOEHM (@guillaumeboehm) y @Ilithy
+agregar traducción al persa, gracias a @Special-N9NE
+actualizar las traducciones al árabe, turco, japonés, italiano y francés
+
+Gracias a:
+DJEBBARI, ABDELHAMID
+Oguz Ersen (@ersen0)
+Guillaume BOEHM (@guillaumeboehm)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+@Ilithy

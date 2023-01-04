@@ -1,0 +1,9 @@
+alterada a dependência de WorkManager para JobScheduler, agora todas as "novas" permissões têm que ser removidas
+atualização de traduções, obrigado:
+    @wmdarg ,
+    Maxime Leroy (@Lisapple) ,
+    @badlop ,
+    J. Lavoie (Edanas)
+
+Isto não é um lançamento planeado. As sub-configurações não foram implementadas.
+Algumas futuras descrições de configurações. Algumas serão alteradas.

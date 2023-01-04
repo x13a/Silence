@@ -1,0 +1,1 @@
+corrigida a rejeição de contratos no Android 10, obrigado ua Sad, @norrinr

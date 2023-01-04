@@ -1,0 +1,10 @@
+adicionar proteção contra explosão repetida
+atualizadas as traduções em árabe, turco, francês, japonês, inglês, bokmål norueguês, italiano
+
+Graças a:
+DJEBBARI.ABDELHAMID (@dxing96)
+Oğuz Ersen (@ersen0)
+Nathanaël Gagnepain (@Ilithy)
+Guillaume BOEHM (@guillaumeboehm)
+Allan Nordhøy (@comradekingu)
+Giovanni Donisi (@gdonisi + @giovannidonisi)

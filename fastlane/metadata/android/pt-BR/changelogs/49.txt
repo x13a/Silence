@@ -1,0 +1,11 @@
+adicionar modo de bloqueio
+adicionar opção para bloquear números começando com um sinal de mais
+atualizadas as traduções para japonês, árabe, turco, francês, italiano, português do Brasil
+
+Graças a:
+Guillaume BOEHM (@guillaumeboehm)
+DJEBBARI.ABDELHAMID (@dxing96)
+Oğuz Ersen (@ersen0)
+Nathanaël Gagnepain (@Ilithy)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+mezisina

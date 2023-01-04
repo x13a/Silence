@@ -1,0 +1,1 @@
+corretto il rifiuto dei contatti su Android 10, grazie ua Sad, @norrinr

@@ -1,0 +1,8 @@
+mudar receptor de SMS para ouvinte de notificação
+atualizadas as traduções italianas, russas, turcas e árabes
+
+Graças a:
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+Ivan
+Oğuz Ersen (@ersen0)
+DJEBBARI.ABDELHAMID

@@ -1,0 +1,11 @@
+permitir uma chamada após uma mensagem (Mensagens &gt; Caixa de entrada)
+
+atualizadas traduções:
+turca, graças a Oğuz Ersen (@ersen0)
+árabe, graças ao DJEBARI.ABDELHAMID
+francesa, graças a @Ilithy
+italiana, graças a Giovanni Donisi (@gdonisi + @giovannidonisi)
+ucraniana, graças a Andrij Mizyk (@andmizyk)
+português (Brasil), graças ao mezysinc
+danonorueguês, graças a Allan Nordhøy (@comradekingu)
+inglês, graças a Allan Nordhøy (@comradekingu)

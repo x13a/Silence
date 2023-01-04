@@ -1,0 +1,10 @@
+adicionada proteção contra ações repetidas num curto espaço de tempo
+atualizadas as traduções em árabe, turco, francês, japonês, inglês, danonorueguês, italiano
+
+Graças a:
+DJEBBARI.ABDELHAMID (@dxing96)
+Oğuz Ersen (@ersen0)
+Nathanaël Gagnepain (@Ilithy)
+Guillaume BOEHM (@guillaumeboehm)
+Allan Nordhøy (@comradekingu)
+Giovanni Donisi (@gdonisi + @giovannidonisi)

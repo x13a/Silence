@@ -1,13 +1,13 @@
-¡Se han eliminado todas las migraciones de preferencias, es posible que tenga que reconfigurar Silence!
+Se eliminaron todas las migraciones de preferencias, ¡es posible que deba volver a configurar Silence!
 
 opción para permitir números ocultos/desconocidos
-opciones para permitir llamadas por SIM, requieren el permiso READ_PHONE_STATE
-añadir opciones detrás del controlador
-cambiar el nombre del prefijo de las acciones del controlador a SET_
+opciones para permitir llamadas por SIM, requieren permiso READ_PHONE_STATE
+agregar opciones detrás del controlador
+cambiar el nombre del prefijo de acciones del controlador a SET_
 
-añadir traducción al turco, gracias a Ümit Seyhan
-añadir traducción al hindi, gracias a tan (@tanmayrajk)
-añadir traducción al árabe, gracias a DJEBARI.ABDELHAMID
-actualizar la traducción al ucraniano, gracias a Andrij Mizyk (@andmizyk)
+agregar traducción al turco, gracias a Ümit Seyhan
+agregue la traducción al hindi, gracias a tan (@tanmayrajk)
+agregue la traducción al árabe, gracias a DJEBARI.ABDELHAMID
+actualice la traducción al ucraniano, gracias a Andrij Mizyk (@andmizyk)
 actualizar la traducción al francés, gracias a @Ilithy
-actualizar la traducción al italiano, gracias a Giovanni Donisi (@gdonisi + @giovannidonisi)
+actualización de la traducción al italiano, gracias a Giovanni Donisi (@gdonisi + @giovannidonisi)

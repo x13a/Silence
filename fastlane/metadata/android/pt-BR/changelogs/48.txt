@@ -1,0 +1,11 @@
+adicionar permitir contatos (padrão: verdadeiro)
+mover SIM para sua própria casa
+refeito o README com novas imagens, graças a @Ilithy
+atualizadas as traduções em árabe, francês, turco, japonês e italiano
+
+Graças a:
+DJEBBARI.ABDELHAMID
+@Ilithy
+Oğuz Ersen (@ersen0)
+Guillaume BOEHM (@guillaumeboehm)
+Giovanni Donisi (@gdonisi + @giovannidonisi)

@@ -1,0 +1,3 @@
+atualizada a tradução fastlane em russo, obrigado Artem
+adicionadas as ações de controlo DELETE_SMS_FILTER_INACTIVE, DELETE_SMS_FILTER_ALL
+atualizadas as dependências e refactor

@@ -1,0 +1,11 @@
+adicionada a opção de permitir contactos (por predefinição: verdadeiro)
+mudar SIM para a sua própria casa
+alteração do README com novas imagens, graças a @Ilithy
+atualizadas as traduções em árabe, francês, turco, japonês, italiano
+
+Graças a:
+DJEBBARI.ABDELHAMID
+@Ilithy
+Oğuz Ersen (@ersen0)
+Guillaume BOEHM (@guillaumeboehm)
+Giovanni Donisi (@gdonisi + @giovannidonisi)

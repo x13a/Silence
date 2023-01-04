@@ -1,0 +1,4 @@
+adicionadas as configurações adicionais à descrição, obrigado uasad
+adicionada a tradução em ucraniano, obrigado Andrij Mizyk (@andmizyk)
+atualizada a tradução em francês, obrigado J. Lavoie (Edanas)
+adicionada solução alternativa ao Weblate para string-array

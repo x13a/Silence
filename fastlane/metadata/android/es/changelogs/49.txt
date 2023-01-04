@@ -1,0 +1,11 @@
+añadir modo de bloque
+agregar opción para bloquear números que comienzan con un más
+actualizar las traducciones al japonés, árabe, turco, francés, italiano, portugués de Brasil
+
+Gracias a:
+Guillaume BOEHM (@guillaumeboehm)
+DJEBBARI.ABDELHAMID (@dxing96)
+Oguz Ersen (@ersen0)
+Nathanaël Gagnepain (@Ilithy)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+mezysinc

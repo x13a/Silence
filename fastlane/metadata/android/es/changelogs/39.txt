@@ -1,0 +1,11 @@
+agregar permitir una llamada después de un mensaje (Mensajes &gt; Bandeja de entrada)
+agregar controlador alternar (por defecto desactivado)
+
+actualice la traducción al turco, gracias a Oğuz Ersen (@ersen0)
+actualización de la traducción árabe, gracias a DJEBARI.ABDELHAMID
+actualizar la traducción al francés, gracias a @Ilithy
+actualización de la traducción al italiano, gracias a Giovanni Donisi (@gdonisi + @giovannidonisi)
+actualice la traducción al ucraniano, gracias a Andrij Mizyk (@andmizyk)
+actualización de la traducción al portugués (Brasil), gracias a mezysinc
+actualice la traducción al bokmål noruego, gracias a Allan Nordhøy (@comradekingu)
+actualización de la traducción al inglés, gracias a Allan Nordhøy (@comradekingu)

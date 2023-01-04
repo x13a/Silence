@@ -1,0 +1,9 @@
+opção de permitir números ocultos/desconhecidos
+opções para permitir chamadas por cada SIM
+
+adicionada a tradução turca, graças a Ümit Seyhan
+adicionada a tradução hindi, graças ao bronzeado (@tanmayrajk)
+adicionada a tradução árabe, graças ao DJEBARI. ABDELHAMID
+adicionada a a tradução ucraniana, graças a Andrij Mizyk (@andmizyk)
+adicionada a a tradução francesa, graças a @Ilithy
+adicionada a a tradução italiana, graças a Giovanni Donisi (@gdonisi + @giovannidonisi)

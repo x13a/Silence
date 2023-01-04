@@ -1,0 +1,11 @@
+añadir grupo móvil
+agregar permitir llamadas de números cortos
+agregue la traducción al japonés, gracias a Guillaume BOEHM (@guillaumeboehm)
+actualizar las traducciones al turco, alemán, francés, italiano y polaco
+
+Gracias a:
+Oguz Ersen (@ersen0)
+Jean-Luc Tibaux (@eUgEntOptIc44)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+J. Lavoie (Edanas)
+nyepwinbxihprivx ngfrqbjhovhytpto
