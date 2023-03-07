@@ -69,4 +69,9 @@
     <string name="repeated_burst_timeout_hint">Тайм-аут</string>
     <string name="extra_short_numbers_description">Разрешить звонки с номеров с 3 до 5 цифрами.</string>
     <string name="extra_plus_numbers_description">Блокировать звонки с номеров начинаемых с \'+\'.</string>
+    <string name="settings_controller_description">Включить широковещательный ресивер, чтобы управлять Silence с помощью интентов.</string>
+    <string name="block_description">Заблокировать все входящие вызовы. Чтобы также заблокировать номера из контактов, вы должны предоставить разрешение.</string>
+    <string name="messages_text_ttl_helper_text">Сколько времени номер сможет звонить Вам. Modifiers: [d]ays [h]ours [m]inutes</string>
+    <string name="messages_text_ttl_error">7d / 48h / 120m</string>
+    <string name="goto_button">ПЕРЕЙТИ</string>
 </resources>
