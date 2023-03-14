@@ -1,0 +1,8 @@
+Interfaz de usuario modificada (necesitaba muchos cambios internos, si encuentra algo fuera de lugar, hágamelo saber)
+Traducciones actualizadas al turco, francés, alemán e italiano.
+
+Gracias a:
+Oguz Ersen (@ersen0)
+@Ilithy
+Jean-Luc Tibaux (@eUgEntOptIc44)
+Giovanni Donisi (@gdonisi + @giovannidonisi)

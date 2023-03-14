@@ -1,0 +1,23 @@
+Por predefinição, os números que não estão nos seus contactos são bloqueados.
+
+Permitir opcionalmente:
+* Números que contactou
+* Números dentro dos grupos selecionados
+* X chamadas do mesmo número num intervalo de tempo em minutos
+* Números encontrados nas mensagens
+* e mais...
+
+Se a aplicação rejeitar chamadas de contactos no Android 10, conceda a permissão de Contactos manualmente em
+Informação da app → Permissões.
+
+Permissões:
+* CALL_SCREENING - bloquear ou permitir chamadas
+* READ_CALL_LOG - verificar se ligou para o número e contar as vezes que o número lhe ligou em X minutos
+* READ_SMS - verificar se enviou uma mensagem para o número e se recebeu uma mensagem do número
+* NOTIFICATION_LISTENER - encontrar números de telemóvel nas mensagens recebidas
+* READ_PHONE_STATE - verificar em qual SIM o número está a ligar
+* RECEIVE_BOOT_COMPLETED - persistir no trabalho de número limpo expirado através de reinicializações
+* READ_CONTACTS - verificar a existência do número nos contactos no Android 10 ou bloquear chamadas a partir deles
+
+É software livre de código-fonte aberto.
+Licença: GPL-3

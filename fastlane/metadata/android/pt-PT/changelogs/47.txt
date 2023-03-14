@@ -1,0 +1,11 @@
+adicionado grupo móvel local
+tornar visível o estado do botão de alternância no material3, graças ao Guillaume BOEHM (@guillaumeboehm) &amp; @Ilithy
+adicionada a tradução persa, graças a @Special-N9NE
+atualizadas as traduções árabe, turco, japonês, italiano, francês
+
+Graças a:
+DJEBBARI.ABDELHAMID
+Oğuz Ersen (@ersen0)
+Guillaume BOEHM (@guillaumeboehm)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+@Ilithy

@@ -1,0 +1,9 @@
+adicionadas opções de resposta a configurações gerais
+atualizadas as traduções em turco, alemão, francês, italiano, danonorueguês
+
+Graças a:
+Oğuz Ersen (@ersen0)
+Allan Nordhøy (@comradekingu)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+@Ilithy
+J. Lavoie (Edanas)

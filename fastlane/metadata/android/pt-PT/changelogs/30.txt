@@ -1,0 +1,1 @@
+corrigida a rotina de deteção de chamadas feitas

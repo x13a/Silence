@@ -1,0 +1,11 @@
+adicionado o modo de bloqueio
+adicionada opção para números bloqueados que começam com um sinal mais
+atualizadas as traduções em japonês, árabe, turco, francês, italiano, português (Brasil)
+
+Graças a:
+Guillaume BOEHM (@guillaumeboehm)
+DJEBBARI.ABDELHAMID (@dxing96)
+Oğuz Ersen (@ersen0)
+Nathanaël Gagnepain (@Ilithy)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
+mezysinc
