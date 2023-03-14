@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Silence</string>
     <string name="contacted_main">Devolución de llamada</string>
-    <string name="contacted_description">Permitir las llamadas de los números con los que ha contactado.</string>
+    <string name="contacted_description">Permitir llamadas de los números que ha contactado.</string>
     <string name="groups_main">Llamadas gratuitas</string>
     <string name="groups_description">Permitir las llamadas de los números de los grupos seleccionados.</string>
     <string name="repeated_main">Repetidas</string>

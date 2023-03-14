@@ -59,13 +59,19 @@
     <string name="messages_text_description">Permitir temporariamente ligações de números móveis encontrados nas mensagens recebidas.</string>
     <string name="extra_short_numbers">Números curtos</string>
     <string name="contacted_call_description">Permitir ligações de números que você já ligou.</string>
-    <string name="contacted_message_description">Permitir ligações de números a quais você já enviou uma mensagem.</string>
+    <string name="contacted_message_description">Permitir ligações de números para os quais você enviou uma mensagem.</string>
     <string name="groups_local_description">Permitir ligações de números com o mesmo código de país que o seu.</string>
     <string name="groups_not_local">Não local</string>
-    <string name="groups_not_local_description">Permitir ligações de números que não têm o mesmo código de país que o seu.</string>
+    <string name="groups_not_local_description">Permitir ligações de números com códigos de país diferentes do seu.</string>
     <string name="groups_toll_free_description">Permitir ligações de números de ligação gratuita (ex 800).</string>
     <string name="repeated_settings_description">A contagem tem que ser inferior a minutos. Por causa de que o Android guarda o resultado, as ligações têm que estar fora do intervalo do cache.</string>
     <string name="messages_inbox_description">Permitir ligações de números que enviaram uma mensagem pra você.</string>
     <string name="groups_local_mobile">Local e móvel</string>
     <string name="groups_local_mobile_description">Permitir ligações de números móveis com o mesmo código de país que o seu.</string>
+    <string name="block_main">Bloquear</string>
+    <string name="repeated_burst_timeout_hint">Tempo de espera</string>
+    <string name="repeated_burst_timeout_helper_text">Tempo limite mínimo em segundos entre ligações repetidas.</string>
+    <string name="block_description">Bloqueie todas as chamadas recebidas. Para também bloquear números de contatos, você deve conceder uma permissão.</string>
+    <string name="extra_plus_numbers_description">Bloqueie chamadas de números que começam com um sinal de mais.</string>
+    <string name="extra_plus_numbers">Números mais</string>
 </resources>

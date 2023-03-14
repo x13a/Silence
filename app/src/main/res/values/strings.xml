@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Silence</string>
     <string name="contacted_main">Contacted</string>
-    <string name="contacted_description">Allow calls from numbers you have contacted.</string>
+    <string name="contacted_description">Allow calls from the numbers you have contacted.</string>
     <string name="contacted_call">Call</string>
     <string name="contacted_call_description">Allow calls from numbers you have called.</string>
     <string name="contacted_message">Message</string>
