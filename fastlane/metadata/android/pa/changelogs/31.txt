@@ -1,0 +1,3 @@
+ਰੀਬੂਟ (android.permission.RECEIVE_BOOT_COMPLETED) ਦੌਰਾਨ ਕਲੀਨਅਪ ਜੌਬ ਸਥਿਰਤਾ
+ਲੁਕਵੇਂ ਸੁਧਾਰ
+ਅਨੁਵਾਦਾਂ ਨੂੰ ਅੱਪਡੇਟ ਕੀਤਾ, ਐਲਨ ਨੋਰਧੋਏ (@comradekingu) ਦਾ ਧੰਨਵਾਦ
