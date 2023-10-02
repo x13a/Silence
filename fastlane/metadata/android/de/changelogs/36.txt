@@ -1,3 +1,3 @@
 Material3
 optionale Benachrichtigung
-Aktualisierung der ukrainischen Übersetzung, Dank an Andrij Mizyk (@andmizyk)
+Aktualisierung der ukrainischen Übersetzung, Danke an Andrij Mizyk (@andmizyk)

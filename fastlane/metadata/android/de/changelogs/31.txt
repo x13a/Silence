@@ -1,3 +1,3 @@
 Aufräumarbeiten bleiben auch nach einem Neustart erhalten (android.permission.RECEIVE_BOOT_COMPLETED)
 Verbesserungen unter der Haube
-Aktualisierung der Übersetzungen, Dank an Allan Nordhøy (@comradekingu)
+Aktualisierung der Übersetzungen, Danke an Allan Nordhøy (@comradekingu)

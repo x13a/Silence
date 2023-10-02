@@ -2,10 +2,22 @@ Standardmäßig werden Nummern blockiert, die sich nicht in Ihrer Kontaktliste b
 
 Optional können Sie zulassen:
 * Nummern, die Sie angerufen haben
-* Nummern mit gebührenfreien Vorwahlen (z. B. 800)
-* Ein dritter registrierter Anruf von der gleichen Nummer innerhalb von fünf Minuten
+* Nummern mit gebührenfreien Vorwahlen (z. B. 0800)
+* Eine Anzahl an Anrufen in einem bestimmten Zeitfenster
 * Handynummern aus eingehenden Textnachrichten vorübergehend
 * Nummern, die die STIR-Verifizierung bestehen (Android 11)
 
 Wenn die Anwendung unter Android 10 Anrufe von Kontakten ablehnt, erlauben Sie den Kontakten die
 Berechtigung manuell unter Anwendungsinfos → Berechtigungen.
+
+Berechtigungen:
+* CALL_SCREENING - blockiere oder erlaube Anrufe
+* READ_CALL_LOG - überprüfe, ob Sie die Nummer angerufen haben oder wie oft sie die Nummer in x Minuten anrief
+* READ_SMS - überprüfe, ob sie der Nummer eine Nachricht gesendet haben oder von ihr eine Nachricht erhalten haben
+* NOTIFICATION_LISTENER - finde Nummern in eingehenden Nachrichten
+* READ_PHONE_STATE - überprüfe auf welcher SIM die Nummer anruft
+* RECEIVE_BOOT_COMPLETED - persistiere die Aufgabe abgelaufener Nummern über Neustarts
+* READ_CONTACTS - überprüfe, ob die Nummer in Ihren Kontakten existiert unter Android 10 oder blockiere Anrufe von dieser
+
+Es handelt sich um freie Open-Source Software.
+Lizenziert unter: GPL-3

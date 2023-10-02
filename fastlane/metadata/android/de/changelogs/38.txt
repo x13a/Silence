@@ -1,7 +1,7 @@
-Alle Einstellungsmigrationen wurden entfernt, möglicherweise müssen Sie Silence neu konfigurieren!
+Alle Einstellungsmigrationen wurden entfernt, möglicherweise müssen Sie Stille(Silence) neu konfigurieren!
 
 Option zum Zulassen versteckter/unbekannter Nummern
-Optionen zum Zulassen von Anrufen pro SIM, erfordern die Berechtigung READ_PHONE_STATE
+Optionen zum Zulassen von Anrufen pro SIM, erfordert die Berechtigung READ_PHONE_STATE
 Hinzufügen von Optionen hinter dem Controller
 Umbenennung des Präfixes für Controller-Aktionen in SET_
 
