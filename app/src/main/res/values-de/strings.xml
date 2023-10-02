@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="contacted_description">Nummern erlauben, die Sie angerufen haben.</string>
+    <string name="contacted_description">Erlaube Anruf von Nummern, die Sie angerufen haben.</string>
     <string name="app_name">Stille</string>
     <string name="contacted_main">Rückruf</string>
-    <string name="groups_main">Gebührenfrei</string>
-    <string name="groups_description">Nummern innerhalb der ausgewählten Gruppen.</string>
+    <string name="groups_main">Gruppen</string>
+    <string name="groups_description">Erlaube Anrufe von Nummern innerhalb der ausgewählten Gruppen.</string>
     <string name="repeated_main">Wiederholt</string>
-    <string name="repeated_description">X registrierte Anrufe von derselben Nummer innerhalb von T Minuten erlauben.</string>
-    <string name="messages_main">SMS</string>
+    <string name="repeated_description">X registrierte Anrufe von derselben Nummer innerhalb einer gesetzten Zeit erlauben.</string>
+    <string name="messages_main">Nachrichten</string>
     <string name="messages_description">Anrufe von in Nachrichten gefundenen Nummern zulassen.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
-    <string name="extra_stir_description">Zahlen, die die STIR-Überprüfung bestehen.</string>
+    <string name="extra_stir_description">Erlaube Nummern, welche die STIR-Überprüfung bestehen.</string>
     <string name="panic_app_unknown_app">eine unbekannte Anwendung</string>
     <string name="panic_app_dialog_title">Bestätigen Sie die Panik-App</string>
     <string name="panic_app_dialog_message">Sind Sie sicher, dass Sie zulassen wollen, dass %1$s zerstörerische Panikaktionen auslöst\?</string>
@@ -22,10 +22,10 @@
     <string name="groups_toll_free">Gebührenfrei</string>
     <string name="messages_inbox">Posteingang</string>
     <string name="groups_local">Lokal</string>
-    <string name="extra_unknown_numbers">Unbekannte Zahlen</string>
+    <string name="extra_unknown_numbers">Unbekannte Nummern</string>
     <string name="repeated_minutes">Minuten</string>
     <string name="sim_2">SIM 2</string>
-    <string name="notification_title">Anruf blockiert</string>
+    <string name="notification_title">Blockierter Anruf</string>
     <string name="contacted_message">Nachricht</string>
     <string name="contacted_call">Anruf</string>
     <string name="settings_controller">Controller</string>
@@ -37,15 +37,15 @@
     <string name="settings_skip_call_log">Anrufliste überspringen</string>
     <string name="settings_skip_notification">Benachrichtigung überspringen</string>
     <string name="contacted_call_description">Erlauben Sie Anrufe von Nummern, die Sie angerufen haben.</string>
-    <string name="contacted_message_description">Anrufe von Nummern denen Sie eine Nachricht gesendet haben erlauben.</string>
+    <string name="contacted_message_description">Anrufe von Nummern, denen Sie eine Nachricht gesendet haben, erlauben.</string>
     <string name="messages_inbox_description">Erlauben Sie Anrufe von Nummern, die Ihnen eine Nachricht geschickt haben.</string>
     <string name="settings_controller_description">Ermöglicht es dem Broadcast-Empfänger, Silence mit Intents zu steuern.</string>
-    <string name="extra_unknown_numbers_description">Erlauben Sie Anrufe von Fremden ohne Nummer.</string>
+    <string name="extra_unknown_numbers_description">Erlauben Sie Anrufe von Fremden mit unterdrückter Nummer.</string>
     <string name="settings_disallow_call_description">Legt fest, ob der eingehende Anruf blockiert werden soll.</string>
     <string name="messages_text_description">Lassen Sie vorübergehend Anrufe von Handynummern zu, die im Text eingehender Nachrichten gefunden wurden.</string>
     <string name="groups_local_description">Erlauben Sie Anrufe von Nummern mit der gleichen Landesvorwahl wie Ihre.</string>
-    <string name="groups_not_local_description">Anrufe von Nummern, die nicht die gleiche Landesvorwahl wie Ihre haben erlauben.</string>
-    <string name="groups_toll_free_description">Erlauben Sie Anrufe von gebührenfreien Nummern (z. B. 800).</string>
+    <string name="groups_not_local_description">Anrufe von Nummern, die nicht die gleiche Landesvorwahl wie Ihre haben, erlauben.</string>
+    <string name="groups_toll_free_description">Erlauben Sie Anrufe von gebührenfreien Nummern (z. B. 0800).</string>
     <string name="repeated_settings_description">Die Anzahl muss niedriger als die Minuten sein. Da Android das Ergebnis zwischenspeichert, müssen Aufrufe außerhalb des Cache-Intervalls liegen.</string>
     <string name="settings_reject_call_description">Legt fest, ob der eingehende Anruf getrennt werden soll, als ob der Benutzer ihn manuell abgelehnt hätte. Diese Option sollte nur aktiviert werden, wenn der Anruf nicht zugelassen ist.</string>
     <string name="settings_skip_call_log_description">Legt fest, ob der eingehende Anruf nicht in der Anrufliste angezeigt werden soll. Diese Option sollte nur aktiviert werden, wenn der Anruf nicht zugelassen ist. Die Anrufe werden weiterhin mit dem Typ BLOCKED_TYPE protokolliert.</string>
@@ -67,11 +67,11 @@
     <string name="block_description">Alle eingehenden Anrufe blockieren. Um auch Nummern aus Kontakten zu blockieren, müssen Sie eine Berechtigung erteilen.</string>
     <string name="groups_mobile">Mobil</string>
     <string name="groups_mobile_description">Anrufe von Mobiltelefonnummern zulassen.</string>
-    <string name="repeated_burst_timeout_helper_text">Minimaler Timeout(Auszeit) in Sekunden zwischen wiederholten Aufrufen.</string>
+    <string name="repeated_burst_timeout_helper_text">Minimales Zeitlimit in Sekunden zwischen wiederholten Aufrufen.</string>
     <string name="sim">SIM-Karte</string>
-    <string name="extra_plus_numbers_description">Anrufe von Nummern die mit einem Plus-Zeichen beginnen blockieren.</string>
+    <string name="extra_plus_numbers_description">Anrufe von Nummern, die mit einem Plus-Zeichen beginnen, blockieren.</string>
     <string name="groups_local_mobile">Lokal &amp; Mobil</string>
     <string name="groups_local_mobile_description">Anrufe von Mobilfunknummern mit der gleichen Vorwahl wie Ihre erlauben.</string>
-    <string name="repeated_burst_timeout_hint">Auszeit</string>
+    <string name="repeated_burst_timeout_hint">Zeitlimit</string>
     <string name="block_main">Blockieren</string>
 </resources>
