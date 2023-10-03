@@ -1,9 +1,9 @@
 Änderung der WorkManager-Abhängigkeit in JobScheduler, jetzt müssen alle "neuen" Berechtigungen entfernt werden
-Übersetzungen aktualisieren, Dank an:
-    @wmdarg ,
-    Maxime Leroy (@Lisapple) ,
-    @badlop ,
-    J. Lavoie (Edanas)
+Übersetzungen aktualisiert, Danke an:
+      @wmdarg,
+      Maxime Leroy (@Lisapple),
+      @badlop,
+      J. Lavoie (Edanas)
 
-Dies ist keine geplante Version. Subsettings ist nicht implementiert.
+Dies ist keine geplante Version. Subsettings sind nicht implementiert.
 Einige Einstellungsbeschreibungen aus der Zukunft. Einige werden geändert werden.
