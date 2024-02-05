@@ -1,0 +1,13 @@
+Tüm tercih geçişleri kaldırıldı, Silence'ı yeniden yapılandırmanız gerekebilir!
+
+gizli/bilinmeyen numaralara izin verme seçeneği
+SIM başına aramalara izin verme seçenekleri, READ_PHONE_STATE izni gerektirir
+denetleyicinin arkasına seçenekler eklendi
+denetleyici eylemleri ön eki SET_ olarak yeniden adlandırıldı
+
+Türkçe çeviri eklendi, teşekkürler Ümit Seyhan
+Hintçe çeviri eklendi, teşekkürler tan (@tanmayrajk)
+Arapça çeviri eklendi, teşekkürler DJEBARI.ABDELHAMID
+Ukraynaca çeviri güncellendi, teşekkürler Andrij Mizyk (@andmizyk)
+Fransızca çeviri güncellendi, teşekkürler @Ilithy
+İtalyanca çeviri güncellendi, teşekkürler Giovanni Donisi (@gdonisi + @giovannidonisi)

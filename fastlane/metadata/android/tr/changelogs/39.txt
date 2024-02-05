@@ -1,0 +1,11 @@
+mesajdan sonra aramaya izin ver (Mesajlar &gt; Gelen Kutusu)
+denetleyici değiştirme eklendi ( öntanımlı: kapalı)
+
+Türkçe çeviri güncellendi, teşekkürler Oğuz Ersen (@ersen0)
+Arapça çeviri güncellendi, teşekkürler DJEBARI.ABDELHAMID
+Fransızca çeviri güncellendi, teşekkürler @Ilithy
+İtalyanca çeviri güncellendi, teşekkürler Giovanni Donisi (@gdonisi + @giovannidonisi)
+Ukraynaca çeviri güncellendi, teşekkürler Andrij Mizyk (@andmizyk)
+Portekizce (Brezilya) çeviri güncellendi, teşekkürler mezysinc
+Bokmål Norveççe çeviri güncellendi, teşekkürler Allan Nordhøy (@comradekingu)
+İngilizce çeviri güncellendi, teşekkürler Allan Nordhøy (@comradekingu)
