@@ -1,0 +1,11 @@
+kişilere izin ver eklendi ( öntanımlı: true)
+sim kendi dizinine taşındı
+README yeni görsellerle yeniden düzenlendi, teşekkürler @Ilithy
+Arapça, Fransızca, Türkçe, Japonca, İtalyanca çevirileri güncellendi
+
+Teşekkürler:
+DJEBBARI.ABDELHAMID
+@Ilithy
+Oğuz Ersen (@ersen0)
+Guillaume BOEHM (@guillaumeboehm)
+Giovanni Donisi (@gdonisi + @giovannidonisi)
