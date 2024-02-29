@@ -11,16 +11,16 @@
     <string name="groups_not_local">غیرمحلی</string>
     <string name="groups_mobile">موبایل</string>
     <string name="groups_mobile_description">اجازه تماس به شماره تلفن ها</string>
-    <string name="repeated_main">تکرار شده</string>
+    <string name="repeated">تکرار شده</string>
     <string name="messages_inbox_description">اجازه تماس به شماره هایی که به شما پیام داده اند.</string>
     <string name="messages_text">متن</string>
     <string name="contacted_message">پیام</string>
     <string name="groups_not_local_description">اجازه تماس به کسانی که کد کشور مشابه شما ندارند.</string>
     <string name="repeated_count">تعداد</string>
     <string name="repeated_minutes">دقیقه</string>
-    <string name="messages_main">پیام ها</string>
+    <string name="messages">پیام ها</string>
     <string name="messages_inbox">ورودی</string>
     <string name="messages_description">اجازه تماس به شماره تلفن هایی که داخل پیام ها هستند.</string>
     <string name="messages_text_ttl_hint">زمان</string>
-    <string name="groups_main">گروه ها</string>
+    <string name="groups">گروه ها</string>
 </resources>

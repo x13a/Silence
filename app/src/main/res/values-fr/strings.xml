@@ -2,15 +2,15 @@
 <resources>
     <string name="app_name">Silence</string>
     <string name="repeated_description">Autorise X appels enregistrés depuis le même numéro pendant un nombre de minutes déterminé.</string>
-    <string name="messages_main">SMS</string>
+    <string name="messages">SMS</string>
     <string name="messages_description">Autorisez les appels provenant de numéros trouvés dans les messages.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
-    <string name="contacted_main">Recontacté</string>
+    <string name="contacted">Recontacté</string>
     <string name="groups_description">Autoriser les appels des numéros dans les groupes sélectionnés.</string>
-    <string name="repeated_main">Répété</string>
+    <string name="repeated">Répété</string>
     <string name="extra_stir_description">Ne pas filtrer les appels des numéros passant la vérification STIR.</string>
     <string name="contacted_description">Autoriser les appels des numéros que vous avez contactés.</string>
-    <string name="groups_main">Groupes</string>
+    <string name="groups">Groupes</string>
     <string name="panic_app_dialog_title">Confirmer l\'application de panique</string>
     <string name="panic_app_unknown_app">une application inconnue</string>
     <string name="panic_app_dialog_message">Êtes-vous sûr(e) de vouloir autoriser %1$s à déclencher des actions de panique destructrices \?</string>
@@ -70,7 +70,7 @@
     <string name="goto_button">ALLER À</string>
     <string name="extra_plus_numbers">Numéro Plus</string>
     <string name="extra_plus_numbers_description">Bloquez les appels provenant de numéros commençant par un plus (+).</string>
-    <string name="block_main">Barrage</string>
+    <string name="block">Barrage</string>
     <string name="block_description">Bloquer tous les appels entrants. Pour bloquer également les numéros des contacts, vous devez en accorder l\'autorisation.</string>
     <string name="repeated_burst_timeout_hint">Temporisation</string>
     <string name="repeated_burst_timeout_helper_text">Temporisation minimale en secondes entre les appels répétés.</string>

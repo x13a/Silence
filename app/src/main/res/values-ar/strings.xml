@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">برنامج صامت</string>
-    <string name="contacted_main">تمكين الاتصال</string>
-    <string name="groups_main">مجموعات</string>
+    <string name="contacted">تمكين الاتصال</string>
+    <string name="groups">مجموعات</string>
     <string name="groups_description">السماح بالمكالمات من أرقام داخل المجموعات المحددة.</string>
-    <string name="repeated_main">تمكين استقبال الاتصال المكرر</string>
+    <string name="repeated">تمكين استقبال الاتصال المكرر</string>
     <string name="repeated_description">السماح بمكالمة \"N\" المسجلة من نفس الرقم خلال دقائق \"T\".</string>
-    <string name="messages_main">الرسائل النصية</string>
+    <string name="messages">الرسائل النصية</string>
     <string name="messages_description">السماح بالمكالمات من الأرقام الموجودة في الرسائل.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
     <string name="extra_stir_description">السماح بالاتصالات من الأرقام التي تمر بالتحقق من المعلومات المسبقة عن علم.</string>
@@ -68,7 +68,7 @@
     <string name="sim">شريحة اتصال</string>
     <string name="extra_contacts_description">السماح بالمكالمات من الأرقام في جهات الاتصال الخاصة بك.</string>
     <string name="extra_contacts">جهات الاتصال</string>
-    <string name="block_main">منع</string>
+    <string name="block">منع</string>
     <string name="extra_plus_numbers">أرقام زائدة</string>
     <string name="extra_plus_numbers_description">حظر المكالمات من الأرقام التي تبدأ بعلامة زائد.</string>
     <string name="block_description">حظر جميع المكالمات الواردة. لحظر الأرقام أيضا من جهات الاتصال ، يجب عليك منح إذن.</string>

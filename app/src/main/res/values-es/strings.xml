@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Silence</string>
-    <string name="contacted_main">Devolución de llamada</string>
+    <string name="contacted">Devolución de llamada</string>
     <string name="contacted_description">Permitir llamadas de los números que ha contactado.</string>
-    <string name="groups_main">Llamadas gratuitas</string>
+    <string name="groups">Llamadas gratuitas</string>
     <string name="groups_description">Permitir las llamadas de los números de los grupos seleccionados.</string>
-    <string name="repeated_main">Repetidas</string>
+    <string name="repeated">Repetidas</string>
     <string name="repeated_description">Permitir X llamadas registradas desde el mismo número en una cantidad determinada de minutos.</string>
-    <string name="messages_main">SMS - Mensajes de Texto</string>
+    <string name="messages">SMS - Mensajes de Texto</string>
     <string name="messages_description">Permitir llamadas desde números encontrados en los mensajes.</string>
     <string name="extra_stir">Protocolos STIR/SHAKEN</string>
     <string name="extra_stir_description">Números que han aprobado la comprobación STIR.</string>
@@ -19,7 +19,7 @@
     <string name="sim_1_description">Permitir todas las llamadas desde la SIM 1.</string>
     <string name="extra">Más información</string>
     <string name="block_description">Bloquear todas las llamadas entrantes. Para bloquear también los números de los contactos hay que conceder un permiso.</string>
-    <string name="block_main">Bloquear</string>
+    <string name="block">Bloquear</string>
     <string name="extra_contacts">Contactos</string>
     <string name="sim_2">Tarjeta SIM 2</string>
     <string name="sim_2_description">Permitir todas las llamadas desde la Tarjeta SIM 2.</string>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Silence</string>
-    <string name="contacted_main">Contacted</string>
+    <string name="contacted">Contacted</string>
     <string name="contacted_description">Allow calls from the numbers you have contacted.</string>
     <string name="contacted_call">Call</string>
     <string name="contacted_call_description">Allow calls from numbers you have called.</string>
     <string name="contacted_message">Message</string>
     <string name="contacted_message_description">Allow calls from numbers you have sent a message to.</string>
-    <string name="groups_main">Groups</string>
+    <string name="groups">Groups</string>
     <string name="groups_description">Allow calls from numbers within the selected groups.</string>
     <string name="groups_local">Local</string>
     <string name="groups_local_description">Allow calls from numbers with the same country code as your.</string>
@@ -19,14 +19,14 @@
     <string name="groups_mobile_description">Allow calls from mobile numbers.</string>
     <string name="groups_local_mobile">Local &amp; Mobile</string>
     <string name="groups_local_mobile_description">Allow calls from mobile numbers with the same country code as your.</string>
-    <string name="repeated_main">Repeated</string>
+    <string name="repeated">Repeated</string>
     <string name="repeated_description">Allow X registered call(s) from the same number within a set amount of minutes.</string>
     <string name="repeated_count">Count</string>
     <string name="repeated_minutes">Minutes</string>
     <string name="repeated_settings_description">Count has to be lower than minutes. Because Android caches the result, calls have to be out of the cache interval.</string>
     <string name="repeated_burst_timeout_hint">Timeout</string>
     <string name="repeated_burst_timeout_helper_text">Minimal timeout in seconds between repeated calls.</string>
-    <string name="messages_main">Messages</string>
+    <string name="messages">Messages</string>
     <string name="messages_description">Allow calls from numbers found in messages.</string>
     <string name="messages_inbox">Inbox</string>
     <string name="messages_inbox_description">Allow calls from numbers that sent you a message.</string>
@@ -35,7 +35,7 @@
     <string name="messages_text_ttl_hint">time</string>
     <string name="messages_text_ttl_helper_text">How much time the number will be able to call you. Modifiers: [d]ays [h]ours [m]inutes</string>
     <string name="messages_text_ttl_error">7d / 48h / 120m</string>
-    <string name="block_main">Block</string>
+    <string name="block">Block</string>
     <string name="block_description">Block all incoming calls. To also block numbers from contacts you have to grant a permission.</string>
     <string name="sim">SIM</string>
     <string name="sim_1">SIM 1</string>

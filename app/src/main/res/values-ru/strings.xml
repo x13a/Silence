@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Silence</string>
-    <string name="contacted_main">Контакты</string>
+    <string name="contacted">Контакты</string>
     <string name="contacted_description">Разрешить звонки с номеров, с которыми вы связались.</string>
-    <string name="groups_main">Группы</string>
+    <string name="groups">Группы</string>
     <string name="groups_description">Разрешить звонки с номеров выбранных групп.</string>
-    <string name="repeated_main">Повторный</string>
+    <string name="repeated">Повторный</string>
     <string name="repeated_description">Разрешить X зарегистрированных звонков с одного и того же номера в течении заданного количества минут.</string>
-    <string name="messages_main">Сообщения</string>
+    <string name="messages">Сообщения</string>
     <string name="messages_description">Разрешить звонки с номеров, найденных в сообщениях.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
     <string name="extra_stir_description">Разрешить звонки с номеров, прошедших STIR верификацию.</string>
@@ -65,7 +65,7 @@
     <string name="messages_text_ttl_hint">Время</string>
     <string name="groups_local_mobile">Домашные и мобильные</string>
     <string name="groups_local_mobile_description">Разрешить звонки с мобильных номеров с таким кодом страны как вашего.</string>
-    <string name="block_main">Блокирование</string>
+    <string name="block">Блокирование</string>
     <string name="repeated_burst_timeout_hint">Тайм-аут</string>
     <string name="extra_short_numbers_description">Разрешить звонки с номеров с 3 до 5 цифрами.</string>
     <string name="extra_plus_numbers_description">Блокировать звонки с номеров начинаемых с \'+\'.</string>

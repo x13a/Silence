@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Silêncio</string>
-    <string name="contacted_main">Contatado</string>
+    <string name="contacted">Contatado</string>
     <string name="contacted_description">Permitir ligações de números que você já contatou.</string>
-    <string name="groups_main">Grupos</string>
+    <string name="groups">Grupos</string>
     <string name="groups_description">Permitir ligações de números que estão dentro de grupos selecionados.</string>
-    <string name="repeated_main">Recorrentes</string>
+    <string name="repeated">Recorrentes</string>
     <string name="repeated_description">Permitir X ligação(es) registrada(s) do mesmo número dentro de um intervalo de tempo definido em minutos.</string>
-    <string name="messages_main">Mensagens</string>
+    <string name="messages">Mensagens</string>
     <string name="messages_description">Permitir ligações de números encontrados nas mensagens.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
     <string name="extra_stir_description">Números que passam a verificação STIR.</string>
@@ -68,7 +68,7 @@
     <string name="messages_inbox_description">Permitir ligações de números que enviaram uma mensagem pra você.</string>
     <string name="groups_local_mobile">Local e móvel</string>
     <string name="groups_local_mobile_description">Permitir ligações de números móveis com o mesmo código de país que o seu.</string>
-    <string name="block_main">Bloquear</string>
+    <string name="block">Bloquear</string>
     <string name="repeated_burst_timeout_hint">Tempo de espera</string>
     <string name="repeated_burst_timeout_helper_text">Tempo limite mínimo em segundos entre ligações repetidas.</string>
     <string name="block_description">Bloqueie todas as chamadas recebidas. Para também bloquear números de contatos, você deve conceder uma permissão.</string>

@@ -13,19 +13,19 @@
 
         <item
             android:id="@+id/nav_contacted"
-            android:title="@string/contacted_main" />
+            android:title="@string/contacted" />
 
         <item
             android:id="@+id/nav_groups"
-            android:title="@string/groups_main" />
+            android:title="@string/groups" />
 
         <item
             android:id="@+id/nav_repeated"
-            android:title="@string/repeated_main" />
+            android:title="@string/repeated" />
 
         <item
             android:id="@+id/nav_messages"
-            android:title="@string/messages_main" />
+            android:title="@string/messages" />
 
         <item
             android:id="@+id/nav_sim"

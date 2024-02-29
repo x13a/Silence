@@ -2,12 +2,12 @@
 <resources>
     <string name="contacted_description">Erlaube Anruf von Nummern, die Sie angerufen haben.</string>
     <string name="app_name">Stille</string>
-    <string name="contacted_main">Rückruf</string>
-    <string name="groups_main">Gruppen</string>
+    <string name="contacted">Rückruf</string>
+    <string name="groups">Gruppen</string>
     <string name="groups_description">Erlaube Anrufe von Nummern innerhalb der ausgewählten Gruppen.</string>
-    <string name="repeated_main">Wiederholt</string>
+    <string name="repeated">Wiederholt</string>
     <string name="repeated_description">X registrierte Anrufe von derselben Nummer innerhalb einer gesetzten Zeit erlauben.</string>
-    <string name="messages_main">Nachrichten</string>
+    <string name="messages">Nachrichten</string>
     <string name="messages_description">Anrufe von in Nachrichten gefundenen Nummern zulassen.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
     <string name="extra_stir_description">Erlaube Nummern, welche die STIR-Überprüfung bestehen.</string>
@@ -73,5 +73,5 @@
     <string name="groups_local_mobile">Lokal &amp; Mobil</string>
     <string name="groups_local_mobile_description">Anrufe von Mobilfunknummern mit der gleichen Vorwahl wie Ihre erlauben.</string>
     <string name="repeated_burst_timeout_hint">Zeitlimit</string>
-    <string name="block_main">Blockieren</string>
+    <string name="block">Blockieren</string>
 </resources>

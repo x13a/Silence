@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="contacted_description">전화 기록이 있는 번호를 허용합니다.</string>
-    <string name="contacted_main">콜백</string>
+    <string name="contacted">콜백</string>
     <string name="app_name">Silence</string>
     <string name="groups_description">수신자 부담 코드가 있는 번호를 허용합니다. (예: 800).</string>
-    <string name="groups_main">수신자 부담 전화</string>
+    <string name="groups">수신자 부담 전화</string>
     <string name="repeated_description">5분 이내에 같은 번호로 세 번째 걸려온 전화를 허용합니다.</string>
-    <string name="repeated_main">지속되는 전화</string>
-    <string name="messages_main">문자</string>
+    <string name="repeated">지속되는 전화</string>
+    <string name="messages">문자</string>
     <string name="extra_stir">발신자 조회 서비스</string>
     <string name="messages_description">방금 도착한 문자의 번호로부터 걸려오는 전화를 일시적으로 허용합니다.</string>
     <string name="extra_stir_description">STIR 인증을 통과한 번호를 허용합니다.</string>

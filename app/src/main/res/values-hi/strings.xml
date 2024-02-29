@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">शांति</string>
-    <string name="contacted_main">संपर्क किया गया</string>
+    <string name="contacted">संपर्क किया गया</string>
     <string name="contacted_description">संपर्क किए गए नंबर।</string>
-    <string name="repeated_main">दोहराया गया</string>
+    <string name="repeated">दोहराया गया</string>
     <string name="repeated_description">N दर्ज हुए कॉल एक ही नंबर से T मिंटो में।</string>
     <string name="extra_stir">STIR/SHAKEN</string>
     <string name="allow">अनुमति दें</string>
@@ -13,9 +13,9 @@
     <string name="sim_2">सिम 2</string>
     <string name="notification_title">अवरोधित कॉल</string>
     <string name="groups_toll_free">टोल फ्री</string>
-    <string name="groups_main">समूहें</string>
+    <string name="groups">समूहें</string>
     <string name="groups_description">चयनित किए गए समूहों के नंबर।</string>
-    <string name="messages_main">संदेशें</string>
+    <string name="messages">संदेशें</string>
     <string name="panic_app_unknown_app">एक अनजान ऐप</string>
     <string name="sim_1">सिम 1</string>
     <string name="contacted_message">संदेशें</string>
