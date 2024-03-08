@@ -7,37 +7,39 @@ import androidx.preference.PreferenceManager
 class Preferences(ctx: Context) {
     companion object {
         const val ENABLED = "enabled"
-        private const val CONTACTED_CHECKED = "contacted_checked"
-        private const val REPEATED_CHECKED = "repeated_checked"
-        private const val MESSAGES_CHECKED = "messages_checked"
-        private const val GROUPS_CHECKED = "groups_checked"
-        private const val BLOCK_ENABLED = "block_enabled"
+        const val CONTACTED_CHECKED = "contacted_checked"
+        const val REPEATED_CHECKED = "repeated_checked"
+        const val MESSAGES_CHECKED = "messages_checked"
+        const val GROUPS_CHECKED = "groups_checked"
+        const val BLOCK_ENABLED = "block_enabled"
 
-        private const val CONTACTED = "contacted"
-        private const val GROUPS = "groups"
-        private const val REPEATED_COUNT = "repeated_count"
-        private const val REPEATED_MINUTES = "repeated_minutes"
-        private const val REPEATED_BURST_TIMEOUT = "repeated_burst_timeout"
-        private const val MESSAGES = "messages"
-        private const val MESSAGES_TEXT_TTL = "messages_text_ttl"
-        private const val REGEX_PATTERN = "regex_pattern"
+        const val CONTACTED = "contacted"
+        const val GROUPS = "groups"
+        const val REPEATED_COUNT = "repeated_count"
+        const val REPEATED_MINUTES = "repeated_minutes"
+        const val REPEATED_BURST_TIMEOUT = "repeated_burst_timeout"
+        const val MESSAGES = "messages"
+        const val MESSAGES_TEXT_TTL = "messages_text_ttl"
 
-        private const val RESPONSE_OPTIONS = "call_screening_response_options"
-        private const val UNKNOWN_NUMBERS_CHECKED = "unknown_numbers_checked"
-        private const val SHORT_NUMBERS_CHECKED = "short_numbers_checked"
-        private const val CONTACTS_CHECKED = "contacts_checked"
-        private const val STIR_CHECKED = "stir_checked"
-        private const val SIM = "sim"
-        private const val BLOCK_PLUS_NUMBERS = "block_plus_numbers"
+        const val RESPONSE_OPTIONS = "call_screening_response_options"
+        const val UNKNOWN_NUMBERS_CHECKED = "unknown_numbers_checked"
+        const val SHORT_NUMBERS_CHECKED = "short_numbers_checked"
+        const val CONTACTS_CHECKED = "contacts_checked"
+        const val STIR_CHECKED = "stir_checked"
+        const val SIM = "sim"
+        const val BLOCK_PLUS_NUMBERS = "block_plus_numbers"
 
-        private const val DEFAULT_REPEATED_COUNT = 3
-        private const val DEFAULT_REPEATED_MINUTES = 5
-        private const val DEFAULT_MESSAGES_TEXT_TTL = 2 * 24 * 60
+        const val DEFAULT_REPEATED_COUNT = 3
+        const val DEFAULT_REPEATED_MINUTES = 5
+        const val DEFAULT_MESSAGES_TEXT_TTL = 2 * 24 * 60
 
         // migration
-        private const val SERVICE_ENABLED = "service_enabled"
-        private const val GENERAL_UNKNOWN_NUMBERS_CHECKED = "general_unknown_numbers_checked"
+        const val SERVICE_ENABLED = "service_enabled"
+        const val GENERAL_UNKNOWN_NUMBERS_CHECKED = "general_unknown_numbers_checked"
+
+        private const val REGEX_PATTERN = "regex_pattern"
     }
+
 
     private val prefs = PreferenceManager.getDefaultSharedPreferences(ctx)
 

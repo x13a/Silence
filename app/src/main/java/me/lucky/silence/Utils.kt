@@ -1,18 +1,37 @@
 package me.lucky.silence
 
+import android.app.ActivityManager
 import android.app.role.RoleManager
 import android.content.ComponentName
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
+import android.provider.Settings
 import android.telephony.TelephonyManager
 
 import me.lucky.silence.text.NotificationListenerService
 
 class Utils {
     companion object {
-        fun setMessagesTextEnabled(ctx: Context, value: Boolean) =
+        private fun isNotificationListenerRunning(ctx: Context): Boolean {
+            val manager = ctx.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+            @Suppress("deprecation")
+            val services = manager.getRunningServices(Integer.MAX_VALUE)
+            for (service in services) {
+                if (NotificationListenerService::class.java.name == service.service.className) {
+                    return true
+                }
+            }
+            return false
+        }
+
+        fun setMessagesTextEnabled(ctx: Context, value: Boolean) {
             setComponentEnabled(ctx, NotificationListenerService::class.java, value)
+            if (value && !isNotificationListenerRunning(ctx)) {
+                ctx.startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
+            }
+        }
 
         fun updateMessagesTextEnabled(ctx: Context) {
             val prefs = Preferences(ctx)
