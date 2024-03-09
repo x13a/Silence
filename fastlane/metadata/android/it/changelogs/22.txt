@@ -1,0 +1,3 @@
+Aggiornata la traduzione in russo, grazie a Artem
+Aggiunto azioni di controllo per DELETE_SMS_FILTER_INACTIVE, DELETE_SMS_FILTER_ALL
+Aggiornate le dipendenze e migliorato il codice
