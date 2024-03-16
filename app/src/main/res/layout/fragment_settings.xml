@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.SettingsFragment">
+
+    <TextView
+        android:id="@+id/txtSettingsHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,8 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/settings_controller" />
+                android:text="@string/settings_controller"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -44,8 +52,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/settings_disallow_call" />
+                android:text="@string/settings_disallow_call"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -63,8 +71,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/settings_reject_call" />
+                android:text="@string/settings_reject_call"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -82,8 +90,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/settings_silence_call" />
+                android:text="@string/settings_silence_call"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -101,8 +109,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/settings_skip_call_log" />
+                android:text="@string/settings_skip_call_log"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -120,8 +128,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/settings_skip_notification" />
+                android:text="@string/settings_skip_notification"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -131,4 +139,5 @@
 
         </LinearLayout>
     </ScrollView>
-</FrameLayout>
+
+</LinearLayout>

@@ -20,6 +20,7 @@ class Preferences(ctx: Context) {
         private const val REPEATED_BURST_TIMEOUT = "repeated_burst_timeout"
         private const val MESSAGES = "messages"
         private const val MESSAGES_TEXT_TTL = "messages_text_ttl"
+        private const val REGEX_PATTERN = "regex_pattern"
 
         private const val RESPONSE_OPTIONS = "call_screening_response_options"
         private const val UNKNOWN_NUMBERS_CHECKED = "unknown_numbers_checked"
@@ -125,6 +126,10 @@ class Preferences(ctx: Context) {
     var isBlockEnabled: Boolean
         get() = prefs.getBoolean(BLOCK_ENABLED, false)
         set(value) = prefs.edit { putBoolean(BLOCK_ENABLED, value) }
+
+    var regexPattern: String?
+        get() = prefs.getString(REGEX_PATTERN, "")
+        set(value) = prefs.edit { putString(REGEX_PATTERN, value) }
 }
 
 enum class Contact(val value: Int) {
