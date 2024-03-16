@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="contacted_main">ਸੰਪਰਕ ਕੀਤਾ ਗਿਆ</string>
+    <string name="contacted">ਸੰਪਰਕ ਕੀਤਾ ਗਿਆ</string>
     <string name="contacted_call">ਕਾਲ</string>
     <string name="contacted_call_description">ਤੁਹਾਡੇ ਵੱਲੋਂ ਕਾਲ ਕੀਤੇ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
     <string name="groups_local">ਸਥਾਨਕ</string>
@@ -10,18 +10,18 @@
     <string name="groups_toll_free">ਟੋਲ-ਫ੍ਰੀ</string>
     <string name="groups_local_mobile">ਸਥਾਨਕ ਅਤੇ ਮੋਬਾਈਲ</string>
     <string name="groups_local_mobile_description">ਉਸੇ ਦੇਸ਼ ਦੇ ਕੋਡ ਵਾਲੇ ਮੋਬਾਈਲ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ ਜੋ ਕਿ ਤੁਹਾਡਾ ਵੀ ਹੈ।</string>
-    <string name="repeated_main">ਦੁਹਰਾਇਆ ਗਿਆ</string>
+    <string name="repeated">ਦੁਹਰਾਇਆ ਗਿਆ</string>
     <string name="repeated_count">ਗਿਣਤੀ</string>
     <string name="repeated_minutes">ਮਿੰਟ</string>
     <string name="repeated_burst_timeout_hint">ਮਿਆਦ ਮੁੱਕੀ</string>
     <string name="repeated_burst_timeout_helper_text">ਕਾਲਾਂ ਵਿਚਕਾਰ ਘੱਟੋ-ਘੱਟ ਮਿਆਦ ਮੁੱਕਣ ਦਾ ਸਮਾਂ (ਸਕਿੰਟਾਂ ਵਿੱਚ)।</string>
-    <string name="messages_main">ਸੁਨੇਹੇ</string>
+    <string name="messages">ਸੁਨੇਹੇ</string>
     <string name="messages_description">ਸੁਨੇਹਿਆਂ ਵਿੱਚ ਮਿਲੇ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
     <string name="messages_inbox">ਇਨਬਾਕਸ</string>
     <string name="messages_text_ttl_hint">ਵੇਲਾ</string>
     <string name="messages_text">ਲਿਖਤ</string>
     <string name="messages_text_ttl_error">7 ਦਿਨ / 48 ਘੰਟੇ / 120 ਮਿੰਟ</string>
-    <string name="block_main">ਪਬੰਦੀ</string>
+    <string name="block">ਪਬੰਦੀ</string>
     <string name="sim_1">ਪਹਿਲੀ ਸਿਮ</string>
     <string name="messages_text_ttl_helper_text">ਨੰਬਰ ਤੁਹਾਨੂੰ ਕਿੰਨਾ ਚਿਰ ਕਾਲ ਕਰਨ ਦੇ ਸਮਰੱਥ ਹੋਵੇਗਾ। ਸੋਧਕ: [d]ays [h]ours [m]inutes</string>
     <string name="sim">ਸਿਮ</string>
@@ -52,7 +52,7 @@
     <string name="main">ਮੁੱਖ</string>
     <string name="goto_button">ਜਾਓ</string>
     <string name="app_name">ਚੁੱਪ</string>
-    <string name="groups_main">ਗੁੱਟ</string>
+    <string name="groups">ਗੁੱਟ</string>
     <string name="contacted_description">ਉਹਨਾਂ ਨੰਬਰਾਂ ਤੋਂ ਫੋਨ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ ਜਿਨ੍ਹਾਂ ਨਾਲ ਤੁਸੀਂ ਸੰਪਰਕ ਕੀਤਾ ਹੈ।</string>
     <string name="contacted_message">ਸੁਨੇਹਾ</string>
     <string name="contacted_message_description">ਉਹਨਾਂ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ ਜਿਨ੍ਹਾਂ \'ਤੇ ਤੁਸੀਂ ਸੁਨੇਹਾ ਘੱਲਿਆ ਹੈ।</string>

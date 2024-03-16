@@ -2,21 +2,21 @@
 <resources>
     <string name="contacted_description">前に連絡した番号からの電話を許可する。</string>
     <string name="app_name">Silence</string>
-    <string name="contacted_main">連絡済み</string>
+    <string name="contacted">連絡済み</string>
     <string name="contacted_call">電話</string>
     <string name="contacted_call_description">前に電話した番号からの電話を許可する。</string>
     <string name="contacted_message_description">前にメッセージを送った番号からの電話を許可する。</string>
-    <string name="groups_main">カテゴリー</string>
+    <string name="groups">カテゴリー</string>
     <string name="groups_description">特定のカテゴリーからの電話を許可する。</string>
     <string name="groups_local">国内</string>
     <string name="groups_local_description">国内からの電話を許可する。</string>
     <string name="groups_not_local">国外</string>
     <string name="groups_not_local_description">国外からの電話を許可する。</string>
     <string name="groups_toll_free">フリーダイヤル</string>
-    <string name="repeated_main">多発</string>
+    <string name="repeated">多発</string>
     <string name="repeated_count">回数</string>
     <string name="repeated_minutes">分間</string>
-    <string name="messages_main">メッセージ</string>
+    <string name="messages">メッセージ</string>
     <string name="messages_inbox">受信箱</string>
     <string name="messages_text">内容</string>
     <string name="messages_text_description">一時期にメッセージの内容に見当たる番号からの電話を許可する。</string>
@@ -68,7 +68,7 @@
     <string name="sim">SIM</string>
     <string name="extra_contacts_description">連絡先に登録されている番号からの電話を許可する。</string>
     <string name="extra_contacts">連絡先</string>
-    <string name="block_main">塞ぐ</string>
+    <string name="block">塞ぐ</string>
     <string name="extra_plus_numbers_description">プラスから始まる番号からの電話を塞ぐ。</string>
     <string name="block_description">全てを塞ぐ。連絡先に登録されている番号を塞ぐために権限の許可が必要です。</string>
     <string name="extra_plus_numbers">プラス番号</string>

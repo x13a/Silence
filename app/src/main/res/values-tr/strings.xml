@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="contacted_main">Aranmış</string>
+    <string name="contacted">Aranmış</string>
     <string name="contacted_description">Daha önce iletişime geçtiğiniz numaralardan gelen aramalara izin ver.</string>
-    <string name="groups_main">Gruplar</string>
+    <string name="groups">Gruplar</string>
     <string name="groups_description">Seçili gruplardaki numaralardan gelen aramalara izin ver.</string>
-    <string name="repeated_main">Tekrarlanan</string>
+    <string name="repeated">Tekrarlanan</string>
     <string name="repeated_description">Belirli bir dakika içerisinde aynı numaradan gelen X kayıtlı aramaya izin ver.</string>
-    <string name="messages_main">Mesajlar</string>
+    <string name="messages">Mesajlar</string>
     <string name="extra_stir">STIR/SHAKEN</string>
     <string name="extra_stir_description">STIR onaylamasını başarıyla geçen numaralardan gelen aramalara izin ver.</string>
     <string name="panic_app_dialog_title">Panik uygulamasını onayla</string>
@@ -68,7 +68,7 @@
     <string name="sim">SIM</string>
     <string name="extra_contacts_description">Kişilerinizdeki numaralardan gelen aramalara izin ver.</string>
     <string name="extra_contacts">Kişiler</string>
-    <string name="block_main">Engelle</string>
+    <string name="block">Engelle</string>
     <string name="extra_plus_numbers_description">Artı ile başlayan numaralardan gelen aramaları engelle.</string>
     <string name="extra_plus_numbers">Artılı numaralar</string>
     <string name="block_description">Tüm gelen aramaları engelle. Rehberdeki numaraları da engellemek için izin vermeniz gerekir.</string>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Silence</string>
-    <string name="contacted_main">Ring tilbake</string>
+    <string name="contacted">Ring tilbake</string>
     <string name="contacted_description">Tillat nummer du har ringt.</string>
-    <string name="groups_main">Gratisnummer</string>
+    <string name="groups">Gratisnummer</string>
     <string name="groups_description">Nummer i de valgte gruppene.</string>
-    <string name="repeated_main">Gjentatt</string>
+    <string name="repeated">Gjentatt</string>
     <string name="repeated_description">N registrert samtale fra samme nummer innen T minutter.</string>
-    <string name="messages_main">SMS</string>
+    <string name="messages">SMS</string>
     <string name="messages_description">Tillat midlertidige mobilnumre fra innkommende tekstmeldinger.</string>
     <string name="extra_stir_description">Nummer som har passert STIR-bekreftelse.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
@@ -31,7 +31,7 @@
     <string name="contacted_message">Melding</string>
     <string name="settings_controller">Kontrollør</string>
     <string name="groups_not_local">Ikke lokal</string>
-    <string name="block_main">Blokker</string>
+    <string name="block">Blokker</string>
     <string name="extra_contacts_description">Tillat anrop fra nummer i kontaktlisten din.</string>
     <string name="extra_short_numbers">Korte nummer</string>
     <string name="extra_plus_numbers_description">Blokker anrop fra nummer som starter med pluss-tegn.</string>

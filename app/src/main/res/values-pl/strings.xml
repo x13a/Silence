@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Cisza</string>
-    <string name="contacted_main">Kontaktowane</string>
-    <string name="groups_main">Grupy</string>
+    <string name="contacted">Kontaktowane</string>
+    <string name="groups">Grupy</string>
     <string name="contacted_description">Zezwalaj na połączenia od numerów, z którymi się kontaktowałeś.</string>
-    <string name="repeated_main">Powtórzone</string>
+    <string name="repeated">Powtórzone</string>
     <string name="repeated_description">Zezwalaj na X zarejestrowanych połączeń od tego samego numeru w ciągu określonej liczby minut.</string>
     <string name="allow">Pozwól</string>
-    <string name="messages_main">Wiadomości</string>
+    <string name="messages">Wiadomości</string>
     <string name="groups_local">Lokalne</string>
     <string name="repeated_minutes">Minuty</string>
     <string name="settings_controller">Kontroler</string>
