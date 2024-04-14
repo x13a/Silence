@@ -19,9 +19,10 @@
     <string name="groups_mobile_description">Allow calls from mobile numbers.</string>
     <string name="groups_local_mobile">Local &amp; Mobile</string>
     <string name="groups_local_mobile_description">Allow calls from mobile numbers with the same country code as your.</string>
-    <string name="groups_match_regex">Block By Pattern</string>
-    <string name="groups_match_regex_hint">Pattern matching whole phone number</string>
-    <string name="groups_match_regex_description">Block phone number matching regular expression.</string>
+    <string name="regex_main">Regex</string>
+    <string name="regex_pattern_hint">Pattern</string>
+    <string name="regex_pattern_helper_text">Block calls from numbers matching regular expression.</string>
+    <string name="regex_pattern_error">"Invalid regex!"</string>
     <string name="repeated_main">Repeated</string>
     <string name="repeated_description">Allow X registered call(s) from the same number within a set amount of minutes.</string>
     <string name="repeated_count">Count</string>
@@ -35,7 +36,7 @@
     <string name="messages_inbox_description">Allow calls from numbers that sent you a message.</string>
     <string name="messages_text">Text</string>
     <string name="messages_text_description">Temporarily allow calls from mobile numbers found in incoming messages text.</string>
-    <string name="messages_text_ttl_hint">time</string>
+    <string name="messages_text_ttl_hint">Time</string>
     <string name="messages_text_ttl_helper_text">How much time the number will be able to call you. Modifiers: [d]ays [h]ours [m]inutes</string>
     <string name="messages_text_ttl_error">7d / 48h / 120m</string>
     <string name="block_main">Block</string>

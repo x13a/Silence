@@ -8,12 +8,15 @@ import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
 import androidx.annotation.RequiresApi
 import androidx.core.text.isDigitsOnly
-import kotlin.properties.Delegates
-
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
-import me.lucky.silence.*
+import me.lucky.silence.NotificationManager
+import me.lucky.silence.Preferences
+import me.lucky.silence.ResponseOption
+import me.lucky.silence.Sim
+import me.lucky.silence.Utils
+import kotlin.properties.Delegates
 
 class CallScreeningService : CallScreeningService() {
     private lateinit var prefs: Preferences
@@ -42,38 +45,22 @@ class CallScreeningService : CallScreeningService() {
         if (!prefs.isEnabled) {
             respondAllow(callDetails)
             return
-        }
-
-        if (isEmergency(callDetails)) {
+        } else if (isEmergency(callDetails)) {
+            prefs.isEnabled = false
             Utils.setMessagesTextEnabled(this, false)
             respondAllow(callDetails)
             return
-        }
-
-        if (callDetails.callDirection != Call.Details.DIRECTION_INCOMING) {
+        } else if (callDetails.callDirection != Call.Details.DIRECTION_INCOMING) {
             respondAllow(callDetails)
             return
-        }
-
-        if (
+        } else if (
             prefs.isBlockEnabled ||
-            (prefs.isBlockPlusNumbers && isPlusNumber(callDetails))
+            (prefs.isBlockPlusNumbers && isPlusNumber(callDetails)) ||
+            checkBlockRegex(callDetails)
         ) {
             respondNotAllow(callDetails)
             return
-        }
-
-        if (
-            !prefs.regexPattern.isNullOrBlank() && matchesBlockRegex(
-                callDetails,
-                prefs.regexPattern!!.toRegex()
-            )
-        ) {
-            respondNotAllow(callDetails)
-            return
-        }
-
-        if (
+        } else if (
             (prefs.isStirChecked && isStirVerified(callDetails)) ||
             (prefs.isUnknownNumbersChecked && isUnknownNumber(callDetails)) ||
             (prefs.isShortNumbersChecked && isShortNumber(callDetails)) ||
@@ -82,7 +69,6 @@ class CallScreeningService : CallScreeningService() {
             respondAllow(callDetails)
             return
         }
-
         val number: Phonenumber.PhoneNumber
         try {
             number = phoneNumberUtil.parse(
@@ -162,9 +148,8 @@ class CallScreeningService : CallScreeningService() {
     private fun isPlusNumber(callDetails: Call.Details) =
         callDetails.handle?.schemeSpecificPart?.startsWith('+') ?: false
 
-    private fun matchesBlockRegex(callDetails: Call.Details, pattern: Regex): Boolean {
-        var phoneNumber = callDetails.handle?.schemeSpecificPart ?: return false
-        val retval = pattern.matchEntire(phoneNumber) != null
-        return retval
+    private fun checkBlockRegex(callDetails: Call.Details): Boolean {
+        val phoneNumber = callDetails.handle?.schemeSpecificPart ?: return false
+        return prefs.regexPattern?.toRegex(RegexOption.MULTILINE)?.matchEntire(phoneNumber) != null
     }
 }

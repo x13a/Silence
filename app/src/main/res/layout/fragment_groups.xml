@@ -103,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/groups_local_mobile_description"
                 android:textAppearance="?attr/textAppearanceBodySmall" />
+
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

@@ -3,9 +3,16 @@ package me.lucky.silence
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-
 import me.lucky.silence.databinding.ActivityMainBinding
-import me.lucky.silence.fragment.*
+import me.lucky.silence.fragment.ContactedFragment
+import me.lucky.silence.fragment.ExtraFragment
+import me.lucky.silence.fragment.GroupsFragment
+import me.lucky.silence.fragment.MainFragment
+import me.lucky.silence.fragment.MessagesFragment
+import me.lucky.silence.fragment.RegexFragment
+import me.lucky.silence.fragment.RepeatedFragment
+import me.lucky.silence.fragment.SettingsFragment
+import me.lucky.silence.fragment.SimFragment
 
 open class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -59,6 +66,7 @@ open class MainActivity : AppCompatActivity() {
         R.id.nav_contacted -> ContactedFragment()
         R.id.nav_groups -> GroupsFragment()
         R.id.nav_repeated -> RepeatedFragment()
+        R.id.nav_regex -> RegexFragment()
         R.id.nav_messages -> MessagesFragment()
         R.id.nav_sim -> SimFragment()
         R.id.nav_extra -> ExtraFragment()
