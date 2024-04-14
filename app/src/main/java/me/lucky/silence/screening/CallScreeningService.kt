@@ -8,12 +8,15 @@ import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
 import androidx.annotation.RequiresApi
 import androidx.core.text.isDigitsOnly
-import kotlin.properties.Delegates
-
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
-import me.lucky.silence.*
+import me.lucky.silence.NotificationManager
+import me.lucky.silence.Preferences
+import me.lucky.silence.ResponseOption
+import me.lucky.silence.Sim
+import me.lucky.silence.Utils
+import kotlin.properties.Delegates
 
 class CallScreeningService : CallScreeningService() {
     private lateinit var prefs: Preferences
@@ -52,7 +55,8 @@ class CallScreeningService : CallScreeningService() {
             return
         } else if (
             prefs.isBlockEnabled ||
-            (prefs.isBlockPlusNumbers && isPlusNumber(callDetails))
+            (prefs.isBlockPlusNumbers && isPlusNumber(callDetails)) ||
+            checkBlockRegex(callDetails)
         ) {
             respondNotAllow(callDetails)
             return
@@ -143,4 +147,9 @@ class CallScreeningService : CallScreeningService() {
 
     private fun isPlusNumber(callDetails: Call.Details) =
         callDetails.handle?.schemeSpecificPart?.startsWith('+') ?: false
+
+    private fun checkBlockRegex(callDetails: Call.Details): Boolean {
+        val phoneNumber = callDetails.handle?.schemeSpecificPart ?: return false
+        return prefs.regexPattern?.toRegex(RegexOption.MULTILINE)?.matchEntire(phoneNumber) != null
+    }
 }

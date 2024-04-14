@@ -9,13 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
-import java.util.regex.Pattern
-
 import me.lucky.silence.Message
 import me.lucky.silence.Preferences
 import me.lucky.silence.R
 import me.lucky.silence.Utils
 import me.lucky.silence.databinding.FragmentMessagesBinding
+import java.util.regex.Pattern
 
 class MessagesFragment : Fragment() {
     companion object {
@@ -73,9 +72,8 @@ class MessagesFragment : Fragment() {
             if (str.length < 2) return@doAfterTextChanged
             val modifier = str.last()
             val i: Int
-            try {
-                i = str.dropLast(1).toInt()
-            } catch (exc: NumberFormatException) { return@doAfterTextChanged }
+            try { i = str.dropLast(1).toInt() }
+            catch (exc: NumberFormatException) { return@doAfterTextChanged }
             prefs.messagesTextTtl = when (modifier) {
                 MODIFIER_DAYS -> i * 24 * 60
                 MODIFIER_HOURS -> i * 60

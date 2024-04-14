@@ -24,6 +24,10 @@
             android:title="@string/repeated_main" />
 
         <item
+            android:id="@+id/nav_regex"
+            android:title="@string/regex_main" />
+
+        <item
             android:id="@+id/nav_messages"
             android:title="@string/messages_main" />
 
@@ -36,5 +40,4 @@
             android:title="@string/extra" />
 
     </group>
-
 </menu>

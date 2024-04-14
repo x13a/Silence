@@ -19,8 +19,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/groups_local" />
+                android:text="@string/groups_local"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -38,8 +38,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/groups_not_local" />
+                android:text="@string/groups_not_local"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -57,8 +57,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/groups_toll_free" />
+                android:text="@string/groups_toll_free"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -76,8 +76,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/groups_mobile" />
+                android:text="@string/groups_mobile"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -95,8 +95,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
-                android:textAppearance="?attr/textAppearanceBodyLarge"
-                android:text="@string/groups_local_mobile" />
+                android:text="@string/groups_local_mobile"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
 
             <TextView
                 android:layout_width="match_parent"
