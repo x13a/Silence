@@ -27,7 +27,7 @@ class PanicConnectionActivity : MainActivity() {
             try {
                 app = packageManager
                     .getApplicationLabel(packageManager.getApplicationInfo(packageName, 0))
-            } catch (exc: PackageManager.NameNotFoundException) {}
+            } catch (_: PackageManager.NameNotFoundException) {}
         }
         MaterialAlertDialogBuilder(this)
             .setTitle(R.string.panic_app_dialog_title)

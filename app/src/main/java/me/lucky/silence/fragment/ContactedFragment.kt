@@ -35,6 +35,7 @@ class ContactedFragment : Fragment() {
             val value = prefs.contacted
             call.isChecked = value.and(Contact.CALL.value) != 0
             message.isChecked = value.and(Contact.MESSAGE.value) != 0
+            answer.isChecked = value.and(Contact.ANSWER.value) != 0
         }
     }
 
@@ -44,6 +45,9 @@ class ContactedFragment : Fragment() {
         }
         message.setOnCheckedChangeListener { _, isChecked ->
             prefs.contacted = Utils.setFlag(prefs.contacted, Contact.MESSAGE.value, isChecked)
+        }
+        answer.setOnCheckedChangeListener { _, isChecked ->
+            prefs.contacted = Utils.setFlag(prefs.contacted, Contact.ANSWER.value, isChecked)
         }
     }
 }

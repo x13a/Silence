@@ -1,6 +1,7 @@
 package me.lucky.silence
 
 import android.content.Context
+import android.os.SystemClock
 import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -10,7 +11,6 @@ class NotificationManager(private val ctx: Context) {
     companion object {
         private const val CHANNEL_BLOCKED_CALLS_ID = "blocked_calls"
         private const val GROUP_BLOCKED_CALLS_KEY = "blocked"
-        private const val NOTIFICATION_BLOCKED_CALLS_ID = 1000
     }
 
     private val manager = NotificationManagerCompat.from(ctx)
@@ -22,13 +22,14 @@ class NotificationManager(private val ctx: Context) {
         ).setName(ctx.getString(R.string.notification_channel)).build())
     }
 
-    fun notifyBlockedCall(tel: String?) {
-        if (tel == null) return
+    fun notifyBlockedCall(tel: String, sim: Sim?) {
+        var title = ctx.getString(R.string.notification_title)
+        if (sim != null) title = "$title (${sim.name.replace('_', ' ')})"
         manager.notify(
-            NOTIFICATION_BLOCKED_CALLS_ID,
+            SystemClock.uptimeMillis().toInt(),
             NotificationCompat.Builder(ctx, CHANNEL_BLOCKED_CALLS_ID)
                 .setSmallIcon(R.drawable.ic_tile)
-                .setContentTitle(ctx.getString(R.string.notification_title))
+                .setContentTitle(title)
                 .setContentText(tel)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setCategory(NotificationCompat.CATEGORY_STATUS)

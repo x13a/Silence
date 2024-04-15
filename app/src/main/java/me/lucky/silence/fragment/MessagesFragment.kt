@@ -71,9 +71,7 @@ class MessagesFragment : Fragment() {
             }
             if (str.length < 2) return@doAfterTextChanged
             val modifier = str.last()
-            val i: Int
-            try { i = str.dropLast(1).toInt() }
-            catch (exc: NumberFormatException) { return@doAfterTextChanged }
+            val i = str.dropLast(1).toIntOrNull() ?: return@doAfterTextChanged
             prefs.messagesTextTtl = when (modifier) {
                 MODIFIER_DAYS -> i * 24 * 60
                 MODIFIER_HOURS -> i * 60

@@ -47,6 +47,25 @@
                 android:text="@string/contacted_message_description"
                 android:textAppearance="?attr/textAppearanceBodySmall" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp" />
+
+            <CheckBox
+                android:id="@+id/answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:text="@string/contacted_answer" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/contacted_answer_description"
+                android:textAppearance="?attr/textAppearanceBodySmall" />
+
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

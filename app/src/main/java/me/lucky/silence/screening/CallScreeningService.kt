@@ -75,7 +75,7 @@ class CallScreeningService : CallScreeningService() {
                 callDetails.handle?.schemeSpecificPart,
                 telephonyManager?.networkCountryIso?.uppercase(),
             )
-        } catch (exc: NumberParseException) {
+        } catch (_: NumberParseException) {
             respondNotAllow(callDetails)
             return
         }
@@ -104,7 +104,17 @@ class CallScreeningService : CallScreeningService() {
                 .setSkipNotification(!isNotify && disallowCall)
                 .build(),
         )
-        if (isNotify && disallowCall) notificationManager.notifyBlockedCall(tel)
+        if (isNotify && disallowCall) {
+            var sim: Sim? = null
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && isMultiSim) {
+                sim = when {
+                    checkSimSlot(0) -> Sim.SIM_1
+                    checkSimSlot(1) -> Sim.SIM_2
+                    else -> null
+                }
+            }
+            notificationManager.notifyBlockedCall(tel ?: return, sim)
+        }
     }
 
     private fun isStirVerified(callDetails: Call.Details) =
@@ -133,7 +143,7 @@ class CallScreeningService : CallScreeningService() {
                     ?.getActiveSubscriptionInfoForSimSlotIndex(slotIndex)
                     ?.subscriptionId ?: return false)
                 ?.callStateForSubscription == TelephonyManager.CALL_STATE_RINGING
-        } catch (exc: SecurityException) { false }
+        } catch (_: SecurityException) { false }
     }
 
     private fun isUnknownNumber(callDetails: Call.Details) =

@@ -10,9 +10,12 @@ import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 import android.telephony.TelephonyManager
 import com.google.i18n.phonenumbers.PhoneNumberUtil
+import me.lucky.silence.AllowNumber
+import me.lucky.silence.AllowNumberDao
+import me.lucky.silence.AppDatabase
+import me.lucky.silence.Message
+import me.lucky.silence.Preferences
 import java.util.concurrent.TimeUnit
-
-import me.lucky.silence.*
 
 class NotificationListenerService : NotificationListenerService() {
     private val phoneNumberUtil = PhoneNumberUtil.getInstance()
@@ -49,7 +52,7 @@ class NotificationListenerService : NotificationListenerService() {
             .filter { phoneNumberUtil.getNumberType(it) == PhoneNumberUtil.PhoneNumberType.MOBILE }
             .map { AllowNumber.new(it, prefs.messagesTextTtl) }
         ) {
-            try { db.insert(number) } catch (exc: SQLiteConstraintException) { db.update(number) }
+            try { db.insert(number) } catch (_: SQLiteConstraintException) { db.update(number) }
             hasNumber = true
         }
         if (hasNumber) schedule()

@@ -7,6 +7,8 @@
     <string name="contacted_call_description">Allow calls from numbers you have called.</string>
     <string name="contacted_message">Message</string>
     <string name="contacted_message_description">Allow calls from numbers you have sent a message to.</string>
+    <string name="contacted_answer">Answer</string>
+    <string name="contacted_answer_description">Allow calls from numbers you have already answered.</string>
     <string name="groups_main">Groups</string>
     <string name="groups_description">Allow calls from numbers within the selected groups.</string>
     <string name="groups_local">Local</string>

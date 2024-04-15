@@ -135,6 +135,7 @@ class Preferences(ctx: Context) {
 enum class Contact(val value: Int) {
     CALL(1),
     MESSAGE(1 shl 1),
+    ANSWER(1 shl 2),
 }
 
 enum class Group(val value: Int) {

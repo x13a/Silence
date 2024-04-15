@@ -96,10 +96,11 @@ class MainFragment : Fragment() {
         val contacted = prefs.contacted
         val permissions = mutableListOf<String>()
         for (value in Contact.values().asSequence().filter { contacted.and(it.value) != 0 }) {
-            when (value) {
-                Contact.CALL -> permissions.add(Manifest.permission.READ_CALL_LOG)
-                Contact.MESSAGE -> permissions.add(Manifest.permission.READ_SMS)
-            }
+            permissions.add(when (value) {
+                Contact.CALL -> Manifest.permission.READ_CALL_LOG
+                Contact.MESSAGE -> Manifest.permission.READ_SMS
+                Contact.ANSWER -> Manifest.permission.READ_CALL_LOG
+            })
         }
         return permissions.toTypedArray()
     }
