@@ -3,15 +3,19 @@ package me.lucky.silence.screening
 import android.content.Context
 import android.database.Cursor
 import android.net.Uri
+import android.os.Build
 import android.provider.CallLog
 import android.provider.ContactsContract
 import android.provider.Telephony
 import android.telecom.Call
 import android.telephony.TelephonyManager
-
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
-import me.lucky.silence.*
+import me.lucky.silence.AppDatabase
+import me.lucky.silence.Contact
+import me.lucky.silence.Group
+import me.lucky.silence.Message
+import me.lucky.silence.Preferences
 
 class CallScreeningHelper(private val ctx: Context) {
     private val telephonyManager = ctx.getSystemService(TelephonyManager::class.java)
@@ -53,7 +57,7 @@ class CallScreeningHelper(private val ctx: Context) {
                 null,
                 null,
             )
-        } catch (exc: SecurityException) {}
+        } catch (_: SecurityException) {}
         cursor?.apply {
             if (moveToFirst()) result = true
             close()
@@ -64,18 +68,25 @@ class CallScreeningHelper(private val ctx: Context) {
     private fun checkContactedMessage(number: Phonenumber.PhoneNumber): Boolean {
         var cursor: Cursor? = null
         var result = false
+        val formatedNumber = phoneNumberUtil.format(
+            number,
+            PhoneNumberUtil.PhoneNumberFormat.E164,
+        )
+        var selection = "${Telephony.Sms.ADDRESS} = ?"
+        var selectionArgs: Array<String>? = arrayOf(formatedNumber)
+        if (isRequireQueryFix()) {
+            selection = selection.replace("?", formatedNumber)
+            selectionArgs = null
+        }
         try {
             cursor = ctx.contentResolver.query(
                 Telephony.Sms.Sent.CONTENT_URI,
                 arrayOf(Telephony.Sms._ID),
-                "${Telephony.Sms.ADDRESS} = " + phoneNumberUtil.format(
-                    number,
-                    PhoneNumberUtil.PhoneNumberFormat.E164,
-                ),
-                arrayOf(),
+                selection,
+                selectionArgs,
                 null,
             )
-        } catch (exc: SecurityException) {}
+        } catch (_: SecurityException) {}
         cursor?.apply {
             if (moveToFirst()) result = true
             close()
@@ -108,16 +119,22 @@ class CallScreeningHelper(private val ctx: Context) {
     private fun checkRepeated(number: Phonenumber.PhoneNumber, callDetails: Call.Details): Boolean {
         val cursor: Cursor?
         val type = CallLog.Calls.TYPE
+        val dateLimit = (System.currentTimeMillis() - prefs.repeatedMinutes * 60 * 1000).toString()
+        var selection = "($type = ${CallLog.Calls.BLOCKED_TYPE} OR " +
+                "$type = ${CallLog.Calls.MISSED_TYPE} OR " +
+                "$type = ${CallLog.Calls.REJECTED_TYPE}) AND " +
+                "${CallLog.Calls.DATE} > ?"
+        var selectionArgs: Array<String>? = arrayOf(dateLimit)
+        if (isRequireQueryFix()) {
+            selection = selection.replace("?", dateLimit)
+            selectionArgs = null
+        }
         try {
             cursor = ctx.contentResolver.query(
                 makeContentUri(CallLog.Calls.CONTENT_FILTER_URI, number),
                 arrayOf(CallLog.Calls._ID, CallLog.Calls.DATE),
-                "(${type} = ${CallLog.Calls.BLOCKED_TYPE} OR " +
-                            "${type} = ${CallLog.Calls.MISSED_TYPE} OR " +
-                            "${type} = ${CallLog.Calls.REJECTED_TYPE}) AND " +
-                        "${CallLog.Calls.DATE} > " +
-                            (System.currentTimeMillis() - prefs.repeatedMinutes * 60 * 1000).toString(),
-                null,
+                selection,
+                selectionArgs,
                 CallLog.Calls.DEFAULT_SORT_ORDER,
             )
         } catch (exc: SecurityException) { return false }
@@ -165,18 +182,25 @@ class CallScreeningHelper(private val ctx: Context) {
             return false
         var cursor: Cursor? = null
         var result = false
+        val formatedNumber = phoneNumberUtil.format(
+            number,
+            PhoneNumberUtil.PhoneNumberFormat.E164,
+        )
+        var selection = "${Telephony.Sms.ADDRESS} = ?"
+        var selectionArgs: Array<String>? = arrayOf(formatedNumber)
+        if (isRequireQueryFix()) {
+            selection = selection.replace("?", formatedNumber)
+            selectionArgs = null
+        }
         try {
             cursor = ctx.contentResolver.query(
                 Telephony.Sms.Inbox.CONTENT_URI,
                 arrayOf(Telephony.Sms._ID),
-                "${Telephony.Sms.ADDRESS} = " + phoneNumberUtil.format(
-                    number,
-                    PhoneNumberUtil.PhoneNumberFormat.E164,
-                ),
-                null,
+                selection,
+                selectionArgs,
                 null,
             )
-        } catch (exc: SecurityException) {}
+        } catch (_: SecurityException) {}
         cursor?.apply {
             if (moveToFirst()) result = true
             close()
@@ -222,4 +246,7 @@ class CallScreeningHelper(private val ctx: Context) {
                 PhoneNumberUtil.PhoneNumberFormat.E164,
             )),
         )
+
+    private fun isRequireQueryFix() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S_V2 &&
+            Build.VERSION.SDK_INT <= Build.VERSION_CODES.TIRAMISU
 }
