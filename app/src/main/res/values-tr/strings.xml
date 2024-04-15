@@ -78,4 +78,6 @@
     <string name="regex_pattern_error">Geçersiz düzenli ifade!</string>
     <string name="regex_main">Düzenli ifade</string>
     <string name="regex_pattern_helper_text">Düzenli ifadeyle eşleşen numaralardan gelen aramaları engelle.</string>
+    <string name="contacted_answer">Yanıtla</string>
+    <string name="contacted_answer_description">Daha önce yanıtladığınız numaralardan gelen aramalara izin ver.</string>
 </resources>
