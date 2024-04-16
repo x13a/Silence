@@ -37,9 +37,8 @@ class Preferences(ctx: Context) {
         const val SERVICE_ENABLED = "service_enabled"
         const val GENERAL_UNKNOWN_NUMBERS_CHECKED = "general_unknown_numbers_checked"
 
-        private const val REGEX_PATTERN = "regex_pattern"
+        const val REGEX_PATTERN = "regex_pattern"
     }
-
 
     private val prefs = PreferenceManager.getDefaultSharedPreferences(ctx)
 

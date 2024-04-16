@@ -86,7 +86,7 @@ fun ExtraScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
             OutlinedTextField(
                 label = { Text(stringResource(R.string.regex_main)) },
                 supportingText = { Text(regexSupportingText) },
-                singleLine = true,
+                singleLine = false,
                 value = regexText,
                 isError = regexError,
                 onValueChange = { newValue ->

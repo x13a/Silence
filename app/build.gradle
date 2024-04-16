@@ -25,7 +25,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
@@ -40,7 +39,6 @@ android {
     }
 
     buildFeatures {
-        viewBinding true
         compose true
     }
     lint {
@@ -60,8 +58,8 @@ dependencies {
 
     // https://issuetracker.google.com/issues/238425626
     implementation('androidx.preference:preference-ktx:1.2.1') {
-        exclude group: 'androidx.lifecycle', module:'lifecycle-viewmodel'
-        exclude group: 'androidx.lifecycle', module:'lifecycle-viewmodel-ktx'
+//        exclude group: 'androidx.lifecycle', module:'lifecycle-viewmodel'
+//        exclude group: 'androidx.lifecycle', module:'lifecycle-viewmodel-ktx'
     }
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.13.32'
     implementation 'info.guardianproject.panic:panic:1.0'
@@ -71,7 +69,7 @@ dependencies {
     ksp "androidx.room:room-compiler:$room_version"
 
     // Compose
-    def composeBom = platform('androidx.compose:compose-bom:2024.02.02')
+    def composeBom = platform('androidx.compose:compose-bom:2024.04.00')
     implementation(composeBom)
     androidTestImplementation(composeBom)
     implementation "androidx.compose.runtime:runtime"

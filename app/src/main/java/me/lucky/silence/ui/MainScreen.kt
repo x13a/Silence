@@ -83,12 +83,12 @@ fun MainScreen(
 ) {
     fun getContactedPermissions(): Array<String> {
         val contacted = prefs.contacted
-        val permissions = mutableListOf<String>()
+        val permissions = mutableSetOf<String>()
         for (value in Contact.entries.asSequence().filter { contacted.and(it.value) != 0 }) {
             when (value) {
                 Contact.CALL -> permissions.add(Manifest.permission.READ_CALL_LOG)
                 Contact.MESSAGE -> permissions.add(Manifest.permission.READ_SMS)
-                else -> {}
+                Contact.ANSWER -> permissions.add(Manifest.permission.READ_CALL_LOG)
             }
         }
         return permissions.toTypedArray()
@@ -96,7 +96,7 @@ fun MainScreen(
 
     fun getMessagesPermissions(): Array<String> {
         val messages = prefs.messages
-        val permissions = mutableListOf<String>()
+        val permissions = mutableSetOf<String>()
         for (value in Message.entries.asSequence().filter { messages.and(it.value) != 0 }) {
             when (value) {
                 Message.INBOX -> permissions.add(Manifest.permission.READ_SMS)

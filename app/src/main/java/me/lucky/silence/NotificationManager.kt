@@ -25,20 +25,22 @@ class NotificationManager(private val ctx: Context) {
     fun notifyBlockedCall(tel: String, sim: Sim?) {
         var title = ctx.getString(R.string.notification_title)
         if (sim != null) title = "$title (${sim.name.replace('_', ' ')})"
-        manager.notify(
-            SystemClock.uptimeMillis().toInt(),
-            NotificationCompat.Builder(ctx, CHANNEL_BLOCKED_CALLS_ID)
-                .setSmallIcon(R.drawable.ic_tile)
-                .setContentTitle(title)
-                .setContentText(tel)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setCategory(NotificationCompat.CATEGORY_STATUS)
-                .setShowWhen(true)
-                .setAutoCancel(true)
-                .addPerson(Person.Builder().setUri("tel:$tel").build())
-                .setGroup(GROUP_BLOCKED_CALLS_KEY)
-                .setGroupSummary(true)
-                .build(),
-        )
+        try {
+            manager.notify(
+                SystemClock.uptimeMillis().toInt(),
+                NotificationCompat.Builder(ctx, CHANNEL_BLOCKED_CALLS_ID)
+                    .setSmallIcon(R.drawable.ic_tile)
+                    .setContentTitle(title)
+                    .setContentText(tel)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    .setCategory(NotificationCompat.CATEGORY_STATUS)
+                    .setShowWhen(true)
+                    .setAutoCancel(true)
+                    .addPerson(Person.Builder().setUri("tel:$tel").build())
+                    .setGroup(GROUP_BLOCKED_CALLS_KEY)
+                    .setGroupSummary(true)
+                    .build(),
+            )
+        } catch (_: SecurityException) {}
     }
 }

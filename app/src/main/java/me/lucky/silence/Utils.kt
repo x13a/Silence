@@ -14,7 +14,7 @@ import me.lucky.silence.text.NotificationListenerService
 
 class Utils {
     companion object {
-        private fun isNotificationListenerRunning(ctx: Context): Boolean {
+        fun isNotificationListenerRunning(ctx: Context): Boolean {
             val manager = ctx.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
             @Suppress("deprecation")
             val services = manager.getRunningServices(Integer.MAX_VALUE)

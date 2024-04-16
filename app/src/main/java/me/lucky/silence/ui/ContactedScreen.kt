@@ -29,7 +29,14 @@ fun ContactedScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
             },
             name = R.string.contacted_message,
             description = R.string.contacted_message_description,
-        )
+        ), Preference(
+            getValue = { prefs.contacted.and(Contact.ANSWER.value) != 0 },
+            setValue = { isChecked ->
+                prefs.contacted = Utils.setFlag(prefs.contacted, Contact.ANSWER.value, isChecked)
+            },
+            name = R.string.contacted_answer,
+            description = R.string.contacted_answer_description,
+        ),
     )
 
     Screen(
