@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Silence</string>
+    <string name="contacted_main">已撥出</string>
+    <string name="contacted_call">電話</string>
+    <string name="contacted_call_description">允許撥打過的號碼來電。</string>
+    <string name="contacted_message">訊息</string>
+    <string name="contacted_message_description">允許來自已向其發送訊息的號碼的來電。</string>
+    <string name="notification_title">封鎖來電</string>
+    <string name="contacted_description">允許來自先前聯絡過的號碼的來電。</string>
+</resources>
