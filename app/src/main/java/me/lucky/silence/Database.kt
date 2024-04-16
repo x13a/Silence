@@ -1,11 +1,21 @@
 package me.lucky.silence
 
 import android.content.Context
-import androidx.room.*
+import androidx.room.AutoMigration
+import androidx.room.ColumnInfo
+import androidx.room.Dao
+import androidx.room.Database
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.Insert
+import androidx.room.PrimaryKey
+import androidx.room.Query
+import androidx.room.RenameTable
+import androidx.room.Room
+import androidx.room.RoomDatabase
 import androidx.room.migration.AutoMigrationSpec
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
 
@@ -41,10 +51,10 @@ abstract class AppDatabase : RoomDatabase() {
 private class AutoMigration1to2 : AutoMigrationSpec
 
 private val MIGRATION_2_3 = object : Migration(2, 3) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        database.execSQL("ALTER TABLE tmp_number RENAME TO allow_number")
-        database.execSQL("ALTER TABLE allow_number RENAME COLUMN ts_created TO ttl")
-        database.execSQL(
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL("ALTER TABLE tmp_number RENAME TO allow_number")
+        db.execSQL("ALTER TABLE allow_number RENAME COLUMN ts_created TO ttl")
+        db.execSQL(
             "UPDATE allow_number SET ttl = ttl + ${AllowNumberDao.INACTIVE_DURATION}")
     }
 }

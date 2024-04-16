@@ -44,7 +44,8 @@ class NotificationListenerService : NotificationListenerService() {
         var hasNumber = false
         for (number in phoneNumberUtil
             .findNumbers(
-                sbn.notification.extras[Notification.EXTRA_TEXT]?.toString() ?: return,
+                sbn.notification.extras.getCharSequence(Notification.EXTRA_TEXT)?.toString()
+                    ?: return,
                 telephonyManager?.networkCountryIso?.uppercase(),
             )
             .asSequence()

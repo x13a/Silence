@@ -36,7 +36,7 @@ class CallScreeningHelper(private val ctx: Context) {
     private fun checkContacted(number: PhoneNumber): Boolean {
         val contacted = prefs.contacted
         var result = false
-        for (value in Contact.values().asSequence().filter { contacted.and(it.value) != 0 }) {
+        for (value in Contact.entries.asSequence().filter { contacted.and(it.value) != 0 }) {
             result = when (value) {
                 Contact.CALL -> checkContactedCall(number)
                 Contact.MESSAGE -> checkContactedMessage(number)
@@ -124,7 +124,7 @@ class CallScreeningHelper(private val ctx: Context) {
         ) }
         val numberType by lazy { phoneNumberUtil.getNumberType(number) }
         val isMobile by lazy { numberType == PhoneNumberUtil.PhoneNumberType.MOBILE }
-        for (group in Group.values().asSequence().filter { groups.and(it.value) != 0 }) {
+        for (group in Group.entries.asSequence().filter { groups.and(it.value) != 0 }) {
             result = when (group) {
                 Group.TOLL_FREE -> numberType == PhoneNumberUtil.PhoneNumberType.TOLL_FREE
                 Group.MOBILE -> isMobile
@@ -188,7 +188,7 @@ class CallScreeningHelper(private val ctx: Context) {
     private fun checkMessages(number: PhoneNumber): Boolean {
         val messages = prefs.messages
         var result = false
-        for (value in Message.values().asSequence().filter { messages.and(it.value) != 0 }) {
+        for (value in Message.entries.asSequence().filter { messages.and(it.value) != 0 }) {
             result = when (value) {
                 Message.INBOX -> checkMessagesInbox(number)
                 Message.TEXT -> checkMessagesText(number)
