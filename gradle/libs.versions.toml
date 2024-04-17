@@ -11,6 +11,7 @@ composeBom = "2024.04.00"
 
 navigationCompose = "2.7.7"
 preferenceKtx = "1.2.1"
+workKtx = "2.9.0"
 room = "2.6.1"
 libphonenumber = "8.13.32"
 panic = "1.0"
@@ -36,6 +37,7 @@ androidx-foundation = { group = "androidx.compose.foundation", name = "foundatio
 androidx-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 androidx-preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "preferenceKtx" }
+androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "workKtx" }
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 google-libphonenumber = { group = "com.googlecode.libphonenumber", name = "libphonenumber", version.ref = "libphonenumber" }

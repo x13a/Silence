@@ -109,11 +109,5 @@
             </meta-data>
         </service>
 
-        <service
-            android:name=".text.CleanJobService"
-            android:exported="true"
-            android:permission="android.permission.BIND_JOB_SERVICE">
-        </service>
-
     </application>
 </manifest>
