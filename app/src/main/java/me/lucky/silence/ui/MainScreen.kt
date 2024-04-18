@@ -177,11 +177,17 @@ fun MainScreen(
             getPreference = { prefs.isBlockEnabled },
             setPreference = { prefs.isBlockEnabled = it },
         ),
-        Module(
-            name = R.string.sim,
-            description = R.string.sim_description,
-            navigation = onNavigateToSim,
-        ),
+        *(if (Utils.getModemCount(ctx) >= 2) {
+            arrayOf(
+                Module(
+                    name = R.string.sim,
+                    description = R.string.sim_description,
+                    navigation = onNavigateToSim,
+                ),
+            )
+        } else {
+            emptyArray()
+        }),
         Module(
             name = R.string.extra,
             description = R.string.extra_description,

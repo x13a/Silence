@@ -63,7 +63,7 @@ class Utils {
         fun getModemCount(ctx: Context): Int {
             val telephonyManager = ctx.getSystemService(TelephonyManager::class.java)
             return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                telephonyManager?.supportedModemCount
+                telephonyManager?.activeModemCount
             } else {
                 @Suppress("deprecation")
                 telephonyManager?.phoneCount
