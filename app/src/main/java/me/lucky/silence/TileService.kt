@@ -1,4 +1,4 @@
-package me.lucky.silence.ctl
+package me.lucky.silence
 
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService

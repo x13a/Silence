@@ -56,7 +56,6 @@ class CallScreeningService : CallScreeningService() {
             return
         } else if (
             prefs.isBlockEnabled ||
-            (prefs.isBlockPlusNumbers && isPlusNumber(callDetails)) ||
             checkBlockRegex(callDetails)
         ) {
             respondNotAllow(callDetails)
@@ -65,6 +64,7 @@ class CallScreeningService : CallScreeningService() {
             (prefs.isStirChecked && isStirVerified(callDetails)) ||
             (prefs.isUnknownNumbersChecked && isUnknownNumber(callDetails)) ||
             (prefs.isShortNumbersChecked && isShortNumber(callDetails)) ||
+            (prefs.isNotPlusNumbersChecked && isNotPlusNumber(callDetails)) ||
             checkSim()
         ) {
             respondAllow(callDetails)
@@ -155,8 +155,8 @@ class CallScreeningService : CallScreeningService() {
         return v.length in 3..5 && v.isDigitsOnly()
     }
 
-    private fun isPlusNumber(callDetails: Call.Details) =
-        callDetails.handle?.schemeSpecificPart?.startsWith('+') ?: false
+    private fun isNotPlusNumber(callDetails: Call.Details) =
+        callDetails.handle?.schemeSpecificPart?.startsWith('+') == false
 
     private fun checkBlockRegex(callDetails: Call.Details): Boolean {
         val phoneNumber = callDetails.handle?.schemeSpecificPart ?: return false

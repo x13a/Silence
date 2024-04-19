@@ -9,4 +9,5 @@ object Route {
     const val REPEATED = "repeated"
     const val SETTINGS = "settings"
     const val SIM = "sim"
+    const val REGEX = "regex"
 }

@@ -53,7 +53,9 @@ fun App(ctx: Context, navController: NavHostController) {
                 onNavigateToMessages = { navController.navigate(Route.MESSAGES) },
                 onNavigateToSim = { navController.navigate(Route.SIM) },
                 onNavigateToExtra = { navController.navigate(Route.EXTRA) },
-                onNavigateToSettings = { navController.navigate(Route.SETTINGS) })
+                onNavigateToSettings = { navController.navigate(Route.SETTINGS) },
+                onNavigateToRegex = { navController.navigate(Route.REGEX) },
+            )
         }
         composable(Route.CONTACTED) { ContactedScreen(prefs) { navController.popBackStack() } }
         composable(Route.GROUPS) { GroupsScreen(prefs) { navController.popBackStack() } }
@@ -62,5 +64,6 @@ fun App(ctx: Context, navController: NavHostController) {
         composable(Route.SIM) { SimScreen(prefs) { navController.popBackStack() } }
         composable(Route.EXTRA) { ExtraScreen(prefs) { navController.popBackStack() } }
         composable(Route.SETTINGS) { SettingsScreen(ctx, prefs) { navController.popBackStack() } }
+        composable(Route.REGEX) { RegexScreen(prefs) { navController.popBackStack() } }
     }
 }

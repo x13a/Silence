@@ -64,7 +64,6 @@
     <string name="settings_reject_call">Avslå anrop</string>
     <string name="settings_silence_call_description">Velger hvorvidt ringing skal forstummes for innkommende anrop. Samtalen vil dog sendes til forvalgt ringeprogram hvis det ikke er blokkert. Å velge dette gir kun mening når samtalen ikke har blitt valgt som ikke tillatt.</string>
     <string name="settings_skip_call_log_description">Velger hvorvidt innkommende anrop skal vises i anropsloggen. Dette skal kun velges hvis anropet ikke tillates. Anrop vil fremdeles bli logget med type «BLOCKED_TYPE».</string>
-    <string name="main">Start</string>
     <string name="groups_local_mobile">Fasttelefon og mobiltelefon</string>
     <string name="messages_text_ttl_helper_text">Hvor lenge nummeret vil kunne ringe deg. Modifikatorer: [d]ager [h]timer [m]inutter.</string>
     <string name="groups_local_mobile_description">Tillat anrop fra mobilnummer fra samme landskode som din.</string>

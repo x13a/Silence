@@ -43,7 +43,6 @@
     <string name="settings_skip_notification">تخطي الإشعار</string>
     <string name="sim_1_description">السماح بجميع المكالمات من شريحة الاتصال SIM 1.</string>
     <string name="sim_2_description">السماح بجميع المكالمات من شريحة الاتصال SIM 2.</string>
-    <string name="main">الرئيسية</string>
     <string name="contacted_call_description">السماح بالمكالمات من الأرقام التي اتصلت بها.</string>
     <string name="messages_text_description">السماح مؤقتا بالمكالمات من أرقام الهواتف المحمولة الموجودة في نص الرسائل الواردة.</string>
     <string name="settings_controller_description">تمكين جهاز استقبال البث من التحكم في الصمت بقصد.</string>

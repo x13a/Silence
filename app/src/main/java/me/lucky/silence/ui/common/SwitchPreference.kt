@@ -2,13 +2,11 @@ package me.lucky.silence.ui.common
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
-import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -45,11 +43,6 @@ fun SwitchPreference(
                     style = MaterialTheme.typography.bodySmall,
                 )
             }
-            VerticalDivider(
-                modifier = Modifier
-                    .padding(horizontal = Dimension.DIV_PADDING)
-                    .height(Dimension.DIV_HEIGHT)
-            )
             Switch(
                 checked = switchState, onCheckedChange = { newSwitchState ->
                     switchState = newSwitchState

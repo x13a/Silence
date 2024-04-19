@@ -37,7 +37,7 @@ fun ToggleableButton(
         }
     ) {
         Text(
-            text = if (isChecked) stringResource(R.string.on) else stringResource(R.string.off),
+            text = if (isChecked) stringResource(R.string.toggle_on) else stringResource(R.string.toggle_off),
             style = MaterialTheme.typography.titleLarge,
             color = if (isChecked) {
                 MaterialTheme.colorScheme.onPrimary

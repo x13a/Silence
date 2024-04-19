@@ -46,7 +46,6 @@
     <string name="panic_app_unknown_app">未知のアプリ</string>
     <string name="allow">許可する</string>
     <string name="notification_title">塞がれた電話</string>
-    <string name="main">ホーム</string>
     <string name="goto_button">移動</string>
     <string name="groups_toll_free_description">フリーダイヤルを許可する (例 800).</string>
     <string name="repeated_description">特定した数分間に同じ場号からの〇回目の電話を許可する。</string>

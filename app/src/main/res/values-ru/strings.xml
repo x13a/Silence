@@ -52,7 +52,6 @@
     <string name="settings_skip_notification">Пропускать уведомления</string>
     <string name="sim_1_description">Разрешить все вызовы для SIM 1.</string>
     <string name="sim_2_description">Разрешить все вызовы для SIM 2.</string>
-    <string name="main">Главная</string>
     <string name="extra_contacts">Контакты</string>
     <string name="extra_contacts_description">Разрешить звонки с номеров в контактах.</string>
     <string name="extra_plus_numbers">Международные номера</string>

@@ -42,7 +42,6 @@
     <string name="allow">Leisti</string>
     <string name="notification_channel">Užblokuoti skambučiai</string>
     <string name="notification_title">Užblokuotas skambutis</string>
-    <string name="main">Pagrindinis</string>
     <string name="goto_button">EITI Į</string>
     <string name="extra_short_numbers_description">Leisti skambučius iš numerių, kurių ilgis yra nuo 3 iki 5 skaitmenų.</string>
     <string name="extra_plus_numbers">Numeriai su pliusu</string>

@@ -41,7 +41,7 @@
         </service>
 
         <service
-            android:name=".ctl.TileService"
+            android:name=".TileService"
             android:icon="@drawable/ic_tile"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
             android:exported="true">

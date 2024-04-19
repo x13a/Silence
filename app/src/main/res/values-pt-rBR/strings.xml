@@ -43,7 +43,6 @@
     <string name="extra_contacts">Contatos</string>
     <string name="extra_contacts_description">Permitir ligações de números em seus contatos.</string>
     <string name="settings_skip_call_log">Pular o registro de ligações</string>
-    <string name="main">Principal</string>
     <string name="goto_button">Vá</string>
     <string name="sim_1_description">Permitir todas as ligações do SIM 1.</string>
     <string name="settings_controller_description">Ativar o receptor de transmissão para controlar o Silêncio com intentos.</string>

@@ -72,6 +72,5 @@
     <string name="allow">Permitir</string>
     <string name="notification_channel">Chamadas bloqueadas</string>
     <string name="notification_title">Chamada bloqueada</string>
-    <string name="main">Principal</string>
     <string name="goto_button">GOTO</string>
 </resources>

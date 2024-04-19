@@ -27,7 +27,7 @@ class Preferences(ctx: Context) {
         const val CONTACTS_CHECKED = "contacts_checked"
         const val STIR_CHECKED = "stir_checked"
         const val SIM = "sim"
-        const val BLOCK_PLUS_NUMBERS = "block_plus_numbers"
+        const val NOT_PLUS_NUMBERS_CHECKED = "not_plus_numbers_checked"
 
         const val DEFAULT_REPEATED_COUNT = 3
         const val DEFAULT_REPEATED_MINUTES = 5
@@ -120,9 +120,9 @@ class Preferences(ctx: Context) {
         get() = prefs.getInt(SIM, 0)
         set(value) = prefs.edit { putInt(SIM, value) }
 
-    var isBlockPlusNumbers: Boolean
-        get() = prefs.getBoolean(BLOCK_PLUS_NUMBERS, false)
-        set(value) = prefs.edit { putBoolean(BLOCK_PLUS_NUMBERS, value) }
+    var isNotPlusNumbersChecked: Boolean
+        get() = prefs.getBoolean(NOT_PLUS_NUMBERS_CHECKED, false)
+        set(value) = prefs.edit { putBoolean(NOT_PLUS_NUMBERS_CHECKED, value) }
 
     var isBlockEnabled: Boolean
         get() = prefs.getBoolean(BLOCK_ENABLED, false)

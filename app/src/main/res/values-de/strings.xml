@@ -56,7 +56,6 @@
     <string name="messages_text_ttl_helper_text">Wie lange die Nummer Sie anrufen kann. Modifikatoren: Tage [d], Stunden [h], Minuten [m]</string>
     <string name="messages_text_ttl_hint">zeit</string>
     <string name="messages_text_ttl_error">7 Tage / 48 Stunden / 120 Minuten</string>
-    <string name="main">Start</string>
     <string name="extra">Weiteres</string>
     <string name="extra_contacts">Kontakte</string>
     <string name="extra_contacts_description">Anrufe von Nummern in Ihren Kontakten zulassen.</string>
