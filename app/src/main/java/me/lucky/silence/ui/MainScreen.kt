@@ -165,7 +165,7 @@ fun MainScreen(
         ),
         Module(
             name = R.string.regex_main,
-            description = R.string.regex_pattern_helper_text,
+            description = R.string.regex_description,
             navigation = onNavigateToRegex,
         ),
         *(if (Utils.getModemCount(ctx, Modem.SUPPORTED) >= 1) {
