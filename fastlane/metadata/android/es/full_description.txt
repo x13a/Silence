@@ -1,23 +1,23 @@
-Por defecto se bloquean los números que no están en sus contactos.
+De forma predeterminada, los números que no están en tus contactos están bloqueados.
 
-Opcionalmente se permite:
+Opcionalmente permitir:
 * Números con los que ha contactado
 * Números dentro de los grupos seleccionados
-* X llamadas registradas desde el mismo número en un periodo de tiempo determinado
+* X llamadas registradas desde el mismo número en un número determinado de minutos
 * Números encontrados en los mensajes
-* y más..
+* y más ..
 
-Si la aplicación rechaza las llamadas de los contactos en Android 10, permita el permiso de Contactos manualmente en
-Información de la aplicación → Permisos.
+Si la aplicación rechaza llamadas de contactos en Android 10, permite el permiso Contactos manualmente
+App info → Permisos.
 
 Permisos:
 * CALL_SCREENING - bloquear o permitir la llamada
-* READ_CALL_LOG - comprueba que has llamado al número y cuenta las veces que el número te ha llamado en X minutos
-* READ_SMS - comprueba que has enviado un mensaje al número y que has recibido un mensaje del número
-* NOTIFICATION_LISTENER - encuentra los números de móvil en los mensajes entrantes
-* READ_PHONE_STATE - comprueba en qué SIM está llamando el número
-* RECEIVE_BOOT_COMPLETED - persiste el trabajo de limpieza de números expirados a través de los reinicios
-* READ_CONTACTS - comprueba que el número existe en los contactos en Android 10 o bloquea las llamadas de ellos
+* READ_CALL_LOG - comprueba que has llamado/respondido el número y cuenta las veces que el número te ha llamado en X minutos
+* READ_SMS - comprobar que ha enviado un mensaje al número y que ha recibido un mensaje del número
+* NOTIFICATION_LISTENER - encontrar números móviles en los mensajes
+* READ_PHONE_STATE - comprobar en qué SIM está llamando el número
+* RECEIVE_BOOT_COMPLETED - persiste el trabajo limpio de números caducados a través de reinicios
+* READ_CONTACTS - comprobar el número existe en los contactos en Android 10 o bloquear llamadas de ellos
 
-Es un software libre de código abierto.
+Es software libre y de código abierto.
 Licencia: GPL-3
