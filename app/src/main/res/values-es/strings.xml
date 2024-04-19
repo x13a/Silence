@@ -53,7 +53,7 @@
     <string name="repeated_burst_timeout_helper_text">Tiempo mínimo de espera en segundos entre llamadas repetidas.</string>
     <string name="messages_inbox">Bandeja de entrada</string>
     <string name="messages_inbox_description">Permitir las llamadas de los números que le han enviado un mensaje.</string>
-    <string name="messages_text_ttl_hint">Tiempo</string>
+    <string name="messages_text_ttl_hint">Duración</string>
     <string name="messages_text_ttl_helper_text">El tiempo que el número podrá llamarle. Modificadores: [d]ays [h]ours [m]inutos</string>
     <string name="extra_contacts_description">Permitir llamadas desde los números de tus contactos.</string>
     <string name="extra_unknown_numbers">Números desconocidos</string>
@@ -74,4 +74,20 @@
     <string name="notification_channel">Llamadas bloqueadas</string>
     <string name="settings_skip_notification">Omitir notificación</string>
     <string name="goto_button">GOTO</string>
+    <string name="regex_main">expresión regular</string>
+    <string name="regex_pattern_hint">Patrón</string>
+    <string name="regex_pattern_helper_text">Bloquee llamadas de números que coincidan con las expresiones regulares.</string>
+    <string name="regex_pattern_error">¡Expresión regular no válida!</string>
+    <string name="additional_settings">Ajustes adicionales</string>
+    <string name="customize_contacted">Personaliza la configuración de los contactos.</string>
+    <string name="customize_groups">Personaliza la configuración de los grupos.</string>
+    <string name="sim_description">Permitir todas las llamadas desde una o ambas tarjetas SIM.</string>
+    <string name="back">Volver</string>
+    <string name="off">Apagar</string>
+    <string name="on">Encender</string>
+    <string name="contacted_answer">Respuesta</string>
+    <string name="contacted_answer_description">Permitir llamadas de números que ya ha contestado.</string>
+    <string name="customize_messages">Personaliza la configuración de los mensajes.</string>
+    <string name="customize_repeated">Personaliza la configuración de los reenvios.</string>
+    <string name="extra_description">Bloquear llamadas de algunos grupos/identificadores varios.</string>
 </resources>
