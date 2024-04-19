@@ -25,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import me.lucky.silence.Contact
 import me.lucky.silence.Message
+import me.lucky.silence.Modem
 import me.lucky.silence.Preferences
 import me.lucky.silence.R
 import me.lucky.silence.Utils
@@ -177,11 +178,17 @@ fun MainScreen(
             getPreference = { prefs.isBlockEnabled },
             setPreference = { prefs.isBlockEnabled = it },
         ),
-        Module(
-            name = R.string.sim,
-            description = R.string.sim_description,
-            navigation = onNavigateToSim,
-        ),
+        *(if (Utils.getModemCount(ctx, Modem.SUPPORTED) >= 2) {
+            arrayOf(
+                Module(
+                    name = R.string.sim,
+                    description = R.string.sim_description,
+                    navigation = onNavigateToSim,
+                ),
+            )
+        } else {
+            emptyArray()
+        }),
         Module(
             name = R.string.extra,
             description = R.string.extra_description,

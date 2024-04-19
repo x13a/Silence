@@ -60,10 +60,13 @@ class Utils {
                 .getSystemService(RoleManager::class.java)
                 ?.isRoleHeld(RoleManager.ROLE_CALL_SCREENING) ?: false
 
-        fun getModemCount(ctx: Context): Int {
+        fun getModemCount(ctx: Context, modem: Modem): Int {
             val telephonyManager = ctx.getSystemService(TelephonyManager::class.java)
             return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                telephonyManager?.supportedModemCount
+                when (modem) {
+                    Modem.ACTIVE -> telephonyManager?.activeModemCount
+                    Modem.SUPPORTED -> telephonyManager?.supportedModemCount
+                }
             } else {
                 @Suppress("deprecation")
                 telephonyManager?.phoneCount
@@ -78,4 +81,9 @@ class Utils {
                 false -> key.and(value.inv())
             }
     }
+}
+
+enum class Modem {
+    ACTIVE,
+    SUPPORTED,
 }

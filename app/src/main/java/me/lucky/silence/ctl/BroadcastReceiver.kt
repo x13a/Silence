@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import me.lucky.silence.Modem
 
 import me.lucky.silence.Preferences
 import me.lucky.silence.Sim
@@ -46,7 +47,8 @@ class BroadcastReceiver : BroadcastReceiver() {
     }
 
     private fun setSimState(ctx: Context, flag: Sim, state: Boolean) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && Utils.getModemCount(ctx) >= 2)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
+            Utils.getModemCount(ctx, Modem.SUPPORTED) >= 2)
             Preferences(ctx).apply {
                 sim = when (state) {
                     true -> sim.or(flag.value)
