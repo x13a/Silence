@@ -68,7 +68,7 @@
     <string name="extra_contacts_description">Kişilerinizdeki numaralardan gelen aramalara izin ver.</string>
     <string name="extra_contacts">Kişiler</string>
     <string name="block_main">Engelle</string>
-    <string name="extra_plus_numbers_description">Artı ile başlayan numaralardan gelen aramaları engelle.</string>
+    <string name="extra_plus_numbers_description">Artı ile başlamayan numaralardan gelen aramalara izin ver.</string>
     <string name="extra_plus_numbers">Artılı numaralar</string>
     <string name="block_description">Tüm gelen aramaları engelle. Rehberdeki numaraları da engellemek için izin vermeniz gerekir.</string>
     <string name="repeated_burst_timeout_hint">Zaman aşımı</string>
@@ -79,7 +79,7 @@
     <string name="regex_pattern_helper_text">Düzenli ifadeyle eşleşen numaralardan gelen aramaları engelle.</string>
     <string name="contacted_answer">Yanıtla</string>
     <string name="contacted_answer_description">Daha önce yanıtladığınız numaralardan gelen aramalara izin ver.</string>
-    <string name="extra_description">Bazı çeşitli gruplardan/tanımlayıcılardan gelen aramaları engelleyin.</string>
+    <string name="extra_description">Bazı çeşitli gruplardan/tanımlayıcılardan gelen aramalara izin ver.</string>
     <string name="sim_description">Bir veya her iki SIM karttan gelen tüm aramalara izin verin.</string>
     <string name="toggle_off">Kapalı</string>
     <string name="back">Geri</string>
