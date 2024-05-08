@@ -12,9 +12,9 @@ Uygulama Bilgileri → İzinler yolunu izleyerek elle kişilerinize erişim izni
 
 Uygulama İzinleri:
 * CALL_SCREENING - Çağrıyı engeller ya da izin verir.
-* READ_CALL_LOG - Numarayı arayıp aramadığınızı ve numaranın sizi kaç kere ve kaç dakika boyunca aradığını denetler.
+* READ_CALL_LOG - Numarayı aradığınızı/yanıtladığınızı ve numaranın sizi kaç kere ve kaç dakika boyunca aradığını denetler.
 * READ_SMS - Numaraya mesaj gönderip göndermediğinizi ve numaradan mesaj alıp almadığınızı denetler.
-* NOTIFICATION_LISTENER - Gelen mesajlardan telefon numaralarını bulur.
+* NOTIFICATION_LISTENER - Mesajlarda telefon numaralarını bulur.
 * READ_PHONE_STATE - numaranın hangi SIM'di aradığını denetler.
 * RECEIVE_BOOT_COMPLETED - Yeniden başlatmalar sırasında ektin olmayan numaraları temizler.
 * READ_CONTACTS - Android 10'da ilgili numaraların rehberinizde var olup olmadığını denetler veya onlardan gelen aramaları engeller.
