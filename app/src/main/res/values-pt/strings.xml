@@ -48,11 +48,11 @@
     <string name="extra">Extra</string>
     <string name="extra_contacts">Contactos</string>
     <string name="extra_contacts_description">Permitir chamadas de números nos seus contactos.</string>
-    <string name="messages_text_ttl_hint">tempo</string>
+    <string name="messages_text_ttl_hint">Tempo</string>
     <string name="extra_short_numbers">Números curtos</string>
     <string name="extra_short_numbers_description">Permitir chamadas de números que contêm entre 3 a 5 dígitos.</string>
     <string name="extra_plus_numbers">Números mais</string>
-    <string name="extra_plus_numbers_description">Bloquear chamadas de números que começam com o sinal mais.</string>
+    <string name="extra_plus_numbers_description">Permitir chamadas de números que não começam com o sinal mais.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
     <string name="settings">Configurações</string>
     <string name="settings_controller">Controlador</string>
@@ -73,4 +73,17 @@
     <string name="notification_title">Chamada bloqueada</string>
     <string name="goto_button">GOTO</string>
     <string name="app_name">Silence</string>
+    <string name="contacted_answer">Atendidos</string>
+    <string name="contacted_answer_description">Permitir chamadas de números que já atendeu.</string>
+    <string name="regex_pattern_helper_text">Permitir chamadas de números que correspondam à expressão regular.</string>
+    <string name="back">Voltar</string>
+    <string name="toggle_off">Desativado</string>
+    <string name="toggle_on">Ativado</string>
+    <string name="regex_main">Expressão regular</string>
+    <string name="regex_description">Processar chamadas de números que correspondem à expressão regular.</string>
+    <string name="regex_pattern_hint">Modelo</string>
+    <string name="regex_pattern_error">Expressão regular inválida!</string>
+    <string name="extra_description">Permitir chamadas de alguns grupos/identificadores diversos.</string>
+    <string name="block">Bloquear</string>
+    <string name="sim_description">Processar todas as chamadas de um ou ambos os cartões SIM.</string>
 </resources>
