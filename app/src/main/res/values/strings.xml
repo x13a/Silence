@@ -86,4 +86,7 @@
     <string name="back">Back</string>
     <string name="toggle_off">Off</string>
     <string name="toggle_on">On</string>
+
+    <string name="timer">Timer</string>
+    <string name="timer_description">Turn on silence automatically after a certain period of time</string>
 </resources>
