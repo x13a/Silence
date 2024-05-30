@@ -88,5 +88,5 @@
     <string name="toggle_on">On</string>
 
     <string name="timer">Timer</string>
-    <string name="timer_description">Turn on silence automatically after a certain period of time</string>
+    <string name="timer_description">Timer toggles the "silence" function after the set duration.</string>
 </resources>
