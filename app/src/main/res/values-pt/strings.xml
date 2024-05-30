@@ -86,4 +86,12 @@
     <string name="extra_description">Permitir chamadas de alguns grupos/identificadores diversos.</string>
     <string name="block">Bloquear</string>
     <string name="sim_description">Processar todas as chamadas de um ou ambos os cartões SIM.</string>
+    <string name="timer">Temporizador</string>
+    <string name="timer_description">O temporizador alterna a função "silêncio" após a duração definida.</string>
+    <string name="input_hours_label">Insira o horário</string>
+    <string name="input_minutes_label">Insira os minutos</string>
+    <string name="start_timer_label">Iniciar temporizador</string>
+    <string name="timer_started_label">Temporizador iniciado</string>
+    <string name="timer_done_app_on">O cronômetro terminou, o aplicativo está ligado!</string>
+    <string name="timer_done_app_off">O cronômetro terminou, o aplicativo está desligado!</string>
 </resources>

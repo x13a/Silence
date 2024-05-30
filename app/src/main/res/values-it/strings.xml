@@ -73,4 +73,12 @@
     <string name="block_description">Blocca tutte le chiamate in arrivo. Per bloccare anche i numeri dai contatti devi concedere un\'autorizzazione.</string>
     <string name="repeated_burst_timeout_hint">Timeout</string>
     <string name="repeated_burst_timeout_helper_text">Timeout minimo in secondi tra chiamate ripetute.</string>
+    <string name="timer">Timer</string>
+    <string name="timer_description">Il timer attiva/disattiva la funzione "silenzio" dopo la durata impostata.</string>
+    <string name="input_hours_label">Inserisci gli orari</string>
+    <string name="input_minutes_label">Inserisci i minuti</string>
+    <string name="start_timer_label">Avvia timer</string>
+    <string name="timer_started_label">Timer avviato</string>
+    <string name="timer_done_app_on">Il timer è pronto, l\'app è attiva!</string>
+    <string name="timer_done_app_off">Il timer è terminato, l\'app è disattivata!</string>
 </resources>

@@ -29,6 +29,10 @@ fun TimerScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
     val coroutineScope = rememberCoroutineScope()
     val timerDescription = stringResource(R.string.timer_description)
     val context = LocalContext.current
+    val timerStartedLabel = stringResource(R.string.timer_started_label)
+    val startTimerLabel = stringResource(R.string.start_timer_label)
+    val timerDoneAppOnLabel = stringResource(R.string.timer_done_app_on)
+    val timerDoneAppOffLabel = stringResource(R.string.timer_done_app_off)
 
     Screen(title = R.string.timer, onBackPressed = onBackPressed) {
         Column(modifier = Modifier.padding(horizontal = 8.dp)) {
@@ -36,28 +40,29 @@ fun TimerScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
                 value = hoursInput,
                 onValueChange = { hoursInput = it },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                label = { Text("Voer het aantal uren in") },
+                label = { Text(stringResource(R.string.input_hours_label)) },
                 modifier = Modifier.fillMaxWidth()
             )
             OutlinedTextField(
                 value = minutesInput,
                 onValueChange = { minutesInput = it },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                label = { Text("Voer het aantal minuten in") },
+                label = { Text(stringResource(R.string.input_minutes_label)) },
                 modifier = Modifier.fillMaxWidth()
             )
             Button(onClick = {
                 val hours = hoursInput.toIntOrNull() ?: 0
                 val minutes = minutesInput.toIntOrNull() ?: 0
                 coroutineScope.launch {
+                    Toast.makeText(context, timerStartedLabel, Toast.LENGTH_SHORT).show()
                     delay((hours * 60L + minutes) * 60L * 1000L)
                     prefs.isEnabled = !prefs.isEnabled
-                    val message = if (prefs.isEnabled) "Timer is klaar, app is aan!" else "Timer is klaar, app is uit!"
+                    val message = if (prefs.isEnabled) timerDoneAppOnLabel else timerDoneAppOffLabel
                     println(message)
                     Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
                 }
             }, modifier = Modifier.align(Alignment.CenterHorizontally)) {
-                Text("Start Timer")
+                Text(startTimerLabel)
             }
             Text(timerDescription)
         }

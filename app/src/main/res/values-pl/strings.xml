@@ -53,4 +53,12 @@
     <string name="extra_unknown_numbers_description">Zezwalaj na połączenia od nieznajomych bez numeru.</string>
     <string name="settings_silence_call_description">Określa, czy dzwonek ma być wyciszony dla połączenia przychodzącego. Połączenie będzie jednak nadal wysyłane do domyślnej aplikacji, jeśli nie jest zablokowane. Zaznaczenie tego ma sens tylko wtedy, gdy połączenie nie zostało odrzucone.</string>
     <string name="settings_skip_call_log">Pomiń rejestr połączeń</string>
+    <string name="timer">Timer</string>
+    <string name="timer_description">Zegar przełącza funkcję „wyciszenia” po ustawionym czasie trwania.</string>
+    <string name="input_hours_label">Wprowadź godziny</string>
+    <string name="input_minutes_label">Wprowadź minuty</string>
+    <string name="start_timer_label">Uruchom licznik czasu</string>
+    <string name="timer_started_label">Timer uruchomiony</string>
+    <string name="timer_done_app_on">Timer się skończył, aplikacja jest włączona!</string>
+    <string name="timer_done_app_off">Timer się skończył, aplikacja wyłączona!</string>
 </resources>
