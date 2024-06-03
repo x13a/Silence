@@ -55,10 +55,10 @@ open class MainActivity : ComponentActivity() {
             MY_PERMISSIONS_REQUEST_SEND_SMS -> {
                 // If the permission is granted
                 if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    // Show a dialog to check SMS messages
+                    // Show a dialog to check Settings
                     AlertDialog.Builder(this)
-                        .setTitle("Check SMS Messages")
-                        .setMessage("Please check your SMS messages when you receive a notification.")
+                        .setTitle("Check Settings")
+                        .setMessage("You can set up an SMS notification in settings to be sent to a blocked number when it's blocked by the app.")
                         .setPositiveButton("OK") { dialog, _ ->
                             // Dismiss the dialog when the OK button is clicked
                             dialog.dismiss()

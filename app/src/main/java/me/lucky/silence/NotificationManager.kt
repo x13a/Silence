@@ -8,6 +8,7 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.Person
 import android.telephony.SmsManager
 
+
 class NotificationManager(private val ctx: Context) {
     companion object {
         private const val CHANNEL_BLOCKED_CALLS_ID = "blocked_calls"
@@ -51,18 +52,20 @@ class NotificationManager(private val ctx: Context) {
     // Get the default instance of the SmsManager
     val smsManager = SmsManager.getDefault()
     // Send a text message to the provided phone number
-    // The second parameter is the service center address, null means use the current default SMSC
-    // The third parameter is the message to send
-    // The fourth and fifth parameters are PendingIntent objects to be broadcast when the message is sent and delivered, respectively. We don't need these, so we set them to null
         smsManager.sendTextMessage(phoneNumber, null, message, null, null)
     }
 
 // Function to send an SMS to a blocked call
-    fun smsBlockedCall(tel: String, sim: Sim?) {
-    // Send an SMS to the blocked number so the caller knows they have been blocked.
-        sendSMS(tel, "Your number has been blocked because it is not known to the person you tried to call. If you want to contact this person, please send a message with your name and reason first.")
+fun smsBlockedCall(tel: String, sim: Sim?) {
+    // Get the SMS message from Preferences
+    val prefs = Preferences(ctx)
+    val message = prefs.smsMessage
+
+    // If the message is not empty, send an SMS to the blocked number
+    if (!message.isNullOrEmpty()) {
+        sendSMS(tel, message)
     }
 
 
 
-}
+}}
