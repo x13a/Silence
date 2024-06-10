@@ -94,4 +94,6 @@
     <string name="timer_started_label">Timer started</string>
     <string name="timer_done_app_on">Timer is done, app is on!</string>
     <string name="timer_done_app_off">Timer is done, app is off!</string>
+    <string name="cancel_timer_label">Cancel Timer</string>
+    <string name="remaining_time">%1$s left until the timer ends</string>
 </resources>

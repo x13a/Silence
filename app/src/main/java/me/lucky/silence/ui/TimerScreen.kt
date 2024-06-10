@@ -2,7 +2,9 @@ package me.lucky.silence.ui
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
@@ -21,16 +23,22 @@ import me.lucky.silence.ui.common.Screen
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.stringResource
+import kotlinx.coroutines.Job
+import androidx.compose.material3.LinearProgressIndicator
 
 @Composable
 fun TimerScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
     var hoursInput by remember { mutableStateOf("") }
     var minutesInput by remember { mutableStateOf("") }
+    var remainingTime by remember { mutableStateOf("") }
+    var totalSeconds by remember { mutableStateOf(0) }
     val coroutineScope = rememberCoroutineScope()
+    var timerJob by remember { mutableStateOf<Job?>(null) }
     val timerDescription = stringResource(R.string.timer_description)
     val context = LocalContext.current
     val timerStartedLabel = stringResource(R.string.timer_started_label)
     val startTimerLabel = stringResource(R.string.start_timer_label)
+    val cancelTimerLabel = stringResource(R.string.cancel_timer_label)
     val timerDoneAppOnLabel = stringResource(R.string.timer_done_app_on)
     val timerDoneAppOffLabel = stringResource(R.string.timer_done_app_off)
 
@@ -53,9 +61,14 @@ fun TimerScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
             Button(onClick = {
                 val hours = hoursInput.toIntOrNull() ?: 0
                 val minutes = minutesInput.toIntOrNull() ?: 0
-                coroutineScope.launch {
+                totalSeconds = (hours * 60 + minutes) * 60
+                timerJob?.cancel()
+                timerJob = coroutineScope.launch {
                     Toast.makeText(context, timerStartedLabel, Toast.LENGTH_SHORT).show()
-                    delay((hours * 60L + minutes) * 60L * 1000L)
+                    for (i in totalSeconds downTo 0) {
+                        remainingTime = "${i / 3600}:${(i % 3600) / 60}:${i % 60}"
+                        delay(1000L)
+                    }
                     prefs.isEnabled = !prefs.isEnabled
                     val message = if (prefs.isEnabled) timerDoneAppOnLabel else timerDoneAppOffLabel
                     println(message)
@@ -64,6 +77,21 @@ fun TimerScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
             }, modifier = Modifier.align(Alignment.CenterHorizontally)) {
                 Text(startTimerLabel)
             }
+            Button(onClick = {
+                timerJob?.cancel()
+                remainingTime = ""
+            }, modifier = Modifier.align(Alignment.CenterHorizontally)) {
+                Text(cancelTimerLabel)
+            }
+            Spacer(modifier = Modifier.height(16.dp))
+            if (remainingTime.isNotEmpty() && totalSeconds > 0) {
+                val remainingSeconds = remainingTime.split(":").map { it.toInt() }.reduce { acc, i -> acc * 60 + i }
+                LinearProgressIndicator(progress = 1f - remainingSeconds.toFloat() / totalSeconds, modifier = Modifier.fillMaxWidth())
+            }
+            if (remainingTime.isNotEmpty()) {
+                Text(stringResource(R.string.remaining_time, remainingTime))
+            }
+            Spacer(modifier = Modifier.height(16.dp))
             Text(timerDescription)
         }
     }
