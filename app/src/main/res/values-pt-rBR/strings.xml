@@ -73,4 +73,12 @@
     <string name="block_description">Bloqueie todas as chamadas recebidas. Para também bloquear números de contatos, você deve conceder uma permissão.</string>
     <string name="extra_plus_numbers_description">Bloqueie chamadas de números que começam com um sinal de mais.</string>
     <string name="extra_plus_numbers">Números mais</string>
+    <string name="timer">Temporizador</string>
+    <string name="timer_description">O temporizador alterna a função "silêncio" após a duração definida.</string>
+    <string name="input_hours_label">Insira o horário</string>
+    <string name="input_minutes_label">Insira os minutos</string>
+    <string name="start_timer_label">Iniciar temporizador</string>
+    <string name="timer_started_label">Temporizador iniciado</string>
+    <string name="timer_done_app_on">O cronômetro terminou, o aplicativo está ligado!</string>
+    <string name="timer_done_app_off">O cronômetro terminou, o aplicativo está desligado!</string>
 </resources>

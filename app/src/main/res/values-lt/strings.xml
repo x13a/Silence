@@ -73,4 +73,12 @@
     <string name="groups_toll_free">Nemokamas</string>
     <string name="messages_text_ttl_hint">laikas</string>
     <string name="groups_local_mobile">Vietinis ir mobilusis</string>
+    <string name="timer">Laikmatis</string>
+    <string name="timer_description">Laikmatis perjungia funkciją "tylos" pasibaigus nustatytai trukmei.</string>
+    <string name="input_hours_label">Įveskite darbo valandas</string>
+    <string name="input_minutes_label">Įveskite minutes</string>
+    <string name="start_timer_label">Paleisti laikmatį</string>
+    <string name="timer_started_label">Laikmatis paleistas</string>
+    <string name="timer_done_app_on">Laikmatis baigtas, programa įjungta!</string>
+    <string name="timer_done_app_off">Laikmatis baigtas, programa išjungta!</string>
 </resources>

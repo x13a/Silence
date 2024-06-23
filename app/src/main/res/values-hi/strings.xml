@@ -26,4 +26,12 @@
     <string name="extra_stir_description">STIR जांच उत्तीर्ण करने वाले नंबरें।</string>
     <string name="panic_app_dialog_title">आज्ञा दें आतंकी ऐप की</string>
     <string name="panic_app_dialog_message">क्या आप अवश्य हैं की आप %1$s ko अनुमति देना चाहते हैं हानिकारक आतंकी कार्य करने के लिए\?</string>
+    <string name="timer">टाइमर</string>
+    <string name="timer_description">टाइमर सेट अवधि के बाद "साइलेंस" फ़ंक्शन को टॉगल करता है।</string>
+    <string name="input_hours_label">घंटे दर्ज करें</string>
+    <string name="input_minutes_label">मिनट दर्ज करें</string>
+    <string name="start_timer_label">टाइमर शुरू करें</string>
+    <string name="timer_started_label">टाइमर शुरू हो गया है</string>
+    <string name="timer_done_app_on">टाइमर पूरा हो गया है, ऐप चालू है!</string>
+    <string name="timer_done_app_off">टाइमर पूरा हो गया है, ऐप बंद है!</string>
 </resources>

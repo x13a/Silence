@@ -73,4 +73,12 @@
     <string name="settings_skip_notification_description">ਸੈੱਟ ਕਰਦਾ ਹੈ ਕਿ ਕੀ ਆਉਣ ਵਾਲੀ ਕਾਲ ਲਈ ਮਿਸਡ ਕਾਲ ਸੂਚਨਾ ਨਹੀਂ ਦਿਖਾਈ ਜਾਣੀ ਚਾਹੀਦੀ। ਇਹਦੀ ਤਾਂ ਹੀ ਜਾਂਚ ਕੀਤੀ ਜਾਣੀ ਚਾਹੀਦੀ ਹੈ ਜੇਕਰ ਕਾਲ ਨਾਮਨਜ਼ੂਰ ਕੀਤੀ ਗਈ ਹੋਵੇ।</string>
     <string name="extra_stir_description">ਐਸ.ਟੀ.ਆਈ.ਆਰ ਤਸਦੀਕ ਪਾਸ ਕਰਨ ਵਾਲੇ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
     <string name="settings_silence_call_description">ਸੈੱਟ ਕਰਦਾ ਹੈ ਕਿ ਕੀ ਆਉਣ ਵਾਲੀ ਕਾਲ ਲਈ ਘੰਟੀ ਦਾ ਵੱਜਣਾ ਬੰਦ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਹਾਲਾਂਕਿ, ਕਾਲ, ਅਜੇ ਵੀ ਡਿਫੌਲਟ ਡਾਇਲਰ ਐਪ ਨੂੰ ਘੱਲੀ ਜਾਵੇਗੀ ਜੇਕਰ ਇਹ ਬਲੌਕ ਨਹੀਂ ਹੈ। ਇਸ ਦੀ ਜਾਂਚ ਕਰਨ ਦਾ ਅਰਥ ਉਦੋਂ ਹੀ ਹੈ ਜਦੋਂ ਕਾਲ ਨੂੰ ਨਾਮਨਜ਼ੂਰ ਨਾ ਕੀਤਾ ਗਿਆ ਹੋਵੇ।</string>
+    <string name="timer">ਟਾਈਮਰ</string>
+    <string name="timer_description">ਟਾਈਮਰ ਸੈੱਟ ਅਵਧੀ ਦੇ ਬਾਅਦ "ਚੁੱਪ" ਫੰਕਸ਼ਨ ਨੂੰ ਟੌਗਲ ਕਰਦਾ ਹੈ।</string>
+    <string name="input_hours_label">ਘੰਟੇ ਦਰਜ ਕਰੋ</string>
+    <string name="input_minutes_label">ਮਿੰਟ ਦਾਖਲ ਕਰੋ</string>
+    <string name="start_timer_label">ਟਾਈਮਰ ਸ਼ੁਰੂ ਕਰੋ</string>
+    <string name="timer_started_label">ਟਾਈਮਰ ਸ਼ੁਰੂ ਹੋਇਆ</string>
+    <string name="timer_done_app_on">ਟਾਈਮਰ ਹੋ ਗਿਆ, ਐਪ ਚਾਲੂ ਹੈ!</string>
+    <string name="timer_done_app_off">ਟਾਈਮਰ ਹੋ ਗਿਆ, ਐਪ ਬੰਦ ਹੈ!</string>
 </resources>

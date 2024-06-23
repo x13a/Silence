@@ -82,6 +82,7 @@ fun MainScreen(
     onNavigateToExtra: () -> Unit,
     onNavigateToSettings: () -> Unit,
     onNavigateToRegex: () -> Unit,
+    onNavigateToTimer: () -> Unit,
 ) {
     fun getContactedPermissions(): Array<String> {
         val contacted = prefs.contacted
@@ -189,6 +190,12 @@ fun MainScreen(
             description = R.string.extra_description,
             navigation = onNavigateToExtra,
         ),
+        // New module for timer
+        Module(
+            name = R.string.timer, // Timer name
+            description = R.string.timer_description, // Timer description
+            navigation = onNavigateToTimer, // Timer navigation
+        ),
         Module(
             name = R.string.block_main,
             description = R.string.block_description,
@@ -238,5 +245,6 @@ fun ModuleScreenPreview() {
         onNavigateToExtra = { navController.navigate(Route.EXTRA) },
         onNavigateToSettings = { navController.navigate(Route.SETTINGS) },
         onNavigateToRegex = { navController.navigate(Route.REGEX) },
+        onNavigateToTimer = { navController.navigate(Route.TIMER) },
     )
 }

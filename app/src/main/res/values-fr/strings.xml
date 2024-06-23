@@ -73,4 +73,12 @@
     <string name="block_description">Bloquer tous les appels entrants. Pour bloquer également les numéros des contacts, vous devez en accorder l\'autorisation.</string>
     <string name="repeated_burst_timeout_hint">Temporisation</string>
     <string name="repeated_burst_timeout_helper_text">Temporisation minimale en secondes entre les appels répétés.</string>
+    <string name="timer">Minuterie</string>
+    <string name="timer_description">La minuterie active la fonction "silence" après la durée définie.</string>
+    <string name="input_hours_label">Entrez les heures</string>
+    <string name="input_minutes_label">Entrez les minutes</string>
+    <string name="start_timer_label">Démarrer le minuteur</string>
+    <string name="timer_started_label">Minuterie démarrée</string>
+    <string name="timer_done_app_on">Le minuteur est terminé, l\'application est activée!</string>
+    <string name="timer_done_app_off">Le minuteur est terminé, l\'application est désactivée!</string>
 </resources>

@@ -10,4 +10,5 @@ object Route {
     const val SETTINGS = "settings"
     const val SIM = "sim"
     const val REGEX = "regex"
+    const val TIMER = "timer"
 }

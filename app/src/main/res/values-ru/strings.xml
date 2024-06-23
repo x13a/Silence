@@ -73,4 +73,12 @@
     <string name="messages_text_ttl_helper_text">Сколько времени номер сможет звонить Вам. Modifiers: [d]ays [h]ours [m]inutes</string>
     <string name="messages_text_ttl_error">7d / 48h / 120m</string>
     <string name="goto_button">ПЕРЕЙТИ</string>
+    <string name="timer">Таймер</string>
+    <string name="timer_description">Таймер переключает функцию «тишина» по истечении установленного времени.</string>
+    <string name="input_hours_label">Введите часы</string>
+    <string name="input_minutes_label">Введите минуты</string>
+    <string name="start_timer_label">Таймер запуска</string>
+    <string name="timer_started_label">Таймер запущен</string>
+    <string name="timer_done_app_on">Таймер закончился, приложение включено!</string>
+    <string name="timer_done_app_off">Таймер закончился, приложение выключено!</string>
 </resources>

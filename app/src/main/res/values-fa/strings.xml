@@ -23,4 +23,12 @@
     <string name="messages_description">اجازه تماس به شماره تلفن هایی که داخل پیام ها هستند.</string>
     <string name="messages_text_ttl_hint">زمان</string>
     <string name="groups_main">گروه ها</string>
+    <string name="timer">تایمر</string>
+    <string name="timer_description">تایمر عملکرد "سکوت" را پس از مدت زمان تعیین شده تغییر می دهد.</string>
+    <string name="input_hours_label">ساعات کاری را وارد کنید</string>
+    <string name="input_minutes_label">دقیقه را وارد کنید</string>
+    <string name="start_timer_label">شروع تایمر</string>
+    <string name="timer_started_label">تایمر شروع شد</string>
+    <string name="timer_done_app_on">تایمر تمام شد، برنامه روشن است!</string>
+    <string name="timer_done_app_off">تایمر تمام شد، برنامه خاموش است!</string>
 </resources>

@@ -86,4 +86,14 @@
     <string name="back">Back</string>
     <string name="toggle_off">Off</string>
     <string name="toggle_on">On</string>
+    <string name="timer">Timer</string>
+    <string name="timer_description">Timer toggles the "silence" function after the set duration.</string>
+    <string name="input_hours_label">Enter hours</string>
+    <string name="input_minutes_label">Enter minutes</string>
+    <string name="start_timer_label">Start Timer</string>
+    <string name="timer_started_label">Timer started</string>
+    <string name="timer_done_app_on">Timer is done, app is on!</string>
+    <string name="timer_done_app_off">Timer is done, app is off!</string>
+    <string name="cancel_timer_label">Cancel Timer</string>
+    <string name="remaining_time">%1$s left until the timer ends</string>
 </resources>
