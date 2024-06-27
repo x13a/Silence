@@ -73,4 +73,17 @@
     <string name="block_description">Bloquer tous les appels entrants. Pour bloquer également les numéros des contacts, vous devez en accorder l\'autorisation.</string>
     <string name="repeated_burst_timeout_hint">Temporisation</string>
     <string name="repeated_burst_timeout_helper_text">Temporisation minimale en secondes entre les appels répétés.</string>
+    <string name="back">Retour</string>
+    <string name="contacted_answer">Répondre</string>
+    <string name="regex_main">Regex</string>
+    <string name="regex_description">Les appels de processus de nombres correspondant à l\'expression régulière.</string>
+    <string name="regex_pattern_hint">Patron</string>
+    <string name="contacted_answer_description">Autoriser les appels des numéros auxquels vous avez déjà répondu.</string>
+    <string name="regex_pattern_helper_text">Permettre les appels de nombres correspondant à l\'expression régulière.</string>
+    <string name="regex_pattern_error">Regex invalide !</string>
+    <string name="block">Bloquer</string>
+    <string name="extra_description">Permettre des appels de certains groupes/identifiants divers.</string>
+    <string name="sim_description">Traitement de tous les appels d\'une ou des deux cartes SIM.</string>
+    <string name="toggle_off">Désactivé</string>
+    <string name="toggle_on">Activé</string>
 </resources>
