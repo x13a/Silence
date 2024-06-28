@@ -86,4 +86,6 @@
     <string name="back">Back</string>
     <string name="toggle_off">Off</string>
     <string name="toggle_on">On</string>
+    <string name="enter_sms_message">SMS Message</string>
+    <string name="enter_sms_message_description">Enter the message to send when a call is blocked. Leave empty to not send an SMS.</string>
 </resources>

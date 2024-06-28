@@ -10,13 +10,19 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -37,6 +43,7 @@ import me.lucky.silence.ui.common.ToggleableButton
 
 @Composable
 fun ModuleList(modules: List<Module>) {
+
     LazyColumn {
         items(modules) { module ->
             if ((module.getPreference != null) && (module.setPreference != null) && (module.navigation != null)) {
@@ -83,6 +90,7 @@ fun MainScreen(
     onNavigateToSettings: () -> Unit,
     onNavigateToRegex: () -> Unit,
 ) {
+
     fun getContactedPermissions(): Array<String> {
         val contacted = prefs.contacted
         val permissions = mutableSetOf<String>()
@@ -196,6 +204,9 @@ fun MainScreen(
             setPreference = { prefs.isBlockEnabled = it },
         ),
     )
+
+
+
     Scaffold(topBar = {
         TopAppBar(title = { Text(text = stringResource(R.string.app_name)) }, actions = {
             IconButton(onClick = onNavigateToSettings) {
@@ -221,6 +232,8 @@ fun MainScreen(
             )
         }
     })
+
+
 }
 
 @Preview
