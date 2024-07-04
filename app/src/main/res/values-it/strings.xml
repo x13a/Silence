@@ -54,7 +54,7 @@
     <string name="settings_reject_call_description">Imposta se la chiamata in arrivo deve essere disconnessa come se l\'utente l\'avesse rifiutata manualmente. Dovrebbe essere selezionato solo se la chiamata non è consentita.</string>
     <string name="sim_1_description">Consenti tutte le chiamate dalla SIM 1.</string>
     <string name="goto_button">Vai</string>
-    <string name="messages_text_ttl_hint">tempo</string>
+    <string name="messages_text_ttl_hint">Tempo</string>
     <string name="messages_text_ttl_helper_text">Per quanto tempo il numero sarà in grado di chiamarvi. Modificatori: giorni [d], ore [h], minuti [m]</string>
     <string name="messages_text_ttl_error">7 g / 48 o / 120 min</string>
     <string name="extra_short_numbers">Numeri brevi</string>
@@ -69,8 +69,21 @@
     <string name="extra_contacts_description">Consenti chiamate dai numeri nei tuoi contatti.</string>
     <string name="block_main">Blocca</string>
     <string name="extra_plus_numbers">Numeri più</string>
-    <string name="extra_plus_numbers_description">Blocca le chiamate da numeri che iniziano con un più.</string>
+    <string name="extra_plus_numbers_description">Consenti chiamate dai numeri che non iniziano con un più.</string>
     <string name="block_description">Blocca tutte le chiamate in arrivo. Per bloccare anche i numeri dai contatti devi concedere un\'autorizzazione.</string>
     <string name="repeated_burst_timeout_hint">Timeout</string>
     <string name="repeated_burst_timeout_helper_text">Timeout minimo in secondi tra chiamate ripetute.</string>
+    <string name="regex_description">Elabora chiamate dai numeri che corrispondono all\'espressione regolare.</string>
+    <string name="block">Blocca</string>
+    <string name="extra_description">Consenti chiamate da alcuni gruppi/identificatori vari.</string>
+    <string name="sim_description">Elabora tutte le chiamate da una o entrambe le schede SIM.</string>
+    <string name="back">Indietro</string>
+    <string name="toggle_off">Spento</string>
+    <string name="toggle_on">Acceso</string>
+    <string name="contacted_answer">Rispondi</string>
+    <string name="contacted_answer_description">Consenti chiamate da numeri a cui si è già risposto.</string>
+    <string name="regex_main">Regex</string>
+    <string name="regex_pattern_hint">Pattern</string>
+    <string name="regex_pattern_helper_text">Consenti chiamate dai numeri che corrispondono all\'espressione regolare.</string>
+    <string name="regex_pattern_error">Espressione regolare non valida!</string>
 </resources>
