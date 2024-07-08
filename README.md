@@ -54,6 +54,7 @@ If the app rejects calls from contacts on Android 10, allow _Contacts_ permissio
 * CALL_SCREENING - block or allow call
 * READ_CALL_LOG - check you have called/answered the number and count times the number have called you in X minutes
 * READ_SMS - check you have sent a message to the number and you received a message from the number
+* SEND_SMS - send a message to the number if the call is rejected
 * NOTIFICATION_LISTENER - find mobile numbers in messages
 * READ_PHONE_STATE - check on which SIM the number is calling
 * RECEIVE_BOOT_COMPLETED - persist clean expired numbers job across reboots

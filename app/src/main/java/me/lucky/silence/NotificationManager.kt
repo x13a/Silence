@@ -6,6 +6,8 @@ import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.Person
+import android.telephony.SmsManager
+
 
 class NotificationManager(private val ctx: Context) {
     companion object {
@@ -43,4 +45,27 @@ class NotificationManager(private val ctx: Context) {
             )
         } catch (_: SecurityException) {}
     }
-}
+
+
+// Function to send an SMS message
+    fun sendSMS(phoneNumber: String, message: String) {
+    // Get the default instance of the SmsManager
+    val smsManager = SmsManager.getDefault()
+    // Send a text message to the provided phone number
+        smsManager.sendTextMessage(phoneNumber, null, message, null, null)
+    }
+
+// Function to send an SMS to a blocked call
+fun smsBlockedCall(tel: String, sim: Sim?) {
+    // Get the SMS message from Preferences
+    val prefs = Preferences(ctx)
+    val message = prefs.smsMessage
+
+    // If the message is not empty, send an SMS to the blocked number
+    if (!message.isNullOrEmpty()) {
+        sendSMS(tel, message)
+    }
+
+
+
+}}
