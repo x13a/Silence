@@ -1,0 +1,10 @@
+добавить защиту от повторных разрывов
+обновлены арабский, турецкий, французский, японский, английский, норвежский Bokmål, итальянский переводы
+
+Благодаря:
+DJEBBARI.ABDELHAMID (@dxing96)
+Огуз Эрсен (@ersen0)
+Nathanaël Gagnepain (@Ilithy)
+Гийом Боэм (@guillaumeboehm)
+Аллан Нордхёй (@comradekingu)
+Джованни Донизи (@gdonisi + @giovannidonisi)
