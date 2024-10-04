@@ -1,12 +1,11 @@
 adicionar permitir uma chamada após uma mensagem (Mensagens &gt; Caixa de entrada)
 adicionar alternância do controlador
 
-atualização das traduções:
-turco, graças a Oğuz Ersen (@ersen0)
-árabe, graças a DJEBARI.ABDELHAMID
-francesa, graças a @Ilithy
-italiana, graças a Giovanni Donisi (@gdonisi + @giovannidonisi)
-ucraniana, graças a Andrij Mizyk (@andmizyk)
-português (Brasil), graças ao mezysinc
-bokmål norueguês, graças a Allan Nordhøy (@comradekingu)
-inglês, graças a Allan Nordhøy (@comradekingu)
+atualizada tradução para turco, graças a Oğuz Ersen (@ersen0)
+atualizada tradução para árabe, graças a DJEBARI.ABDELHAMID
+atualizada tradução para francesa, graças a @Ilithy
+atualizada tradução para italiana, graças a Giovanni Donisi (@gdonisi + @giovannidonisi)
+atualizada tradução para ucraniana, graças a Andrij Mizyk (@andmizyk)
+atualizada tradução para português (Brasil), graças ao mezysinc
+atualizada tradução para bokmål norueguês, graças a Allan Nordhøy (@comradekingu)
+atualizada tradução para inglês, graças a Allan Nordhøy (@comradekingu)

@@ -1,3 +1,5 @@
+Todas as migrações de configurações foram removidas, talvez você precise reconfigurar o Silêncio!
+
 opção para permitir números ocultos/ desconhecidos
 opções para permitir ligações via SIM, requerem a permissão do READ_PHONE_STATE
 opções ao controlador
