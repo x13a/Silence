@@ -54,7 +54,7 @@
     <string name="settings_reject_call_description">Imposta se la chiamata in arrivo deve essere disconnessa come se l\'utente l\'avesse rifiutata manualmente. Dovrebbe essere selezionato solo se la chiamata non è consentita.</string>
     <string name="sim_1_description">Consenti tutte le chiamate dalla SIM 1.</string>
     <string name="goto_button">Vai</string>
-    <string name="messages_text_ttl_hint">tempo</string>
+    <string name="messages_text_ttl_hint">Tempo</string>
     <string name="messages_text_ttl_helper_text">Per quanto tempo il numero sarà in grado di chiamarvi. Modificatori: giorni [d], ore [h], minuti [m]</string>
     <string name="messages_text_ttl_error">7 g / 48 o / 120 min</string>
     <string name="extra_short_numbers">Numeri brevi</string>
@@ -69,16 +69,8 @@
     <string name="extra_contacts_description">Consenti chiamate dai numeri nei tuoi contatti.</string>
     <string name="block_main">Blocca</string>
     <string name="extra_plus_numbers">Numeri più</string>
-    <string name="extra_plus_numbers_description">Blocca le chiamate da numeri che iniziano con un più.</string>
+    <string name="extra_plus_numbers_description">Consenti chiamate dai numeri che non iniziano con un più.</string>
     <string name="block_description">Blocca tutte le chiamate in arrivo. Per bloccare anche i numeri dai contatti devi concedere un\'autorizzazione.</string>
     <string name="repeated_burst_timeout_hint">Timeout</string>
     <string name="repeated_burst_timeout_helper_text">Timeout minimo in secondi tra chiamate ripetute.</string>
-    <string name="timer">Timer</string>
-    <string name="timer_description">Il timer attiva/disattiva la funzione "silenzio" dopo la durata impostata.</string>
-    <string name="input_hours_label">Inserisci gli orari</string>
-    <string name="input_minutes_label">Inserisci i minuti</string>
-    <string name="start_timer_label">Avvia timer</string>
-    <string name="timer_started_label">Timer avviato</string>
-    <string name="timer_done_app_on">Il timer è pronto, l\'app è attiva!</string>
-    <string name="timer_done_app_off">Il timer è terminato, l\'app è disattivata!</string>
 </resources>
