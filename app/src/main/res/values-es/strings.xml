@@ -84,4 +84,12 @@
     <string name="contacted_answer">Respuesta</string>
     <string name="contacted_answer_description">Permitir llamadas de números que ya ha contestado.</string>
     <string name="extra_description">Permitir llamadas de algunos grupos/identificadores varios.</string>
+    <string name="timer">Temporizador</string>
+    <string name="timer_description">El temporizador alterna la función "silencio" después de la duración establecida.</string>
+    <string name="input_hours_label">Ingrese horas</string>
+    <string name="input_minutes_label">Ingrese minutos</string>
+    <string name="start_timer_label">Iniciar temporizador</string>
+    <string name="timer_started_label">Temporizador iniciado</string>
+    <string name="timer_done_app_on">¡El cronómetro está listo, la aplicación está encendida!</string>
+    <string name="timer_done_app_off">¡El cronómetro está listo, la aplicación está apagada!</string>
 </resources>

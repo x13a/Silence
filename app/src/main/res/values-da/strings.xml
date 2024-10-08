@@ -11,4 +11,12 @@
     <string name="messages_description">Tillad midlertidige mobilnumre fra indgående tekstbeskeder.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
     <string name="extra_stir_description">Tillad numre der har bestået STIR-verificering.</string>
+    <string name="timer">Timer</string>
+    <string name="timer_description">Timeren skifter "stilhed"-funktionen efter den indstillede varighed.</string>
+    <string name="input_hours_label">Indtast timer</string>
+    <string name="input_minutes_label">Indtast minutter</string>
+    <string name="start_timer_label">Start timer</string>
+    <string name="timer_started_label">Timeren er startet</string>
+    <string name="timer_done_app_on">Timeren er færdig, appen er tændt!</string>
+    <string name="timer_done_app_off">Timeren er færdig, appen er slukket!</string>
 </resources>

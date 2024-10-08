@@ -11,4 +11,12 @@
     <string name="extra_stir">발신자 조회 서비스</string>
     <string name="messages_description">방금 도착한 문자의 번호로부터 걸려오는 전화를 일시적으로 허용합니다.</string>
     <string name="extra_stir_description">STIR 인증을 통과한 번호를 허용합니다.</string>
+    <string name="timer">타이머</string>
+    <string name="timer_description">타이머는 설정된 시간이 지나면 "무음" 기능을 전환합니다.</string>
+    <string name="input_hours_label">시간 입력</string>
+    <string name="input_minutes_label">분 입력</string>
+    <string name="start_timer_label">타이머 시작</string>
+    <string name="timer_started_label">타이머 시작됨</string>
+    <string name="timer_done_app_on">타이머가 완료되어 앱이 켜져 있습니다!</string>
+    <string name="timer_done_app_off">타이머가 완료되어 앱이 꺼졌습니다!</string>
 </resources>

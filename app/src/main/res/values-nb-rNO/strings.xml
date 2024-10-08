@@ -73,4 +73,12 @@
     <string name="settings_disallow_call_description">Velger hvorvidt innkommende anrop skal blokkeres.</string>
     <string name="repeated_burst_timeout_hint">Tidsavbrudd</string>
     <string name="repeated_burst_timeout_helper_text">Minste tidsavbrudd i sekunder mellom gjentatte anrop.</string>
+    <string name="timer">Timer</string>
+    <string name="timer_description">Timeren slår på "stille"-funksjonen etter den angitte varigheten.</string>
+    <string name="input_hours_label">Skriv inn timer</string>
+    <string name="input_minutes_label">Skriv inn minutter</string>
+    <string name="start_timer_label">Start timer</string>
+    <string name="timer_started_label">Timeren startet</string>
+    <string name="timer_done_app_on">Timeren er ferdig, appen er på!</string>
+    <string name="timer_done_app_off">Timeren er ferdig, appen er av!</string>
 </resources>

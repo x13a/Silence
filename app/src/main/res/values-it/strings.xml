@@ -73,17 +73,4 @@
     <string name="block_description">Blocca tutte le chiamate in arrivo. Per bloccare anche i numeri dai contatti devi concedere un\'autorizzazione.</string>
     <string name="repeated_burst_timeout_hint">Timeout</string>
     <string name="repeated_burst_timeout_helper_text">Timeout minimo in secondi tra chiamate ripetute.</string>
-    <string name="regex_description">Elabora chiamate dai numeri che corrispondono all\'espressione regolare.</string>
-    <string name="block">Blocca</string>
-    <string name="extra_description">Consenti chiamate da alcuni gruppi/identificatori vari.</string>
-    <string name="sim_description">Elabora tutte le chiamate da una o entrambe le schede SIM.</string>
-    <string name="back">Indietro</string>
-    <string name="toggle_off">Spento</string>
-    <string name="toggle_on">Acceso</string>
-    <string name="contacted_answer">Rispondi</string>
-    <string name="contacted_answer_description">Consenti chiamate da numeri a cui si è già risposto.</string>
-    <string name="regex_main">Regex</string>
-    <string name="regex_pattern_hint">Pattern</string>
-    <string name="regex_pattern_helper_text">Consenti chiamate dai numeri che corrispondono all\'espressione regolare.</string>
-    <string name="regex_pattern_error">Espressione regolare non valida!</string>
 </resources>

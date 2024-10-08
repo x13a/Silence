@@ -71,4 +71,12 @@
     <string name="extra_plus_numbers_description">プラスから始まる番号からの電話を塞ぐ。</string>
     <string name="block_description">全てを塞ぐ。連絡先に登録されている番号を塞ぐために権限の許可が必要です。</string>
     <string name="extra_plus_numbers">プラス番号</string>
+    <string name="timer">タイマー</string>
+    <string name="timer_description">タイマーは、設定された時間が経過すると「無音」機能を切り替えます。</string>
+    <string name="input_hours_label">時間を入力</string>
+    <string name="input_minutes_label">分数を入力</string>
+    <string name="start_timer_label">タイマーを開始</string>
+    <string name="timer_started_label">タイマーが開始しました</string>
+    <string name="timer_done_app_on">タイマーが終了しました。アプリがオンになっています。</string>
+    <string name="timer_done_app_off">タイマーが終了しました。アプリがオフになっています。</string>
 </resources>

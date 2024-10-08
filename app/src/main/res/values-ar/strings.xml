@@ -73,4 +73,12 @@
     <string name="block_description">حظر جميع المكالمات الواردة. لحظر الأرقام أيضا من جهات الاتصال ، يجب عليك منح إذن.</string>
     <string name="repeated_burst_timeout_hint">مهلة</string>
     <string name="repeated_burst_timeout_helper_text">الحد الأدنى من المهلة بالثواني بين المكالمات المتكررة.</string>
+    <string name="timer">المؤقت</string>
+    <string name="timer_description">يقوم المؤقت بتبديل وظيفة "الصمت" بعد المدة المحددة.</string>
+    <string name="input_hours_label">أدخل الساعات</string>
+    <string name="input_minutes_label">أدخل الدقائق</string>
+    <string name="start_timer_label">بدء المؤقت</string>
+    <string name="timer_started_label">بدأ المؤقت</string>
+    <string name="timer_done_app_on">انتهى الموقّت، والتطبيق قيد التشغيل!</string>
+    <string name="timer_done_app_off">انتهى الموقّت، والتطبيق متوقف!</string>
 </resources>

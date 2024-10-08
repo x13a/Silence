@@ -23,4 +23,12 @@
     <string name="notification_title">Дзвінок заблоковано</string>
     <string name="contacted_call">Виклик</string>
     <string name="contacted_message">Повідомлення</string>
+    <string name="timer">Таймер</string>
+    <string name="timer_description">Таймер перемикає функцію "мовчання" після встановленої тривалості.</string>
+    <string name="input_hours_label">Введіть години</string>
+    <string name="input_minutes_label">Введіть хвилини</string>
+    <string name="start_timer_label">Запустити таймер</string>
+    <string name="timer_started_label">Таймер запущено</string>
+    <string name="timer_done_app_on">Таймер виконано, додаток увімкнено!</string>
+    <string name="timer_done_app_off">Таймер виконано, додаток вимкнено!</string>
 </resources>

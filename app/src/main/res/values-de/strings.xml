@@ -73,4 +73,12 @@
     <string name="groups_local_mobile_description">Anrufe von Mobilfunknummern mit der gleichen Vorwahl wie Ihre erlauben.</string>
     <string name="repeated_burst_timeout_hint">Zeitlimit</string>
     <string name="block_main">Blockieren</string>
+    <string name="timer">Timer</string>
+    <string name="timer_description">Timer schaltet die „Stumm“-Funktion nach der eingestellten Dauer um.</string>
+    <string name="input_hours_label">Stunden eingeben</string>
+    <string name="input_minutes_label">Minuten eingeben</string>
+    <string name="start_timer_label">Timer starten</string>
+    <string name="timer_started_label">Timer gestartet</string>
+    <string name="timer_done_app_on">Timer ist abgelaufen, App ist an!</string>
+    <string name="timer_done_app_off">Timer ist abgelaufen, App ist aus!</string>
 </resources>
