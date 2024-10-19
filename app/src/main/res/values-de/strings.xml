@@ -69,7 +69,7 @@
     <string name="repeated_burst_timeout_helper_text">Minimales Zeitlimit in Sekunden zwischen wiederholten Aufrufen.</string>
     <string name="sim">SIM-Karte</string>
     <string name="extra_plus_numbers_description">Anrufe von Nummern, die mit einem Plus-Zeichen beginnen, blockieren.</string>
-    <string name="groups_local_mobile">Lokal &amp; Mobil</string>
+    <string name="groups_local_mobile">Lokal und Mobil</string>
     <string name="groups_local_mobile_description">Anrufe von Mobilfunknummern mit der gleichen Vorwahl wie Ihre erlauben.</string>
     <string name="repeated_burst_timeout_hint">Zeitlimit</string>
     <string name="block_main">Blockieren</string>
