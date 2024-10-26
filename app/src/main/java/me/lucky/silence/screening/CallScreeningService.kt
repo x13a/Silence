@@ -113,6 +113,9 @@ class CallScreeningService : CallScreeningService() {
                 }
             }
             notificationManager.notifyBlockedCall(tel ?: return, sim)
+
+            // Here's where you would call smsBlockedCall
+            notificationManager.smsBlockedCall(tel ?: return, sim)
         }
         respondToCall(callDetails, response)
     }
