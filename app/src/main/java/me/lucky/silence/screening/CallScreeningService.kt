@@ -160,6 +160,20 @@ class CallScreeningService : CallScreeningService() {
 
     private fun checkBlockRegex(callDetails: Call.Details): Boolean {
         val phoneNumber = callDetails.handle?.schemeSpecificPart ?: return false
-        return prefs.regexPattern?.toRegex(RegexOption.MULTILINE)?.matchEntire(phoneNumber) != null
+        val regexPatterns = prefs.regexPattern?.split(",")?.map { it.trim() } ?: return false
+
+        // Check if any of the regex patterns match the phone number
+        for (pattern in regexPatterns) {
+            try {
+                if (pattern.toRegex(RegexOption.MULTILINE).matches(phoneNumber)) {
+                    return true // Match found, block the call
+                }
+            } catch (exc: java.util.regex.PatternSyntaxException) {
+                // Ignore invalid patterns; continue checking others
+            }
+        }
+
+        // No matches found
+        return false
     }
 }

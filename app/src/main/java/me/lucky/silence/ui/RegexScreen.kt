@@ -59,12 +59,22 @@ fun RegexScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
     })
 }
 
-private fun isValidRegex(pattern: String): Boolean {
-    try {
-        pattern.toRegex(RegexOption.MULTILINE)
-    } catch (exc: java.util.regex.PatternSyntaxException) {
-        return false
+private fun isValidRegex(patterns: String): Boolean {
+    // Split the input string by commas and trim whitespace from each pattern
+    val regexPatterns = patterns.split(",").map { it.trim() }
+
+    // Validate each pattern
+    for (pattern in regexPatterns) {
+        try {
+            // Attempt to convert the pattern to a Regex object
+            pattern.toRegex(RegexOption.MULTILINE)
+        } catch (exc: java.util.regex.PatternSyntaxException) {
+            // If an exception is thrown, return false
+            return false
+        }
     }
+
+    // All patterns are valid
     return true
 }
 
