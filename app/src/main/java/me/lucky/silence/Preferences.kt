@@ -37,7 +37,9 @@ class Preferences(ctx: Context) {
         const val SERVICE_ENABLED = "service_enabled"
         const val GENERAL_UNKNOWN_NUMBERS_CHECKED = "general_unknown_numbers_checked"
 
-        const val REGEX_PATTERN = "regex_pattern"
+        const val REGEX_PATTERN_ALLOW = "regex_pattern_allow"
+
+        const val REGEX_PATTERN_BLOCK = "regex_pattern_block"
     }
 
     private val prefs = PreferenceManager.getDefaultSharedPreferences(ctx)
@@ -128,9 +130,13 @@ class Preferences(ctx: Context) {
         get() = prefs.getBoolean(BLOCK_ENABLED, false)
         set(value) = prefs.edit { putBoolean(BLOCK_ENABLED, value) }
 
-    var regexPattern: String?
-        get() = prefs.getString(REGEX_PATTERN, "")
-        set(value) = prefs.edit { putString(REGEX_PATTERN, value) }
+    var regexPatternAllow: String?
+        get() = prefs.getString(REGEX_PATTERN_ALLOW, "")
+        set(value) = prefs.edit { putString(REGEX_PATTERN_ALLOW, value) }
+
+    var regexPatternBlock: String?
+        get() = prefs.getString(REGEX_PATTERN_BLOCK, "")
+        set(value) = prefs.edit { putString(REGEX_PATTERN_BLOCK, value) }
 }
 
 enum class Contact(val value: Int) {
