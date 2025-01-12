@@ -7,11 +7,6 @@
     src="data/presentation.png">
 </p>
 
-[<img 
-    src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
-    alt="Get it on F-Droid"
-    height="80">](https://f-droid.org/packages/me.lucky.silence/)
-
 <b>By default numbers not in your contacts are blocked.</b>
 
 Optionally allow:
@@ -19,7 +14,11 @@ Optionally allow:
 * Numbers within the selected groups
 * X registered call(s) from the same number within a set amount of minutes
 * Numbers found in messages
+* Numbers matching REGEX patterns
 * and more..
+
+Optionally block:
+* Numbers matching REGEX patterns, including numbers in contacts
 
 If the app rejects calls from contacts on Android 10, allow _Contacts_ permission manually in 
 `App info → Permissions`.
@@ -40,6 +39,9 @@ If the app rejects calls from contacts on Android 10, allow _Contacts_ permissio
 <img 
     src="data/messages.png" 
     height="400">
+<img 
+    src="data/regex.png" 
+    height="400">     
 <img 
     src="data/sim.png" 
     height="400"> 
