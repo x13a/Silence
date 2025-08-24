@@ -22,7 +22,8 @@ fun SwitchPreference(
     getIsEnabled: () -> Boolean,
     setIsEnabled: (Boolean) -> Unit,
 ) {
-    var switchState by remember { mutableStateOf(getIsEnabled()) }
+    val currentValue = getIsEnabled()
+    var switchState by remember(currentValue) { mutableStateOf(currentValue) }
 
     Surface(
         modifier = Modifier
