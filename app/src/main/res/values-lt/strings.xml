@@ -73,4 +73,8 @@
     <string name="groups_toll_free">Nemokamas</string>
     <string name="messages_text_ttl_hint">laikas</string>
     <string name="groups_local_mobile">Vietinis ir mobilusis</string>
+    
+    <!-- App Shortcuts -->
+    <string name="shortcut_activate_block">Įjungti skambučių blokavimą</string>
+    <string name="shortcut_deactivate_block">Išjungti skambučių blokavimą</string>
 </resources>

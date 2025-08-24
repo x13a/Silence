@@ -86,4 +86,8 @@
     <string name="regex_pattern_hint">Pattern</string>
     <string name="regex_pattern_helper_text">Consenti chiamate dai numeri che corrispondono all\'espressione regolare.</string>
     <string name="regex_pattern_error">Espressione regolare non valida!</string>
+    
+    <!-- App Shortcuts -->
+    <string name="shortcut_activate_block">Attiva blocco chiamate</string>
+    <string name="shortcut_deactivate_block">Disattiva blocco chiamate</string>
 </resources>

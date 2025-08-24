@@ -23,4 +23,8 @@
     <string name="messages_description">اجازه تماس به شماره تلفن هایی که داخل پیام ها هستند.</string>
     <string name="messages_text_ttl_hint">زمان</string>
     <string name="groups_main">گروه ها</string>
+    
+    <!-- App Shortcuts -->
+    <string name="shortcut_activate_block">فعال کردن مسدود کردن تماس</string>
+    <string name="shortcut_deactivate_block">غیرفعال کردن مسدود کردن تماس</string>
 </resources>

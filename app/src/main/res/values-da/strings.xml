@@ -11,4 +11,8 @@
     <string name="messages_description">Tillad midlertidige mobilnumre fra indgående tekstbeskeder.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
     <string name="extra_stir_description">Tillad numre der har bestået STIR-verificering.</string>
+    
+    <!-- App Shortcuts -->
+    <string name="shortcut_activate_block">Aktivér opkaldsblokering</string>
+    <string name="shortcut_deactivate_block">Deaktivér opkaldsblokering</string>
 </resources>

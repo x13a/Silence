@@ -71,4 +71,8 @@
     <string name="extra_plus_numbers_description">プラスから始まる番号からの電話を塞ぐ。</string>
     <string name="block_description">全てを塞ぐ。連絡先に登録されている番号を塞ぐために権限の許可が必要です。</string>
     <string name="extra_plus_numbers">プラス番号</string>
+    
+    <!-- App Shortcuts -->
+    <string name="shortcut_activate_block">通話ブロックを有効にする</string>
+    <string name="shortcut_deactivate_block">通話ブロックを無効にする</string>
 </resources>
