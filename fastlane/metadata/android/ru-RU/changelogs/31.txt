@@ -1,0 +1,3 @@
+сохранение заданий при перезагрузке (android.permission.RECEIVE_BOOT_COMPLETED)
+улучшения под капотом
+обновлены переводы, спасибо Аллану Нордхёю (@comradekingu)
