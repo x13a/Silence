@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "me.lucky.silence"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "me.lucky.silence"
         minSdk = 29
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 50
         versionName = "1.11.6"
 
