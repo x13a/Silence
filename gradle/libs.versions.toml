@@ -15,7 +15,7 @@ workKtx = "2.11.0"
 room = "2.8.4"
 libphonenumber = "9.0.19"
 panic = "1.0"
-ksp = "1.9.23-1.0.20"
+ksp = "2.3.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
