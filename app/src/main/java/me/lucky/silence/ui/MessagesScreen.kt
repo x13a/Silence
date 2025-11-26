@@ -97,7 +97,7 @@ fun MessagesScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
                 modifier = Modifier.weight(1f),
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Ascii,
-                    autoCorrect = false,
+                    autoCorrectEnabled = false,
                     capitalization = KeyboardCapitalization.None
                 )
             )

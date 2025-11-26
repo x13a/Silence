@@ -3,9 +3,6 @@ package me.lucky.silence
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 
-import me.lucky.silence.Preferences
-import me.lucky.silence.Utils
-
 class TileService : TileService() {
     private lateinit var prefs: Preferences
 

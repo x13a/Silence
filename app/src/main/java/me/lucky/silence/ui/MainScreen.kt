@@ -45,7 +45,7 @@ fun ModuleList(modules: List<Module>) {
                     getIsEnabled = module.getPreference,
                     setIsEnabled = module.setPreference,
                     onModuleClick = { module.navigation.invoke() })
-            } else if (module.getPreference != null && module.setPreference != null && module.navigation == null) {
+            } else if (module.getPreference != null && module.setPreference != null) {
                 SwitchPreference(
                     name = stringResource(module.name),
                     description = stringResource(module.description),
