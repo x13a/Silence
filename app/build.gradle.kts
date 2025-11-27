@@ -7,22 +7,25 @@ plugins {
 
 android {
     namespace = "me.lucky.silence"
-    compileSdk = 36
+    compileSdk {
+        version = release(36)
+    }
 
     defaultConfig {
         applicationId = "me.lucky.silence"
         minSdk = 29
         targetSdk = 36
-        versionCode = 50
-        versionName = "1.11.6"
+        versionCode = 51
+        versionName = "1.12.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
-        ksp {
-            arg("room.schemaLocation", "$projectDir/schemas")
-        }
+    }
+
+    ksp {
+        arg("room.schemaLocation", "$projectDir/schemas")
     }
 
     buildTypes {
