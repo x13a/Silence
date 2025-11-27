@@ -28,7 +28,7 @@ fun Screen(title: Int, onBackPressed: () -> Boolean, content: @Composable Column
                 navigationIcon = {
                     IconButton(onClick = { onBackPressed() }) {
                         Icon(
-                            painter = painterResource(id = R.drawable.baseline_arrow_back_24),
+                            painter = painterResource(id = R.drawable.ic_baseline_arrow_back_24),
                             contentDescription = stringResource(R.string.back)
                         )
                     }

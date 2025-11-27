@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.role.RoleManager
 import android.content.Context
 import android.os.Build
+import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Column
@@ -18,6 +19,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -87,6 +92,8 @@ fun MainScreen(
     onNavigateToRegex: () -> Unit,
 ) {
     val scrollState = rememberScrollState()
+    val blockEnabledToast = stringResource(R.string.block_enabled)
+    val blockDisabledToast = stringResource(R.string.block_disabled)
     val registerForRepeatedPermissions =
         rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {}
 
@@ -152,15 +159,29 @@ fun MainScreen(
             description = R.string.extra_description,
             navigation = onNavigateToExtra,
         ),
-        Module(
-            name = R.string.block_main,
-            description = R.string.block_description,
-            getPreference = { prefs.isBlockEnabled },
-            setPreference = { prefs.isBlockEnabled = it },
-        ),
     )
+    var isBlockEnabled by remember { mutableStateOf(prefs.isBlockEnabled) }
     Scaffold(topBar = {
         TopAppBar(title = { Text(text = stringResource(R.string.app_name)) }, actions = {
+            IconButton(onClick = {
+                isBlockEnabled = !isBlockEnabled
+                prefs.isBlockEnabled = isBlockEnabled
+                Toast
+                    .makeText(
+                        ctx,
+                        if (isBlockEnabled) blockEnabledToast else blockDisabledToast,
+                        Toast.LENGTH_SHORT
+                    )
+                    .show()
+            }) {
+                Icon(
+                    painter = painterResource(
+                        id = if (isBlockEnabled) R.drawable.ic_baseline_do_not_disturb_on_24
+                            else R.drawable.ic_baseline_do_not_disturb_off_24
+                    ),
+                    contentDescription = stringResource(R.string.block_main)
+                )
+            }
             IconButton(onClick = onNavigateToSettings) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_baseline_settings_24),
