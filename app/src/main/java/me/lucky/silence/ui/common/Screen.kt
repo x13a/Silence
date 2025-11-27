@@ -2,7 +2,10 @@ package me.lucky.silence.ui.common
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -32,6 +35,12 @@ fun Screen(title: Int, onBackPressed: () -> Boolean, content: @Composable Column
                 })
         }
     ) { padding ->
-        Column(modifier = Modifier.padding(padding), content = content)
+        Column(
+            modifier = Modifier
+                .padding(padding)
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState()),
+            content = content
+        )
     }
 }
