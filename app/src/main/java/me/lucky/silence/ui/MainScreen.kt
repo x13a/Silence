@@ -7,10 +7,10 @@ import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -36,14 +36,16 @@ import me.lucky.silence.ui.common.ToggleableButton
 
 @Composable
 fun ModuleList(modules: List<Module>) {
-    LazyColumn {
-        items(modules) { module ->
+    Column {
+        modules.forEach { module ->
             if ((module.getPreference != null) && (module.setPreference != null) && (module.navigation != null)) {
-                ClickableSwitchPreference(name = stringResource(module.name),
+                ClickableSwitchPreference(
+                    name = stringResource(module.name),
                     description = stringResource(module.description),
                     getIsEnabled = module.getPreference,
                     setIsEnabled = module.setPreference,
-                    onModuleClick = { module.navigation.invoke() })
+                    onModuleClick = { module.navigation.invoke() }
+                )
             } else if (module.getPreference != null && module.setPreference != null) {
                 SwitchPreference(
                     name = stringResource(module.name),
@@ -52,9 +54,11 @@ fun ModuleList(modules: List<Module>) {
                     setIsEnabled = module.setPreference,
                 )
             } else if (module.navigation != null) {
-                ClickablePreference(name = stringResource(module.name),
+                ClickablePreference(
+                    name = stringResource(module.name),
                     description = stringResource(module.description),
-                    onModuleClick = { module.navigation.invoke() })
+                    onModuleClick = { module.navigation.invoke() }
+                )
             }
         }
     }
@@ -82,6 +86,7 @@ fun MainScreen(
     onNavigateToSettings: () -> Unit,
     onNavigateToRegex: () -> Unit,
 ) {
+    val scrollState = rememberScrollState()
     val registerForRepeatedPermissions =
         rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {}
 
@@ -165,10 +170,17 @@ fun MainScreen(
         })
     }, content = { padding ->
         Column(
-            modifier = Modifier.padding(padding)
+            modifier = Modifier
+                .padding(padding)
+                .fillMaxSize()
         ) {
-            ModuleList(modules)
-            Spacer(modifier = Modifier.weight(1f))
+            Column(
+                modifier = Modifier
+                    .weight(1f, fill = true)
+                    .verticalScroll(scrollState)
+            ) {
+                ModuleList(modules)
+            }
             ToggleableButton(
                 getPreference = { prefs.isEnabled },
                 setPreference = { isChecked ->
