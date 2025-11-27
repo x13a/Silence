@@ -75,6 +75,8 @@
     <string name="repeated_burst_timeout_helper_text">Timeout minimo in secondi tra chiamate ripetute.</string>
     <string name="regex_description">Elabora chiamate dai numeri che corrispondono all\'espressione regolare.</string>
     <string name="block">Blocca</string>
+    <string name="block_enabled">Blocco abilitato</string>
+    <string name="block_disabled">Blocco disabilitato</string>
     <string name="extra_description">Consenti chiamate da alcuni gruppi/identificatori vari.</string>
     <string name="sim_description">Elabora tutte le chiamate da una o entrambe le schede SIM.</string>
     <string name="back">Indietro</string>
