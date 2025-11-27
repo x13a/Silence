@@ -3,6 +3,7 @@ package me.lucky.silence.ui
 import android.Manifest
 import android.app.role.RoleManager
 import android.content.Context
+import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Column
@@ -128,7 +129,9 @@ fun MainScreen(
             description = R.string.messages_description,
             navigation = onNavigateToMessages,
         ),
-        *(if (Utils.getModemCount(ctx, Modem.SUPPORTED) >= 2) {
+        *(if (Utils.getModemCount(ctx, Modem.SUPPORTED) >= 2
+            && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
+        {
             arrayOf(
                 Module(
                     name = R.string.sim,
