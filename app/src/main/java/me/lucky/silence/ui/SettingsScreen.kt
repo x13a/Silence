@@ -73,6 +73,7 @@ fun SettingsScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolea
             },
             name = R.string.settings_controller,
             description = R.string.settings_controller_description,
+            dividerBefore = true,
         ),
     )
     Screen(title = R.string.settings,
