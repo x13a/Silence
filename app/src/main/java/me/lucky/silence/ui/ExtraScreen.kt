@@ -13,7 +13,6 @@ import me.lucky.silence.ui.common.Preference
 import me.lucky.silence.ui.common.PreferenceList
 import me.lucky.silence.ui.common.Screen
 
-
 @Composable
 fun ExtraScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
     val registerForContactsPermissions =

@@ -15,7 +15,7 @@ class TileService : TileService() {
         super.onClick()
         val state = qsTile.state == Tile.STATE_INACTIVE
         prefs.isEnabled = state
-        Utils.updateMessagesTextEnabled(this)
+        Utils.updateMessagesEnabled(this)
         update()
     }
 

@@ -34,7 +34,7 @@ class ControlReceiver : BroadcastReceiver() {
 
     private fun setGlobalState(ctx: Context, state: Boolean) {
         Preferences(ctx).isEnabled = state
-        Utils.updateMessagesTextEnabled(ctx)
+        Utils.updateMessagesEnabled(ctx)
     }
 
     private fun setUnknownNumbersState(ctx: Context, state: Boolean) {

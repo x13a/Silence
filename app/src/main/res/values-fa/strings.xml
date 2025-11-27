@@ -2,9 +2,9 @@
 <resources>
     <string name="app_name">سایلنت</string>
     <string name="contacted_description">اجازه تماس با آن هایی که قبلا تماس داشته اید.</string>
-    <string name="contacted_call">تماس</string>
-    <string name="contacted_call_description">اجازه تماس به کسانی که قبلا تماس داشته اید.</string>
-    <string name="contacted_message_description">اجازه تماس به کسانی که به آن ها پیام داده اید.</string>
+    <string name="contacted_call_out">تماس</string>
+    <string name="contacted_call_out_description">اجازه تماس به کسانی که قبلا تماس داشته اید.</string>
+    <string name="contacted_message_out_description">اجازه تماس به کسانی که به آن ها پیام داده اید.</string>
     <string name="groups_description">اجازه تماس به شماره های داخل گروه انتخابی.</string>
     <string name="groups_local">محلی</string>
     <string name="groups_local_description">اجازه تماس به کسانی که کد کشور مشابه شما دارند.</string>
@@ -12,15 +12,15 @@
     <string name="groups_mobile">موبایل</string>
     <string name="groups_mobile_description">اجازه تماس به شماره تلفن ها</string>
     <string name="repeated_main">تکرار شده</string>
-    <string name="messages_inbox_description">اجازه تماس به شماره هایی که به شما پیام داده اند.</string>
-    <string name="messages_text">متن</string>
-    <string name="contacted_message">پیام</string>
+    <string name="contacted_message_in_description">اجازه تماس به شماره هایی که به شما پیام داده اند.</string>
+    <string name="messages_notification">متن</string>
+    <string name="contacted_message_out">پیام</string>
     <string name="groups_not_local_description">اجازه تماس به کسانی که کد کشور مشابه شما ندارند.</string>
     <string name="repeated_count">تعداد</string>
     <string name="repeated_minutes">دقیقه</string>
     <string name="messages_main">پیام ها</string>
-    <string name="messages_inbox">ورودی</string>
+    <string name="contacted_message_in">ورودی</string>
     <string name="messages_description">اجازه تماس به شماره تلفن هایی که داخل پیام ها هستند.</string>
-    <string name="messages_text_ttl_hint">زمان</string>
+    <string name="messages_ttl_hint">زمان</string>
     <string name="groups_main">گروه ها</string>
 </resources>

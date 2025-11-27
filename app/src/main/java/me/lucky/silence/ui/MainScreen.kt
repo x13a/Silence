@@ -23,8 +23,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import me.lucky.silence.Contact
-import me.lucky.silence.Message
 import me.lucky.silence.Modem
 import me.lucky.silence.Preferences
 import me.lucky.silence.R
@@ -83,48 +81,11 @@ fun MainScreen(
     onNavigateToSettings: () -> Unit,
     onNavigateToRegex: () -> Unit,
 ) {
-    fun getContactedPermissions(): Array<String> {
-        val contacted = prefs.contacted
-        val permissions = mutableSetOf<String>()
-        for (value in Contact.entries.asSequence().filter { contacted.and(it.value) != 0 }) {
-            when (value) {
-                Contact.CALL -> permissions.add(Manifest.permission.READ_CALL_LOG)
-                Contact.MESSAGE -> permissions.add(Manifest.permission.READ_SMS)
-                Contact.ANSWER -> permissions.add(Manifest.permission.READ_CALL_LOG)
-            }
-        }
-        return permissions.toTypedArray()
-    }
-
-    fun getMessagesPermissions(): Array<String> {
-        val messages = prefs.messages
-        val permissions = mutableSetOf<String>()
-        for (value in Message.entries.asSequence().filter { messages.and(it.value) != 0 }) {
-            when (value) {
-                Message.INBOX -> permissions.add(Manifest.permission.READ_SMS)
-                Message.TEXT -> {}
-            }
-        }
-        return permissions.toTypedArray()
-    }
-
-    val registerForContactedPermissions =
-        rememberLauncherForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {}
-
-    fun requestContactedPermissions() =
-        registerForContactedPermissions.launch(getContactedPermissions())
-
     val registerForRepeatedPermissions =
         rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {}
 
     fun requestRepeatedPermissions() =
         registerForRepeatedPermissions.launch(Manifest.permission.READ_CALL_LOG)
-
-    val registerForMessagesPermissions =
-        rememberLauncherForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {}
-
-    fun requestMessagesPermissions() =
-        registerForMessagesPermissions.launch(getMessagesPermissions())
 
     val roleManager: RoleManager by lazy { ctx.getSystemService(RoleManager::class.java) }
     val registerForCallScreeningRole =
@@ -136,39 +97,38 @@ fun MainScreen(
 
     val modules = listOf(
         Module(
-            name = R.string.groups_main,
-            description = R.string.groups_description,
-            getPreference = { prefs.isGroupsChecked },
-            setPreference = { prefs.isGroupsChecked = it },
-            navigation = onNavigateToGroups,
-        ),
-        Module(
             name = R.string.repeated_main,
             description = R.string.repeated_description,
-            getPreference = { prefs.isRepeatedChecked },
+            getPreference = { prefs.isRepeatedEnabled },
             setPreference = { isChecked ->
-                prefs.isRepeatedChecked = isChecked
+                prefs.isRepeatedEnabled = isChecked
                 if (isChecked) requestRepeatedPermissions()
             },
             navigation = onNavigateToRepeated,
         ),
         Module(
-            name = R.string.messages_main,
-            description = R.string.messages_description,
-            getPreference = { prefs.isMessagesChecked },
-            setPreference = { isChecked ->
-                prefs.isMessagesChecked = isChecked
-                if (isChecked) requestMessagesPermissions()
-                Utils.updateMessagesTextEnabled(ctx)
-            },
-            navigation = onNavigateToMessages,
-        ),
-        Module(
             name = R.string.regex_main,
             description = R.string.regex_description,
+            getPreference = { prefs.isRegexEnabled },
+            setPreference = { prefs.isRegexEnabled = it },
             navigation = onNavigateToRegex,
         ),
-        *(if (Utils.getModemCount(ctx, Modem.SUPPORTED) >= 1) {
+        Module(
+            name = R.string.contacted_main,
+            description = R.string.contacted_description,
+            navigation = onNavigateToContacted,
+        ),
+        Module(
+            name = R.string.groups_main,
+            description = R.string.groups_description,
+            navigation = onNavigateToGroups,
+        ),
+        Module(
+            name = R.string.messages_main,
+            description = R.string.messages_description,
+            navigation = onNavigateToMessages,
+        ),
+        *(if (Utils.getModemCount(ctx, Modem.SUPPORTED) >= 2) {
             arrayOf(
                 Module(
                     name = R.string.sim,
@@ -179,11 +139,6 @@ fun MainScreen(
         } else {
             emptyArray()
         }),
-        Module(
-            name = R.string.contacted_main,
-            description = R.string.contacted_description,
-            navigation = onNavigateToContacted,
-        ),
         Module(
             name = R.string.extra,
             description = R.string.extra_description,
@@ -216,7 +171,7 @@ fun MainScreen(
                 setPreference = { isChecked ->
                     prefs.isEnabled = isChecked
                     if (isChecked) requestCallScreeningRole()
-                    Utils.updateMessagesTextEnabled(ctx)
+                    Utils.updateMessagesEnabled(ctx)
                 }
             )
         }

@@ -2,10 +2,10 @@
 <resources>
     <string name="app_name">Silence</string>
     <string name="contacted_main">已聯絡</string>
-    <string name="contacted_call">撥打</string>
-    <string name="contacted_call_description">允許來自你已撥打過的號碼來電。</string>
-    <string name="contacted_message">訊息</string>
-    <string name="contacted_message_description">允許來自你已向其發送訊息過的號碼來電。</string>
+    <string name="contacted_call_out">撥打</string>
+    <string name="contacted_call_out_description">允許來自你已撥打過的號碼來電。</string>
+    <string name="contacted_message_out">訊息</string>
+    <string name="contacted_message_out_description">允許來自你已向其發送訊息過的號碼來電。</string>
     <string name="notification_title">封鎖來電</string>
     <string name="contacted_description">允許來自你已聯絡過的號碼來電。</string>
     <string name="extra_plus_numbers_description">允許來自不以加號開頭的號碼來電。</string>
@@ -13,9 +13,9 @@
     <string name="back">返回</string>
     <string name="toggle_off">關閉</string>
     <string name="toggle_on">開啟</string>
-    <string name="contacted_answer">接聽</string>
+    <string name="contacted_call_in">接聽</string>
     <string name="groups_local">本地</string>
-    <string name="contacted_answer_description">允許來自你已接聽過的號碼來電。</string>
+    <string name="contacted_call_in_description">允許來自你已接聽過的號碼來電。</string>
     <string name="groups_main">群組</string>
     <string name="groups_description">允許來自已選擇群組內的號碼來電。</string>
     <string name="groups_local_description">允許來自與你的國際電話區號相同的號碼來電。</string>
@@ -31,8 +31,8 @@
     <string name="regex_pattern_hint">模式</string>
     <string name="regex_pattern_helper_text">允許來自與正規表示式匹配的號碼來電。</string>
     <string name="messages_main">訊息</string>
-    <string name="messages_inbox">收件匣</string>
-    <string name="messages_text_ttl_helper_text">該號碼可以有多少時間給你來電。修飾符：[d] 天 [h] 小時 [m] 分鐘</string>
+    <string name="contacted_message_in">收件匣</string>
+    <string name="messages_ttl_helper_text">該號碼可以有多少時間給你來電。修飾符：[d] 天 [h] 小時 [m] 分鐘</string>
     <string name="block_main">封鎖</string>
     <string name="sim">SIM</string>
     <string name="block_description">封鎖所有來電。若要同時封鎖聯絡人的號碼，你必須授予權限。</string>
@@ -40,10 +40,10 @@
     <string name="sim_1_description">允許來自 SIM 1 的所有來電。</string>
     <string name="sim_2">SIM 2</string>
     <string name="sim_2_description">允許來自 SIM 2 的所有來電。</string>
-    <string name="messages_text_ttl_hint">時間</string>
-    <string name="messages_text">文字</string>
-    <string name="messages_text_ttl_error">7 天／48 小時／120 分鐘</string>
-    <string name="messages_text_description">暫時允許來自傳入訊息文字中找到的流動電話的號碼來電。</string>
+    <string name="messages_ttl_hint">時間</string>
+    <string name="messages_notification">文字</string>
+    <string name="messages_ttl_error">7 天／48 小時／120 分鐘</string>
+    <string name="messages_notification_description">暫時允許來自傳入訊息文字中找到的流動電話的號碼來電。</string>
     <string name="settings_reject_call">拒絕來電</string>
     <string name="settings_disallow_call_description">設定來電是否封鎖。</string>
     <string name="settings_reject_call_description">設定來電是否應像使用者手動拒絕一樣斷開。此項應該只在不允許來電時才勾選。</string>
@@ -81,7 +81,7 @@
     <string name="notification_channel">已封鎖的來電</string>
     <string name="extra_description">允許來自某些雜項群組／身份識別的來電。</string>
     <string name="messages_description">允許來自訊息中找到的號碼來電。</string>
-    <string name="messages_inbox_description">允許來自向你發送訊息過的號碼來電。</string>
+    <string name="contacted_message_in_description">允許來自向你發送訊息過的號碼來電。</string>
     <string name="repeated_burst_timeout_helper_text">重複來電之間的最小逾時時間，以秒為單位。</string>
     <string name="extra_unknown_numbers_description">允許來自陌生人並且沒有號碼的來電。</string>
     <string name="extra_unknown_numbers">未知號碼</string>

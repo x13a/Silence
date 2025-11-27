@@ -19,14 +19,6 @@ import me.lucky.silence.ui.common.Screen
 fun SettingsScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolean) {
     val preferenceList = listOf(
         Preference(
-            getValue = { Utils.isComponentEnabled(ctx, ControlReceiver::class.java) },
-            setValue = { isChecked ->
-                       Utils.setComponentEnabled(ctx, ControlReceiver::class.java, isChecked)
-            },
-            name = R.string.settings_controller,
-            description = R.string.settings_controller_description,
-        ),
-        Preference(
             getValue = { prefs.responseOptions.and(ResponseOption.DisallowCall.value) != 0 },
             setValue = { isChecked ->
                 prefs.responseOptions = Utils.setFlag(
@@ -73,7 +65,15 @@ fun SettingsScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolea
             },
             name = R.string.settings_skip_notification,
             description = R.string.settings_skip_notification_description,
-        )
+        ),
+        Preference(
+            getValue = { Utils.isComponentEnabled(ctx, ControlReceiver::class.java) },
+            setValue = { isChecked ->
+                Utils.setComponentEnabled(ctx, ControlReceiver::class.java, isChecked)
+            },
+            name = R.string.settings_controller,
+            description = R.string.settings_controller_description,
+        ),
     )
     Screen(title = R.string.settings,
         onBackPressed = onBackPressed,

@@ -18,11 +18,11 @@
     <string name="messages_main">संदेशें</string>
     <string name="panic_app_unknown_app">एक अनजान ऐप</string>
     <string name="sim_1">सिम 1</string>
-    <string name="contacted_message">संदेशें</string>
+    <string name="contacted_message_out">संदेशें</string>
     <string name="messages_description">संदेशों में से नंबरें।</string>
     <string name="repeated_count">गिनती</string>
     <string name="notification_channel">अवरोधित कॉलें</string>
-    <string name="contacted_call">कॉल</string>
+    <string name="contacted_call_out">कॉल</string>
     <string name="extra_stir_description">STIR जांच उत्तीर्ण करने वाले नंबरें।</string>
     <string name="panic_app_dialog_title">आज्ञा दें आतंकी ऐप की</string>
     <string name="panic_app_dialog_message">क्या आप अवश्य हैं की आप %1$s ko अनुमति देना चाहते हैं हानिकारक आतंकी कार्य करने के लिए\?</string>

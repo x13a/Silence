@@ -36,8 +36,7 @@ class NotificationListenerService : NotificationListenerService() {
     override fun onNotificationPosted(sbn: StatusBarNotification?) {
         super.onNotificationPosted(sbn)
         if (sbn == null
-            || !prefs.isMessagesChecked
-            || prefs.messages.and(Message.TEXT.value) == 0) return
+            || prefs.messages.and(Message.NOTIFICATION.value) == 0) return
         var hasNumber = false
         for (number in phoneNumberUtil
             .findNumbers(
@@ -48,7 +47,7 @@ class NotificationListenerService : NotificationListenerService() {
             .asSequence()
             .map { it.number() }
             .filter { phoneNumberUtil.getNumberType(it) == PhoneNumberUtil.PhoneNumberType.MOBILE }
-            .map { AllowNumber.new(it, prefs.messagesTextTtl) }
+            .map { AllowNumber.new(it, prefs.messagesTtl) }
         ) {
             try { db.insert(number) } catch (_: SQLiteConstraintException) { db.update(number) }
             hasNumber = true
@@ -66,6 +65,6 @@ class NotificationListenerService : NotificationListenerService() {
         WorkManager
             .getInstance(this)
             .enqueue(OneTimeWorkRequestBuilder<CleanupWorker>()
-                .setInitialDelay(prefs.messagesTextTtl.toLong() + 5, TimeUnit.MINUTES)
+                .setInitialDelay(prefs.messagesTtl.toLong() + 5, TimeUnit.MINUTES)
                 .build())
 }
