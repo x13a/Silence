@@ -94,8 +94,8 @@
     <string name="regex_pattern_error">Espressione regolare non valida!</string>
     
     <!-- App Shortcuts -->
-    <string name="shortcut_activate">Attivato</string>
-    <string name="shortcut_deactivate">Disattivato</string>
+    <string name="shortcut_activate">Attiva</string>
+    <string name="shortcut_deactivate">Disattiva</string>
     <string name="shortcut_activate_block">Attiva blocco chiamate</string>
     <string name="shortcut_deactivate_block">Disattiva blocco chiamate</string>
 </resources>
