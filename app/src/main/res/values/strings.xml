@@ -94,9 +94,9 @@
     <string name="back">Back</string>
     <string name="toggle_off">Off</string>
     <string name="toggle_on">On</string>
-    
     <!-- App Shortcuts -->
-    
+    <string name="shortcut_activate">Activate</string>
+    <string name="shortcut_deactivate">Deactivate</string>
     <string name="shortcut_activate_block">Activate call blocking</string>
     <string name="shortcut_deactivate_block">Deactivate call blocking</string>
 </resources>

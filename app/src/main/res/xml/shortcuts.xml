@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
     <shortcut
+        android:shortcutId="activate"
+        android:enabled="true"
+        android:icon="@drawable/ic_tile"
+        android:shortcutShortLabel="@string/shortcut_activate">
+        <intent
+            android:action="me.lucky.silence.action.ACTIVATE"
+            android:targetPackage="me.lucky.silence"
+            android:targetClass="me.lucky.silence.ShortcutActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="deactivate"
+        android:enabled="true"
+        android:icon="@drawable/ic_tile"
+        android:shortcutShortLabel="@string/shortcut_deactivate">
+        <intent
+            android:action="me.lucky.silence.action.DEACTIVATE"
+            android:targetPackage="me.lucky.silence"
+            android:targetClass="me.lucky.silence.ShortcutActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
         android:shortcutId="activate_block"
         android:enabled="true"
         android:icon="@drawable/ic_tile"
