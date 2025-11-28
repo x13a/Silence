@@ -48,7 +48,7 @@ class CallScreeningService : CallScreeningService() {
             return
         } else if (isEmergency(callDetails)) {
             prefs.isEnabled = false
-            Utils.setMessagesEnabled(this, false)
+            Utils.updateMessagesEnabled(this)
             respondAllow(callDetails)
             return
         } else if (callDetails.callDirection != Call.Details.DIRECTION_INCOMING) {

@@ -1,8 +1,11 @@
 package me.lucky.silence.ui
 
-import android.content.Intent
+import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.provider.Settings
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -57,12 +60,36 @@ fun MessagesScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolea
         else -> "$ttl${modifierMinutes}"
     }
     var timeText by remember { mutableStateOf(timeoutString) }
+    val registerForMessagePermissions =
+        rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {}
+
+    fun requestMessagePermissions() =
+        registerForMessagePermissions.launch(Manifest.permission.READ_SMS)
 
     val preferenceList = listOf(
         Preference(
+            getValue = { prefs.messages.and(Message.MESSAGE.value) != 0 },
+            setValue = { isChecked ->
+                prefs.messages = Utils.setFlag(
+                    prefs.messages,
+                    Message.MESSAGE.value,
+                    isChecked
+                )
+                if (isChecked) requestMessagePermissions()
+                Utils.updateMessagesEnabled(ctx)
+            },
+            name = R.string.messages_message,
+            description = R.string.messages_message_description,
+        ),
+        Preference(
             getValue = { prefs.messages.and(Message.NOTIFICATION.value) != 0 },
             setValue = { isChecked ->
-                prefs.messages = Utils.setFlag(prefs.messages, Message.NOTIFICATION.value, isChecked)
+                prefs.messages = Utils.setFlag(
+                    prefs.messages,
+                    Message.NOTIFICATION.value,
+                    isChecked
+                )
+                Utils.updateMessagesEnabled(ctx)
             },
             name = R.string.messages_notification,
             description = R.string.messages_notification_description,

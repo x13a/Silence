@@ -189,9 +189,15 @@ class CallScreeningHelper(private val ctx: Context) {
     private fun checkMessages(number: PhoneNumber): Boolean {
         val messages = prefs.messages
         var result = false
+        var isDbChecked = false
         for (value in Message.entries.asSequence().filter { messages.and(it.value) != 0 }) {
             result = when (value) {
-                Message.NOTIFICATION -> checkMessagesNotification(number)
+                Message.MESSAGE, Message.NOTIFICATION -> {
+                    if (isDbChecked) continue
+                    val rv = checkMessagesDb(number)
+                    isDbChecked = true
+                    rv
+                }
             }
             if (result) break
         }
@@ -229,11 +235,15 @@ class CallScreeningHelper(private val ctx: Context) {
         return result
     }
 
-    private fun checkMessagesNotification(number: PhoneNumber): Boolean {
+    private fun checkMessagesDb(number: PhoneNumber): Boolean {
         val logNumber = PhoneNumber()
         val countryCode = telephonyManager?.networkCountryIso?.uppercase()
         for (row in db.selectActive()) {
-            phoneNumberUtil.parseAndKeepRawInput(row.phoneNumber, countryCode, logNumber)
+            phoneNumberUtil.parseAndKeepRawInput(
+                row.phoneNumber,
+                countryCode,
+                logNumber
+            )
             if (phoneNumberUtil.isNumberMatch(number, logNumber) ==
                 PhoneNumberUtil.MatchType.EXACT_MATCH) return true
         }

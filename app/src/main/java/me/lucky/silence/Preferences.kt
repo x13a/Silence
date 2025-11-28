@@ -168,6 +168,7 @@ enum class Group(val value: Int) {
 }
 
 enum class Message(val value: Int) {
+    MESSAGE(1),
     NOTIFICATION(1 shl 1),
 }
 

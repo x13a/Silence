@@ -8,6 +8,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.telephony.TelephonyManager
 import me.lucky.silence.text.NotificationListenerService
+import me.lucky.silence.text.SmsReceiver
 
 class Utils {
     companion object {
@@ -23,15 +24,17 @@ class Utils {
             return false
         }
 
-        fun setMessagesEnabled(ctx: Context, value: Boolean) {
-            setComponentEnabled(ctx, NotificationListenerService::class.java, value)
-        }
-
         fun updateMessagesEnabled(ctx: Context) {
             val prefs = Preferences(ctx)
-            setMessagesEnabled(
+            setComponentEnabled(
                 ctx,
-                prefs.messages.and(Message.NOTIFICATION.value) != 0,
+                SmsReceiver::class.java,
+                prefs.messages.and(Message.MESSAGE.value) != 0 && prefs.isEnabled
+            )
+            setComponentEnabled(
+                ctx,
+                NotificationListenerService::class.java,
+                prefs.messages.and(Message.NOTIFICATION.value) != 0 && prefs.isEnabled
             )
         }
 

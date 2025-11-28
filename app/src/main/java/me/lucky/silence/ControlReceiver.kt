@@ -42,8 +42,9 @@ class ControlReceiver : BroadcastReceiver() {
     }
 
     private fun setSimState(ctx: Context, flag: Sim, state: Boolean) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
-            Utils.getModemCount(ctx, Modem.SUPPORTED) >= 2)
-            Utils.setFlag(Preferences(ctx).sim, flag.value, state)
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S
+            || Utils.getModemCount(ctx, Modem.SUPPORTED) < 2) return
+        val prefs = Preferences(ctx)
+        prefs.sim = Utils.setFlag(prefs.sim, flag.value, state)
     }
 }

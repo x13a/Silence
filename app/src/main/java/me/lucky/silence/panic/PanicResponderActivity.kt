@@ -16,7 +16,7 @@ class PanicResponderActivity : ComponentActivity() {
             return
         }
         Preferences(this).isEnabled = false
-        Utils.setMessagesEnabled(this, false)
+        Utils.updateMessagesEnabled(this)
         if (PanicResponder.receivedTriggerFromConnectedApp(this))
             AppDatabase.getInstance(this).allowNumberDao().deleteAll()
         finishAndRemoveTask()
