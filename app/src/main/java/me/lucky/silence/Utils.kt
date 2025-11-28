@@ -29,7 +29,7 @@ class Utils {
             setComponentEnabled(
                 ctx,
                 SmsReceiver::class.java,
-                prefs.messages.and(Message.MESSAGE.value) != 0 && prefs.isEnabled
+                prefs.messages.and(Message.SMS.value) != 0 && prefs.isEnabled
             )
             setComponentEnabled(
                 ctx,

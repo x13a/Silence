@@ -60,26 +60,26 @@ fun MessagesScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolea
         else -> "$ttl${modifierMinutes}"
     }
     var timeText by remember { mutableStateOf(timeoutString) }
-    val registerForMessagePermissions =
+    val registerForSmsPermissions =
         rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {}
 
-    fun requestMessagePermissions() =
-        registerForMessagePermissions.launch(Manifest.permission.READ_SMS)
+    fun requestSmsPermissions() =
+        registerForSmsPermissions.launch(Manifest.permission.READ_SMS)
 
     val preferenceList = listOf(
         Preference(
-            getValue = { prefs.messages.and(Message.MESSAGE.value) != 0 },
+            getValue = { prefs.messages.and(Message.SMS.value) != 0 },
             setValue = { isChecked ->
                 prefs.messages = Utils.setFlag(
                     prefs.messages,
-                    Message.MESSAGE.value,
+                    Message.SMS.value,
                     isChecked
                 )
-                if (isChecked) requestMessagePermissions()
+                if (isChecked) requestSmsPermissions()
                 Utils.updateMessagesEnabled(ctx)
             },
-            name = R.string.messages_message,
-            description = R.string.messages_message_description,
+            name = R.string.messages_sms,
+            description = R.string.messages_sms_description,
         ),
         Preference(
             getValue = { prefs.messages.and(Message.NOTIFICATION.value) != 0 },
