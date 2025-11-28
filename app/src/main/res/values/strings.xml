@@ -84,8 +84,8 @@
     <string name="panic_app_unknown_app">an unknown app</string>
     <string name="allow">Allow</string>
     <string name="block">Block</string>
-    <string name="block_enabled">Activate global call blocking</string>
-    <string name="block_disabled">Deactivate global call blocking</string>
+    <string name="block_enabled">Block mode enabled</string>
+    <string name="block_disabled">Block mode disabled</string>
     <string name="notification_channel">Blocked calls</string>
     <string name="notification_title">Blocked call</string>
     <string name="goto_button">GOTO</string>
@@ -97,6 +97,6 @@
     <!-- App Shortcuts -->
     <string name="shortcut_activate">Activate Silence</string>
     <string name="shortcut_deactivate">Deactivate Silence</string>
-    <string name="shortcut_activate_block">Activate global call blocking</string>
-    <string name="shortcut_deactivate_block">Deactivate global call blocking</string>
+    <string name="shortcut_activate_block">Block mode enabled</string>
+    <string name="shortcut_deactivate_block">Block mode disabled</string>
 </resources>
