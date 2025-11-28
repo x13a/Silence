@@ -73,4 +73,8 @@
     <string name="groups_local_mobile_description">Anrufe von Mobilfunknummern mit der gleichen Vorwahl wie Ihre erlauben.</string>
     <string name="repeated_burst_timeout_hint">Zeitlimit</string>
     <string name="block_main">Blockieren</string>
+    
+    <!-- App Shortcuts -->
+    <string name="shortcut_activate_block">Anrufblockierung aktivieren</string>
+    <string name="shortcut_deactivate_block">Anrufblockierung deaktivieren</string>
 </resources>

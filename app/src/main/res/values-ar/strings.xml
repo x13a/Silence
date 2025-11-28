@@ -73,4 +73,8 @@
     <string name="block_description">حظر جميع المكالمات الواردة. لحظر الأرقام أيضا من جهات الاتصال ، يجب عليك منح إذن.</string>
     <string name="repeated_burst_timeout_hint">مهلة</string>
     <string name="repeated_burst_timeout_helper_text">الحد الأدنى من المهلة بالثواني بين المكالمات المتكررة.</string>
+    
+    <!-- App Shortcuts -->
+    <string name="shortcut_activate_block">تفعيل حظر المكالمات</string>
+    <string name="shortcut_deactivate_block">إلغاء تفعيل حظر المكالمات</string>
 </resources>

@@ -73,4 +73,8 @@
     <string name="notification_channel">Chamadas bloqueadas</string>
     <string name="notification_title">Chamada bloqueada</string>
     <string name="goto_button">GOTO</string>
+    
+    <!-- App Shortcuts -->
+    <string name="shortcut_activate_block">Ativar bloqueio de chamadas</string>
+    <string name="shortcut_deactivate_block">Desativar bloqueio de chamadas</string>
 </resources>

@@ -86,4 +86,8 @@
     <string name="block">Блокировка</string>
     <string name="sim_description">Обработка всех вызовов с одной или обеих SIM-карт.</string>
     <string name="extra_description">Разрешить звонки от некоторых различных групп/идентификаторов.</string>
+    
+    <!-- App Shortcuts -->
+    <string name="shortcut_activate_block">Активировать блокировку звонков</string>
+    <string name="shortcut_deactivate_block">Деактивировать блокировку звонков</string>
 </resources>

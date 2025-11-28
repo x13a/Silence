@@ -53,4 +53,8 @@
     <string name="extra_unknown_numbers_description">Zezwalaj na połączenia od nieznajomych bez numeru.</string>
     <string name="settings_silence_call_description">Określa, czy dzwonek ma być wyciszony dla połączenia przychodzącego. Połączenie będzie jednak nadal wysyłane do domyślnej aplikacji, jeśli nie jest zablokowane. Zaznaczenie tego ma sens tylko wtedy, gdy połączenie nie zostało odrzucone.</string>
     <string name="settings_skip_call_log">Pomiń rejestr połączeń</string>
+    
+    <!-- App Shortcuts -->
+    <string name="shortcut_activate_block">Włącz blokowanie połączeń</string>
+    <string name="shortcut_deactivate_block">Wyłącz blokowanie połączeń</string>
 </resources>

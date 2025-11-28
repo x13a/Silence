@@ -16,6 +16,11 @@ import me.lucky.silence.ui.App
 open class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        // Run migration to fix any incorrect defaults
+        val prefs = Preferences(this)
+        prefs.runMigrationIfNeeded()
+        
         NotificationManager(this).createNotificationChannels()
         setContent {
             val isAndroid12OrLater = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S

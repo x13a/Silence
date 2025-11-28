@@ -32,16 +32,17 @@ class Preferences(ctx: Context) {
         const val DEFAULT_MESSAGES_TTL = 2 * 24 * 60
 
         // migration
-        const val SERVICE_ENABLED = "service_enabled"
         const val GENERAL_UNKNOWN_NUMBERS_CHECKED = "general_unknown_numbers_checked"
 
         const val REGEX_PATTERN = "regex_pattern"
+        const val MIGRATION_VERSION = "migration_version"
+        const val CURRENT_MIGRATION_VERSION = 1
     }
 
     private val prefs = PreferenceManager.getDefaultSharedPreferences(ctx)
 
     var isEnabled: Boolean
-        get() = prefs.getBoolean(ENABLED, prefs.getBoolean(SERVICE_ENABLED, false))
+        get() = prefs.getBoolean(ENABLED, false)
         set(value) = prefs.edit { putBoolean(ENABLED, value) }
 
     var contacted: Int
@@ -118,6 +119,21 @@ class Preferences(ctx: Context) {
         get() = prefs.getString(REGEX_PATTERN, "")
         set(value) = prefs.edit { putString(REGEX_PATTERN, value) }
 
+    fun resetToDefaults() {
+        prefs.edit {
+            putBoolean(ENABLED, false)
+            putBoolean(BLOCK_ENABLED, false)
+        }
+    }
+
+    fun runMigrationIfNeeded() {
+        val currentVersion = prefs.getInt(MIGRATION_VERSION, 0)
+        if (currentVersion < CURRENT_MIGRATION_VERSION) {
+            // Migration to fix default values
+            resetToDefaults()
+            prefs.edit { putInt(MIGRATION_VERSION, CURRENT_MIGRATION_VERSION) }
+        }
+    }
     var isRegexEnabled: Boolean
         get() = prefs.getBoolean(REGEX_ENABLED, false)
         set(value) = prefs.edit { putBoolean(REGEX_ENABLED, value) }

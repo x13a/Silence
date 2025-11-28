@@ -86,4 +86,8 @@
     <string name="extra_description">Permitir chamadas de alguns grupos/identificadores diversos.</string>
     <string name="block">Bloquear</string>
     <string name="sim_description">Processar todas as chamadas de um ou ambos os cartões SIM.</string>
+    
+    <!-- App Shortcuts -->
+    <string name="shortcut_activate_block">Ativar bloqueio de chamadas</string>
+    <string name="shortcut_deactivate_block">Desativar bloqueio de chamadas</string>
 </resources>
