@@ -41,6 +41,7 @@
     <string name="settings_skip_notification_description">Imposta se una notifica di chiamata persa non deve essere visualizzata per la chiamata in arrivo. Dovrebbe essere selezionato solo se la chiamata non è consentita.</string>
     <string name="settings_skip_call_log_description">Imposta se la chiamata in arrivo non deve essere visualizzata nel registro chiamate. Dovrebbe essere selezionato solo se la chiamata non è consentita. Le chiamate verranno comunque registrate con il tipo BLOCKED_TYPE.</string>
     <string name="sim_2_allow_description">Consenti tutte le chiamate dalla SIM 2.</string>
+    <string name="sim_2_block_description">Blocca tutte le chiamate dalla SIM 2.</string>
     <string name="contacted_call_out_description">Consenti chiamate dai numeri che hai chiamato.</string>
     <string name="contacted_message_out_description">Consenti chiamate dai numeri a cui hai mandato un messaggio.</string>
     <string name="groups_local_description">Consenti chiamate da numeri con lo stesso prefisso internazionale del tuo.</string>
@@ -53,6 +54,7 @@
     <string name="settings_disallow_call_description">Imposta se la chiamata in arrivo deve essere bloccata.</string>
     <string name="settings_reject_call_description">Imposta se la chiamata in arrivo deve essere disconnessa come se l\'utente l\'avesse rifiutata manualmente. Dovrebbe essere selezionato solo se la chiamata non è consentita.</string>
     <string name="sim_1_allow_description">Consenti tutte le chiamate dalla SIM 1.</string>
+    <string name="sim_1_block_description">Blocca tutte le chiamate dalla SIM 1.</string>
     <string name="goto_button">Vai</string>
     <string name="messages_ttl_hint">Tempo</string>
     <string name="messages_ttl_helper_text">Per quanto tempo il numero sarà in grado di chiamarvi. Modificatori: giorni [d], ore [h], minuti [m]</string>
@@ -74,8 +76,8 @@
     <string name="repeated_burst_timeout_hint">Timeout</string>
     <string name="repeated_burst_timeout_helper_text">Timeout minimo in secondi tra chiamate ripetute.</string>    
     <string name="block">Blocca</string>
-    <string name="block_enabled">Blocco abilitato</string>
-    <string name="block_disabled">Blocco disabilitato</string>
+    <string name="block_enabled">Modalità di Blocco abilitata</string>
+    <string name="block_disabled">Modalità di Blocco disabilitata</string>
     <string name="extra_description">Consenti chiamate da alcuni gruppi/identificatori vari.</string>
     <string name="sim_description">Elabora tutte le chiamate da una o entrambe le schede SIM.</string>
     <string name="back">Indietro</string>
@@ -92,6 +94,8 @@
     <string name="regex_pattern_error">Espressione regolare non valida!</string>
     
     <!-- App Shortcuts -->
+    <string name="shortcut_activate">Attivato</string>
+    <string name="shortcut_deactivate">Disattivato</string>
     <string name="shortcut_activate_block">Attiva blocco chiamate</string>
     <string name="shortcut_deactivate_block">Disattiva blocco chiamate</string>
 </resources>
