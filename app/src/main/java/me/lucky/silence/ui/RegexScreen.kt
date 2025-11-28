@@ -58,7 +58,7 @@ fun RegexScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
                     modifier = Modifier.weight(1f),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Ascii,
-                        autoCorrect = false,
+                        autoCorrectEnabled = false,
                         capitalization = KeyboardCapitalization.None
                     )
                 )
@@ -84,7 +84,7 @@ fun RegexScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
                     modifier = Modifier.weight(1f),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Ascii,
-                        autoCorrect = false,
+                        autoCorrectEnabled = false,
                         capitalization = KeyboardCapitalization.None
                     )
                 )
@@ -97,18 +97,16 @@ fun RegexScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
 private fun isValidRegex(patterns: String): Boolean {
     // Split the input string by commas and trim whitespace from each pattern
     val regexPatterns = patterns.split(",").map { it.trim() }
-
     // Validate each pattern
     for (pattern in regexPatterns) {
         try {
             // Attempt to convert the pattern to a Regex object
             pattern.toRegex(RegexOption.MULTILINE)
-        } catch (exc: java.util.regex.PatternSyntaxException) {
+        } catch (_: java.util.regex.PatternSyntaxException) {
             // If an exception is thrown, return false
             return false
         }
     }
-
     // All patterns are valid
     return true
 }

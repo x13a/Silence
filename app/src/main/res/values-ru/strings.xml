@@ -80,8 +80,8 @@
     <string name="contacted_call_in_description">Разрешите звонки с номеров, на которые вы уже отвечали.</string>
     <string name="regex_main">Справочник</string>
     <string name="regex_description">Обработка звонков с номеров, соответствующих регулярному выражению.</string>
-    <string name="regex_pattern_hint">Узор</string>
-    <string name="regex_pattern_helper_text">Разрешить звонки с номеров, соответствующих регулярному выражению.</string>
+    <string name="regex_pattern_allow_hint">Узор</string>
+    <string name="regex_pattern_allow_helper_text">Разрешить звонки с номеров, соответствующих регулярному выражению.</string>
     <string name="regex_pattern_error">Неверный регекс!</string>
     <string name="block">Блокировка</string>
     <string name="sim_description">Обработка всех вызовов с одной или обеих SIM-карт.</string>

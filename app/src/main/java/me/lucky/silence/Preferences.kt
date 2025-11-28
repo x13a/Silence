@@ -34,11 +34,9 @@ class Preferences(ctx: Context) {
         // migration
         const val GENERAL_UNKNOWN_NUMBERS_CHECKED = "general_unknown_numbers_checked"
 
-        const val REGEX_PATTERN = "regex_pattern"
         const val MIGRATION_VERSION = "migration_version"
         const val CURRENT_MIGRATION_VERSION = 1
         const val REGEX_PATTERN_ALLOW = "regex_pattern_allow"
-
         const val REGEX_PATTERN_BLOCK = "regex_pattern_block"
     }
 
@@ -118,10 +116,6 @@ class Preferences(ctx: Context) {
         get() = prefs.getBoolean(BLOCK_ENABLED, false)
         set(value) = prefs.edit { putBoolean(BLOCK_ENABLED, value) }
 
-    var regexPattern: String?
-        get() = prefs.getString(REGEX_PATTERN, "")
-        set(value) = prefs.edit { putString(REGEX_PATTERN, value) }
-
     fun resetToDefaults() {
         prefs.edit {
             putBoolean(ENABLED, false)
@@ -140,6 +134,7 @@ class Preferences(ctx: Context) {
     var isRegexEnabled: Boolean
         get() = prefs.getBoolean(REGEX_ENABLED, false)
         set(value) = prefs.edit { putBoolean(REGEX_ENABLED, value) }
+
     var regexPatternAllow: String?
         get() = prefs.getString(REGEX_PATTERN_ALLOW, "")
         set(value) = prefs.edit { putString(REGEX_PATTERN_ALLOW, value) }

@@ -73,10 +73,10 @@
     <string name="block_description">Tüm gelen aramaları engelle. Rehberdeki numaraları da engellemek için izin vermeniz gerekir.</string>
     <string name="repeated_burst_timeout_hint">Zaman aşımı</string>
     <string name="repeated_burst_timeout_helper_text">Tekrarlanan aramalar arasında saniye cinsinden asgari zaman aşımı.</string>
-    <string name="regex_pattern_hint">Desen</string>
+    <string name="regex_pattern_allow_hint">Desen</string>
     <string name="regex_pattern_error">Geçersiz düzenli ifade!</string>
     <string name="regex_main">Düzenli ifade</string>
-    <string name="regex_pattern_helper_text">Düzenli ifadeyle eşleşen numaralardan gelen aramaları engelle.</string>
+    <string name="regex_pattern_allow_helper_text">Düzenli ifadeyle eşleşen numaralardan gelen aramaları engelle.</string>
     <string name="contacted_call_in">Yanıtla</string>
     <string name="contacted_call_in_description">Daha önce yanıtladığınız numaralardan gelen aramalara izin ver.</string>
     <string name="extra_description">Bazı çeşitli gruplardan/tanımlayıcılardan gelen aramalara izin ver.</string>

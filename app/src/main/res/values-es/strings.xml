@@ -74,8 +74,8 @@
     <string name="settings_skip_notification">Omitir notificación</string>
     <string name="goto_button">GOTO</string>
     <string name="regex_main">expresión regular</string>
-    <string name="regex_pattern_hint">Patrón</string>
-    <string name="regex_pattern_helper_text">Bloquee llamadas de números que coincidan con las expresiones regulares.</string>
+    <string name="regex_pattern_allow_hint">Patrón</string>
+    <string name="regex_pattern_allow_helper_text">Bloquee llamadas de números que coincidan con las expresiones regulares.</string>
     <string name="regex_pattern_error">¡Expresión regular no válida!</string>
     <string name="sim_description">Permitir todas las llamadas desde una o ambas tarjetas SIM.</string>
     <string name="back">Volver</string>

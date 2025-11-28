@@ -79,8 +79,8 @@
     <string name="contacted_call_in">Resposta</string>
     <string name="contacted_call_in_description">Permitir ligações de números que você já atendeu.</string>
     <string name="regex_description">Processar ligações de números usando uma expressão regular.</string>
-    <string name="regex_pattern_hint">Padrão</string>
-    <string name="regex_pattern_helper_text">Permitir ligações de números usando uma expressão regular.</string>
+    <string name="regex_pattern_allow_hint">Padrão</string>
+    <string name="regex_pattern_allow_helper_text">Permitir ligações de números usando uma expressão regular.</string>
     <string name="regex_pattern_error">Regex inválido!</string>
     <string name="block">Bloquear</string>
     <string name="sim_description">Processar todas as ligações de um ou ambos cartões SIM.</string>

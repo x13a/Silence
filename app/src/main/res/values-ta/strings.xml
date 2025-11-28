@@ -22,8 +22,8 @@
     <string name="groups_local_mobile_description">மொபைல் எண்களிலிருந்து அழைப்புகளை உங்கள் அதே நாட்டு குறியீட்டைக் கொண்டு அனுமதிக்கவும்.</string>
     <string name="regex_main">வழக்கவெளி</string>
     <string name="regex_description">வழக்கமான வெளிப்பாட்டுடன் பொருந்தக்கூடிய எண்களிலிருந்து செயல்முறை அழைப்புகள்.</string>
-    <string name="regex_pattern_hint">முறை</string>
-    <string name="regex_pattern_helper_text">வழக்கமான வெளிப்பாட்டுடன் பொருந்தக்கூடிய எண்களிலிருந்து அழைப்புகளை அனுமதிக்கவும்.</string>
+    <string name="regex_pattern_allow_hint">முறை</string>
+    <string name="regex_pattern_allow_helper_text">வழக்கமான வெளிப்பாட்டுடன் பொருந்தக்கூடிய எண்களிலிருந்து அழைப்புகளை அனுமதிக்கவும்.</string>
     <string name="regex_pattern_error">தவறான ரீசெக்ச்!</string>
     <string name="repeated_main">மறுநிகழ்வுஏற்ப்பட்டது</string>
     <string name="repeated_description">அதே எண்ணிலிருந்து ஃச் பதிவுசெய்யப்பட்ட அழைப்பு (களை) ஒரு குறிப்பிட்ட நிமிடங்களுக்குள் அனுமதிக்கவும்.</string>

@@ -85,8 +85,8 @@
     <string name="contacted_call_in">Rispondi</string>
     <string name="contacted_call_in_description">Consenti chiamate da numeri a cui si è già risposto.</string>
     <string name="regex_main">Regex</string>
-    <string name="regex_pattern_hint">Pattern</string>
-    <string name="regex_pattern_helper_text">Consenti chiamate dai numeri che corrispondono all\'espressione regolare.</string>
+    <string name="regex_pattern_allow_hint">Pattern</string>
+    <string name="regex_pattern_allow_helper_text">Consenti chiamate dai numeri che corrispondono all\'espressione regolare.</string>
     <string name="regex_pattern_error">Espressione regolare non valida!</string>
     
     <!-- App Shortcuts -->
