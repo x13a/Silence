@@ -27,17 +27,19 @@ class Preferences(ctx: Context) {
         const val SIM = "sim"
         const val NOT_PLUS_NUMBERS_CHECKED = "not_plus_numbers_checked"
 
+        const val REGEX_PATTERN_ALLOW = "regex_pattern_allow"
+        const val REGEX_PATTERN_BLOCK = "regex_pattern_block"
+
         const val DEFAULT_REPEATED_COUNT = 3
         const val DEFAULT_REPEATED_MINUTES = 5
         const val DEFAULT_MESSAGES_TTL = 2 * 24 * 60
 
         // migration
+        const val REGEX_PATTERN = "regex_pattern"
         const val GENERAL_UNKNOWN_NUMBERS_CHECKED = "general_unknown_numbers_checked"
 
         const val MIGRATION_VERSION = "migration_version"
         const val CURRENT_MIGRATION_VERSION = 1
-        const val REGEX_PATTERN_ALLOW = "regex_pattern_allow"
-        const val REGEX_PATTERN_BLOCK = "regex_pattern_block"
     }
 
     private val prefs = PreferenceManager.getDefaultSharedPreferences(ctx)
@@ -47,7 +49,10 @@ class Preferences(ctx: Context) {
         set(value) = prefs.edit { putBoolean(ENABLED, value) }
 
     var contacted: Int
-        get() = prefs.getInt(CONTACTED, Contact.CALL_OUT.value.or(Contact.MESSAGE_OUT.value))
+        get() = prefs.getInt(
+            CONTACTED,
+            Contact.CALL_OUT.value.or(Contact.MESSAGE_OUT.value)
+        )
         set(value) = prefs.edit { putInt(CONTACTED, value) }
 
     var groups: Int
@@ -136,7 +141,10 @@ class Preferences(ctx: Context) {
         set(value) = prefs.edit { putBoolean(REGEX_ENABLED, value) }
 
     var regexPatternAllow: String?
-        get() = prefs.getString(REGEX_PATTERN_ALLOW, "")
+        get() = prefs.getString(
+            REGEX_PATTERN_ALLOW,
+            prefs.getString(REGEX_PATTERN, "")
+        )
         set(value) = prefs.edit { putString(REGEX_PATTERN_ALLOW, value) }
 
     var regexPatternBlock: String?
