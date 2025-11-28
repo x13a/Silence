@@ -48,7 +48,7 @@ abstract class AppDatabase : RoomDatabase() {
 }
 
 @RenameTable(fromTableName = "sms_filter", toTableName = "tmp_number")
-private class AutoMigration1to2 : AutoMigrationSpec
+class AutoMigration1to2 : AutoMigrationSpec
 
 private val MIGRATION_2_3 = object : Migration(2, 3) {
     override fun migrate(db: SupportSQLiteDatabase) {

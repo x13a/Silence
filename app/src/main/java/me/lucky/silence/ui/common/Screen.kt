@@ -2,7 +2,10 @@ package me.lucky.silence.ui.common
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -25,13 +28,19 @@ fun Screen(title: Int, onBackPressed: () -> Boolean, content: @Composable Column
                 navigationIcon = {
                     IconButton(onClick = { onBackPressed() }) {
                         Icon(
-                            painter = painterResource(id = R.drawable.baseline_arrow_back_24),
+                            painter = painterResource(id = R.drawable.ic_baseline_arrow_back_24),
                             contentDescription = stringResource(R.string.back)
                         )
                     }
                 })
         }
     ) { padding ->
-        Column(modifier = Modifier.padding(padding), content = content)
+        Column(
+            modifier = Modifier
+                .padding(padding)
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState()),
+            content = content
+        )
     }
 }

@@ -1,5 +1,8 @@
 package me.lucky.silence.ui
 
+import android.Manifest
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
@@ -14,28 +17,60 @@ import me.lucky.silence.ui.common.Screen
 
 @Composable
 fun ContactedScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
+    fun getContactedPermissions(): Array<String> {
+        val contacted = prefs.contacted
+        val permissions = mutableSetOf<String>()
+        for (value in Contact.entries.asSequence().filter { contacted.and(it.value) != 0 }) {
+            when (value) {
+                Contact.CALL_OUT -> permissions.add(Manifest.permission.READ_CALL_LOG)
+                Contact.MESSAGE_OUT -> permissions.add(Manifest.permission.READ_SMS)
+                Contact.CALL_IN -> permissions.add(Manifest.permission.READ_CALL_LOG)
+                Contact.MESSAGE_IN -> permissions.add(Manifest.permission.READ_SMS)
+            }
+        }
+        return permissions.toTypedArray()
+    }
+
+    val registerForContactedPermissions =
+        rememberLauncherForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {}
+
+    fun requestContactedPermissions() =
+        registerForContactedPermissions.launch(getContactedPermissions())
+
     val preferenceList = listOf(
         Preference(
-            getValue = { prefs.contacted.and(Contact.CALL.value) != 0 },
+            getValue = { prefs.contacted.and(Contact.CALL_OUT.value) != 0 },
             setValue = { isChecked ->
-                prefs.contacted = Utils.setFlag(prefs.contacted, Contact.CALL.value, isChecked)
+                prefs.contacted = Utils.setFlag(prefs.contacted, Contact.CALL_OUT.value, isChecked)
+                if (isChecked) requestContactedPermissions()
             },
-            name = R.string.contacted_call,
-            description = R.string.contacted_call_description,
+            name = R.string.contacted_call_out,
+            description = R.string.contacted_call_out_description,
         ), Preference(
-            getValue = { prefs.contacted.and(Contact.MESSAGE.value) != 0 },
+            getValue = { prefs.contacted.and(Contact.MESSAGE_OUT.value) != 0 },
             setValue = { isChecked ->
-                prefs.contacted = Utils.setFlag(prefs.contacted, Contact.MESSAGE.value, isChecked)
+                prefs.contacted = Utils.setFlag(prefs.contacted, Contact.MESSAGE_OUT.value, isChecked)
+                if (isChecked) requestContactedPermissions()
             },
-            name = R.string.contacted_message,
-            description = R.string.contacted_message_description,
+            name = R.string.contacted_message_out,
+            description = R.string.contacted_message_out_description,
         ), Preference(
-            getValue = { prefs.contacted.and(Contact.ANSWER.value) != 0 },
+            getValue = { prefs.contacted.and(Contact.CALL_IN.value) != 0 },
             setValue = { isChecked ->
-                prefs.contacted = Utils.setFlag(prefs.contacted, Contact.ANSWER.value, isChecked)
+                prefs.contacted = Utils.setFlag(prefs.contacted, Contact.CALL_IN.value, isChecked)
+                if (isChecked) requestContactedPermissions()
             },
-            name = R.string.contacted_answer,
-            description = R.string.contacted_answer_description,
+            name = R.string.contacted_call_in,
+            description = R.string.contacted_call_in_description,
+        ),
+        Preference(
+            getValue = { prefs.contacted.and(Contact.MESSAGE_IN.value) != 0 },
+            setValue = { isChecked ->
+                prefs.contacted = Utils.setFlag(prefs.contacted, Contact.MESSAGE_IN.value, isChecked)
+                if (isChecked) requestContactedPermissions()
+            },
+            name = R.string.contacted_message_in,
+            description = R.string.contacted_message_in_description,
         ),
     )
 

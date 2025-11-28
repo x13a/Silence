@@ -3,13 +3,15 @@ package me.lucky.silence.ui
 import android.Manifest
 import android.app.role.RoleManager
 import android.content.Context
+import android.os.Build
+import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -17,14 +19,16 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import me.lucky.silence.Contact
-import me.lucky.silence.Message
 import me.lucky.silence.Modem
 import me.lucky.silence.Preferences
 import me.lucky.silence.R
@@ -37,15 +41,17 @@ import me.lucky.silence.ui.common.ToggleableButton
 
 @Composable
 fun ModuleList(modules: List<Module>) {
-    LazyColumn {
-        items(modules) { module ->
+    Column {
+        modules.forEach { module ->
             if ((module.getPreference != null) && (module.setPreference != null) && (module.navigation != null)) {
-                ClickableSwitchPreference(name = stringResource(module.name),
+                ClickableSwitchPreference(
+                    name = stringResource(module.name),
                     description = stringResource(module.description),
                     getIsEnabled = module.getPreference,
                     setIsEnabled = module.setPreference,
-                    onModuleClick = { module.navigation.invoke() })
-            } else if (module.getPreference != null && module.setPreference != null && module.navigation == null) {
+                    onModuleClick = { module.navigation.invoke() }
+                )
+            } else if (module.getPreference != null && module.setPreference != null) {
                 SwitchPreference(
                     name = stringResource(module.name),
                     description = stringResource(module.description),
@@ -53,9 +59,11 @@ fun ModuleList(modules: List<Module>) {
                     setIsEnabled = module.setPreference,
                 )
             } else if (module.navigation != null) {
-                ClickablePreference(name = stringResource(module.name),
+                ClickablePreference(
+                    name = stringResource(module.name),
                     description = stringResource(module.description),
-                    onModuleClick = { module.navigation.invoke() })
+                    onModuleClick = { module.navigation.invoke() }
+                )
             }
         }
     }
@@ -83,48 +91,14 @@ fun MainScreen(
     onNavigateToSettings: () -> Unit,
     onNavigateToRegex: () -> Unit,
 ) {
-    fun getContactedPermissions(): Array<String> {
-        val contacted = prefs.contacted
-        val permissions = mutableSetOf<String>()
-        for (value in Contact.entries.asSequence().filter { contacted.and(it.value) != 0 }) {
-            when (value) {
-                Contact.CALL -> permissions.add(Manifest.permission.READ_CALL_LOG)
-                Contact.MESSAGE -> permissions.add(Manifest.permission.READ_SMS)
-                Contact.ANSWER -> permissions.add(Manifest.permission.READ_CALL_LOG)
-            }
-        }
-        return permissions.toTypedArray()
-    }
-
-    fun getMessagesPermissions(): Array<String> {
-        val messages = prefs.messages
-        val permissions = mutableSetOf<String>()
-        for (value in Message.entries.asSequence().filter { messages.and(it.value) != 0 }) {
-            when (value) {
-                Message.INBOX -> permissions.add(Manifest.permission.READ_SMS)
-                Message.TEXT -> {}
-            }
-        }
-        return permissions.toTypedArray()
-    }
-
-    val registerForContactedPermissions =
-        rememberLauncherForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {}
-
-    fun requestContactedPermissions() =
-        registerForContactedPermissions.launch(getContactedPermissions())
-
+    val scrollState = rememberScrollState()
+    val blockEnabledToast = stringResource(R.string.block_enabled)
+    val blockDisabledToast = stringResource(R.string.block_disabled)
     val registerForRepeatedPermissions =
         rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {}
 
     fun requestRepeatedPermissions() =
         registerForRepeatedPermissions.launch(Manifest.permission.READ_CALL_LOG)
-
-    val registerForMessagesPermissions =
-        rememberLauncherForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {}
-
-    fun requestMessagesPermissions() =
-        registerForMessagesPermissions.launch(getMessagesPermissions())
 
     val roleManager: RoleManager by lazy { ctx.getSystemService(RoleManager::class.java) }
     val registerForCallScreeningRole =
@@ -136,39 +110,40 @@ fun MainScreen(
 
     val modules = listOf(
         Module(
-            name = R.string.groups_main,
-            description = R.string.groups_description,
-            getPreference = { prefs.isGroupsChecked },
-            setPreference = { prefs.isGroupsChecked = it },
-            navigation = onNavigateToGroups,
-        ),
-        Module(
             name = R.string.repeated_main,
             description = R.string.repeated_description,
-            getPreference = { prefs.isRepeatedChecked },
+            getPreference = { prefs.isRepeatedEnabled },
             setPreference = { isChecked ->
-                prefs.isRepeatedChecked = isChecked
+                prefs.isRepeatedEnabled = isChecked
                 if (isChecked) requestRepeatedPermissions()
             },
             navigation = onNavigateToRepeated,
         ),
         Module(
-            name = R.string.messages_main,
-            description = R.string.messages_description,
-            getPreference = { prefs.isMessagesChecked },
-            setPreference = { isChecked ->
-                prefs.isMessagesChecked = isChecked
-                if (isChecked) requestMessagesPermissions()
-                Utils.updateMessagesTextEnabled(ctx)
-            },
-            navigation = onNavigateToMessages,
-        ),
-        Module(
             name = R.string.regex_main,
             description = R.string.regex_description,
+            getPreference = { prefs.isRegexEnabled },
+            setPreference = { prefs.isRegexEnabled = it },
             navigation = onNavigateToRegex,
         ),
-        *(if (Utils.getModemCount(ctx, Modem.SUPPORTED) >= 1) {
+        Module(
+            name = R.string.contacted_main,
+            description = R.string.contacted_description,
+            navigation = onNavigateToContacted,
+        ),
+        Module(
+            name = R.string.groups_main,
+            description = R.string.groups_description,
+            navigation = onNavigateToGroups,
+        ),
+        Module(
+            name = R.string.messages_main,
+            description = R.string.messages_description,
+            navigation = onNavigateToMessages,
+        ),
+        *(if (Utils.getModemCount(ctx, Modem.SUPPORTED) >= 2
+            && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
+        {
             arrayOf(
                 Module(
                     name = R.string.sim,
@@ -180,24 +155,33 @@ fun MainScreen(
             emptyArray()
         }),
         Module(
-            name = R.string.contacted_main,
-            description = R.string.contacted_description,
-            navigation = onNavigateToContacted,
-        ),
-        Module(
             name = R.string.extra,
             description = R.string.extra_description,
             navigation = onNavigateToExtra,
         ),
-        Module(
-            name = R.string.block_main,
-            description = R.string.block_description,
-            getPreference = { prefs.isBlockEnabled },
-            setPreference = { prefs.isBlockEnabled = it },
-        ),
     )
+    var isBlockEnabled by remember { mutableStateOf(prefs.isBlockEnabled) }
     Scaffold(topBar = {
         TopAppBar(title = { Text(text = stringResource(R.string.app_name)) }, actions = {
+            IconButton(onClick = {
+                isBlockEnabled = !isBlockEnabled
+                prefs.isBlockEnabled = isBlockEnabled
+                Toast
+                    .makeText(
+                        ctx,
+                        if (isBlockEnabled) blockEnabledToast else blockDisabledToast,
+                        Toast.LENGTH_SHORT
+                    )
+                    .show()
+            }) {
+                Icon(
+                    painter = painterResource(
+                        id = if (isBlockEnabled) R.drawable.ic_baseline_do_not_disturb_on_24
+                            else R.drawable.ic_baseline_do_not_disturb_off_24
+                    ),
+                    contentDescription = stringResource(R.string.block_main)
+                )
+            }
             IconButton(onClick = onNavigateToSettings) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_baseline_settings_24),
@@ -207,16 +191,23 @@ fun MainScreen(
         })
     }, content = { padding ->
         Column(
-            modifier = Modifier.padding(padding)
+            modifier = Modifier
+                .padding(padding)
+                .fillMaxSize()
         ) {
-            ModuleList(modules)
-            Spacer(modifier = Modifier.weight(1f))
+            Column(
+                modifier = Modifier
+                    .weight(1f, fill = true)
+                    .verticalScroll(scrollState)
+            ) {
+                ModuleList(modules)
+            }
             ToggleableButton(
                 getPreference = { prefs.isEnabled },
                 setPreference = { isChecked ->
                     prefs.isEnabled = isChecked
                     if (isChecked) requestCallScreeningRole()
-                    Utils.updateMessagesTextEnabled(ctx)
+                    Utils.updateMessagesEnabled(ctx)
                 }
             )
         }

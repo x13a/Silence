@@ -19,19 +19,19 @@
     <string name="panic_app_dialog_title">Potwierdź aplikację przeciwko-napadową</string>
     <string name="settings">Ustawienia</string>
     <string name="sim_2">Karta SIM 2</string>
-    <string name="messages_inbox">Skszynka</string>
-    <string name="contacted_message">Wiadomość</string>
+    <string name="contacted_message_in">Skszynka</string>
+    <string name="contacted_message_out">Wiadomość</string>
     <string name="sim_1">Karta SIM 1</string>
-    <string name="contacted_call">Telefon</string>
-    <string name="messages_text">Treść</string>
+    <string name="contacted_call_out">Telefon</string>
+    <string name="messages_notification">Treść</string>
     <string name="notification_title">Połączenie zablokowane</string>
     <string name="notification_channel">Zablokowane połączenia</string>
     <string name="panic_app_dialog_message">Czy na pewno chcesz zezwolić aplikacji %1$s na wykonywanie destrukcyjnych działań paniki\?</string>
     <string name="groups_description">Zezwalaj na połączenia od numerów w wybranych grupach.</string>
     <string name="messages_description">Zezwalaj na połączenia od numerów znalezionych we wiadomościach.</string>
     <string name="extra_stir_description">Zezwalaj na połączenia od numerów przechodzących weryfikację STIR.</string>
-    <string name="messages_text_ttl_hint">czas</string>
-    <string name="messages_text_ttl_error">7d / 48h / 120m</string>
+    <string name="messages_ttl_hint">czas</string>
+    <string name="messages_ttl_error">7d / 48h / 120m</string>
     <string name="settings_disallow_call">Nie zezwalaj na połączenie</string>
     <string name="settings_disallow_call_description">Określa, czy połączenie przychodzące ma być blokowane.</string>
     <string name="settings_reject_call">Odrzucaj połączenie</string>
@@ -41,16 +41,20 @@
     <string name="sim_1_description">Zezwalaj na wszystkie połączenia z karty SIM 1.</string>
     <string name="sim_2_description">Zezwalaj na wszystkie połączenia z karty SIM 2.</string>
     <string name="goto_button">IDŹ</string>
-    <string name="messages_text_description">Tymczasowo zezwalaj na połączenia od numerów telefonów komórkowych znalezionych w treści wiadomości przychodzących.</string>
+    <string name="messages_notification_description">Tymczasowo zezwalaj na połączenia od numerów telefonów komórkowych znalezionych w treści wiadomości przychodzących.</string>
     <string name="settings_silence_call">Wycisz połączenie</string>
     <string name="settings_skip_call_log_description">Określa, czy połączenie przychodzące nie powinno być wyświetlane w rejestrze połączeń. To powinno być zaznaczone tylko wtedy, gdy połączenie jest odrzucone. Połączenia będą nadal rejestrowane z typem BLOCKED_TYPE.</string>
-    <string name="contacted_message_description">Zezwalaj na połączenia od numerów, do których dzwoniłeś.</string>
+    <string name="contacted_message_out_description">Zezwalaj na połączenia od numerów, do których dzwoniłeś.</string>
     <string name="groups_local_description">Zezwalaj na połączenia od numerów o tym samym kodzie kraju, co Twój.</string>
     <string name="groups_not_local">Nielokalne</string>
     <string name="groups_not_local_description">Zezwalaj na połączenia od numerów o innym kodzie kraju, co Twój.</string>
     <string name="groups_toll_free_description">Zezwalaj na połączenia od numerów bezpłatnych (np. 800).</string>
-    <string name="messages_inbox_description">Zezwalaj na połączenia od numerów, które wysłały Ci wiadomość.</string>
+    <string name="contacted_message_in_description">Zezwalaj na połączenia od numerów, które wysłały Ci wiadomość.</string>
     <string name="extra_unknown_numbers_description">Zezwalaj na połączenia od nieznajomych bez numeru.</string>
     <string name="settings_silence_call_description">Określa, czy dzwonek ma być wyciszony dla połączenia przychodzącego. Połączenie będzie jednak nadal wysyłane do domyślnej aplikacji, jeśli nie jest zablokowane. Zaznaczenie tego ma sens tylko wtedy, gdy połączenie nie zostało odrzucone.</string>
     <string name="settings_skip_call_log">Pomiń rejestr połączeń</string>
+    
+    <!-- App Shortcuts -->
+    <string name="shortcut_activate_block">Włącz blokowanie połączeń</string>
+    <string name="shortcut_deactivate_block">Wyłącz blokowanie połączeń</string>
 </resources>

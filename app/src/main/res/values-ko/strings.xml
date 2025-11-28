@@ -11,4 +11,8 @@
     <string name="extra_stir">발신자 조회 서비스</string>
     <string name="messages_description">방금 도착한 문자의 번호로부터 걸려오는 전화를 일시적으로 허용합니다.</string>
     <string name="extra_stir_description">STIR 인증을 통과한 번호를 허용합니다.</string>
+    
+    <!-- App Shortcuts -->
+    <string name="shortcut_activate_block">통화 차단 활성화</string>
+    <string name="shortcut_deactivate_block">통화 차단 비활성화</string>
 </resources>

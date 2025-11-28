@@ -4,12 +4,9 @@ import android.app.ActivityManager
 import android.app.role.RoleManager
 import android.content.ComponentName
 import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
-import android.provider.Settings
 import android.telephony.TelephonyManager
-
 import me.lucky.silence.text.NotificationListenerService
 
 class Utils {
@@ -26,20 +23,15 @@ class Utils {
             return false
         }
 
-        fun setMessagesTextEnabled(ctx: Context, value: Boolean) {
+        fun setMessagesEnabled(ctx: Context, value: Boolean) {
             setComponentEnabled(ctx, NotificationListenerService::class.java, value)
-            if (value && !isNotificationListenerRunning(ctx)) {
-                ctx.startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
-            }
         }
 
-        fun updateMessagesTextEnabled(ctx: Context) {
+        fun updateMessagesEnabled(ctx: Context) {
             val prefs = Preferences(ctx)
-            setMessagesTextEnabled(
+            setMessagesEnabled(
                 ctx,
-                prefs.isEnabled &&
-                        prefs.isMessagesChecked &&
-                        prefs.messages.and(Message.TEXT.value) != 0,
+                prefs.messages.and(Message.NOTIFICATION.value) != 0,
             )
         }
 

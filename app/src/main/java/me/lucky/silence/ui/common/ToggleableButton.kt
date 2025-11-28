@@ -20,7 +20,8 @@ fun ToggleableButton(
     getPreference: () -> Boolean,
     setPreference: (Boolean) -> Unit,
 ) {
-    var isChecked by remember { mutableStateOf(getPreference()) }
+    val currentValue = getPreference()
+    var isChecked by remember(currentValue) { mutableStateOf(currentValue) }
 
     Button(
         modifier = Modifier

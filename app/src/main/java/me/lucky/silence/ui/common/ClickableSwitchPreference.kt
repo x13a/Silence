@@ -26,7 +26,8 @@ fun ClickableSwitchPreference(
     setIsEnabled: (Boolean) -> Unit,
     onModuleClick: () -> Unit
 ) {
-    var switchState by remember { mutableStateOf(getIsEnabled()) }
+    val currentValue = getIsEnabled()
+    var switchState by remember(currentValue) { mutableStateOf(currentValue) }
 
     Surface(
         modifier = Modifier

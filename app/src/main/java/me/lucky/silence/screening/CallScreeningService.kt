@@ -48,7 +48,7 @@ class CallScreeningService : CallScreeningService() {
             return
         } else if (isEmergency(callDetails)) {
             prefs.isEnabled = false
-            Utils.setMessagesTextEnabled(this, false)
+            Utils.setMessagesEnabled(this, false)
             respondAllow(callDetails)
             return
         } else if (callDetails.callDirection != Call.Details.DIRECTION_INCOMING) {
@@ -58,8 +58,7 @@ class CallScreeningService : CallScreeningService() {
             respondAllow(callDetails)
             return
         } else if (
-            prefs.isBlockEnabled ||
-            checkBlockRegex(callDetails)
+            prefs.isBlockEnabled
         ) {
             respondNotAllow(callDetails)
             return
@@ -68,6 +67,7 @@ class CallScreeningService : CallScreeningService() {
             (prefs.isUnknownNumbersChecked && isUnknownNumber(callDetails)) ||
             (prefs.isShortNumbersChecked && isShortNumber(callDetails)) ||
             (prefs.isNotPlusNumbersChecked && isNotPlusNumber(callDetails)) ||
+            (prefs.isRegexEnabled && checkRegex(callDetails)) ||
             checkSim()
         ) {
             respondAllow(callDetails)
@@ -115,7 +115,7 @@ class CallScreeningService : CallScreeningService() {
                     else -> null
                 }
             }
-            notificationManager.notifyBlockedCall(tel ?: return, sim)
+            notificationManager.notifyBlockedCall(tel, sim)
         }
         respondToCall(callDetails, response)
     }
