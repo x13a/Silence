@@ -20,10 +20,12 @@ Optionally allow:
 * X registered call(s) from the same number within a set amount of minutes
 * Numbers found in messages
 * Numbers matching REGEX patterns
+* SIM 1/2
 * and more..
 
 Optionally block:
 * Numbers matching REGEX patterns, including numbers in contacts
+* SIM 1/2
 
 If the app rejects calls from contacts on Android 10, allow _Contacts_ permission manually in 
 `App info → Permissions`.

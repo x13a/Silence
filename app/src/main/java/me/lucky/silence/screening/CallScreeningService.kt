@@ -59,6 +59,7 @@ class CallScreeningService : CallScreeningService() {
             return
         } else if (
             prefs.isBlockEnabled ||
+            checkSim(prefs.simBlock) ||
             (prefs.isRegexEnabled && checkBlockRegex(callDetails))
         ) {
             respondNotAllow(callDetails)
@@ -68,7 +69,7 @@ class CallScreeningService : CallScreeningService() {
             (prefs.isUnknownNumbersChecked && isUnknownNumber(callDetails)) ||
             (prefs.isShortNumbersChecked && isShortNumber(callDetails)) ||
             (prefs.isNotPlusNumbersChecked && isNotPlusNumber(callDetails)) ||
-            checkSim()
+            checkSim(prefs.simAllow)
         ) {
             respondAllow(callDetails)
             return
@@ -131,9 +132,8 @@ class CallScreeningService : CallScreeningService() {
         telephonyManager
             ?.isEmergencyNumber(callDetails.handle?.schemeSpecificPart ?: "") == true
 
-    private fun checkSim(): Boolean {
+    private fun checkSim(sim: Int): Boolean {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S || !isMultiSim) return false
-        val sim = prefs.sim
         return (sim.and(Sim.SIM_1.value) != 0 && checkSimSlot(0)) ||
                 (sim.and(Sim.SIM_2.value) != 0 && checkSimSlot(1))
     }

@@ -38,9 +38,9 @@
     <string name="settings_skip_notification">通知をスキップ</string>
     <string name="settings_skip_notification_description">不在着信通知がスキップされるかの設定。この設定は電話を防ぐ設定がセレクトした場合にのみセレクトしてください。</string>
     <string name="sim_1">SIM 1</string>
-    <string name="sim_1_description">SIM 1 からの電話を許可する。</string>
+    <string name="sim_1_allow_description">SIM 1 からの電話を許可する。</string>
     <string name="sim_2">SIM 2</string>
-    <string name="sim_2_description">SIM 2 からの電話を許可する。</string>
+    <string name="sim_2_allow_description">SIM 2 からの電話を許可する。</string>
     <string name="panic_app_dialog_message">%1$sにパニック作用を許可することを確認しますか。</string>
     <string name="panic_app_dialog_title">パニックアプリを確認</string>
     <string name="panic_app_unknown_app">未知のアプリ</string>

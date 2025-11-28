@@ -25,22 +25,41 @@ fun SimScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
 
     val preferenceList = listOf(
         Preference(
-            getValue = { prefs.sim.and(Sim.SIM_1.value) != 0 },
+            getValue = { prefs.simAllow.and(Sim.SIM_1.value) != 0 },
             setValue = { isChecked ->
-                prefs.sim = Utils.setFlag(prefs.sim, Sim.SIM_1.value, isChecked)
+                prefs.simAllow = Utils.setFlag(prefs.simAllow, Sim.SIM_1.value, isChecked)
                 if (isChecked) requestSimPermissions()
             },
             name = R.string.sim_1,
-            description = R.string.sim_1_description,
+            description = R.string.sim_1_allow_description,
         ),
         Preference(
-            getValue = { prefs.sim.and(Sim.SIM_2.value) != 0 },
+            getValue = { prefs.simAllow.and(Sim.SIM_2.value) != 0 },
             setValue = { isChecked ->
-                prefs.sim = Utils.setFlag(prefs.sim, Sim.SIM_2.value, isChecked)
+                prefs.simAllow = Utils.setFlag(prefs.simAllow, Sim.SIM_2.value, isChecked)
                 if (isChecked) requestSimPermissions()
             },
             name = R.string.sim_2,
-            description = R.string.sim_2_description
+            description = R.string.sim_2_allow_description
+        ),
+        Preference(
+            getValue = { prefs.simBlock.and(Sim.SIM_1.value) != 0 },
+            setValue = { isChecked ->
+                prefs.simBlock = Utils.setFlag(prefs.simBlock, Sim.SIM_1.value, isChecked)
+                if (isChecked) requestSimPermissions()
+            },
+            name = R.string.sim_1,
+            description = R.string.sim_1_block_description,
+            dividerBefore = true,
+        ),
+        Preference(
+            getValue = { prefs.simBlock.and(Sim.SIM_2.value) != 0 },
+            setValue = { isChecked ->
+                prefs.simBlock = Utils.setFlag(prefs.simBlock, Sim.SIM_2.value, isChecked)
+                if (isChecked) requestSimPermissions()
+            },
+            name = R.string.sim_2,
+            description = R.string.sim_2_block_description
         )
     )
     Screen(title = R.string.sim,

@@ -37,9 +37,9 @@
     <string name="sim">SIM</string>
     <string name="block_description">封鎖所有來電。若要同時封鎖聯絡人的號碼，你必須授予權限。</string>
     <string name="sim_1">SIM 1</string>
-    <string name="sim_1_description">允許來自 SIM 1 的所有來電。</string>
+    <string name="sim_1_allow_description">允許來自 SIM 1 的所有來電。</string>
     <string name="sim_2">SIM 2</string>
-    <string name="sim_2_description">允許來自 SIM 2 的所有來電。</string>
+    <string name="sim_2_allow_description">允許來自 SIM 2 的所有來電。</string>
     <string name="messages_ttl_hint">時間</string>
     <string name="messages_notification">文字</string>
     <string name="messages_ttl_error">7 天／48 小時／120 分鐘</string>

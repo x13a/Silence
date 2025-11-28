@@ -40,8 +40,8 @@
     <string name="groups_toll_free_description">Tillat anrop fra gratisnummer (f.eks. 800).</string>
     <string name="block_description">Blokker alle innkommende anrop. For å blokkere nummer fra kontakter også må du innvilge tilgang.</string>
     <string name="sim">SIM</string>
-    <string name="sim_1_description">Tillat alle anrop fra SIM 1.</string>
-    <string name="sim_2_description">Tillat alle anrop fra SIM 2.</string>
+    <string name="sim_1_allow_description">Tillat alle anrop fra SIM 1.</string>
+    <string name="sim_2_allow_description">Tillat alle anrop fra SIM 2.</string>
     <string name="extra_short_numbers_description">Tillat anrop med nummer på 3 til 5 siffer.</string>
     <string name="extra_contacts">Kontakter</string>
     <string name="extra_plus_numbers">Pluss-numre</string>

@@ -43,9 +43,9 @@
     <string name="messages_ttl_error">7 டி / 48 எச் / 120 மீ</string>
     <string name="block_main">தொகுதி</string>
     <string name="block_description">உள்வரும் அனைத்து அழைப்புகளையும் தடுக்கவும். தொடர்புகளிலிருந்து எண்களைத் தடுக்க நீங்கள் இசைவு வழங்க வேண்டும்.</string>
-    <string name="sim_1_description">சிம் 1 இலிருந்து அனைத்து அழைப்புகளையும் அனுமதிக்கவும்.</string>
+    <string name="sim_1_allow_description">சிம் 1 இலிருந்து அனைத்து அழைப்புகளையும் அனுமதிக்கவும்.</string>
     <string name="sim_2">சிம் 2</string>
-    <string name="sim_2_description">சிம் 2 இலிருந்து அனைத்து அழைப்புகளையும் அனுமதிக்கவும்.</string>
+    <string name="sim_2_allow_description">சிம் 2 இலிருந்து அனைத்து அழைப்புகளையும் அனுமதிக்கவும்.</string>
     <string name="extra">கூடுதல்</string>
     <string name="extra_contacts">தொடர்புகள்</string>
     <string name="extra_contacts_description">உங்கள் தொடர்புகளில் உள்ள எண்களிலிருந்து அழைப்புகளை அனுமதிக்கவும்.</string>

@@ -50,9 +50,11 @@
     <string name="block_description">Block all incoming calls. To also block numbers from contacts you have to grant a permission.</string>
     <string name="sim">SIM</string>
     <string name="sim_1">SIM 1</string>
-    <string name="sim_1_description">Allow all calls from SIM 1.</string>
+    <string name="sim_1_allow_description">Allow all calls from SIM 1.</string>
     <string name="sim_2">SIM 2</string>
-    <string name="sim_2_description">Allow all calls from SIM 2.</string>
+    <string name="sim_2_allow_description">Allow all calls from SIM 2.</string>
+    <string name="sim_1_block_description">Block all calls from SIM 1.</string>
+    <string name="sim_2_block_description">Block all calls from SIM 2.</string>
     <string name="extra">Extra</string>
     <string name="extra_contacts">Contacts</string>
     <string name="extra_contacts_description">Allow calls from numbers in your contacts.</string>

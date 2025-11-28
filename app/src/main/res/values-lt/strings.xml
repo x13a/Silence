@@ -28,9 +28,9 @@
     <string name="block_description">Blokuoti visus įeinančius skambučius. Norėdami blokuoti numerius iš kontaktų, turite suteikti leidimą.</string>
     <string name="sim">SIM</string>
     <string name="sim_1">SIM 1</string>
-    <string name="sim_1_description">Leisti visus skambučius iš SIM 1.</string>
+    <string name="sim_1_allow_description">Leisti visus skambučius iš SIM 1.</string>
     <string name="sim_2">SIM 2</string>
-    <string name="sim_2_description">Leisti visus skambučius iš SIM 2.</string>
+    <string name="sim_2_allow_description">Leisti visus skambučius iš SIM 2.</string>
     <string name="extra">Papildoma</string>
     <string name="extra_contacts">Kontaktai</string>
     <string name="extra_contacts_description">Leisti skambučius iš adresinėje esančių numerių.</string>

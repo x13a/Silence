@@ -15,7 +15,7 @@
     <string name="messages_notification">Texto</string>
     <string name="extra_unknown_numbers_description">Permitir chamadas de desconhecidos com número oculto.</string>
     <string name="messages_ttl_error">7d / 48h / 120m</string>
-    <string name="sim_2_description">Permitir todas as chamadas do SIM 2.</string>
+    <string name="sim_2_allow_description">Permitir todas as chamadas do SIM 2.</string>
     <string name="extra_stir_description">Permitir chamadas de números que passam a verificação STRI.</string>
     <string name="settings_reject_call_description">Define se a chamada recebida deve ser rejeitada automaticamente como se o utilizador a tivesse rejeitado manualmente. Isso só deve ser ativado se a chamada for bloqueada.</string>
     <string name="settings_silence_call_description">Define se o toque da chamada recebida deve ser silenciado. No entanto a chamada ainda será enviada para a aplicação de chamadas padrão, se não estiver bloqueada. Ativar isto só faz sentido quando a chamada não foi bloqueada.</string>
@@ -43,7 +43,7 @@
     <string name="block_description">Bloquear todas as chamadas recebidas. Para também bloquear números de contactos, tem de conceder a permissão.</string>
     <string name="sim">SIM</string>
     <string name="sim_1">SIM 1</string>
-    <string name="sim_1_description">Permitir todas as chamadas do SIM 1.</string>
+    <string name="sim_1_allow_description">Permitir todas as chamadas do SIM 1.</string>
     <string name="sim_2">SIM 2</string>
     <string name="extra">Extra</string>
     <string name="extra_contacts">Contactos</string>

@@ -24,7 +24,8 @@ class Preferences(ctx: Context) {
         const val SHORT_NUMBERS_CHECKED = "short_numbers_checked"
         const val CONTACTS_CHECKED = "contacts_checked"
         const val STIR_CHECKED = "stir_checked"
-        const val SIM = "sim"
+        const val SIM_ALLOW = "sim_allow"
+        const val SIM_BLOCK = "sim_block"
         const val NOT_PLUS_NUMBERS_CHECKED = "not_plus_numbers_checked"
 
         const val REGEX_PATTERN_ALLOW = "regex_pattern_allow"
@@ -37,6 +38,7 @@ class Preferences(ctx: Context) {
 
         // migration
         const val REGEX_PATTERN = "regex_pattern"
+        const val SIM = "sim"
         const val GENERAL_UNKNOWN_NUMBERS_CHECKED = "general_unknown_numbers_checked"
 
         const val MIGRATION_VERSION = "migration_version"
@@ -110,9 +112,13 @@ class Preferences(ctx: Context) {
         )
         set(value) = prefs.edit { putInt(RESPONSE_OPTIONS, value) }
 
-    var sim: Int
-        get() = prefs.getInt(SIM, 0)
-        set(value) = prefs.edit { putInt(SIM, value) }
+    var simAllow: Int
+        get() = prefs.getInt(SIM_ALLOW, prefs.getInt(SIM, 0))
+        set(value) = prefs.edit { putInt(SIM_ALLOW, value) }
+
+    var simBlock: Int
+        get() = prefs.getInt(SIM_BLOCK, 0)
+        set(value) = prefs.edit { putInt(SIM_BLOCK, value) }
 
     var isNotPlusNumbersChecked: Boolean
         get() = prefs.getBoolean(NOT_PLUS_NUMBERS_CHECKED, false)

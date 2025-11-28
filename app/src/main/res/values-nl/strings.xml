@@ -41,9 +41,9 @@
     <string name="sim">Sim-karte</string>
     <string name="block_description">Blokkeer alle inkomende oproepen. Om nummers van contacten te blokkeren, moet u autorisatie geven.</string>
     <string name="sim_1">SIM 1</string>
-    <string name="sim_1_description">Sta alle oproepen toe van SIM 1.</string>
+    <string name="sim_1_allow_description">Sta alle oproepen toe van SIM 1.</string>
     <string name="sim_2">SIM 2</string>
-    <string name="sim_2_description">Sta alle oproepen toe van SIM 2.</string>
+    <string name="sim_2_allow_description">Sta alle oproepen toe van SIM 2.</string>
     <string name="extra">Verder</string>
     <string name="extra_contacts">Contact</string>
     <string name="extra_contacts_description">Sta oproepen toe van telefoonnummers in uw contacten.</string>

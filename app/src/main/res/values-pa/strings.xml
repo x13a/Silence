@@ -25,9 +25,9 @@
     <string name="sim_1">ਪਹਿਲੀ ਸਿਮ</string>
     <string name="messages_ttl_helper_text">ਨੰਬਰ ਤੁਹਾਨੂੰ ਕਿੰਨਾ ਚਿਰ ਕਾਲ ਕਰਨ ਦੇ ਸਮਰੱਥ ਹੋਵੇਗਾ। ਸੋਧਕ: [d]ays [h]ours [m]inutes</string>
     <string name="sim">ਸਿਮ</string>
-    <string name="sim_1_description">ਪਹਿਲੀ ਸਿਮ ਤੋਂ ਸਾਰੀਆਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
+    <string name="sim_1_allow_description">ਪਹਿਲੀ ਸਿਮ ਤੋਂ ਸਾਰੀਆਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
     <string name="sim_2">ਦੂਜੀ ਸਿਮ</string>
-    <string name="sim_2_description">ਦੂਜੀ ਸਿਮ ਤੋਂ ਸਾਰੀਆਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
+    <string name="sim_2_allow_description">ਦੂਜੀ ਸਿਮ ਤੋਂ ਸਾਰੀਆਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
     <string name="extra_contacts_description">ਆਪਣੇ ਸੰਪਰਕਾਂ ਵਿੱਚਲੇ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
     <string name="extra_unknown_numbers">ਅਣਪਛਾਤੇ ਨੰਬਰ</string>
     <string name="extra_unknown_numbers_description">ਬਿਨਾਂ ਨੰਬਰ ਵਾਲੇ ਓਪਰੇ ਲੋਕਾਂ ਦੀਆਂ ਕਾਲਾਂ ਨੂੰ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>

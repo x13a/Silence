@@ -12,10 +12,14 @@ class ControlReceiver : BroadcastReceiver() {
         private const val SET_OFF = "$PREFIX.SET_OFF"
         private const val SET_UNKNOWN_NUMBERS_ON = "$PREFIX.SET_UNKNOWN_NUMBERS_ON"
         private const val SET_UNKNOWN_NUMBERS_OFF = "$PREFIX.SET_UNKNOWN_NUMBERS_OFF"
-        private const val SET_SIM_1_ON = "$PREFIX.SET_SIM_1_ON"
-        private const val SET_SIM_1_OFF = "$PREFIX.SET_SIM_1_OFF"
-        private const val SET_SIM_2_ON = "$PREFIX.SET_SIM_2_ON"
-        private const val SET_SIM_2_OFF = "$PREFIX.SET_SIM_2_OFF"
+        private const val SET_SIM_1_ALLOW_ON = "$PREFIX.SET_SIM_1_ALLOW_ON"
+        private const val SET_SIM_1_ALLOW_OFF = "$PREFIX.SET_SIM_1_ALLOW_OFF"
+        private const val SET_SIM_2_ALLOW_ON = "$PREFIX.SET_SIM_2_ALLOW_ON"
+        private const val SET_SIM_2_ALLOW_OFF = "$PREFIX.SET_SIM_2_ALLOW_OFF"
+        private const val SET_SIM_1_BLOCK_ON = "$PREFIX.SET_SIM_1_BLOCK_ON"
+        private const val SET_SIM_1_BLOCK_OFF = "$PREFIX.SET_SIM_1_BLOCK_OFF"
+        private const val SET_SIM_2_BLOCK_ON = "$PREFIX.SET_SIM_2_BLOCK_ON"
+        private const val SET_SIM_2_BLOCK_OFF = "$PREFIX.SET_SIM_2_BLOCK_OFF"
     }
 
     override fun onReceive(context: Context?, intent: Intent?) {
@@ -25,10 +29,14 @@ class ControlReceiver : BroadcastReceiver() {
             SET_OFF -> setGlobalState(context, false)
             SET_UNKNOWN_NUMBERS_ON -> setUnknownNumbersState(context, true)
             SET_UNKNOWN_NUMBERS_OFF -> setUnknownNumbersState(context, false)
-            SET_SIM_1_ON -> setSimState(context, Sim.SIM_1, true)
-            SET_SIM_1_OFF -> setSimState(context, Sim.SIM_1, false)
-            SET_SIM_2_ON -> setSimState(context, Sim.SIM_2, true)
-            SET_SIM_2_OFF -> setSimState(context, Sim.SIM_2, false)
+            SET_SIM_1_ALLOW_ON -> setSimAllowState(context, Sim.SIM_1, true)
+            SET_SIM_1_ALLOW_OFF -> setSimAllowState(context, Sim.SIM_1, false)
+            SET_SIM_2_ALLOW_ON -> setSimAllowState(context, Sim.SIM_2, true)
+            SET_SIM_2_ALLOW_OFF -> setSimAllowState(context, Sim.SIM_2, false)
+            SET_SIM_1_BLOCK_ON -> setSimBlockState(context, Sim.SIM_1, true)
+            SET_SIM_1_BLOCK_OFF -> setSimBlockState(context, Sim.SIM_1, false)
+            SET_SIM_2_BLOCK_ON -> setSimBlockState(context, Sim.SIM_2, true)
+            SET_SIM_2_BLOCK_OFF -> setSimBlockState(context, Sim.SIM_2, false)
         }
     }
 
@@ -41,10 +49,17 @@ class ControlReceiver : BroadcastReceiver() {
         Preferences(ctx).isUnknownNumbersChecked = state
     }
 
-    private fun setSimState(ctx: Context, flag: Sim, state: Boolean) {
+    private fun setSimAllowState(ctx: Context, flag: Sim, state: Boolean) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S
             || Utils.getModemCount(ctx, Modem.SUPPORTED) < 2) return
         val prefs = Preferences(ctx)
-        prefs.sim = Utils.setFlag(prefs.sim, flag.value, state)
+        prefs.simAllow = Utils.setFlag(prefs.simAllow, flag.value, state)
+    }
+
+    private fun setSimBlockState(ctx: Context, flag: Sim, state: Boolean) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S
+            || Utils.getModemCount(ctx, Modem.SUPPORTED) < 2) return
+        val prefs = Preferences(ctx)
+        prefs.simBlock = Utils.setFlag(prefs.simBlock, flag.value, state)
     }
 }

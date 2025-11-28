@@ -16,13 +16,13 @@
     <string name="panic_app_dialog_message">¿Está seguro de que quiere permitir que %1$s desencadene acciones de pánico destructivo\?</string>
     <string name="panic_app_unknown_app">una aplicación desconocida</string>
     <string name="sim_1">Tarjeta SIM 1</string>
-    <string name="sim_1_description">Permitir todas las llamadas desde la SIM 1.</string>
+    <string name="sim_1_allow_description">Permitir todas las llamadas desde la SIM 1.</string>
     <string name="extra">Más información</string>
     <string name="block_description">Bloquear todas las llamadas entrantes. Para bloquear también los números de los contactos hay que conceder un permiso.</string>
     <string name="block_main">Bloquear</string>
     <string name="extra_contacts">Contactos</string>
     <string name="sim_2">Tarjeta SIM 2</string>
-    <string name="sim_2_description">Permitir todas las llamadas desde la Tarjeta SIM 2.</string>
+    <string name="sim_2_allow_description">Permitir todas las llamadas desde la Tarjeta SIM 2.</string>
     <string name="extra_unknown_numbers_description">Permitir llamadas de extraños sin número.</string>
     <string name="extra_short_numbers">Números cortos</string>
     <string name="extra_short_numbers_description">Permitir llamadas desde números con una longitud de 3 a 5 dígitos.</string>

@@ -4,7 +4,7 @@
     <string name="repeated_burst_timeout_hint">Tempo de espera</string>
     <string name="block_main">Bloquear</string>
     <string name="block_description">Bloquear todas as chamadas recebidas. Para também bloquear números de contactos, tem de conceder a permissão.</string>
-    <string name="sim_2_description">Permitir todas as chamadas do SIM 2.</string>
+    <string name="sim_2_allow_description">Permitir todas as chamadas do SIM 2.</string>
     <string name="settings_disallow_call">Bloquear chamada</string>
     <string name="settings_skip_notification">Não notificar</string>
     <string name="panic_app_dialog_message">Tem a certeza de que quer permitir que %1$s desencadeie ações de pânico destrutivas\?</string>
@@ -44,7 +44,7 @@
     <string name="messages_ttl_error">7d / 48h / 120m</string>
     <string name="sim">SIM</string>
     <string name="sim_1">SIM 1</string>
-    <string name="sim_1_description">Permitir todas as chamadas do SIM 1.</string>
+    <string name="sim_1_allow_description">Permitir todas as chamadas do SIM 1.</string>
     <string name="sim_2">SIM 2</string>
     <string name="extra">Extra</string>
     <string name="extra_contacts">Contactos</string>
