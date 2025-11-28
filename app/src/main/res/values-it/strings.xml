@@ -8,7 +8,7 @@
     <string name="repeated_main">Ripetuti</string>
     <string name="repeated_description">Consenti X chiamate registrate dallo stesso numero entro un determinato numero di minuti.</string>
     <string name="messages_main">SMS</string>
-    <string name="messages_message">Messaggio</string>
+    <string name="messages_message">SMS</string>
     <string name="messages_message_description">Consenti temporaneamente le chiamate dai numeri trovati nei messaggi.</string>
     <string name="messages_description">Consenti chiamate dai numeri trovati nei messaggi.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
