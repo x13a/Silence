@@ -72,8 +72,7 @@
     <string name="extra_plus_numbers_description">Consenti chiamate dai numeri che non iniziano con un più.</string>
     <string name="block_description">Blocca tutte le chiamate in arrivo. Per bloccare anche i numeri dai contatti devi concedere un\'autorizzazione.</string>
     <string name="repeated_burst_timeout_hint">Timeout</string>
-    <string name="repeated_burst_timeout_helper_text">Timeout minimo in secondi tra chiamate ripetute.</string>
-    <string name="regex_description">Elabora chiamate dai numeri che corrispondono all\'espressione regolare.</string>
+    <string name="repeated_burst_timeout_helper_text">Timeout minimo in secondi tra chiamate ripetute.</string>    
     <string name="block">Blocca</string>
     <string name="block_enabled">Blocco abilitato</string>
     <string name="block_disabled">Blocco disabilitato</string>
@@ -85,8 +84,11 @@
     <string name="contacted_call_in">Rispondi</string>
     <string name="contacted_call_in_description">Consenti chiamate da numeri a cui si è già risposto.</string>
     <string name="regex_main">Regex</string>
-    <string name="regex_pattern_allow_hint">Pattern</string>
+    <string name="regex_description">Elabora chiamate dai numeri che corrispondono all\'espressione regolare.</string>
+    <string name="regex_pattern_allow_hint">Pattern Consentiti</string>
+    <string name="regex_pattern_block_hint">Pattern Bloccati</string>
     <string name="regex_pattern_allow_helper_text">Consenti chiamate dai numeri che corrispondono all\'espressione regolare.</string>
+    <string name="regex_pattern_block_helper_text">Blocca chiamate dai numeri che corrispondono all\' espressione regolare.</string>     
     <string name="regex_pattern_error">Espressione regolare non valida!</string>
     
     <!-- App Shortcuts -->
