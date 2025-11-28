@@ -71,7 +71,7 @@
     <string name="groups_local_description">Sta calls van getallen toe met hetzelfde landcode als die van u.</string>
     <string name="contacted_call_in_description">Laat oproepen toe van nummers die je al hebt beantwoord.</string>
     <string name="regex_main">Regex</string>
-    <string name="regex_pattern_hint">Patroon</string>
+    <string name="regex_pattern_allow_hint">Patroon</string>
     <string name="regex_pattern_error">Ongeldige regex!</string>
     <string name="repeated_main">Herhaald</string>
     <string name="repeated_count">Nummer</string>
@@ -85,5 +85,5 @@
     <string name="toggle_off">Uit</string>
     <string name="toggle_on">Op</string>
     <string name="regex_description">Verwerk oproepen van nummers die overeenkomen met de reguliere expressie.</string>
-    <string name="regex_pattern_helper_text">Sta oproepen toe van nummers die overeenkomen met de reguliere expressie.</string>
+    <string name="regex_pattern_allow_helper_text">Sta oproepen toe van nummers die overeenkomen met de reguliere expressie.</string>
 </resources>

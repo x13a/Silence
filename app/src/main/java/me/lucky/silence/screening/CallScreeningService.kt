@@ -54,8 +54,12 @@ class CallScreeningService : CallScreeningService() {
         } else if (callDetails.callDirection != Call.Details.DIRECTION_INCOMING) {
             respondAllow(callDetails)
             return
+        } else if (prefs.isRegexEnabled && checkAllowRegex(callDetails)) {
+            respondAllow(callDetails)
+            return
         } else if (
-            prefs.isBlockEnabled
+            prefs.isBlockEnabled ||
+            (prefs.isRegexEnabled && checkBlockRegex(callDetails))
         ) {
             respondNotAllow(callDetails)
             return
@@ -64,7 +68,6 @@ class CallScreeningService : CallScreeningService() {
             (prefs.isUnknownNumbersChecked && isUnknownNumber(callDetails)) ||
             (prefs.isShortNumbersChecked && isShortNumber(callDetails)) ||
             (prefs.isNotPlusNumbersChecked && isNotPlusNumber(callDetails)) ||
-            (prefs.isRegexEnabled && checkRegex(callDetails)) ||
             checkSim()
         ) {
             respondAllow(callDetails)
@@ -158,8 +161,41 @@ class CallScreeningService : CallScreeningService() {
     private fun isNotPlusNumber(callDetails: Call.Details) =
         callDetails.handle?.schemeSpecificPart?.startsWith('+') == false
 
-    private fun checkRegex(callDetails: Call.Details): Boolean {
+    private fun checkAllowRegex(callDetails: Call.Details): Boolean {
         val phoneNumber = callDetails.handle?.schemeSpecificPart ?: return false
-        return prefs.regexPattern?.toRegex(RegexOption.MULTILINE)?.matchEntire(phoneNumber) != null
+        val regexPatterns = prefs.regexPatternAllow?.
+            split(",")?.
+            map { it.trim() } ?: return false
+        // Check if any of the regex patterns match the phone number
+        for (pattern in regexPatterns) {
+            try {
+                if (pattern.toRegex(RegexOption.MULTILINE).matches(phoneNumber)) {
+                    return true // Match found, allow the call
+                }
+            } catch (_: java.util.regex.PatternSyntaxException) {
+                // Ignore invalid patterns; continue checking others
+            }
+        }
+        // No matches found
+        return false
+    }
+
+    private fun checkBlockRegex(callDetails: Call.Details): Boolean {
+        val phoneNumber = callDetails.handle?.schemeSpecificPart ?: return false
+        val regexPatterns = prefs.regexPatternBlock?.
+            split(",")?.
+            map { it.trim() } ?: return false
+        // Check if any of the regex patterns match the phone number
+        for (pattern in regexPatterns) {
+            try {
+                if (pattern.toRegex(RegexOption.MULTILINE).matches(phoneNumber)) {
+                    return true // Match found, block the call
+                }
+            } catch (_: java.util.regex.PatternSyntaxException) {
+                // Ignore invalid patterns; continue checking others
+            }
+        }
+        // No matches found
+        return false
     }
 }
