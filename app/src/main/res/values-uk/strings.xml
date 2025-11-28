@@ -21,8 +21,8 @@
     <string name="groups_local">Локальний</string>
     <string name="notification_channel">Блоковані дзвінки</string>
     <string name="notification_title">Дзвінок заблоковано</string>
-    <string name="contacted_call">Виклик</string>
-    <string name="contacted_message">Повідомлення</string>
+    <string name="contacted_call_out">Виклик</string>
+    <string name="contacted_message_out">Повідомлення</string>
     
     <!-- App Shortcuts -->
     <string name="shortcut_activate_block">Активувати блокування дзвінків</string>

@@ -32,7 +32,6 @@ class Preferences(ctx: Context) {
         const val DEFAULT_MESSAGES_TTL = 2 * 24 * 60
 
         // migration
-        const val SERVICE_ENABLED = "service_enabled"
         const val GENERAL_UNKNOWN_NUMBERS_CHECKED = "general_unknown_numbers_checked"
 
         const val REGEX_PATTERN = "regex_pattern"

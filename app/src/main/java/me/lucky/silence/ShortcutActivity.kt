@@ -1,7 +1,6 @@
 package me.lucky.silence
 
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 
@@ -31,8 +30,8 @@ class ShortcutActivity : Activity() {
         prefs.isEnabled = true
         prefs.isBlockEnabled = true
         
-        // Update messages text functionality when global state changes
-        Utils.updateMessagesTextEnabled(this)
+        // Update messages functionality when global state changes
+        Utils.updateMessagesEnabled(this)
         
         Toast.makeText(
             this, 
@@ -46,8 +45,8 @@ class ShortcutActivity : Activity() {
         prefs.isEnabled = false
         prefs.isBlockEnabled = false
         
-        // Update messages text functionality when global state changes
-        Utils.updateMessagesTextEnabled(this)
+        // Update messages functionality when global state changes
+        Utils.updateMessagesEnabled(this)
         
         Toast.makeText(
             this, 
