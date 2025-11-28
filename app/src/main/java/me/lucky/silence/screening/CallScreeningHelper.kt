@@ -192,7 +192,7 @@ class CallScreeningHelper(private val ctx: Context) {
         var isDbChecked = false
         for (value in Message.entries.asSequence().filter { messages.and(it.value) != 0 }) {
             result = when (value) {
-                Message.MESSAGE, Message.NOTIFICATION -> {
+                Message.SMS, Message.NOTIFICATION -> {
                     if (isDbChecked) continue
                     val rv = checkMessagesDb(number)
                     isDbChecked = true

@@ -39,8 +39,8 @@
     <string name="repeated_burst_timeout_helper_text">Minimal timeout in seconds between repeated calls.</string>
     <string name="messages_main">Messages</string>
     <string name="messages_description">Allow calls from numbers found in messages.</string>
-    <string name="messages_message">Message</string>
-    <string name="messages_message_description">Temporarily allow calls from mobile numbers founded in incoming messages.</string>
+    <string name="messages_sms">SMS</string>
+    <string name="messages_sms_description">Temporarily allow calls from mobile numbers founded in incoming messages.</string>
     <string name="messages_notification">Notification</string>
     <string name="messages_notification_description">Temporarily allow calls from mobile numbers founded in notifications.</string>
     <string name="messages_ttl_hint">Time</string>
