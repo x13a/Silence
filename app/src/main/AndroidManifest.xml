@@ -78,10 +78,14 @@
                 <action android:name="me.lucky.silence.action.SET_OFF" />
                 <action android:name="me.lucky.silence.action.SET_UNKNOWN_NUMBERS_ON" />
                 <action android:name="me.lucky.silence.action.SET_UNKNOWN_NUMBERS_OFF" />
-                <action android:name="me.lucky.silence.action.SET_SIM_1_ON" />
-                <action android:name="me.lucky.silence.action.SET_SIM_1_OFF" />
-                <action android:name="me.lucky.silence.action.SET_SIM_2_ON" />
-                <action android:name="me.lucky.silence.action.SET_SIM_2_OFF" />
+                <action android:name="me.lucky.silence.action.SET_SIM_1_ALLOW_ON" />
+                <action android:name="me.lucky.silence.action.SET_SIM_1_ALLOW_OFF" />
+                <action android:name="me.lucky.silence.action.SET_SIM_2_ALLOW_ON" />
+                <action android:name="me.lucky.silence.action.SET_SIM_2_ALLOW_OFF" />
+                <action android:name="me.lucky.silence.action.SET_SIM_1_BLOCK_ON" />
+                <action android:name="me.lucky.silence.action.SET_SIM_1_BLOCK_OFF" />
+                <action android:name="me.lucky.silence.action.SET_SIM_2_BLOCK_ON" />
+                <action android:name="me.lucky.silence.action.SET_SIM_2_BLOCK_OFF" />
             </intent-filter>
         </receiver>
 
