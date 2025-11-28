@@ -9,7 +9,7 @@
     <string name="repeated_description">Consenti X chiamate registrate dallo stesso numero entro un determinato numero di minuti.</string>
     <string name="messages_main">SMS</string>
     <string name="messages_message">SMS</string>
-    <string name="messages_message_description">Consenti temporaneamente le chiamate dai numeri trovati nei messaggi.</string>
+    <string name="messages_message_description">Consenti temporaneamente le chiamate dai numeri di cellulare trovati nei messaggi in arrivo.</string>
     <string name="messages_description">Consenti chiamate dai numeri trovati nei messaggi.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
     <string name="extra_stir_description">Consenti chiamate dai numeri che hanno superato la verifica STIR.</string>
@@ -29,7 +29,7 @@
     <string name="sim_1">SIM 1</string>
     <string name="sim_2">SIM 2</string>
     <string name="settings">Impostazioni</string>
-    <string name="messages_notification">Notifica</string>
+    <string name="messages_notification">Notifiche</string>
     <string name="contacted_message_in">Posta in arrivo</string>
     <string name="settings_controller">Controllore</string>
     <string name="groups_not_local">Non locale</string>
@@ -38,7 +38,7 @@
     <string name="settings_skip_notification">Salta la notifica</string>
     <string name="settings_reject_call">Rifiuta chiamata</string>
     <string name="settings_skip_call_log">Salta registro chiamate</string>
-    <string name="messages_notification_description">Consenti temporaneamente le chiamate dai numeri trovati nelle notifiche dei messaggi in arrivo.</string>
+    <string name="messages_notification_description">Consenti temporaneamente le chiamate dai numeri di cellulare trovati nelle notifiche.</string>
     <string name="settings_silence_call_description">Imposta se la suoneria deve essere silenziata per la chiamata in arrivo. La chiamata, tuttavia, verrà comunque inviata all\'app telefono predefinita se non è bloccata. Selezionare questo ha senso solo quando la chiamata è stata consentita.</string>
     <string name="settings_skip_notification_description">Imposta se una notifica di chiamata persa non deve essere visualizzata per la chiamata in arrivo. Dovrebbe essere selezionato solo se la chiamata non è consentita.</string>
     <string name="settings_skip_call_log_description">Imposta se la chiamata in arrivo non deve essere visualizzata nel registro chiamate. Dovrebbe essere selezionato solo se la chiamata non è consentita. Le chiamate verranno comunque registrate con il tipo BLOCKED_TYPE.</string>
