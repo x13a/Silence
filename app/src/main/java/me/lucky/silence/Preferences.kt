@@ -7,10 +7,8 @@ import androidx.preference.PreferenceManager
 class Preferences(ctx: Context) {
     companion object {
         const val ENABLED = "enabled"
-        const val CONTACTED_CHECKED = "contacted_checked"
-        const val REPEATED_CHECKED = "repeated_checked"
-        const val MESSAGES_CHECKED = "messages_checked"
-        const val GROUPS_CHECKED = "groups_checked"
+        const val REPEATED_ENABLED = "repeated_checked"
+        const val REGEX_ENABLED = "regex_checked"
         const val BLOCK_ENABLED = "block_enabled"
 
         const val CONTACTED = "contacted"
@@ -19,7 +17,7 @@ class Preferences(ctx: Context) {
         const val REPEATED_MINUTES = "repeated_minutes"
         const val REPEATED_BURST_TIMEOUT = "repeated_burst_timeout"
         const val MESSAGES = "messages"
-        const val MESSAGES_TEXT_TTL = "messages_text_ttl"
+        const val MESSAGES_TTL = "messages_text_ttl"
 
         const val RESPONSE_OPTIONS = "call_screening_response_options"
         const val UNKNOWN_NUMBERS_CHECKED = "unknown_numbers_checked"
@@ -31,7 +29,7 @@ class Preferences(ctx: Context) {
 
         const val DEFAULT_REPEATED_COUNT = 3
         const val DEFAULT_REPEATED_MINUTES = 5
-        const val DEFAULT_MESSAGES_TEXT_TTL = 2 * 24 * 60
+        const val DEFAULT_MESSAGES_TTL = 2 * 24 * 60
 
         // migration
         const val SERVICE_ENABLED = "service_enabled"
@@ -48,25 +46,17 @@ class Preferences(ctx: Context) {
         get() = prefs.getBoolean(ENABLED, false)
         set(value) = prefs.edit { putBoolean(ENABLED, value) }
 
-    var isContactedChecked: Boolean
-        get() = prefs.getBoolean(CONTACTED_CHECKED, false)
-        set(value) = prefs.edit { putBoolean(CONTACTED_CHECKED, value) }
-
     var contacted: Int
-        get() = prefs.getInt(CONTACTED, Contact.CALL.value.or(Contact.MESSAGE.value))
+        get() = prefs.getInt(CONTACTED, Contact.CALL_OUT.value.or(Contact.MESSAGE_OUT.value))
         set(value) = prefs.edit { putInt(CONTACTED, value) }
-
-    var isGroupsChecked: Boolean
-        get() = prefs.getBoolean(GROUPS_CHECKED, false)
-        set(value) = prefs.edit { putBoolean(GROUPS_CHECKED, value) }
 
     var groups: Int
         get() = prefs.getInt(GROUPS, 0)
         set(value) = prefs.edit { putInt(GROUPS, value) }
 
-    var isRepeatedChecked: Boolean
-        get() = prefs.getBoolean(REPEATED_CHECKED, false)
-        set(value) = prefs.edit { putBoolean(REPEATED_CHECKED, value) }
+    var isRepeatedEnabled: Boolean
+        get() = prefs.getBoolean(REPEATED_ENABLED, false)
+        set(value) = prefs.edit { putBoolean(REPEATED_ENABLED, value) }
 
     var repeatedCount: Int
         get() = prefs.getInt(REPEATED_COUNT, DEFAULT_REPEATED_COUNT)
@@ -80,17 +70,13 @@ class Preferences(ctx: Context) {
         get() = prefs.getInt(REPEATED_BURST_TIMEOUT, 0)
         set(value) = prefs.edit { putInt(REPEATED_BURST_TIMEOUT, value) }
 
-    var isMessagesChecked: Boolean
-        get() = prefs.getBoolean(MESSAGES_CHECKED, false)
-        set(value) = prefs.edit { putBoolean(MESSAGES_CHECKED, value) }
-
     var messages: Int
         get() = prefs.getInt(MESSAGES, 0)
         set(value) = prefs.edit { putInt(MESSAGES, value) }
 
-    var messagesTextTtl: Int
-        get() = prefs.getInt(MESSAGES_TEXT_TTL, DEFAULT_MESSAGES_TEXT_TTL)
-        set(value) = prefs.edit { putInt(MESSAGES_TEXT_TTL, value) }
+    var messagesTtl: Int
+        get() = prefs.getInt(MESSAGES_TTL, DEFAULT_MESSAGES_TTL)
+        set(value) = prefs.edit { putInt(MESSAGES_TTL, value) }
 
     var isStirChecked: Boolean
         get() = prefs.getBoolean(STIR_CHECKED, false)
@@ -149,12 +135,16 @@ class Preferences(ctx: Context) {
             prefs.edit { putInt(MIGRATION_VERSION, CURRENT_MIGRATION_VERSION) }
         }
     }
+    var isRegexEnabled: Boolean
+        get() = prefs.getBoolean(REGEX_ENABLED, false)
+        set(value) = prefs.edit { putBoolean(REGEX_ENABLED, value) }
 }
 
 enum class Contact(val value: Int) {
-    CALL(1),
-    MESSAGE(1 shl 1),
-    ANSWER(1 shl 2),
+    CALL_OUT(1),
+    MESSAGE_OUT(1 shl 1),
+    CALL_IN(1 shl 2),
+    MESSAGE_IN(1 shl 3),
 }
 
 enum class Group(val value: Int) {
@@ -166,8 +156,7 @@ enum class Group(val value: Int) {
 }
 
 enum class Message(val value: Int) {
-    INBOX(1),
-    TEXT(1 shl 1),
+    NOTIFICATION(1 shl 1),
 }
 
 enum class ResponseOption(val value: Int) {

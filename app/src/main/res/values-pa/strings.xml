@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="contacted_main">ਸੰਪਰਕ ਕੀਤਾ ਗਿਆ</string>
-    <string name="contacted_call">ਕਾਲ</string>
-    <string name="contacted_call_description">ਤੁਹਾਡੇ ਵੱਲੋਂ ਕਾਲ ਕੀਤੇ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
+    <string name="contacted_call_out">ਕਾਲ</string>
+    <string name="contacted_call_out_description">ਤੁਹਾਡੇ ਵੱਲੋਂ ਕਾਲ ਕੀਤੇ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
     <string name="groups_local">ਸਥਾਨਕ</string>
     <string name="groups_not_local">ਗੈਰ ਸਥਾਨਕ</string>
     <string name="groups_mobile">ਮੋਬਾਈਲ</string>
@@ -17,13 +17,13 @@
     <string name="repeated_burst_timeout_helper_text">ਕਾਲਾਂ ਵਿਚਕਾਰ ਘੱਟੋ-ਘੱਟ ਮਿਆਦ ਮੁੱਕਣ ਦਾ ਸਮਾਂ (ਸਕਿੰਟਾਂ ਵਿੱਚ)।</string>
     <string name="messages_main">ਸੁਨੇਹੇ</string>
     <string name="messages_description">ਸੁਨੇਹਿਆਂ ਵਿੱਚ ਮਿਲੇ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
-    <string name="messages_inbox">ਇਨਬਾਕਸ</string>
-    <string name="messages_text_ttl_hint">ਵੇਲਾ</string>
-    <string name="messages_text">ਲਿਖਤ</string>
-    <string name="messages_text_ttl_error">7 ਦਿਨ / 48 ਘੰਟੇ / 120 ਮਿੰਟ</string>
+    <string name="contacted_message_in">ਇਨਬਾਕਸ</string>
+    <string name="messages_ttl_hint">ਵੇਲਾ</string>
+    <string name="messages_notification">ਲਿਖਤ</string>
+    <string name="messages_ttl_error">7 ਦਿਨ / 48 ਘੰਟੇ / 120 ਮਿੰਟ</string>
     <string name="block_main">ਪਬੰਦੀ</string>
     <string name="sim_1">ਪਹਿਲੀ ਸਿਮ</string>
-    <string name="messages_text_ttl_helper_text">ਨੰਬਰ ਤੁਹਾਨੂੰ ਕਿੰਨਾ ਚਿਰ ਕਾਲ ਕਰਨ ਦੇ ਸਮਰੱਥ ਹੋਵੇਗਾ। ਸੋਧਕ: [d]ays [h]ours [m]inutes</string>
+    <string name="messages_ttl_helper_text">ਨੰਬਰ ਤੁਹਾਨੂੰ ਕਿੰਨਾ ਚਿਰ ਕਾਲ ਕਰਨ ਦੇ ਸਮਰੱਥ ਹੋਵੇਗਾ। ਸੋਧਕ: [d]ays [h]ours [m]inutes</string>
     <string name="sim">ਸਿਮ</string>
     <string name="sim_1_description">ਪਹਿਲੀ ਸਿਮ ਤੋਂ ਸਾਰੀਆਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
     <string name="sim_2">ਦੂਜੀ ਸਿਮ</string>
@@ -53,14 +53,14 @@
     <string name="app_name">ਚੁੱਪ</string>
     <string name="groups_main">ਗੁੱਟ</string>
     <string name="contacted_description">ਉਹਨਾਂ ਨੰਬਰਾਂ ਤੋਂ ਫੋਨ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ ਜਿਨ੍ਹਾਂ ਨਾਲ ਤੁਸੀਂ ਸੰਪਰਕ ਕੀਤਾ ਹੈ।</string>
-    <string name="contacted_message">ਸੁਨੇਹਾ</string>
-    <string name="contacted_message_description">ਉਹਨਾਂ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ ਜਿਨ੍ਹਾਂ \'ਤੇ ਤੁਸੀਂ ਸੁਨੇਹਾ ਘੱਲਿਆ ਹੈ।</string>
+    <string name="contacted_message_out">ਸੁਨੇਹਾ</string>
+    <string name="contacted_message_out_description">ਉਹਨਾਂ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ ਜਿਨ੍ਹਾਂ \'ਤੇ ਤੁਸੀਂ ਸੁਨੇਹਾ ਘੱਲਿਆ ਹੈ।</string>
     <string name="groups_local_description">ਆਪਣੇ ਖੁਦ ਦੇ ਦੇਸ਼ ਦੇ ਕੋਡ ਵਾਲੇ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
     <string name="groups_description">ਚੁਣੇ ਗਏ ਗੁੱਟਾਂ ਵਿਚਲੇ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
     <string name="groups_not_local_description">ਤੁਹਾਡੇ ਤੋਂ ਵੱਖਰੇ ਦੇਸ਼ਾਂ ਦੇ ਕੋਡ ਵਾਲੇ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
     <string name="groups_toll_free_description">ਟੋਲ-ਫ੍ਰੀ ਨੰਬਰਾਂ (ਜਿਵੇਂ ਕਿ 800) ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
-    <string name="messages_text_description">ਆਉਣ ਵਾਲੇ ਸੁਨੇਹਿਆਂ ਦੀ ਲਿਖਤ ਵਿੱਚ ਮਿਲੇ ਮੋਬਾਈਲ ਨੰਬਰਾਂ ਤੋਂ ਕੱਚੇ ਤੌਰ \'ਤੇ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
-    <string name="messages_inbox_description">ਉਹਨਾਂ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ ਜਿਨ੍ਹਾਂ ਨੇ ਤੁਹਾਨੂੰ ਸੁਨੇਹਾ ਘੱਲਿਆ ਹੈ।</string>
+    <string name="messages_notification_description">ਆਉਣ ਵਾਲੇ ਸੁਨੇਹਿਆਂ ਦੀ ਲਿਖਤ ਵਿੱਚ ਮਿਲੇ ਮੋਬਾਈਲ ਨੰਬਰਾਂ ਤੋਂ ਕੱਚੇ ਤੌਰ \'ਤੇ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ।</string>
+    <string name="contacted_message_in_description">ਉਹਨਾਂ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿਓ ਜਿਨ੍ਹਾਂ ਨੇ ਤੁਹਾਨੂੰ ਸੁਨੇਹਾ ਘੱਲਿਆ ਹੈ।</string>
     <string name="block_description">ਬਾਹਰੋਂ ਆਉਣ ਵਾਲੀਆਂ ਸਾਰੀਆਂ ਕਾਲਾਂ ਤੇ ਪਾਬੰਦੀ ਲਾਓ। ਸੰਪਰਕਾਂ ਤੋਂ ਨੰਬਰਾਂ ਤੇ ਪਾਬੰਦੀ ਲਾਉਣ ਲਈ ਵੀ ਤੁਹਾਨੂੰ ਇੱਕ ਮਨਜ਼ੂਰੀ ਦੇਣੀ ਪਵੇਗੀ।</string>
     <string name="extra">ਵਾਧੂ</string>
     <string name="extra_contacts">ਸੰਪਰਕ</string>

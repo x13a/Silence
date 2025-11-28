@@ -26,10 +26,10 @@ class CallScreeningHelper(private val ctx: Context) {
     fun check(number: PhoneNumber, callDetails: Call.Details): Boolean {
         return (
             (prefs.isContactsChecked && checkContacts(number)) ||
-            (prefs.isContactedChecked && checkContacted(number)) ||
-            (prefs.isGroupsChecked && checkGroups(number)) ||
-            (prefs.isRepeatedChecked && checkRepeated(number, callDetails)) ||
-            (prefs.isMessagesChecked && checkMessages(number))
+            checkContacted(number) ||
+            checkGroups(number) ||
+            (prefs.isRepeatedEnabled && checkRepeated(number, callDetails)) ||
+            checkMessages(number)
         )
     }
 
@@ -38,16 +38,17 @@ class CallScreeningHelper(private val ctx: Context) {
         var result = false
         for (value in Contact.entries.asSequence().filter { contacted.and(it.value) != 0 }) {
             result = when (value) {
-                Contact.CALL -> checkContactedCall(number)
-                Contact.MESSAGE -> checkContactedMessage(number)
-                Contact.ANSWER -> checkContactedAnswer(number)
+                Contact.CALL_OUT -> checkContactedCallOut(number)
+                Contact.MESSAGE_OUT -> checkContactedMessageOut(number)
+                Contact.CALL_IN -> checkContactedCallIn(number)
+                Contact.MESSAGE_IN -> checkContactedMessageIn(number)
             }
             if (result) break
         }
         return result
     }
 
-    private fun checkContactedCall(number: PhoneNumber): Boolean {
+    private fun checkContactedCallOut(number: PhoneNumber): Boolean {
         var cursor: Cursor? = null
         var result = false
         try {
@@ -66,7 +67,7 @@ class CallScreeningHelper(private val ctx: Context) {
         return result
     }
 
-    private fun checkContactedMessage(number: PhoneNumber): Boolean {
+    private fun checkContactedMessageOut(number: PhoneNumber): Boolean {
         var cursor: Cursor? = null
         var result = false
         val formatedNumber = phoneNumberUtil.format(
@@ -95,7 +96,7 @@ class CallScreeningHelper(private val ctx: Context) {
         return result
     }
 
-    private fun checkContactedAnswer(number: PhoneNumber): Boolean {
+    private fun checkContactedCallIn(number: PhoneNumber): Boolean {
         var cursor: Cursor? = null
         var result = false
         try {
@@ -190,15 +191,14 @@ class CallScreeningHelper(private val ctx: Context) {
         var result = false
         for (value in Message.entries.asSequence().filter { messages.and(it.value) != 0 }) {
             result = when (value) {
-                Message.INBOX -> checkMessagesInbox(number)
-                Message.TEXT -> checkMessagesText(number)
+                Message.NOTIFICATION -> checkMessagesNotification(number)
             }
             if (result) break
         }
         return result
     }
 
-    private fun checkMessagesInbox(number: PhoneNumber): Boolean {
+    private fun checkContactedMessageIn(number: PhoneNumber): Boolean {
         if (phoneNumberUtil.getNumberType(number) != PhoneNumberUtil.PhoneNumberType.MOBILE)
             return false
         var cursor: Cursor? = null
@@ -229,7 +229,7 @@ class CallScreeningHelper(private val ctx: Context) {
         return result
     }
 
-    private fun checkMessagesText(number: PhoneNumber): Boolean {
+    private fun checkMessagesNotification(number: PhoneNumber): Boolean {
         val logNumber = PhoneNumber()
         val countryCode = telephonyManager?.networkCountryIso?.uppercase()
         for (row in db.selectActive()) {

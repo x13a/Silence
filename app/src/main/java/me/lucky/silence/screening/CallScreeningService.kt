@@ -48,15 +48,14 @@ class CallScreeningService : CallScreeningService() {
             return
         } else if (isEmergency(callDetails)) {
             prefs.isEnabled = false
-            Utils.setMessagesTextEnabled(this, false)
+            Utils.setMessagesEnabled(this, false)
             respondAllow(callDetails)
             return
         } else if (callDetails.callDirection != Call.Details.DIRECTION_INCOMING) {
             respondAllow(callDetails)
             return
         } else if (
-            prefs.isBlockEnabled ||
-            checkBlockRegex(callDetails)
+            prefs.isBlockEnabled
         ) {
             respondNotAllow(callDetails)
             return
@@ -65,6 +64,7 @@ class CallScreeningService : CallScreeningService() {
             (prefs.isUnknownNumbersChecked && isUnknownNumber(callDetails)) ||
             (prefs.isShortNumbersChecked && isShortNumber(callDetails)) ||
             (prefs.isNotPlusNumbersChecked && isNotPlusNumber(callDetails)) ||
+            (prefs.isRegexEnabled && checkRegex(callDetails)) ||
             checkSim()
         ) {
             respondAllow(callDetails)
@@ -112,7 +112,7 @@ class CallScreeningService : CallScreeningService() {
                     else -> null
                 }
             }
-            notificationManager.notifyBlockedCall(tel ?: return, sim)
+            notificationManager.notifyBlockedCall(tel, sim)
         }
         respondToCall(callDetails, response)
     }
@@ -158,7 +158,7 @@ class CallScreeningService : CallScreeningService() {
     private fun isNotPlusNumber(callDetails: Call.Details) =
         callDetails.handle?.schemeSpecificPart?.startsWith('+') == false
 
-    private fun checkBlockRegex(callDetails: Call.Details): Boolean {
+    private fun checkRegex(callDetails: Call.Details): Boolean {
         val phoneNumber = callDetails.handle?.schemeSpecificPart ?: return false
         return prefs.regexPattern?.toRegex(RegexOption.MULTILINE)?.matchEntire(phoneNumber) != null
     }

@@ -1,0 +1,40 @@
+Better later, than never, here  we are:
+
+- Android 16 update
+- UI is rewritten to Compose, thx to Joel Beckmeyer @TinfoilSubmarine
+- added monochrome icon, thx to Joel Beckmeyer @TinfoilSubmarine
+- now app is working properly on Android 12L-13, thx to @Efenstor
+- added regex mode, thx to Dev Ghai @meowtochondria
+- updated readme presentation and screenshots, thx to @Ilithy
+- updated Arabic, French, Turkish, Italian, Spanish, Russian, German, Norwegian, Lithuanian,
+Portugal, Punjabi, Polish, Chinese, Tamil, Dutch translations
+
+many thanks to:
+- DJEBBARI.ABDELHAMID @dxing96
+- Oğuz Ersen @oersen
+- Giovanni Donisi @gdonisi
+- Maxime Leroy @Lisapple
+- gallegonovato
+- Sergei Grishin @racingrebel
+- Мистер Перевод
+- Jean-Luc Tibaux @eUgEntOptIc44
+- Allan Nordhøy @comradekingu
+- Gediminas Murauskas @70h
+- Rukesh Patel @rukpat
+- SC @laralem
+- @bomzhellino
+- Silvério Santos @SantosSi
+- Marco P
+- @rickeesingh
+- Umut Yilmaz @Proto1337
+- Marco Ratto @marcoratto
+- D0735
+- hugoalh
+- J. Lavoie
+- gfbdrgng
+- Fupi Brazil @fupicat
+- Rudi Timmermans
+- தமிழ்நேரம்
+
+A lot of thx to all of you. You are awesome!
+All pull requests will be discussed and merged ASAP.

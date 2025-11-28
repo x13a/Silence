@@ -1,8 +1,15 @@
 package me.lucky.silence.ui
 
+import android.content.Intent
+import android.content.Context
+import android.provider.Settings
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -21,28 +28,29 @@ import me.lucky.silence.Message
 import me.lucky.silence.Preferences
 import me.lucky.silence.R
 import me.lucky.silence.Utils
+import me.lucky.silence.ui.common.Dimension
 import me.lucky.silence.ui.common.Preference
 import me.lucky.silence.ui.common.PreferenceList
 import me.lucky.silence.ui.common.Screen
 import java.util.regex.Pattern
 
 @Composable
-fun MessagesScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
+fun MessagesScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolean) {
     val modifierDays = 'd'
     val modifierHours = 'h'
     val modifierMinutes = 'm'
 
-    val errorHint = stringResource(R.string.messages_text_ttl_error)
+    val errorHint = stringResource(R.string.messages_ttl_error)
     var error by remember { mutableStateOf(false) }
 
-    val description = stringResource(R.string.messages_text_ttl_helper_text)
+    val description = stringResource(R.string.messages_ttl_helper_text)
     var supportingText by remember { mutableStateOf(description) }
 
     val pattern by lazy {
         Pattern.compile("^[1-9]\\d*[${modifierDays}${modifierHours}${modifierMinutes}]$")
     }
 
-    val ttl = prefs.messagesTextTtl
+    val ttl = prefs.messagesTtl
     val timeoutString = when {
         ttl % (24 * 60) == 0 -> "${ttl / 24 / 60}${modifierDays}"
         ttl % 60 == 0 -> "${ttl / 60}${modifierHours}"
@@ -52,19 +60,12 @@ fun MessagesScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
 
     val preferenceList = listOf(
         Preference(
-            getValue = { prefs.messages.and(Message.INBOX.value) != 0 },
+            getValue = { prefs.messages.and(Message.NOTIFICATION.value) != 0 },
             setValue = { isChecked ->
-                prefs.messages = Utils.setFlag(prefs.messages, Message.INBOX.value, isChecked)
+                prefs.messages = Utils.setFlag(prefs.messages, Message.NOTIFICATION.value, isChecked)
             },
-            name = R.string.messages_inbox,
-            description = R.string.messages_inbox_description,
-        ), Preference(
-            getValue = { prefs.messages.and(Message.TEXT.value) != 0 },
-            setValue = { isChecked ->
-                prefs.messages = Utils.setFlag(prefs.messages, Message.TEXT.value, isChecked)
-            },
-            name = R.string.messages_text,
-            description = R.string.messages_text_description,
+            name = R.string.messages_notification,
+            description = R.string.messages_notification_description,
         )
     )
 
@@ -72,7 +73,7 @@ fun MessagesScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
         PreferenceList(preferenceList)
         Row(modifier = Modifier.padding(horizontal = 8.dp)) {
             OutlinedTextField(
-                label = { Text(stringResource(R.string.messages_text_ttl_hint)) },
+                label = { Text(stringResource(R.string.messages_ttl_hint)) },
                 supportingText = { Text(supportingText) },
                 singleLine = true,
                 value = timeText,
@@ -86,7 +87,7 @@ fun MessagesScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
                         supportingText = description
                         val timeModifier = newValue.last()
                         val i = newValue.dropLast(1).toInt()
-                        prefs.messagesTextTtl = when (timeModifier) {
+                        prefs.messagesTtl = when (timeModifier) {
                             modifierDays -> i * 24 * 60
                             modifierHours -> i * 60
                             else -> i
@@ -97,9 +98,23 @@ fun MessagesScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
                 modifier = Modifier.weight(1f),
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Ascii,
-                    autoCorrect = false,
+                    autoCorrectEnabled = false,
                     capitalization = KeyboardCapitalization.None
                 )
+            )
+        }
+        Spacer(modifier = Modifier.weight(1f))
+        Button(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(Dimension.PADDING),
+            onClick = {
+                ctx.startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
+            },
+        ) {
+            Text(
+                text = stringResource(R.string.goto_button),
+                style = MaterialTheme.typography.titleLarge,
             )
         }
     }
@@ -108,5 +123,5 @@ fun MessagesScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
 @Preview
 @Composable
 fun MessagesScreenPreview() {
-    MessagesScreen(Preferences(LocalContext.current)) { true }
+    MessagesScreen(LocalContext.current, Preferences(LocalContext.current)) { true }
 }

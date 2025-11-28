@@ -14,7 +14,7 @@ Permissions:
 * CALL_SCREENING - block or allow call
 * READ_CALL_LOG - check you have called/answered the number and count times the number have called you in X minutes
 * READ_SMS - check you have sent a message to the number and you received a message from the number
-* NOTIFICATION_LISTENER - find mobile numbers in messages
+* NOTIFICATION_LISTENER - find mobile numbers in notifications
 * READ_PHONE_STATE - check on which SIM the number is calling
 * RECEIVE_BOOT_COMPLETED - persist clean expired numbers job across reboots
 * READ_CONTACTS - check the number exists in contacts on Android 10 or block calls from them

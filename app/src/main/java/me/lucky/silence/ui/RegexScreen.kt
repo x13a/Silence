@@ -51,7 +51,7 @@ fun RegexScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
                 modifier = Modifier.weight(1f),
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Ascii,
-                    autoCorrect = false,
+                    autoCorrectEnabled = false,
                     capitalization = KeyboardCapitalization.None
                 )
             )
@@ -62,7 +62,7 @@ fun RegexScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
 private fun isValidRegex(pattern: String): Boolean {
     try {
         pattern.toRegex(RegexOption.MULTILINE)
-    } catch (exc: java.util.regex.PatternSyntaxException) {
+    } catch (_: java.util.regex.PatternSyntaxException) {
         return false
     }
     return true

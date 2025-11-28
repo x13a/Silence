@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="contacted_call">Skambinta</string>
+    <string name="contacted_call_out">Skambinta</string>
     <string name="app_name">Tyla</string>
-    <string name="contacted_call_description">Leisti skambučius iš numerių, kuriems skambinote.</string>
-    <string name="contacted_message_description">Leisti skambučius iš numerių, kuriems siuntėte žinutę.</string>
+    <string name="contacted_call_out_description">Leisti skambučius iš numerių, kuriems skambinote.</string>
+    <string name="contacted_message_out_description">Leisti skambučius iš numerių, kuriems siuntėte žinutę.</string>
     <string name="groups_description">Leisti skambučius iš pasirinktų grupių numerių.</string>
     <string name="groups_not_local_description">Leisti skambučius iš numerių, kurių šalies kodai skiriasi nuo jūsų šalies kodų.</string>
     <string name="groups_toll_free_description">Leisti skambučius iš nemokamų numerių (pvz., 800).</string>
@@ -14,16 +14,16 @@
     <string name="repeated_burst_timeout_helper_text">Minimalus laiko tarpas sekundėmis tarp pakartotinių skambučių.</string>
     <string name="messages_main">Žinutės</string>
     <string name="messages_description">Leisti skambučius iš numerių, rastų žinutėse.</string>
-    <string name="contacted_message">Žinutė</string>
+    <string name="contacted_message_out">Žinutė</string>
     <string name="groups_main">Grupės</string>
     <string name="groups_local">Vietinis</string>
     <string name="groups_not_local">Ne vietinis</string>
     <string name="contacted_main">Kontaktuotas</string>
     <string name="contacted_description">Leisti skambučius iš numerių, su kuriais kontaktavote.</string>
     <string name="repeated_settings_description">Skaičius turi būti mažesnis nei minutės. Kadangi „Android“ rezultatą talpina į spartinančiąją atmintinę, skambučiai turi būti už talpyklos intervalo ribų.</string>
-    <string name="messages_inbox">Gautieji</string>
-    <string name="messages_inbox_description">Leisti skambučius iš numerių, kurie jums atsiuntė žinutę.</string>
-    <string name="messages_text_ttl_error">7 d. / 48 val. / 120 min.</string>
+    <string name="contacted_message_in">Gautieji</string>
+    <string name="contacted_message_in_description">Leisti skambučius iš numerių, kurie jums atsiuntė žinutę.</string>
+    <string name="messages_ttl_error">7 d. / 48 val. / 120 min.</string>
     <string name="block_main">Blokuoti</string>
     <string name="block_description">Blokuoti visus įeinančius skambučius. Norėdami blokuoti numerius iš kontaktų, turite suteikti leidimą.</string>
     <string name="sim">SIM</string>
@@ -36,9 +36,9 @@
     <string name="extra_contacts_description">Leisti skambučius iš adresinėje esančių numerių.</string>
     <string name="extra_unknown_numbers">Nežinomi numeriai</string>
     <string name="extra_unknown_numbers_description">Leisti skambučius iš nepažįstamų žmonių be numerio.</string>
-    <string name="messages_text_description">Laikinai leisti skambučius iš mobiliųjų telefonų numerių, rastų įeinančių pranešimų tekste.</string>
-    <string name="messages_text_ttl_helper_text">Kiek laiko numeris galės jums skambinti. Modifikatoriai: [d.]ienos [val.]andos [min.]utės</string>
-    <string name="messages_text">Tekstas</string>
+    <string name="messages_notification_description">Laikinai leisti skambučius iš mobiliųjų telefonų numerių, rastų įeinančių pranešimų tekste.</string>
+    <string name="messages_ttl_helper_text">Kiek laiko numeris galės jums skambinti. Modifikatoriai: [d.]ienos [val.]andos [min.]utės</string>
+    <string name="messages_notification">Tekstas</string>
     <string name="allow">Leisti</string>
     <string name="notification_channel">Užblokuoti skambučiai</string>
     <string name="notification_title">Užblokuotas skambutis</string>
@@ -71,7 +71,7 @@
     <string name="groups_mobile">Mobilusis</string>
     <string name="extra_short_numbers">Trumpieji numeriai</string>
     <string name="groups_toll_free">Nemokamas</string>
-    <string name="messages_text_ttl_hint">laikas</string>
+    <string name="messages_ttl_hint">laikas</string>
     <string name="groups_local_mobile">Vietinis ir mobilusis</string>
     
     <!-- App Shortcuts -->

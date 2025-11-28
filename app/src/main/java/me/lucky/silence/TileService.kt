@@ -3,9 +3,6 @@ package me.lucky.silence
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 
-import me.lucky.silence.Preferences
-import me.lucky.silence.Utils
-
 class TileService : TileService() {
     private lateinit var prefs: Preferences
 
@@ -18,7 +15,7 @@ class TileService : TileService() {
         super.onClick()
         val state = qsTile.state == Tile.STATE_INACTIVE
         prefs.isEnabled = state
-        Utils.updateMessagesTextEnabled(this)
+        Utils.updateMessagesEnabled(this)
         update()
     }
 

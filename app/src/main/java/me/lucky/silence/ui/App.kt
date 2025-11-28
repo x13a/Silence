@@ -60,7 +60,7 @@ fun App(ctx: Context, navController: NavHostController) {
         composable(Route.CONTACTED) { ContactedScreen(prefs) { navController.popBackStack() } }
         composable(Route.GROUPS) { GroupsScreen(prefs) { navController.popBackStack() } }
         composable(Route.REPEATED) { RepeatedScreen(prefs) { navController.popBackStack() } }
-        composable(Route.MESSAGES) { MessagesScreen(prefs) { navController.popBackStack() } }
+        composable(Route.MESSAGES) { MessagesScreen(ctx, prefs) { navController.popBackStack() } }
         composable(Route.SIM) { SimScreen(prefs) { navController.popBackStack() } }
         composable(Route.EXTRA) { ExtraScreen(prefs) { navController.popBackStack() } }
         composable(Route.SETTINGS) { SettingsScreen(ctx, prefs) { navController.popBackStack() } }
