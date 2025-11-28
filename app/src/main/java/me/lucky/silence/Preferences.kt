@@ -29,6 +29,7 @@ class Preferences(ctx: Context) {
 
         const val REGEX_PATTERN_ALLOW = "regex_pattern_allow"
         const val REGEX_PATTERN_BLOCK = "regex_pattern_block"
+        const val REGEX_SEP = ";"
 
         const val DEFAULT_REPEATED_COUNT = 3
         const val DEFAULT_REPEATED_MINUTES = 5

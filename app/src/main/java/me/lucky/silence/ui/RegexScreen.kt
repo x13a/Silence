@@ -96,7 +96,7 @@ fun RegexScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
 
 private fun isValidRegex(patterns: String): Boolean {
     // Split the input string by commas and trim whitespace from each pattern
-    val regexPatterns = patterns.split(",").map { it.trim() }
+    val regexPatterns = patterns.split(Preferences.REGEX_SEP).map { it.trim() }
     // Validate each pattern
     for (pattern in regexPatterns) {
         try {

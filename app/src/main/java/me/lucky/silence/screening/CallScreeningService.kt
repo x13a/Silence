@@ -164,7 +164,7 @@ class CallScreeningService : CallScreeningService() {
     private fun checkAllowRegex(callDetails: Call.Details): Boolean {
         val phoneNumber = callDetails.handle?.schemeSpecificPart ?: return false
         val regexPatterns = prefs.regexPatternAllow?.
-            split(",")?.
+            split(Preferences.REGEX_SEP)?.
             map { it.trim() } ?: return false
         // Check if any of the regex patterns match the phone number
         for (pattern in regexPatterns) {
@@ -183,7 +183,7 @@ class CallScreeningService : CallScreeningService() {
     private fun checkBlockRegex(callDetails: Call.Details): Boolean {
         val phoneNumber = callDetails.handle?.schemeSpecificPart ?: return false
         val regexPatterns = prefs.regexPatternBlock?.
-            split(",")?.
+            split(Preferences.REGEX_SEP)?.
             map { it.trim() } ?: return false
         // Check if any of the regex patterns match the phone number
         for (pattern in regexPatterns) {
