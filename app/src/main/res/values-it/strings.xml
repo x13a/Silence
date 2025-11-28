@@ -78,8 +78,8 @@
     <string name="repeated_burst_timeout_hint">Timeout</string>
     <string name="repeated_burst_timeout_helper_text">Timeout minimo in secondi tra chiamate ripetute.</string>    
     <string name="block">Blocca</string>
-    <string name="block_enabled">Attiva modalità Blocco</string>
-    <string name="block_disabled">Disattiva modalità Blocco</string>
+    <string name="block_enabled">Attiva modalità di Blocco</string>
+    <string name="block_disabled">Disattiva modalità di Blocco</string>
     <string name="extra_description">Consenti chiamate da alcuni gruppi/identificatori vari.</string>
     <string name="sim_description">Elabora tutte le chiamate da una o entrambe le schede SIM.</string>
     <string name="back">Indietro</string>
@@ -98,6 +98,6 @@
     <!-- App Shortcuts -->
     <string name="shortcut_activate">Attiva Silence</string>
     <string name="shortcut_deactivate">Disattiva Silence</string>
-    <string name="shortcut_activate_block">Attiva modalità Blocco</string>
-    <string name="shortcut_deactivate_block">Disattiva modalità Blocco</string>
+    <string name="shortcut_activate_block">Attiva blocco chiamate</string>
+    <string name="shortcut_deactivate_block">Disattiva blocco chiamate</string>
 </resources>

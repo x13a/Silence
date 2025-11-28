@@ -97,6 +97,6 @@
     <!-- App Shortcuts -->
     <string name="shortcut_activate">Activate Silence</string>
     <string name="shortcut_deactivate">Deactivate Silence</string>
-    <string name="shortcut_activate_block">Block mode enabled</string>
-    <string name="shortcut_deactivate_block">Block mode disabled</string>
+    <string name="shortcut_activate_block">Activate call blocking</string>
+    <string name="shortcut_deactivate_block">Deactivate call blocking</string>
 </resources>
