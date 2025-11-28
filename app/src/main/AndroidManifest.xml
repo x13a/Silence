@@ -40,6 +40,8 @@
             android:exported="true"
             android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
+                <action android:name="me.lucky.silence.action.ACTIVATE" />
+                <action android:name="me.lucky.silence.action.DEACTIVATE" />
                 <action android:name="me.lucky.silence.action.ACTIVATE_BLOCK" />
                 <action android:name="me.lucky.silence.action.DEACTIVATE_BLOCK" />
                 <category android:name="android.intent.category.DEFAULT" />
