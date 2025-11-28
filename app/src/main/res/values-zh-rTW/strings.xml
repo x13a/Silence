@@ -86,7 +86,6 @@
     <string name="extra_unknown_numbers_description">允許來自陌生人並且沒有號碼的來電。</string>
     <string name="extra_unknown_numbers">未知號碼</string>
     <string name="extra_plus_numbers">加號號碼</string>
-    
     <!-- App Shortcuts -->
     <string name="shortcut_activate_block">啟用通話封鎖</string>
     <string name="shortcut_deactivate_block">停用通話封鎖</string>
