@@ -94,7 +94,6 @@
     <string name="regex_pattern_allow_helper_text">Consenti chiamate dai numeri che corrispondono ad espressioni regolari separate da punto e virgola.</string>
     <string name="regex_pattern_block_helper_text">Blocca chiamate dai numeri che corrispondono ad espressioni regolari separate da punto e virgola.</string>     
     <string name="regex_pattern_error">Espressione regolare non valida!</string>
-    
     <!-- App Shortcuts -->
     <string name="shortcut_activate">Attiva Silence</string>
     <string name="shortcut_deactivate">Disattiva Silence</string>

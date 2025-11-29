@@ -84,7 +84,6 @@
     <string name="toggle_off">Kapalı</string>
     <string name="back">Geri</string>
     <string name="toggle_on">Açık</string>
-    
     <!-- App Shortcuts -->
     <string name="shortcut_activate_block">Arama engellemeyi etkinleştir</string>
     <string name="shortcut_deactivate_block">Arama engellemeyi devre dışı bırak</string>
