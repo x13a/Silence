@@ -1,0 +1,8 @@
+- added app shortcuts, thx to Gedward Romo @ged-ward
+- added regex block mode, thx to Sran Manpreet @sranmanpreet
+- added per SIM block mode (Android 12+)
+- returned find mobile numbers in incoming SMS, not only Notifications
+- changed regex separator to semicolon
+- updated unknown number parsing
+- updated English, Italian translations, thx to @chaoscalm
+- under the hood improvements
