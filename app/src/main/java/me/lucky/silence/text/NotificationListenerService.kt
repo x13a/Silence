@@ -36,7 +36,7 @@ class NotificationListenerService : NotificationListenerService() {
     override fun onNotificationPosted(sbn: StatusBarNotification?) {
         super.onNotificationPosted(sbn)
         if (sbn == null
-            || prefs.messages.and(Message.NOTIFICATION.value) == 0) return
+            || !prefs.messages.has(Message.NOTIFICATION)) return
         var hasNumber = false
         for (number in phoneNumberUtil
             .findNumbers(

@@ -13,6 +13,7 @@ class Preferences(ctx: Context) {
 
         const val CONTACTED = "contacted"
         const val GROUPS = "groups"
+        const val EXTRA = "extra"
         const val REPEATED_COUNT = "repeated_count"
         const val REPEATED_MINUTES = "repeated_minutes"
         const val REPEATED_BURST_TIMEOUT = "repeated_burst_timeout"
@@ -20,13 +21,8 @@ class Preferences(ctx: Context) {
         const val MESSAGES_TTL = "messages_text_ttl"
 
         const val RESPONSE_OPTIONS = "call_screening_response_options"
-        const val UNKNOWN_NUMBERS_CHECKED = "unknown_numbers_checked"
-        const val SHORT_NUMBERS_CHECKED = "short_numbers_checked"
-        const val CONTACTS_CHECKED = "contacts_checked"
-        const val STIR_CHECKED = "stir_checked"
         const val SIM_ALLOW = "sim_allow"
         const val SIM_BLOCK = "sim_block"
-        const val NOT_PLUS_NUMBERS_CHECKED = "not_plus_numbers_checked"
 
         const val REGEX_PATTERN_ALLOW = "regex_pattern_allow"
         const val REGEX_PATTERN_BLOCK = "regex_pattern_block"
@@ -37,6 +33,11 @@ class Preferences(ctx: Context) {
         const val DEFAULT_MESSAGES_TTL = 2 * 24 * 60
 
         // migration
+        const val NOT_PLUS_NUMBERS_CHECKED = "not_plus_numbers_checked"
+        const val UNKNOWN_NUMBERS_CHECKED = "unknown_numbers_checked"
+        const val SHORT_NUMBERS_CHECKED = "short_numbers_checked"
+        const val CONTACTS_CHECKED = "contacts_checked"
+        const val STIR_CHECKED = "stir_checked"
         const val REGEX_PATTERN = "regex_pattern"
         const val SIM = "sim"
         const val GENERAL_UNKNOWN_NUMBERS_CHECKED = "general_unknown_numbers_checked"
@@ -51,16 +52,18 @@ class Preferences(ctx: Context) {
         get() = prefs.getBoolean(ENABLED, false)
         set(value) = prefs.edit { putBoolean(ENABLED, value) }
 
-    var contacted: Int
-        get() = prefs.getInt(
-            CONTACTED,
-            Contact.CALL_OUT.value.or(Contact.MESSAGE_OUT.value)
+    var contacted: FlagSet<Contact>
+        get() = FlagSet.from(
+            prefs.getInt(
+                CONTACTED,
+                Contact.CALL_OUT.value.or(Contact.MESSAGE_OUT.value),
+            ),
         )
-        set(value) = prefs.edit { putInt(CONTACTED, value) }
+        set(flag) = prefs.edit { putInt(CONTACTED, flag.value) }
 
-    var groups: Int
-        get() = prefs.getInt(GROUPS, 0)
-        set(value) = prefs.edit { putInt(GROUPS, value) }
+    var groups: FlagSet<Group>
+        get() = FlagSet.from(prefs.getInt(GROUPS, 0))
+        set(flag) = prefs.edit { putInt(GROUPS, flag.value) }
 
     var isRepeatedEnabled: Boolean
         get() = prefs.getBoolean(REPEATED_ENABLED, false)
@@ -78,55 +81,60 @@ class Preferences(ctx: Context) {
         get() = prefs.getInt(REPEATED_BURST_TIMEOUT, 0)
         set(value) = prefs.edit { putInt(REPEATED_BURST_TIMEOUT, value) }
 
-    var messages: Int
-        get() = prefs.getInt(MESSAGES, 0)
-        set(value) = prefs.edit { putInt(MESSAGES, value) }
+    var messages: FlagSet<Message>
+        get() = FlagSet.from(prefs.getInt(MESSAGES, 0))
+        set(flag) = prefs.edit { putInt(MESSAGES, flag.value) }
 
     var messagesTtl: Int
         get() = prefs.getInt(MESSAGES_TTL, DEFAULT_MESSAGES_TTL)
         set(value) = prefs.edit { putInt(MESSAGES_TTL, value) }
 
     var isStirChecked: Boolean
-        get() = prefs.getBoolean(STIR_CHECKED, false)
-        set(value) = prefs.edit { putBoolean(STIR_CHECKED, value) }
+        get() = extra.has(Extra.Stir)
+        set(value) { extra = extra.with(Extra.Stir, value) }
 
     var isUnknownNumbersChecked: Boolean
-        get() = prefs.getBoolean(
-            UNKNOWN_NUMBERS_CHECKED,
-            prefs.getBoolean(GENERAL_UNKNOWN_NUMBERS_CHECKED, false),
-        )
-        set(value) = prefs.edit { putBoolean(UNKNOWN_NUMBERS_CHECKED, value) }
+        get() = extra.has(Extra.UnknownNumbers)
+        set(value) { extra = extra.with(Extra.UnknownNumbers, value) }
 
     var isShortNumbersChecked: Boolean
-        get() = prefs.getBoolean(SHORT_NUMBERS_CHECKED, false)
-        set(value) = prefs.edit { putBoolean(SHORT_NUMBERS_CHECKED, value) }
+        get() = extra.has(Extra.ShortNumbers)
+        set(value) { extra = extra.with(Extra.ShortNumbers, value) }
 
     var isContactsChecked: Boolean
-        get() = prefs.getBoolean(CONTACTS_CHECKED, true)
-        set(value) = prefs.edit { putBoolean(CONTACTS_CHECKED, value) }
+        get() = extra.has(Extra.Contacts)
+        set(value) { extra = extra.with(Extra.Contacts, value) }
 
-    var responseOptions: Int
-        get() = prefs.getInt(
-            RESPONSE_OPTIONS,
-            ResponseOption.DisallowCall.value.or(ResponseOption.RejectCall.value),
+    var responseOptions: FlagSet<ResponseOption>
+        get() = FlagSet.from(
+            prefs.getInt(
+                RESPONSE_OPTIONS,
+                ResponseOption.DisallowCall.value.or(ResponseOption.RejectCall.value),
+            ),
         )
-        set(value) = prefs.edit { putInt(RESPONSE_OPTIONS, value) }
+        set(flag) = prefs.edit { putInt(RESPONSE_OPTIONS, flag.value) }
 
-    var simAllow: Int
-        get() = prefs.getInt(SIM_ALLOW, prefs.getInt(SIM, 0))
-        set(value) = prefs.edit { putInt(SIM_ALLOW, value) }
+    var simAllow: FlagSet<Sim>
+        get() = FlagSet.from(prefs.getInt(SIM_ALLOW, prefs.getInt(SIM, 0)))
+        set(flag) = prefs.edit { putInt(SIM_ALLOW, flag.value) }
 
-    var simBlock: Int
-        get() = prefs.getInt(SIM_BLOCK, 0)
-        set(value) = prefs.edit { putInt(SIM_BLOCK, value) }
+    var simBlock: FlagSet<Sim>
+        get() = FlagSet.from(prefs.getInt(SIM_BLOCK, 0))
+        set(flag) = prefs.edit { putInt(SIM_BLOCK, flag.value) }
 
     var isNotPlusNumbersChecked: Boolean
-        get() = prefs.getBoolean(NOT_PLUS_NUMBERS_CHECKED, false)
-        set(value) = prefs.edit { putBoolean(NOT_PLUS_NUMBERS_CHECKED, value) }
+        get() = extra.has(Extra.NotPlusNumbers)
+        set(value) { extra = extra.with(Extra.NotPlusNumbers, value) }
 
     var isBlockEnabled: Boolean
         get() = prefs.getBoolean(BLOCK_ENABLED, false)
         set(value) = prefs.edit { putBoolean(BLOCK_ENABLED, value) }
+
+    var extra: FlagSet<Extra>
+        get() = FlagSet.from(
+            if (prefs.contains(EXTRA)) prefs.getInt(EXTRA, 0) else defaultExtra(),
+        )
+        set(flag) = prefs.edit { putInt(EXTRA, flag.value) }
 
     fun resetToDefaults() {
         prefs.edit {
@@ -142,6 +150,21 @@ class Preferences(ctx: Context) {
             resetToDefaults()
             prefs.edit { putInt(MIGRATION_VERSION, CURRENT_MIGRATION_VERSION) }
         }
+    }
+
+    private fun defaultExtra(): Int {
+        var flags = 0
+        if (prefs.getBoolean(CONTACTS_CHECKED, true)) flags = flags.or(Extra.Contacts.value)
+        if (prefs.getBoolean(SHORT_NUMBERS_CHECKED, false)) flags = flags.or(Extra.ShortNumbers.value)
+        if (prefs.getBoolean(
+                UNKNOWN_NUMBERS_CHECKED,
+                prefs.getBoolean(GENERAL_UNKNOWN_NUMBERS_CHECKED, false),
+            )
+        ) flags = flags.or(Extra.UnknownNumbers.value)
+        if (prefs.getBoolean(NOT_PLUS_NUMBERS_CHECKED, false))
+            flags = flags.or(Extra.NotPlusNumbers.value)
+        if (prefs.getBoolean(STIR_CHECKED, false)) flags = flags.or(Extra.Stir.value)
+        return flags
     }
     var isRegexEnabled: Boolean
         get() = prefs.getBoolean(REGEX_ENABLED, false)
@@ -159,14 +182,14 @@ class Preferences(ctx: Context) {
         set(value) = prefs.edit { putString(REGEX_PATTERN_BLOCK, value) }
 }
 
-enum class Contact(val value: Int) {
+enum class Contact(override val value: Int) : FlagValue {
     CALL_OUT(1),
     MESSAGE_OUT(1 shl 1),
     CALL_IN(1 shl 2),
     MESSAGE_IN(1 shl 3),
 }
 
-enum class Group(val value: Int) {
+enum class Group(override val value: Int) : FlagValue {
     TOLL_FREE(1),
     LOCAL(1 shl 1),
     NOT_LOCAL(1 shl 2),
@@ -174,12 +197,20 @@ enum class Group(val value: Int) {
     LOCAL_MOBILE(1 shl 4),
 }
 
-enum class Message(val value: Int) {
+enum class Message(override val value: Int) : FlagValue {
     SMS(1),
     NOTIFICATION(1 shl 1),
 }
 
-enum class ResponseOption(val value: Int) {
+enum class Extra(override val value: Int) : FlagValue {
+    Contacts(1),
+    ShortNumbers(1 shl 1),
+    UnknownNumbers(1 shl 2),
+    NotPlusNumbers(1 shl 3),
+    Stir(1 shl 4),
+}
+
+enum class ResponseOption(override val value: Int) : FlagValue {
     DisallowCall(1),
     RejectCall(1 shl 1),
     SilenceCall(1 shl 2),
@@ -187,7 +218,7 @@ enum class ResponseOption(val value: Int) {
     SkipNotification(1 shl 4),
 }
 
-enum class Sim(val value: Int) {
+enum class Sim(override val value: Int) : FlagValue {
     SIM_1(1),
     SIM_2(1 shl 1),
 }

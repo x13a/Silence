@@ -9,7 +9,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import me.lucky.silence.Preferences
 import me.lucky.silence.R
 import me.lucky.silence.Sim
-import me.lucky.silence.Utils
 import me.lucky.silence.ui.common.Preference
 import me.lucky.silence.ui.common.PreferenceList
 import me.lucky.silence.ui.common.Screen
@@ -25,27 +24,27 @@ fun SimScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
 
     val preferenceList = listOf(
         Preference(
-            getValue = { prefs.simAllow.and(Sim.SIM_1.value) != 0 },
+            getValue = { prefs.simAllow.has(Sim.SIM_1) },
             setValue = { isChecked ->
-                prefs.simAllow = Utils.setFlag(prefs.simAllow, Sim.SIM_1.value, isChecked)
+                prefs.simAllow = prefs.simAllow.with(Sim.SIM_1, isChecked)
                 if (isChecked) requestSimPermissions()
             },
             name = R.string.sim_1,
             description = R.string.sim_1_allow_description,
         ),
         Preference(
-            getValue = { prefs.simAllow.and(Sim.SIM_2.value) != 0 },
+            getValue = { prefs.simAllow.has(Sim.SIM_2) },
             setValue = { isChecked ->
-                prefs.simAllow = Utils.setFlag(prefs.simAllow, Sim.SIM_2.value, isChecked)
+                prefs.simAllow = prefs.simAllow.with(Sim.SIM_2, isChecked)
                 if (isChecked) requestSimPermissions()
             },
             name = R.string.sim_2,
             description = R.string.sim_2_allow_description
         ),
         Preference(
-            getValue = { prefs.simBlock.and(Sim.SIM_1.value) != 0 },
+            getValue = { prefs.simBlock.has(Sim.SIM_1) },
             setValue = { isChecked ->
-                prefs.simBlock = Utils.setFlag(prefs.simBlock, Sim.SIM_1.value, isChecked)
+                prefs.simBlock = prefs.simBlock.with(Sim.SIM_1, isChecked)
                 if (isChecked) requestSimPermissions()
             },
             name = R.string.sim_1,
@@ -53,9 +52,9 @@ fun SimScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
             dividerBefore = true,
         ),
         Preference(
-            getValue = { prefs.simBlock.and(Sim.SIM_2.value) != 0 },
+            getValue = { prefs.simBlock.has(Sim.SIM_2) },
             setValue = { isChecked ->
-                prefs.simBlock = Utils.setFlag(prefs.simBlock, Sim.SIM_2.value, isChecked)
+                prefs.simBlock = prefs.simBlock.with(Sim.SIM_2, isChecked)
                 if (isChecked) requestSimPermissions()
             },
             name = R.string.sim_2,

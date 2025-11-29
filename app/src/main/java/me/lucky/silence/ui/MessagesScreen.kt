@@ -68,13 +68,9 @@ fun MessagesScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolea
 
     val preferenceList = listOf(
         Preference(
-            getValue = { prefs.messages.and(Message.SMS.value) != 0 },
+            getValue = { prefs.messages.has(Message.SMS) },
             setValue = { isChecked ->
-                prefs.messages = Utils.setFlag(
-                    prefs.messages,
-                    Message.SMS.value,
-                    isChecked
-                )
+                prefs.messages = prefs.messages.with(Message.SMS, isChecked)
                 if (isChecked) requestSmsPermissions()
                 Utils.updateMessagesEnabled(ctx)
             },
@@ -82,13 +78,9 @@ fun MessagesScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolea
             description = R.string.messages_sms_description,
         ),
         Preference(
-            getValue = { prefs.messages.and(Message.NOTIFICATION.value) != 0 },
+            getValue = { prefs.messages.has(Message.NOTIFICATION) },
             setValue = { isChecked ->
-                prefs.messages = Utils.setFlag(
-                    prefs.messages,
-                    Message.NOTIFICATION.value,
-                    isChecked
-                )
+                prefs.messages = prefs.messages.with(Message.NOTIFICATION, isChecked)
                 Utils.updateMessagesEnabled(ctx)
             },
             name = R.string.messages_notification,

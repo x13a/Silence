@@ -9,7 +9,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import me.lucky.silence.Contact
 import me.lucky.silence.Preferences
 import me.lucky.silence.R
-import me.lucky.silence.Utils
 import me.lucky.silence.ui.common.Preference
 import me.lucky.silence.ui.common.PreferenceList
 import me.lucky.silence.ui.common.Screen
@@ -18,9 +17,8 @@ import me.lucky.silence.ui.common.Screen
 @Composable
 fun ContactedScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
     fun getContactedPermissions(): Array<String> {
-        val contacted = prefs.contacted
         val permissions = mutableSetOf<String>()
-        for (value in Contact.entries.asSequence().filter { contacted.and(it.value) != 0 }) {
+        for (value in prefs.contacted.active()) {
             when (value) {
                 Contact.CALL_OUT -> permissions.add(Manifest.permission.READ_CALL_LOG)
                 Contact.MESSAGE_OUT -> permissions.add(Manifest.permission.READ_SMS)
@@ -39,34 +37,34 @@ fun ContactedScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
 
     val preferenceList = listOf(
         Preference(
-            getValue = { prefs.contacted.and(Contact.CALL_OUT.value) != 0 },
+            getValue = { prefs.contacted.has(Contact.CALL_OUT) },
             setValue = { isChecked ->
-                prefs.contacted = Utils.setFlag(prefs.contacted, Contact.CALL_OUT.value, isChecked)
+                prefs.contacted = prefs.contacted.with(Contact.CALL_OUT, isChecked)
                 if (isChecked) requestContactedPermissions()
             },
             name = R.string.contacted_call_out,
             description = R.string.contacted_call_out_description,
         ), Preference(
-            getValue = { prefs.contacted.and(Contact.MESSAGE_OUT.value) != 0 },
+            getValue = { prefs.contacted.has(Contact.MESSAGE_OUT) },
             setValue = { isChecked ->
-                prefs.contacted = Utils.setFlag(prefs.contacted, Contact.MESSAGE_OUT.value, isChecked)
+                prefs.contacted = prefs.contacted.with(Contact.MESSAGE_OUT, isChecked)
                 if (isChecked) requestContactedPermissions()
             },
             name = R.string.contacted_message_out,
             description = R.string.contacted_message_out_description,
         ), Preference(
-            getValue = { prefs.contacted.and(Contact.CALL_IN.value) != 0 },
+            getValue = { prefs.contacted.has(Contact.CALL_IN) },
             setValue = { isChecked ->
-                prefs.contacted = Utils.setFlag(prefs.contacted, Contact.CALL_IN.value, isChecked)
+                prefs.contacted = prefs.contacted.with(Contact.CALL_IN, isChecked)
                 if (isChecked) requestContactedPermissions()
             },
             name = R.string.contacted_call_in,
             description = R.string.contacted_call_in_description,
         ),
         Preference(
-            getValue = { prefs.contacted.and(Contact.MESSAGE_IN.value) != 0 },
+            getValue = { prefs.contacted.has(Contact.MESSAGE_IN) },
             setValue = { isChecked ->
-                prefs.contacted = Utils.setFlag(prefs.contacted, Contact.MESSAGE_IN.value, isChecked)
+                prefs.contacted = prefs.contacted.with(Contact.MESSAGE_IN, isChecked)
                 if (isChecked) requestContactedPermissions()
             },
             name = R.string.contacted_message_in,

@@ -34,9 +34,8 @@ class CallScreeningHelper(private val ctx: Context) {
     }
 
     private fun checkContacted(number: PhoneNumber): Boolean {
-        val contacted = prefs.contacted
         var result = false
-        for (value in Contact.entries.asSequence().filter { contacted.and(it.value) != 0 }) {
+        for (value in prefs.contacted.active()) {
             result = when (value) {
                 Contact.CALL_OUT -> checkContactedCallOut(number)
                 Contact.MESSAGE_OUT -> checkContactedMessageOut(number)
@@ -117,7 +116,6 @@ class CallScreeningHelper(private val ctx: Context) {
     }
 
     private fun checkGroups(number: PhoneNumber): Boolean {
-        val groups = prefs.groups
         var result = false
         val isLocal by lazy { phoneNumberUtil.isValidNumberForRegion(
             number,
@@ -125,7 +123,7 @@ class CallScreeningHelper(private val ctx: Context) {
         ) }
         val numberType by lazy { phoneNumberUtil.getNumberType(number) }
         val isMobile by lazy { numberType == PhoneNumberUtil.PhoneNumberType.MOBILE }
-        for (group in Group.entries.asSequence().filter { groups.and(it.value) != 0 }) {
+        for (group in prefs.groups.active()) {
             result = when (group) {
                 Group.TOLL_FREE -> numberType == PhoneNumberUtil.PhoneNumberType.TOLL_FREE
                 Group.MOBILE -> isMobile
@@ -187,10 +185,9 @@ class CallScreeningHelper(private val ctx: Context) {
     }
 
     private fun checkMessages(number: PhoneNumber): Boolean {
-        val messages = prefs.messages
         var result = false
         var isDbChecked = false
-        for (value in Message.entries.asSequence().filter { messages.and(it.value) != 0 }) {
+        for (value in prefs.messages.active()) {
             result = when (value) {
                 Message.SMS, Message.NOTIFICATION -> {
                     if (isDbChecked) continue

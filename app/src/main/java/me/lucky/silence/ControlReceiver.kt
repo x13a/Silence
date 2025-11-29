@@ -53,13 +53,13 @@ class ControlReceiver : BroadcastReceiver() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S
             || Utils.getModemCount(ctx, Modem.SUPPORTED) < 2) return
         val prefs = Preferences(ctx)
-        prefs.simAllow = Utils.setFlag(prefs.simAllow, flag.value, state)
+        prefs.simAllow = prefs.simAllow.with(flag, state)
     }
 
     private fun setSimBlockState(ctx: Context, flag: Sim, state: Boolean) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S
             || Utils.getModemCount(ctx, Modem.SUPPORTED) < 2) return
         val prefs = Preferences(ctx)
-        prefs.simBlock = Utils.setFlag(prefs.simBlock, flag.value, state)
+        prefs.simBlock = prefs.simBlock.with(flag, state)
     }
 }

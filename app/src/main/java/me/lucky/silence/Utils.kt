@@ -29,12 +29,12 @@ class Utils {
             setComponentEnabled(
                 ctx,
                 SmsReceiver::class.java,
-                prefs.messages.and(Message.SMS.value) != 0 && prefs.isEnabled
+                prefs.messages.has(Message.SMS) && prefs.isEnabled,
             )
             setComponentEnabled(
                 ctx,
                 NotificationListenerService::class.java,
-                prefs.messages.and(Message.NOTIFICATION.value) != 0 && prefs.isEnabled
+                prefs.messages.has(Message.NOTIFICATION) && prefs.isEnabled,
             )
         }
 
@@ -69,12 +69,6 @@ class Utils {
         }
 
         fun currentTimeSeconds() = System.currentTimeMillis() / 1000
-
-        fun setFlag(key: Int, value: Int, enabled: Boolean) =
-            when(enabled) {
-                true -> key.or(value)
-                false -> key.and(value.inv())
-            }
     }
 }
 

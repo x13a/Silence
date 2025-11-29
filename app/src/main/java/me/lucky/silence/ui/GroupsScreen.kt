@@ -6,7 +6,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import me.lucky.silence.Group
 import me.lucky.silence.Preferences
 import me.lucky.silence.R
-import me.lucky.silence.Utils
 import me.lucky.silence.ui.common.Preference
 import me.lucky.silence.ui.common.PreferenceList
 import me.lucky.silence.ui.common.Screen
@@ -16,37 +15,37 @@ import me.lucky.silence.ui.common.Screen
 fun GroupsScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
     val preferenceList = listOf(
         Preference(
-            getValue = { prefs.groups.and(Group.LOCAL.value) != 0 },
+            getValue = { prefs.groups.has(Group.LOCAL) },
             setValue = { isChecked ->
-                prefs.groups = Utils.setFlag(prefs.groups, Group.LOCAL.value, isChecked)
+                prefs.groups = prefs.groups.with(Group.LOCAL, isChecked)
             },
             name = R.string.groups_local,
             description = R.string.groups_local_description,
         ), Preference(
-            getValue = { prefs.groups.and(Group.NOT_LOCAL.value) != 0 },
+            getValue = { prefs.groups.has(Group.NOT_LOCAL) },
             setValue = { isChecked ->
-                prefs.groups = Utils.setFlag(prefs.groups, Group.NOT_LOCAL.value, isChecked)
+                prefs.groups = prefs.groups.with(Group.NOT_LOCAL, isChecked)
             },
             name = R.string.groups_not_local,
             description = R.string.groups_not_local_description,
         ), Preference(
-            getValue = { prefs.groups.and(Group.TOLL_FREE.value) != 0 },
+            getValue = { prefs.groups.has(Group.TOLL_FREE) },
             setValue = { isChecked ->
-                prefs.groups = Utils.setFlag(prefs.groups, Group.TOLL_FREE.value, isChecked)
+                prefs.groups = prefs.groups.with(Group.TOLL_FREE, isChecked)
             },
             name = R.string.groups_toll_free,
             description = R.string.groups_toll_free_description,
         ), Preference(
-            getValue = { prefs.groups.and(Group.MOBILE.value) != 0 },
+            getValue = { prefs.groups.has(Group.MOBILE) },
             setValue = { isChecked ->
-                prefs.groups = Utils.setFlag(prefs.groups, Group.MOBILE.value, isChecked)
+                prefs.groups = prefs.groups.with(Group.MOBILE, isChecked)
             },
             name = R.string.groups_mobile,
             description = R.string.groups_mobile_description,
         ), Preference(
-            getValue = { prefs.groups.and(Group.LOCAL_MOBILE.value) != 0 },
+            getValue = { prefs.groups.has(Group.LOCAL_MOBILE) },
             setValue = { isChecked ->
-                prefs.groups = Utils.setFlag(prefs.groups, Group.LOCAL_MOBILE.value, isChecked)
+                prefs.groups = prefs.groups.with(Group.LOCAL_MOBILE, isChecked)
             },
             name = R.string.groups_local_mobile,
             description = R.string.groups_local_mobile_description,
