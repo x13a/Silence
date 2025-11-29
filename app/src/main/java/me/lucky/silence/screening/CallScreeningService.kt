@@ -150,7 +150,7 @@ class CallScreeningService : CallScreeningService() {
     }
 
     private fun isUnknownNumber(callDetails: Call.Details) =
-        callDetails.handle?.schemeSpecificPart == null
+        (callDetails.handle?.schemeSpecificPart ?: "").isBlank()
 
     private fun isShortNumber(callDetails: Call.Details): Boolean {
         var v = callDetails.handle?.schemeSpecificPart ?: return false
