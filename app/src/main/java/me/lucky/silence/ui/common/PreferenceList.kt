@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
@@ -30,7 +30,7 @@ fun PreferenceList(preferenceList: List<Preference>) {
     Column(modifier = Modifier.padding(Dimension.LIST_PADDING)) {
         for (preference in preferenceList) {
             if (preference.dividerBefore) {
-                Divider(modifier = Modifier.padding(vertical = Dimension.PADDING))
+                HorizontalDivider(modifier = Modifier.padding(vertical = Dimension.PADDING))
             }
             PreferenceItem(preference)
         }
