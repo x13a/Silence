@@ -37,10 +37,10 @@ fun SimScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
         blockState: MutableState<Boolean>
     ) {
         allowState.value = isChecked
-        prefs.simAllow = prefs.simAllow.with(sim, isChecked)
+        prefs.setSimAllow(sim, isChecked)
         if (isChecked) {
             blockState.value = false
-            prefs.simBlock = prefs.simBlock.with(sim, false)
+            prefs.setSimBlock(sim, false)
             requestSimPermissions()
         }
     }
@@ -52,10 +52,10 @@ fun SimScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
         allowState: MutableState<Boolean>
     ) {
         blockState.value = isChecked
-        prefs.simBlock = prefs.simBlock.with(sim, isChecked)
+        prefs.setSimBlock(sim, isChecked)
         if (isChecked) {
             allowState.value = false
-            prefs.simAllow = prefs.simAllow.with(sim, false)
+            prefs.setSimAllow(sim, false)
             requestSimPermissions()
         }
     }

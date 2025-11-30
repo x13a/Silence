@@ -13,6 +13,7 @@ import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber
 import me.lucky.silence.AppDatabase
 import me.lucky.silence.Contact
+import me.lucky.silence.Extra
 import me.lucky.silence.Group
 import me.lucky.silence.Message
 import me.lucky.silence.Preferences
@@ -25,7 +26,7 @@ class CallScreeningHelper(private val ctx: Context) {
 
     fun check(number: PhoneNumber, callDetails: Call.Details): Boolean {
         return (
-            (prefs.isContactsChecked && checkContacts(number)) ||
+            (prefs.extra.has(Extra.Contacts) && checkContacts(number)) ||
             checkContacted(number) ||
             checkGroups(number) ||
             (prefs.isRepeatedEnabled && checkRepeated(number, callDetails)) ||

@@ -89,22 +89,6 @@ class Preferences(ctx: Context) {
         get() = prefs.getInt(MESSAGES_TTL, DEFAULT_MESSAGES_TTL)
         set(value) = prefs.edit { putInt(MESSAGES_TTL, value) }
 
-    var isStirChecked: Boolean
-        get() = extra.has(Extra.Stir)
-        set(value) { extra = extra.with(Extra.Stir, value) }
-
-    var isUnknownNumbersChecked: Boolean
-        get() = extra.has(Extra.UnknownNumbers)
-        set(value) { extra = extra.with(Extra.UnknownNumbers, value) }
-
-    var isShortNumbersChecked: Boolean
-        get() = extra.has(Extra.ShortNumbers)
-        set(value) { extra = extra.with(Extra.ShortNumbers, value) }
-
-    var isContactsChecked: Boolean
-        get() = extra.has(Extra.Contacts)
-        set(value) { extra = extra.with(Extra.Contacts, value) }
-
     var responseOptions: FlagSet<ResponseOption>
         get() = FlagSet.from(
             prefs.getInt(
@@ -122,19 +106,43 @@ class Preferences(ctx: Context) {
         get() = FlagSet.from(prefs.getInt(SIM_BLOCK, 0))
         set(flag) = prefs.edit { putInt(SIM_BLOCK, flag.value) }
 
-    var isNotPlusNumbersChecked: Boolean
-        get() = extra.has(Extra.NotPlusNumbers)
-        set(value) { extra = extra.with(Extra.NotPlusNumbers, value) }
-
     var isBlockEnabled: Boolean
         get() = prefs.getBoolean(BLOCK_ENABLED, false)
         set(value) = prefs.edit { putBoolean(BLOCK_ENABLED, value) }
+
+    fun setContacted(flag: Contact, enabled: Boolean) {
+        contacted = contacted.with(flag, enabled)
+    }
+
+    fun setGroups(flag: Group, enabled: Boolean) {
+        groups = groups.with(flag, enabled)
+    }
+
+    fun setMessages(flag: Message, enabled: Boolean) {
+        messages = messages.with(flag, enabled)
+    }
+
+    fun setResponseOption(flag: ResponseOption, enabled: Boolean) {
+        responseOptions = responseOptions.with(flag, enabled)
+    }
+
+    fun setSimAllow(flag: Sim, enabled: Boolean) {
+        simAllow = simAllow.with(flag, enabled)
+    }
+
+    fun setSimBlock(flag: Sim, enabled: Boolean) {
+        simBlock = simBlock.with(flag, enabled)
+    }
 
     var extra: FlagSet<Extra>
         get() = FlagSet.from(
             if (prefs.contains(EXTRA)) prefs.getInt(EXTRA, 0) else defaultExtra(),
         )
         set(flag) = prefs.edit { putInt(EXTRA, flag.value) }
+
+    fun setExtra(flag: Extra, enabled: Boolean) {
+        extra = extra.with(flag, enabled)
+    }
 
     fun resetToDefaults() {
         prefs.edit {

@@ -17,35 +17,35 @@ fun GroupsScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
         Preference(
             getValue = { prefs.groups.has(Group.LOCAL) },
             setValue = { isChecked ->
-                prefs.groups = prefs.groups.with(Group.LOCAL, isChecked)
+                prefs.setGroups(Group.LOCAL, isChecked)
             },
             name = R.string.groups_local,
             description = R.string.groups_local_description,
         ), Preference(
             getValue = { prefs.groups.has(Group.NOT_LOCAL) },
             setValue = { isChecked ->
-                prefs.groups = prefs.groups.with(Group.NOT_LOCAL, isChecked)
+                prefs.setGroups(Group.NOT_LOCAL, isChecked)
             },
             name = R.string.groups_not_local,
             description = R.string.groups_not_local_description,
         ), Preference(
             getValue = { prefs.groups.has(Group.TOLL_FREE) },
             setValue = { isChecked ->
-                prefs.groups = prefs.groups.with(Group.TOLL_FREE, isChecked)
+                prefs.setGroups(Group.TOLL_FREE, isChecked)
             },
             name = R.string.groups_toll_free,
             description = R.string.groups_toll_free_description,
         ), Preference(
             getValue = { prefs.groups.has(Group.MOBILE) },
             setValue = { isChecked ->
-                prefs.groups = prefs.groups.with(Group.MOBILE, isChecked)
+                prefs.setGroups(Group.MOBILE, isChecked)
             },
             name = R.string.groups_mobile,
             description = R.string.groups_mobile_description,
         ), Preference(
             getValue = { prefs.groups.has(Group.LOCAL_MOBILE) },
             setValue = { isChecked ->
-                prefs.groups = prefs.groups.with(Group.LOCAL_MOBILE, isChecked)
+                prefs.setGroups(Group.LOCAL_MOBILE, isChecked)
             },
             name = R.string.groups_local_mobile,
             description = R.string.groups_local_mobile_description,

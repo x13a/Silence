@@ -11,8 +11,8 @@ import androidx.core.text.isDigitsOnly
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import com.google.i18n.phonenumbers.Phonenumber
+import me.lucky.silence.Extra
 import me.lucky.silence.FlagSet
-import me.lucky.silence.Modem
 import me.lucky.silence.NotificationManager
 import me.lucky.silence.Preferences
 import me.lucky.silence.ResponseOption
@@ -72,10 +72,10 @@ class CallScreeningService : CallScreeningService() {
             respondNotAllow(callDetails)
             return
         } else if (
-            (prefs.isStirChecked && isStirVerified(callDetails)) ||
-            (prefs.isUnknownNumbersChecked && isUnknownNumber(callDetails)) ||
-            (prefs.isShortNumbersChecked && isShortNumber(callDetails)) ||
-            (prefs.isNotPlusNumbersChecked && isNotPlusNumber(callDetails))
+            (prefs.extra.has(Extra.Stir) && isStirVerified(callDetails)) ||
+            (prefs.extra.has(Extra.UnknownNumbers) && isUnknownNumber(callDetails)) ||
+            (prefs.extra.has(Extra.ShortNumbers) && isShortNumber(callDetails)) ||
+            (prefs.extra.has(Extra.NotPlusNumbers) && isNotPlusNumber(callDetails))
         ) {
             respondAllow(callDetails)
             return

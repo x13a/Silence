@@ -21,8 +21,7 @@ fun SettingsScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolea
         Preference(
             getValue = { prefs.responseOptions.has(ResponseOption.DisallowCall) },
             setValue = { isChecked ->
-                prefs.responseOptions =
-                    prefs.responseOptions.with(ResponseOption.DisallowCall, isChecked)
+                prefs.setResponseOption(ResponseOption.DisallowCall, isChecked)
             },
             name = R.string.settings_disallow_call,
             description = R.string.settings_disallow_call_description,
@@ -30,8 +29,7 @@ fun SettingsScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolea
         Preference(
             getValue = { prefs.responseOptions.has(ResponseOption.RejectCall) },
             setValue = { isChecked ->
-                prefs.responseOptions =
-                    prefs.responseOptions.with(ResponseOption.RejectCall, isChecked)
+                prefs.setResponseOption(ResponseOption.RejectCall, isChecked)
             },
             name = R.string.settings_reject_call,
             description = R.string.settings_reject_call_description,
@@ -39,8 +37,7 @@ fun SettingsScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolea
         Preference(
             getValue = { prefs.responseOptions.has(ResponseOption.SilenceCall) },
             setValue = { isChecked ->
-                prefs.responseOptions =
-                    prefs.responseOptions.with(ResponseOption.SilenceCall, isChecked)
+                prefs.setResponseOption(ResponseOption.SilenceCall, isChecked)
             },
             name = R.string.settings_silence_call,
             description = R.string.settings_silence_call_description,
@@ -48,8 +45,7 @@ fun SettingsScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolea
         Preference(
             getValue = { prefs.responseOptions.has(ResponseOption.SkipCallLog) },
             setValue = { isChecked ->
-                prefs.responseOptions =
-                    prefs.responseOptions.with(ResponseOption.SkipCallLog, isChecked)
+                prefs.setResponseOption(ResponseOption.SkipCallLog, isChecked)
             },
             name = R.string.settings_skip_call_log,
             description = R.string.settings_skip_call_log_description,
@@ -57,8 +53,7 @@ fun SettingsScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolea
         Preference(
             getValue = { prefs.responseOptions.has(ResponseOption.SkipNotification) },
             setValue = { isChecked ->
-                prefs.responseOptions =
-                    prefs.responseOptions.with(ResponseOption.SkipNotification, isChecked)
+                prefs.setResponseOption(ResponseOption.SkipNotification, isChecked)
             },
             name = R.string.settings_skip_notification,
             description = R.string.settings_skip_notification_description,

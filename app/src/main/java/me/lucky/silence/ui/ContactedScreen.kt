@@ -39,7 +39,7 @@ fun ContactedScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
         Preference(
             getValue = { prefs.contacted.has(Contact.CALL_OUT) },
             setValue = { isChecked ->
-                prefs.contacted = prefs.contacted.with(Contact.CALL_OUT, isChecked)
+                prefs.setContacted(Contact.CALL_OUT, isChecked)
                 if (isChecked) requestContactedPermissions()
             },
             name = R.string.contacted_call_out,
@@ -47,7 +47,7 @@ fun ContactedScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
         ), Preference(
             getValue = { prefs.contacted.has(Contact.MESSAGE_OUT) },
             setValue = { isChecked ->
-                prefs.contacted = prefs.contacted.with(Contact.MESSAGE_OUT, isChecked)
+                prefs.setContacted(Contact.MESSAGE_OUT, isChecked)
                 if (isChecked) requestContactedPermissions()
             },
             name = R.string.contacted_message_out,
@@ -55,7 +55,7 @@ fun ContactedScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
         ), Preference(
             getValue = { prefs.contacted.has(Contact.CALL_IN) },
             setValue = { isChecked ->
-                prefs.contacted = prefs.contacted.with(Contact.CALL_IN, isChecked)
+                prefs.setContacted(Contact.CALL_IN, isChecked)
                 if (isChecked) requestContactedPermissions()
             },
             name = R.string.contacted_call_in,
@@ -64,7 +64,7 @@ fun ContactedScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
         Preference(
             getValue = { prefs.contacted.has(Contact.MESSAGE_IN) },
             setValue = { isChecked ->
-                prefs.contacted = prefs.contacted.with(Contact.MESSAGE_IN, isChecked)
+                prefs.setContacted(Contact.MESSAGE_IN, isChecked)
                 if (isChecked) requestContactedPermissions()
             },
             name = R.string.contacted_message_in,

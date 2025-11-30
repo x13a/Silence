@@ -3,7 +3,6 @@ package me.lucky.silence.ui
 import android.Manifest
 import android.app.role.RoleManager
 import android.content.Context
-import android.os.Build
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -29,7 +28,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import me.lucky.silence.Modem
 import me.lucky.silence.Preferences
 import me.lucky.silence.R
 import me.lucky.silence.Utils

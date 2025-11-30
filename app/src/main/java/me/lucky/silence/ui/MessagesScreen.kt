@@ -70,7 +70,7 @@ fun MessagesScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolea
         Preference(
             getValue = { prefs.messages.has(Message.SMS) },
             setValue = { isChecked ->
-                prefs.messages = prefs.messages.with(Message.SMS, isChecked)
+                prefs.setMessages(Message.SMS, isChecked)
                 if (isChecked) requestSmsPermissions()
                 Utils.updateMessagesEnabled(ctx)
             },
@@ -80,7 +80,7 @@ fun MessagesScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolea
         Preference(
             getValue = { prefs.messages.has(Message.NOTIFICATION) },
             setValue = { isChecked ->
-                prefs.messages = prefs.messages.with(Message.NOTIFICATION, isChecked)
+                prefs.setMessages(Message.NOTIFICATION, isChecked)
                 Utils.updateMessagesEnabled(ctx)
             },
             name = R.string.messages_notification,

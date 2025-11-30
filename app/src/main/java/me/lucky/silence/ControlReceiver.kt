@@ -3,7 +3,6 @@ package me.lucky.silence
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 
 class ControlReceiver : BroadcastReceiver() {
     companion object {
@@ -46,20 +45,21 @@ class ControlReceiver : BroadcastReceiver() {
     }
 
     private fun setUnknownNumbersState(ctx: Context, state: Boolean) {
-        Preferences(ctx).isUnknownNumbersChecked = state
+        val prefs = Preferences(ctx)
+        prefs.setExtra(Extra.UnknownNumbers, state)
     }
 
     private fun setSimAllowState(ctx: Context, flag: Sim, state: Boolean) {
         if (!Utils.isSimFeatureEnabled(ctx)) return
         val prefs = Preferences(ctx)
-        prefs.simAllow = prefs.simAllow.with(flag, state)
-        if (state) prefs.simBlock = prefs.simBlock.with(flag, false)
+        prefs.setSimAllow(flag, state)
+        if (state) prefs.setSimBlock(flag, false)
     }
 
     private fun setSimBlockState(ctx: Context, flag: Sim, state: Boolean) {
         if (!Utils.isSimFeatureEnabled(ctx)) return
         val prefs = Preferences(ctx)
-        prefs.simBlock = prefs.simBlock.with(flag, state)
-        if (state) prefs.simAllow = prefs.simAllow.with(flag, false)
+        prefs.setSimBlock(flag, state)
+        if (state) prefs.setSimAllow(flag, false)
     }
 }
