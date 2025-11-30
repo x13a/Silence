@@ -9,6 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -23,6 +24,7 @@ data class Preference(
     val name: Int,
     val description: Int,
     val dividerBefore: Boolean = false,
+    val state: MutableState<Boolean>? = null,
 )
 
 @Composable
@@ -41,9 +43,8 @@ fun PreferenceList(preferenceList: List<Preference>) {
 fun PreferenceItem(
     preference: Preference
 ) {
-    var checkedState by remember {
-        mutableStateOf(preference.getValue())
-    }
+    val state = preference.state ?: remember { mutableStateOf(preference.getValue()) }
+    var checkedState by state
 
     Row(
         verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(Dimension.PADDING)

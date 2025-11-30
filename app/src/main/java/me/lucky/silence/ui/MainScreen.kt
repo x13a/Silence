@@ -141,9 +141,7 @@ fun MainScreen(
             description = R.string.messages_description,
             navigation = onNavigateToMessages,
         ),
-        *(if (Utils.getModemCount(ctx, Modem.SUPPORTED) >= 2
-            && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
-        {
+        *(if (Utils.isSimFeatureEnabled(ctx)) {
             arrayOf(
                 Module(
                     name = R.string.sim,

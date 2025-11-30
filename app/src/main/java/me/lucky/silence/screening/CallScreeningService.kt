@@ -42,7 +42,7 @@ class CallScreeningService : CallScreeningService() {
         prefs = Preferences(this)
         callScreeningHelper = CallScreeningHelper(this)
         phoneNumberUtil = PhoneNumberUtil.getInstance()
-        isMultiSim = Utils.getModemCount(this, Modem.SUPPORTED) >= 2
+        isMultiSim = Utils.isSimFeatureEnabled(this)
         telephonyManager = getSystemService(TelephonyManager::class.java)
         subscriptionManager = getSystemService(SubscriptionManager::class.java)
     }
@@ -111,8 +111,7 @@ class CallScreeningService : CallScreeningService() {
             .build()
         if (isNotify && disallowCall) {
             var sim: Sim? = null
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
-                Utils.getModemCount(this, Modem.ACTIVE) >= 2) {
+            if (Utils.hasActiveMultiSim(this)) {
                 sim = when {
                     checkSimSlot(0) -> Sim.SIM_1
                     checkSimSlot(1) -> Sim.SIM_2

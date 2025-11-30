@@ -55,6 +55,16 @@ class Utils {
                 .getSystemService(RoleManager::class.java)
                 ?.isRoleHeld(RoleManager.ROLE_CALL_SCREENING) ?: false
 
+        private fun minSimCount() = if (BuildConfig.DEBUG) 1 else 2
+
+        fun isSimFeatureEnabled(ctx: Context): Boolean =
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
+                getModemCount(ctx, Modem.SUPPORTED) >= minSimCount()
+
+        fun hasActiveMultiSim(ctx: Context): Boolean =
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
+                getModemCount(ctx, Modem.ACTIVE) >= minSimCount()
+
         fun getModemCount(ctx: Context, modem: Modem): Int {
             val telephonyManager = ctx.getSystemService(TelephonyManager::class.java)
             return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
