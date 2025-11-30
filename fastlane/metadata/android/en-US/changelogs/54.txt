@@ -1,0 +1,4 @@
+- fixed call screening filter priorities, thx to Voyager-A
+- added sim mutual exclusive all/block states
+- under the hood improvements, thx to @chaoscalm
+- updated English, Italian translations, thx to @chaoscalm
