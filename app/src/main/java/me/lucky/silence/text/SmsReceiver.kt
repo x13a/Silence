@@ -12,18 +12,22 @@ import androidx.work.WorkManager
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 import me.lucky.silence.AllowNumber
 import me.lucky.silence.AppDatabase
+import me.lucky.silence.Message
 import me.lucky.silence.Preferences
 import java.util.concurrent.TimeUnit
 
 class SmsReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         if (intent?.action != Telephony.Sms.Intents.SMS_RECEIVED_ACTION) return
-        Thread(Runner(context ?: return, intent, goAsync())).start()
+        val prefs = Preferences(context ?: return)
+        if (!prefs.messages.has(Message.SMS)) return
+        Thread(Runner(context, intent, prefs, goAsync())).start()
     }
 
     private class Runner(
         private val ctx: Context,
         private val intent: Intent,
+        private val prefs: Preferences,
         private val pendingResult: PendingResult,
     ) : Runnable {
         private val phoneNumberUtil by lazy { PhoneNumberUtil.getInstance() }
@@ -34,7 +38,6 @@ class SmsReceiver : BroadcastReceiver() {
                 telephonyManager?.networkCountryIso?.uppercase()
             }
             val db by lazy { AppDatabase.getInstance(ctx).allowNumberDao() }
-            val prefs by lazy { Preferences(ctx) }
             var hasNumber = false
             for (msg in Telephony.Sms.Intents.getMessagesFromIntent(intent) ?: return) {
                 if (
