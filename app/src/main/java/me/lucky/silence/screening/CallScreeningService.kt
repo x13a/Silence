@@ -59,22 +59,23 @@ class CallScreeningService : CallScreeningService() {
         } else if (callDetails.callDirection != Call.Details.DIRECTION_INCOMING) {
             respondAllow(callDetails)
             return
+        } else if (prefs.isBlockEnabled || checkSim(prefs.simBlock)) {
+            respondNotAllow(callDetails)
+            return
+        } else if (checkSim(prefs.simAllow)) {
+            respondAllow(callDetails)
+            return
         } else if (prefs.isRegexEnabled && checkAllowRegex(callDetails)) {
             respondAllow(callDetails)
             return
-        } else if (
-            prefs.isBlockEnabled ||
-            checkSim(prefs.simBlock) ||
-            (prefs.isRegexEnabled && checkBlockRegex(callDetails))
-        ) {
+        } else if (prefs.isRegexEnabled && checkBlockRegex(callDetails)) {
             respondNotAllow(callDetails)
             return
         } else if (
             (prefs.isStirChecked && isStirVerified(callDetails)) ||
             (prefs.isUnknownNumbersChecked && isUnknownNumber(callDetails)) ||
             (prefs.isShortNumbersChecked && isShortNumber(callDetails)) ||
-            (prefs.isNotPlusNumbersChecked && isNotPlusNumber(callDetails)) ||
-            checkSim(prefs.simAllow)
+            (prefs.isNotPlusNumbersChecked && isNotPlusNumber(callDetails))
         ) {
             respondAllow(callDetails)
             return
