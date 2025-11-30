@@ -86,7 +86,6 @@
     <string name="sim_description">Processar todas as ligações de um ou ambos cartões SIM.</string>
     <string name="extra_description">Permitir ligações de alguns grupos/identificadores miscelâneos.</string>
     <string name="back">Voltar</string>
-    
     <!-- App Shortcuts -->
     <string name="shortcut_activate_block">Ativar bloqueio de ligações</string>
     <string name="shortcut_deactivate_block">Desativar bloqueio de ligações</string>
