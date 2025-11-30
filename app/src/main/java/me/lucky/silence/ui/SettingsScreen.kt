@@ -19,41 +19,41 @@ import me.lucky.silence.ui.common.Screen
 fun SettingsScreen(ctx: Context, prefs: Preferences, onBackPressed: () -> Boolean) {
     val preferenceList = listOf(
         Preference(
-            getValue = { prefs.responseOptions.has(ResponseOption.DisallowCall) },
+            getValue = { prefs.responseOptions.has(ResponseOption.DISALLOW_CALL) },
             setValue = { isChecked ->
-                prefs.setResponseOption(ResponseOption.DisallowCall, isChecked)
+                prefs.setResponseOption(ResponseOption.DISALLOW_CALL, isChecked)
             },
             name = R.string.settings_disallow_call,
             description = R.string.settings_disallow_call_description,
         ),
         Preference(
-            getValue = { prefs.responseOptions.has(ResponseOption.RejectCall) },
+            getValue = { prefs.responseOptions.has(ResponseOption.REJECT_CALL) },
             setValue = { isChecked ->
-                prefs.setResponseOption(ResponseOption.RejectCall, isChecked)
+                prefs.setResponseOption(ResponseOption.REJECT_CALL, isChecked)
             },
             name = R.string.settings_reject_call,
             description = R.string.settings_reject_call_description,
         ),
         Preference(
-            getValue = { prefs.responseOptions.has(ResponseOption.SilenceCall) },
+            getValue = { prefs.responseOptions.has(ResponseOption.SILENCE_CALL) },
             setValue = { isChecked ->
-                prefs.setResponseOption(ResponseOption.SilenceCall, isChecked)
+                prefs.setResponseOption(ResponseOption.SILENCE_CALL, isChecked)
             },
             name = R.string.settings_silence_call,
             description = R.string.settings_silence_call_description,
         ),
         Preference(
-            getValue = { prefs.responseOptions.has(ResponseOption.SkipCallLog) },
+            getValue = { prefs.responseOptions.has(ResponseOption.SKIP_CALL_LOG) },
             setValue = { isChecked ->
-                prefs.setResponseOption(ResponseOption.SkipCallLog, isChecked)
+                prefs.setResponseOption(ResponseOption.SKIP_CALL_LOG, isChecked)
             },
             name = R.string.settings_skip_call_log,
             description = R.string.settings_skip_call_log_description,
         ),
         Preference(
-            getValue = { prefs.responseOptions.has(ResponseOption.SkipNotification) },
+            getValue = { prefs.responseOptions.has(ResponseOption.SKIP_NOTIFICATION) },
             setValue = { isChecked ->
-                prefs.setResponseOption(ResponseOption.SkipNotification, isChecked)
+                prefs.setResponseOption(ResponseOption.SKIP_NOTIFICATION, isChecked)
             },
             name = R.string.settings_skip_notification,
             description = R.string.settings_skip_notification_description,

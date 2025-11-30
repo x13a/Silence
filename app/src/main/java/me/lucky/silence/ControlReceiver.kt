@@ -46,7 +46,7 @@ class ControlReceiver : BroadcastReceiver() {
 
     private fun setUnknownNumbersState(ctx: Context, state: Boolean) {
         val prefs = Preferences(ctx)
-        prefs.setExtra(Extra.UnknownNumbers, state)
+        prefs.setExtra(Extra.UNKNOWN_NUMBERS, state)
     }
 
     private fun setSimAllowState(ctx: Context, flag: Sim, state: Boolean) {

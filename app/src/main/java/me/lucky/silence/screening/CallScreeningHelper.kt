@@ -26,7 +26,7 @@ class CallScreeningHelper(private val ctx: Context) {
 
     fun check(number: PhoneNumber, callDetails: Call.Details): Boolean {
         return (
-            (prefs.extra.has(Extra.Contacts) && checkContacts(number)) ||
+            (prefs.extra.has(Extra.CONTACTS) && checkContacts(number)) ||
             checkContacted(number) ||
             checkGroups(number) ||
             (prefs.isRepeatedEnabled && checkRepeated(number, callDetails)) ||

@@ -24,33 +24,33 @@ fun ExtraScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
 
     val preferenceList = listOf(
         Preference(
-            getValue = { prefs.extra.has(Extra.Contacts) },
+            getValue = { prefs.extra.has(Extra.CONTACTS) },
             setValue = { isChecked ->
-                prefs.setExtra(Extra.Contacts, isChecked)
+                prefs.setExtra(Extra.CONTACTS, isChecked)
                 if (!isChecked) requestContactsPermissions()
             },
             name = R.string.extra_contacts,
             description = R.string.extra_contacts_description,
         ), Preference(
-            getValue = { prefs.extra.has(Extra.ShortNumbers) },
-            setValue = { isChecked -> prefs.setExtra(Extra.ShortNumbers, isChecked) },
+            getValue = { prefs.extra.has(Extra.SHORT_NUMBERS) },
+            setValue = { isChecked -> prefs.setExtra(Extra.SHORT_NUMBERS, isChecked) },
             name = R.string.extra_short_numbers,
             description = R.string.extra_short_numbers_description,
         ), Preference(
-            getValue = { prefs.extra.has(Extra.UnknownNumbers) },
-            setValue = { isChecked -> prefs.setExtra(Extra.UnknownNumbers, isChecked) },
+            getValue = { prefs.extra.has(Extra.UNKNOWN_NUMBERS) },
+            setValue = { isChecked -> prefs.setExtra(Extra.UNKNOWN_NUMBERS, isChecked) },
             name = R.string.extra_unknown_numbers,
             description = R.string.extra_unknown_numbers_description,
         ), Preference(
-            getValue = { prefs.extra.has(Extra.NotPlusNumbers) },
-            setValue = { isChecked -> prefs.setExtra(Extra.NotPlusNumbers, isChecked) },
+            getValue = { prefs.extra.has(Extra.NOT_PLUS_NUMBERS) },
+            setValue = { isChecked -> prefs.setExtra(Extra.NOT_PLUS_NUMBERS, isChecked) },
             name = R.string.extra_plus_numbers,
             description = R.string.extra_plus_numbers_description,
         ), *(if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             arrayOf(
                 Preference(
-                    getValue = { prefs.extra.has(Extra.Stir) },
-                    setValue = { isChecked -> prefs.setExtra(Extra.Stir, isChecked) },
+                    getValue = { prefs.extra.has(Extra.STIR) },
+                    setValue = { isChecked -> prefs.setExtra(Extra.STIR, isChecked) },
                     name = R.string.extra_stir,
                     description = R.string.extra_stir_description,
                 )

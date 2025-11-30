@@ -72,10 +72,10 @@ class CallScreeningService : CallScreeningService() {
             respondNotAllow(callDetails)
             return
         } else if (
-            (prefs.extra.has(Extra.Stir) && isStirVerified(callDetails)) ||
-            (prefs.extra.has(Extra.UnknownNumbers) && isUnknownNumber(callDetails)) ||
-            (prefs.extra.has(Extra.ShortNumbers) && isShortNumber(callDetails)) ||
-            (prefs.extra.has(Extra.NotPlusNumbers) && isNotPlusNumber(callDetails))
+            (prefs.extra.has(Extra.STIR) && isStirVerified(callDetails)) ||
+            (prefs.extra.has(Extra.UNKNOWN_NUMBERS) && isUnknownNumber(callDetails)) ||
+            (prefs.extra.has(Extra.SHORT_NUMBERS) && isShortNumber(callDetails)) ||
+            (prefs.extra.has(Extra.NOT_PLUS_NUMBERS) && isNotPlusNumber(callDetails))
         ) {
             respondAllow(callDetails)
             return
@@ -99,14 +99,14 @@ class CallScreeningService : CallScreeningService() {
 
     private fun respondNotAllow(callDetails: Call.Details) {
         val responseOptions = prefs.responseOptions
-        val disallowCall = responseOptions.has(ResponseOption.DisallowCall)
+        val disallowCall = responseOptions.has(ResponseOption.DISALLOW_CALL)
         val tel = callDetails.handle?.schemeSpecificPart
-        val isNotify = !responseOptions.has(ResponseOption.SkipNotification) && tel != null
+        val isNotify = !responseOptions.has(ResponseOption.SKIP_NOTIFICATION) && tel != null
         val response = CallResponse.Builder()
             .setDisallowCall(disallowCall)
-            .setRejectCall(responseOptions.has(ResponseOption.RejectCall) && disallowCall)
-            .setSilenceCall(responseOptions.has(ResponseOption.SilenceCall))
-            .setSkipCallLog(responseOptions.has(ResponseOption.SkipCallLog) && disallowCall)
+            .setRejectCall(responseOptions.has(ResponseOption.REJECT_CALL) && disallowCall)
+            .setSilenceCall(responseOptions.has(ResponseOption.SILENCE_CALL))
+            .setSkipCallLog(responseOptions.has(ResponseOption.SKIP_CALL_LOG) && disallowCall)
             .setSkipNotification(!isNotify && disallowCall)
             .build()
         if (isNotify && disallowCall) {

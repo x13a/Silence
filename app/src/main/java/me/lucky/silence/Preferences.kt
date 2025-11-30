@@ -93,7 +93,7 @@ class Preferences(ctx: Context) {
         get() = FlagSet.from(
             prefs.getInt(
                 RESPONSE_OPTIONS,
-                ResponseOption.DisallowCall.value.or(ResponseOption.RejectCall.value),
+                ResponseOption.DISALLOW_CALL.value.or(ResponseOption.REJECT_CALL.value),
             ),
         )
         set(flag) = prefs.edit { putInt(RESPONSE_OPTIONS, flag.value) }
@@ -162,16 +162,16 @@ class Preferences(ctx: Context) {
 
     private fun defaultExtra(): Int {
         var flags = 0
-        if (prefs.getBoolean(CONTACTS_CHECKED, true)) flags = flags.or(Extra.Contacts.value)
-        if (prefs.getBoolean(SHORT_NUMBERS_CHECKED, false)) flags = flags.or(Extra.ShortNumbers.value)
+        if (prefs.getBoolean(CONTACTS_CHECKED, true)) flags = flags.or(Extra.CONTACTS.value)
+        if (prefs.getBoolean(SHORT_NUMBERS_CHECKED, false)) flags = flags.or(Extra.SHORT_NUMBERS.value)
         if (prefs.getBoolean(
                 UNKNOWN_NUMBERS_CHECKED,
                 prefs.getBoolean(GENERAL_UNKNOWN_NUMBERS_CHECKED, false),
             )
-        ) flags = flags.or(Extra.UnknownNumbers.value)
+        ) flags = flags.or(Extra.UNKNOWN_NUMBERS.value)
         if (prefs.getBoolean(NOT_PLUS_NUMBERS_CHECKED, false))
-            flags = flags.or(Extra.NotPlusNumbers.value)
-        if (prefs.getBoolean(STIR_CHECKED, false)) flags = flags.or(Extra.Stir.value)
+            flags = flags.or(Extra.NOT_PLUS_NUMBERS.value)
+        if (prefs.getBoolean(STIR_CHECKED, false)) flags = flags.or(Extra.STIR.value)
         return flags
     }
     var isRegexEnabled: Boolean
@@ -211,19 +211,19 @@ enum class Message(override val value: Int) : FlagValue {
 }
 
 enum class Extra(override val value: Int) : FlagValue {
-    Contacts(1),
-    ShortNumbers(1 shl 1),
-    UnknownNumbers(1 shl 2),
-    NotPlusNumbers(1 shl 3),
-    Stir(1 shl 4),
+    CONTACTS(1),
+    SHORT_NUMBERS(1 shl 1),
+    UNKNOWN_NUMBERS(1 shl 2),
+    NOT_PLUS_NUMBERS(1 shl 3),
+    STIR(1 shl 4),
 }
 
 enum class ResponseOption(override val value: Int) : FlagValue {
-    DisallowCall(1),
-    RejectCall(1 shl 1),
-    SilenceCall(1 shl 2),
-    SkipCallLog(1 shl 3),
-    SkipNotification(1 shl 4),
+    DISALLOW_CALL(1),
+    REJECT_CALL(1 shl 1),
+    SILENCE_CALL(1 shl 2),
+    SKIP_CALL_LOG(1 shl 3),
+    SKIP_NOTIFICATION(1 shl 4),
 }
 
 enum class Sim(override val value: Int) : FlagValue {
