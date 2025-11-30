@@ -62,10 +62,10 @@ class CallScreeningService : CallScreeningService() {
         } else if (prefs.isBlockEnabled || checkSim(prefs.simBlock)) {
             respondNotAllow(callDetails)
             return
-        } else if (checkSim(prefs.simAllow)) {
-            respondAllow(callDetails)
-            return
-        } else if (prefs.isRegexEnabled && checkAllowRegex(callDetails)) {
+        } else if (
+            checkSim(prefs.simAllow)
+            || (prefs.isRegexEnabled && checkAllowRegex(callDetails))
+        ) {
             respondAllow(callDetails)
             return
         } else if (prefs.isRegexEnabled && checkBlockRegex(callDetails)) {
