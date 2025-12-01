@@ -63,7 +63,7 @@ fun RegexScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
                     )
                 )
             }
-            Spacer(modifier = Modifier.padding(vertical = 12.dp))
+            Spacer(modifier = Modifier.padding(vertical = 4.dp))
             Row(modifier = Modifier.padding(horizontal = 8.dp)) {
                 OutlinedTextField(
                     label = { Text(stringResource(R.string.regex_pattern_block_hint)) },
