@@ -8,7 +8,7 @@
     <string name="repeated_main">Ripetuti</string>
     <string name="repeated_description">Consenti X chiamate registrate dallo stesso numero entro un determinato numero di minuti.</string>
     <string name="messages_main">Messaggi</string>
-    <string name="messages_sms">SMS</string>    
+    <string name="messages_sms">SMS</string>
     <string name="messages_sms_description">Consenti temporaneamente le chiamate dai numeri di cellulare trovati nei messaggi in arrivo.</string>
     <string name="messages_description">Consenti chiamate dai numeri trovati nei messaggi.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
@@ -75,8 +75,8 @@
     <string name="extra_plus_numbers">Numeri più</string>
     <string name="extra_plus_numbers_description">Consenti chiamate dai numeri che non iniziano con un più.</string>
     <string name="block_description">Blocca tutte le chiamate in arrivo. Per bloccare anche i numeri dai contatti devi concedere un\'autorizzazione.</string>
-    <string name="repeated_burst_timeout_hint">Timeout</string>
-    <string name="repeated_burst_timeout_helper_text">Timeout minimo in secondi tra chiamate ripetute.</string>    
+    <string name="repeated_burst_timeout_hint">Scadenza</string>
+    <string name="repeated_burst_timeout_helper_text">Timeout minimo in secondi tra chiamate ripetute.</string>
     <string name="block">Blocca</string>
     <string name="block_enabled">Blocco abilitato</string>
     <string name="block_disabled">Blocco disabilitato</string>
@@ -88,11 +88,11 @@
     <string name="contacted_call_in">Rispondi</string>
     <string name="contacted_call_in_description">Consenti chiamate da numeri a cui si è già risposto.</string>
     <string name="regex_main">Regex</string>
-    <string name="regex_description">Elabora chiamate dai numeri che corrispondono all\'espressione regolare.</string>
-    <string name="regex_pattern_allow_hint">Pattern Consentiti</string>
-    <string name="regex_pattern_block_hint">Pattern Bloccati</string>
+    <string name="regex_description">Elabora chiamate dai numeri che corrispondono alle espressioni regolari.</string>
+    <string name="regex_pattern_allow_hint">Modelli di autorizzazione</string>
+    <string name="regex_pattern_block_hint">Modelli di blocco</string>
     <string name="regex_pattern_allow_helper_text">Consenti chiamate dai numeri che corrispondono ad espressioni regolari separate da punto e virgola.</string>
-    <string name="regex_pattern_block_helper_text">Blocca chiamate dai numeri che corrispondono ad espressioni regolari separate da punto e virgola.</string>     
+    <string name="regex_pattern_block_helper_text">Blocca chiamate dai numeri che corrispondono ad espressioni regolari separate da punto e virgola.</string>
     <string name="regex_pattern_error">Espressione regolare non valida!</string>
     <!-- App Shortcuts -->
     <string name="shortcut_activate">Attiva Silence</string>
