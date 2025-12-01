@@ -162,8 +162,10 @@ class Preferences(ctx: Context) {
 
     private fun defaultExtra(): Int {
         var flags = 0
-        if (prefs.getBoolean(CONTACTS_CHECKED, true)) flags = flags.or(Extra.CONTACTS.value)
-        if (prefs.getBoolean(SHORT_NUMBERS_CHECKED, false)) flags = flags.or(Extra.SHORT_NUMBERS.value)
+        if (prefs.getBoolean(CONTACTS_CHECKED, true))
+            flags = flags.or(Extra.CONTACTS.value)
+        if (prefs.getBoolean(SHORT_NUMBERS_CHECKED, false))
+            flags = flags.or(Extra.SHORT_NUMBERS.value)
         if (prefs.getBoolean(
                 UNKNOWN_NUMBERS_CHECKED,
                 prefs.getBoolean(GENERAL_UNKNOWN_NUMBERS_CHECKED, false),
@@ -171,7 +173,8 @@ class Preferences(ctx: Context) {
         ) flags = flags.or(Extra.UNKNOWN_NUMBERS.value)
         if (prefs.getBoolean(NOT_PLUS_NUMBERS_CHECKED, false))
             flags = flags.or(Extra.NOT_PLUS_NUMBERS.value)
-        if (prefs.getBoolean(STIR_CHECKED, false)) flags = flags.or(Extra.STIR.value)
+        if (prefs.getBoolean(STIR_CHECKED, false))
+            flags = flags.or(Extra.STIR.value)
         return flags
     }
     var isRegexEnabled: Boolean

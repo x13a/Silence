@@ -64,11 +64,11 @@ class CallScreeningService : CallScreeningService() {
             return
         } else if (
             checkSim(prefs.simAllow)
-            || (prefs.isRegexEnabled && checkAllowRegex(callDetails))
+            || (prefs.isRegexEnabled && checkRegex(callDetails, prefs.regexPatternAllow))
         ) {
             respondAllow(callDetails)
             return
-        } else if (prefs.isRegexEnabled && checkBlockRegex(callDetails)) {
+        } else if (prefs.isRegexEnabled && checkRegex(callDetails, prefs.regexPatternBlock)) {
             respondNotAllow(callDetails)
             return
         } else if (
@@ -163,9 +163,9 @@ class CallScreeningService : CallScreeningService() {
     private fun isNotPlusNumber(callDetails: Call.Details) =
         callDetails.getRawNumber()?.startsWith('+') == false
 
-    private fun checkAllowRegex(callDetails: Call.Details): Boolean {
+    private fun checkRegex(callDetails: Call.Details, regexPatterns: String?): Boolean {
         val phoneNumber = callDetails.getRawNumber() ?: return false
-        val regexPatterns = prefs.regexPatternAllow?.
+        val regexPatterns = regexPatterns?.
             split(Preferences.REGEX_SEP)?.
             map { it.trim() } ?: return false
         // Check if any of the regex patterns match the phone number
@@ -173,25 +173,6 @@ class CallScreeningService : CallScreeningService() {
             try {
                 if (pattern.toRegex(RegexOption.MULTILINE).matches(phoneNumber)) {
                     return true // Match found, allow the call
-                }
-            } catch (_: java.util.regex.PatternSyntaxException) {
-                // Ignore invalid patterns; continue checking others
-            }
-        }
-        // No matches found
-        return false
-    }
-
-    private fun checkBlockRegex(callDetails: Call.Details): Boolean {
-        val phoneNumber = callDetails.getRawNumber() ?: return false
-        val regexPatterns = prefs.regexPatternBlock?.
-            split(Preferences.REGEX_SEP)?.
-            map { it.trim() } ?: return false
-        // Check if any of the regex patterns match the phone number
-        for (pattern in regexPatterns) {
-            try {
-                if (pattern.toRegex(RegexOption.MULTILINE).matches(phoneNumber)) {
-                    return true // Match found, block the call
                 }
             } catch (_: java.util.regex.PatternSyntaxException) {
                 // Ignore invalid patterns; continue checking others
