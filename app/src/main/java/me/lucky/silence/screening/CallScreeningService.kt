@@ -128,11 +128,13 @@ class CallScreeningService : CallScreeningService() {
             callDetails.callerNumberVerificationStatus == Connection.VERIFICATION_STATUS_PASSED
         else false
 
-    private fun isEmergency(callDetails: Call.Details) =
-        callDetails.hasProperty(Call.Details.PROPERTY_EMERGENCY_CALLBACK_MODE) ||
-        callDetails.hasProperty(Call.Details.PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL) ||
-        telephonyManager
-            ?.isEmergencyNumber(callDetails.getRawNumber() ?: "") == true
+    private fun isEmergency(callDetails: Call.Details): Boolean {
+        val rv = callDetails.hasProperty(Call.Details.PROPERTY_EMERGENCY_CALLBACK_MODE) ||
+            callDetails.hasProperty(Call.Details.PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL) ||
+            telephonyManager
+                ?.isEmergencyNumber(callDetails.getRawNumber() ?: return false) == true
+        return rv
+    }
 
     private fun checkSim(sim: FlagSet<Sim>): Boolean {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S || !isMultiSim) return false
