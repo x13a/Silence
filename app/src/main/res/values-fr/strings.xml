@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">Silence</string>
     <string name="repeated_description">Autorise X appels enregistrés depuis le même numéro pendant un nombre de minutes déterminé.</string>
-    <string name="messages_main">SMS</string>
-    <string name="messages_description">Autorisez les appels provenant de numéros trouvés dans les messages.</string>
+    <string name="messages_main">Messages</string>
+    <string name="messages_description">Autoriser les appels provenant de numéros trouvés dans les messages.</string>
     <string name="extra_stir">STIR/SHAKEN</string>
     <string name="contacted_main">Recontacté</string>
     <string name="groups_description">Autoriser les appels des numéros dans les groupes sélectionnés.</string>
@@ -76,10 +76,10 @@
     <string name="back">Retour</string>
     <string name="contacted_call_in">Répondre</string>
     <string name="regex_main">Regex</string>
-    <string name="regex_description">Les appels de processus de nombres correspondant à l\'expression régulière.</string>
-    <string name="regex_pattern_allow_hint">Patron</string>
+    <string name="regex_description">Les appels de processus de nombres correspondant aux expressions régulières.</string>
+    <string name="regex_pattern_allow_hint">Modèles d\'autorisation</string>
     <string name="contacted_call_in_description">Autoriser les appels des numéros auxquels vous avez déjà répondu.</string>
-    <string name="regex_pattern_allow_helper_text">Permettre les appels de nombres correspondant à l\'expression régulière.</string>
+    <string name="regex_pattern_allow_helper_text">Autoriser les appels des numéros correspondant aux expressions séparées par un point-virgule.</string>
     <string name="regex_pattern_error">Regex invalide !</string>
     <string name="block">Bloquer</string>
     <string name="extra_description">Permettre des appels de certains groupes/identifiants divers.</string>
@@ -89,4 +89,14 @@
     <!-- App Shortcuts -->
     <string name="shortcut_activate_block">Activer le blocage d\'appels</string>
     <string name="shortcut_deactivate_block">Désactiver le blocage d\'appels</string>
+    <string name="regex_pattern_block_hint">Modèles de blocage</string>
+    <string name="regex_pattern_block_helper_text">Bloquer les appels des numéros correspondant aux expressions régulières séparées par un point-virgule.</string>
+    <string name="messages_sms">SMS</string>
+    <string name="messages_sms_description">Autoriser temporairement les appels des numéros mobiles trouvés dans les messages entrants.</string>
+    <string name="sim_1_block_description">Bloquer tous les appeles de la SIM 1.</string>
+    <string name="sim_2_block_description">Bloquer tous les appels de la SIM 2.</string>
+    <string name="block_enabled">Mode blocage activé</string>
+    <string name="block_disabled">Mode blocage désactivé</string>
+    <string name="shortcut_activate">Activer Silence</string>
+    <string name="shortcut_deactivate">Désactiver Silence</string>
 </resources>
