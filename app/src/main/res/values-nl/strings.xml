@@ -82,8 +82,8 @@
     <string name="block">Blokkeer</string>
     <string name="extra_description">Oproepen toestaan van bepaalde groepen/identifiers.</string>
     <string name="back">Terug</string>
-    <string name="toggle_off">Uit</string>
-    <string name="toggle_on">Op</string>
+    <string name="activate_app">Uit</string>
+    <string name="deactivate_app">Op</string>
     <string name="regex_description">Verwerk oproepen van nummers die overeenkomen met de reguliere expressie.</string>
     <string name="regex_pattern_allow_helper_text">Sta oproepen toe van nummers die overeenkomen met de reguliere expressie.</string>
 </resources>

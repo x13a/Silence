@@ -83,8 +83,8 @@
     <string name="extra_description">Consenti chiamate da alcuni gruppi/identificatori vari.</string>
     <string name="sim_description">Elabora tutte le chiamate da una o entrambe le schede SIM.</string>
     <string name="back">Indietro</string>
-    <string name="toggle_off">Spento</string>
-    <string name="toggle_on">Acceso</string>
+    <string name="activate_app">Spento</string>
+    <string name="deactivate_app">Acceso</string>
     <string name="contacted_call_in">Rispondi</string>
     <string name="contacted_call_in_description">Consenti chiamate da numeri a cui si è già risposto.</string>
     <string name="regex_main">Regex</string>

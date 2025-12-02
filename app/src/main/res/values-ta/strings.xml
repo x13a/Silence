@@ -81,9 +81,9 @@
     <string name="extra_description">சில இதர குழுக்கள்/அடையாளங்காட்டிகளிடமிருந்து அழைப்புகளை அனுமதிக்கவும்.</string>
     <string name="sim_description">ஒன்று அல்லது இரண்டு சிம் கார்டுகளிலிருந்தும் அனைத்து அழைப்புகளையும் செயலாக்கவும்.</string>
     <string name="back">பின்</string>
-    <string name="toggle_off">அணை</string>
+    <string name="activate_app">அணை</string>
     <string name="app_name">ம .னம்</string>
     <string name="sim">சிம்</string>
     <string name="sim_1">சிம் 1</string>
-    <string name="toggle_on">ஆன்</string>
+    <string name="deactivate_app">ஆன்</string>
 </resources>

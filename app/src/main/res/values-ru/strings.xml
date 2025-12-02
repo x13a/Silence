@@ -73,8 +73,8 @@
     <string name="messages_ttl_helper_text">Сколько времени номер сможет звонить Вам. Modifiers: [d]ays [h]ours [m]inutes</string>
     <string name="messages_ttl_error">7d / 48h / 120m</string>
     <string name="goto_button">ПЕРЕЙТИ</string>
-    <string name="toggle_off">Off</string>
-    <string name="toggle_on">On</string>
+    <string name="activate_app">Включить</string>
+    <string name="deactivate_app">Выключить</string>
     <string name="back">Назад</string>
     <string name="contacted_call_in">Ответить</string>
     <string name="contacted_call_in_description">Разрешите звонки с номеров, на которые вы уже отвечали.</string>

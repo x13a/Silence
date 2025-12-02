@@ -79,8 +79,8 @@
     <string name="regex_pattern_error">¡Expresión regular no válida!</string>
     <string name="sim_description">Permitir todas las llamadas desde una o ambas tarjetas SIM.</string>
     <string name="back">Volver</string>
-    <string name="toggle_off">Apagar</string>
-    <string name="toggle_on">Encender</string>
+    <string name="activate_app">Apagar</string>
+    <string name="deactivate_app">Encender</string>
     <string name="contacted_call_in">Respuesta</string>
     <string name="contacted_call_in_description">Permitir llamadas de números que ya ha contestado.</string>
     <string name="extra_description">Permitir llamadas de algunos grupos/identificadores varios.</string>

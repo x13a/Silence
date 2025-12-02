@@ -81,9 +81,9 @@
     <string name="contacted_call_in_description">Daha önce yanıtladığınız numaralardan gelen aramalara izin ver.</string>
     <string name="extra_description">Bazı çeşitli gruplardan/tanımlayıcılardan gelen aramalara izin ver.</string>
     <string name="sim_description">Bir veya her iki SIM karttan gelen tüm aramalara izin verin.</string>
-    <string name="toggle_off">Kapalı</string>
+    <string name="activate_app">Kapalı</string>
     <string name="back">Geri</string>
-    <string name="toggle_on">Açık</string>
+    <string name="deactivate_app">Açık</string>
     <!-- App Shortcuts -->
     <string name="shortcut_activate_block">Arama engellemeyi etkinleştir</string>
     <string name="shortcut_deactivate_block">Arama engellemeyi devre dışı bırak</string>

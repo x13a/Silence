@@ -77,8 +77,8 @@
     <string name="contacted_call_in_description">Permitir chamadas de números que já atendeu.</string>
     <string name="regex_pattern_allow_helper_text">Permitir chamadas de números que correspondam à expressão regular.</string>
     <string name="back">Voltar</string>
-    <string name="toggle_off">Desativado</string>
-    <string name="toggle_on">Ativado</string>
+    <string name="activate_app">Desativado</string>
+    <string name="deactivate_app">Ativado</string>
     <string name="regex_main">Expressão regular</string>
     <string name="regex_description">Processar chamadas de números que correspondem à expressão regular.</string>
     <string name="regex_pattern_allow_hint">Modelo</string>

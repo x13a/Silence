@@ -84,8 +84,8 @@
     <string name="block">Bloquer</string>
     <string name="extra_description">Permettre des appels de certains groupes/identifiants divers.</string>
     <string name="sim_description">Traitement de tous les appels d\'une ou des deux cartes SIM.</string>
-    <string name="toggle_off">Désactivé</string>
-    <string name="toggle_on">Activé</string>
+    <string name="activate_app">Désactivé</string>
+    <string name="deactivate_app">Activé</string>
     <!-- App Shortcuts -->
     <string name="shortcut_activate_block">Activer le blocage d\'appels</string>
     <string name="shortcut_deactivate_block">Désactiver le blocage d\'appels</string>

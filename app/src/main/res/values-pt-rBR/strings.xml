@@ -73,8 +73,8 @@
     <string name="block_description">Bloquear todas as chamadas recebidas. Para bloquear números de contatos também, você deve conceder uma permissão.</string>
     <string name="extra_plus_numbers_description">Permitir chamadas de números que não começam com um sinal de mais.</string>
     <string name="extra_plus_numbers">Números +</string>
-    <string name="toggle_on">Ativado</string>
-    <string name="toggle_off">Desativado</string>
+    <string name="deactivate_app">Ativado</string>
+    <string name="activate_app">Desativado</string>
     <string name="regex_main">Regex</string>
     <string name="contacted_call_in">Resposta</string>
     <string name="contacted_call_in_description">Permitir ligações de números que você já atendeu.</string>

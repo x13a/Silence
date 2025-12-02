@@ -11,8 +11,8 @@
     <string name="extra_plus_numbers_description">允許來自不以加號開頭的號碼來電。</string>
     <string name="sim_description">處理來自一張或兩張 SIM 卡的所有來電。</string>
     <string name="back">返回</string>
-    <string name="toggle_off">關閉</string>
-    <string name="toggle_on">開啟</string>
+    <string name="activate_app">關閉</string>
+    <string name="deactivate_app">開啟</string>
     <string name="contacted_call_in">接聽</string>
     <string name="groups_local">本地</string>
     <string name="contacted_call_in_description">允許來自你已接聽過的號碼來電。</string>

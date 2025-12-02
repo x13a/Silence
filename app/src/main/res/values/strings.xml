@@ -92,8 +92,8 @@
     <string name="extra_description">Allow calls from some miscellaneous groups/identifiers.</string>
     <string name="sim_description">Process all calls from one or both SIM cards.</string>
     <string name="back">Back</string>
-    <string name="toggle_off">Off</string>
-    <string name="toggle_on">On</string>
+    <string name="activate_app">Activate</string>
+    <string name="deactivate_app">Deactivate</string>
     <!-- App Shortcuts -->
     <string name="shortcut_activate">Activate Silence</string>
     <string name="shortcut_deactivate">Deactivate Silence</string>
