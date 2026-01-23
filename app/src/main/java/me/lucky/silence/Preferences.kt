@@ -162,7 +162,7 @@ class Preferences(ctx: Context) {
 
     private fun defaultExtra(): Int {
         var flags = 0
-        if (prefs.getBoolean(CONTACTS_CHECKED, true))
+        if (prefs.getBoolean(CONTACTS_CHECKED, false))
             flags = flags.or(Extra.CONTACTS.value)
         if (prefs.getBoolean(SHORT_NUMBERS_CHECKED, false))
             flags = flags.or(Extra.SHORT_NUMBERS.value)
