@@ -59,13 +59,13 @@ class CallScreeningService : CallScreeningService() {
         } else if (callDetails.callDirection != Call.Details.DIRECTION_INCOMING) {
             respondAllow(callDetails)
             return
+        } else if (checkSim(prefs.simAllow)) {
+            respondAllow(callDetails)
+            return
         } else if (prefs.isBlockEnabled || checkSim(prefs.simBlock)) {
             respondNotAllow(callDetails)
             return
-        } else if (
-            checkSim(prefs.simAllow)
-            || (prefs.isRegexEnabled && checkRegex(callDetails, prefs.regexPatternAllow))
-        ) {
+        } else if (prefs.isRegexEnabled && checkRegex(callDetails, prefs.regexPatternAllow)) {
             respondAllow(callDetails)
             return
         } else if (prefs.isRegexEnabled && checkRegex(callDetails, prefs.regexPatternBlock)) {
